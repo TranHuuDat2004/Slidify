@@ -3,52 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slidify - Trình chiếu Slide</title>
-    <!-- Đã cập nhật đường dẫn file CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Slidify - Chọn môn học</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
-
-    <!-- Vùng chứa cho header -->
     <header id="header-placeholder"></header>
 
-    <div class="main-container">
-        <!-- Khu vực hiển thị slide chính -->
-        <main class="slide-viewer">
-            <h1 id="slide-title"></h1>
-            <img id="slide-image" src="" alt="Hình ảnh slide">
-        </main>
-
-        <!-- Thanh mục lục bên phải -->
-        <aside class="slide-sidebar">
-            <h2>Nội dung khóa học</h2>
-            <ul id="slide-list">
-                <!-- Danh sách slide sẽ được tạo tự động bằng JavaScript -->
-            </ul>
-        </aside>
-    </div>
-
-    <!-- Khu vực ghi chú và giải thích bên dưới (phần này vẫn là duy nhất cho index.html) -->
-    <section class="notes-section">
-        <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'notes')">Ghi Chú</button>
-            <button class="tab-link" onclick="openTab(event, 'terms')">Giải Thích Thuật Ngữ</button>
+    <main class="homepage-main">
+        <h1>Chào mừng đến với Notely</h1>
+        <p>Chọn một môn học bên dưới để bắt đầu ghi chú và khám phá kiến thức.</p>
+        
+        <div id="course-list-container" class="course-list-container">
+            <!-- Các thẻ môn học sẽ được tạo tự động bằng JavaScript -->
         </div>
+    </main>
 
-        <div id="notes" class="tab-content" style="display: block;">
-            <p id="slide-notes-content"></p>
-        </div>
-
-        <div id="terms" class="tab-content">
-            <dl id="slide-terms-content"></dl>
-        </div>
-    </section>
-
-    <!-- Vùng chứa cho footer -->
     <footer id="footer-placeholder"></footer>
 
-    <!-- Đã cập nhật đường dẫn các file JS -->
+    <!-- Nhúng các file JS cần thiết -->
     <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        // Hàm load header/footer (có thể tách ra file js/main.js nếu muốn)
+        function loadComponent(filePath, elementId) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => { document.getElementById(elementId).innerHTML = data; });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Nạp header và footer
+            loadComponent('header.html', 'header-placeholder');
+            loadComponent('footer.html', 'footer-placeholder');
+
+            // Hiển thị danh sách môn học
+            const courseContainer = document.getElementById('course-list-container');
+            for (const courseKey in coursesData) {
+                const course = coursesData[courseKey];
+                const courseCard = document.createElement('a');
+                courseCard.className = 'course-card';
+                // Link đến trang học với tham số ?course=...
+                courseCard.href = `subject.html?course=${courseKey}`;
+                
+                courseCard.innerHTML = `
+                    <img src="${course.thumbnail}" alt="${course.title}">
+                    <div class="course-card-content">
+                        <h3>${course.title}</h3>
+                        <p>${course.description}</p>
+                    </div>
+                `;
+                courseContainer.appendChild(courseCard);
+            }
+        });
+    </script>
 </body>
 </html>

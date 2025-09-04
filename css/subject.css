@@ -1,0 +1,114 @@
+/* ==================
+   SUBJECT PAGE SPECIFIC STYLES
+   ================== */
+.main-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1400px; /* Thêm max-width để đẹp hơn trên màn hình lớn */
+    margin: 0 auto;
+}
+
+.slide-viewer {
+    flex: 3;
+    background-color: #2d2f31;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.slide-viewer img {
+    max-width: 100%;
+    max-height: 70vh; /* Điều chỉnh chiều cao tối đa của slide */
+    border-radius: 4px;
+}
+
+.slide-sidebar {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-self: flex-start;
+}
+
+.slide-sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#slide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#slide-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#slide-list li:hover {
+    background-color: #f0f0f0;
+}
+
+#slide-list li.active {
+    background-color: #e8e9ff;
+    font-weight: bold;
+    border-left: 3px solid #5624d0;
+    padding-left: 9px;
+}
+
+.notes-section {
+    background-color: white;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.section-title {
+    font-size: 1em; /* Kích thước tiêu đề tuần */
+    font-weight: bold;
+    padding: 15px 12px 10px;
+    margin: 10px 0 0 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.slide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Kiểu cho mỗi slide trong danh sách (giống như li cũ) */
+.slide-list li {
+    padding: 12px 12px 12px 20px; /* Thụt vào một chút so với tiêu đề tuần */
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.95em;
+}
+
+.slide-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.slide-list li.active {
+    background-color: #e8e9ff;
+    font-weight: bold;
+    border-left: 3px solid #5624d0;
+    padding-left: 17px;
+}
