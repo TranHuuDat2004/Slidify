@@ -31,7 +31,7 @@ body {
 }
 
 .logo {
-    height: 40px;
+    height: 50px;
     margin-right: 10px;
 }
 
@@ -54,19 +54,112 @@ body {
 
 
 /* ==================
-   FOOTER STYLES
+   NEW FOOTER STYLES
    ================== */
 #footer-placeholder {
-    background-color: #2d2f31;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    background-color: #ffffff;
+    color: #333;
+    margin-top: 50px;
+    border-top: 1px solid #e9ecef; /* Màu viền sáng hơn */
+    font-size: 0.95em;
 }
 
-.footer-container p {
-    margin: 5px 0;
-    font-size: 0.9em;
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    /* Tạo 4 cột trên màn hình lớn, và tự động xuống hàng trên màn hình nhỏ */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer-column .footer-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #0d6efd; /* Màu xanh dương giống mẫu */
+    margin: 0 0 10px 0;
+}
+
+.footer-column .footer-about {
+    line-height: 1.7;
+    color: #555;
+}
+
+.footer-column .footer-heading {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    color: #212529; /* Màu đen đậm hơn */
+}
+
+.footer-list, .footer-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+.footer-list li a:hover {
+    color: #0d6efd;
+    padding-left: 5px;
+}
+
+/* Thêm icon > vào trước link */
+.footer-list li a::before {
+    content: '>';
+    margin-right: 10px;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.footer-info li {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    color: #555;
+}
+
+.footer-info li i {
+    color: #0d6efd;
+    margin-right: 12px;
+    width: 20px; /* Căn chỉnh các icon thẳng hàng */
+    text-align: center;
+}
+
+.footer-info li a {
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.footer-info li a:hover {
+    color: #0d6efd;
+}
+
+.footer-bottom {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85em;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
 
 /* ==================

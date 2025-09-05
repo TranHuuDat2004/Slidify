@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nạp header và footer
     loadComponent('header.html', 'header-placeholder');
     loadComponent('footer.html', 'footer-placeholder');
-
+    
     const courseId = getCourseIdFromURL();
     const currentCourseData = coursesData[courseId];
 
@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.main-container').innerHTML = `<h1>Lỗi: Không tìm thấy môn học.</h1><p>Vui lòng quay lại <a href="index.html">trang chủ</a>.</p>`;
         return;
     }
-    
+
     // Đổi tên biến để rõ ràng hơn
     const courseSections = currentCourseData.sections;
-    
+
     // **NÂNG CẤP: Lấy các element trên trang**
     const slideNavContainer = document.getElementById('slide-navigation-container');
     const slideTitleEl = document.getElementById('slide-title');
@@ -56,10 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         slideTitleEl.textContent = slideData.title;
         slideImageEl.src = slideData.image;
-        slideNotesEl.textContent = slideData.notes;
+        slideNotesEl.innerHTML = slideData.notes;
 
         slideTermsEl.innerHTML = '';
-        if (slideData.terms) {
+        // Kiểm tra xem 'terms' có tồn tại và có nội dung hay không
+        if (slideData.terms && Object.keys(slideData.terms).length > 0) {
+            // Nếu có, lặp qua và hiển thị chúng
             for (const term in slideData.terms) {
                 const dt = document.createElement('dt');
                 dt.textContent = term;
@@ -68,6 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 slideTermsEl.appendChild(dt);
                 slideTermsEl.appendChild(dd);
             }
+        } else {
+            // Nếu không, hiển thị thông báo
+            const message = document.createElement('p');
+            message.textContent = "Không có thuật ngữ nào cho slide này.";
+            message.className = 'empty-terms-message';
+            slideTermsEl.appendChild(message);
         }
 
         // Cập nhật trạng thái "active"
@@ -78,12 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // **NÂNG CẤP: Hàm tạo mục lục theo từng tuần**
+    // **NÂNG CẤP: Hàm tạo mục lục có thể thu gọn/mở rộng**
     function generateSlideNavigation() {
         slideNavContainer.innerHTML = ''; // Xóa mục lục cũ
-        
-        courseSections.forEach(section => {
-            // Tạo tiêu đề cho tuần/phần
+
+        // Sử dụng forEach với index để biết được tuần nào là tuần đầu tiên
+        courseSections.forEach((section, index) => {
+            // Tạo tiêu đề cho tuần/phần (H3)
             const sectionTitle = document.createElement('h3');
             sectionTitle.className = 'section-title';
             sectionTitle.textContent = section.title;
@@ -97,15 +106,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 const li = document.createElement('li');
                 li.textContent = slide.title;
                 li.setAttribute('data-id', slide.id);
-                
+
                 li.addEventListener('click', () => {
                     displaySlide(slide.id);
                 });
 
                 slideList.appendChild(li);
             });
-            
+
             slideNavContainer.appendChild(slideList);
+
+            // ---- LOGIC ĐÓNG/MỞ ----
+            // 1. Thiết lập trạng thái ban đầu: Mở tuần đầu tiên, đóng các tuần còn lại
+            if (index === 0) {
+                sectionTitle.classList.add('expanded');
+                slideList.style.display = 'block';
+            } else {
+                slideList.style.display = 'none';
+            }
+
+            // 2. Thêm sự kiện click vào tiêu đề tuần
+            sectionTitle.addEventListener('click', function () {
+                // "this" ở đây chính là thẻ h3 được click
+                this.classList.toggle('expanded'); // Thêm/xóa class 'expanded'
+
+                // Lấy danh sách slide (ul) ngay sau tiêu đề (h3)
+                const content = this.nextElementSibling;
+
+                // Kiểm tra và thay đổi trạng thái hiển thị của danh sách slide
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
         });
     }
 

@@ -5,35 +5,47 @@
     display: flex;
     padding: 20px;
     gap: 20px;
-    max-width: 1400px; /* Thêm max-width để đẹp hơn trên màn hình lớn */
+    max-width: 1400px;
+    /* Thêm max-width để đẹp hơn trên màn hình lớn */
     margin: 0 auto;
 }
 
 .slide-viewer {
     flex: 3;
-    background-color: #2d2f31;
-    color: white;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 8px;
+
+}
+
+.slide-viewer h1 {
+    color: #2d2f31;
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
 .slide-viewer img {
     max-width: 100%;
-    max-height: 70vh; /* Điều chỉnh chiều cao tối đa của slide */
+    max-height: 50vh;
     border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* NÂNG CẤP: Sidebar có thanh cuộn và dính vào màn hình */
 .slide-sidebar {
     flex: 1;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    align-self: flex-start;
+    align-self: flex-start; /* Giữ cho sidebar ở trên cùng */
+
+    /* Thêm các thuộc tính sau */
+    position: sticky; /* Giữ sidebar cố định khi cuộn */
+    top: 20px; /* Khoảng cách từ sidebar đến đỉnh màn hình */
+    max-height: 550px; 
+    overflow-y: auto; /* Tự động hiển thị thanh cuộn khi cần */
 }
 
 .slide-sidebar h2 {
@@ -70,16 +82,23 @@
     margin: 0 20px 20px 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
 
+#slide-notes-content {
+    white-space: pre-wrap;
+    /* Dòng này sẽ tự động xử lý ký tự \n */
+    word-wrap: break-word;
+    /* Đảm bảo các dòng chữ dài sẽ tự xuống hàng */
+}
 
 
 .section-title {
-    font-size: 1em; /* Kích thước tiêu đề tuần */
+    font-size: 1em;
+    /* Kích thước tiêu đề tuần */
     font-weight: bold;
     padding: 15px 12px 10px;
     margin: 10px 0 0 0;
@@ -95,7 +114,8 @@
 
 /* Kiểu cho mỗi slide trong danh sách (giống như li cũ) */
 .slide-list li {
-    padding: 12px 12px 12px 20px; /* Thụt vào một chút so với tiêu đề tuần */
+    padding: 12px 12px 12px 20px;
+    /* Thụt vào một chút so với tiêu đề tuần */
     border-bottom: 1px solid #eee;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -111,4 +131,46 @@
     font-weight: bold;
     border-left: 3px solid #5624d0;
     padding-left: 17px;
+}
+
+/* Style cho thông báo thuật ngữ trống */
+.empty-terms-message {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ==================
+   COLLAPSIBLE NAVIGATION STYLES
+   ================== */
+
+/* Định dạng cho tiêu đề tuần có thể nhấp vào */
+.section-title {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 15px 12px 10px;
+    margin: 10px 0 0 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer; /* Biến con trỏ thành hình bàn tay */
+    position: relative; /* Cần cho icon +/- */
+    transition: background-color 0.2s;
+}
+
+.section-title:hover {
+    background-color: #f5f5f5;
+}
+
+/* Thêm icon [+] và [-] vào trước tiêu đề tuần */
+.section-title::before {
+    content: '+'; /* Mặc định là dấu cộng */
+    font-weight: bold;
+    margin-right: 8px;
+    color: #5624d0;
+}
+
+/* Khi một tuần được mở ra (có class 'expanded') */
+.section-title.expanded::before {
+    content: '−'; /* Đổi icon thành dấu trừ */
 }
