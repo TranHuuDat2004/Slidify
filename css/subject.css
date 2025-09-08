@@ -38,14 +38,18 @@
     background-color: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    align-self: flex-start; /* Giữ cho sidebar ở trên cùng */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+    /* Giữ cho sidebar ở trên cùng */
 
     /* Thêm các thuộc tính sau */
-    position: sticky; /* Giữ sidebar cố định khi cuộn */
-    top: 20px; /* Khoảng cách từ sidebar đến đỉnh màn hình */
-    max-height: 550px; 
-    overflow-y: auto; /* Tự động hiển thị thanh cuộn khi cần */
+    position: sticky;
+    /* Giữ sidebar cố định khi cuộn */
+    top: 20px;
+    /* Khoảng cách từ sidebar đến đỉnh màn hình */
+    max-height: 550px;
+    overflow-y: auto;
+    /* Tự động hiển thị thanh cuộn khi cần */
 }
 
 .slide-sidebar h2 {
@@ -153,8 +157,10 @@
     margin: 10px 0 0 0;
     color: #333;
     border-bottom: 1px solid #ccc;
-    cursor: pointer; /* Biến con trỏ thành hình bàn tay */
-    position: relative; /* Cần cho icon +/- */
+    cursor: pointer;
+    /* Biến con trỏ thành hình bàn tay */
+    position: relative;
+    /* Cần cho icon +/- */
     transition: background-color 0.2s;
 }
 
@@ -164,7 +170,8 @@
 
 /* Thêm icon [+] và [-] vào trước tiêu đề tuần */
 .section-title::before {
-    content: '+'; /* Mặc định là dấu cộng */
+    content: '+';
+    /* Mặc định là dấu cộng */
     font-weight: bold;
     margin-right: 8px;
     color: #5624d0;
@@ -172,5 +179,86 @@
 
 /* Khi một tuần được mở ra (có class 'expanded') */
 .section-title.expanded::before {
-    content: '−'; /* Đổi icon thành dấu trừ */
+    content: '−';
+    /* Đổi icon thành dấu trừ */
+}
+
+/* ==================
+   NEW NOTES SECTION STYLES
+   ================== */
+
+.notes-heading,
+.terms-heading {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+#slide-notes-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.7;
+    /* Tăng khoảng cách dòng cho dễ đọc */
+}
+
+/* Style cho phần giới thiệu của danh sách thuật ngữ tổng kết */
+.terms-summary-intro {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ==================
+   TERM LIST AS TABLE STYLES
+   ================== */
+
+/* Áp dụng layout Grid cho toàn bộ danh sách thuật ngữ */
+#slide-terms-content {
+    display: grid;
+    /* 
+     * Tạo 2 cột:
+     * - Cột 1 (dành cho thuật ngữ) có chiều rộng tối đa 200px.
+     * - Cột 2 (dành cho định nghĩa) sẽ chiếm hết phần không gian còn lại (1fr).
+    */
+    grid-template-columns: 200px 1fr;
+    
+    /* 
+     * Tạo khoảng cách giữa các hàng và các cột:
+     * - 20px giữa các hàng (hàng trên và hàng dưới).
+     * - 20px giữa cột thuật ngữ và cột định nghĩa.
+    */
+    gap: 20px 20px;
+
+    /* Căn chỉnh nội dung của mỗi ô bắt đầu từ phía trên */
+    align-items: start;
+    
+    margin-top: 20px; /* Thêm khoảng cách với dòng mô tả phía trên */
+    border-top: 1px solid #eee; /* Thêm một đường kẻ ngang để tách biệt */
+    padding-top: 20px;
+}
+
+/* Định dạng cho thẻ <dt> (chứa Thuật ngữ) */
+#slide-terms-content dt {
+    font-weight: bold;
+    color: #333;
+    /* Căn lề phải để trông giống như tiêu đề của một bảng */
+    text-align: right;
+}
+
+/* Định dạng cho thẻ <dd> (chứa Định nghĩa) */
+#slide-terms-content dd {
+    margin: 0; /* Xóa margin mặc định của trình duyệt */
+    line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+    border-bottom: 1px solid #eee; /* Thêm đường kẻ phân cách giữa các hàng */
+    padding-bottom: 20px;
+}
+
+/* Loại bỏ đường kẻ ở hàng cuối cùng để trông đẹp hơn */
+#slide-terms-content dd:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
 }

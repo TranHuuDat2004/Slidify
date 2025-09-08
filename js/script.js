@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nạp header và footer
     loadComponent('header.html', 'header-placeholder');
     loadComponent('footer.html', 'footer-placeholder');
-    
+
     const courseId = getCourseIdFromURL();
     const currentCourseData = coursesData[courseId];
 
@@ -48,37 +48,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // **NÂNG CẤP: Hàm hiển thị slide (logic bên trong giữ nguyên)**
     function displaySlide(slideId) {
-        const slideData = findSlideById(slideId);
-        if (!slideData) {
+        // --- Phần 1: Tìm dữ liệu slide và section hiện tại ---
+        let currentSlideData = null;
+        let currentSection = null;
+
+        for (const section of courseSections) {
+            const foundSlide = section.slides.find(s => s.id === slideId);
+            if (foundSlide) {
+                currentSlideData = foundSlide;
+                currentSection = section;
+                break;
+            }
+        }
+
+        if (!currentSlideData) {
             console.error("Không tìm thấy slide với ID:", slideId);
             return;
         }
 
-        slideTitleEl.textContent = slideData.title;
-        slideImageEl.src = slideData.image;
-        slideNotesEl.innerHTML = slideData.notes;
+        // --- Phần 2: Hiển thị nội dung chính (Tiêu đề, ảnh, ghi chú) ---
+        slideTitleEl.textContent = currentSlideData.title;
+        slideImageEl.src = currentSlideData.image;
+        slideNotesEl.innerHTML = currentSlideData.notes; // Dùng innerHTML để giữ định dạng
 
-        slideTermsEl.innerHTML = '';
-        // Kiểm tra xem 'terms' có tồn tại và có nội dung hay không
-        if (slideData.terms && Object.keys(slideData.terms).length > 0) {
-            // Nếu có, lặp qua và hiển thị chúng
-            for (const term in slideData.terms) {
-                const dt = document.createElement('dt');
-                dt.textContent = term;
-                const dd = document.createElement('dd');
-                dd.textContent = slideData.terms[term];
-                slideTermsEl.appendChild(dt);
-                slideTermsEl.appendChild(dd);
+        // --- Phần 3: Xử lý logic hiển thị thuật ngữ ---
+        const termsContainer = document.getElementById('terms-section-container');
+        termsContainer.innerHTML = ''; // Luôn xóa nội dung thuật ngữ cũ
+
+        // Kiểm tra xem đây có phải là slide cuối cùng của tuần hay không
+        const isLastSlide = currentSection.slides.indexOf(currentSlideData) === currentSection.slides.length - 1;
+
+        if (isLastSlide) {
+            // TỔNG HỢP TẤT CẢ THUẬT NGỮ TRONG TUẦN
+            const allTerms = {};
+            currentSection.slides.forEach(slide => {
+                if (slide.terms) {
+                    Object.assign(allTerms, slide.terms); // Gộp các thuật ngữ lại
+                }
+            });
+
+            // Nếu có thuật ngữ để hiển thị
+            if (Object.keys(allTerms).length > 0) {
+                // Tạo tiêu đề và danh sách
+                termsContainer.innerHTML = `
+                <h3 class="terms-heading">Tổng kết Thuật Ngữ</h3>
+                <p class="terms-summary-intro">Dưới đây là tổng hợp các thuật ngữ đã xuất hiện trong tuần này:</p>
+                <dl id="slide-terms-content"></dl>
+            `;
+                const termsListEl = document.getElementById('slide-terms-content');
+                for (const term in allTerms) {
+                    const dt = document.createElement('dt');
+                    dt.textContent = term;
+                    const dd = document.createElement('dd');
+                    dd.textContent = allTerms[term];
+                    termsListEl.appendChild(dt);
+                    termsListEl.appendChild(dd);
+                }
             }
-        } else {
-            // Nếu không, hiển thị thông báo
-            const message = document.createElement('p');
-            message.textContent = "Không có thuật ngữ nào cho slide này.";
-            message.className = 'empty-terms-message';
-            slideTermsEl.appendChild(message);
         }
+        // Nếu không phải slide cuối, chúng ta không làm gì cả, termsContainer sẽ trống.
 
-        // Cập nhật trạng thái "active"
+        // --- Phần 4: Cập nhật trạng thái "active" cho mục lục ---
         document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
         const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
         if (activeLi) {

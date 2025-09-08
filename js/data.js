@@ -61,19 +61,19 @@ const coursesData = {
             title: "Trang 5: Kết quả học tập & Đánh giá",
             image: "images/game-dev/week1/slide_5.png",
             notes: "Sau khi hoàn thành môn học này, bạn sẽ có khả năng:\n" +
-                   "- Hiểu được kiến trúc của game 2D/3D.\n" +
-                   "- Thiết kế và lập trình các game 2D/3D đơn giản bằng Unity3D.\n" +
-                   "- Lập trình các hành vi AI cơ bản cho nhân vật (NPC).\n" +
-                   "- Thiết kế và lập trình các hiệu ứng đồ họa trong môi trường 3D.\n" +
-                   "- Thiết kế và lập trình các đối tượng trong game (game objects).\n\n" +
-                   "<b>Phương pháp đánh giá:</b>\n" +
-                   "- <b>Kiểm tra tiến độ (30%):</b>\n" +
-                   "  - Bài 1 (15%) - Nội dung từ Tuần 1 - 4.\n" +
-                   "  - Bài 2 (15%) - Nội dung từ Tuần 5 - 9.\n" +
-                   "- <b>Bài tập thực hành mỗi hai tuần (10%).</b>\n" +
-                   "- <b>Một bài tập lớn duy nhất (60%):</b>\n" +
-                   "  - Phần I (20%) - Hạn nộp ngày 22 tháng 11, 2016.\n" +
-                   "  - Phần II (40%) - Hạn nộp ngày 9 tháng 1, 2017.",
+              "- Hiểu được kiến trúc của game 2D/3D.\n" +
+              "- Thiết kế và lập trình các game 2D/3D đơn giản bằng Unity3D.\n" +
+              "- Lập trình các hành vi AI cơ bản cho nhân vật (NPC).\n" +
+              "- Thiết kế và lập trình các hiệu ứng đồ họa trong môi trường 3D.\n" +
+              "- Thiết kế và lập trình các đối tượng trong game (game objects).\n\n" +
+              "<b>Phương pháp đánh giá:</b>\n" +
+              "- <b>Kiểm tra tiến độ (30%):</b>\n" +
+              "  - Bài 1 (15%) - Nội dung từ Tuần 1 - 4.\n" +
+              "  - Bài 2 (15%) - Nội dung từ Tuần 5 - 9.\n" +
+              "- <b>Bài tập thực hành mỗi hai tuần (10%).</b>\n" +
+              "- <b>Một bài tập lớn duy nhất (60%):</b>\n" +
+              "  - Phần I (20%) - Hạn nộp ngày 22 tháng 11, 2016.\n" +
+              "  - Phần II (40%) - Hạn nộp ngày 9 tháng 1, 2017.",
             terms: {
               "Learning Outcomes (Kết quả học tập)": "Các kiến thức và kỹ năng cụ thể mà sinh viên dự kiến sẽ đạt được sau khi hoàn thành một môn học.",
               "Assessment (Đánh giá)": "Quá trình đo lường và cho điểm mức độ hiểu biết và năng lực của sinh viên thông qua các bài kiểm tra, bài tập.",
@@ -87,18 +87,18 @@ const coursesData = {
             title: "Trang 6: Lịch trình khóa học",
             image: "images/game-dev/week1/slide_6.png",
             notes: "<b>Lý thuyết (Lectures):</b>\n" +
-                   "- Mỗi thứ Ba, 1h chiều tại phòng 3.320, kéo dài 2 tiếng.\n" +
-                   "- Bao gồm thảo luận, demo phần mềm và các câu hỏi ôn tập (sử dụng Kahoot!).\n\n" +
-                   "<b>Thực hành (Labs):</b>\n" +
-                   "- Mỗi thứ Sáu, 1h chiều tại phòng CES Lab 1, kéo dài 2 tiếng.\n" +
-                   "- Sẽ có hướng dẫn từng bước, tutorials và các bài tập mở.\n" +
-                   "- Trợ giảng là Emily Marriot (email: ecmarr@essex.ac.uk).\n\n" +
-                   "<b>Lịch học chi tiết:</b>\n" +
-                   "- Lý thuyết: Thứ Ba, Tuần 2-5 & 7-10, 1h-3h chiều, Phòng 3.320.\n" +
-                   "- Lý thuyết: Thứ Ba, Tuần 6 & 11, 2h-3h chiều, Phòng 3.320.\n" +
-                   "- Thực hành: Thứ Sáu, Tuần 2-11, 1h-3h chiều, Phòng CES Lab 1.\n" +
-                   "- Kiểm tra: Thứ Ba, Tuần 6 (ngày 8/11) và Tuần 11 (ngày 13/12), 1h-2h chiều.\n\n" +
-                   "Cuối cùng, phần trình bày/demo cho bài tập lớn (phần II) có thể sẽ diễn ra vào <b>Tuần 16</b>.",
+              "- Mỗi thứ Ba, 1h chiều tại phòng 3.320, kéo dài 2 tiếng.\n" +
+              "- Bao gồm thảo luận, demo phần mềm và các câu hỏi ôn tập (sử dụng Kahoot!).\n\n" +
+              "<b>Thực hành (Labs):</b>\n" +
+              "- Mỗi thứ Sáu, 1h chiều tại phòng CES Lab 1, kéo dài 2 tiếng.\n" +
+              "- Sẽ có hướng dẫn từng bước, tutorials và các bài tập mở.\n" +
+              "- Trợ giảng là Emily Marriot (email: ecmarr@essex.ac.uk).\n\n" +
+              "<b>Lịch học chi tiết:</b>\n" +
+              "- Lý thuyết: Thứ Ba, Tuần 2-5 & 7-10, 1h-3h chiều, Phòng 3.320.\n" +
+              "- Lý thuyết: Thứ Ba, Tuần 6 & 11, 2h-3h chiều, Phòng 3.320.\n" +
+              "- Thực hành: Thứ Sáu, Tuần 2-11, 1h-3h chiều, Phòng CES Lab 1.\n" +
+              "- Kiểm tra: Thứ Ba, Tuần 6 (ngày 8/11) và Tuần 11 (ngày 13/12), 1h-2h chiều.\n\n" +
+              "Cuối cùng, phần trình bày/demo cho bài tập lớn (phần II) có thể sẽ diễn ra vào <b>Tuần 16</b>.",
             terms: {
               "Lecture": "Buổi học lý thuyết, nơi giảng viên trình bày và giảng giải các khái niệm chính của môn học.",
               "Lab (Laboratory session)": "Buổi học thực hành, nơi sinh viên áp dụng kiến thức lý thuyết vào việc giải quyết các bài tập cụ thể, thường là trên máy tính.",
@@ -112,14 +112,14 @@ const coursesData = {
             title: "Trang 7: Yêu cầu bài tập",
             image: "images/game-dev/week1/slide_7.png",
             notes: "Tất cả bài tập trong môn CE318 đều là <b>bài tập cá nhân</b>. Mọi buổi thực hành, thuyết trình và demo đều là <b>bắt buộc</b> (sẽ bị 0% điểm nếu vắng mặt không có lý do chính đáng).\n\n" +
-                   "<b>Bài tập mỗi hai tuần (10%):</b>\n" +
-                   "- Sẽ có 4 bài tập dạng này. Các bài tập sẽ được đánh giá tại phòng lab.\n\n" +
-                   "<b>Bài tập lớn (60%):</b>\n" +
-                   "- Yêu cầu phát triển một game hoàn chỉnh, gồm 2 phần phải nộp:\n" +
-                   "  - <b>Phần I (20%, hạn nộp Thứ Tư 22/11):</b> Bao gồm Game Prototype (10%) + Kế hoạch phát triển (5%) + 5 phút thuyết trình (5%, có peer review).\n" +
-                   "  - <b>Phần II (40%, hạn nộp Thứ Hai 09/01):</b>\n" +
-                   "    - Đối với môn <b>CE318</b>: Game hoàn chỉnh (20%) + Báo cáo cuối kỳ (10%) + 10 phút thuyết trình (10%, có peer review).\n" +
-                   "    - Đối với môn <b>CE818</b>: Game hoàn chỉnh (15%) + Báo cáo cuối kỳ (10%) + Case Study (10%) + 10 phút thuyết trình (5%, có peer review).",
+              "<b>Bài tập mỗi hai tuần (10%):</b>\n" +
+              "- Sẽ có 4 bài tập dạng này. Các bài tập sẽ được đánh giá tại phòng lab.\n\n" +
+              "<b>Bài tập lớn (60%):</b>\n" +
+              "- Yêu cầu phát triển một game hoàn chỉnh, gồm 2 phần phải nộp:\n" +
+              "  - <b>Phần I (20%, hạn nộp Thứ Tư 22/11):</b> Bao gồm Game Prototype (10%) + Kế hoạch phát triển (5%) + 5 phút thuyết trình (5%, có peer review).\n" +
+              "  - <b>Phần II (40%, hạn nộp Thứ Hai 09/01):</b>\n" +
+              "    - Đối với môn <b>CE318</b>: Game hoàn chỉnh (20%) + Báo cáo cuối kỳ (10%) + 10 phút thuyết trình (10%, có peer review).\n" +
+              "    - Đối với môn <b>CE818</b>: Game hoàn chỉnh (15%) + Báo cáo cuối kỳ (10%) + Case Study (10%) + 10 phút thuyết trình (5%, có peer review).",
             terms: {
               "Mandatory": "Bắt buộc, có nghĩa là phải tham gia hoặc hoàn thành, nếu không sẽ bị phạt hoặc không đủ điều kiện qua môn.",
               "Deliverable": "Một sản phẩm hoặc kết quả cụ thể, hữu hình phải được tạo ra và nộp lại để hoàn thành một dự án hoặc một phần của dự án.",
@@ -134,16 +134,16 @@ const coursesData = {
             title: "Trang 8: Peer Review & Giải thưởng Game hay nhất",
             image: "images/game-dev/week1/slide_8.png",
             notes: "Trong môn học này, các bạn sẽ tham gia đánh giá lẫn nhau dựa trên các tiêu chí sau:\n" +
-                   "- Phần thuyết trình cuối kỳ.\n" +
-                   "- Mức độ \"vui\" (fun) của game.\n" +
-                   "- Tính thẩm mỹ (aesthetics) của game.\n" +
-                   "- Game hay nhất về tổng thể.\n\n" +
-                   "<b>Quy tắc đánh giá:</b>\n" +
-                   "- Danh tính của người đánh giá sẽ được <b>giữ ẩn danh</b> với người được đánh giá, nhưng sẽ không ẩn danh với giảng viên/trợ giảng.\n" +
-                   "- Giảng viên có quyền không tính các điểm số cực đoan (quá cao hoặc quá thấp) mang tính không khách quan.\n\n" +
-                   "<b>Giải thưởng:</b>\n" +
-                   "- Vào kỳ mùa Xuân, sẽ có 3 giải thưởng được trao cho 3 hạng mục cuối (Vui, Thẩm mỹ, Tổng thể) dựa trên đánh giá của các bạn cùng lớp.\n" +
-                   "- Phần thưởng có thể là 3 voucher (trị giá khoảng 20 Bảng Anh) để mua hàng trên Amazon hoặc Waterstones.",
+              "- Phần thuyết trình cuối kỳ.\n" +
+              "- Mức độ \"vui\" (fun) của game.\n" +
+              "- Tính thẩm mỹ (aesthetics) của game.\n" +
+              "- Game hay nhất về tổng thể.\n\n" +
+              "<b>Quy tắc đánh giá:</b>\n" +
+              "- Danh tính của người đánh giá sẽ được <b>giữ ẩn danh</b> với người được đánh giá, nhưng sẽ không ẩn danh với giảng viên/trợ giảng.\n" +
+              "- Giảng viên có quyền không tính các điểm số cực đoan (quá cao hoặc quá thấp) mang tính không khách quan.\n\n" +
+              "<b>Giải thưởng:</b>\n" +
+              "- Vào kỳ mùa Xuân, sẽ có 3 giải thưởng được trao cho 3 hạng mục cuối (Vui, Thẩm mỹ, Tổng thể) dựa trên đánh giá của các bạn cùng lớp.\n" +
+              "- Phần thưởng có thể là 3 voucher (trị giá khoảng 20 Bảng Anh) để mua hàng trên Amazon hoặc Waterstones.",
             terms: {
               "Peer Review": "Là quá trình các cá nhân cùng vai trò (ví dụ: sinh viên) đánh giá, nhận xét công việc của nhau. Điều này giúp cung cấp nhiều góc nhìn và thúc đẩy việc học hỏi lẫn nhau.",
               "Aesthetics (Tính thẩm mỹ)": "Trong game, đây là yếu tố liên quan đến vẻ đẹp và phong cách nghệ thuật của trò chơi, bao gồm đồ họa, âm thanh, và cảm giác tổng thể mà nó mang lại.",
@@ -157,19 +157,19 @@ const coursesData = {
             title: "Trang 9: Tài liệu tham khảo",
             image: "images/game-dev/week1/slide_9.png",
             notes: "Đây là danh sách các tài liệu và tài nguyên web được đề xuất cho môn học:\n\n" +
-                   "<b>Ngôn ngữ C#:</b>\n" +
-                   "1. <b>C# 4.0 Pocket Reference</b> của <i>Albahari and Albahari</i>.\n" +
-                   "2. <b>Essential C# 4.0</b> của <i>Mark Michaelis</i>.\n" +
-                   "3. MSDN C# Ref: msdn.microsoft.com/en-us/library/618ayhy6.aspx\n\n" +
-                   "<b>Unity3D:</b>\n" +
-                   "1. http://unity3d.com/: Nơi chứa tài liệu Manual, Scripting API, Samples, Tutorials... (hầu hết tài liệu khóa học được lấy từ đây).\n" +
-                   "2. <b>Beginning 3D Game Development with Unity 4, 2nd Edition</b> của <i>Sue Blackman</i> (rất khuyến khích).\n" +
-                   "3. <b>Unity 4.x Cookbook</b> của <i>Matt Smith</i> (sách tham khảo bổ sung).\n" +
-                   "4. <b>Unity 4.x Game AI Programming</b> của <i>Aung Sithu Kyaw, Thet Naing Swe</i> (dành cho Game AI trong Unity).\n" +
-                   "5. <b>Unity 4x Game Development by Example, Beginners Guide</b> của <i>Ryan Henson Creighton</i> (dành cho người mới bắt đầu).\n\n" +
-                   "<b>Game AI:</b>\n" +
-                   "1. <b>Artificial Intelligence for Games</b> của <i>Millington and Funge</i>.\n" +
-                   "2. <b>Game Artificial Intelligence</b> của <i>Ahlquist and Novak</i>.",
+              "<b>Ngôn ngữ C#:</b>\n" +
+              "1. <b>C# 4.0 Pocket Reference</b> của <i>Albahari and Albahari</i>.\n" +
+              "2. <b>Essential C# 4.0</b> của <i>Mark Michaelis</i>.\n" +
+              "3. MSDN C# Ref: msdn.microsoft.com/en-us/library/618ayhy6.aspx\n\n" +
+              "<b>Unity3D:</b>\n" +
+              "1. http://unity3d.com/: Nơi chứa tài liệu Manual, Scripting API, Samples, Tutorials... (hầu hết tài liệu khóa học được lấy từ đây).\n" +
+              "2. <b>Beginning 3D Game Development with Unity 4, 2nd Edition</b> của <i>Sue Blackman</i> (rất khuyến khích).\n" +
+              "3. <b>Unity 4.x Cookbook</b> của <i>Matt Smith</i> (sách tham khảo bổ sung).\n" +
+              "4. <b>Unity 4.x Game AI Programming</b> của <i>Aung Sithu Kyaw, Thet Naing Swe</i> (dành cho Game AI trong Unity).\n" +
+              "5. <b>Unity 4x Game Development by Example, Beginners Guide</b> của <i>Ryan Henson Creighton</i> (dành cho người mới bắt đầu).\n\n" +
+              "<b>Game AI:</b>\n" +
+              "1. <b>Artificial Intelligence for Games</b> của <i>Millington and Funge</i>.\n" +
+              "2. <b>Game Artificial Intelligence</b> của <i>Ahlquist and Novak</i>.",
             terms: {
               "MSDN (Microsoft Developer Network)": "Là cổng thông tin chính thức của Microsoft dành cho các nhà phát triển, cung cấp tài liệu kỹ thuật, mã mẫu, và công cụ cho các sản phẩm và công nghệ của Microsoft.",
               "API (Application Programming Interface)": "Giao diện lập trình ứng dụng. Đây là một tập hợp các quy tắc và công cụ cho phép các ứng dụng phần mềm khác nhau giao tiếp với nhau. 'Scripting API' của Unity là tập hợp các lệnh bạn có thể dùng để điều khiển engine.",
@@ -182,7 +182,7 @@ const coursesData = {
             title: "Trang 10: Chuyển tiếp - Giới thiệu về C#",
             image: "images/game-dev/week1/slide_10.png",
             notes: "Kết thúc phần Tổng quan khóa học.\n\n" +
-                   "Phần tiếp theo sẽ giới thiệu chi tiết về ngôn ngữ lập trình C#.",
+              "Phần tiếp theo sẽ giới thiệu chi tiết về ngôn ngữ lập trình C#.",
             terms: {}
           },
           // SLIDE 11: GIỚI THIỆU VỀ C#
@@ -191,8 +191,8 @@ const coursesData = {
             title: "Trang 11: Giới thiệu về C#",
             image: "images/game-dev/week1/slide_11.png",
             notes: "Tất cả các game làm bằng Unity3D thường chứa các đoạn mã (scripts) được viết bằng C#, Javascript hoặc Boo.\n\n" +
-                   "Trong môn học này, chúng ta sẽ <b>chỉ sử dụng C#</b>, một ngôn ngữ lập trình hướng đối tượng được phát triển bởi Microsoft trong khuôn khổ .NET framework của họ.\n\n" +
-                   "Unity3D đi kèm với một IDE mặc định gọi là <b>MonoDevelop</b>, cung cấp các tính năng như tô màu cú pháp (syntax highlighting) và gỡ lỗi (debug).",
+              "Trong môn học này, chúng ta sẽ <b>chỉ sử dụng C#</b>, một ngôn ngữ lập trình hướng đối tượng được phát triển bởi Microsoft trong khuôn khổ .NET framework của họ.\n\n" +
+              "Unity3D đi kèm với một IDE mặc định gọi là <b>MonoDevelop</b>, cung cấp các tính năng như tô màu cú pháp (syntax highlighting) và gỡ lỗi (debug).",
             terms: {
               "C# (C Sharp)": "Một ngôn ngữ lập trình hiện đại, hướng đối tượng, được phát triển bởi Microsoft. Nó là ngôn ngữ chính được sử dụng để lập trình trong Unity.",
               "IDE (Integrated Development Environment)": "Môi trường phát triển tích hợp. Đây là một ứng dụng phần mềm cung cấp các công cụ cần thiết cho việc phát triển phần mềm, bao gồm trình soạn thảo mã, trình biên dịch, và công cụ gỡ lỗi (debugger).",
@@ -206,9 +206,9 @@ const coursesData = {
             title: "Trang 12: C# cơ bản - Dành cho người biết Java",
             image: "images/game-dev/week1/slide_12.png",
             notes: "Slide này trình bày một chương trình C# cơ bản và chỉ ra một số điểm khác biệt so với Java:\n\n" +
-                   "- Từ khóa <b>using</b> được dùng để 'import' các gói, mà trong C# được gọi là <b>namespace</b>.\n" +
-                   "- Một namespace có thể chứa nhiều class, và tên file không nhất thiết phải trùng với tên namespace hay tên class bên trong nó.\n" +
-                   "- Quy ước đặt tên: Tên phương thức (ví dụ: <b>Main</b>) bắt đầu bằng chữ hoa, trong khi các kiểu dữ liệu có sẵn (ví dụ: <b>class</b>, <b>string</b>) thì không.",
+              "- Từ khóa <b>using</b> được dùng để 'import' các gói, mà trong C# được gọi là <b>namespace</b>.\n" +
+              "- Một namespace có thể chứa nhiều class, và tên file không nhất thiết phải trùng với tên namespace hay tên class bên trong nó.\n" +
+              "- Quy ước đặt tên: Tên phương thức (ví dụ: <b>Main</b>) bắt đầu bằng chữ hoa, trong khi các kiểu dữ liệu có sẵn (ví dụ: <b>class</b>, <b>string</b>) thì không.",
             terms: {
               "using directive": "Trong C#, đây là chỉ thị được sử dụng ở đầu file mã nguồn để khai báo các namespace sẽ được sử dụng, cho phép bạn sử dụng các class trong namespace đó mà không cần ghi đầy đủ tên.",
               "namespace": "Một 'container' dùng để tổ chức mã nguồn và tránh xung đột tên. Nó tương tự như khái niệm 'package' trong Java.",
@@ -221,11 +221,11 @@ const coursesData = {
             title: "Trang 13: C# cơ bản - Biến, tham số & namespace",
             image: "images/game-dev/week1/slide_13.png",
             notes: "Tổng quan về các khái niệm biến, tham số và namespace trong C#:\n\n" +
-                   "- <b>Biến và hằng số:</b> Khai báo với các kiểu dữ liệu như int, double, string, bool. Từ khóa <b>const</b> dùng để khai báo hằng số.\n" +
-                   "- <b>Biến Static:</b> Biến được chia sẻ chung cho tất cả các đối tượng (instance) của một class.\n" +
-                   "- <b>Chuyển đổi kiểu:</b> Có thể là ngầm định (implicit, ví dụ int sang double) hoặc tường minh (explicit/casting, ví dụ double sang short).\n" +
-                   "- <b>Params và tham số tùy chọn:</b> Từ khóa <b>params</b> cho phép một phương thức nhận một số lượng đối số không xác định. Tham số tùy chọn là tham số có giá trị mặc định.\n" +
-                   "- <b>Namespaces:</b> Có thể được lồng vào nhau để tạo ra một cấu trúc phân cấp, giúp tổ chức code tốt hơn.",
+              "- <b>Biến và hằng số:</b> Khai báo với các kiểu dữ liệu như int, double, string, bool. Từ khóa <b>const</b> dùng để khai báo hằng số.\n" +
+              "- <b>Biến Static:</b> Biến được chia sẻ chung cho tất cả các đối tượng (instance) của một class.\n" +
+              "- <b>Chuyển đổi kiểu:</b> Có thể là ngầm định (implicit, ví dụ int sang double) hoặc tường minh (explicit/casting, ví dụ double sang short).\n" +
+              "- <b>Params và tham số tùy chọn:</b> Từ khóa <b>params</b> cho phép một phương thức nhận một số lượng đối số không xác định. Tham số tùy chọn là tham số có giá trị mặc định.\n" +
+              "- <b>Namespaces:</b> Có thể được lồng vào nhau để tạo ra một cấu trúc phân cấp, giúp tổ chức code tốt hơn.",
             terms: {
               "static": "Một từ khóa chỉ định rằng một thành viên (biến hoặc phương thức) thuộc về chính kiểu dữ liệu đó, chứ không thuộc về một đối tượng cụ thể của kiểu đó.",
               "Casting (Ép kiểu)": "Là việc chuyển đổi tường minh một giá trị từ kiểu dữ liệu này sang kiểu dữ liệu khác, có thể gây mất mát dữ liệu (ví dụ: ép kiểu một số double thành int sẽ mất phần thập phân).",
@@ -238,10 +238,10 @@ const coursesData = {
             title: "Trang 14: C# cơ bản - Kiểu tham trị và tham chiếu",
             image: "images/game-dev/week1/slide_14.png",
             notes: "Trong C#, các kiểu dữ liệu được chia thành hai loại chính:\n\n" +
-                   "- <b>Kiểu tham trị (Value types):</b> Chứa trực tiếp giá trị của nó. Ví dụ: int, float, bool, char, và các <b>Struct</b> (như Vector3). Khi gán hoặc truyền một biến kiểu tham trị, một bản sao của giá trị sẽ được tạo ra.\n" +
-                   "- <b>Kiểu tham chiếu (Reference types):</b> Chứa một địa chỉ bộ nhớ trỏ đến nơi chứa giá trị. Ví dụ: các <b>Class</b> (như Transform, GameObject). Khi gán hoặc truyền một biến kiểu tham chiếu, chỉ có địa chỉ bộ nhớ được sao chép, các biến vẫn trỏ đến cùng một đối tượng.\n\n" +
-                   "<b>Ví dụ:</b> Thay đổi một bản sao của <b>transform.position</b> (là Vector3, một struct) sẽ không ảnh hưởng đến bản gốc. Nhưng thay đổi thuộc tính của một bản sao của <b>transform</b> (là một class) sẽ ảnh hưởng đến bản gốc.\n\n" +
-                   "- Từ khóa <b>ref</b> và <b>out</b> dùng để truyền các đối số vào phương thức theo kiểu tham chiếu.",
+              "- <b>Kiểu tham trị (Value types):</b> Chứa trực tiếp giá trị của nó. Ví dụ: int, float, bool, char, và các <b>Struct</b> (như Vector3). Khi gán hoặc truyền một biến kiểu tham trị, một bản sao của giá trị sẽ được tạo ra.\n" +
+              "- <b>Kiểu tham chiếu (Reference types):</b> Chứa một địa chỉ bộ nhớ trỏ đến nơi chứa giá trị. Ví dụ: các <b>Class</b> (như Transform, GameObject). Khi gán hoặc truyền một biến kiểu tham chiếu, chỉ có địa chỉ bộ nhớ được sao chép, các biến vẫn trỏ đến cùng một đối tượng.\n\n" +
+              "<b>Ví dụ:</b> Thay đổi một bản sao của <b>transform.position</b> (là Vector3, một struct) sẽ không ảnh hưởng đến bản gốc. Nhưng thay đổi thuộc tính của một bản sao của <b>transform</b> (là một class) sẽ ảnh hưởng đến bản gốc.\n\n" +
+              "- Từ khóa <b>ref</b> và <b>out</b> dùng để truyền các đối số vào phương thức theo kiểu tham chiếu.",
             terms: {
               "Value Type (Kiểu tham trị)": "Một kiểu dữ liệu lưu trữ giá trị của nó trực tiếp trong bộ nhớ. Các kiểu cơ bản như int, double, bool và các struct là kiểu tham trị.",
               "Reference Type (Kiểu tham chiếu)": "Một kiểu dữ liệu lưu trữ một tham chiếu (địa chỉ bộ nhớ) đến đối tượng thực tế. Các class, interface, delegate, và array là kiểu tham chiếu.",
@@ -255,16 +255,24 @@ const coursesData = {
             title: "Trang 15: C# cơ bản - Class, Interface và Kế thừa",
             image: "images/game-dev/week1/slide_15.png",
             notes: "Các khái niệm về Class, Interface và Kế thừa trong C# tương tự như Java:\n\n" +
-                   "- Một class chỉ có thể <b>kế thừa (subclass)</b> từ một class khác, nhưng có thể <b>thực thi (implement)</b> nhiều interface.\n" +
-                   "- <b>Interface</b> là một 'hợp đồng' định nghĩa các phương thức mà một class phải có nếu nó thực thi interface đó.\n" +
-                   "- Sử dụng từ khóa <b>override</b> để cung cấp một định nghĩa mới cho một phương thức đã được định nghĩa ở lớp cha (base class).\n" +
-                   "- Sử dụng từ khóa <b>base</b> để truy cập đến các thành viên (ví dụ: phương thức) của lớp cha từ bên trong lớp con.",
+              "- Một class chỉ có thể <b>kế thừa (subclass)</b> từ một class khác, nhưng có thể <b>thực thi (implement)</b> nhiều interface.\n" +
+              "- <b>Interface</b> là một 'hợp đồng' định nghĩa các phương thức mà một class phải có nếu nó thực thi interface đó.\n" +
+              "- Sử dụng từ khóa <b>override</b> để cung cấp một định nghĩa mới cho một phương thức đã được định nghĩa ở lớp cha (base class).\n" +
+              "- Sử dụng từ khóa <b>base</b> để truy cập đến các thành viên (ví dụ: phương thức) của lớp cha từ bên trong lớp con.",
             terms: {
               "Inheritance (Kế thừa)": "Một cơ chế cho phép một class (lớp con) thừa hưởng các thuộc tính và phương thức từ một class khác (lớp cha).",
               "Interface": "Một tập hợp các định nghĩa về phương thức và thuộc tính. Một class khi 'thực thi' một interface phải cung cấp định nghĩa chi tiết cho tất cả các thành viên của interface đó.",
               "override": "Từ khóa dùng trong lớp con để cung cấp một triển khai mới cho một phương thức (virtual hoặc abstract) của lớp cha.",
               "base": "Từ khóa dùng trong lớp con để truy cập đến các thành viên của lớp cha, ví dụ như gọi constructor hoặc một phương thức đã bị override của lớp cha."
             }
+          },
+          // Thêm vào cuối mảng slides của Tuần 1
+          {
+            id: 47, // Giả sử đây là slide cuối cùng của tuần
+            title: "Trang 47: Cảm ơn & Tổng kết thuật ngữ",
+            image: "images/game-dev/week1/slide_47.png", // Bạn cần có ảnh cho slide này
+            notes: "Cảm ơn bạn đã theo dõi bài giảng Tuần 1. Dưới đây là danh sách tổng hợp các thuật ngữ quan trọng đã xuất hiện trong tuần này để bạn tiện ôn tập.",
+            terms: {} // Để trống, JS sẽ tự động điền vào
           }
           // ... và tiếp tục với các slide còn lại
         ]

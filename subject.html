@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
+
 <body>
 
     <!-- Vùng chứa cho header -->
@@ -33,17 +35,13 @@
 
     <!-- Khu vực ghi chú và giải thích bên dưới (phần này vẫn là duy nhất cho index.html) -->
     <section class="notes-section">
-        <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'notes')">Ghi Chú</button>
-            <button class="tab-link" onclick="openTab(event, 'terms')">Giải Thích Thuật Ngữ</button>
-        </div>
+        <!-- Khu vực hiển thị Ghi chú -->
+        <h3 class="notes-heading">Ghi Chú</h3>
+        <p id="slide-notes-content"></p>
 
-        <div id="notes" class="tab-content" style="display: block;">
-            <p id="slide-notes-content"></p>
-        </div>
-
-        <div id="terms" class="tab-content">
-            <dl id="slide-terms-content"></dl>
+        <!-- Khu vực hiển thị Thuật ngữ (sẽ được JS điều khiển) -->
+        <div id="terms-section-container">
+            <!-- Nội dung sẽ được tạo tự động bằng JavaScript -->
         </div>
     </section>
 
@@ -54,4 +52,5 @@
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
