@@ -1,124 +1,107 @@
-# Phân tích thuật toán hàm `displaySlide(slideId)`
+# Phân tích thuật toán hàm `displaySlide(slideId)` (Phiên bản 2 - Bố cục hai cột)
 
-Hàm `displaySlide` là "trái tim" của trang học (`subject.html`). Mỗi khi người dùng nhấp vào một slide trong mục lục, hàm này sẽ được gọi với `slideId` tương ứng. Nhiệm vụ của nó là tìm nạp tất cả dữ liệu liên quan đến slide đó và cập nhật toàn bộ giao diện một cách chính xác.
+Hàm `displaySlide` là "trái tim" của trang học (`subject.html`). Mỗi khi người dùng nhấp vào một slide trong mục lục, hàm này được gọi với `slideId` tương ứng. Nhiệm vụ của nó là tìm nạp dữ liệu liên quan và cập nhật toàn bộ giao diện, bao gồm cả việc **điều khiển bố cục hai cột một cách linh hoạt**.
 
 ## Toàn bộ mã nguồn hàm
 
 ```javascript
 function displaySlide(slideId) {
-    // --- Phần 1: Tìm dữ liệu slide và section hiện tại ---
+    // --- Phần 1: Tìm dữ liệu slide ---
     let currentSlideData = null;
-    let currentSection = null;
-
     for (const section of courseSections) {
         const foundSlide = section.slides.find(s => s.id === slideId);
         if (foundSlide) {
             currentSlideData = foundSlide;
-            currentSection = section;
             break;
         }
     }
-
-    if (!currentSlideData) {
-        console.error("Không tìm thấy slide với ID:", slideId);
-        return;
-    }
+    if (!currentSlideData) { return; }
 
     // --- Phần 2: Hiển thị nội dung chính (Tiêu đề, ảnh, ghi chú) ---
     slideTitleEl.textContent = currentSlideData.title;
     slideImageEl.src = currentSlideData.image;
-    slideNotesEl.innerHTML = currentSlideData.notes; // Dùng innerHTML để giữ định dạng
+    slideNotesEl.innerHTML = currentSlideData.notes;
 
-    // --- Phần 3: Xử lý logic hiển thị thuật ngữ ---
-    const termsContainer = document.getElementById('terms-section-container');
-    termsContainer.innerHTML = ''; // Luôn xóa nội dung thuật ngữ cũ
+    // --- Phần 3: Xử lý bố cục 2 cột ---
+    const notesSection = document.querySelector('.notes-section');
+    const termsColumn = document.getElementById('terms-column');
+    const termsListEl = document.getElementById('slide-terms-content');
+    termsListEl.innerHTML = ''; // Luôn dọn dẹp danh sách cũ
 
-    // Kiểm tra xem đây có phải là slide cuối cùng của tuần hay không
-    const isLastSlide = currentSection.slides.indexOf(currentSlideData) === currentSection.slides.length - 1;
+    // Kiểm tra xem slide này có thuật ngữ hay không
+    const hasTerms = currentSlideData.terms && Object.keys(currentSlideData.terms).length > 0;
 
-    if (isLastSlide) {
-        // TỔNG HỢP TẤT CẢ THUẬT NGỮ TRONG TUẦN
-        const allTerms = {};
-        currentSection.slides.forEach(slide => {
-            if (slide.terms) {
-                Object.assign(allTerms, slide.terms); // Gộp các thuật ngữ lại
-            }
-        });
+    if (hasTerms) {
+        // NẾU CÓ THUẬT NGỮ:
+        termsColumn.style.display = 'block'; // 1. Hiện cột thuật ngữ
+        notesSection.classList.remove('single-column'); // 2. Xóa class để layout trở về 2 cột
 
-        // Nếu có thuật ngữ để hiển thị
-        if (Object.keys(allTerms).length > 0) {
-            // Tạo tiêu đề và danh sách
-            termsContainer.innerHTML = `
-                <h3 class="terms-heading">Tổng kết Thuật Ngữ</h3>
-                <p class="terms-summary-intro">Dưới đây là tổng hợp các thuật ngữ đã xuất hiện trong tuần này:</p>
-                <dl id="slide-terms-content"></dl>
-            `;
-            const termsListEl = document.getElementById('slide-terms-content');
-            for (const term in allTerms) {
-                const dt = document.createElement('dt');
-                dt.textContent = term;
-                const dd = document.createElement('dd');
-                dd.textContent = allTerms[term];
-                termsListEl.appendChild(dt);
-                termsListEl.appendChild(dd);
-            }
+        // 3. Điền dữ liệu thuật ngữ vào cột phải
+        for (const term in currentSlideData.terms) {
+            const dt = document.createElement('dt');
+            dt.textContent = term;
+            const dd = document.createElement('dd');
+            dd.textContent = currentSlideData.terms[term];
+            termsListEl.appendChild(dt);
+            termsListEl.appendChild(dd);
         }
+    } else {
+        // NẾU KHÔNG CÓ THUẬT NGỮ:
+        termsColumn.style.display = 'none'; // 1. Ẩn cột thuật ngữ
+        notesSection.classList.add('single-column'); // 2. Thêm class để cột ghi chú chiếm toàn bộ không gian
     }
-    // Nếu không phải slide cuối, chúng ta không làm gì cả, termsContainer sẽ trống.
 
-    // --- Phần 4: Cập nhật trạng thái "active" cho mục lục ---
+    // --- Phần 4: Cập nhật mục lục ---
     document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
     const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
-    if (activeLi) {
-        activeLi.classList.add('active');
-    }
+    if (activeLi) { activeLi.classList.add('active'); }
 }
 ```
 
 ## Phân rã thuật toán theo từng bước
 
-Thuật toán của hàm có thể được chia thành 4 bước chính:
+Thuật toán của hàm có thể được chia thành 4 bước chính, với sự thay đổi lớn nhất ở Bước 3.
 
 ### Bước 1: Tìm kiếm Dữ liệu (The "Seeker")
-Đây là bước đầu vào, mục tiêu là lấy ra dữ liệu của slide được yêu cầu và cả "tuần học" (section) chứa nó.
+*Bước này không thay đổi.* Mục tiêu là lấy ra dữ liệu của slide được yêu cầu.
 
-1.  **Khởi tạo:** Tạo ra 2 biến rỗng: `currentSlideData` và `currentSection`.
-2.  **Vòng lặp ngoài:** Lặp qua từng `section` (từng tuần) trong mảng `courseSections`.
-3.  **Vòng lặp trong (sử dụng `.find()`):** Bên trong mỗi `section`, sử dụng phương thức `find()` để tìm kiếm trong mảng `slides` xem có slide nào có `id` khớp với `slideId` được truyền vào hay không.
-4.  **Lưu kết quả:** Nếu tìm thấy, gán dữ liệu của slide đó vào `currentSlideData` và gán section chứa nó vào `currentSection`.
-5.  **Tối ưu hóa:** Sử dụng lệnh `break` để thoát khỏi vòng lặp ngoài ngay khi tìm thấy slide, tránh việc phải tìm kiếm không cần thiết ở các tuần sau.
-6.  **Kiểm tra lỗi:** Nếu sau khi lặp xong mà `currentSlideData` vẫn rỗng, tức là không tìm thấy slide, hàm sẽ báo lỗi và kết thúc.
+1.  **Khởi tạo:** Tạo biến `currentSlideData` rỗng.
+2.  **Vòng lặp:** Lặp qua từng `section` (tuần học), và dùng `.find()` để tìm slide có `id` khớp với `slideId`.
+3.  **Lưu kết quả & Thoát sớm:** Nếu tìm thấy, gán dữ liệu vào `currentSlideData` và dùng `break` để kết thúc tìm kiếm.
+4.  **Kiểm tra lỗi:** Nếu không tìm thấy, kết thúc hàm.
 
 ### Bước 2: Hiển thị Nội dung Cốt lõi (The "Painter")
-Sau khi đã có dữ liệu, bước này cập nhật các thành phần chính trên giao diện.
+*Bước này không thay đổi.* Cập nhật các thành phần chính trên giao diện.
 
-1.  **Cập nhật tiêu đề:** Gán `currentSlideData.title` cho `textContent` của tiêu đề `h1`.
-2.  **Cập nhật ảnh:** Gán `currentSlideData.image` cho thuộc tính `src` của thẻ `img`.
-3.  **Cập nhật ghi chú:** Gán `currentSlideData.notes` cho `innerHTML` của vùng ghi chú. (Sử dụng `innerHTML` thay vì `textContent` để các thẻ HTML như `<b>` có thể được hiển thị đúng định dạng).
+1.  **Cập nhật tiêu đề:** Gán `currentSlideData.title` vào `textContent` của tiêu đề.
+2.  **Cập nhật ảnh:** Gán `currentSlideData.image` vào thuộc tính `src` của ảnh.
+3.  **Cập nhật ghi chú:** Gán `currentSlideData.notes` vào `innerHTML` của vùng ghi chú.
 
-### Bước 3: Xử lý Thuật ngữ Thông minh (The "Strategist")
-Đây là phần logic phức tạp nhất, quyết định việc có hiển thị thuật ngữ hay không và hiển thị cái gì.
+### Bước 3: Quản lý Bố cục Động (The "Layout Manager")
+Đây là phần logic được **thiết kế lại hoàn toàn**. Nó quyết định xem giao diện sẽ hiển thị 1 hay 2 cột.
 
-1.  **Dọn dẹp:** Tìm đến vùng chứa thuật ngữ (`termsContainer`) và xóa sạch nội dung cũ của nó (`innerHTML = ''`). Bước này cực kỳ quan trọng để đảm bảo nội dung từ slide trước không còn sót lại.
-2.  **Ra quyết định:** Tính toán xem slide hiện tại có phải là slide cuối cùng của tuần hay không.
-    *   Điều này được thực hiện bằng cách so sánh vị trí (index) của slide hiện tại trong mảng `slides` của `currentSection` với chiều dài của mảng đó trừ đi 1.
-    *   `currentSection.slides.indexOf(currentSlideData) === currentSection.slides.length - 1`
-3.  **Phân luồng xử lý:**
-    *   **Nếu LÀ slide cuối (`if (isLastSlide)`):**
-        a. **Khởi tạo "Giỏ chứa":** Tạo một object rỗng `allTerms` để lưu trữ tất cả thuật ngữ.
-        b. **Thực hiện "Thu thập":** Chạy một vòng lặp `forEach` qua **tất cả các slide** trong `currentSection`.
-        c. **"Gộp" dữ liệu:** Với mỗi slide, sử dụng `Object.assign(allTerms, slide.terms)` để sao chép toàn bộ thuật ngữ của slide đó vào "giỏ chứa" `allTerms`. `Object.assign` tự động xử lý việc gộp các object lại với nhau.
-        d. **Hiển thị:** Sau khi thu thập xong, tạo ra cấu trúc HTML cho phần tổng kết (tiêu đề, mô tả) và một danh sách `<dl>` rỗng, rồi chèn vào `termsContainer`.
-        e. **Điền dữ liệu:** Cuối cùng, lặp qua "giỏ chứa" `allTerms` và tạo các thẻ `<dt>` (thuật ngữ) và `<dd>` (định nghĩa) tương ứng để điền vào danh sách.
-    *   **Nếu KHÔNG PHẢI slide cuối:**
-        a. Khối `if` sẽ bị bỏ qua.
-        b. Vì `termsContainer` đã được dọn dẹp ở bước 3.1, nó sẽ vẫn trống, đúng như mục tiêu.
+1.  **Tham chiếu đến các Element:** Lấy ra các element HTML quan trọng:
+    *   `notesSection`: Vùng chứa chính (`<section>`) của cả hai cột.
+    *   `termsColumn`: Cột thuật ngữ bên phải.
+    *   `termsListEl`: Danh sách `<dl>` để chứa nội dung thuật ngữ.
+2.  **Dọn dẹp:** Luôn xóa sạch nội dung của danh sách thuật ngữ cũ (`termsListEl.innerHTML = ''`) để chuẩn bị cho dữ liệu mới.
+3.  **Ra quyết định:** Kiểm tra xem slide hiện tại có chứa thuật ngữ hay không.
+    *   Một biến boolean `hasTerms` được tạo ra.
+    *   Điều kiện kiểm tra là: `currentSlideData.terms` có tồn tại **VÀ** số lượng "key" trong nó có lớn hơn 0 hay không (`Object.keys(currentSlideData.terms).length > 0`).
+4.  **Phân luồng xử lý bố cục:**
+    *   **Nếu `hasTerms` là `true` (CÓ thuật ngữ):**
+        a. **Hiện cột phải:** Thiết lập `termsColumn.style.display = 'block'`.
+        b. **Kích hoạt layout 2 cột:** Xóa class `single-column` khỏi `notesSection`. CSS sẽ tự động áp dụng `display: flex` và chia đôi không gian.
+        c. **Điền dữ liệu:** Lặp qua đối tượng `currentSlideData.terms` và tạo các thẻ `<dt>`, `<dd>` để hiển thị nội dung thuật ngữ.
+    *   **Nếu `hasTerms` là `false` (KHÔNG có thuật ngữ):**
+        a. **Ẩn cột phải:** Thiết lập `termsColumn.style.display = 'none'`.
+        b. **Kích hoạt layout 1 cột:** Thêm class `single-column` vào `notesSection`. CSS sẽ làm cho cột ghi chú bên trái chiếm 100% chiều rộng.
 
 ### Bước 4: Cập nhật Giao diện Mục lục (The "Highlighter")
-Đây là bước cuối cùng để phản hồi lại cho người dùng biết họ đang ở slide nào.
+*Bước này không thay đổi.* Phản hồi lại cho người dùng biết họ đang ở slide nào.
 
-1.  **Xóa highlight cũ:** Lấy tất cả các mục `<li>` trong mục lục và xóa class `active` khỏi chúng.
-2.  **Thêm highlight mới:** Sử dụng `querySelector` để tìm chính xác mục `<li>` có `data-id` khớp với `slideId` hiện tại, và thêm class `active` vào cho nó.
+1.  **Xóa highlight cũ:** Xóa class `active` khỏi tất cả các mục `<li>` trong mục lục.
+2.  **Thêm highlight mới:** Tìm đúng mục `<li>` có `data-id` khớp với `slideId` và thêm class `active` vào cho nó.
 
 ## Sơ đồ luồng thuật toán (Flowchart)
 
@@ -129,10 +112,10 @@ Sau khi đã có dữ liệu, bước này cập nhật các thành phần chín
 ( Nhận slideId )
     |
     v
-[ Tìm slide và section tương ứng ]
+[ Tìm dữ liệu slide tương ứng ]
     |
     v
-< Tìm thấy? > --Không--► [ Báo lỗi & Kết thúc ]
+< Tìm thấy? > --Không--► [ Kết thúc ]
     |
    Có
     |
@@ -143,18 +126,17 @@ Sau khi đã có dữ liệu, bước này cập nhật các thành phần chín
 [ Xóa nội dung thuật ngữ cũ ]
     |
     v
-< Đây có phải slide cuối của tuần? > --Không--► [ BƯỚC TIẾP THEO ]
-    |
-   Có
-    |
-    v
-[ Vòng lặp: Thu thập tất cả thuật ngữ trong tuần ]
-    |
-    v
-[ Hiển thị danh sách tổng kết thuật ngữ ]
-    |
-    v
-[ BƯỚC TIẾP THEO ]
+< Slide hiện tại có thuật ngữ? > --Không--► [ Ẩn cột thuật ngữ & Áp dụng layout 1 cột ]
+    |                                                 |
+   Có                                                   |
+    |                                                 |
+    v                                                 |
+[ Hiện cột thuật ngữ & Áp dụng layout 2 cột ]             |
+    |                                                 |
+    v                                                 |
+[ Điền dữ liệu thuật ngữ vào cột phải ]                 |
+    |                                                 |
+    +-------------------------------------------------+
     |
     v
 [ Cập nhật mục lục: highlight slide đang active ]
