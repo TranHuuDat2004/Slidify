@@ -48,72 +48,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // **NÂNG CẤP: Hàm hiển thị slide (logic bên trong giữ nguyên)**
     function displaySlide(slideId) {
-        // --- Phần 1: Tìm dữ liệu slide và section hiện tại ---
+        // --- Phần 1: Tìm dữ liệu slide ---
         let currentSlideData = null;
-        let currentSection = null;
-
         for (const section of courseSections) {
             const foundSlide = section.slides.find(s => s.id === slideId);
             if (foundSlide) {
                 currentSlideData = foundSlide;
-                currentSection = section;
                 break;
             }
         }
-
-        if (!currentSlideData) {
-            console.error("Không tìm thấy slide với ID:", slideId);
-            return;
-        }
+        if (!currentSlideData) { return; }
 
         // --- Phần 2: Hiển thị nội dung chính (Tiêu đề, ảnh, ghi chú) ---
         slideTitleEl.textContent = currentSlideData.title;
         slideImageEl.src = currentSlideData.image;
-        slideNotesEl.innerHTML = currentSlideData.notes; // Dùng innerHTML để giữ định dạng
+        slideNotesEl.innerHTML = currentSlideData.notes;
 
-        // --- Phần 3: Xử lý logic hiển thị thuật ngữ ---
-        const termsContainer = document.getElementById('terms-section-container');
-        termsContainer.innerHTML = ''; // Luôn xóa nội dung thuật ngữ cũ
+        // --- Phần 3: Xử lý bố cục 2 cột ---
+        const notesSection = document.querySelector('.notes-section');
+        const termsColumn = document.getElementById('terms-column');
+        const termsListEl = document.getElementById('slide-terms-content');
+        termsListEl.innerHTML = ''; // Luôn dọn dẹp danh sách cũ
 
-        // Kiểm tra xem đây có phải là slide cuối cùng của tuần hay không
-        const isLastSlide = currentSection.slides.indexOf(currentSlideData) === currentSection.slides.length - 1;
+        // Kiểm tra xem slide này có thuật ngữ hay không
+        const hasTerms = currentSlideData.terms && Object.keys(currentSlideData.terms).length > 0;
 
-        if (isLastSlide) {
-            // TỔNG HỢP TẤT CẢ THUẬT NGỮ TRONG TUẦN
-            const allTerms = {};
-            currentSection.slides.forEach(slide => {
-                if (slide.terms) {
-                    Object.assign(allTerms, slide.terms); // Gộp các thuật ngữ lại
-                }
-            });
+        if (hasTerms) {
+            // NẾU CÓ THUẬT NGỮ:
+            termsColumn.style.display = 'block'; // 1. Hiện cột thuật ngữ
+            notesSection.classList.remove('single-column'); // 2. Xóa class để layout trở về 2 cột
 
-            // Nếu có thuật ngữ để hiển thị
-            if (Object.keys(allTerms).length > 0) {
-                // Tạo tiêu đề và danh sách
-                termsContainer.innerHTML = `
-                <h3 class="terms-heading">Tổng kết Thuật Ngữ</h3>
-                <p class="terms-summary-intro">Dưới đây là tổng hợp các thuật ngữ đã xuất hiện trong tuần này:</p>
-                <dl id="slide-terms-content"></dl>
-            `;
-                const termsListEl = document.getElementById('slide-terms-content');
-                for (const term in allTerms) {
-                    const dt = document.createElement('dt');
-                    dt.textContent = term;
-                    const dd = document.createElement('dd');
-                    dd.textContent = allTerms[term];
-                    termsListEl.appendChild(dt);
-                    termsListEl.appendChild(dd);
-                }
+            // 3. Điền dữ liệu thuật ngữ vào cột phải
+            for (const term in currentSlideData.terms) {
+                const dt = document.createElement('dt');
+                dt.textContent = term;
+                const dd = document.createElement('dd');
+                dd.textContent = currentSlideData.terms[term];
+                termsListEl.appendChild(dt);
+                termsListEl.appendChild(dd);
             }
+        } else {
+            // NẾU KHÔNG CÓ THUẬT NGỮ:
+            termsColumn.style.display = 'none'; // 1. Ẩn cột thuật ngữ
+            notesSection.classList.add('single-column'); // 2. Thêm class để cột ghi chú chiếm toàn bộ không gian
         }
-        // Nếu không phải slide cuối, chúng ta không làm gì cả, termsContainer sẽ trống.
 
-        // --- Phần 4: Cập nhật trạng thái "active" cho mục lục ---
+        // --- Phần 4: Cập nhật mục lục ---
         document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
         const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
-        if (activeLi) {
-            activeLi.classList.add('active');
-        }
+        if (activeLi) { activeLi.classList.add('active'); }
     }
 
     // **NÂNG CẤP: Hàm tạo mục lục có thể thu gọn/mở rộng**
