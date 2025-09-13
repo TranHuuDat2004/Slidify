@@ -23,6 +23,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative; /* <-- THÊM DÒNG NÀY */
 }
 
 .logo-container {
@@ -379,6 +380,35 @@ dl dd {
     color: #333;
 }
 
+/* Bỏ gạch chân cho link logo */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Căn giữa menu chính trên desktop */
+.main-nav-desktop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-nav-desktop a {
+    /* Giữ nguyên các style cũ và thêm margin ngang */
+    margin: 0 15px; /* Khoảng cách giữa các mục menu */
+    text-decoration: none;
+    color: #5624d0; /* Đổi màu cho nổi bật hơn */
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Chuẩn bị cho hiệu ứng hover */
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.main-nav-desktop a:hover {
+    color: #401b9c;
+    border-bottom-color: #401b9c; /* Hiệu ứng gạch chân khi hover */
+}
 /* ==================
    RESPONSIVE (Cập nhật)
    ================== */

@@ -350,27 +350,34 @@
 .slide-nav-buttons {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
+    width: 60%;
+    margin: 20px;
+
 }
 
 .slide-nav-btn {
-    padding: 10px 20px;
+    padding: 10px 20px 10px 15px;
     font-size: 1em;
     font-weight: bold;
     color: #fff;
-    background-color: #5624d0; /* Màu tím đặc trưng */
+    background-color: #5624d0;
+    /* Màu tím đặc trưng */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    gap: 8px;
+    /* Khoảng cách giữa icon và chữ */
     transition: background-color 0.2s;
+    border-radius: 16px;
+    margin: 5px;
+
 }
 
 .slide-nav-btn:hover {
-    background-color: #401b9c; /* Màu tím đậm hơn khi hover */
+    background-color: #401b9c;
+    /* Màu tím đậm hơn khi hover */
 }
 
 /* Style cho trạng thái bị vô hiệu hóa */
@@ -381,7 +388,8 @@
 }
 
 .slide-nav-btn:disabled:hover {
-    background-color: #ccc; /* Không đổi màu khi hover */
+    background-color: #ccc;
+    /* Không đổi màu khi hover */
 }
 
 /* ==================
@@ -468,5 +476,33 @@
     /* Hiện lại header của sidebar phải trên MOBILE */
     .slide-sidebar .sidebar-header {
         display: flex;
+    }
+
+    .slide-nav-btn {
+        padding: 10px 20px 10px 15px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #fff;
+        background-color: #5624d0;
+        /* Màu tím đặc trưng */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        /* Khoảng cách giữa icon và chữ */
+        transition: background-color 0.2s;
+        border-radius: 16px;
+        margin: 5px;
+
+    }
+
+    .slide-nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px;
+
     }
 }

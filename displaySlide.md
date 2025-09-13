@@ -129,7 +129,7 @@ Thuật toán của hàm có thể được chia thành 4 bước chính, với 
 
 ### Bước 5: Trang trước và trang sau
 
-Giúp người du
+Giúp người dùng chuyển đổi slide linh hoạt hơn
 
 ## Sơ đồ luồng thuật toán (Flowchart)
 
