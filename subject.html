@@ -14,7 +14,26 @@
 
 <body>
 
-    <!-- Vùng chứa cho header -->
+
+    <!-- === SIDEBAR CHÍNH (BÊN TRÁI) - CÓ HEADER VÀ NÚT ĐÓNG === -->
+    <nav id="left-sidebar" class="sidebar left-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-container">
+                <img src="images/logo.png" alt="Slidify Logo" class="logo">
+
+            </div>
+            <button id="close-left-sidebar-btn" class="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="index.html">Trang Chủ</a>
+        <a href="#">Giới Thiệu</a>
+    </nav>
+
+    <!-- === LỚP PHỦ (OVERLAY) === -->
+    <div id="overlay"></div>
+
+    <!-- Header của bạn sẽ được nạp vào đây -->
     <header id="header-placeholder"></header>
 
     <div class="main-container">
@@ -22,13 +41,31 @@
         <main class="slide-viewer">
             <h1 id="slide-title"></h1>
             <img id="slide-image" src="" alt="Hình ảnh slide">
+            <!-- === CÁC NÚT ĐIỀU HƯỚNG TRƯỚC/SAU === -->
+            <div class="slide-nav-buttons">
+                <button id="prev-slide-btn" class="slide-nav-btn">
+                    <i class="fas fa-arrow-left"></i> Trang trước
+                </button>
+                <button id="next-slide-btn" class="slide-nav-btn">
+                    Trang sau <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </main>
 
+        <!-- === NÚT BẤM MỚI - CHỈ HIỆN TRÊN MOBILE === -->
+        <button id="toggle-toc-btn" class="toggle-toc-btn">Hiện Mục lục khóa học</button>
+
         <!-- Thanh mục lục bên phải -->
+        <!-- === SIDEBAR MỤC LỤC (BÊN PHẢI) - CÓ HEADER VÀ NÚT ĐÓNG === -->
         <aside class="slide-sidebar">
-            <h2>Nội dung khóa học</h2>
+            <div class="sidebar-header">
+                <h2>Nội dung khóa học</h2>
+                <button id="close-right-sidebar-btn" class="close-sidebar-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <div id="slide-navigation-container">
-                <!-- Danh sách slide sẽ được tạo tự động bằng JavaScript -->
+                <!-- Danh sách slide được tạo tự động -->
             </div>
         </aside>
     </div>
@@ -53,6 +90,8 @@
 
     <!-- Đã cập nhật đường dẫn các file JS -->
     <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 

@@ -1,10 +1,16 @@
 // --- CÁC HÀM TIỆN ÍCH (giữ nguyên) ---
 function loadComponent(filePath, elementId) {
-    fetch(filePath)
-        .then(response => response.ok ? response.text() : Promise.reject('File not found'))
-        .then(data => { document.getElementById(elementId).innerHTML = data; })
-        .catch(error => console.error(`Error loading ${elementId}:`, error));
+    // Hàm này bây giờ trả về một Promise để chúng ta biết khi nào nó tải xong
+    return fetch(filePath)
+        .then(response => {
+            if (!response.ok) throw new Error(`Could not load ${filePath}`);
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+        });
 }
+
 
 function getCourseIdFromURL() {
     const params = new URLSearchParams(window.location.search);
@@ -13,9 +19,68 @@ function getCourseIdFromURL() {
 
 // --- LOGIC CHÍNH CỦA TRANG MÔN HỌC ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Nạp header và footer
-    loadComponent('header.html', 'header-placeholder');
-    loadComponent('footer.html', 'footer-placeholder');
+
+    // --- TẢI CÁC THÀNH PHẦN ĐỘNG ---
+    // Sử dụng Promise.all để đảm bảo cả header và footer đều được tải xong
+    // --- TẢI CÁC THÀNH PHẦN ĐỘNG ---
+    Promise.all([
+        loadComponent('header.html', 'header-placeholder'),
+        loadComponent('footer.html', 'footer-placeholder')
+    ]).then(() => {
+        // === KHỞI TẠO TOÀN BỘ LOGIC SIDEBAR SAU KHI HEADER ĐÃ TẢI XONG ===
+
+        // Lấy tất cả các element cần thiết
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const leftSidebar = document.getElementById('left-sidebar');
+        const closeLeftSidebarBtn = document.getElementById('close-left-sidebar-btn');
+
+        const toggleTocBtn = document.getElementById('toggle-toc-btn');
+        const rightSidebar = document.querySelector('.slide-sidebar');
+        const closeRightSidebarBtn = document.getElementById('close-right-sidebar-btn');
+
+        const overlay = document.getElementById('overlay');
+        const body = document.body;
+
+        // --- Hàm chung để đóng tất cả sidebar ---
+        function closeAllSidebars() {
+            leftSidebar.classList.remove('open');
+            rightSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            body.classList.remove('body-no-scroll');
+        }
+
+        // --- Logic cho Sidebar Trái (Menu chính) ---
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                leftSidebar.classList.add('open');
+                overlay.classList.add('active');
+                body.classList.add('body-no-scroll');
+            });
+        }
+        if (closeLeftSidebarBtn) {
+            closeLeftSidebarBtn.addEventListener('click', closeAllSidebars);
+        }
+
+        // --- Logic cho Sidebar Phải (Mục lục) ---
+        if (toggleTocBtn) {
+            toggleTocBtn.addEventListener('click', () => {
+                rightSidebar.classList.add('open');
+                overlay.classList.add('active');
+                body.classList.add('body-no-scroll');
+            });
+        }
+        if (closeRightSidebarBtn) {
+            closeRightSidebarBtn.addEventListener('click', closeAllSidebars);
+        }
+
+        // --- Logic cho Overlay ---
+        if (overlay) {
+            overlay.addEventListener('click', closeAllSidebars);
+        }
+
+    }).catch(error => {
+        console.error("Lỗi khi tải header hoặc footer:", error);
+    });
 
     const courseId = getCourseIdFromURL();
     const currentCourseData = coursesData[courseId];
@@ -47,53 +112,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // **NÂNG CẤP: Hàm hiển thị slide (logic bên trong giữ nguyên)**
+    // **NÂNG CẤP LẦN CUỐI: Hàm hiển thị slide tích hợp nút Trước/Sau**
     function displaySlide(slideId) {
-        // --- Phần 1: Tìm dữ liệu slide ---
+        // --- Lấy các element nút bấm ---
+        const prevBtn = document.getElementById('prev-slide-btn');
+        const nextBtn = document.getElementById('next-slide-btn');
+
+        // --- Phần 1: Tìm dữ liệu slide, section và index hiện tại ---
         let currentSlideData = null;
+        let currentSection = null;
+        let currentSlideIndex = -1;
+        let allSlidesInSection = [];
+
         for (const section of courseSections) {
-            const foundSlide = section.slides.find(s => s.id === slideId);
-            if (foundSlide) {
-                currentSlideData = foundSlide;
+            const foundIndex = section.slides.findIndex(s => s.id === slideId);
+            if (foundIndex !== -1) {
+                currentSection = section;
+                currentSlideIndex = foundIndex;
+                currentSlideData = section.slides[foundIndex];
+                allSlidesInSection = section.slides;
                 break;
             }
         }
+
         if (!currentSlideData) { return; }
 
-        // --- Phần 2: Hiển thị nội dung chính (Tiêu đề, ảnh, ghi chú) ---
+        // --- Phần 2: Hiển thị nội dung chính (giữ nguyên) ---
         slideTitleEl.textContent = currentSlideData.title;
         slideImageEl.src = currentSlideData.image;
         slideNotesEl.innerHTML = currentSlideData.notes;
 
-        // --- Phần 3: Xử lý bố cục 2 cột ---
+        // --- Phần 3: Xử lý bố cục 2 cột (giữ nguyên) ---
         const notesSection = document.querySelector('.notes-section');
         const termsColumn = document.getElementById('terms-column');
         const termsListEl = document.getElementById('slide-terms-content');
-        termsListEl.innerHTML = ''; // Luôn dọn dẹp danh sách cũ
-
-        // Kiểm tra xem slide này có thuật ngữ hay không
+        termsListEl.innerHTML = '';
         const hasTerms = currentSlideData.terms && Object.keys(currentSlideData.terms).length > 0;
-
         if (hasTerms) {
-            // NẾU CÓ THUẬT NGỮ:
-            termsColumn.style.display = 'block'; // 1. Hiện cột thuật ngữ
-            notesSection.classList.remove('single-column'); // 2. Xóa class để layout trở về 2 cột
-
-            // 3. Điền dữ liệu thuật ngữ vào cột phải
+            termsColumn.style.display = 'block';
+            notesSection.classList.remove('single-column');
             for (const term in currentSlideData.terms) {
-                const dt = document.createElement('dt');
-                dt.textContent = term;
-                const dd = document.createElement('dd');
-                dd.textContent = currentSlideData.terms[term];
-                termsListEl.appendChild(dt);
-                termsListEl.appendChild(dd);
+                const dt = document.createElement('dt'); dt.textContent = term;
+                const dd = document.createElement('dd'); dd.textContent = currentSlideData.terms[term];
+                termsListEl.appendChild(dt); termsListEl.appendChild(dd);
             }
         } else {
-            // NẾU KHÔNG CÓ THUẬT NGỮ:
-            termsColumn.style.display = 'none'; // 1. Ẩn cột thuật ngữ
-            notesSection.classList.add('single-column'); // 2. Thêm class để cột ghi chú chiếm toàn bộ không gian
+            termsColumn.style.display = 'none';
+            notesSection.classList.add('single-column');
         }
 
-        // --- Phần 4: Cập nhật mục lục ---
+        // --- Phần 4: Logic cho nút Trước/Sau ---
+        // Nút "Trang trước"
+        if (currentSlideIndex > 0) {
+            prevBtn.disabled = false;
+            const prevSlideId = allSlidesInSection[currentSlideIndex - 1].id;
+            prevBtn.onclick = () => displaySlide(prevSlideId);
+        } else {
+            prevBtn.disabled = true; // Vô hiệu hóa nếu là slide đầu tiên
+            prevBtn.onclick = null;
+        }
+
+        // Nút "Trang sau"
+        if (currentSlideIndex < allSlidesInSection.length - 1) {
+            nextBtn.disabled = false;
+            const nextSlideId = allSlidesInSection[currentSlideIndex + 1].id;
+            nextBtn.onclick = () => displaySlide(nextSlideId);
+        } else {
+            nextBtn.disabled = true; // Vô hiệu hóa nếu là slide cuối cùng
+            nextBtn.onclick = null;
+        }
+
+        // --- Phần 5: Cập nhật mục lục (giữ nguyên) ---
         document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
         const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
         if (activeLi) { activeLi.classList.add('active'); }

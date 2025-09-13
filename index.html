@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,33 @@
 
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
+
 <body>
+
+    <!-- === SIDEBAR CHÍNH (BÊN TRÁI) - CÓ HEADER VÀ NÚT ĐÓNG === -->
+    <nav id="left-sidebar" class="sidebar left-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-container">
+                <img src="images/logo.png" alt="Slidify Logo" class="logo">
+
+            </div>
+            <button id="close-left-sidebar-btn" class="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="index.html">Trang Chủ</a>
+        <a href="#">Giới Thiệu</a>
+    </nav>
+    <!-- === LỚP PHỦ (OVERLAY) === -->
+    <div id="overlay"></div>
+
+    <!-- Header của bạn sẽ được nạp vào đây -->
     <header id="header-placeholder"></header>
 
     <main class="homepage-main">
         <h1>Chào mừng đến với Slidify</h1>
         <p>Chọn một môn học bên dưới để bắt đầu ghi chú và khám phá kiến thức.</p>
-        
+
         <div id="course-list-container" class="course-list-container">
             <!-- Các thẻ môn học sẽ được tạo tự động bằng JavaScript -->
         </div>
@@ -26,6 +47,8 @@
 
     <!-- Nhúng các file JS cần thiết -->
     <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
     <script>
         // Hàm load header/footer (có thể tách ra file js/main.js nếu muốn)
         function loadComponent(filePath, elementId) {
@@ -47,7 +70,7 @@
                 courseCard.className = 'course-card';
                 // Link đến trang học với tham số ?course=...
                 courseCard.href = `subject.html?course=${courseKey}`;
-                
+
                 courseCard.innerHTML = `
                     <img src="${course.thumbnail}" alt="${course.title}">
                     <div class="course-card-content">
@@ -60,4 +83,5 @@
         });
     </script>
 </body>
+
 </html>

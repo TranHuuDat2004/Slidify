@@ -40,16 +40,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     align-self: flex-start;
-    /* Giữ cho sidebar ở trên cùng */
-
-    /* Thêm các thuộc tính sau */
     position: sticky;
-    /* Giữ sidebar cố định khi cuộn */
     top: 20px;
-    /* Khoảng cách từ sidebar đến đỉnh màn hình */
-    max-height: 550px;
+    max-height: 400px;
     overflow-y: auto;
-    /* Tự động hiển thị thanh cuộn khi cần */
 }
 
 .slide-sidebar h2 {
@@ -224,7 +218,7 @@
      * - Cột 2 (dành cho định nghĩa) sẽ chiếm hết phần không gian còn lại (1fr).
     */
     grid-template-columns: 200px 1fr;
-    
+
     /* 
      * Tạo khoảng cách giữa các hàng và các cột:
      * - 20px giữa các hàng (hàng trên và hàng dưới).
@@ -234,9 +228,11 @@
 
     /* Căn chỉnh nội dung của mỗi ô bắt đầu từ phía trên */
     align-items: start;
-    
-    margin-top: 20px; /* Thêm khoảng cách với dòng mô tả phía trên */
-    border-top: 1px solid #eee; /* Thêm một đường kẻ ngang để tách biệt */
+
+    margin-top: 20px;
+    /* Thêm khoảng cách với dòng mô tả phía trên */
+    border-top: 1px solid #eee;
+    /* Thêm một đường kẻ ngang để tách biệt */
     padding-top: 20px;
 }
 
@@ -248,9 +244,12 @@
 
 /* Định dạng cho thẻ <dd> (chứa Định nghĩa) */
 #slide-terms-content dd {
-    margin: 0; /* Xóa margin mặc định của trình duyệt */
-    line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
-    border-bottom: 1px solid #eee; /* Thêm đường kẻ phân cách giữa các hàng */
+    margin: 0;
+    /* Xóa margin mặc định của trình duyệt */
+    line-height: 1.6;
+    /* Tăng khoảng cách dòng cho dễ đọc */
+    border-bottom: 1px solid #eee;
+    /* Thêm đường kẻ phân cách giữa các hàng */
     padding-bottom: 20px;
 }
 
@@ -267,13 +266,15 @@
 /* Dùng Flexbox để tạo layout 2 cột */
 .notes-section {
     display: flex;
-    gap: 30px; /* Khoảng cách giữa 2 cột */
+    gap: 30px;
+    /* Khoảng cách giữa 2 cột */
 }
 
 /* Mỗi cột sẽ chiếm 1 phần không gian bằng nhau */
 .notes-content-column {
     flex: 1;
-    min-width: 0; /* Cần thiết để flexbox hoạt động đúng */
+    min-width: 0;
+    /* Cần thiết để flexbox hoạt động đúng */
 }
 
 /* Khi chỉ có cột ghi chú, nó sẽ chiếm toàn bộ chiều rộng */
@@ -318,4 +319,154 @@
 
 #slide-terms-content dd:last-child {
     border-bottom: none;
+}
+
+/* Nút bấm để hiện/ẩn mục lục trên mobile */
+.toggle-toc-btn {
+    display: none;
+    /* Mặc định ẩn trên desktop */
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5624d0;
+    /* Màu tím đặc trưng */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Ẩn header của sidebar phải trên DESKTOP */
+.slide-sidebar .sidebar-header {
+    display: none;
+}
+
+/* ==================
+   SLIDE NAVIGATION BUTTONS STYLES
+   ================== */
+.slide-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.slide-nav-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5624d0; /* Màu tím đặc trưng */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    transition: background-color 0.2s;
+}
+
+.slide-nav-btn:hover {
+    background-color: #401b9c; /* Màu tím đậm hơn khi hover */
+}
+
+/* Style cho trạng thái bị vô hiệu hóa */
+.slide-nav-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.slide-nav-btn:disabled:hover {
+    background-color: #ccc; /* Không đổi màu khi hover */
+}
+
+/* ==================
+   RESPONSIVE - Dành cho màn hình nhỏ (Mobile)
+   ================== */
+
+@media (max-width: 768px) {
+
+    /* 1. Sửa layout chính */
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 0;
+        /* Bỏ gap vì các mục không còn nằm cạnh nhau */
+    }
+
+    /* === THAY ĐỔI LỚN: SẮP XẾP LẠI THỨ TỰ ƯU TIÊN === */
+    .slide-viewer {
+        order: 1;
+        /* Ưu tiên 1: Slide */
+    }
+
+    /* Ghi chú và Thuật ngữ sẽ tự động nằm dưới slide viewer (thứ tự HTML) */
+    .notes-section {
+        order: 2;
+        /* Ưu tiên 2: Ghi chú */
+        flex-direction: column;
+        margin: 20px 10px 10px 10px;
+        gap: 0;
+    }
+
+    /* Nút bấm mới sẽ nằm dưới Ghi chú */
+    .toggle-toc-btn {
+        display: block;
+        /* Hiện nút bấm trên mobile */
+        order: 3;
+        /* Ưu tiên 3: Nút bấm */
+    }
+
+
+    /* Các điều chỉnh nhỏ khác */
+    .slide-viewer h1 {
+        font-size: 1.2em;
+    }
+
+    .notes-content-column {
+        padding-top: 20px;
+    }
+
+    .slide-sidebar {
+        /* Kế thừa style từ class .sidebar của main.css */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 280px;
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        transition: transform 0.3s ease-in-out;
+        padding: 20px;
+
+        transform: translateX(100%);
+        /* Ẩn về bên phải */
+
+        /* Ghi đè các thuộc tính không cần thiết */
+        display: block !important;
+        max-height: 100vh;
+        order: initial;
+        margin-top: 0;
+    }
+
+    .slide-sidebar.open {
+        transform: translateX(0);
+        /* Hiện ra */
+    }
+
+    /* Đổi tên nút bấm mục lục */
+    .toggle-toc-btn {
+        order: 2;
+        /* Ưu tiên 2: Nút bấm (nằm dưới ghi chú) */
+    }
+
+    /* Hiện lại header của sidebar phải trên MOBILE */
+    .slide-sidebar .sidebar-header {
+        display: flex;
+    }
 }

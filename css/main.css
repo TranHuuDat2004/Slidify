@@ -13,7 +13,7 @@ body {
 #header-placeholder {
     background-color: #ffffff;
     padding: 15px 30px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -60,7 +60,8 @@ body {
     background-color: #ffffff;
     color: #333;
     margin-top: 50px;
-    border-top: 1px solid #e9ecef; /* Màu viền sáng hơn */
+    border-top: 1px solid #e9ecef;
+    /* Màu viền sáng hơn */
     font-size: 0.95em;
 }
 
@@ -80,7 +81,8 @@ body {
 .footer-column .footer-brand {
     font-size: 1.8em;
     font-weight: bold;
-    color: #0d6efd; /* Màu xanh dương giống mẫu */
+    color: #0d6efd;
+    /* Màu xanh dương giống mẫu */
     margin: 0 0 10px 0;
 }
 
@@ -93,10 +95,12 @@ body {
     font-size: 1.1em;
     font-weight: bold;
     margin: 0 0 15px 0;
-    color: #212529; /* Màu đen đậm hơn */
+    color: #212529;
+    /* Màu đen đậm hơn */
 }
 
-.footer-list, .footer-info {
+.footer-list,
+.footer-info {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -133,7 +137,8 @@ body {
 .footer-info li i {
     color: #0d6efd;
     margin-right: 12px;
-    width: 20px; /* Căn chỉnh các icon thẳng hàng */
+    width: 20px;
+    /* Căn chỉnh các icon thẳng hàng */
     text-align: center;
 }
 
@@ -170,6 +175,7 @@ body {
     border-bottom: 1px solid #ccc;
     margin-bottom: 15px;
 }
+
 .tab-link {
     background-color: inherit;
     border: none;
@@ -178,21 +184,223 @@ body {
     padding: 14px 16px;
     font-size: 1em;
 }
+
 .tab-link:hover {
     background-color: #ddd;
 }
+
 .tab-link.active {
     border-bottom: 2px solid #5624d0;
     font-weight: bold;
 }
+
 .tab-content {
     display: none;
     line-height: 1.6;
 }
+
 dl dt {
     font-weight: bold;
     margin-top: 10px;
 }
+
 dl dd {
     margin-left: 20px;
+}
+
+/* ==================
+   RESPONSIVE - Dành cho màn hình nhỏ (Mobile)
+   ================== */
+@media (max-width: 768px) {
+
+    /* 1. Sửa Header */
+    /* BÊN TRONG @media (max-width: 768px) */
+    .header-container {
+        /* 1. Thiết lập lại hướng và căn chỉnh */
+        flex-direction: row;
+        /* QUAN TRỌNG: Chuyển về hàng ngang */
+        align-items: center;
+        justify-content: center;
+        /* Căn giữa logo */
+
+        /* 2. Dùng position để định vị hamburger một cách chính xác */
+        position: relative;
+        height: 60px;
+        /* Thêm chiều cao cố định để căn chỉnh dễ hơn */
+    }
+
+    .main-nav {
+        /* Căn giữa các link nav */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .main-nav a {
+        margin-left: 0;
+    }
+
+    /* 2. Sửa Footer */
+    .footer-grid {
+        /* Ép footer về 1 cột duy nhất */
+        grid-template-columns: 1fr;
+        text-align: center;
+        /* Căn giữa nội dung trong footer */
+    }
+
+    .footer-list li a::before {
+        display: none;
+        /* Ẩn dấu > trên mobile cho gọn */
+    }
+
+    .footer-info li,
+    .footer-info li a {
+        justify-content: center;
+        /* Căn giữa các mục thông tin */
+    }
+
+    .footer-column .footer-brand {
+        font-size: 1.5em;
+    }
+}
+
+/* ==================
+   OFF-CANVAS SIDEBAR & OVERLAY
+   ================== */
+
+/* Lớp phủ làm mờ nền */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    /* Nằm dưới sidebar nhưng trên nội dung */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style cơ bản cho cả hai sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 280px;
+    /* Chiều rộng của sidebar */
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Sidebar trái (menu chính) */
+.left-sidebar {
+    left: 0;
+    transform: translateX(-100%);
+    /* Ẩn về bên trái */
+}
+
+.left-sidebar.open {
+    transform: translateX(0);
+    /* Hiện ra */
+}
+
+.left-sidebar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    border-bottom: 1px solid #eee;
+}
+
+/* Nút Hamburger */
+.hamburger-btn {
+    display: none;
+    /* Ẩn trên desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Class để khóa cuộn trang khi sidebar mở */
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/* Style cho header bên trong sidebar */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 15px 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.sidebar-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Style cho nút X */
+.close-sidebar-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #888;
+}
+
+.close-sidebar-btn:hover {
+    color: #333;
+}
+
+/* ==================
+   RESPONSIVE (Cập nhật)
+   ================== */
+@media (max-width: 768px) {
+
+    /* Ẩn menu desktop trên mobile */
+    .main-nav-desktop {
+        display: none;
+    }
+
+    /* Hiện nút hamburger trên mobile */
+    .hamburger-btn {
+        display: flex;
+        /* Định vị nút bấm ở góc trái */
+        position: absolute;
+        left: 15px;
+        /* Khoảng cách từ lề trái */
+        top: 50%;
+        transform: translateY(-50%);
+        /* Căn giữa theo chiều dọc một cách hoàn hảo */
+
+    }
+
+
 }
