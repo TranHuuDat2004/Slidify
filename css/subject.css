@@ -118,6 +118,20 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 0.95em;
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Cần cho pseudo-element */
+}
+
+/* Khi một slide đã được xem (có class 'viewed') */
+.slide-list li.viewed::after { /* Sử dụng ::after để tạo dấu tích */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c"; /* Icon check */
+    color: #28a745;
+    font-size: 1.1em;
+    margin-left: 10px; /* Tạo khoảng cách với chữ */
 }
 
 .slide-list li:hover {
@@ -393,6 +407,39 @@
 }
 
 /* ==================
+   PROGRESS TRACKING STYLES
+   ================== */
+
+/* Style cho mục slide trong mục lục */
+.slide-list li {
+    display: flex; /* Sử dụng flexbox để căn chỉnh */
+    justify-content: space-between; /* Đẩy nội dung và dấu tích ra 2 bên */
+    align-items: center;
+    /* ... các thuộc tính cũ của bạn ... */
+    padding: 12px 12px 12px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.95em;
+}
+
+/* Style cho dấu tích (sẽ được thêm bằng JS) */
+.slide-list li .progress-tick {
+    font-family: "Font Awesome 5 Free"; /* Sử dụng font của Font Awesome */
+    font-weight: 900; /* Cần thiết để icon hiển thị */
+    content: "\f00c"; /* Mã unicode cho icon check */
+    color: #28a745; /* Màu xanh lá cây */
+    font-size: 1.1em;
+    opacity: 0; /* Mặc định ẩn đi */
+    transition: opacity 0.3s;
+}
+
+/* Khi một slide đã được xem (có class 'viewed') */
+.slide-list li.viewed .progress-tick {
+    opacity: 1; /* Hiện dấu tích ra */
+}
+
+/* ==================
    RESPONSIVE - Dành cho màn hình nhỏ (Mobile)
    ================== */
 
@@ -478,31 +525,7 @@
         display: flex;
     }
 
-    .slide-nav-btn {
-        padding: 10px 20px 10px 15px;
-        font-size: 1em;
-        font-weight: bold;
-        color: #fff;
-        background-color: #5624d0;
-        /* Màu tím đặc trưng */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        /* Khoảng cách giữa icon và chữ */
-        transition: background-color 0.2s;
-        border-radius: 16px;
-        margin: 5px;
-
-    }
-
     .slide-nav-buttons {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-        margin: 20px;
-
+        width: 100%;
     }
 }

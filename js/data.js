@@ -266,6 +266,84 @@ const coursesData = {
               "base": "Từ khóa dùng trong lớp con để truy cập đến các thành viên của lớp cha, ví dụ như gọi constructor hoặc một phương thức đã bị override của lớp cha."
             }
           },
+          // SLIDE 16: C# CƠ BẢN - GENERICS
+          {
+            id: 16,
+            title: "Trang 16: C# cơ bản - Generics",
+            image: "images/game-dev/week1/slide_16.png",
+            notes: "Generics cho phép lập trình viên trì hoãn việc chỉ định một hoặc nhiều kiểu dữ liệu cho đến khi class hoặc phương thức được khai báo và khởi tạo.\n\n" +
+                   "Nói cách khác, nó cho phép bạn viết một class hoặc phương thức có thể hoạt động với bất kỳ kiểu dữ liệu nào (ví dụ: `int`, `string`, hoặc một class tự định nghĩa như `AClass`) mà không cần viết lại code cho từng kiểu.\n\n" +
+                   "Ví dụ trên slide minh họa cách tạo một class `GenericList<T>` có thể chứa một danh sách các số nguyên (`int`), chuỗi (`string`), hoặc các đối tượng `AClass`.",
+            terms: {
+              "Generics": "Một tính năng cho phép viết code linh hoạt, tái sử dụng và an toàn về kiểu (type-safe) bằng cách cho phép các class, interface và phương thức hoạt động với một 'kiểu dữ liệu giữ chỗ' (placeholder type). Kiểu dữ liệu thực tế sẽ được chỉ định khi code được sử dụng.",
+              "Instantiated (Khởi tạo đối tượng)": "Quá trình tạo ra một 'thể hiện' (instance) cụ thể của một class trong bộ nhớ. Thường được thực hiện bằng từ khóa `new`."
+            }
+          },
+          // SLIDE 17: C# CƠ BẢN - PROPERTIES
+          {
+            id: 17,
+            title: "Trang 17: C# cơ bản - Properties",
+            image: "images/game-dev/week1/slide_17.png",
+            notes: "Properties (Thuộc tính) là các 'lối tắt' cú pháp cho các phương thức getter và setter thường đi kèm với các biến của class. Chúng giúp kiểm soát việc truy cập vào một biến và có thể được dùng để tạo ra một biến chỉ đọc (read-only).\n\n" +
+                   "- <b>Phiên bản ngắn gọn (auto-implemented property):</b> `public double Seconds { get; set; }` tự động tạo ra một biến private ẩn.\n" +
+                   "- <b>Phiên bản đầy đủ:</b> Cho phép bạn thêm logic tùy chỉnh vào bên trong `get` (để trả về giá trị) và `set` (để gán giá trị mới, thông qua từ khóa `value`).\n" +
+                   "- Có thể sử dụng các access modifier (ví dụ: `private`) trên `get` hoặc `set` để hạn chế quyền truy cập.",
+            terms: {
+              "Property (Thuộc tính)": "Một thành viên của class đóng vai trò trung gian để truy cập vào một trường dữ liệu private. Nó bao gồm các khối lệnh `get` (để đọc giá trị) và `set` (để ghi giá trị).",
+              "Getter": "Phương thức hoặc khối lệnh `get` trong một property, dùng để truy xuất giá trị của một biến.",
+              "Setter": "Phương thức hoặc khối lệnh `set` trong một property, dùng để gán một giá trị mới cho một biến.",
+              "Access Modifiers (e.g., private, public)": "Các từ khóa dùng để quy định mức độ truy cập (ai có thể thấy và sử dụng) của các thành viên trong một class."
+            }
+          },
+          // SLIDE 18: C# CƠ BẢN - STRUCTS
+          {
+            id: 18,
+            title: "Trang 18: C# cơ bản - Structs",
+            image: "images/game-dev/week1/slide_18.png",
+            notes: "Struct trong C# là một cấu trúc dữ liệu:\n" +
+                   "- Giống như một class nhưng nó là một <b>kiểu tham trị (value type)</b>.\n" +
+                   "- Không hỗ trợ kế thừa.\n" +
+                   "- Constructor mặc định sẽ khởi tạo tất cả các biến về giá trị 0 hoặc null. Bạn không thể gán giá trị cho chúng trong constructor mặc định trừ khi chúng là `const`.\n" +
+                   "- Không yêu cầu khởi tạo đối tượng trên vùng nhớ heap.\n" +
+                   "- Theo mặc định, struct được truyền theo giá trị (pass by value), trong khi class được truyền theo tham chiếu (pass by reference).",
+            terms: {
+              "Struct": "Một kiểu dữ liệu giá trị (value type) dùng để đóng gói một nhóm nhỏ các biến liên quan. Rất hữu ích cho các đối tượng nhẹ mà không cần đến các tính năng phức tạp của class như kế thừa.",
+              "Heap": "Một vùng bộ nhớ được sử dụng cho việc cấp phát động. Các đối tượng của class (kiểu tham chiếu) được lưu trữ trên heap.",
+              "Pass by value": "Khi một biến được truyền vào một phương thức, một bản sao của giá trị của biến đó được tạo ra. Mọi thay đổi trên bản sao bên trong phương thức không ảnh hưởng đến biến gốc.",
+              "Pass by reference": "Khi một biến được truyền vào một phương thức, một tham chiếu (địa chỉ bộ nhớ) đến đối tượng gốc được truyền vào. Mọi thay đổi bên trong phương thức sẽ ảnh hưởng trực tiếp đến đối tượng gốc."
+            }
+          },
+          // SLIDE 19: C# CƠ BẢN - ARRAYS, LISTS & DICTIONARIES
+          {
+            id: 19,
+            title: "Trang 19: C# cơ bản - Mảng, List & Dictionary",
+            image: "images/game-dev/week1/slide_19.png",
+            notes: "C# có hai loại mảng chính: <b>mảng chữ nhật (rectangular)</b> và <b>mảng lởm chởm (jagged)</b>. Trong hầu hết các trường hợp, bạn sẽ sử dụng mảng chữ nhật vì nó hiệu quả hơn.\n\n" +
+                   "- <b>List</b> và <b>Dictionary</b> là các cấu trúc dữ liệu generic (giống như trong Java).\n" +
+                   "  - <b>List<T>:</b> Một danh sách động có thể thêm, xóa, sắp xếp các phần tử.\n" +
+                   "  - <b>Dictionary<TKey, TValue>:</b> Một bộ sưu tập các cặp key-value, cho phép truy xuất giá trị nhanh chóng thông qua key.",
+            terms: {
+              "Rectangular Array (Mảng chữ nhật)": "Một mảng đa chiều trong đó mỗi 'hàng' có cùng một số lượng 'cột'. Ví dụ: `int[,] a = new int[2,3];`.",
+              "Jagged Array (Mảng lởm chởm)": "Một mảng của các mảng, trong đó mỗi mảng con có thể có một độ dài khác nhau. Ví dụ: `int[][] a = new int[3][];`.",
+              "List<T>": "Một lớp generic trong .NET đại diện cho một danh sách các đối tượng có thể được truy cập bằng chỉ mục. Kích thước của nó có thể thay đổi động.",
+              "Dictionary<TKey, TValue>": "Một lớp generic đại diện cho một bộ sưu tập các cặp khóa-giá trị, cung cấp khả năng tra cứu rất nhanh."
+            }
+          },
+          // SLIDE 20: C# CƠ BẢN - ENUMERATIONS
+          {
+            id: 20,
+            title: "Trang 20: C# cơ bản - Enumerations",
+            image: "images/game-dev/week1/slide_20.png",
+            notes: "Enumerations (hay Enums) được sử dụng thường xuyên trong game để chỉ định các trạng thái khác nhau của trò chơi (ví dụ: màn hình chờ, đang chơi, tạm dừng, v.v.).\n\n" +
+                   "- Enum thường được sử dụng kết hợp với câu lệnh `switch`.\n" +
+                   "- Mỗi thành viên của enum có một giá trị số nguyên (integral value) tương ứng, theo thứ tự khai báo và bắt đầu từ 0.\n" +
+                   "- Bạn có thể gán giá trị tường minh cho các thành viên của enum.\n" +
+                   "- Giá trị số nguyên của một thành viên enum có thể được truy xuất bằng cách ép kiểu tường minh (explicit casting).",
+            terms: {
+              "Enumeration (Enum)": "Một kiểu dữ liệu đặc biệt cho phép một biến là một tập hợp các hằng số được đặt tên trước. Nó giúp làm cho code dễ đọc và dễ bảo trì hơn bằng cách sử dụng tên thay vì các con số 'ma thuật' (magic numbers)."
+            }
+          },
+          
           // Thêm vào cuối mảng slides của Tuần 1
           {
             id: 47, // Giả sử đây là slide cuối cùng của tuần

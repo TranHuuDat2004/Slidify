@@ -17,6 +17,29 @@ function getCourseIdFromURL() {
     return params.get('course');
 }
 
+// === CÁC HÀM HELPER CHO LOCALSTORAGE ===
+
+// Hàm lấy tiến độ đã lưu cho một môn học cụ thể
+function getProgress(courseId) {
+    const progress = localStorage.getItem(`progress_${courseId}`);
+    return progress ? JSON.parse(progress) : []; // Trả về mảng các slideId đã xem
+}
+
+// Hàm lưu tiến độ
+function saveProgress(courseId, viewedSlides) {
+    localStorage.setItem(`progress_${courseId}`, JSON.stringify(viewedSlides));
+}
+
+// Hàm lấy slide cuối cùng đã xem
+function getLastViewedSlide(courseId) {
+    return localStorage.getItem(`last_slide_${courseId}`);
+}
+
+// Hàm lưu slide cuối cùng đã xem
+function saveLastViewedSlide(courseId, slideId) {
+    localStorage.setItem(`last_slide_${courseId}`, slideId);
+}
+
 // --- LOGIC CHÍNH CỦA TRANG MÔN HỌC ---
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -161,6 +184,25 @@ document.addEventListener('DOMContentLoaded', () => {
             notesSection.classList.add('single-column');
         }
 
+
+        // === LOGIC LƯU TRỮ TIẾN ĐỘ VÀ VỊ TRÍ ===
+        // 1. Lưu slide này là slide cuối cùng đã xem
+        saveLastViewedSlide(courseId, slideId);
+
+        // 2. Cập nhật và lưu tiến độ đã xem
+        let viewedSlides = getProgress(courseId);
+        if (!viewedSlides.includes(slideId)) {
+            // Chỉ thêm vào localStorage nếu chưa có
+            viewedSlides.push(slideId);
+            saveProgress(courseId, viewedSlides);
+        }
+
+        // 3. LUÔN LUÔN thêm class 'viewed' vào mục li tương ứng để hiển thị dấu tích
+        const viewedLi = document.querySelector(`.slide-list li[data-id='${slideId}']`);
+        if (viewedLi) {
+            viewedLi.classList.add('viewed');
+        }
+
         // --- Phần 4: Logic cho nút Trước/Sau ---
         // Nút "Trang trước"
         if (currentSlideIndex > 0) {
@@ -186,6 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
         const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
         if (activeLi) { activeLi.classList.add('active'); }
+
+
     }
 
     // **NÂNG CẤP: Hàm tạo mục lục có thể thu gọn/mở rộng**
@@ -245,13 +289,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- KHỞI CHẠY ---
+    // 1. Tạo mục lục trước
     generateSlideNavigation();
 
-    // Hiển thị slide đầu tiên của môn học
+    // 2. Cập nhật giao diện dựa trên tiến độ đã lưu
+    const viewedSlides = getProgress(courseId);
+    viewedSlides.forEach(viewedId => {
+        const li = document.querySelector(`.slide-list li[data-id='${viewedId}']`);
+        if (li) {
+            li.classList.add('viewed');
+        }
+    });
+
+    // 3. Quyết định slide nào sẽ được hiển thị khi tải trang
+    const lastViewedId = getLastViewedSlide(courseId);
     const firstSlide = courseSections[0]?.slides[0];
-    if (firstSlide) {
-        displaySlide(firstSlide.id);
+
+    if (lastViewedId) {
+        // Nếu có slide đã xem gần nhất -> hiển thị nó
+        displaySlide(parseInt(lastViewedId), courseId); // Chuyển chuỗi về số
+    } else if (firstSlide) {
+        // Nếu không -> hiển thị slide đầu tiên
+        displaySlide(firstSlide.id, courseId);
     }
 });
 
