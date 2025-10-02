@@ -31,58 +31,23 @@ Nó sẽ chuyển đổi chúng thành một định dạng sạch sẽ và th�
 
 ## Kịch bản PowerShell
 
-```powershell
-# Lấy tất cả các tệp có đuôi .png trong thư mục hiện tại
+# BƯỚC 1: Đổi tên tất cả các file .png sang một tên tạm thời
 Get-ChildItem -Filter *.png | ForEach-Object {
-    # Kiểm tra xem tên tệp có khớp với mẫu "[bất kỳ]_[số].png" không
     if ($_.Name -match '(.*)_(\d+)\.png') {
+        # Thêm tiền tố "temp_" vào trước tên mới
+        $tempName = "temp_slide_{0}.png" -f $matches[2]
         
-        # Nếu khớp, tạo tên mới theo định dạng "slide_[số].png"
-        # $matches chứa phần số đã được trích xuất từ tên tệp cũ
-        $newName = "slide_{0}.png" -f $matches
-        
-        # Thực hiện đổi tên tệp
-        Rename-Item -Path $_.FullName -NewName $newName
+        # Thêm -Force để ghi đè nếu cần, và -ErrorAction SilentlyContinue để bỏ qua lỗi
+        Rename-Item -Path $_.FullName -NewName $tempName -ErrorAction SilentlyContinue
     }
 }
+Write-Host "Buoc 1 Hoan tat! Tat ca cac tep da duoc doi ten tam thoi."
 
-# In ra thông báo hoàn tất
-Write-Host "Hoan tat! Da doi ten cac tep phu hop."
-```
-
-## Tùy chỉnh kịch bản
-
-Bạn có thể dễ dàng chỉnh sửa kịch bản cho các nhu cầu khác nhau.
-
-### 1. Thay đổi tiền tố (prefix) của tên mới
-
-Nếu bạn không muốn `slide_`, hãy thay đổi nó trong dòng này:
-```powershell
-$newName = "trang_{0}.png" -f $matches 
-# Kết quả: trang_38.png
-```
-
-### 2. Thay đổi loại tệp (file extension)
-
-Nếu bạn đang xử lý ảnh `.jpg`, hãy thay đổi ở hai nơi:
-```powershell
-Get-ChildItem -Filter *.jpg | ForEach-Object { # Thay đổi ở đây
-    if ($_.Name -match '(.*)_(\d+)\.jpg') {     # Và ở đây
-        # ...
-    }
+# BƯỚC 2: Đổi tên từ tên tạm thời về tên cuối cùng
+Get-ChildItem -Filter "temp_*.png" | ForEach-Object {
+    # Tạo tên mới bằng cách loại bỏ "temp_"
+    $finalName = $_.Name.Replace("temp_", "")
+    
+    Rename-Item -Path $_.FullName -NewName $finalName
 }
-```
-
-### 3. Thêm số 0 vào trước (ví dụ: `slide_09.png` thay vì `slide_9.png`)
-
-Đây là một nâng cấp rất hữu ích để đảm bảo file luôn được sắp xếp đúng. Chỉ cần thay đổi cách tạo `$newName`:
-
-```powershell
-# D2 có nghĩa là "Decimal with 2 digits" (Số thập phân có 2 chữ số)
-$newName = "slide_{0:D2}.png" -f [int]$matches
-
-# Nếu bạn cần 3 chữ số (slide_009.png), dùng D3
-# $newName = "slide_{0:D3}.png" -f [int]$matches
-```
-
-*Lưu ý: chúng ta thêm `[int]` để chuyển đổi chuỗi số thành kiểu số nguyên, điều này là cần thiết cho việc định dạng số.*
+Write-Host "Buoc 2 Hoan tat! Da doi ten xong."
