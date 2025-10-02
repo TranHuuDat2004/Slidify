@@ -272,8 +272,8 @@ const coursesData = {
             title: "Trang 16: C# cơ bản - Generics",
             image: "images/game-dev/week1/slide_16.png",
             notes: "Generics cho phép lập trình viên trì hoãn việc chỉ định một hoặc nhiều kiểu dữ liệu cho đến khi class hoặc phương thức được khai báo và khởi tạo.\n\n" +
-                   "Nói cách khác, nó cho phép bạn viết một class hoặc phương thức có thể hoạt động với bất kỳ kiểu dữ liệu nào (ví dụ: `int`, `string`, hoặc một class tự định nghĩa như `AClass`) mà không cần viết lại code cho từng kiểu.\n\n" +
-                   "Ví dụ trên slide minh họa cách tạo một class `GenericList<T>` có thể chứa một danh sách các số nguyên (`int`), chuỗi (`string`), hoặc các đối tượng `AClass`.",
+              "Nói cách khác, nó cho phép bạn viết một class hoặc phương thức có thể hoạt động với bất kỳ kiểu dữ liệu nào (ví dụ: `int`, `string`, hoặc một class tự định nghĩa như `AClass`) mà không cần viết lại code cho từng kiểu.\n\n" +
+              "Ví dụ trên slide minh họa cách tạo một class `GenericList<T>` có thể chứa một danh sách các số nguyên (`int`), chuỗi (`string`), hoặc các đối tượng `AClass`.",
             terms: {
               "Generics": "Một tính năng cho phép viết code linh hoạt, tái sử dụng và an toàn về kiểu (type-safe) bằng cách cho phép các class, interface và phương thức hoạt động với một 'kiểu dữ liệu giữ chỗ' (placeholder type). Kiểu dữ liệu thực tế sẽ được chỉ định khi code được sử dụng.",
               "Instantiated (Khởi tạo đối tượng)": "Quá trình tạo ra một 'thể hiện' (instance) cụ thể của một class trong bộ nhớ. Thường được thực hiện bằng từ khóa `new`."
@@ -285,9 +285,9 @@ const coursesData = {
             title: "Trang 17: C# cơ bản - Properties",
             image: "images/game-dev/week1/slide_17.png",
             notes: "Properties (Thuộc tính) là các 'lối tắt' cú pháp cho các phương thức getter và setter thường đi kèm với các biến của class. Chúng giúp kiểm soát việc truy cập vào một biến và có thể được dùng để tạo ra một biến chỉ đọc (read-only).\n\n" +
-                   "- <b>Phiên bản ngắn gọn (auto-implemented property):</b> `public double Seconds { get; set; }` tự động tạo ra một biến private ẩn.\n" +
-                   "- <b>Phiên bản đầy đủ:</b> Cho phép bạn thêm logic tùy chỉnh vào bên trong `get` (để trả về giá trị) và `set` (để gán giá trị mới, thông qua từ khóa `value`).\n" +
-                   "- Có thể sử dụng các access modifier (ví dụ: `private`) trên `get` hoặc `set` để hạn chế quyền truy cập.",
+              "- <b>Phiên bản ngắn gọn (auto-implemented property):</b> `public double Seconds { get; set; }` tự động tạo ra một biến private ẩn.\n" +
+              "- <b>Phiên bản đầy đủ:</b> Cho phép bạn thêm logic tùy chỉnh vào bên trong `get` (để trả về giá trị) và `set` (để gán giá trị mới, thông qua từ khóa `value`).\n" +
+              "- Có thể sử dụng các access modifier (ví dụ: `private`) trên `get` hoặc `set` để hạn chế quyền truy cập.",
             terms: {
               "Property (Thuộc tính)": "Một thành viên của class đóng vai trò trung gian để truy cập vào một trường dữ liệu private. Nó bao gồm các khối lệnh `get` (để đọc giá trị) và `set` (để ghi giá trị).",
               "Getter": "Phương thức hoặc khối lệnh `get` trong một property, dùng để truy xuất giá trị của một biến.",
@@ -301,11 +301,11 @@ const coursesData = {
             title: "Trang 18: C# cơ bản - Structs",
             image: "images/game-dev/week1/slide_18.png",
             notes: "Struct trong C# là một cấu trúc dữ liệu:\n" +
-                   "- Giống như một class nhưng nó là một <b>kiểu tham trị (value type)</b>.\n" +
-                   "- Không hỗ trợ kế thừa.\n" +
-                   "- Constructor mặc định sẽ khởi tạo tất cả các biến về giá trị 0 hoặc null. Bạn không thể gán giá trị cho chúng trong constructor mặc định trừ khi chúng là `const`.\n" +
-                   "- Không yêu cầu khởi tạo đối tượng trên vùng nhớ heap.\n" +
-                   "- Theo mặc định, struct được truyền theo giá trị (pass by value), trong khi class được truyền theo tham chiếu (pass by reference).",
+              "- Giống như một class nhưng nó là một <b>kiểu tham trị (value type)</b>.\n" +
+              "- Không hỗ trợ kế thừa.\n" +
+              "- Constructor mặc định sẽ khởi tạo tất cả các biến về giá trị 0 hoặc null. Bạn không thể gán giá trị cho chúng trong constructor mặc định trừ khi chúng là `const`.\n" +
+              "- Không yêu cầu khởi tạo đối tượng trên vùng nhớ heap.\n" +
+              "- Theo mặc định, struct được truyền theo giá trị (pass by value), trong khi class được truyền theo tham chiếu (pass by reference).",
             terms: {
               "Struct": "Một kiểu dữ liệu giá trị (value type) dùng để đóng gói một nhóm nhỏ các biến liên quan. Rất hữu ích cho các đối tượng nhẹ mà không cần đến các tính năng phức tạp của class như kế thừa.",
               "Heap": "Một vùng bộ nhớ được sử dụng cho việc cấp phát động. Các đối tượng của class (kiểu tham chiếu) được lưu trữ trên heap.",
@@ -319,9 +319,9 @@ const coursesData = {
             title: "Trang 19: C# cơ bản - Mảng, List & Dictionary",
             image: "images/game-dev/week1/slide_19.png",
             notes: "C# có hai loại mảng chính: <b>mảng chữ nhật (rectangular)</b> và <b>mảng lởm chởm (jagged)</b>. Trong hầu hết các trường hợp, bạn sẽ sử dụng mảng chữ nhật vì nó hiệu quả hơn.\n\n" +
-                   "- <b>List</b> và <b>Dictionary</b> là các cấu trúc dữ liệu generic (giống như trong Java).\n" +
-                   "  - <b>List<T>:</b> Một danh sách động có thể thêm, xóa, sắp xếp các phần tử.\n" +
-                   "  - <b>Dictionary<TKey, TValue>:</b> Một bộ sưu tập các cặp key-value, cho phép truy xuất giá trị nhanh chóng thông qua key.",
+              "- <b>List</b> và <b>Dictionary</b> là các cấu trúc dữ liệu generic (giống như trong Java).\n" +
+              "  - <b>List<T>:</b> Một danh sách động có thể thêm, xóa, sắp xếp các phần tử.\n" +
+              "  - <b>Dictionary<TKey, TValue>:</b> Một bộ sưu tập các cặp key-value, cho phép truy xuất giá trị nhanh chóng thông qua key.",
             terms: {
               "Rectangular Array (Mảng chữ nhật)": "Một mảng đa chiều trong đó mỗi 'hàng' có cùng một số lượng 'cột'. Ví dụ: `int[,] a = new int[2,3];`.",
               "Jagged Array (Mảng lởm chởm)": "Một mảng của các mảng, trong đó mỗi mảng con có thể có một độ dài khác nhau. Ví dụ: `int[][] a = new int[3][];`.",
@@ -335,15 +335,424 @@ const coursesData = {
             title: "Trang 20: C# cơ bản - Enumerations",
             image: "images/game-dev/week1/slide_20.png",
             notes: "Enumerations (hay Enums) được sử dụng thường xuyên trong game để chỉ định các trạng thái khác nhau của trò chơi (ví dụ: màn hình chờ, đang chơi, tạm dừng, v.v.).\n\n" +
-                   "- Enum thường được sử dụng kết hợp với câu lệnh `switch`.\n" +
-                   "- Mỗi thành viên của enum có một giá trị số nguyên (integral value) tương ứng, theo thứ tự khai báo và bắt đầu từ 0.\n" +
-                   "- Bạn có thể gán giá trị tường minh cho các thành viên của enum.\n" +
-                   "- Giá trị số nguyên của một thành viên enum có thể được truy xuất bằng cách ép kiểu tường minh (explicit casting).",
+              "- Enum thường được sử dụng kết hợp với câu lệnh `switch`.\n" +
+              "- Mỗi thành viên của enum có một giá trị số nguyên (integral value) tương ứng, theo thứ tự khai báo và bắt đầu từ 0.\n" +
+              "- Bạn có thể gán giá trị tường minh cho các thành viên của enum.\n" +
+              "- Giá trị số nguyên của một thành viên enum có thể được truy xuất bằng cách ép kiểu tường minh (explicit casting).",
             terms: {
               "Enumeration (Enum)": "Một kiểu dữ liệu đặc biệt cho phép một biến là một tập hợp các hằng số được đặt tên trước. Nó giúp làm cho code dễ đọc và dễ bảo trì hơn bằng cách sử dụng tên thay vì các con số 'ma thuật' (magic numbers)."
             }
           },
-          
+          // Dán 5 khối mã dưới đây vào sau slide có id: 20
+
+          // SLIDE 21: C# CƠ BẢN - CÁC VÒNG LẶP
+          {
+            id: 21,
+            title: "Trang 21: C# cơ bản - Các vòng lặp",
+            image: "images/game-dev/week1/slide_21.png",
+            notes: "C# có nhiều câu lệnh lặp (iteration statements), tương tự như Java:\n\n" +
+              "- <b>for:</b> Lặp lại một khối lệnh một số lần xác định, thường dùng với một biến đếm.\n" +
+              "- <b>foreach:</b> Duyệt qua tất cả các phần tử trong một bộ sưu tập (như mảng hoặc List) mà không cần dùng đến chỉ số (index).\n" +
+              "- <b>while:</b> Lặp lại một khối lệnh chừng nào một điều kiện còn đúng. Điều kiện được kiểm tra trước mỗi lần lặp.\n" +
+              "- <b>do-while:</b> Tương tự như 'while', nhưng khối lệnh được thực thi ít nhất một lần trước khi điều kiện được kiểm tra.\n\n" +
+              "Ngoài ra, C# cũng có các câu lệnh <b>break</b> (để thoát khỏi vòng lặp), <b>continue</b> (để bỏ qua lần lặp hiện tại và đi đến lần tiếp theo), và <b>goto</b>.",
+            terms: {
+              "Iteration (Sự lặp lại)": "Hành động thực hiện một khối mã nguồn nhiều lần. Các vòng lặp là công cụ chính để thực hiện iteration.",
+              "foreach loop": "Một loại vòng lặp được thiết kế để duyệt qua từng phần tử của một bộ sưu tập một cách đơn giản và dễ đọc.",
+              "break": "Một câu lệnh dùng để chấm dứt ngay lập tức vòng lặp (for, foreach, while, do-while) hoặc câu lệnh switch.",
+              "continue": "Một câu lệnh dùng để bỏ qua phần còn lại của lần lặp hiện tại và chuyển ngay sang lần lặp tiếp theo của vòng lặp."
+            }
+          },
+          // SLIDE 22: C# CƠ BẢN - CÁC KHÁI NIỆM BỔ SUNG
+          {
+            id: 22,
+            title: "Trang 22: C# cơ bản - Các khái niệm bổ sung",
+            image: "images/game-dev/week1/slide_22.png",
+            notes: "Một vài khái niệm bổ sung trong C#:\n\n" +
+              "- <b>Comments (Chú thích):</b> Có 3 loại chính: `//` cho chú thích một dòng, `/* ... */` cho chú thích nhiều dòng, và `///` cho chú thích tài liệu XML.\n" +
+              "- <b>Từ khóa 'is':</b> Dùng để kiểm tra xem một đối tượng có tương thích với một kiểu dữ liệu cho trước hay không.\n" +
+              "- <b>Preprocessor directives (Chỉ thị tiền xử lý):</b> Các lệnh đặc biệt như `#if`, `#elif`, `#else`, `#endif` cho phép trình biên dịch bỏ qua một số dòng code nhất định khi xây dựng và thực thi. Rất hữu ích để viết code chỉ chạy trên một nền tảng cụ thể (ví dụ: Wii, Web) hoặc chỉ trong chế độ gỡ lỗi (DEBUG).",
+            terms: {
+              "Preprocessor Directive": "Một chỉ thị cho trình biên dịch, được xử lý trước khi quá trình biên dịch mã nguồn thực sự bắt đầu. Chúng thường được dùng để biên dịch có điều kiện (conditional compilation).",
+              "is (keyword)": "Một toán tử trong C# dùng để kiểm tra kiểu của một đối tượng tại thời điểm chạy (runtime). Nó trả về `true` nếu đối tượng là một thể hiện của kiểu đó hoặc một kiểu dẫn xuất từ nó."
+            }
+          },
+          // SLIDE 23: CHUYỂN TIẾP - SCRIPTING TRONG C# CHO UNITY3D
+          {
+            id: 23,
+            title: "Trang 23: Chuyển tiếp - Scripting trong C# cho Unity3D",
+            image: "images/game-dev/week1/slide_23.png",
+            notes: "Kết thúc phần giới thiệu các khái niệm cơ bản của C#.\n\n" +
+              "Phần tiếp theo sẽ tập trung vào cách viết script bằng C# để điều khiển các đối tượng và hành vi trong Unity3D.",
+            terms: {}
+          },
+          // SLIDE 24: SCRIPTING CHO UNITY
+          {
+            id: 24,
+            title: "Trang 24: Scripting cho Unity",
+            image: "images/game-dev/week1/slide_24.png",
+            notes: "Scripting là một phần thiết yếu của việc làm game, nó quyết định cách người chơi tương tác, cách các yếu tố trong game hoạt động, tạo hiệu ứng đồ họa, AI của kẻ thù, vật lý, v.v.\n\n" +
+              "Trong Unity3D 5.1, có thể viết script bằng 3 ngôn ngữ: C#, UnityScript (Javascript) và Boo. Chúng ta sẽ <b>chỉ sử dụng C#</b> trong môn học này.\n\n" +
+              "- <b>Game Object:</b> Là mỗi thực thể hiện diện trong một Màn chơi (Scene) của game.\n" +
+              "- <b>Components:</b> Mỗi Game Object chứa một bộ sưu tập các Components (ví dụ: đèn, vùng va chạm, animation...).\n" +
+              "- <b>Scripts:</b> Có thể được xem như một loại component hành vi (behaviour component) và cần phải được <b>gắn (attached)</b> vào một Game Object để hoạt động.",
+            terms: {
+              "Scripting": "Quá trình viết mã nguồn (script) để định nghĩa hành vi, logic và các sự kiện trong một môi trường phần mềm, chẳng hạn như một game engine.",
+              "Game Object": "Trong Unity, đây là đối tượng cơ bản nhất trong một Scene. Mọi thứ bạn thấy và tương tác trong game đều là hoặc được gắn vào một Game Object.",
+              "Component": "Các khối xây dựng chức năng trong Unity. Mỗi component cung cấp một tính năng cụ thể cho một Game Object (ví dụ: `Transform` để xác định vị trí, `Rigidbody` để xử lý vật lý).",
+              "Scene": "Trong Unity, đây là một màn chơi hoặc một cấp độ của game. Nó chứa tất cả các Game Objects, môi trường và giao diện người dùng cho phần đó của trò chơi."
+            }
+          },
+          // SLIDE 25: CẤU TRÚC CỦA MỘT SCRIPT
+          {
+            id: 25,
+            title: "Trang 25: Cấu trúc của một Script",
+            image: "images/game-dev/week1/slide_25.png",
+            notes: "Một Game Object có thể chứa nhiều script. Lý tưởng nhất, mỗi script nên đảm nhận một hành vi cụ thể của đối tượng.\n\n" +
+              "Khi tạo một C# Script mới từ trình soạn thảo Unity, mã nguồn ban đầu sẽ có cấu trúc như sau:\n" +
+              "- Kế thừa từ lớp <b>MonoBehaviour</b>. Đây là lớp cơ sở cho tất cả các script trong Unity.\n" +
+              "- Phương thức <b>Start():</b> Được gọi một lần duy nhất khi script được kích hoạt, thường dùng cho việc khởi tạo.\n" +
+              "- Phương thức <b>Update():</b> Được gọi một lần trong mỗi khung hình (frame). Đây là nơi chứa hầu hết logic của game.\n\n" +
+              "<b>Lưu ý quan trọng:</b> Script trong Unity <b>không có constructor!</b> Bạn không được thêm bất kỳ constructor nào. Unity sẽ tự tạo đối tượng cho bạn trước khi game bắt đầu.",
+            terms: {
+              "MonoBehaviour": "Lớp cơ sở mà mọi script trong Unity phải kế thừa từ đó nếu muốn được gắn vào một Game Object và tương tác với game engine.",
+              "Start()": "Một phương thức đặc biệt của MonoBehaviour được Unity tự động gọi một lần trong suốt vòng đời của script, sau khi các đối tượng đã được tạo nhưng trước khi vòng lặp Update() đầu tiên bắt đầu.",
+              "Update()": "Một phương thức đặc biệt của MonoBehaviour được Unity tự động gọi ở mỗi khung hình. Logic game chính, như di chuyển và xử lý input, thường được đặt ở đây.",
+              "Frame (Khung hình)": "Một hình ảnh tĩnh duy nhất trong một chuỗi các hình ảnh tạo nên một video hoặc chuyển động trong game. Tốc độ khung hình (FPS - Frames Per Second) đo lường số lượng khung hình được hiển thị mỗi giây."
+            }
+          },
+
+          // Dán 5 khối mã dưới đây vào sau slide có id: 25
+
+          // SLIDE 26: CÁC HÀM SỰ KIỆN (EVENT FUNCTIONS) - PHẦN 1
+          {
+            id: 26,
+            title: "Trang 26: Các hàm sự kiện (Event Functions) - Phần 1",
+            image: "images/game-dev/week1/slide_26.png",
+            notes: "Unity điều khiển các script bằng cách gọi một tập hợp các hàm được xác định trước, gọi là <b>Event Functions</b> (Hàm sự kiện). Dưới đây là các hàm phổ biến nhất:\n\n" +
+              "<b>Khởi tạo (Initialization):</b>\n" +
+              "- <b>Awake():</b> Hàm đầu tiên được gọi khi scene được tải, chỉ được gọi một lần nếu game object đang 'active'.\n" +
+              "- <b>Start():</b> Được gọi trước frame đầu tiên, chỉ được gọi một lần nếu script (component) đang 'enabled'.\n\n" +
+              "<b>Các sự kiện cập nhật thông thường (Regular Update Events):</b>\n" +
+              "- <b>FixedUpdate():</b> Thường được gọi thường xuyên hơn `Update()`. Dùng cho các tính toán vật lý. Được gọi độc lập với tốc độ khung hình (framerate).\n" +
+              "- <b>Update():</b> Được gọi ở mỗi khung hình. Dùng cho logic game chính.\n" +
+              "- <b>LateUpdate():</b> Được gọi một lần mỗi khung hình, sau khi `Update()` đã kết thúc. Hữu ích cho các hành vi cần chạy sau cùng, ví dụ như camera đi theo người chơi.",
+            terms: {
+              "Event Function": "Các phương thức đặc biệt trong một script MonoBehaviour mà Unity tự động gọi tại các thời điểm cụ thể trong vòng đời của game (ví dụ: khi bắt đầu, ở mỗi khung hình, khi có va chạm...).",
+              "Awake()": "Được gọi khi một thể hiện của script được tải. Thường dùng để khởi tạo các tham chiếu giữa các script và các thiết lập ban đầu.",
+              "FixedUpdate()": "Được gọi theo một tần suất cố định (ví dụ: 50 lần/giây), không phụ thuộc vào tốc độ khung hình. Đây là nơi lý tưởng để xử lý các logic liên quan đến vật lý (Rigidbody).",
+              "LateUpdate()": "Được gọi sau khi tất cả các hàm Update() đã được thực thi. Thường được sử dụng cho các logic cần đảm bảo đã xử lý xong chuyển động, ví dụ như camera theo sau nhân vật.",
+              "Time.deltaTime": "Khoảng thời gian (tính bằng giây) đã trôi qua để hoàn thành khung hình cuối cùng. Thường được nhân với các giá trị chuyển động trong `Update()` để làm cho chuyển động mượt mà và độc lập với tốc- độ khung hình."
+            }
+          },
+          // SLIDE 27: CÁC HÀM SỰ KIỆN (EVENT FUNCTIONS) - PHẦN 2
+          {
+            id: 27,
+            title: "Trang 27: Các hàm sự kiện (Event Functions) - Phần 2",
+            image: "images/game-dev/week1/slide_27.png",
+            notes: "Tiếp tục với các hàm sự kiện phổ biến khác:\n\n" +
+              "<b>Sự kiện GUI (Giao diện người dùng):</b>\n" +
+              "- <b>OnGUI():</b> Dùng cho các chức năng của giao diện người dùng đồ họa (Legacy GUI system).\n" +
+              "- <b>OnMouseDown(), OnMouseEnter(), OnMouseOver():</b> Dùng cho các sự kiện chuột liên quan đến GUI Components.\n\n" +
+              "<b>Sự kiện Vật lý (Physics Events):</b>\n" +
+              "- <b>OnCollisionEnter(), OnCollisionStay(), OnCollisionExit():</b> Dành cho các va chạm với các <b>Colliders</b>.\n" +
+              "- <b>OnTriggerEnter(), OnTriggerStay(), OnTriggerExit():</b> Dành cho các va chạm với các <b>Triggers</b>.",
+            terms: {
+              "OnCollisionEnter()": "Được gọi khi một Collider/Rigidbody bắt đầu chạm vào một Collider/Rigidbody khác.",
+              "OnTriggerEnter()": "Được gọi khi một Collider đi vào một Collider khác được đánh dấu là 'Trigger'. Trigger dùng để phát hiện sự hiện diện mà không gây ra va chạm vật lý thực sự.",
+              "Execution Order (Thứ tự thực thi)": "Thứ tự cụ thể mà Unity gọi các hàm sự kiện khác nhau (Awake, Start, FixedUpdate, Update...). Việc hiểu rõ thứ tự này rất quan trọng để tránh các lỗi logic."
+            }
+          },
+          // SLIDE 28: BIẾN TRONG SCRIPT
+          {
+            id: 28,
+            title: "Trang 28: Biến trong Script",
+            image: "images/game-dev/week1/slide_28.png",
+            notes: "Khi bạn khai báo một biến là <b>public</b> trong một script, nó sẽ tự động xuất hiện trong cửa sổ <b>Inspector</b> của Unity Editor.\n\n" +
+              "Điều này cho phép bạn thay đổi giá trị của biến trực tiếp từ trình soạn thảo mà không cần sửa code.\n\n" +
+              "<b>Quy tắc ưu tiên:</b>\n" +
+              "- Giá trị bạn thiết lập trong <b>Editor</b> sẽ được ưu tiên hơn và ghi đè lên giá trị bạn khai báo trong code.\n" +
+              "- Tuy nhiên, bạn có thể ghi đè lại giá trị của Editor bằng cách gán một giá trị mới cho biến đó bên trong các hàm <b>Awake()</b> hoặc <b>Start()</b>.",
+            terms: {
+              "public (keyword)": "Một access modifier. Khi một biến của MonoBehaviour được khai báo là 'public', nó sẽ được hiển thị và có thể chỉnh sửa được trong Inspector của Unity.",
+              "Inspector": "Một cửa sổ trong Unity Editor hiển thị thông tin chi tiết về Game Object hoặc asset đang được chọn. Đây là nơi bạn có thể xem và chỉnh sửa các component và thuộc tính của chúng."
+            }
+          },
+          // SLIDE 29: MẢNG TRONG SCRIPT
+          {
+            id: 29,
+            title: "Trang 29: Mảng trong Script",
+            image: "images/game-dev/week1/slide_29.png",
+            notes: "Tương tự như các biến thông thường, khi bạn khai báo một mảng (Array) hoặc một List là <b>public</b>, nó cũng sẽ xuất hiện trong Inspector.\n\n" +
+              "Inspector sẽ cung cấp một giao diện tiện lợi để bạn:\n" +
+              "- Thay đổi kích thước (Size) của mảng.\n" +
+              "- Gán các phần tử (Element) vào mảng, thường bằng cách kéo thả các Game Object hoặc các assets khác từ trong Editor vào các ô tương ứng.",
+            terms: {
+              "GameObject.FindGameObjectsWithTag()": "Một phương thức của Unity dùng để tìm và trả về một mảng chứa tất cả các Game Object trong Scene đang có một 'Tag' (thẻ) cụ thể."
+            }
+          },
+          // SLIDE 30: CÁC COMPONENT CỦA MỘT GAME OBJECT
+          {
+            id: 30,
+            title: "Trang 30: Các Component của một Game Object",
+            image: "images/game-dev/week1/slide_30.png",
+            notes: "Mỗi Game Object chứa một bộ sưu tập các component. Dưới đây là một số component phổ biến nhất:\n\n" +
+              "- <b>Transform:</b> Xác định Vị trí, Xoay, và Tỷ lệ của một đối tượng. Đây là component duy nhất mà mọi Game Object đều bắt buộc phải có.\n" +
+              "- <b>Collider:</b> Định nghĩa hình dạng vật lý của đối tượng cho việc xử lý va chạm.\n" +
+              "- <b>Rigidbody:</b> Cho phép đối tượng được điều khiển bởi hệ thống vật lý của Unity (chịu tác động của trọng lực, lực đẩy...).\n" +
+              "- <b>Scripts:</b> Các component chứa mã nguồn để định nghĩa hành vi.\n" +
+              "- <b>Animator:</b> Giao diện để điều khiển hệ thống animation Mecanim.\n" +
+              "- <b>AudioSource:</b> Đại diện cho các nguồn âm thanh trong không gian 3D.\n" +
+              "- <b>Light:</b> Giao diện script cho các component ánh sáng.\n\n" +
+              "Một script có thể có một game object hoặc một component làm biến. Bạn có thể gán các giá trị này trực tiếp từ Editor.",
+            terms: {
+              "Transform": "Một component lưu trữ vị trí, góc xoay và tỷ lệ của một Game Object. Mọi Game Object đều có một Transform.",
+              "Collider": "Một component định nghĩa một hình dạng (như hình hộp, hình cầu) cho mục đích va chạm vật lý. Collider không tự di chuyển, chúng chỉ là hình dạng.",
+              "Rigidbody": "Một component cho phép một Game Object được điều khiển bởi hệ thống vật lý của Unity. Để hai vật thể va chạm vật lý với nhau, cả hai phải có Collider và ít nhất một trong hai phải có Rigidbody.",
+              "Animator": "Component dùng để gán các animation (chuyển động) cho một Game Object và điều khiển chúng thông qua các trạng thái và tham số."
+            }
+          },
+
+          // Dán 5 khối mã dưới đây vào sau slide có id: 30
+
+          // SLIDE 31: SCRIPTS VÀ GAME OBJECTS (1/4)
+          {
+            id: 31,
+            title: "Trang 31: Scripts và Game Objects (1/4)",
+            image: "images/game-dev/week1/slide_31.png",
+            notes: "Từ bên trong một script, bạn có thể truy cập đến tất cả các component khác của cùng một Game Object.\n\n" +
+              "<b>Cách truy cập các component:</b>\n" +
+              "1. <b>Lối tắt cũ (Không còn dùng trong Unity 5+):</b> Trước đây, các component phổ biến như `transform`, `rigidbody`, `collider` có thể được truy cập trực tiếp như một biến. Điều này đã bị loại bỏ.\n" +
+              "2. <b>Cách chung (Khuyên dùng):</b> Sử dụng phương thức generic `GetComponent<T>()`. Ví dụ: `GetComponent<Rigidbody>()` sẽ tìm và trả về component Rigidbody đầu tiên trên Game Object đó.\n" +
+              "3. <b>Cách thay thế (Không khuyến khích):</b> Có thể dùng chuỗi để gọi `GetComponent()`, ví dụ: `GetComponent(\"Rigidbody\")`. Tuy nhiên, cách này kém hiệu quả hơn về mặt hiệu suất.",
+            terms: {
+              "GetComponent<T>()": "Phương thức quan trọng nhất để một script có thể 'giao tiếp' với các component khác trên cùng một Game Object. Nó tìm và trả về một tham chiếu đến component thuộc kiểu `T` được chỉ định."
+            }
+          },
+          // SLIDE 32: SCRIPTS VÀ GAME OBJECTS (2/4)
+          {
+            id: 32,
+            title: "Trang 32: Scripts và Game Objects (2/4)",
+            image: "images/game-dev/week1/slide_32.png",
+            notes: "Unity cung cấp nhiều biến thể của `GetComponent` để tìm kiếm component ở các đối tượng khác:\n\n" +
+              "- <b>GetComponentInChildren<T>():</b> Trả về component kiểu `T` trên chính Game Object đó <b>hoặc</b> trên bất kỳ đối tượng con (children) nào của nó.\n" +
+              "- <b>GetComponentInParent<T>():</b> Trả về component kiểu `T` trên chính Game Object đó <b>hoặc</b> trên bất kỳ đối tượng cha (parent) nào của nó.\n\n" +
+              "Cũng có thể lấy nhiều hơn một component cùng lúc:\n" +
+              "- <b>GetComponents<T>():</b> Trả về một <b>mảng</b> chứa <b>tất cả</b> các component kiểu `T` trên Game Object.\n" +
+              "- <b>GetComponentsInChildren<T>():</b> Trả về một <b>mảng</b> chứa <b>tất cả</b> các component kiểu `T` trên Game Object đó và tất cả các con của nó.\n" +
+              "- <b>GetComponentsInParent<T>():</b> Trả về một <b>mảng</b> chứa <b>tất cả</b> các component kiểu `T` trên Game Object đó và tất cả các cha của nó.",
+            terms: {
+              "Parent/Children (Cha/Con)": "Trong Unity, bạn có thể tạo ra một hệ thống phân cấp bằng cách kéo một Game Object vào một Game Object khác trong cửa sổ Hierarchy. Đối tượng bị kéo vào sẽ trở thành 'con' và đối tượng kia là 'cha'. Đối tượng con sẽ thừa hưởng các phép biến đổi (vị trí, xoay, tỷ lệ) từ cha của nó."
+            }
+          },
+          // SLIDE 33: SCRIPTS VÀ GAME OBJECTS (3/4)
+          {
+            id: 33,
+            title: "Trang 33: Scripts và Game Objects (3/4)",
+            image: "images/game-dev/week1/slide_33.png",
+            notes: "Thông thường, trong game sẽ có nhiều Game Object cùng loại (ví dụ: các đồng xu trong Mario, các điểm checkpoint trong game đua xe...).\n\n" +
+              "Một cách hay để giữ cho các đối tượng này được tổ chức gọn gàng là đặt tất cả chúng làm <b>con (children)</b> của một Game Object rỗng chung.\n\n" +
+              "Sau đó, có thể truy cập tất cả các đối tượng con này thông qua component <b>Transform</b> của đối tượng cha. Bằng cách lặp qua `transform` của đối tượng cha, bạn có thể lấy được `transform` của từng đối tượng con.",
+            terms: {}
+          },
+          // SLIDE 34: SCRIPTS VÀ GAME OBJECTS (4/4)
+          {
+            id: 34,
+            title: "Trang 34: Scripts và Game Objects (4/4)",
+            image: "images/game-dev/week1/slide_34.png",
+            notes: "Ví dụ này minh họa cách các script có thể tham chiếu và lấy component từ các Game Object khác nhau:\n\n" +
+              "- <b>Dòng 6:</b> Khai báo một biến `player` kiểu `GameObject` để chứa tham chiếu đến đối tượng người chơi.\n" +
+              "- <b>Dòng 9:</b> Khai báo một biến `playerHealth` để chứa tham chiếu đến script `PlayerHealth` nằm trên đối tượng người chơi.\n" +
+              "- <b>Dòng 13:</b> Khai báo một biến `enemyHealth` để chứa tham chiếu đến script `EnemyHealth` nằm trên chính đối tượng kẻ thù này.\n\n" +
+              "Trong hàm <b>Awake()</b> (được gọi một lần):\n" +
+              "- <b>Dòng 20:</b> Tìm đối tượng người chơi trong Scene bằng Tag của nó.\n" +
+              "- <b>Dòng 23:</b> Lấy component (script) `PlayerHealth` từ đối tượng người chơi vừa tìm được.\n" +
+              "- <b>Dòng 26:</b> Lấy component (script) `EnemyHealth` từ chính Game Object này.",
+            terms: {
+              "GameObject.FindGameObjectWithTag()": "Một phương thức của Unity dùng để tìm và trả về Game Object đầu tiên trong Scene có 'Tag' (thẻ) được chỉ định. Đây là một cách hiệu quả để tìm các đối tượng quan trọng như 'Player'."
+            }
+          },
+          // SLIDE 35: CÁC THAO TÁC VỚI GAME OBJECTS VÀ COMPONENTS
+          {
+            id: 35,
+            title: "Trang 35: Các thao tác với Game Objects và Components",
+            image: "images/game-dev/week1/slide_35.png",
+            notes: "Các thao tác cơ bản để quản lý đối tượng và component tại thời điểm chạy (runtime):\n\n" +
+              "<b>Hủy (Destroying):</b>\n" +
+              "- `Destroy(obj, t)`: Hủy một đối tượng hoặc component. Tham số `t` (tùy chọn) là khoảng thời gian trì hoãn (tính bằng giây) trước khi hủy.\n" +
+              "- `Destroy` không hủy ngay lập tức, nó chỉ 'đánh dấu' đối tượng để hủy. Việc hủy thực sự sẽ diễn ra vào cuối khung hình.\n\n" +
+              "<b>Kích hoạt / Vô hiệu hóa (Activating / Deactivating) Game Objects:</b>\n" +
+              "- `SetActive(bool value)`: Bật (`true`) hoặc tắt (`false`) toàn bộ một Game Object. Khi một Game Object bị tắt, tất cả các component của nó (renderer, collider, script...) cũng sẽ bị vô hiệu hóa.\n\n" +
+              "<b>Bật / Tắt (Enabling / Disabling) Components:</b>\n" +
+              "- `Behaviour.enabled = bool`: Bật (`true`) hoặc tắt (`false`) một component cụ thể (thường là script). Các component bị tắt sẽ không được gọi hàm `Update()`.",
+            terms: {
+              "Destroy()": "Một hàm cơ bản của Unity dùng để xóa một Game Object, một component, hoặc một asset khỏi Scene.",
+              "SetActive()": "Phương thức của Game Object dùng để kích hoạt hoặc vô hiệu hóa nó. Các đối tượng bị vô hiệu hóa sẽ không được vẽ, không va chạm và các script trên đó sẽ không chạy.",
+              "Behaviour.enabled": "Một thuộc tính của các component kế thừa từ `Behaviour` (như script, camera, light...). Thiết lập nó thành `false` sẽ vô hiệu hóa component đó mà không ảnh hưởng đến toàn bộ Game Object."
+            }
+          },
+
+          // Dán 5 khối mã dưới đây vào sau slide có id: 35
+
+          // SLIDE 36: TÊN VÀ TAG
+          {
+            id: 36,
+            title: "Trang 36: Tên và Tag",
+            image: "images/game-dev/week1/slide_36.png",
+            notes: "Ngoài việc tham chiếu trực tiếp, Unity còn cho phép tìm kiếm Game Object bằng Tên hoặc Tag.\n\n" +
+              "<b>Tìm theo Tên (Name):</b>\n" +
+              "- `GameObject.Find(string name)`: Tìm và trả về Game Object đầu tiên có tên trùng khớp. Trả về `null` nếu không tìm thấy.\n" +
+              "- <b>Cảnh báo hiệu suất:</b> Không nên sử dụng hàm này liên tục ở mỗi frame (ví dụ trong `Update()`). Thay vào đó, hãy gọi nó một lần ở `Start()` và lưu kết quả vào một biến.\n\n" +
+              "<b>Tìm theo Tag:</b>\n" +
+              "- Tag là một 'nhãn' bạn có thể định nghĩa và gán cho một hoặc nhiều Game Object để phân loại chúng.\n" +
+              "- `GameObject.FindWithTag(string tag)`: Trả về một Game Object 'active' có tag tương ứng.\n" +
+              "- `GameObject.FindGameObjectsWithTag(string tag)`: Trả về một <b>mảng</b> chứa tất cả các Game Object 'active' có tag tương ứng. Trả về một mảng rỗng nếu không tìm thấy.\n" +
+              "- Lưu ý: Các hàm này là <b>static</b>, thuộc về chính lớp `GameObject`.",
+            terms: {
+              "Tag": "Một thuộc tính tham chiếu dạng chuỗi có thể được gán cho một hoặc nhiều Game Object. Tag rất hữu ích để xác định và nhóm các loại đối tượng (ví dụ: 'Player', 'Enemy', 'Coin').",
+              "static (method)": "Một phương thức thuộc về chính class đó, không phải một thể hiện (instance) cụ thể của class. Bạn có thể gọi nó trực tiếp từ tên class (ví dụ: `GameObject.Find(...)`) mà không cần tạo đối tượng."
+            }
+          },
+          // SLIDE 37: LAYER (1/4)
+          {
+            id: 37,
+            title: "Trang 37: Layer (1/4) - Giới thiệu",
+            image: "images/game-dev/week1/slide_37.png",
+            notes: "Layer (Lớp) là một cơ chế mạnh mẽ để tổ chức và phân loại Game Object cho các mục đích cụ thể:\n\n" +
+              "- <b>Rendering:</b> Cho phép Camera chỉ render (hiển thị) một phần của scene.\n" +
+              "- <b>Raycasting:</b> Cho phép các tia vật lý (raycast) chỉ tương tác với hoặc bỏ qua một số loại đối tượng nhất định.\n" +
+              "- <b>Lighting:</b> Cho phép các nguồn sáng chỉ chiếu sáng một số layer nhất định.\n" +
+              "- <b>Collision:</b> Xác định các quy tắc va chạm giữa các nhóm đối tượng.\n" +
+              "- <b>Sorting:</b> Xác định thứ tự hiển thị của các Sprite (đối tượng 2D).\n\n" +
+              "Để gán một Game Object vào một layer, chỉ cần chọn layer ở menu thả xuống trên cùng của cửa sổ Inspector.",
+            terms: {
+              "Layer": "Một cơ chế trong Unity dùng để nhóm các Game Object. Layer chủ yếu được sử dụng bởi Camera để chỉ render một phần của scene, và bởi hệ thống vật lý để kiểm soát va chạm.",
+              "Raycasting": "Quá trình 'bắn' ra một tia ảo theo một hướng nhất định để phát hiện xem nó có va chạm với Collider nào trên đường đi hay không. Rất hữu ích cho việc xác định tầm nhìn, bắn súng, tương tác với đối tượng..."
+            }
+          },
+          // SLIDE 38: LAYER (2/4)
+          {
+            id: 38,
+            title: "Trang 38: Layer (2/4) - Tạo Layer mới",
+            image: "images/game-dev/week1/slide_38.png",
+            notes: "Unity cung cấp một số layer mặc định (Default, TransparentFX, Ignore Raycast, Water, UI), nhưng bạn có thể tạo các layer mới của riêng mình.\n\n" +
+              "Để tạo hoặc chỉnh sửa layer, hãy đi tới menu <b>Edit → Project Settings → Tags and Layers</b>.",
+            terms: {}
+          },
+          // SLIDE 39: LAYER (3/4)
+          {
+            id: 39,
+            title: "Trang 39: Layer (3/4) - Culling Mask",
+            image: "images/game-dev/week1/slide_39.png",
+            notes: "Có thể chỉ định cho cả component Camera và Light rằng chúng sẽ ảnh hưởng đến những layer nào thông qua thuộc tính <b>Culling Mask</b>.\n\n" +
+              "- <b>Đối với Camera:</b> Culling Mask quyết định những layer nào sẽ được camera đó render (vẽ lên màn hình).\n" +
+              "- <b>Đối với Light:</b> Culling Mask quyết định những layer nào sẽ được nguồn sáng đó chiếu sáng.\n\n" +
+              "Theo mặc định, tất cả các layer đều được render và chiếu sáng.",
+            terms: {
+              "Culling Mask": "Một thuộc tính trên Camera và Light cho phép bạn chọn lọc các layer mà chúng sẽ tương tác. 'Culling' có nghĩa là loại bỏ hoặc bỏ qua một cái gì đó."
+            }
+          },
+          // SLIDE 40: LAYER (4/4)
+          {
+            id: 40,
+            title: "Trang 40: Layer (4/4) - Ma trận Va chạm",
+            image: "images/game-dev/week1/slide_40.png",
+            notes: "Một trong những ứng dụng mạnh mẽ nhất của Layer là kiểm soát va chạm (Layer-based collision detection).\n\n" +
+              "Bạn có thể chỉ định chính xác những nhóm đối tượng nào có thể va chạm với nhau bằng cách bật/tắt các va chạm giữa các layer tương ứng của chúng trong một ma trận gọi là <b>Layer Collision Matrix</b>.\n\n" +
+              "Ma trận này có thể được tìm thấy trong <b>Physics 2D Manager</b> (cho game 2D) hoặc <b>Physics Manager</b> (cho game 3D) bằng cách đi tới menu <b>Edit → Project Settings</b>.",
+            terms: {
+              "Layer Collision Matrix": "Một ma trận dạng bảng trong cài đặt vật lý của Unity, cho phép bạn bật hoặc tắt khả năng va chạm giữa các cặp layer khác nhau."
+            }
+          },
+
+          // Dán 6 khối mã dưới đây vào sau slide có id: 40
+
+          // SLIDE 41: PREFAB ASSETS
+          {
+            id: 41,
+            title: "Trang 41: Prefab Assets",
+            image: "images/game-dev/week1/slide_41.png",
+            notes: "<b>Prefab</b> là một loại asset (tài sản) dùng để lưu trữ một Game Object hoàn chỉnh với tất cả các component và thuộc tính của nó.\n\n" +
+              "- Nó hoạt động như một <b>khuôn mẫu (template)</b> cho Game Object đó.\n" +
+              "- Mọi thay đổi bạn thực hiện trên Prefab asset sẽ ngay lập tức được phản ánh trên tất cả các 'thể hiện' (instances) của nó trong Scene.\n" +
+              "- Có thể ghi đè (override) các component và thiết lập cho từng thể hiện một cách riêng lẻ.\n\n" +
+              "Một prefab có thể được 'khởi tạo' (instantiated) một cách tự động tại thời điểm chạy bằng hàm `Instantiate()`.",
+            terms: {
+              "Prefab": "Một Game Object đã được cấu hình sẵn và lưu lại như một Asset. Prefab cho phép bạn tạo, cấu hình và lưu trữ một Game Object cùng với tất cả các component, giá trị thuộc tính và các Game Object con của nó như một tài sản có thể tái sử dụng.",
+              "Instantiate()": "Hàm của Unity dùng để tạo ra một bản sao (clone) của một đối tượng tại thời điểm chạy. Thường được dùng để 'đẻ' ra các đối tượng từ Prefab (ví dụ: tạo viên đạn, kẻ thù...)."
+            }
+          },
+          // SLIDE 42: INVOKE - LÊN LỊCH CÁC LỆNH GỌI HÀM
+          {
+            id: 42,
+            title: "Trang 42: Invoke - Lên lịch các lệnh gọi hàm",
+            image: "images/game-dev/week1/slide_42.png",
+            notes: "Họ các phương thức <b>Invoke</b> cho phép bạn lên lịch để gọi một hàm sau một khoảng thời gian trễ. Chỉ các hàm có kiểu trả về là `void` và không có tham số mới có thể được gọi bằng cách này.\n\n" +
+              "- <b>Invoke(string methodName, float time):</b> Gọi hàm `methodName` sau `time` giây.\n" +
+              "- <b>InvokeRepeating(string methodName, float time, float repeatRate):</b> Gọi hàm `methodName` lần đầu sau `time` giây, sau đó lặp lại việc gọi hàm đó sau mỗi `repeatRate` giây.\n" +
+              "- <b>CancelInvoke():</b> Hủy tất cả các lệnh gọi `Invoke` trên script (MonoBehaviour) này.\n" +
+              "- <b>CancelInvoke(string methodName):</b> Chỉ hủy các lệnh gọi `Invoke` đến hàm `methodName`.",
+            terms: {
+              "Invoke": "Một cơ chế đơn giản trong Unity để thực thi một phương thức sau một khoảng thời gian trễ. Hữu ích cho các hành động đơn giản, hẹn giờ."
+            }
+          },
+          // SLIDE 43: COROUTINES (1/2)
+          {
+            id: 43,
+            title: "Trang 43: Coroutines (1/2) - Giới thiệu",
+            image: "images/game-dev/week1/slide_43.png",
+            notes: "<b>Coroutine</b> là một hàm có khả năng tạm dừng việc thực thi và trả lại quyền điều khiển cho Unity, sau đó tiếp tục lại từ nơi nó đã dừng ở một frame sau đó.\n\n" +
+              "- Nó được bắt đầu bằng cách gọi `StartCoroutine()`.\n" +
+              "- Phương thức được gọi phải có kiểu trả về là <b>IEnumerator</b>.\n" +
+              "- Nó có thể trả về (tạm dừng) bằng từ khóa <b>yield return</b>.\n" +
+              "- Ở lần cập nhật (update) tiếp theo, hàm sẽ tiếp tục thực thi từ sau điểm `yield return`.\n" +
+              "- Coroutine kết thúc khi phương thức chạy xong, hoặc khi `StopCoroutine()` được gọi.",
+            terms: {
+              "Coroutine": "Một loại hàm đặc biệt trong Unity cho phép bạn thực hiện các tác vụ kéo dài qua nhiều frame. Nó giống như một hàm có thể 'tạm dừng' và 'tiếp tục' mà không chặn luồng chính của game.",
+              "IEnumerator": "Một interface trong .NET định nghĩa hành vi cho việc lặp qua một bộ sưu tập. Trong Unity, các hàm coroutine phải trả về kiểu này.",
+              "yield return": "Câu lệnh được sử dụng bên trong một coroutine để tạm dừng việc thực thi. Giá trị trả về sau 'yield return' sẽ quyết định khi nào coroutine sẽ tiếp tục (ví dụ: `yield return null` sẽ tiếp tục ở frame tiếp theo, `yield return new WaitForSeconds(3f)` sẽ tiếp tục sau 3 giây)."
+            }
+          },
+          // SLIDE 44: COROUTINES (2/2)
+          {
+            id: 44,
+            title: "Trang 44: Coroutines (2/2) - Ví dụ",
+            image: "images/game-dev/week1/slide_44.png",
+            notes: "Ví dụ này minh họa một Coroutine tên là `Movement` dùng để di chuyển một đối tượng đến một vị trí `target` một cách mượt mà.\n\n" +
+              "- Vòng lặp `while` sẽ tiếp tục chạy chừng nào khoảng cách giữa vị trí hiện tại và vị trí mục tiêu còn lớn hơn 0.05f.\n" +
+              "- Bên trong vòng lặp, `Vector3.Lerp` được dùng để tính toán vị trí mới, di chuyển một chút về phía `target` ở mỗi frame.\n" +
+              "- `yield return null;` tạm dừng coroutine và sẽ tiếp tục lại ở frame tiếp theo, tạo ra hiệu ứng di chuyển mượt mà qua nhiều frame.",
+            terms: {
+              "Vector3.Lerp(a, b, t)": "Hàm nội suy tuyến tính (Linear Interpolation) trả về một điểm nằm trên đường thẳng giữa hai điểm `a` và `b`. Tham số `t` là một giá trị từ 0 đến 1, quyết định vị trí của điểm trả về (0 là tại `a`, 1 là tại `b`)."
+            }
+          },
+          // SLIDE 45: CÁC THÓI QUEN LẬP TRÌNH TỐT
+          {
+            id: 45,
+            title: "Trang 45: Các thói quen lập trình tốt",
+            image: "images/game-dev/week1/slide_45.png",
+            notes: "Các nguyên tắc để giữ cho mã nguồn dễ bảo trì, dễ mở rộng và dễ đọc:\n\n" +
+              "- <b>Nguyên tắc Đơn trách nhiệm (Single Responsibility):</b> Mỗi class chỉ nên chịu trách nhiệm cho một nhiệm vụ duy nhất. Thay vì một class `Player.cs` làm mọi thứ, hãy tách nó ra thành `PlayerInput.cs`, `PlayerWeapons.cs`, `PlayerInventory.cs`...\n" +
+              "- <b>Nguyên tắc Đảo ngược sự phụ thuộc (Dependency Inversion):</b> Nếu class A phụ thuộc vào B, thì B nên là một interface hoặc một abstract class.\n" +
+              "- <b>Module hóa (Modularization):</b> Các hành vi độc lập nên được đặt trong các hàm hoặc thậm chí các class riêng biệt.",
+            terms: {
+              "Single Responsibility Principle": "Một nguyên tắc thiết kế phần mềm phát biểu rằng mỗi module, class, hoặc hàm chỉ nên có trách nhiệm đối với một phần chức năng duy nhất.",
+              "Dependency Inversion Principle": "Một nguyên tắc thiết kế phần mềm phát biểu rằng các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả hai nên phụ thuộc vào các 'trừu tượng' (abstractions, ví dụ như interface)."
+            }
+          },
+          // SLIDE 46: CHUYỂN TIẾP - CÂU HỎI & DEMO LAB
+          {
+            id: 46,
+            title: "Trang 46: Chuyển tiếp - Câu hỏi & Demo Lab",
+            image: "images/game-dev/week1/slide_46.png",
+            notes: "Kết thúc phần lý thuyết về Scripting trong C# cho Unity.\n\n" +
+              "Phần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+            terms: {}
+          },
+
+          // ... slide 47 (tổng kết) sẽ nằm ở đây ...
+
+
           // Thêm vào cuối mảng slides của Tuần 1
           {
             id: 47, // Giả sử đây là slide cuối cùng của tuần
