@@ -39,8 +39,21 @@
     <div class="main-container">
         <!-- Khu vực hiển thị slide chính -->
         <main class="slide-viewer">
-            <h1 id="slide-title"></h1>
+            <!-- BÊN TRONG thẻ <main class="slide-viewer"> -->
+
+            <!-- === KHU VỰC ĐIỀU KHIỂN SLIDE (TIÊU ĐỀ + ZOOM) === -->
+            <div class="slide-controls">
+                <h1 id="slide-title"></h1>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" data-zoom="0.5">50%</button>
+                    <button class="zoom-btn active" data-zoom="1">100%</button>
+                    <button class="zoom-btn" data-zoom="1.5">150%</button>
+                    <button class="zoom-btn" data-zoom="2">200%</button>
+                </div>
+            </div>
+
             <img id="slide-image" src="" alt="Hình ảnh slide">
+
             <!-- === CÁC NÚT ĐIỀU HƯỚNG TRƯỚC/SAU === -->
             <div class="slide-nav-buttons">
                 <button id="prev-slide-btn" class="slide-nav-btn">

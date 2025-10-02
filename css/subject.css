@@ -26,10 +26,13 @@
 }
 
 .slide-viewer img {
-    max-width: 100%;
-    max-height: 50vh;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+max-width: 100%;
+max-height: 65vh; /* Tăng chiều cao mặc định lên một chút */
+border-radius: 4px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+transform-origin: top; 
+transition: transform 0.3s ease; 
 }
 
 /* NÂNG CẤP: Sidebar có thanh cuộn và dính vào màn hình */
@@ -356,6 +359,52 @@
 /* Ẩn header của sidebar phải trên DESKTOP */
 .slide-sidebar .sidebar-header {
     display: none;
+}
+
+/* ==================
+   SLIDE CONTROLS & ZOOM STYLES
+   ================== */
+
+.slide-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.slide-viewer h1 {
+    margin-bottom: 0; /* Xóa margin cũ vì đã có container mới */
+}
+
+.zoom-controls {
+    display: flex;
+    gap: 5px;
+    background-color: #f0f0f0;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.zoom-btn {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #555;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.zoom-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style cho nút zoom đang được chọn */
+.zoom-btn.active {
+    background-color: #5624d0;
+    color: #fff;
 }
 
 /* ==================

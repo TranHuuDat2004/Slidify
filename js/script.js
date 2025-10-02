@@ -40,6 +40,17 @@ function saveLastViewedSlide(courseId, slideId) {
     localStorage.setItem(`last_slide_${courseId}`, slideId);
 }
 
+// Hàm lấy mức zoom đã lưu
+function getSavedZoom() {
+    const zoom = localStorage.getItem('slide_zoom');
+    return zoom ? parseFloat(zoom) : 1; // Mặc định là 1 (100%)
+}
+
+// Hàm lưu mức zoom
+function saveZoom(zoomLevel) {
+    localStorage.setItem('slide_zoom', zoomLevel);
+}
+
 // --- LOGIC CHÍNH CỦA TRANG MÔN HỌC ---
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -50,6 +61,41 @@ document.addEventListener('DOMContentLoaded', () => {
         loadComponent('header.html', 'header-placeholder'),
         loadComponent('footer.html', 'footer-placeholder')
     ]).then(() => {
+
+         // === KHỞI TẠO LOGIC ZOOM ===
+    const zoomButtons = document.querySelectorAll('.zoom-btn');
+    const slideImage = document.getElementById('slide-image');
+
+    // Hàm áp dụng zoom và cập nhật UI
+    function applyZoom(zoomValue) {
+        // 1. Áp dụng scale cho ảnh
+        slideImage.style.transform = `scale(${zoomValue})`;
+
+        // 2. Cập nhật trạng thái "active" cho các nút
+        zoomButtons.forEach(btn => {
+            if (parseFloat(btn.dataset.zoom) === zoomValue) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // 3. Lưu lựa chọn vào localStorage
+        saveZoom(zoomValue);
+    }
+
+    // Gán sự kiện click cho từng nút zoom
+    zoomButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const zoomValue = parseFloat(button.dataset.zoom);
+            applyZoom(zoomValue);
+        });
+    });
+
+    // Áp dụng mức zoom đã lưu khi tải trang
+    const initialZoom = getSavedZoom();
+    applyZoom(initialZoom);
+    
         // === KHỞI TẠO TOÀN BỘ LOGIC SIDEBAR SAU KHI HEADER ĐÃ TẢI XONG ===
 
         // Lấy tất cả các element cần thiết
