@@ -1,6 +1,6 @@
 # Slidify - Nền tảng học tập qua Slide
 
-<!-- ![Slidify Screenshot](https://i.imgur.com/your-screenshot-url.png)  -->
+![Slidify Screenshot](images/index.png) 
 
 **Slidify** là một ứng dụng web tĩnh được xây dựng để giải quyết một vấn đề phổ biến: làm thế nào để học tập hiệu quả từ các bài giảng slide chuyên ngành bằng tiếng Anh? Thay vì chỉ xem slide một cách thụ động, Slidify biến mỗi bài giảng thành một buổi học tương tác với ghi chú, giải thích và thuật ngữ chi tiết bằng tiếng Việt.
 
@@ -14,7 +14,7 @@ Dự án này được xây dựng hoàn toàn bằng **HTML, CSS, và JavaScrip
 *   **Ghi nhớ vị trí:** Khi bạn quay lại một môn học, Slidify sẽ tự động đưa bạn đến slide cuối cùng bạn đã xem.
 *   **Điều khiển linh hoạt:**
     *   Dễ dàng di chuyển qua lại giữa các slide bằng nút "Trang trước" / "Trang sau".
-    *   Điều chỉnh kích thước slide (50%, 100%, 150%, 200%) để phù hợp với mọi kích thước màn hình và thị lực.
+    *   Điều chỉnh kích thước slide (50%, 100%) để phù hợp với mọi kích thước màn hình và thị lực.
 *   **Giao diện Responsive:** Hoạt động mượt mà trên cả máy tính và thiết bị di động, với hệ thống sidebar trượt (off-canvas) chuyên nghiệp.
 *   **Tổ chức nội dung khoa học:** Mục lục được nhóm theo từng tuần/chương và có thể đóng/mở, giúp dễ dàng điều hướng trong các bài giảng dài.
 *   **Dễ dàng mở rộng:** Cấu trúc dự án được thiết kế để bạn có thể dễ dàng thêm các môn học mới và các tuần học mới chỉ bằng cách cập nhật tệp `data.js`.
@@ -56,7 +56,7 @@ Dự án này được xây dựng hoàn toàn bằng **HTML, CSS, và JavaScrip
 
 1.  **Clone repository:**
     ```bash
-    git clone https://github.com/your-username/slidify.git
+    git clone https://github.com/tranhuudat2004/slidify.git
     ```
 2.  **Mở dự án:**
     *   Đi đến thư mục dự án vừa clone.
@@ -79,7 +79,7 @@ Toàn bộ "bộ não" của Slidify nằm trong tệp `js/data.js`.
 
 ## 💡 Tác giả
 
-Được tạo ra và phát triển bởi **[Tên của bạn]**.
+Được tạo ra và phát triển bởi **Trần Hữu Đạt**.
 
 ---
 *Dự án này được tạo ra với mục đích học tập và quản lý kiến thức cá nhân.*
