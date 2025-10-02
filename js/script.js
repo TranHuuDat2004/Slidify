@@ -40,15 +40,14 @@ function saveLastViewedSlide(courseId, slideId) {
     localStorage.setItem(`last_slide_${courseId}`, slideId);
 }
 
-// Hàm lấy mức zoom đã lưu
-function getSavedZoom() {
-    const zoom = localStorage.getItem('slide_zoom');
-    return zoom ? parseFloat(zoom) : 1; // Mặc định là 1 (100%)
+// THAY ĐỔI CÁC HÀM HELPER NÀY:
+function getSavedWidth() {
+    const width = localStorage.getItem('slide_width');
+    return width ? parseInt(width) : 100; // Mặc định là 100 (%)
 }
 
-// Hàm lưu mức zoom
-function saveZoom(zoomLevel) {
-    localStorage.setItem('slide_zoom', zoomLevel);
+function saveWidth(widthPercentage) {
+    localStorage.setItem('slide_width', widthPercentage);
 }
 
 // --- LOGIC CHÍNH CỦA TRANG MÔN HỌC ---
@@ -62,40 +61,43 @@ document.addEventListener('DOMContentLoaded', () => {
         loadComponent('footer.html', 'footer-placeholder')
     ]).then(() => {
 
-         // === KHỞI TẠO LOGIC ZOOM ===
-    const zoomButtons = document.querySelectorAll('.zoom-btn');
-    const slideImage = document.getElementById('slide-image');
+        // === KHỞI TẠO LOGIC WIDTH (THAY THẾ CHO ZOOM) ===
+        const sizeButtons = document.querySelectorAll('.zoom-btn'); // Giữ nguyên class cho tiện
+        const slideImage = document.getElementById('slide-image');
 
-    // Hàm áp dụng zoom và cập nhật UI
-    function applyZoom(zoomValue) {
-        // 1. Áp dụng scale cho ảnh
-        slideImage.style.transform = `scale(${zoomValue})`;
+        // Hàm áp dụng width và cập nhật UI
+        function applyWidth(widthValue) {
+            // 1. Áp dụng width (tính theo %) cho ảnh
+            slideImage.style.width = `${widthValue}%`;
 
-        // 2. Cập nhật trạng thái "active" cho các nút
-        zoomButtons.forEach(btn => {
-            if (parseFloat(btn.dataset.zoom) === zoomValue) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            // 2. Cập nhật trạng thái "active" cho các nút
+            sizeButtons.forEach(btn => {
+                if (parseInt(btn.dataset.zoom) === widthValue) { // Vẫn dùng data-zoom cho tiện
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 3. Lưu lựa chọn vào localStorage
+            saveWidth(widthValue);
+        }
+
+        // Gán sự kiện click cho từng nút
+        sizeButtons.forEach(button => {
+            // Thay đổi data-zoom thành các giá trị %
+            const widthValue = parseInt(button.textContent); // Lấy 50, 100, 150, 200 từ text
+            button.addEventListener('click', () => {
+                applyWidth(widthValue);
+            });
         });
 
-        // 3. Lưu lựa chọn vào localStorage
-        saveZoom(zoomValue);
-    }
+        // Áp dụng mức width đã lưu khi tải trang
+        const initialWidth = getSavedWidth();
+        applyWidth(initialWidth);
 
-    // Gán sự kiện click cho từng nút zoom
-    zoomButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const zoomValue = parseFloat(button.dataset.zoom);
-            applyZoom(zoomValue);
-        });
-    });
 
-    // Áp dụng mức zoom đã lưu khi tải trang
-    const initialZoom = getSavedZoom();
-    applyZoom(initialZoom);
-    
+
         // === KHỞI TẠO TOÀN BỘ LOGIC SIDEBAR SAU KHI HEADER ĐÃ TẢI XONG ===
 
         // Lấy tất cả các element cần thiết
