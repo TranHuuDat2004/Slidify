@@ -809,8 +809,505 @@ const coursesData = {
               "Vector2": "Một struct trong Unity dùng để biểu diễn các vector và điểm trong không gian 2D. Nó chứa hai thành phần public là `x` và `y`.",
               "magnitude (thuộc tính)": "Một thuộc tính của các kiểu Vector (Vector2, Vector3...) trong Unity, trả về độ dài của vector đó."
             }
+          },
+
+          // Dán 5 khối mã này vào sau slide có id: 5 của Tuần 2
+
+          // SLIDE 6: CÁC PHÉP TOÁN TRÊN VECTOR (1/5)
+          {
+            id: 6,
+            title: "Trang 6: Các phép toán trên Vector (1/5)",
+            image: "images/game-dev/week2/slide_6.png",
+            notes: "Tổng quan về các phép toán cơ bản trên vector:\n\n" +
+                   "- <b>Phép cộng (Addition):</b> Cộng từng thành phần tương ứng. Có tính giao hoán (`a + b = b + a`).\n" +
+                   "- <b>Phép trừ (Subtraction):</b> Trừ từng thành phần tương ứng. Không có tính giao hoán (`a - b != b - a`).\n" +
+                   "- <b>Nhân vô hướng (Scalar multiplication):</b> Nhân một số với từng thành phần của vector, làm thay đổi độ lớn của vector.\n" +
+                   "- <b>Phủ định (Negation):</b> Đảo ngược dấu của tất cả các thành phần, tạo ra một vector có cùng độ lớn nhưng ngược hướng.\n" +
+                   "- <b>Tích vô hướng (Dot product):</b> Một phép toán giữa hai vector cho kết quả là một số vô hướng (scalar).\n" +
+                   "- <b>Tích có hướng (Cross product):</b> Một phép toán giữa hai vector trong không gian 3D, cho kết quả là một vector mới vuông góc với cả hai vector ban đầu.",
+            terms: {
+              "Scalar (Vô hướng)": "Một đại lượng chỉ có độ lớn, không có hướng (ví dụ: một con số như 5, -10.5).",
+              "Dot Product (Tích vô hướng)": "Phép toán `a · b = ||a|| ||b|| cos(θ)`. Kết quả là một số vô hướng. Rất hữu ích để tính góc giữa hai vector hoặc để 'chiếu' một vector lên một vector khác.",
+              "Cross Product (Tích có hướng)": "Phép toán `a x b`. Chỉ xác định trong không gian 3D, kết quả là một vector mới vuông góc với mặt phẳng chứa hai vector ban đầu. Rất hữu ích để tìm vector pháp tuyến của một mặt phẳng."
+            }
+          },
+          // SLIDE 7: CÁC PHÉP TOÁN TRÊN VECTOR (2/5)
+          {
+            id: 7,
+            title: "Trang 7: Các phép toán trên Vector (2/5)",
+            image: "images/game-dev/week2/slide_7.png",
+            notes: "Minh họa hình học của các phép toán trên vector:\n\n" +
+                   "- <b>a + b:</b> Đặt gốc của vector b vào đầu của vector a. Vector tổng là vector nối từ gốc của a đến đầu của b (quy tắc hình bình hành).\n" +
+                   "- <b>a - b:</b> Tương đương với `a + (-b)`. Là vector nối từ đầu của b đến đầu của a.\n" +
+                   "- <b>ac:</b> Vector a được kéo dài hoặc co lại một lượng bằng c. Nếu c < 0, vector sẽ đổi hướng.\n" +
+                   "- <b>-a:</b> Vector a có cùng độ lớn nhưng ngược hướng.\n" +
+                   "- <b>ab (Dot product):</b> Biểu diễn hình chiếu của vector a lên vector b (hoặc ngược lại) nhân với độ dài của vector kia.\n" +
+                   "- <b>a x b (Cross product):</b> Vector kết quả vuông góc với cả a và b, tuân theo quy tắc bàn tay.",
+            terms: {}
+          },
+          // SLIDE 8: CÁC PHÉP TOÁN TRÊN VECTOR (3/5)
+          {
+            id: 8,
+            title: "Trang 8: Các phép toán trên Vector (3/5)",
+            image: "images/game-dev/week2/slide_8.png",
+            notes: "Trong Unity, bạn có thể sử dụng các toán tử thông thường (`+`, `-`, `*`, `/`) để thực hiện các phép toán cộng, trừ vector, và nhân/chia một vector với một số.\n\n" +
+                   "<b>Vector đơn vị (Unit vector):</b>\n" +
+                   "- Là một vector bất kỳ có độ dài (magnitude) bằng 1.\n" +
+                   "- Vector đơn vị thường được dùng để chỉ định một <b>hướng</b> mà không quan tâm đến độ lớn.\n" +
+                   "- Bất kỳ vector nào cũng có thể được 'chuẩn hóa' (normalizing) để trở thành một vector đơn vị bằng cách chia nó cho chính độ dài của nó.\n" +
+                   "- Trong Unity, có thể chuẩn hóa một vector bằng cách gọi hàm `Normalize()`.",
+            terms: {
+              "Unit Vector (Vector đơn vị)": "Một vector có độ lớn chính xác bằng 1. Nó rất hữu ích để biểu diễn một hướng thuần túy.",
+              "Normalizing (Chuẩn hóa)": "Quá trình biến một vector có độ dài bất kỳ thành một vector đơn vị (độ dài bằng 1) nhưng vẫn giữ nguyên hướng ban đầu."
+            }
+          },
+          // SLIDE 9: CÁC PHÉP TOÁN TRÊN VECTOR (4/5)
+          {
+            id: 9,
+            title: "Trang 9: Các phép toán trên Vector (4/5)",
+            image: "images/game-dev/week2/slide_9.png",
+            notes: "<b>Tích vô hướng (Dot Product)</b>, đôi khi được gọi là inner product, cho kết quả là một số vô hướng (scalar).\n" +
+                   "Công thức: `a · b = ||a|| ||b|| cos(θ)`, trong đó `θ` là góc (tính bằng radian) giữa hai vector.\n\n" +
+                   "Đối với các vector đã được chuẩn hóa (normalized vectors):\n" +
+                   "- Tích vô hướng bằng <b>1</b> nếu chúng trỏ về cùng một hướng.\n" +
+                   "- Tích vô hướng bằng <b>-1</b> nếu chúng trỏ về hai hướng hoàn toàn đối lập.\n" +
+                   "- Tích vô hướng bằng <b>0</b> nếu hai vector vuông góc với nhau.\n\n" +
+                   "Đây là một phép toán rất hữu ích để xác định góc giữa hai vector, ví dụ như để xác định góc quay cần thiết để đối mặt với một vị trí nhất định, góc nhìn, v.v.",
+            terms: {
+              "Radian": "Một đơn vị đo góc. Một vòng tròn đầy đủ là 2π radian (tương đương 360 độ). Hầu hết các hàm lượng giác trong lập trình đều sử dụng radian."
+            }
+          },
+          // SLIDE 10: CÁC PHÉP TOÁN TRÊN VECTOR (5/5)
+          {
+            id: 10,
+            title: "Trang 10: Các phép toán trên Vector (5/5)",
+            image: "images/game-dev/week2/slide_10.png",
+            notes: "Trong Unity, bạn có thể sử dụng các hàm sau để tính toán góc giữa hai vector:\n\n" +
+                   "1. <b>Chuẩn hóa (Normalize):</b> Để có kết quả chính xác, bạn nên chuẩn hóa cả hai vector trước khi tính tích vô hướng của chúng.\n" +
+                   "2. <b>`Vector2.Dot(a, b)`:</b> Tính tích vô hướng của hai vector a và b.\n" +
+                   "3. <b>`Mathf.Acos(dotProduct)`:</b> Tính góc (tính bằng radian) từ giá trị tích vô hướng. Đây là hàm arccos(x).\n" +
+                   "4. <b>`Mathf.Rad2Deg`:</b> Một hằng số dùng để nhân với giá trị radian để chuyển đổi nó sang độ (degrees).",
+            terms: {
+              "Vector2.Dot()": "Một hàm static của lớp Vector2 dùng để tính tích vô hướng giữa hai vector 2D.",
+              "Mathf.Acos()": "Hàm trong lớp Mathf của Unity, trả về giá trị arccos của một số. Kết quả là góc (tính bằng radian) có cosin là số đó.",
+              "Mathf.Rad2Deg": "Một hằng số trong lớp Mathf có giá trị là `180 / PI`. Nhân một góc tính bằng radian với hằng số này sẽ chuyển đổi nó sang độ."
+            }
+          },
+
+          // Dán 5 khối mã này vào sau slide có id: 10 của Tuần 2
+
+          // SLIDE 11: 3D VECTORS
+          {
+            id: 11,
+            title: "Trang 11: 3D Vectors",
+            image: "images/game-dev/week2/slide_11.png",
+            notes: "Vector 3D là một đối tượng hình học trong không gian 3 chiều, có <b>độ lớn (magnitude)</b> và <b>hướng (direction)</b>.\n\n" +
+                   "Tương tự như vector 2D, chúng có thể được dùng để biểu diễn một <b>điểm (point)</b> trong không gian hoặc một <b>hướng</b> kèm theo một <b>độ lớn</b>.\n\n" +
+                   "Trong Unity, các vector 3D có rất nhiều thuộc tính và phương thức, có thể tham khảo thêm tại tài liệu của Unity về Vector3.",
+            terms: {
+              "Vector3": "Một struct trong Unity dùng để biểu diễn các vector và điểm trong không gian 3D. Nó chứa ba thành phần public là `x`, `y`, và `z`."
+            }
+          },
+          // SLIDE 12: CÁC PHÉP TOÁN TRÊN VECTOR 3D (1/4)
+          {
+            id: 12,
+            title: "Trang 12: Các phép toán trên Vector 3D (1/4)",
+            image: "images/game-dev/week2/slide_12.png",
+            notes: "Tương tự như Vector2, bạn có thể sử dụng các toán tử thông thường (`+`, `-`, `*`, `/`) để thực hiện các phép toán cộng, trừ, và nhân/chia một Vector3 với một số.\n\n" +
+                   "Khái niệm <b>Vector đơn vị (Unit vector)</b> và việc <b>chuẩn hóa (normalizing)</b> một vector bằng hàm `Normalize()` cũng được áp dụng tương tự như trong không gian 2D.",
+            terms: {}
+          },
+          // SLIDE 13: CÁC PHÉP TOÁN TRÊN VECTOR 3D (2/4)
+          {
+            id: 13,
+            title: "Trang 13: Các phép toán trên Vector 3D (2/4)",
+            image: "images/game-dev/week2/slide_13.png",
+            notes: "Các phép toán cơ bản như <b>Phép cộng (Addition)</b>, <b>Phép trừ (Subtraction)</b>, <b>Nhân vô hướng (Scalar multiplication)</b>, và <b>Phủ định (Negation)</b> được thực hiện trên 3 thành phần (x, y, z) tương tự như với vector 2D.\n\n" +
+                   "<b>Tích vô hướng (Dot product)</b> và <b>Tích có hướng (Cross product)</b> cũng có các công thức tương ứng trong không gian 3D.",
+            terms: {}
+          },
+          // SLIDE 14: CÁC PHÉP TOÁN TRÊN VECTOR 3D (3/4)
+          {
+            id: 14,
+            title: "Trang 14: Các phép toán trên Vector 3D (3/4)",
+            image: "images/game-dev/week2/slide_14.png",
+            notes: "<b>Tích có hướng (Cross Product)</b>, hay còn gọi là vector product, là một phép toán nhị phân trên hai vector trong không gian 3 chiều.\n\n" +
+                   "Kết quả của `a x b` là một vector mới <b>vuông góc</b> với cả hai vector `a` và `b` (tức là vuông góc với mặt phẳng chứa chúng).\n\n" +
+                   "Hướng của vector kết quả có thể được xác định bằng <b>'quy tắc bàn tay phải' (right hand rule)</b>.\n\n" +
+                   "Ví dụ: Hàm `GetNormal` trên slide cho thấy cách tính vector pháp tuyến của một mặt phẳng tam giác bằng cách lấy tích có hướng của hai cạnh của tam giác đó.",
+            terms: {
+              "Right Hand Rule (Quy tắc bàn tay phải)": "Một quy ước để xác định hướng của vector kết quả trong phép tích có hướng. Nếu bạn cuộn các ngón tay của bàn tay phải từ vector đầu tiên sang vector thứ hai, ngón cái sẽ chỉ theo hướng của vector tích có hướng.",
+              "Normal Vector (Vector pháp tuyến)": "Một vector vuông góc với một bề mặt tại một điểm nhất định. Vector pháp tuyến rất quan trọng trong đồ họa máy tính để tính toán sự phản xạ ánh sáng và các hiệu ứng khác."
+            }
+          },
+          // SLIDE 15: CÁC PHÉP TOÁN TRÊN VECTOR 3D (4/4)
+          {
+            id: 15,
+            title: "Trang 15: Các phép toán trên Vector 3D (4/4)",
+            image: "images/game-dev/week2/slide_15.png",
+            notes: "Một ví dụ ứng dụng của Tích có hướng là tìm trục quay để áp dụng mô-men xoắn (torque) nhằm xoay tháp pháo của một chiếc xe tăng.\n\n" +
+                   "Bằng cách lấy tích có hướng giữa <b>hướng hiện tại</b> của tháp pháo và <b>hướng mà nó cần đối mặt</b>, chúng ta sẽ có được vector trục quay (trong ví dụ là vector C).\n\n" +
+                   "Tích có hướng cũng có thể được dùng để xác định vector pháp tuyến của một mặt phẳng (ví dụ: một tam giác trên một bề mặt) nhằm tính toán hướng cho va chạm và ánh sáng.",
+            terms: {
+              "Torque (Mô-men xoắn)": "Một lực xoắn gây ra sự thay đổi trong chuyển động quay của một vật thể. Trong Unity, bạn có thể áp dụng torque cho một Rigidbody để làm nó quay."
+            }
+          },
+
+          // Dán 5 khối mã này vào sau slide có id: 15 của Tuần 2
+
+          // SLIDE 16: SMOOTH DAMP
+          {
+            id: 16,
+            title: "Trang 16: Smooth Damp",
+            image: "images/game-dev/week2/slide_16.png",
+            notes: "<b>Vector3.SmoothDamp</b> là một hàm static rất hữu ích để di chuyển một đối tượng đến một vị trí mục tiêu một cách mượt mà, giống như có một bộ giảm xóc.\n\n" +
+                   "Vector sẽ được làm mượt theo một hàm giống như lò xo-giảm chấn và sẽ không bao giờ 'vọt lố' (overshoot) qua mục tiêu. Một ứng dụng phổ biến là làm mượt camera đi theo nhân vật.\n\n" +
+                   "Hàm này trả về vị trí mới và cập nhật lại vận tốc `currentVelocity` (được truyền vào bằng từ khóa `ref`) để duy trì sự mượt mà ở các frame tiếp theo.",
+            terms: {
+              "Vector3.SmoothDamp()": "Một hàm của Unity dùng để di chuyển dần dần một vector tới một vị trí mong muốn trong một khoảng thời gian nhất định. Rất hữu ích để tạo ra các chuyển động camera hoặc đối tượng mượt mà.",
+              "ref (keyword)": "Từ khóa dùng khi truyền đối số vào phương thức, cho phép phương thức đó thay đổi giá trị của biến gốc. Biến truyền vào phải được khởi tạo trước."
+            }
+          },
+          // SLIDE 17: TRANSFORMS
+          {
+            id: 17,
+            title: "Trang 17: Transforms",
+            image: "images/game-dev/week2/slide_17.png",
+            notes: "Mọi đối tượng trong một Scene đều có một component <b>Transform</b>. Đây là component duy nhất không thể bị xóa bỏ.\n\n" +
+                   "Transform quyết định 3 thuộc tính cơ bản của đối tượng:\n" +
+                   "- <b>Position (Vị trí):</b> Vị trí của Transform theo tọa độ X, Y, và Z.\n" +
+                   "- <b>Rotation (Góc xoay):</b> Góc xoay của Transform quanh các trục X, Y, và Z, tính bằng độ.\n" +
+                   "- <b>Scale (Tỷ lệ):</b> Tỷ lệ của Transform dọc theo các trục X, Y, và Z. Giá trị 1 là kích thước gốc.\n\n" +
+                   "Mỗi Transform có thể có một 'cha' (parent), cho phép bạn áp dụng các thay đổi về vị trí, góc xoay và tỷ lệ một cách phân cấp.",
+            terms: {
+              "Transform": "Một component lưu trữ vị trí, góc xoay và tỷ lệ của một Game Object. Mọi Game Object đều có một Transform."
+            }
+          },
+          // SLIDE 18: HỆ TỌA ĐỘ LOCAL VÀ WORLD/GLOBAL (1/2)
+          {
+            id: 18,
+            title: "Trang 18: Tọa độ Local và World (1/2)",
+            image: "images/game-dev/week2/slide_18.png",
+            notes: "Component Transform của một game object chứa các vector như <b>forward</b>, <b>up</b>, và <b>right</b>. Các vector này xác định <b>hệ tọa độ cục bộ (local coordinate system)</b> của đối tượng.\n\n" +
+                   "Hệ tọa độ cục bộ (còn gọi là local space, model space, object space) có 3 trục vuông góc với nhau và có thể được dùng để biết đâu là phía trước, phía trên, và bên cạnh của đối tượng.\n\n" +
+                   "Khi một phép xoay được áp dụng lên Transform, tất cả các trục này sẽ xoay theo để phản ánh sự thay đổi đó.",
+            terms: {
+              "Local Space (Không gian cục bộ)": "Hệ tọa độ riêng của một Game Object, với gốc tọa độ (0,0,0) nằm ngay tại tâm của đối tượng đó. Các trục X, Y, Z của nó (right, up, forward) sẽ xoay cùng với đối tượng.",
+              "transform.forward": "Một vector đơn vị trỏ về phía trước (trục Z dương) của đối tượng trong không gian cục bộ của nó.",
+              "transform.up": "Một vector đơn vị trỏ về phía trên (trục Y dương) của đối tượng trong không gian cục bộ của nó.",
+              "transform.right": "Một vector đơn vị trỏ về phía bên phải (trục X dương) của đối tượng trong không gian cục bộ của nó."
+            }
+          },
+          // SLIDE 19: HỆ TỌA ĐỘ LOCAL VÀ WORLD/GLOBAL (2/2)
+          {
+            id: 19,
+            title: "Trang 19: Tọa độ Local và World (2/2)",
+            image: "images/game-dev/week2/slide_19.png",
+            notes: "Mặt khác, <b>hệ tọa độ thế giới (world coordinate system)</b> định nghĩa các vector `Vector3.forward`, `Vector3.up`, và `Vector3.right`. Đây là các vector hằng số, chỉ hướng dương của các trục Z, Y, và X tương ứng.\n\n" +
+                   "Đây là một hệ tọa độ chung cho tất cả các đối tượng trong Scene.\n\n" +
+                   "Lưu ý rằng hệ tọa độ cục bộ và hệ tọa độ thế giới không nhất thiết phải thẳng hàng với nhau. Do đó, nói rằng bạn 'xoay quanh vector forward của đối tượng' sẽ chính xác hơn là nói 'xoay quanh trục Z'.",
+            terms: {
+              "World Space (Không gian thế giới)": "Một hệ tọa độ duy nhất, cố định và chung cho toàn bộ Scene. Mọi đối tượng trong Scene đều có một vị trí và góc xoay được xác định trong không gian này.",
+              "Vector3.forward": "Một vector hằng số `(0, 0, 1)`, đại diện cho hướng 'phía trước' trong không gian thế giới.",
+              "Vector3.up": "Một vector hằng số `(0, 1, 0)`, đại diện cho hướng 'phía trên' trong không gian thế giới.",
+              "Vector3.right": "Một vector hằng số `(1, 0, 0)`, đại diện cho hướng 'bên phải' trong không gian thế giới."
+            }
+          },
+          // SLIDE 20: TRANSFORMS.TRANSLATE (1/2)
+          {
+            id: 20,
+            title: "Trang 20: Transforms.Translate (1/2)",
+            image: "images/game-dev/week2/slide_20.png",
+            notes: "Phương thức <b>Transform.Translate</b> di chuyển một transform theo một hướng và khoảng cách được chỉ định bởi vector `translation`.\n\n" +
+                   "- Nếu `relativeTo` là `Space.Self` (mặc định), di chuyển sẽ được áp dụng tương đối với hệ tọa độ cục bộ của transform (ví dụ: `Vector3.forward` sẽ di chuyển đối tượng về phía trước của chính nó).\n" +
+                   "- Nếu `relativeTo` là `Space.World`, di chuyển sẽ được áp dụng tương đối với hệ tọa độ thế giới.\n\n" +
+                   "<b>Ví dụ A:</b> Di chuyển đối tượng về phía trước 1 đơn vị mỗi <b>frame</b>. Điều này sẽ làm đối tượng di chuyển rất nhanh trên các máy tính mạnh.\n" +
+                   "<b>Ví dụ B:</b> Nhân với `Time.deltaTime` để di chuyển đối tượng về phía trước 1 đơn vị mỗi <b>giây</b>. Đây là cách làm đúng để chuyển động không phụ thuộc vào tốc độ khung hình.",
+            terms: {
+              "Transform.Translate()": "Một phương thức của component Transform dùng để di chuyển đối tượng một khoảng cách nhất định theo một hướng nhất định.",
+              "Space.Self": "Một hằng số Enum chỉ định rằng một phép toán (như Translate hoặc Rotate) nên được thực hiện trong không gian cục bộ của đối tượng.",
+              "Space.World": "Một hằng số Enum chỉ định rằng một phép toán nên được thực hiện trong không gian thế giới."
+            }
+          },
+          // Dán 5 khối mã này vào sau slide có id: 20 của Tuần 2
+
+          // SLIDE 21: TRANSFORMS.TRANSLATE (2/2)
+          {
+            id: 21,
+            title: "Trang 21: Transforms.Translate (2/2)",
+            image: "images/game-dev/week2/slide_21.png",
+            notes: "<b>Ví dụ C:</b> Chúng ta có thể thay đổi tốc độ di chuyển bằng cách khai báo một biến `speed` và nhân nó vào phép tính. Điều này cho phép di chuyển đối tượng với tốc độ `speed` đơn vị mỗi giây.\n\n" +
+                   "<b>Ví dụ D:</b> Ví dụ trước tương đương với việc cung cấp tham số `Space.Self`. Nếu chúng ta muốn di chuyển đối tượng trong không gian tọa độ thế giới (world coordinates), nơi `Vector3.forward` luôn là trục Z dương, chúng ta cần chỉ định `Space.World` làm tham số cuối cùng.\n\n" +
+                   "Lưu ý: `Time.deltaTime` mặc định được thiết lập là 1/60 ≈ 0.0166, tương ứng với tốc độ khung hình 60 FPS.",
+            terms: {}
+          },
+          // SLIDE 22: LERP
+          {
+            id: 22,
+            title: "Trang 22: Lerp",
+            image: "images/game-dev/week2/slide_22.png",
+            notes: "<b>Lerp (Linear Interpolation - Nội suy tuyến tính)</b> là một hàm nội suy tuyến tính giữa hai điểm `from` và `to` theo một phần `t`.\n\n" +
+                   "Hàm này thường được sử dụng để tìm một điểm nằm trên đường thẳng giữa hai điểm đầu cuối, hoặc để di chuyển một đối tượng dần dần giữa các điểm đó.\n\n" +
+                   "Giá trị `t` được kẹp trong khoảng [0, 1]. Khi `t = 0`, hàm trả về `from`. Khi `t = 1`, hàm trả về `to`. Khi `t = 0.5`, hàm trả về điểm nằm chính giữa `from` và `to`.\n\n" +
+                   "Ví dụ trên slide cho thấy cách sử dụng `Vector3.Lerp` để làm mượt chuyển động của camera theo một đối tượng `target`.",
+            terms: {
+              "Lerp (Linear Interpolation)": "Một phép toán tìm một điểm mới nằm trên một đường thẳng giữa hai điểm cho trước. Nó rất phổ biến trong lập trình game để tạo ra các chuyển động mượt mà (smoothing), hiệu ứng mờ dần (fading), hoặc thay đổi giá trị theo thời gian."
+            }
+          },
+          // SLIDE 23: CÁC PHÉP XOAY TRONG 3D
+          {
+            id: 23,
+            title: "Trang 23: Các phép xoay trong 3D",
+            image: "images/game-dev/week2/slide_23.png",
+            notes: "Có ba loại xoay khác nhau có thể được thực hiện quanh một điểm trong không gian 3D, thường được gọi là <b>góc Euler (Euler angles)</b>:\n\n" +
+                   "- <b>Pitch:</b> Xoay quanh trục <b>X</b> (làm máy bay ngóc lên hoặc chúc xuống).\n" +
+                   "- <b>Yaw:</b> Xoay quanh trục <b>Y</b> (làm máy bay rẽ trái hoặc phải).\n" +
+                   "- <b>Roll:</b> Xoay quanh trục <b>Z</b> (làm máy bay nghiêng sang hai bên).",
+            terms: {
+              "Euler Angles": "Một bộ ba góc (thường là Pitch, Yaw, Roll) dùng để biểu diễn hướng của một vật thể trong không gian 3D. Mặc dù dễ hiểu, chúng có thể gây ra một vấn đề gọi là 'Gimbal Lock'."
+            }
+          },
+          // SLIDE 24: TRANSFORMS.ROTATE
+          {
+            id: 24,
+            title: "Trang 24: Transforms.Rotate",
+            image: "images/game-dev/week2/slide_24.png",
+            notes: "Phương thức <b>Transform.Rotate</b> xoay một transform quanh một `axis` (trục) một góc `angle` (tính bằng độ).\n\n" +
+                   "- Nếu `relativeTo` là `Space.Self` (mặc định), phép xoay được áp dụng quanh các trục cục bộ (local axes) của transform.\n" +
+                   "- Nếu `relativeTo` là `Space.World`, phép xoay được áp dụng quanh các trục của thế giới (world axes).\n\n" +
+                   "<b>Ví dụ A:</b> Xoay đối tượng quanh trục Y (Yaw) với tốc độ `turnSpeed` độ mỗi giây.\n" +
+                   "<b>Ví dụ B:</b> Phép xoay có thể được áp dụng quanh trục Y của không gian cục bộ hoặc không gian thế giới.",
+            terms: {
+              "Transform.Rotate()": "Một phương thức của component Transform dùng để áp dụng một phép xoay cho đối tượng."
+            }
+          },
+          // SLIDE 25: TRANSFORM.LOOKAT
+          {
+            id: 25,
+            title: "Trang 25: Transform.LookAt",
+            image: "images/game-dev/week2/slide_25.png",
+            notes: "Phương thức <b>Transform.LookAt</b> xoay một transform sao cho vector 'forward' (phía trước) của nó trỏ vào vị trí hiện tại của `target` hoặc một `worldPosition` cho trước.\n\n" +
+                   "Đây là một cách sử dụng rất hay để hướng camera vào một vị trí hoặc một đối tượng mục tiêu.\n\n" +
+                   "Trong ví dụ, camera sẽ luôn xoay để 'nhìn' vào đối tượng `target` ở mỗi frame.",
+            terms: {
+              "Transform.LookAt()": "Một phương thức của component Transform dùng để xoay đối tượng sao cho trục Z dương (forward) của nó hướng về một vị trí mục tiêu trong không gian thế giới."
+            }
+          },
+          // Dán 5 khối mã này vào sau slide có id: 25 của Tuần 2
+
+          // SLIDE 26: TRANSFORM.LOCALSCALE
+          {
+            id: 26,
+            title: "Trang 26: Transform.localScale",
+            image: "images/game-dev/week2/slide_26.png",
+            notes: "Unity không cung cấp một hàm `Transform.Scale()` riêng biệt. Tuy nhiên, có thể thay đổi trực tiếp trường `localScale` để điều chỉnh tỷ lệ của transform.\n\n" +
+                   "<b>Lưu ý quan trọng về Vật lý:</b>\n" +
+                   "Nếu bạn muốn di chuyển một đối tượng có Collider (và tương tác với vật lý), bạn <b>không nên</b> sử dụng `Transform.Translate` hoặc `Transform.Rotate`. Thay vào đó, hãy sử dụng các hàm vật lý (sẽ được học ở bài giảng sau).\n\n" +
+                   "Chỉ nên sử dụng `Transform.Translate` hoặc `Transform.Rotate` khi đối tượng có một Rigidbody được đánh dấu là <b>kinematic</b>.",
+            terms: {
+              "transform.localScale": "Một thuộc tính của Transform đại diện cho tỷ lệ của đối tượng so với đối tượng cha của nó. Nếu không có cha, nó là tỷ lệ trong không gian thế giới.",
+              "Kinematic (Rigidbody)": "Một loại Rigidbody không bị ảnh hưởng bởi các lực vật lý (như trọng lực hay va chạm). Nó chỉ di chuyển khi được điều khiển trực tiếp từ script thông qua Transform. Rigidbody kinematic vẫn có thể tương tác và gây ra va chạm với các Rigidbody thông thường khác."
+            }
+          },
+          // SLIDE 27: VẤN ĐỀ GIMBAL LOCK (1/2)
+          {
+            id: 27,
+            title: "Trang 27: Vấn đề Gimbal Lock (1/2)",
+            image: "images/game-dev/week2/slide_27.png",
+            notes: "Việc xoay một đối tượng trực tiếp bằng góc Euler (Pitch, Yaw, Roll) rất trực quan. Tuy nhiên, bên trong, Transform lưu trữ một ma trận được hình thành từ các vector cục bộ (Right, Up, Forward).\n\n" +
+                   "Cách áp dụng các phép xoay này hoạt động tốt, nhưng nó có thể gặp phải vấn đề <b>gimbal lock</b>: sự mất mát một bậc tự do trong không gian ba chiều, xảy ra khi các trục của hai trong ba gimbal bị đẩy vào một cấu hình song song.",
+            terms: {
+              "Gimbal Lock": "Một hiện tượng trong không gian 3D xảy ra khi sử dụng góc Euler, khiến cho một trong ba trục xoay trở nên vô dụng (ví dụ: xoay quanh trục Y và trục Z lại cho cùng một kết quả). Điều này làm mất đi một bậc tự do và gây ra các chuyển động xoay không mong muốn.",
+              "Degree of Freedom (Bậc tự do)": "Trong cơ học, đây là số lượng các tham số độc lập định nghĩa cấu hình của một hệ thống. Một vật thể rắn trong không gian 3D có 6 bậc tự do: 3 cho tịnh tiến (di chuyển theo X, Y, Z) và 3 cho quay (xoay quanh X, Y, Z)."
+            }
+          },
+          // SLIDE 28: VẤN ĐỀ GIMBAL LOCK (2/2)
+          {
+            id: 28,
+            title: "Trang 28: Vấn đề Gimbal Lock (2/2)",
+            image: "images/game-dev/week2/slide_28.png",
+            notes: "Slide này minh họa bằng toán học ma trận về cách vấn đề gimbal lock xảy ra. Khi một góc xoay (ví dụ: β) bằng 0 hoặc 90 độ, hai ma trận xoay khác có thể bị 'khóa' vào nhau, làm cho hai phép xoay riêng biệt (α và γ) lại có cùng một tác dụng, dẫn đến mất một bậc tự do.",
+            terms: {}
+          },
+          // SLIDE 29: QUATERNIONS (1/3)
+          {
+            id: 29,
+            title: "Trang 29: Quaternions (1/3) - Giới thiệu",
+            image: "images/game-dev/week2/slide_29.png",
+            notes: "<b>Quaternions</b> là các vector bốn chiều của số thực, cho phép ba phép toán: cộng, nhân vô hướng và nhân quaternion. Chúng được sử dụng để biểu diễn các phép xoay.\n\n" +
+                   "Unity sử dụng Quaternions bên trong để biểu diễn tất cả các phép xoay vì chúng không bị gimbal lock và có thể dễ dàng được nội suy.\n\n" +
+                   "Một quaternion có bốn thành phần: w, x, y, và z. Các thành phần này hoạt động cùng nhau và <b>không bao giờ</b> nên được sửa đổi riêng lẻ.\n\n" +
+                   "<b>Quaternions vs. Euler:</b>\n" +
+                   "- Quaternions không bị gimbal lock, cung cấp phép nội suy mượt mà hơn.\n" +
+                   "- Các phép tính trên quaternion dễ dàng hơn.\n" +
+                   "- Về mặt khái niệm, quaternion khó nắm bắt hơn so với góc Euler.",
+            terms: {
+              "Quaternion": "Một hệ thống số phức bốn chiều được sử dụng trong đồ họa máy tính để biểu diễn các phép xoay trong không gian 3D. Đây là cách Unity lưu trữ và xử lý tất cả các góc xoay để tránh vấn đề Gimbal Lock."
+            }
+          },
+          // SLIDE 30: QUATERNIONS (2/3)
+          {
+            id: 30,
+            title: "Trang 30: Quaternions (2/3) - LookRotation",
+            image: "images/game-dev/week2/slide_30.png",
+            notes: "Lớp Quaternion cung cấp nhiều chức năng hữu ích. Một trong những hàm static quan trọng là <b>Quaternion.LookRotation</b>.\n\n" +
+                   "`Quaternion.LookRotation(Vector3 forward, Vector3 upwards)` tạo ra một phép xoay với hướng 'phía trước' (forward) và 'phía trên' (upwards) được chỉ định.\n\n" +
+                   "Khi được sử dụng để định hướng một Transform, trục Z của đối tượng sẽ được căn chỉnh với vector `forward` và trục Y sẽ được căn chỉnh với vector `upwards`.",
+            terms: {
+              "Quaternion.LookRotation()": "Một hàm static của lớp Quaternion, tạo ra một giá trị Quaternion đại diện cho một phép xoay. Phép xoay này sẽ làm cho đối tượng 'nhìn' về hướng của vector `forward` được cung cấp."
+            }
+          },
+
+          // Dán 5 khối mã này vào sau slide có id: 30 của Tuần 2
+
+          // SLIDE 31: QUATERNIONS (3/3)
+          {
+            id: 31,
+            title: "Trang 31: Quaternions (3/3) - Slerp & Identity",
+            image: "images/game-dev/week2/slide_31.png",
+            notes: "Hai chức năng hữu ích khác của lớp Quaternion:\n\n" +
+                   "<b>Quaternion.Slerp(from, to, t):</b>\n" +
+                   "- Nội suy hình cầu (Spherical Linear Interpolation) giữa hai phép xoay `from` và `to` theo một phần `t`.\n" +
+                   "- Đây là cách chính xác và mượt mà nhất để xoay một đối tượng dần dần từ góc này sang góc khác.\n\n" +
+                   "<b>Quaternion.identity:</b>\n" +
+                   "- Đại diện cho một phép xoay 'rỗng' (không xoay). Nó hoàn toàn thẳng hàng với các trục của thế giới.\n" +
+                   "- Rất hữu ích để reset góc xoay của một đối tượng về trạng thái ban đầu.",
+            terms: {
+              "Slerp (Spherical Linear Interpolation)": "Một phép toán nội suy trên một mặt cầu. Trong Unity, nó được dùng để tạo ra các phép xoay mượt mà và tự nhiên giữa hai hướng khác nhau với tốc độ không đổi.",
+              "Quaternion.identity": "Một thuộc tính static của lớp Quaternion trả về một phép xoay không có sự thay đổi nào (tương đương với góc xoay (0, 0, 0))."
+            }
+          },
+          // SLIDE 32: CHUYỂN TIẾP - QUẢN LÝ TƯƠNG TÁC NGƯỜI DÙNG
+          {
+            id: 32,
+            title: "Trang 32: Chuyển tiếp - Quản lý Tương tác người dùng",
+            image: "images/game-dev/week2/slide_32.png",
+            notes: "Kết thúc phần Toán học trong Game.\n\n" +
+                   "Phần tiếp theo sẽ tập trung vào cách Unity quản lý và xử lý các tín hiệu đầu vào từ người chơi (bàn phím, chuột, tay cầm...).",
+            terms: {}
+          },
+          // SLIDE 33: THE INPUT MANAGER (1/2)
+          {
+            id: 33,
+            title: "Trang 33: The Input Manager (1/2)",
+            image: "images/game-dev/week2/slide_33.png",
+            notes: "Unity hỗ trợ các loại thiết bị đầu vào truyền thống như bàn phím, tay cầm (joypad), v.v., cũng như màn hình cảm ứng và các cảm biến chuyển động của thiết bị di động.\n\n" +
+                   "<b>Input Manager</b> là nơi bạn định nghĩa tất cả các 'trục' (axes) và 'hành động' (actions) đầu vào cho dự án của mình.\n" +
+                   "Để xem Input Manager, hãy chọn menu <b>Edit → Project Settings → Input</b>.\n\n" +
+                   "Tất cả các trục được định nghĩa sẽ được hiển thị cho người chơi trong game launcher, cho phép họ tùy chỉnh lại các nút bấm theo ý muốn.",
+            terms: {
+              "Input Manager": "Một công cụ cài đặt trong Unity Editor cho phép bạn định nghĩa và quản lý các 'trục ảo' (virtual axes) cho các tín hiệu đầu vào của người chơi, chẳng hạn như 'Horizontal', 'Vertical', 'Jump', 'Fire1'."
+            }
+          },
+          // SLIDE 34: THE INPUT MANAGER (2/2)
+          {
+            id: 34,
+            title: "Trang 34: The Input Manager (2/2)",
+            image: "images/game-dev/week2/slide_34.png",
+            notes: "Đây là các cài đặt quan trọng nhất có thể được thiết lập cho mỗi trục:\n\n" +
+                   "- <b>Name:</b> Tên chuỗi dùng để tham chiếu đến trục trong script.\n" +
+                   "- <b>Positive/Negative Button:</b> Các phím sẽ gửi giá trị dương/âm cho trục (ví dụ: 'd' và 'a').\n" +
+                   "- <b>Gravity, Dead, Sensitivity:</b> Các thông số ảnh hưởng đến cách giá trị của trục thay đổi theo thời gian, tạo ra cảm giác 'trơn' hoặc 'nhạy'.\n" +
+                   "- <b>Invert:</b> Nếu được bật, các phím dương sẽ gửi giá trị âm và ngược lại.\n" +
+                   "- <b>Type:</b> Loại đầu vào (Phím, Chuyển động chuột, Trục tay cầm...).",
+            terms: {
+              "Axis (Trục)": "Trong Input Manager, đây là một ánh xạ (mapping) từ một hoặc nhiều nút bấm vật lý đến một giá trị số (thường từ -1 đến 1). Ví dụ, trục 'Horizontal' có thể được điều khiển bởi cả phím A/D và mũi tên trái/phải.",
+              "Dead (Dead zone)": "Một khoảng giá trị nhỏ gần 0 mà các tín hiệu từ tay cầm analog sẽ bị bỏ qua. Điều này giúp tránh các chuyển động không mong muốn khi tay cầm không hoàn toàn ở vị trí trung tâm."
+            }
+          },
+          // SLIDE 35: INPUT TRUYỀN THỐNG
+          {
+            id: 35,
+            title: "Trang 35: Input truyền thống",
+            image: "images/game-dev/week2/slide_35.png",
+            notes: "Mỗi dự án Unity khi được tạo ra đều có các trục đầu vào mặc định sau:\n\n" +
+                   "- <b>Horizontal</b> và <b>Vertical</b> được ánh xạ tới các phím w, a, s, d và các phím mũi tên.\n" +
+                   "- <b>Fire1, Fire2, Fire3</b> được ánh xạ tới Control, Option (Alt), và Command.\n" +
+                   "- <b>Mouse X</b> và <b>Mouse Y</b> được ánh xạ tới sự thay đổi (delta) trong chuyển động của chuột.\n\n" +
+                   "Tất cả các trục ảo này được truy cập bằng tên của chúng từ script, ví dụ:\n" +
+                   "- `Input.GetAxis(\"Horizontal\")`: Trả về một giá trị float từ -1 đến 1.\n" +
+                   "- `Input.GetKey(\"a\")`: Trả về một giá trị boolean `true` nếu phím 'a' đang được nhấn.",
+            terms: {
+              "Input.GetAxis()": "Một hàm của Unity trả về giá trị của một trục ảo đã được định nghĩa trong Input Manager. Giá trị này được làm mượt và nằm trong khoảng [-1, 1].",
+              "Input.GetKey()": "Một hàm của Unity trả về `true` trong mỗi frame mà người dùng đang giữ một phím được chỉ định.",
+              "Mouse Delta": "Lượng di chuyển của chuột kể từ khung hình cuối cùng. Giá trị này không bị giới hạn trong khoảng [-1, 1]."
+            }
+          },
+          // Dán 5 khối mã này vào sau slide có id: 35 của Tuần 2
+
+          // SLIDE 36: CÁC NÚT BẤM VÀ PHÍM
+          {
+            id: 36,
+            title: "Trang 36: Các nút bấm và phím",
+            image: "images/game-dev/week2/slide_36.png",
+            notes: "Trong Unity, họ các hàm `GetKey` và `GetButton` là những cách để nhận tín hiệu đầu vào từ các phím hoặc các nút trên tay cầm thông qua lớp `Input`.\n\n" +
+                   "- <b>GetKey</b> tham chiếu đến các phím vật lý cụ thể có thể được nhấn (ví dụ: `KeyCode.Space`).\n" +
+                   "- <b>GetButton</b> tham chiếu đến các 'hành động' đã được chỉ định trong Input Manager (ví dụ: \"Jump\"). Đây là cách được khuyến khích sử dụng.\n\n" +
+                   "Cả hai họ hàm này đều có ba thành viên trả về giá trị `boolean`:\n" +
+                   "- <b>Get...Down():</b> Trả về `true` <b>chỉ trong một frame duy nhất</b> ngay khi phím/nút được nhấn xuống.\n" +
+                   "- <b>Get...():</b> Trả về `true` trong mỗi frame mà phím/nút <b>đang được giữ</b>.\n" +
+                   "- <b>Get...Up():</b> Trả về `true` <b>chỉ trong một frame duy nhất</b> ngay khi phím/nút được thả ra.",
+            terms: {
+              "KeyCode": "Một Enum trong Unity chứa danh sách tất cả các phím vật lý trên bàn phím.",
+              "Input.GetButtonDown()": "Hàm trả về `true` trong frame mà người dùng nhấn nút ảo được chỉ định. Rất hữu ích cho các hành động chỉ xảy ra một lần như nhảy hoặc bắn.",
+              "Input.GetButton()": "Hàm trả về `true` trong mỗi frame mà người dùng đang giữ nút ảo được chỉ định. Hữu ích cho các hành động liên tục như di chuyển hoặc bắn liên thanh.",
+              "Input.GetButtonUp()": "Hàm trả về `true` trong frame mà người dùng thả nút ảo được chỉ định."
+            }
+          },
+          // SLIDE 37: GETAXIS VÀ GETAXISRAW
+          {
+            id: 37,
+            title: "Trang 37: GetAxis và GetAxisRaw",
+            image: "images/game-dev/week2/slide_37.png",
+            notes: "<b>`Input.GetAxis()`</b> trả về một giá trị float trong khoảng [-1, 1] và có áp dụng các hiệu ứng làm mượt (smoothing) như Gravity và Sensitivity.\n\n" +
+                   "<b>`Input.GetAxisRaw()`</b> trả về một giá trị float chỉ có thể là -1, 0, hoặc 1, không có bất kỳ sự làm mượt nào. Nó phản ánh trực tiếp trạng thái của nút bấm.\n\n" +
+                   "Các cài đặt cho `GetAxis()`:\n" +
+                   "- <b>Gravity:</b> Tốc độ giá trị quay trở về 0 sau khi nút được thả ra.\n" +
+                   "- <b>Sensitivity:</b> Tốc độ giá trị đạt đến -1 hoặc 1 sau khi nút được nhấn.\n" +
+                   "- <b>Dead:</b> Khoảng giá trị gần 0 sẽ được coi là 0 (hữu ích cho tay cầm).\n" +
+                   "- <b>Snap:</b> Nếu được chọn, giá trị sẽ quay về 0 ngay lập tức nếu cả hai nút dương và âm được nhấn cùng lúc.",
+            terms: {
+              "Input.GetAxisRaw()": "Tương tự như `GetAxis`, nhưng không có bất kỳ sự làm mượt nào. Giá trị trả về sẽ ngay lập tức là -1, 0, hoặc 1. Hữu ích khi bạn muốn có sự phản hồi tức thì và chính xác."
+            }
+          },
+          // SLIDE 38: CHUỘT (MOUSE)
+          {
+            id: 38,
+            title: "Trang 38: Chuột (Mouse)",
+            image: "images/game-dev/week2/slide_38.png",
+            notes: "Tín hiệu đầu vào từ chuột có thể được phát hiện bằng các hàm `GetAxis` (cho 'Mouse X', 'Mouse Y') và `GetButton` (cho các nút chuột).\n\n" +
+                   "Tuy nhiên, Unity cũng cho phép phát hiện các cú nhấp chuột trên một <b>Collider</b> hoặc một <b>GUI Element</b>. Nếu phần tử đó có một script được gắn vào, họ các hàm sau sẽ được gọi:\n\n" +
+                   "- <b>OnMouseDown():</b> Được gọi khi người dùng nhấn nút chuột khi con trỏ đang ở trên Collider/GUIElement.\n" +
+                   "- <b>OnMouseUp():</b> Được gọi khi người dùng thả nút chuột.\n" +
+                   "- <b>OnMouseEnter() / OnMouseExit():</b> Được gọi khi con trỏ chuột đi vào / đi ra khỏi Collider/GUIElement.\n" +
+                   "- <b>OnMouseOver():</b> Được gọi ở mỗi frame khi con trỏ chuột đang ở trên Collider/GUIElement.\n" +
+                   "- <b>OnMouseDrag():</b> Được gọi khi người dùng đã nhấp và vẫn đang giữ chuột trên Collider/GUIElement.",
+            terms: {
+              "OnMouseDown()": "Một hàm sự kiện của MonoBehaviour được Unity tự động gọi trên tất cả các script của một Game Object khi người dùng nhấn nút chuột trong khi con trỏ đang ở trên Collider của đối tượng đó."
+            }
+          },
+          // SLIDE 39: CHUYỂN TIẾP - CÂU HỎI & DEMO LAB
+          {
+            id: 39,
+            title: "Trang 39: Chuyển tiếp - Câu hỏi & Demo Lab",
+            image: "images/game-dev/week2/slide_39.png",
+            notes: "Kết thúc phần lý thuyết về Quản lý Tương tác người dùng.\n\n" +
+                   "Phần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+            terms: {}
+          },
+          // SLIDE 40: XEM TRƯỚC BUỔI THỰC HÀNH
+          {
+            id: 40,
+            title: "Trang 40: Xem trước buổi thực hành",
+            image: "images/game-dev/week2/slide_40.png",
+            notes: "Trong buổi thực hành này, bạn sẽ hoàn thành phần thứ hai của bài lab. Hãy nhớ rằng bạn sẽ được đánh giá và sẽ tiếp tục từ nơi bạn đã dừng lại ở tuần trước.\n\n" +
+                   "Bài giảng tiếp theo: <b>3D Games: Models and Physics</b>.",
+            terms: {}
           }
-        ]
+
+        ],
+
+        
       }
     ]
   },

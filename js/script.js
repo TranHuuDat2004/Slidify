@@ -185,7 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
         const activeLi = document.querySelector(`.slide-list[data-section-index='${sectionIndex}'] li[data-id='${slideId}']`);
-        if (activeLi) activeLi.classList.add('active');
+        if (activeLi) {
+            activeLi.classList.add('active');
+
+            // === DÒNG MÃ MỚI - TỰ ĐỘNG CUỘN ĐẾN MỤC ĐANG CHỌN ===
+            activeLi.scrollIntoView({
+                behavior: 'smooth', // Hiệu ứng cuộn mượt mà
+                block: 'nearest'   // Cuộn đến vị trí gần nhất (trên hoặc dưới)
+            });
+        }
     }
 
     function generateSlideNavigation() {
