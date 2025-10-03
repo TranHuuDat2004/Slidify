@@ -31,23 +31,14 @@ Nó sẽ chuyển đổi chúng thành một định dạng sạch sẽ và th�
 
 ## Kịch bản PowerShell
 
-# BƯỚC 1: Đổi tên tất cả các file .png sang một tên tạm thời
+# Đổi tên tất cả các file .png sang một tên mới slide_{0}.png
 Get-ChildItem -Filter *.png | ForEach-Object {
     if ($_.Name -match '(.*)_(\d+)\.png') {
         # Thêm tiền tố "temp_" vào trước tên mới
-        $tempName = "temp_slide_{0}.png" -f $matches[2]
+        $tempName = "slide_{0}.png" -f $matches[2]
         
         # Thêm -Force để ghi đè nếu cần, và -ErrorAction SilentlyContinue để bỏ qua lỗi
         Rename-Item -Path $_.FullName -NewName $tempName -ErrorAction SilentlyContinue
     }
 }
-Write-Host "Buoc 1 Hoan tat! Tat ca cac tep da duoc doi ten tam thoi."
-
-# BƯỚC 2: Đổi tên từ tên tạm thời về tên cuối cùng
-Get-ChildItem -Filter "temp_*.png" | ForEach-Object {
-    # Tạo tên mới bằng cách loại bỏ "temp_"
-    $finalName = $_.Name.Replace("temp_", "")
-    
-    Rename-Item -Path $_.FullName -NewName $finalName
-}
-Write-Host "Buoc 2 Hoan tat! Da doi ten xong."
+Write-Host "Hoan tat! Tat ca cac tep da duoc doi ten ."
