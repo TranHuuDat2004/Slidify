@@ -767,49 +767,51 @@ const coursesData = {
       {
         title: "Tuần 2: 3D Games and User Input",
         slides: [
-          // SLIDE 1 (của Tuần 2)
           {
-            id: 1, // BẮT ĐẦU LẠI TỪ 1
+            id: 1,
             title: "Trang 1: Bìa - 3D Games and User Input",
             image: "images/game-dev/week2/slide_1.png",
-            notes: "Bài giảng 2: Game 3D và Tương tác người dùng (User Input)...",
+            notes: "Bài giảng 2: Game 3D và Tương tác người dùng (User Input).\n\nTuần này sẽ tập trung vào các khái niệm toán học cơ bản trong game và cách quản lý các tín hiệu đầu vào từ người chơi.",
             terms: {}
           },
-          // SLIDE 2 (của Tuần 2)
           {
             id: 2,
             title: "Trang 2: Đề cương bài giảng",
             image: "images/game-dev/week2/slide_2.png",
-            notes: "Nội dung chính của bài giảng Tuần 2 bao gồm 3 phần...",
+            notes: "Nội dung chính của bài giảng Tuần 2 bao gồm 3 phần:\n\n1. <b>Toán học trong Game (Math in Games)</b>.\n2. <b>Quản lý Tương tác người dùng (Managing Player Input)</b>.\n3. <b>Câu hỏi ôn tập và Xem trước buổi thực hành</b>.",
             terms: {}
           },
-          // SLIDE 3 (của Tuần 2)
           {
             id: 3,
             title: "Trang 3: Chuyển tiếp - Toán học trong Game",
             image: "images/game-dev/week2/slide_3.png",
-            notes: "Chuẩn bị vào phần đầu tiên: Các khái niệm toán học...",
+            notes: "Chuẩn bị vào phần đầu tiên: Các khái niệm toán học cơ bản được ứng dụng trong lập trình game.",
             terms: {}
           },
-          // SLIDE 4 (của Tuần 2)
           {
             id: 4,
             title: "Trang 4: 2D Vectors",
             image: "images/game-dev/week2/slide_4.png",
-            notes: "Vector là một đối tượng hình học có độ lớn (magnitude) và hướng (direction)...",
-            terms: { /* ... thuật ngữ ... */ }
+            notes: "Vector là một đối tượng hình học có <b>độ lớn (magnitude)</b> và <b>hướng (direction)</b>.\n\nVector có thể được dùng để biểu diễn:\n- Một <b>điểm (point)</b> trong không gian.\n- Một <b>hướng (direction)</b> kèm theo một <b>độ lớn (magnitude)</b>.\n\nTrong Unity, các vector 2D có nhiều thuộc tính và phương thức hữu ích, có thể tham khảo thêm tại tài liệu của Unity.",
+            terms: {
+              "Vector": "Một đại lượng toán học có cả độ lớn và hướng. Trong lập trình game, nó thường được dùng để biểu diễn vị trí, vận tốc, và lực.",
+              "Magnitude (Độ lớn)": "Độ dài của một vector, thường được tính bằng căn bậc hai của tổng bình phương các thành phần của nó. Nó biểu thị 'cường độ' của vector (ví dụ: tốc độ, độ lớn của lực).",
+              "Direction (Hướng)": "Hướng mà vector đang trỏ tới trong không gian.",
+              "Left Hand Rule Coordinates": "Hệ tọa độ quy tắc bàn tay trái. Trong hệ tọa độ này (được dùng bởi Unity), nếu bạn xòe bàn tay trái, ngón cái chỉ theo trục X dương, ngón trỏ chỉ theo trục Y dương, thì ngón giữa sẽ chỉ theo trục Z dương."
+            }
           },
-          // SLIDE 5 (của Tuần 2)
           {
             id: 5,
             title: "Trang 5: 2D Vectors & Hình học cơ bản",
             image: "images/game-dev/week2/slide_5.png",
-            notes: "Vector 2D được cấu tạo bởi hai thành phần (x, y)...",
-            terms: { /* ... thuật ngữ ... */ }
+            notes: "Vector 2D được cấu tạo bởi hai thành phần (x, y). Với các vector bắt đầu từ gốc tọa độ (0,0), chúng biểu diễn khoảng cách từ gốc dọc theo trục X và Y.\n\nĐộ dài (hay độ lớn - magnitude) của một vector được xác định bởi norm của nó, tính theo công thức Pythagoras: `magnitude = ||vec|| = sqrt(x² + y²)`.\nTrong Unity, giá trị này có thể được truy cập dễ dàng thông qua thuộc tính `.magnitude`.\n\n<b>Ví dụ:</b> Một vector có thể biểu diễn tốc độ di chuyển của một vật thể. Nếu vector là (2, 5), vật thể đang di chuyển 2 đơn vị/giây theo trục X và 5 đơn vị/giây theo trục Y. Độ lớn của vector này là `sqrt(2² + 5²) = sqrt(29) ≈ 5.385`, đây chính là tốc độ tuyến tính của vật thể.",
+            terms: {
+              "Vector2": "Một struct trong Unity dùng để biểu diễn các vector và điểm trong không gian 2D. Nó chứa hai thành phần public là `x` và `y`.",
+              "magnitude (thuộc tính)": "Một thuộc tính của các kiểu Vector (Vector2, Vector3...) trong Unity, trả về độ dài của vector đó."
+            }
           }
         ]
-      },
-      // Bạn có thể thêm "Tuần 3", "Tuần 4"... ở đây
+      }
     ]
   },
 
