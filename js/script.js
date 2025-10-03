@@ -208,22 +208,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             slideNavContainer.appendChild(slideList);
 
-            if (sectionIndex === 0) {
-                sectionTitle.classList.add('expanded');
-                slideList.style.display = 'block';
-            } else {
-                slideList.style.display = 'none';
-            }
+
+
             sectionTitle.addEventListener('click', function () {
+                // 1. Thêm/xóa class 'expanded' để thay đổi icon +/-
                 this.classList.toggle('expanded');
-                this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+
+                // 2. Lấy danh sách slide (ul) ngay sau tiêu đề
+                const content = this.nextElementSibling;
+
+                // 3. Kích hoạt animation bằng cách thay đổi max-height
+                if (content.style.maxHeight) {
+                    // Nếu đang mở -> đóng lại
+                    content.style.maxHeight = null;
+                } else {
+                    // Nếu đang đóng -> mở ra bằng cách set max-height bằng chiều cao thực của nó
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
             });
         });
     }
 
     // --- KHỞI CHẠY ---
+
     generateSlideNavigation();
 
+    // Cập nhật dấu tích cho các slide đã xem
     const viewedSlides = getProgress(courseId);
     viewedSlides.forEach(uniqueId => {
         if (typeof uniqueId === 'string' && uniqueId.includes('-')) {
@@ -233,12 +243,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Quyết định slide và tuần nào sẽ được hiển thị
+    let initialSectionIndex = 0;
+    let initialSlideId = courseSections[0]?.slides[0]?.id;
+
     const lastViewedId = getLastViewedSlide(courseId);
     if (lastViewedId && lastViewedId.includes('-')) {
         const [sectionIndex, slideId] = lastViewedId.split('-');
-        displaySlide(parseInt(slideId), parseInt(sectionIndex));
-    } else {
-        const firstSlide = courseSections[0]?.slides[0];
-        if (firstSlide) displaySlide(firstSlide.id, 0);
+        initialSectionIndex = parseInt(sectionIndex);
+        initialSlideId = parseInt(slideId);
+    }
+
+    // === LOGIC MỚI: MỞ ĐÚNG TUẦN HỌC KHI TẢI TRANG ===
+    // 1. Lấy tất cả các tiêu đề tuần
+    const allSectionTitles = document.querySelectorAll('.section-title');
+
+    // 2. Lặp qua tất cả các tuần để thiết lập trạng thái đóng/mở
+    allSectionTitles.forEach((title, index) => {
+        const content = title.nextElementSibling;
+        if (index === initialSectionIndex) {
+            // Mở tuần học chứa slide cuối cùng đã xem
+            title.classList.add('expanded');
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            // Đóng tất cả các tuần khác
+            title.classList.remove('expanded');
+            content.style.maxHeight = null;
+        }
+    });
+
+    // 3. Hiển thị slide cuối cùng
+    if (initialSlideId !== undefined) {
+        displaySlide(initialSlideId, initialSectionIndex);
     }
 }); // <--- DẤU NGOẶC NHỌN VÀ NGOẶC ĐƠN ĐÓNG LẠI DOMCONTENTLOADED
