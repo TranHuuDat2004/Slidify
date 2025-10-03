@@ -182,137 +182,103 @@ document.addEventListener('DOMContentLoaded', () => {
         return null; // Không tìm thấy
     }
 
-    // **NÂNG CẤP: Hàm hiển thị slide (logic bên trong giữ nguyên)**
-    // **NÂNG CẤP LẦN CUỐI: Hàm hiển thị slide tích hợp nút Trước/Sau**
-    function displaySlide(slideId) {
-        // --- Lấy các element nút bấm ---
-        const prevBtn = document.getElementById('prev-slide-btn');
-        const nextBtn = document.getElementById('next-slide-btn');
+    function displaySlide(slideId, sectionIndex, courseId) {
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const currentSection = courseSections[sectionIndex];
+    if (!currentSection) return;
+    const allSlidesInSection = currentSection.slides;
+    const currentSlideIndex = allSlidesInSection.findIndex(s => s.id === slideId);
+    if (currentSlideIndex === -1) return;
+    const currentSlideData = allSlidesInSection[currentSlideIndex];
 
-        // --- Phần 1: Tìm dữ liệu slide, section và index hiện tại ---
-        let currentSlideData = null;
-        let currentSection = null;
-        let currentSlideIndex = -1;
-        let allSlidesInSection = [];
+    // --- Hiển thị nội dung ---
+    slideTitleEl.textContent = currentSlideData.title;
+    slideImageEl.src = currentSlideData.image;
+    slideNotesEl.innerHTML = currentSlideData.notes;
 
-        for (const section of courseSections) {
-            const foundIndex = section.slides.findIndex(s => s.id === slideId);
-            if (foundIndex !== -1) {
-                currentSection = section;
-                currentSlideIndex = foundIndex;
-                currentSlideData = section.slides[foundIndex];
-                allSlidesInSection = section.slides;
-                break;
-            }
+    // --- Xử lý bố cục 2 cột ---
+    const notesSection = document.querySelector('.notes-section');
+    const termsColumn = document.getElementById('terms-column');
+    const termsListEl = document.getElementById('slide-terms-content');
+    termsListEl.innerHTML = '';
+    const hasTerms = currentSlideData.terms && Object.keys(currentSlideData.terms).length > 0;
+    if (hasTerms) {
+        termsColumn.style.display = 'block';
+        notesSection.classList.remove('single-column');
+        for (const term in currentSlideData.terms) {
+            const dt = document.createElement('dt'); dt.textContent = term;
+            const dd = document.createElement('dd'); dd.textContent = currentSlideData.terms[term];
+            termsListEl.appendChild(dt); termsListEl.appendChild(dd);
         }
-
-        if (!currentSlideData) { return; }
-
-        // --- Phần 2: Hiển thị nội dung chính (giữ nguyên) ---
-        slideTitleEl.textContent = currentSlideData.title;
-        slideImageEl.src = currentSlideData.image;
-        slideNotesEl.innerHTML = currentSlideData.notes;
-
-        // --- Phần 3: Xử lý bố cục 2 cột (giữ nguyên) ---
-        const notesSection = document.querySelector('.notes-section');
-        const termsColumn = document.getElementById('terms-column');
-        const termsListEl = document.getElementById('slide-terms-content');
-        termsListEl.innerHTML = '';
-        const hasTerms = currentSlideData.terms && Object.keys(currentSlideData.terms).length > 0;
-        if (hasTerms) {
-            termsColumn.style.display = 'block';
-            notesSection.classList.remove('single-column');
-            for (const term in currentSlideData.terms) {
-                const dt = document.createElement('dt'); dt.textContent = term;
-                const dd = document.createElement('dd'); dd.textContent = currentSlideData.terms[term];
-                termsListEl.appendChild(dt); termsListEl.appendChild(dd);
-            }
-        } else {
-            termsColumn.style.display = 'none';
-            notesSection.classList.add('single-column');
-        }
-
-
-        // === LOGIC LƯU TRỮ TIẾN ĐỘ VÀ VỊ TRÍ ===
-        // 1. Lưu slide này là slide cuối cùng đã xem
-        saveLastViewedSlide(courseId, slideId);
-
-        // 2. Cập nhật và lưu tiến độ đã xem
-        let viewedSlides = getProgress(courseId);
-        if (!viewedSlides.includes(slideId)) {
-            // Chỉ thêm vào localStorage nếu chưa có
-            viewedSlides.push(slideId);
-            saveProgress(courseId, viewedSlides);
-        }
-
-        // 3. LUÔN LUÔN thêm class 'viewed' vào mục li tương ứng để hiển thị dấu tích
-        const viewedLi = document.querySelector(`.slide-list li[data-id='${slideId}']`);
-        if (viewedLi) {
-            viewedLi.classList.add('viewed');
-        }
-
-        // --- Phần 4: Logic cho nút Trước/Sau ---
-        // Nút "Trang trước"
-        if (currentSlideIndex > 0) {
-            prevBtn.disabled = false;
-            const prevSlideId = allSlidesInSection[currentSlideIndex - 1].id;
-            prevBtn.onclick = () => displaySlide(prevSlideId);
-        } else {
-            prevBtn.disabled = true; // Vô hiệu hóa nếu là slide đầu tiên
-            prevBtn.onclick = null;
-        }
-
-        // Nút "Trang sau"
-        if (currentSlideIndex < allSlidesInSection.length - 1) {
-            nextBtn.disabled = false;
-            const nextSlideId = allSlidesInSection[currentSlideIndex + 1].id;
-            nextBtn.onclick = () => displaySlide(nextSlideId);
-        } else {
-            nextBtn.disabled = true; // Vô hiệu hóa nếu là slide cuối cùng
-            nextBtn.onclick = null;
-        }
-
-        // --- Phần 5: Cập nhật mục lục (giữ nguyên) ---
-        document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
-        const activeLi = document.querySelector(`#slide-navigation-container li[data-id='${slideId}']`);
-        if (activeLi) { activeLi.classList.add('active'); }
-
-
+    } else {
+        termsColumn.style.display = 'none';
+        notesSection.classList.add('single-column');
     }
+
+    // --- Logic lưu trữ ---
+    const uniqueSlideIdentifier = `${sectionIndex}-${slideId}`;
+    saveLastViewedSlide(courseId, uniqueSlideIdentifier);
+    let viewedSlides = getProgress(courseId);
+    if (!viewedSlides.includes(uniqueSlideIdentifier)) {
+        viewedSlides.push(uniqueSlideIdentifier);
+        saveProgress(courseId, viewedSlides);
+    }
+    const viewedLi = document.querySelector(`.slide-list[data-section-index='${sectionIndex}'] li[data-id='${slideId}']`);
+    if (viewedLi) {
+        viewedLi.classList.add('viewed');
+    }
+
+    // --- Logic nút Trước/Sau ---
+    if (currentSlideIndex > 0) {
+        prevBtn.disabled = false;
+        const prevSlide = allSlidesInSection[currentSlideIndex - 1];
+        prevBtn.onclick = () => displaySlide(prevSlide.id, sectionIndex, courseId);
+    } else {
+        prevBtn.disabled = true;
+    }
+    if (currentSlideIndex < allSlidesInSection.length - 1) {
+        nextBtn.disabled = false;
+        const nextSlide = allSlidesInSection[currentSlideIndex + 1];
+        nextBtn.onclick = () => displaySlide(nextSlide.id, sectionIndex, courseId);
+    } else {
+        nextBtn.disabled = true;
+    }
+
+    // --- Cập nhật mục lục ---
+    document.querySelectorAll('#slide-navigation-container li').forEach(li => li.classList.remove('active'));
+    const activeLi = document.querySelector(`.slide-list[data-section-index='${sectionIndex}'] li[data-id='${slideId}']`);
+    if (activeLi) {
+        activeLi.classList.add('active');
+    }
+}
 
     // **NÂNG CẤP: Hàm tạo mục lục có thể thu gọn/mở rộng**
     function generateSlideNavigation() {
-        slideNavContainer.innerHTML = ''; // Xóa mục lục cũ
-
-        // Sử dụng forEach với index để biết được tuần nào là tuần đầu tiên
-        courseSections.forEach((section, index) => {
-            // Tạo tiêu đề cho tuần/phần (H3)
+        slideNavContainer.innerHTML = '';
+        courseSections.forEach((section, sectionIndex) => { // Lấy ra sectionIndex
             const sectionTitle = document.createElement('h3');
-            sectionTitle.className = 'section-title';
-            sectionTitle.textContent = section.title;
-            slideNavContainer.appendChild(sectionTitle);
+            // ... (code tạo tiêu đề tuần giữ nguyên) ...
 
-            // Tạo danh sách ul cho các slide trong tuần
             const slideList = document.createElement('ul');
             slideList.className = 'slide-list';
+            slideList.setAttribute('data-section-index', sectionIndex); // Thêm data attribute
 
             section.slides.forEach(slide => {
                 const li = document.createElement('li');
                 li.textContent = slide.title;
                 li.setAttribute('data-id', slide.id);
-
+                // Truyền cả slide.id và sectionIndex
                 li.addEventListener('click', () => {
-                    displaySlide(slide.id);
+                    displaySlide(slide.id, sectionIndex, courseId);
                 });
-
                 slideList.appendChild(li);
             });
 
-            slideNavContainer.appendChild(slideList);
 
-            // ---- LOGIC ĐÓNG/MỞ ----
+            // ---- LOGIC ĐÓNG/MỞ (ĐÃ SỬA) ----
             // 1. Thiết lập trạng thái ban đầu: Mở tuần đầu tiên, đóng các tuần còn lại
-            if (index === 0) {
+            if (sectionIndex === 0) { // SỬA 'index' THÀNH 'sectionIndex'
                 sectionTitle.classList.add('expanded');
                 slideList.style.display = 'block';
             } else {
@@ -321,51 +287,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. Thêm sự kiện click vào tiêu đề tuần
             sectionTitle.addEventListener('click', function () {
-                // "this" ở đây chính là thẻ h3 được click
-                this.classList.toggle('expanded'); // Thêm/xóa class 'expanded'
-
-                // Lấy danh sách slide (ul) ngay sau tiêu đề (h3)
+                this.classList.toggle('expanded');
                 const content = this.nextElementSibling;
-
-                // Kiểm tra và thay đổi trạng thái hiển thị của danh sách slide
                 if (content.style.display === 'block') {
                     content.style.display = 'none';
                 } else {
                     content.style.display = 'block';
                 }
             });
+
         });
     }
 
-    // 1. Tạo mục lục trước
+    // --- KHỞI CHẠY (PHIÊN BẢN CUỐI) ---
     generateSlideNavigation();
 
-    // 2. Cập nhật giao diện dựa trên tiến độ đã lưu
-    const viewedSlides = getProgress(courseId);
-    viewedSlides.forEach(viewedId => {
-        const li = document.querySelector(`.slide-list li[data-id='${viewedId}']`);
+const viewedSlides = getProgress(courseId);
+viewedSlides.forEach(uniqueId => {
+    // === BƯỚC KIỂM TRA AN TOÀN ===
+    // Chỉ thực hiện nếu uniqueId là một chuỗi và chứa dấu '-'
+    if (typeof uniqueId === 'string' && uniqueId.includes('-')) {
+        const [sectionIndex, slideId] = uniqueId.split('-');
+        const li = document.querySelector(`.slide-list[data-section-index='${sectionIndex}'] li[data-id='${slideId}']`);
         if (li) {
             li.classList.add('viewed');
         }
-    });
-
-    // 3. Quyết định slide nào sẽ được hiển thị khi tải trang
-    const lastViewedId = getLastViewedSlide(courseId);
-    const firstSlide = courseSections[0]?.slides[0];
-
-    if (lastViewedId) {
-        // Nếu có slide đã xem gần nhất -> hiển thị nó
-        displaySlide(parseInt(lastViewedId), courseId); // Chuyển chuỗi về số
-    } else if (firstSlide) {
-        // Nếu không -> hiển thị slide đầu tiên
-        displaySlide(firstSlide.id, courseId);
     }
-});
-
-// Hàm chuyển tab (giữ nguyên)
+    // Hàm chuyển tab (giữ nguyên)
 function openTab(evt, tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
     document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
     document.getElementById(tabName).style.display = 'block';
     evt.currentTarget.classList.add('active');
 }
+});
+

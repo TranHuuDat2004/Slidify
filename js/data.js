@@ -763,7 +763,52 @@ const coursesData = {
           }
           // ... và tiếp tục với các slide còn lại
         ]
-      }
+      }, // Dấu phẩy ngăn cách các tuần
+      {
+        title: "Tuần 2: 3D Games and User Input",
+        slides: [
+          // SLIDE 1 (của Tuần 2)
+          {
+            id: 1, // BẮT ĐẦU LẠI TỪ 1
+            title: "Trang 1: Bìa - 3D Games and User Input",
+            image: "images/game-dev/week2/slide_1.png",
+            notes: "Bài giảng 2: Game 3D và Tương tác người dùng (User Input)...",
+            terms: {}
+          },
+          // SLIDE 2 (của Tuần 2)
+          {
+            id: 2,
+            title: "Trang 2: Đề cương bài giảng",
+            image: "images/game-dev/week2/slide_2.png",
+            notes: "Nội dung chính của bài giảng Tuần 2 bao gồm 3 phần...",
+            terms: {}
+          },
+          // SLIDE 3 (của Tuần 2)
+          {
+            id: 3,
+            title: "Trang 3: Chuyển tiếp - Toán học trong Game",
+            image: "images/game-dev/week2/slide_3.png",
+            notes: "Chuẩn bị vào phần đầu tiên: Các khái niệm toán học...",
+            terms: {}
+          },
+          // SLIDE 4 (của Tuần 2)
+          {
+            id: 4,
+            title: "Trang 4: 2D Vectors",
+            image: "images/game-dev/week2/slide_4.png",
+            notes: "Vector là một đối tượng hình học có độ lớn (magnitude) và hướng (direction)...",
+            terms: { /* ... thuật ngữ ... */ }
+          },
+          // SLIDE 5 (của Tuần 2)
+          {
+            id: 5,
+            title: "Trang 5: 2D Vectors & Hình học cơ bản",
+            image: "images/game-dev/week2/slide_5.png",
+            notes: "Vector 2D được cấu tạo bởi hai thành phần (x, y)...",
+            terms: { /* ... thuật ngữ ... */ }
+          }
+        ]
+      },
       // Bạn có thể thêm "Tuần 3", "Tuần 4"... ở đây
     ]
   },
