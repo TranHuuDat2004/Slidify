@@ -1305,10 +1305,727 @@ const coursesData = {
             terms: {}
           }
 
-        ],
-
+        ]
         
-      }
+      }, // Dấu phẩy ngăn cách các tuần
+{
+  title: "Tuần 3: 3D Games: Models and Physics",
+  slides: [
+    // Dán 5 khối mã này vào mảng slides của Tuần 3
+
+          // SLIDE 1: BÌA TUẦN 3
+          {
+            id: 1,
+            title: "Trang 1: Bìa - 3D Games: Models and Physics",
+            image: "images/game-dev/week3/slide_1.png",
+            notes: "Bài giảng 3: Game 3D: Các mô hình và Vật lý.\n\n" +
+                   "Tuần này sẽ giới thiệu về cách làm việc với các đối tượng 3D và hệ thống vật lý trong Unity.",
+            terms: {}
+          },
+          // SLIDE 2: ĐỀ CƯƠNG TUẦN 3
+          {
+            id: 2,
+            title: "Trang 2: Đề cương bài giảng",
+            image: "images/game-dev/week3/slide_2.png",
+            notes: "Nội dung chính của bài giảng Tuần 3 bao gồm 3 phần:\n\n" +
+                   "1. <b>Các mô hình 3D (3D Models).</b>\n" +
+                   "2. <b>Vật lý 3D (3D Physics).</b>\n" +
+                   "3. <b>Câu hỏi ôn tập và Xem trước buổi thực hành.</b>",
+            terms: {}
+          },
+          // SLIDE 3: CHUYỂN TIẾP
+          {
+            id: 3,
+            title: "Trang 3: Chuyển tiếp - Các mô hình 3D",
+            image: "images/game-dev/week3/slide_3.png",
+            notes: "Chuẩn bị vào phần đầu tiên: Các mô hình 3D.",
+            terms: {}
+          },
+          // SLIDE 4: CHẾ ĐỘ 3D
+          {
+            id: 4,
+            title: "Trang 4: Chế độ 3D",
+            image: "images/game-dev/week3/slide_4.png",
+            notes: "Trong Unity 5.4, khi bạn bắt đầu một dự án mới, bạn có thể chọn làm game 2D hoặc 3D. Lựa chọn này sẽ thiết lập trình soạn thảo ở chế độ 2D hoặc 3D tương ứng.\n\n" +
+                   "Theo mặc định, cửa sổ <b>Scene View</b> sẽ được đặt ở chế độ xem 3D, mặc dù bạn có thể chuyển đổi sang chế độ xem 2D bất kỳ lúc nào.",
+            terms: {
+              "Scene View": "Cửa sổ chính trong Unity Editor nơi bạn có thể xem và tương tác với thế giới game của mình một cách trực quan. Bạn có thể di chuyển, xoay, và sắp xếp các Game Object trong cửa sổ này."
+            }
+          },
+          // SLIDE 5: CÁC ĐỐI TƯỢNG GAME 3D (PRIMITIVE MESHES)
+          {
+            id: 5,
+            title: "Trang 5: Các đối tượng Game 3D (Primitive Meshes)",
+            image: "images/game-dev/week3/slide_5.png",
+            notes: "Unity có một số lưới (meshes) nguyên thủy được định nghĩa sẵn, rất hữu ích cho việc dựng mẫu (prototyping) hoặc làm các đối tượng giữ chỗ (placeholders):\n\n" +
+                   "- <b>Cube:</b> Hình lập phương.\n" +
+                   "- <b>Sphere:</b> Hình cầu.\n" +
+                   "- <b>Capsule:</b> Hình con nhộng (thường dùng cho nhân vật).\n" +
+                   "- <b>Cylinder:</b> Hình trụ.\n" +
+                   "- <b>Plane:</b> Một mặt phẳng lớn, vô hạn về mặt hình ảnh.\n" +
+                   "- <b>Quad:</b> Một mặt phẳng hình vuông, có kích thước 1x1.",
+            terms: {
+              "Mesh": "Thành phần chính của một mô hình 3D, bao gồm một tập hợp các đỉnh (vertices), cạnh (edges), và mặt (faces) định nghĩa nên hình dạng của vật thể.",
+              "Primitive Mesh": "Các hình dạng hình học 3D cơ bản được cung cấp sẵn bởi một game engine. Chúng là những khối xây dựng đơn giản nhất để tạo ra các đối tượng trong game."
+            }
+          },// Dán 5 khối mã này vào sau slide có id: 5 của Tuần 3
+
+          // SLIDE 6: 3D TRANSFORMS
+          {
+            id: 6,
+            title: "Trang 6: 3D Transforms",
+            image: "images/game-dev/week3/slide_6.png",
+            notes: "Tất cả các đối tượng game 3D đều có một component <b>Transform</b>, quyết định 3 thuộc tính cơ bản: Vị trí (Position), Góc xoay (Rotation), và Tỷ lệ (Scale).\n\n" +
+                   "Các thuộc tính này có thể được thiết lập trực tiếp trong Inspector hoặc được điều khiển trong cửa sổ Scene View bằng cách sử dụng các công cụ điều khiển (control gizmos) tương ứng cho Tịnh tiến, Xoay, và Tỷ lệ.",
+            terms: {
+              "Gizmo": "Các biểu tượng đồ họa được hiển thị trong Scene View để giúp bạn tương tác và điều khiển các đối tượng. Ví dụ, gizmo di chuyển có 3 mũi tên màu đỏ, xanh lá, và xanh dương tương ứng với các trục X, Y, Z."
+            }
+          },
+          // SLIDE 7: VERTICES, TRIANGLES, MESHES
+          {
+            id: 7,
+            title: "Trang 7: Vertices, Triangles, Meshes",
+            image: "images/game-dev/week3/slide_7.png",
+            notes: "Một <b>mesh</b> (lưới) là một tập hợp các điểm 3D (gọi là <b>vertices</b> - đỉnh), khi được kết hợp lại với nhau, sẽ định nghĩa nên sự hiện diện vật lý của một đối tượng.\n\n" +
+                   "Mọi mesh đều được tạo thành từ một chuỗi các <b>triangles</b> (tam giác), được xác định bởi các đỉnh của nó.\n\n" +
+                   "Tam giác được sử dụng vì:\n" +
+                   "- 3 điểm xác định một tam giác duy nhất với các cạnh không cắt nhau.\n" +
+                   "- 3 điểm xác định một tam giác trong một mặt phẳng duy nhất (hình dạng phẳng).",
+            terms: {
+              "Vertices (Đỉnh)": "Các điểm trong không gian 3D, là thành phần cơ bản nhất của một mesh. Mỗi đỉnh chứa thông tin về vị trí và có thể chứa các thông tin khác như màu sắc, tọa độ UV, và vector pháp tuyến.",
+              "Triangles (Tam giác)": "Các mặt phẳng được tạo ra bằng cách nối 3 đỉnh lại với nhau. Đây là đơn vị cơ bản để xây dựng bề mặt của tất cả các mô hình 3D trong đồ họa máy tính thời gian thực."
+            }
+          },
+          // SLIDE 8: MESH FILTER VÀ MESH RENDERER
+          {
+            id: 8,
+            title: "Trang 8: Mesh Filter và Mesh Renderer",
+            image: "images/game-dev/week3/slide_8.png",
+            notes: "Để một Game Object có thể hiển thị một mesh, nó cần hai component chính:\n\n" +
+                   "- <b>Mesh Filter:</b> Component này lấy một mesh từ các asset của bạn và chuyển nó cho Mesh Renderer để render lên màn hình.\n" +
+                   "- <b>Mesh Renderer:</b> Component này lấy thông tin hình học (geometry) của đối tượng từ Mesh Filter và render nó tại vị trí được xác định bởi component Transform. Nó cũng xử lý việc đổ bóng, nhận bóng, và áp dụng các vật liệu (materials).",
+            terms: {
+              "Mesh Filter": "Một component chứa dữ liệu mesh của một đối tượng. Nó không tự render bất cứ thứ gì, mà chỉ giữ thông tin về hình dạng và cung cấp nó cho Mesh Renderer.",
+              "Mesh Renderer": "Một component chịu trách nhiệm vẽ (render) mesh được cung cấp bởi Mesh Filter lên màn hình. Nó xử lý cách đối tượng tương tác với ánh sáng và cách nó được tô màu thông qua các Materials."
+            }
+          },
+          // SLIDE 9: MODELS (1/2)
+          {
+            id: 9,
+            title: "Trang 9: Models (1/2) - Giới thiệu",
+            image: "images/game-dev/week3/slide_9.png",
+            notes: "Một <b>model</b> (mô hình) là một mesh đã được áp dụng các vật liệu (material), texture, và shader.\n\n" +
+                   "<b>Các định dạng được hỗ trợ:</b>\n" +
+                   "Việc nhập (import) các mesh vào Unity có thể được thực hiện từ hai loại tệp chính:\n" +
+                   "- Các định dạng tệp 3D đã xuất (Exported), chẳng hạn như <b>.FBX</b> hoặc <b>.OBJ</b>.\n" +
+                   "- Các định dạng tệp ứng dụng 3D độc quyền, chẳng hạn như <b>.Max</b> (3D Studio Max) và <b>.Blend</b> (Blender).\n\n" +
+                   "Unity có thể đọc được các định dạng .FBX, .dae (Collada), .3DS, .dxf và .obj.",
+            terms: {
+              "Model (Mô hình)": "Trong ngữ cảnh game, đây là một asset đại diện cho một đối tượng 3D hoàn chỉnh, bao gồm hình dạng (mesh), bề mặt (material, texture), và đôi khi cả các animation.",
+              ".FBX": "Một định dạng tệp 3D phổ biến được phát triển bởi Autodesk, được sử dụng rộng rãi trong ngành công nghiệp game để trao đổi các mô hình 3D, animation, và các dữ liệu scene khác giữa các ứng dụng.",
+              ".OBJ": "Một định dạng tệp hình học 3D đơn giản, chỉ lưu trữ thông tin về hình dạng (đỉnh, mặt, UVs, pháp tuyến) của một mô hình."
+            }
+          },
+          // SLIDE 10: MODELS (2/2)
+          {
+            id: 10,
+            title: "Trang 10: Models (2/2) - Cấu trúc",
+            image: "images/game-dev/week3/slide_10.png",
+            notes: "Một mô hình được áp dụng một <b>Model Material</b>.\n\n" +
+                   "- Một <b>material</b> (vật liệu) có thể được xem như là 'lớp da' của mesh.\n" +
+                   "- Mọi mesh cần một material để có thể được nhìn thấy trên màn hình.\n" +
+                   "- Model material (được lưu trong một tệp) có hai phần: <b>texture</b> (họa tiết) và <b>shader</b> (trình đổ bóng).",
+            terms: {
+              "Material": "Một asset trong Unity định nghĩa cách một bề mặt sẽ được render. Nó kết hợp một Shader và các thuộc tính (như màu sắc, texture) để tạo ra diện mạo cuối cùng của một đối tượng.",
+              "Texture": "Một tệp hình ảnh (ví dụ: .png, .jpg) được 'dán' lên bề mặt của một mô hình 3D để cung cấp chi tiết về màu sắc, hoa văn, hoặc các đặc tính bề mặt khác.",
+              "Shader": "Một chương trình nhỏ chạy trên card đồ họa (GPU), quyết định các thuộc tính của pixel cuối cùng được vẽ lên màn hình. Nó tính toán màu sắc dựa trên ánh sáng, texture, và các thuộc tính khác của material."
+            }
+          },// Dán 5 khối mã này vào sau slide có id: 10 của Tuần 3
+
+          // SLIDE 11: MATERIALS
+          {
+            id: 11,
+            title: "Trang 11: Materials",
+            image: "images/game-dev/week3/slide_11.png",
+            notes: "Unity cung cấp một material mặc định cho mỗi mesh (một material màu xám, trơn đơn giản).\n\n" +
+                   "Một trong những tham số cơ bản của nó là <b>texture</b>. Một texture chỉ đơn giản là một tệp hình ảnh.\n\n" +
+                   "Chúng ta có thể tạo một material mới trong Unity và gán texture cho nó. Sau đó, có thể áp dụng material mới này cho đối tượng để thay đổi diện mạo của nó.",
+            terms: {
+              "Material": "Một asset trong Unity định nghĩa cách một bề mặt sẽ được render. Nó kết hợp một Shader và các thuộc tính (như màu sắc, texture) để tạo ra diện mạo cuối cùng của một đối tượng.",
+              "Texture": "Một tệp hình ảnh (ví dụ: .png, .jpg) được 'dán' lên bề mặt của một mô hình 3D để cung cấp chi tiết về màu sắc, hoa văn, hoặc các đặc tính bề mặt khác."
+            }
+          },
+          // SLIDE 12: SHADERS
+          {
+            id: 12,
+            title: "Trang 12: Shaders",
+            image: "images/game-dev/week3/slide_12.png",
+            notes: "Shader trong Unity được sử dụng thông qua Materials. Mã shader sẽ cho material biết nó cần những thuộc tính nào (màu sắc, textures, độ trong suốt, v.v.).\n\n" +
+                   "Shader mặc định là <b>Standard Shader</b>, được sử dụng trong material mặc định. Đây là một shader rất linh hoạt có thể được cấu hình theo nhiều cách.\n\n" +
+                   "Có ba mục chính trong shader material:\n" +
+                   "1. <b>Rendering Mode (Chế độ render):</b>\n" +
+                   "   - <b>Opaque:</b> Mặc định, vật thể đặc, không trong suốt.\n" +
+                   "   - <b>Cutout:</b> Dùng kênh alpha của texture để 'cắt bỏ' các phần của vật thể.\n" +
+                   "   - <b>Fade / Transparent:</b> Làm cho vật thể trong suốt.",
+            terms: {
+              "Shader": "Một chương trình nhỏ chạy trên card đồ họa (GPU), quyết định các thuộc tính của pixel cuối cùng được vẽ lên màn hình. Nó tính toán màu sắc dựa trên ánh sáng, texture, và các thuộc tính khác của material.",
+              "Standard Shader": "Shader mặc định, đa năng của Unity. Nó có thể tạo ra nhiều loại bề mặt khác nhau (kim loại, nhựa, kính...) chỉ bằng cách điều chỉnh các thông số của nó.",
+              "Alpha Channel": "Một kênh thông tin bổ sung trong một hình ảnh, quy định độ trong suốt của mỗi pixel."
+            }
+          },
+          // SLIDE 13: THE STANDARD SHADER
+          {
+            id: 13,
+            title: "Trang 13: The Standard Shader",
+            image: "images/game-dev/week3/slide_13.png",
+            notes: "Tiếp tục với các mục trong Standard Shader:\n\n" +
+                   "2. <b>Main Maps (Các texture chính):</b> Các thuộc tính được định nghĩa bởi các texture map.\n" +
+                   "   - <b>Albedo:</b> Màu cơ bản của bề mặt, là sự kết hợp của một texture và một màu sắc.\n" +
+                   "   - <b>Metallic:</b> Xác định độ 'kim loại' của bề mặt.\n" +
+                   "   - <b>Smoothness:</b> Xác định độ mịn/nhám của bề mặt, ảnh hưởng đến sự phản chiếu.\n" +
+                   "   - <b>Normal Map:</b> Tạo ra ảo giác về các chi tiết lồi lõm trên bề mặt.\n" +
+                   "   - <b>Height Map:</b> Xác định chiều cao biểu kiến của bề mặt.\n" +
+                   "   - <b>Occlusion:</b> Cách bề mặt phản ứng với ánh sáng môi trường.\n" +
+                   "   - <b>Emission:</b> Làm cho bề mặt tự phát sáng.\n\n" +
+                   "3. <b>Secondary maps:</b> Để định nghĩa các chi tiết bề mặt bổ sung.\n\n" +
+                   "Standard Shader còn có một biến thể (Standard, Specular Setup) sử dụng <b>Specular</b> thay vì Metallic.",
+            terms: {
+              "Albedo": "Màu sắc cơ bản của một bề mặt, không bị ảnh hưởng bởi ánh sáng. Nó giống như màu sắc bạn thấy của một vật thể trong một căn phòng được chiếu sáng đều.",
+              "Normal Map": "Một loại texture đặc biệt dùng để thêm chi tiết bề mặt mà không cần tăng số lượng đa giác của mô hình. Nó mô phỏng các vết lồi lõm nhỏ bằng cách thay đổi cách ánh sáng phản xạ trên bề mặt.",
+              "Specular": "Đề cập đến sự phản chiếu ánh sáng một cách sắc nét, giống như gương. Trái ngược với 'Diffuse' là sự phản xạ khuếch tán, mờ."
+            }
+          },
+          // SLIDE 14: SHADERS (VÍ DỤ)
+          {
+            id: 14,
+            title: "Trang 14: Shaders (Ví dụ)",
+            image: "images/game-dev/week3/slide_14.png",
+            notes: "Slide này minh họa ảnh hưởng của các map khác nhau trong Standard Shader lên một hình cầu đơn giản:\n\n" +
+                   "- <b>Hình trên bên trái:</b> Chỉ có Albedo (màu gạch).\n" +
+                   "- <b>Hình trên bên phải:</b> Albedo + Metallic/Smoothness (bề mặt trông bóng hơn).\n" +
+                   "- <b>Hình dưới bên trái:</b> Thêm Occlusion (các khe gạch tối hơn).\n" +
+                   "- <b>Hình dưới bên phải:</b> Thêm Normal/Height Map (bề mặt trông lồi lõm, có chiều sâu thực sự).",
+            terms: {}
+          },
+          // SLIDE 15: BỨC TRANH TOÀN CẢNH
+          {
+            id: 15,
+            title: "Trang 15: Bức tranh toàn cảnh",
+            image: "images/game-dev/week3/slide_15.png",
+            notes: "Sơ đồ này tóm tắt mối quan hệ giữa các thành phần rendering:\n\n" +
+                   "1. <b>3D Model (Mesh):</b> Chứa dữ liệu hình học cơ bản như vị trí đỉnh, màu đỉnh, pháp tuyến, và dữ liệu UV (để áp texture).\n" +
+                   "2. <b>Material:</b> Sử dụng dữ liệu từ Model. Nó chứa các Texture và các giá trị thuộc tính của Shader (ví dụ: màu Albedo, độ mịn...).\n" +
+                   "3. <b>Shader:</b> Được sử dụng bởi Material. Nó chứa mã nguồn (viết bằng Cg/HLSL) để thực hiện các phép tính và cuối cùng quyết định màu sắc của từng pixel trên màn hình.",
+            terms: {
+              "UV data (Texture Mapping)": "Tọa độ 2D được gán cho mỗi đỉnh của một mesh 3D, cho biết phần nào của một texture 2D sẽ được 'dán' lên vị trí đó của mô hình.",
+              "Cg / HLSL": "Các ngôn ngữ lập trình bậc cao được sử dụng để viết shader. Cg (C for Graphics) được phát triển bởi NVIDIA. HLSL (High-Level Shading Language) được phát triển bởi Microsoft cho DirectX."
+            }
+          },// Dán 5 khối mã này vào sau slide có id: 15 của Tuần 3
+
+          // SLIDE 16: CHUYỂN TIẾP - VẬT LÝ 3D
+          {
+            id: 16,
+            title: "Trang 16: Chuyển tiếp - Vật lý 3D",
+            image: "images/game-dev/week3/slide_16.png",
+            notes: "Kết thúc phần giới thiệu về các mô hình 3D.\n\n" +
+                   "Phần tiếp theo sẽ tập trung vào hệ thống vật lý 3D của Unity.",
+            terms: {}
+          },
+          // SLIDE 17: VẬT LÝ 3D
+          {
+            id: 17,
+            title: "Trang 17: Vật lý 3D",
+            image: "images/game-dev/week3/slide_17.png",
+            notes: "Unity có một engine vật lý riêng biệt cho tất cả các tương tác 3D trong game.\n\n" +
+                   "Các thành phần của engine vật lý 3D trong Unity là:\n" +
+                   "- <b>Rigidbodies:</b> Cho phép đối tượng có hành vi vật lý.\n" +
+                   "- <b>3D Colliders:</b> Các hình dạng va chạm (Box, Capsule, Mesh, Sphere...).\n" +
+                   "- <b>Joints (Khớp nối):</b> Dùng để kết nối các Rigidbody với nhau (Hinge, Spring, Character...).\n" +
+                   "- <b>Forces and Torque (Lực và Mô-men xoắn).</b>\n\n" +
+                   "Chúng ta cũng sẽ xem xét về Physic 3D Materials và Raycasting trong bài giảng này.",
+            terms: {
+              "Physics Engine": "Một phần mềm mô phỏng các định luật vật lý Newton trong môi trường ảo. Nó chịu trách nhiệm tính toán các hiệu ứng như trọng lực, va chạm, ma sát, và các lực khác."
+            }
+          },
+          // SLIDE 18: 3D RIGIDBODY (1/3)
+          {
+            id: 18,
+            title: "Trang 18: 3D Rigidbody (1/3) - Giới thiệu",
+            image: "images/game-dev/week3/slide_18.png",
+            notes: "<b>Rigidbody</b> là component chính cho phép một đối tượng có hành vi vật lý. Với một Rigidbody được gắn vào, đối tượng sẽ ngay lập tức phản ứng với trọng lực.\n\n" +
+                   "Khi một component Rigidbody kiểm soát chuyển động của đối tượng, bạn <b>không nên</b> cố gắng di chuyển nó từ script bằng cách thay đổi các thuộc tính của Transform như vị trí và góc xoay. Thay vào đó, bạn nên <b>áp dụng các lực</b> để đẩy đối tượng và để engine vật lý tính toán kết quả.\n\n" +
+                   "<b>Sleeping (Ngủ đông):</b> Khi một rigidbody di chuyển chậm hơn một tốc độ tối thiểu nhất định, engine vật lý sẽ cho rằng nó đã dừng lại và đặt nó vào chế độ 'ngủ'. Đối tượng sẽ không được cập nhật cho đến khi nhận được một va chạm hoặc một lực tác động mới. Đây là một cơ chế tối ưu hóa hiệu suất.",
+            terms: {
+              "Rigidbody": "Một component cho phép một Game Object được điều khiển bởi hệ thống vật lý của Unity. Nó cho phép đối tượng của bạn chịu tác động của trọng lực, va chạm với các đối tượng khác, và phản ứng với các lực được áp dụng từ script.",
+              "Force": "Một tác động có thể làm thay đổi chuyển động của một vật thể. Trong Unity, bạn có thể dùng `Rigidbody.AddForce()` để đẩy một đối tượng."
+            }
+          },
+          // SLIDE 19: 3D RIGIDBODY (2/3)
+          {
+            id: 19,
+            title: "Trang 19: 3D Rigidbody (2/3) - Các tham số",
+            image: "images/game-dev/week3/slide_19.png",
+            notes: "Các tham số chính của component Rigidbody:\n\n" +
+                   "- <b>Mass (Khối lượng):</b> Khối lượng của đối tượng. Bạn không nên tạo ra các khối lượng chênh lệch quá lớn (hơn 100 lần) so với các Rigidbody khác.\n" +
+                   "- <b>Drag (Lực cản):</b> Lực cản không khí ảnh hưởng đến đối tượng khi di chuyển. 0 nghĩa là không có lực cản.\n" +
+                   "- <b>Angular Drag:</b> Lực cản không khí ảnh hưởng đến đối tượng khi xoay.\n" +
+                   "- <b>Use Gravity:</b> Nếu được bật, đối tượng sẽ bị ảnh hưởng bởi trọng lực.\n" +
+                   "- <b>Is Kinematic:</b> Nếu được bật, đối tượng sẽ không bị điều khiển bởi engine vật lý, và chỉ có thể được điều khiển thông qua Transform của nó.",
+            terms: {
+              "Mass (Khối lượng)": "Đại lượng vật lý đo lường quán tính của một vật thể. Trong Unity, khối lượng ảnh hưởng đến cách một đối tượng phản ứng với các lực và va chạm.",
+              "Drag (Lực cản)": "Một lực cản trở chuyển động của một vật thể qua một chất lỏng (như không khí). Drag càng lớn, vật thể càng nhanh chóng dừng lại.",
+              "Is Kinematic": "Một thuộc tính của Rigidbody. Khi bật, đối tượng sẽ không phản ứng với các lực vật lý nhưng vẫn có thể gây ra va chạm và kích hoạt trigger. Hữu ích cho các đối tượng chuyển động mà bạn muốn kiểm soát hoàn toàn bằng script (ví dụ: thang máy, cửa tự động)."
+            }
+          },
+          // SLIDE 20: 3D RIGIDBODY (3/3)
+          {
+            id: 20,
+            title: "Trang 20: 3D Rigidbody (3/3) - Các tham số khác",
+            image: "images/game-dev/week3/slide_20.png",
+            notes: "Các tham số quan trọng khác của Rigidbody:\n\n" +
+                   "- <b>Interpolate (Nội suy):</b> Dùng để làm mượt chuyển động của Rigidbody giữa các frame vật lý.\n" +
+                   "  - <b>Interpolate:</b> Làm mượt Transform dựa trên vị trí của các frame trước đó.\n" +
+                   "  - <b>Extrapolate:</b> Làm mượt Transform dựa trên vận tốc hiện tại.\n" +
+                   "- <b>Collision Detection (Phát hiện va chạm):</b>\n" +
+                   "  - <b>Discrete:</b> Phát hiện va chạm thông thường.\n" +
+                   "  - <b>Continuous:</b> Ngăn chặn các collider di chuyển nhanh đi xuyên qua nhau. Hữu ích cho các vật thể như viên đạn.\n" +
+                   "- <b>Constraints (Ràng buộc):</b> Cho phép 'đóng băng' chuyển động hoặc xoay của Rigidbody trên các trục X, Y, Z một cách chọn lọc.",
+            terms: {
+              "Interpolation (Nội suy)": "Trong vật lý game, đây là kỹ thuật dùng để làm mượt chuyển động của một đối tượng vật lý, vốn được cập nhật ở một tần suất cố định (trong FixedUpdate), để nó trông mượt mà trên màn hình, vốn được cập nhật ở một tần suất thay đổi (trong Update).",
+              "Continuous Collision Detection (CCD)": "Một chế độ phát hiện va chạm chính xác hơn, được thiết kế để ngăn chặn các vật thể di chuyển với tốc độ cao đi xuyên qua các vật thể mỏng khác. Nó tốn nhiều tài nguyên hơn so với phát hiện va chạm 'Discrete'."
+            }
+          },
+
+// Dán 5 khối mã này vào sau slide có id: 20 của Tuần 3
+
+          // SLIDE 21: 3D RIGIDBODY TRONG CODE
+          {
+            id: 21,
+            title: "Trang 21: 3D Rigidbody trong Code",
+            image: "images/game-dev/week3/slide_21.png",
+            notes: "Các script nằm trong một game object có gắn rigidbody sẽ có thể truy cập đến component này thông qua lệnh gọi `GetComponent<Rigidbody>()`.\n\n" +
+                   "Có thể di chuyển một đối tượng có rigidbody bằng cách thay đổi vị trí, vận tốc tuyến tính, vận tốc góc, v.v. của nó. Ví dụ:\n\n" +
+                   "- `rigidbody.velocity`: Thiết lập vận tốc di chuyển thẳng của rigidbody.\n" +
+                   "- `rigidbody.angularVelocity`: Thiết lập vận tốc xoay của rigidbody.\n" +
+                   "- `rigidbody.position`: Thiết lập trực tiếp vị trí của rigidbody (nên dùng trong `FixedUpdate`).\n\n" +
+                   "Bạn cũng có thể truy cập các biến khác của component rigidbody, chẳng hạn như `drag`, `angularDrag`, `useGravity` hoặc `isKinematic`.",
+            terms: {
+              "rigidbody.velocity": "Một thuộc tính Vector3 của Rigidbody, đại diện cho vận tốc của đối tượng. Thay đổi giá trị này sẽ làm cho đối tượng di chuyển ngay lập tức với vận tốc mới.",
+              "rigidbody.angularVelocity": "Một thuộc tính Vector3 của Rigidbody, đại diện cho vận tốc góc (tốc độ xoay) của đối tượng."
+            }
+          },
+          // SLIDE 22: 3D COLLIDERS (1/3)
+          {
+            id: 22,
+            title: "Trang 22: 3D Colliders (1/3) - Giới thiệu",
+            image: "images/game-dev/week3/slide_22.png",
+            notes: "Các component <b>Collider</b> định nghĩa hình dạng của một đối tượng cho mục đích va chạm vật lý. Một collider là vô hình, không nhất thiết phải có hình dạng giống hệt như mesh của đối tượng, và trên thực tế, một hình dạng xấp xỉ đơn giản thường hiệu quả hơn và không thể phân biệt được trong gameplay.\n\n" +
+                   "Có thể thêm nhiều collider vào một đối tượng duy nhất để tạo ra các <b>collider phức hợp (compound colliders)</b>.\n\n" +
+                   "Một quy tắc chung là sử dụng <b>mesh colliders</b> cho các vật thể tĩnh trong màn chơi (như mặt đất, tường) và sử dụng các collider nguyên thủy phức hợp để xấp xỉ hình dạng của các đối tượng chuyển động.",
+            terms: {
+              "Collider": "Một component định nghĩa một hình dạng (như hình hộp, hình cầu) cho mục đích va chạm vật lý. Collider không tự di chuyển, chúng chỉ là hình dạng.",
+              "Compound Collider": "Một cấu trúc vật lý được tạo ra bằng cách kết hợp nhiều collider nguyên thủy (primitive colliders) trên một Game Object duy nhất (có một Rigidbody). Điều này cho phép tạo ra các hình dạng va chạm phức tạp mà vẫn hiệu quả về mặt hiệu suất.",
+              "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
+            }
+          },
+          // SLIDE 23: 3D COLLIDERS (2/3)
+          {
+            id: 23,
+            title: "Trang 23: 3D Colliders (2/3) - Static Collider",
+            image: "images/game-dev/week3/slide_23.png",
+            notes: "Các collider tương tác với nhau theo những cách khác nhau tùy thuộc vào cách các component Rigidbody của chúng được cấu hình. Ba cấu hình quan trọng là:\n\n" +
+                   "<b>Static Collider (Collider tĩnh):</b>\n" +
+                   "- Là một Game Object có một Collider nhưng <b>không có</b> Rigidbody.\n" +
+                   "- Được sử dụng cho các hình học trong màn chơi luôn ở cùng một vị trí và không bao giờ di chuyển (ví dụ: sàn nhà, tường, tòa nhà).\n" +
+                   "- Các đối tượng rigidbody đang lao tới sẽ va chạm với collider tĩnh nhưng sẽ không làm nó di chuyển.\n" +
+                   "- Engine vật lý giả định rằng các collider tĩnh không bao giờ di chuyển và có thể thực hiện các tối ưu hóa hiệu suất dựa trên giả định này. Do đó, bạn <b>không nên</b> di chuyển, thay đổi tỷ lệ, hoặc bật/tắt các collider tĩnh trong khi game đang chạy.",
+            terms: {
+              "Static Collider": "Một Game Object có component Collider nhưng không có Rigidbody. Nó được coi là một vật thể bất động trong thế giới vật lý, lý tưởng cho các yếu- tố môi trường."
+            }
+          },
+          // SLIDE 24: 3D COLLIDERS (3/3)
+          {
+            id: 24,
+            title: "Trang 24: 3D Colliders (3/3) - Rigidbody Colliders",
+            image: "images/game-dev/week3/slide_24.png",
+            notes: "<b>Rigidbody Collider:</b>\n" +
+                   "- Là một Game Object có một Collider và một Rigidbody thông thường (non-kinematic).\n" +
+                   "- Các collider rigidbody được mô phỏng hoàn toàn bởi engine vật lý và có thể phản ứng với các va chạm và các lực được áp dụng từ script. Đây là cấu hình Collider được sử dụng phổ biến nhất trong các game có sử dụng vật lý.\n\n" +
+                   "<b>Kinematic Rigidbody Collider:</b>\n" +
+                   "- Là một Game Object có một Collider và một Rigidbody được đánh dấu là kinematic.\n" +
+                   "- Bạn có thể di chuyển một đối tượng kinematic rigidbody từ script bằng cách sửa đổi component Transform của nó, nhưng nó sẽ không phản ứng với các lực như một rigidbody non-kinematic.\n" +
+                   "- Nên sử dụng kinematic rigidbody cho các collider có thể được di chuyển hoặc bật/tắt đôi khi nhưng vẫn hoạt động như các collider tĩnh. Ví dụ: một cánh cửa trượt.",
+            terms: {}
+          },
+          // SLIDE 25: 3D COLLIDERS - BOX COLLIDER
+          {
+            id: 25,
+            title: "Trang 25: 3D Colliders - Box Collider",
+            image: "images/game-dev/week3/slide_25.png",
+            notes: "<b>Box Collider</b> là một collider nguyên thủy có hình dạng khối lập phương cơ bản. Nó rất hữu ích cho bất cứ thứ gì có hình dạng gần giống hình hộp, chẳng hạn như một cái thùng hoặc một cái rương. Một box collider mỏng cũng có thể được dùng làm sàn, tường hoặc dốc.\n\n" +
+                   "Các thuộc tính chính:\n" +
+                   "- <b>Is Trigger:</b> Nếu được bật, Collider này được sử dụng để kích hoạt các sự kiện và bị bỏ qua bởi engine vật lý (các vật thể khác có thể đi xuyên qua nó).\n" +
+                   "- <b>Material:</b> Tham chiếu đến một Physic Material, quyết định cách Collider này tương tác với các collider khác (ví dụ: độ nảy, ma sát).\n" +
+                   "- <b>Center / Size:</b> Vị trí tâm và kích thước của Collider trong không gian cục bộ của đối tượng.",
+            terms: {
+              "Is Trigger": "Một thuộc tính boolean trên một Collider. Khi được bật, collider sẽ không còn là một vật thể rắn vật lý nữa. Thay vào đó, nó sẽ hoạt động như một 'vùng cảm biến' và sẽ gọi các hàm sự kiện như `OnTriggerEnter()` khi một Rigidbody khác đi vào nó.",
+              "Physic Material": "Một asset dùng để điều chỉnh các thuộc tính ma sát và độ nảy của các collider khi chúng va chạm với nhau."
+            }
+          },// Dán 5 khối mã này vào sau slide có id: 25 của Tuần 3
+
+          // SLIDE 26: 3D COLLIDERS - SPHERE COLLIDER
+          {
+            id: 26,
+            title: "Trang 26: 3D Colliders - Sphere Collider",
+            image: "images/game-dev/week3/slide_26.png",
+            notes: "<b>Sphere Collider</b> là một collider nguyên thủy có hình dạng hình cầu cơ bản. Collider này có thể được thay đổi kích thước thông qua thuộc tính Bán kính (Radius) nhưng không thể được co giãn không đồng đều theo ba trục.\n\n" +
+                   "Ngoài việc sử dụng cho các vật thể hình cầu như quả bóng tennis, hình cầu cũng hoạt động tốt cho các tảng đá rơi và các vật thể khác cần lăn và nhào lộn.",
+            terms: {
+              "Sphere Collider": "Một component va chạm cơ bản có hình dạng hình cầu. Nó rất hiệu quả về mặt hiệu suất cho việc tính toán va chạm."
+            }
+          },
+          // SLIDE 27: 3D COLLIDERS - CAPSULE COLLIDER
+          {
+            id: 27,
+            title: "Trang 27: 3D Colliders - Capsule Collider",
+            image: "images/game-dev/week3/slide_27.png",
+            notes: "<b>Capsule Collider</b> được tạo thành từ hai nửa hình cầu được nối với nhau bằng một hình trụ. Nó có hình dạng giống như primitive Capsule.\n\n" +
+                   "Đây là loại collider rất phổ biến để sử dụng cho các nhân vật, vì hình dạng tròn ở đáy giúp nhân vật không dễ bị mắc kẹt vào các cạnh của chướng ngại vật trên mặt đất.",
+            terms: {
+              "Capsule Collider": "Một component va chạm có hình dạng con nhộng. Đây là lựa chọn hàng đầu cho các collider của nhân vật trong cả game 2D và 3D."
+            }
+          },
+          // SLIDE 28: 3D COLLIDERS - MESH COLLIDER (1/2)
+          {
+            id: 28,
+            title: "Trang 28: 3D Colliders - Mesh Collider (1/2)",
+            image: "images/game-dev/week3/slide_28.png",
+            notes: "<b>Mesh Collider</b> lấy một Mesh Asset và xây dựng Collider của nó dựa trên mesh đó. Nó chính xác hơn nhiều cho việc phát hiện va chạm so với các collider nguyên thủy đối với các mesh phức tạp.\n\n" +
+                   "Theo mặc định, các collider nguyên thủy không va chạm với các Mesh Collider khác. Mesh Collider tốn nhiều tài nguyên tính toán hơn các loại collider nguyên thủy, vì vậy tốt nhất là sử dụng chúng một cách tiết kiệm.",
+            terms: {
+              "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
+            }
+          },
+          // SLIDE 29: 3D COLLIDERS - MESH COLLIDER (2/2)
+          {
+            id: 29,
+            title: "Trang 29: 3D Colliders - Mesh Collider (2/2)",
+            image: "images/game-dev/week3/slide_29.png",
+            notes: "Các thuộc tính của Mesh Collider:\n\n" +
+                   "- <b>Convex:</b> Đặt thành `true` nếu collider không có lỗ hổng hoặc lối vào. Nếu được bật, Mesh Collider này sẽ có thể va chạm với các Mesh Collider khác. Các Convex Mesh Collider bị giới hạn ở 255 tam giác và cần phải là convex để hoạt động với một rigidbody.\n" +
+                   "- <b>Is Trigger:</b> Nếu được bật, collider này được sử dụng để kích hoạt các sự kiện. Chức năng trigger trong mesh collider chỉ có thể thực hiện được nếu collider được đánh dấu là convex.",
+            terms: {
+              "Convex (Lồi)": "Một hình dạng được coi là lồi nếu một đường thẳng nối hai điểm bất kỳ bên trong hình dạng đó cũng nằm hoàn toàn bên trong hình dạng đó. Hình cầu, hình hộp là lồi; hình bánh donut (có lỗ ở giữa) là không lồi (concave). Engine vật lý xử lý va chạm giữa các vật thể lồi hiệu quả hơn nhiều."
+            }
+          },
+          // SLIDE 30: 3D COLLIDERS - TERRAIN COLLIDER
+          {
+            id: 30,
+            title: "Trang 30: 3D Colliders - Terrain Collider",
+            image: "images/game-dev/week3/slide_30.png",
+            notes: "<b>Terrain Collider</b> lấy một đối tượng Địa hình (Terrain) và xây dựng Collider của nó dựa trên địa hình đó.\n\n" +
+                   "Các thuộc tính chính:\n" +
+                   "- <b>Is Trigger:</b> Nếu được bật, collider này được sử dụng để kích hoạt các sự kiện.\n" +
+                   "- <b>Terrain Data:</b> Dữ liệu địa hình.\n" +
+                   "- <b>Create Tree Colliders:</b> Khi được chọn, các collider cho cây cối trên địa hình sẽ được tạo ra.",
+            terms: {
+              "Terrain": "Một hệ thống trong Unity cho phép bạn tạo ra các cảnh quan rộng lớn. Bạn có thể điêu khắc địa hình, vẽ texture, và thêm cây cối, cỏ.",
+              "Terrain Collider": "Một component va chạm đặc biệt lấy dữ liệu hình dạng của nó từ một asset Terrain. Nó được tối ưu hóa cao cho các địa hình lớn."
+            }
+          },
+
+          // SLIDE 31: 3D COLLIDERS - WHEEL COLLIDER
+          {
+            id: 31,
+            title: "Trang 31: 3D Colliders - Wheel Collider",
+            image: "images/game-dev/week3/slide_31.png",
+            notes: "<b>Wheel Collider</b> là một collider đặc biệt dành cho các phương tiện trên mặt đất. Nó có sẵn các tính năng phát hiện va chạm, vật lý bánh xe, và một mô hình ma sát lốp dựa trên độ trượt.\n\n" +
+                   "Nó có thể được sử dụng cho các vật thể khác ngoài bánh xe, nhưng nó được thiết kế đặc biệt cho các phương tiện có bánh xe.",
+            terms: {
+              "Wheel Collider": "Một component vật lý đặc biệt trong Unity mô phỏng một bánh xe. Nó không chỉ xử lý va chạm mà còn cả hệ thống treo (suspension) và ma sát của lốp xe."
+            }
+          },
+          // SLIDE 32: COLLIDERS AS TRIGGERS
+          {
+            id: 32,
+            title: "Trang 32: Colliders as Triggers",
+            image: "images/game-dev/week3/slide_32.png",
+            notes: "Các collider được đặt làm <b>triggers</b> sẽ <b>không</b> tham gia vào các va chạm vật lý. Thay vào đó, chúng hoạt động như những vùng cảm biến.\n\n" +
+                   "Nếu một va chạm xảy ra với một trigger 3D collider, các thông điệp sau sẽ được gửi:\n" +
+                   "- <b>OnTriggerEnter(Collider other):</b> Gửi khi một collider khác đi vào trigger.\n" +
+                   "- <b>OnTriggerExit(Collider other):</b> Gửi khi một collider khác rời khỏi trigger.\n" +
+                   "- <b>OnTriggerStay(Collider other):</b> Gửi một lần mỗi frame cho mỗi collider đang chạm vào trigger.\n\n" +
+                   "Ngược lại, một collider 3D không được thiết lập làm trigger sẽ tham gia vào các va chạm vật lý, gửi các thông điệp `OnCollisionEnter`, `OnCollisionExit`, và `OnCollisionStay`.",
+            terms: {
+              "Trigger": "Một collider được cấu hình để phát hiện khi các đối tượng khác đi vào không gian của nó, thay vì gây ra một va chạm vật lý. Rất hữu ích để kích hoạt các sự kiện trong game (ví dụ: mở cửa, kích hoạt một đoạn cắt cảnh)."
+            }
+          },
+          // SLIDE 33: CÁC LỰC (FORCES)
+          {
+            id: 33,
+            title: "Trang 33: Các lực (Forces)",
+            image: "images/game-dev/week3/slide_33.png",
+            notes: "<b>Lực (Force)</b> là bất kỳ tương tác nào có xu hướng làm thay đổi chuyển động của một vật thể. Trong Unity, các lực được biểu diễn dưới dạng vector, và có thể là tuyến tính (được gọi đơn giản là Force) hoặc quay (được gọi là Torque).\n\n" +
+                   "Sự khác biệt lớn nhất giữa việc điều khiển Transform và Rigidbody là việc sử dụng các lực: rigidbody có thể nhận lực và mô-men xoắn, nhưng Transform thì không.\n\n" +
+                   "<b>Quan trọng:</b> Thay đổi Transform trong khi đang sử dụng vật lý có thể gây ra các vấn đề với va chạm và các tính toán khác.\n\n" +
+                   "Trong một script, hàm <b>FixedUpdate</b> được khuyến nghị là nơi để áp dụng các lực và thay đổi cài đặt của Rigidbody, vì các cập nhật vật lý được thực hiện theo các bước thời gian đo lường không trùng với cập nhật khung hình.",
+            terms: {
+              "Force (Lực)": "Một tác động có thể làm thay đổi chuyển động của một vật thể. Trong Unity, bạn có thể dùng `Rigidbody.AddForce()` để đẩy một đối tượng."
+            }
+          },
+          // SLIDE 34: ADDFORCE
+          {
+            id: 34,
+            title: "Trang 34: AddForce",
+            image: "images/game-dev/week3/slide_34.png",
+            notes: "Hàm `Rigidbody.AddForce()` dùng để áp dụng một lực lên Rigidbody.\n\n" +
+                   "Tham số <b>ForceMode</b> chỉ định cách lực được áp dụng:\n" +
+                   "- <b>ForceMode.Force:</b> Áp dụng một lực liên tục có tính đến khối lượng của đối tượng. Tốt cho các lực đẩy liên tục như động cơ tên lửa.\n" +
+                   "- <b>ForceMode.Acceleration:</b> Áp dụng một gia tốc liên tục, bỏ qua khối lượng. Chuyển động không phụ thuộc vào khối lượng.\n" +
+                   "- <b>ForceMode.Impulse:</b> Áp dụng một lực tức thời (xung lực), có tính đến khối lượng. Tốt cho các vụ nổ hoặc va chạm.\n" +
+                   "- <b>ForceMode.VelocityChange:</b> Áp dụng một thay đổi vận tốc tức thời, bỏ qua khối lượng.",
+            terms: {
+              "Rigidbody.AddForce()": "Phương thức chính để áp dụng một lực lên một Rigidbody, làm cho nó di chuyển và xoay theo các quy tắc vật lý.",
+              "ForceMode": "Một Enum xác định cách một lực được áp dụng lên một Rigidbody. Các lựa chọn khác nhau cho phép mô phỏng các loại tác động khác nhau (liên tục, tức thời, có hoặc không có ảnh hưởng của khối lượng)."
+            }
+          },
+          // SLIDE 35: ADDTORQUE
+          {
+            id: 35,
+            title: "Trang 35: AddTorque",
+            image: "images/game-dev/week3/slide_35.png",
+            notes: "<b>Torque (Mô-men xoắn)</b> là xu hướng của một lực làm quay một vật thể quanh một trục. Hàm <b>AddTorque</b> thêm một lực mô-men xoắn vào một Rigidbody, làm cho nó bắt đầu quay quanh trục `torque`.\n\n" +
+                   "Lực được áp dụng theo quy tắc 'vít tay trái' (left hand screw rule).",
+            terms: {
+              "Rigidbody.AddTorque()": "Phương thức chính để áp dụng một mô-men xoắn (lực xoay) lên một Rigidbody, làm cho nó bắt đầu quay.",
+              "Torque (Mô-men xoắn)": "Một lực xoắn gây ra sự thay đổi trong chuyển động quay của một vật thể. Trong Unity, bạn có thể áp dụng torque cho một Rigidbody để làm nó quay."
+            }
+          },
+          // Dán 5 khối mã này vào sau slide có id: 35 của Tuần 3
+
+          // SLIDE 36: CÁC LỰC KHÁC ĐỂ THÊM
+          {
+            id: 36,
+            title: "Trang 36: Các lực khác để thêm",
+            image: "images/game-dev/week3/slide_36.png",
+            notes: "Ngoài `AddForce`, Rigidbody còn có các phương thức khác để áp dụng lực:\n\n" +
+                   "<b>AddRelativeForce:</b>\n" +
+                   "Thêm một lực vào rigidbody tương đối với hệ tọa độ <b>cục bộ (local)</b> của nó. Ví dụ, áp dụng một lực theo `Vector3.forward` sẽ luôn đẩy đối tượng về phía trước của chính nó, bất kể nó đang xoay về hướng nào.\n\n" +
+                   "<b>AddForceAtPosition:</b>\n" +
+                   "Áp dụng một `force` tại một `position`. Kết quả là nó sẽ áp dụng cả một mô-men xoắn và một lực lên đối tượng. Để có hiệu ứng chân thực, vị trí nên nằm gần bề mặt của rigidbody. Thường được sử dụng nhất cho các vụ nổ.",
+            terms: {
+              "Rigidbody.AddRelativeForce()": "Một phương thức áp dụng lực lên Rigidbody trong không gian tọa độ cục bộ của nó. Rất hữu ích cho việc điều khiển các phương tiện như tàu vũ trụ hoặc xe hơi.",
+              "Rigidbody.AddForceAtPosition()": "Một phương thức áp dụng lực tại một điểm cụ thể trên Rigidbody, gây ra cả chuyển động tịnh tiến và chuyển động quay. Lý tưởng để mô phỏng các vụ nổ hoặc các tác động lực không đồng đều."
+            }
+          },
+          // SLIDE 37: CONSTANT FORCE
+          {
+            id: 37,
+            title: "Trang 37: Constant Force",
+            image: "images/game-dev/week3/slide_37.png",
+            notes: "<b>Constant Force</b> là một component có thể được thêm vào một game object có Rigidbody.\n\n" +
+                   "Trong khi `AddForce` chỉ áp dụng một lực trong một frame duy nhất (do đó bạn phải gọi hàm liên tục), `Constant Force` sẽ áp dụng lực ở <b>mỗi frame</b> cho đến khi bạn thay đổi giá trị lực hoặc mô-men xoắn thành một giá trị mới.\n\n" +
+                   "Component này cho phép bạn thiết lập các lực và mô-men xoắn liên tục trong cả không gian thế giới (world space) và không gian cục bộ (local space).",
+            terms: {
+              "Constant Force": "Một component tiện lợi dùng để áp dụng một lực hoặc mô-men xoắn không đổi lên một Rigidbody ở mỗi bước vật lý, mà không cần viết mã trong `FixedUpdate`."
+            }
+          },
+          // SLIDE 38: PHYSICS MATERIALS (1/2)
+          {
+            id: 38,
+            title: "Trang 38: Physics Materials (1/2)",
+            image: "images/game-dev/week3/slide_38.png",
+            notes: "<b>Physics Material</b> được sử dụng để điều chỉnh các hiệu ứng ma sát và độ nảy của các đối tượng va chạm. Chúng được gán vào component Collider của một game object.\n\n" +
+                   "- <b>Dynamic Friction (Ma sát động):</b> Ma sát được sử dụng khi đối tượng đã đang di chuyển. Giá trị từ 0 đến 1. Giá trị 0 cảm giác như băng, giá trị 1 sẽ làm cho nó dừng lại rất nhanh.\n" +
+                   "- <b>Static Friction (Ma sát tĩnh):</b> Ma sát được sử dụng khi một đối tượng đang nằm yên trên một bề mặt. Giá trị từ 0 đến 1. Giá trị 1 sẽ làm cho việc bắt đầu di chuyển đối tượng trở nên rất khó khăn.\n" +
+                   "- <b>Bounciness (Độ nảy):</b> Bề mặt nảy như thế nào. Giá trị 0 sẽ không nảy, giá trị 1 sẽ nảy lên mà không mất năng lượng.",
+            terms: {
+              "Physic Material": "Một asset dùng để điều chỉnh các thuộc tính ma sát và độ nảy của các collider khi chúng va chạm với nhau.",
+              "Friction (Ma sát)": "Lực cản lại chuyển động tương đối giữa các bề mặt tiếp xúc. Ma sát tĩnh ngăn cản vật thể bắt đầu di chuyển, trong khi ma sát động làm chậm vật thể đang di chuyển.",
+              "Bounciness (Độ nảy)": "Một thuộc tính xác định mức độ đàn hồi của một vụ va chạm. Giá trị cao hơn sẽ làm cho các vật thể nảy ra xa nhau hơn sau khi va chạm."
+            }
+          },
+          // SLIDE 39: PHYSICS MATERIALS (2/2)
+          {
+            id: 39,
+            title: "Trang 39: Physics Materials (2/2)",
+            image: "images/game-dev/week3/slide_39.png",
+            notes: "Các thuộc tính kết hợp của Physics Material:\n\n" +
+                   "- <b>Friction Combine:</b> Cách ma sát của hai đối tượng va chạm được kết hợp với nhau (Lấy trung bình, Lấy giá trị nhỏ nhất, Lấy giá trị lớn nhất, Nhân với nhau).\n" +
+                   "- <b>Bounce Combine:</b> Cách độ nảy của hai đối tượng va chạm được kết hợp với nhau. Có các chế độ tương tự như Friction Combine.\n\n" +
+                   "Các thuộc tính ma sát theo hướng cụ thể:\n" +
+                   "- <b>Friction Direction 2:</b> Ma sát cụ thể cho một hướng cụ thể.\n" +
+                   "- <b>Dynamic Friction 2 / Static Friction 2:</b> Ma sát động/tĩnh dọc theo `Friction Direction 2`.",
+            terms: {}
+          },
+          // SLIDE 40: JOINTS (1/2)
+          {
+            id: 40,
+            title: "Trang 40: Joints (1/2) - Giới thiệu",
+            image: "images/game-dev/week3/slide_40.png",
+            notes: "<b>Joints (Khớp nối)</b> được sử dụng để hạn chế chuyển động của một đối tượng sao cho nó phụ thuộc vào một đối tượng khác. Sự phụ thuộc này được thực hiện bởi vật lý, thay vì phân cấp đối tượng (parenting).\n\n" +
+                   "<b>Fixed Joint (Khớp cố định):</b>\n" +
+                   "Được sử dụng để làm cho hai đối tượng dính chặt vào nhau. Cả hai đối tượng phải có component Rigidbody.\n" +
+                   "- <b>Connected Body:</b> Tham chiếu (tùy chọn) đến Rigidbody mà khớp nối phụ thuộc vào. Nếu không được đặt, khớp nối sẽ kết nối với thế giới.\n" +
+                   "- <b>Break Force / Break Torque:</b> Lực/Mô-men xoắn cần thiết để làm gãy khớp nối này.",
+            terms: {
+              "Joint": "Một component vật lý cho phép một Rigidbody được ràng buộc với một Rigidbody khác hoặc một điểm cố định trong không gian. Joints rất cần thiết để tạo ra các cơ chế phức tạp như cửa bản lề, dây xích, hệ thống treo xe..."
+            }
+          },
+
+// Dán 5 khối mã này vào sau slide có id: 40 của Tuần 3
+
+          // SLIDE 41: JOINTS (2/2)
+          {
+            id: 41,
+            title: "Trang 41: Joints (2/2) - Các loại khác",
+            image: "images/game-dev/week3/slide_41.png",
+            notes: "Một số loại khớp nối (Joints) phổ biến khác:\n\n" +
+                   "- <b>Spring Joint:</b> Nối hai Rigidbody với nhau, ràng buộc chúng di chuyển giống như được kết nối bằng một lò xo.\n" +
+                   "- <b>Hinge Joint:</b> Nối hai Rigidbody với nhau, ràng buộc chúng di chuyển giống như được kết nối bằng một bản lề. Rất phù hợp cho cửa ra vào, cũng có thể được dùng để mô hình hóa dây xích, con lắc, v.v.\n" +
+                   "- <b>Character Joint:</b> Nối hai Rigidbody với nhau, giới hạn góc xoay của chúng với nhau. Chủ yếu được sử dụng cho hiệu ứng Ragdoll.\n" +
+                   "- <b>Configurable Joint:</b> Một khớp nối có thể tùy chỉnh hoàn toàn, cho phép hạn chế và tăng tốc chuyển động/xoay của các Rigidbody được gắn vào.",
+            terms: {
+              "Ragdoll": "Một loại animation vật lý thủ tục, thường được sử dụng khi một nhân vật chết. Thay vì một animation được làm sẵn, cơ thể của nhân vật sẽ trở thành một tập hợp các Rigidbody được nối với nhau bằng các khớp, làm cho nó ngã xuống một cách chân thực theo các định luật vật lý."
+            }
+          },
+          // SLIDE 42: RAYCASTING (1/3)
+          {
+            id: 42,
+            title: "Trang 42: Raycasting (1/3) - Giới thiệu",
+            image: "images/game-dev/week3/slide_42.png",
+            notes: "Một <b>tia (ray)</b> là một đường thẳng vô hạn bắt đầu từ một điểm gốc và đi theo một hướng nào đó.\n\n" +
+                   "Một <b>raycast</b> là một thủ tục bao gồm việc 'bắn' một tia vào tất cả hoặc một số collider nhất định trong scene. Unity cung cấp hàm static `Physics.Raycast`.\n\n" +
+                   "Các tham số chính:\n" +
+                   "- <b>ray:</b> Điểm bắt đầu và hướng của tia.\n" +
+                   "- <b>distance:</b> Chiều dài của tia.\n" +
+                   "- <b>hitInfo:</b> Nếu raycast thành công, biến này sẽ chứa thông tin về nơi va chạm.\n" +
+                   "- <b>layerMask:</b> Dùng để chọn lọc bỏ qua các collider khi bắn tia.\n\n" +
+                   "`Physics.Raycast` trả về `true` nếu tia giao với một collider, và `false` nếu không.",
+            terms: {
+              "Raycasting": "Quá trình 'bắn' ra một tia ảo theo một hướng nhất định để phát hiện xem nó có va chạm với Collider nào trên đường đi hay không. Rất hữu ích cho việc xác định tầm nhìn, bắn súng, tương tác với đối tượng...",
+              "RaycastHit": "Một struct chứa thông tin chi tiết về một va chạm được trả về từ một hàm Raycast (ví dụ: điểm va chạm, khoảng cách, collider đã va chạm)."
+            }
+          },
+          // SLIDE 43: RAYCASTING (2/3)
+          {
+            id: 43,
+            title: "Trang 43: Raycasting (2/3) - RaycastHit & LayerMasks",
+            image: "images/game-dev/week3/slide_43.png",
+            notes: "<b>RaycastHit</b> là một struct được sử dụng để lấy thông tin trả về từ một raycast. Một số trường thông tin của nó bao gồm:\n" +
+                   "- `collider`: Collider đã bị bắn trúng.\n" +
+                   "- `distance`: Khoảng cách từ gốc của tia đến điểm va chạm.\n" +
+                   "- `normal`: Vector pháp tuyến của bề mặt mà tia đã bắn trúng.\n" +
+                   "- `point`: Điểm trong không gian thế giới nơi va chạm xảy ra.\n\n" +
+                   "<b>LayerMasks:</b> Bằng cách định nghĩa một layer mask, bạn có thể xác định các collider trong các layer cụ thể sẽ bị ảnh hưởng bởi raycast. Raycast với một mask được cung cấp sẽ chỉ bắn trúng các collider được gán cho các layer đó.",
+            terms: {
+              "LayerMask": "Một mặt nạ bit dùng để lọc các Game Object theo Layer của chúng. Thường được sử dụng trong Raycasting và Camera Culling để chỉ tương tác với các layer mong muốn."
+            }
+          },
+          // SLIDE 44: RAYCASTING (3/3)
+          {
+            id: 44,
+            title: "Trang 44: Raycasting (3/3) - Ví dụ",
+            image: "images/game-dev/week3/slide_44.png",
+            notes: "Ví dụ này minh họa cách thực hiện một raycast để bắn súng:\n\n" +
+                   "1. <b>Chuẩn bị:</b> Khai báo một biến `RaycastHit`, `range` (tầm bắn), `LayerMask` (chỉ bắn vào những thứ có thể bắn được), và một `Ray`.\n" +
+                   "2. <b>Thiết lập Ray:</b> Đặt gốc của tia tại vị trí của súng và hướng của tia là hướng về phía trước của súng.\n" +
+                   "3. <b>Thực hiện Raycast:</b> Gọi `Physics.Raycast`, truyền vào ray, `hitInfo` (với từ khóa `out`), tầm bắn, và layer mask.\n" +
+                   "4. <b>Xử lý kết quả:</b> Nếu hàm trả về `true` (bắn trúng), lấy component `EnemyHealth` từ collider đã bị bắn trúng và gây sát thương. Đồng thời, vẽ một đường `LineRenderer` đến điểm va chạm. Nếu không trúng, vẽ đường line đến hết tầm bắn.",
+            terms: {
+              "out (keyword)": "Một từ khóa tham số cho phép một phương thức trả về nhiều hơn một giá trị. Biến được truyền vào với từ khóa 'out' không cần được khởi tạo trước, nhưng phương thức bắt buộc phải gán một giá trị cho nó.",
+              "LineRenderer": "Một component trong Unity dùng để vẽ các đường thẳng trong không gian 3D. Rất hữu ích để hiển thị các tia laser, đường đạn, hoặc các đường dẫn."
+            }
+          },
+          // SLIDE 45: COMPONENT ĐẶC BIỆT - CHARACTER CONTROLLER (1/2)
+          {
+            id: 45,
+            title: "Trang 45: Character Controller (1/2)",
+            image: "images/game-dev/week3/slide_45.png",
+            notes: "<b>Character Controller</b> là một component đặc biệt dành cho các đối tượng nhân vật. Trong khi Rigidbody cung cấp vật lý <b>đáng tin cậy</b>, đôi khi bạn không muốn điều đó (ví dụ: nhân vật di chuyển với tốc độ cao và nhảy những khoảng cách không tưởng).\n\n" +
+                   "Một đối tượng với component Character Controller:\n" +
+                   "- <b>Không</b> phản ứng với các lực (thực tế, không nên dùng nó cùng với một Rigidbody).\n" +
+                   "- <b>Không</b> áp dụng lực cho các rigidbody khác.\n" +
+                   "- Tự động bao gồm một <b>Capsule Collider</b>, do đó nó phản ứng với các va chạm.",
+            terms: {
+              "Character Controller": "Một component cung cấp một cách di chuyển nhân vật đơn giản, không dựa trên vật lý thực tế. Nó cho phép bạn dễ dàng tạo ra các chuyển động giống như trong các game platformer hoặc FPS mà không cần phải xử lý các lực phức tạp của Rigidbody."
+            }
+          },
+
+// Dán 5 khối mã này vào sau slide có id: 45 của Tuần 3
+
+          // SLIDE 46: COMPONENT ĐẶC BIỆT - CHARACTER CONTROLLER (2/2)
+          {
+            id: 46,
+            title: "Trang 46: Character Controller (2/2)",
+            image: "images/game-dev/week3/slide_46.png",
+            notes: "Ở cấp độ Scripting, component Character Controller bao gồm một số hàm/biến/thông điệp hữu ích:\n\n" +
+                   "- <b>isGrounded:</b> Cho biết controller có đang chạm đất trong frame này hay không.\n" +
+                   "- <b>velocity:</b> Vận tốc hiện tại của controller.\n" +
+                   "- <b>SimpleMove(Vector3)</b> và <b>Move(Vector3):</b> Dùng để di chuyển nhân vật.\n" +
+                   "- <b>OnControllerColliderHit:</b> Được gọi khi va chạm với một collider khác, nếu game object này đang thực hiện một lệnh Move().\n\n" +
+                   "<b>Sự khác biệt giữa `SimpleMove` và `Move`:</b>\n" +
+                   "- <b>SimpleMove:</b> Di chuyển trên trục XZ, tự động áp dụng trọng lực. Tốc độ tính bằng <i>mét trên giây</i>.\n" +
+                   "- <b>Move:</b> Di chuyển trên trục XYZ, <b>không</b> tự động áp dụng trọng lực. Tốc độ tính bằng <i>mét</i> (cần nhân với Time.deltaTime để di chuyển mượt mà).",
+            terms: {
+              "CharacterController.isGrounded": "Một thuộc tính boolean trả về `true` nếu controller đang chạm vào một collider bên dưới nó. Rất hữu ích để kiểm tra xem nhân vật có thể nhảy hay không.",
+              "CharacterController.SimpleMove()": "Một hàm đơn giản để di chuyển nhân vật. Nó nhận vào vận tốc mong muốn, tự động áp dụng trọng lực và đảm bảo nhân vật trượt dọc theo các bề mặt dốc.",
+              "CharacterController.Move()": "Một hàm mạnh mẽ hơn `SimpleMove`. Nó di chuyển controller một khoảng cách nhất định nhưng không tự động áp dụng trọng lực, cho phép bạn tự lập trình các hành vi vật lý phức tạp hơn như nhảy."
+            }
+          },
+          // SLIDE 47: CÁC THÓI QUEN TỐT NHẤT VỀ VẬT LÝ (1/2)
+          {
+            id: 47,
+            title: "Trang 47: Các thói quen tốt nhất về Vật lý (1/2)",
+            image: "images/game-dev/week3/slide_47.png",
+            notes: "<b>Layers và ma trận va chạm:</b>\n" +
+                   "- Theo mặc định, mọi thứ va chạm với mọi thứ, điều này khá kém hiệu quả. <b>Mẹo:</b> Gán các đối tượng vào các layer và vô hiệu hóa các va chạm không cần thiết trong ma trận va chạm.\n\n" +
+                   "<b>Raycast:</b>\n" +
+                   "- Raycasting rất mạnh mẽ nhưng là một hoạt động tốn kém. <b>Mẹo:</b>\n" +
+                   "  - Sử dụng số lượng tia ít nhất có thể.\n" +
+                   "  - Đặt khoảng cách giới hạn nếu có thể.\n" +
+                   "  - Không sử dụng Raycast bên trong hàm `FixedUpdate()`.\n" +
+                   "  - Sử dụng một collider đơn giản hơn để xấp xỉ thay vì raycast vào các mesh collider phức tạp.\n" +
+                   "  - Chỉ định một layer mask để giới hạn số lượng va chạm mà raycast kiểm tra.",
+            terms: {
+              "Bitwise operators (Toán tử bit)": "Các toán tử hoạt động trên các bit riêng lẻ của một số (ví dụ: `<<` dịch trái, `~` đảo bit). Chúng rất hiệu quả để làm việc với LayerMask."
+            }
+          },
+          // SLIDE 48: CÁC THÓI QUEN TỐT NHẤT VỀ VẬT LÝ (2/2)
+          {
+            id: 48,
+            title: "Trang 48: Các thói quen tốt nhất về Vật lý (2/2)",
+            image: "images/game-dev/week3/slide_48.png",
+            notes: "<b>Mẹo về Rigidbody:</b>\n\n" +
+                   "- Các game object không có component Rigidbody được coi là <b>static colliders</b>. Việc cố gắng di chuyển các static collider là cực kỳ kém hiệu quả, vì nó buộc engine vật lý phải tính toán lại toàn bộ thế giới vật lý.\n" +
+                   "- Việc một Rigidbody có Khối lượng (Mass) lớn hơn không làm cho nó rơi tự do nhanh hơn. Hãy sử dụng Lực cản (Drag) cho việc đó.\n" +
+                   "- Nếu bạn đang điều khiển trực tiếp Transform của đối tượng nhưng vẫn muốn va chạm và nhận thông điệp trigger, hãy gắn một Rigidbody và đặt nó thành <b>Kinematic</b>.\n" +
+                   "- Bạn không thể làm một đối tượng ngừng quay chỉ bằng cách đặt Angular Drag của nó thành vô cực.",
+            terms: {}
+          },
+          // SLIDE 49: CHUYỂN TIẾP - CÂU HỎI & DEMO LAB
+          {
+            id: 49,
+            title: "Trang 49: Chuyển tiếp - Câu hỏi & Demo Lab",
+            image: "images/game-dev/week3/slide_49.png",
+            notes: "Kết thúc phần lý thuyết về Vật lý 3D.\n\n" +
+                   "Phần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+            terms: {}
+          },
+          // SLIDE 50: XEM TRƯỚC BUỔI THỰC HÀNH
+          {
+            id: 50,
+            title: "Trang 50: Xem trước buổi thực hành",
+            image: "images/game-dev/week3/slide_50.png",
+            notes: "Trong buổi thực hành này và tuần tới, bạn sẽ tạo ra một game 3D.\n\n" +
+                   "- Game sẽ là một game bắn súng không gian 3D, mặc dù nó chỉ mở rộng trong hai chiều khi nhìn từ trên xuống.\n" +
+                   "- Bạn sẽ học cách thiết lập một dự án, tạo một scene, đặt các game object, xử lý input để di chuyển người chơi, v.v.\n\n" +
+                   "Bài giảng tiếp theo: <b>Cameras, Audio, Lights and Shadows</b>.",
+            terms: {}
+          },
+
+  ]
+}
     ]
   },
 
