@@ -2036,7 +2036,7 @@ const coursesData = {
     thumbnail: "images/computer-vision.webp",
     sections: [
       {
-        title: "Tuần 1: Giới thiệu và các khái niệm cơ bản",
+        title: "Tuần 0: Tài liệu môn học của thầy Phạm Văn Huy",
         slides: [
           {
             id: 1,
