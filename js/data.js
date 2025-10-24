@@ -2035,13 +2035,14 @@ const coursesData = {
     description: "Khám phá cách máy tính 'nhìn' và phân tích hình ảnh, từ nhận diện vật thể đến xử lý ảnh cơ bản.",
     thumbnail: "images/computer-vision.webp",
     sections: [
+
       {
-        title: "Tuần 0: Tài liệu môn học của thầy Phạm Văn Huy",
+        title: "[Tham khảo thêm]: Tài liệu môn học của thầy Phạm Văn Huy",
         slides: [
           {
             id: 1,
             title: "Trang 1: Bìa môn học",
-            image: "images/cv/week1/Slide1.PNG",
+            image: "images/cv/reference/Slide1.PNG",
             notes: "Bài giảng giới thiệu môn Thị giác Máy tính.\n\n" +
               "<b>Giảng viên:</b> Phạm Văn Huy, Ph.D.\n" +
               "<b>Khoa:</b> Công nghệ thông tin, Đại học Tôn Đức Thắng, TP.HCM.",
@@ -2050,7 +2051,7 @@ const coursesData = {
           {
             id: 2,
             title: "Trang 2: Yêu cầu môn học",
-            image: "images/cv/week1/Slide2.PNG",
+            image: "images/cv/reference/Slide2.PNG",
             notes: "Slide này giới thiệu về các yêu cầu và cách tính điểm của môn học:\n\n" +
               "<b>Bài tập về nhà (Homework - 20%):</b>\n" +
               "- Gồm 2 bài, làm theo nhóm ngẫu nhiên.\n" +
@@ -2071,7 +2072,7 @@ const coursesData = {
           {
             id: 3,
             title: "Trang 3: Thị giác Máy tính là gì?",
-            image: "images/cv/week1/Slide3.PNG",
+            image: "images/cv/reference/Slide3.PNG",
             notes: "Thị giác máy tính là một lĩnh vực của Trí tuệ nhân tạo (AI), cho phép máy móc diễn giải và xử lý dữ liệu hình ảnh tương tự như thị giác của con người.\n\n" +
               "<b>Hệ thống thị giác của con người:</b>\n" +
               "- Mắt (Eye): Cảm biến để thu nhận hình ảnh từ môi trường.\n" +
@@ -2088,7 +2089,7 @@ const coursesData = {
           {
             id: 4,
             title: "Trang 4: Từ Xử lý ảnh đến Thị giác máy tính",
-            image: "images/cv/week1/Slide4.PNG",
+            image: "images/cv/reference/Slide4.PNG",
             notes: "Quá trình đi từ một hình ảnh thô đến việc hiểu được nó có thể được chia thành 3 cấp độ xử lý:\n\n" +
               "1. <b>Xử lý cấp thấp (Low-Level Processing):</b>\n" +
               "   - Đầu vào: Hình ảnh. Đầu ra: Hình ảnh.\n" +
@@ -2108,7 +2109,7 @@ const coursesData = {
           {
             id: 5,
             title: "Trang 5: Các ứng dụng của Thị giác Máy tính",
-            image: "images/cv/week1/Slide5.PNG",
+            image: "images/cv/reference/Slide5.PNG",
             notes: "Thị giác máy tính có rất nhiều ứng dụng trong thực tế, bao gồm:\n\n" +
               "- <b>Xe tự lái (Self-driving vehicles):</b> Giúp xe 'nhìn' và hiểu môi trường xung quanh.\n" +
               "- <b>Nhận dạng khuôn mặt (Facial recognition):</b> Dùng trong bảo mật, mạng xã hội.\n" +
@@ -2128,7 +2129,7 @@ const coursesData = {
           {
             id: 6,
             title: "Trang 6: Lịch sử phát triển của Thị giác Máy tính",
-            image: "images/cv/week1/Slide6.PNG",
+            image: "images/cv/reference/Slide6.PNG",
 
             notes: "<b>Nông nghiệp (Agriculture):</b>\n" +
               "- Giám sát cây trồng và phát hiện bệnh.\n" +
@@ -2149,7 +2150,7 @@ const coursesData = {
           {
             id: 7,
             title: "Trang 7: Giới thiệu - Kỹ thuật truyền thống và Deep Learning",
-            image: "images/cv/week1/Slide7.PNG",
+            image: "images/cv/reference/Slide7.PNG",
             notes: "Thị giác máy tính đã phát triển đáng kể, kết hợp cả hai phương pháp: kỹ thuật truyền thống và học sâu (deep learning).\n\n" +
               "Bài thuyết trình này khám phá lý do tại sao các kỹ thuật truyền thống vẫn còn giá trị mặc cho những tiến bộ của học sâu.",
             terms: {
@@ -2161,7 +2162,7 @@ const coursesData = {
           {
             id: 8,
             title: "Trang 8: Ứng dụng - Nhận dạng khuôn mặt & Tự động hóa công nghiệp",
-            image: "images/cv/week1/Slide8.PNG",
+            image: "images/cv/reference/Slide8.PNG",
             notes: "<b>Nhận dạng khuôn mặt (Facial Recognition):</b>\n" +
               "- Hệ thống an ninh để nhận dạng cá nhân.\n" +
               "- Xác thực và mở khóa điện thoại di động.\n" +
@@ -2178,7 +2179,7 @@ const coursesData = {
           {
             id: 9,
             title: "Trang 9: Ứng dụng - Y tế & Xe tự lái",
-            image: "images/cv/week1/Slide9.PNG",
+            image: "images/cv/reference/Slide9.PNG",
             notes: "<b>Hình ảnh Y tế (Medical Imaging):</b>\n" +
               "- Phát hiện các khối u trong ảnh MRI và CT.\n" +
               "- Tự động đếm tế bào trong ảnh kính hiển vi.\n" +
@@ -2195,7 +2196,7 @@ const coursesData = {
           {
             id: 10,
             title: "Trang 10: Ứng dụng - Nông nghiệp & An ninh giám sát",
-            image: "images/cv/week1/Slide10.PNG",
+            image: "images/cv/reference/Slide10.PNG",
             notes: "Dòng thời gian phát triển của Thị giác Máy tính:\n\n" +
               "- <b>Thập niên 1960-1980:</b> Các thí nghiệm ban đầu về xử lý ảnh và trích xuất đặc trưng đơn giản.\n" +
               "- <b>Thập niên 1990-2000:</b> Phát triển các thuật toán phức tạp như SIFT, HOG và những tiến bộ trong việc phát hiện cạnh (edge detection).\n" +
@@ -2214,7 +2215,7 @@ const coursesData = {
           {
             id: 11,
             title: "Trang 11: Các kỹ thuật Thị giác Máy tính - Tổng quan",
-            image: "images/cv/week1/Slide11.PNG",
+            image: "images/cv/reference/Slide11.PNG",
             notes: "Sơ đồ này so sánh quy trình làm việc giữa Học máy (truyền thống) và Học sâu:\n\n" +
               "<b>Học máy (Machine Learning):</b>\n" +
               "1. <b>Đầu vào (Input):</b> Hình ảnh.\n" +
@@ -2231,7 +2232,7 @@ const coursesData = {
           {
             id: 12,
             title: "Trang 12: Các kỹ thuật Thị giác Máy tính - So sánh quy trình",
-            image: "images/cv/week1/Slide12.PNG",
+            image: "images/cv/reference/Slide12.PNG",
 
             notes: "<b>Kỹ thuật truyền thống (Traditional Techniques):</b>\n" +
               "- <b>Định nghĩa:</b> Các phương pháp dựa trên các mô hình toán học và các đặc trưng được chế tác thủ công (handcrafted features).\n" +
@@ -2249,7 +2250,7 @@ const coursesData = {
           {
             id: 13,
             title: "Trang 13: Các kỹ thuật Thị giác Máy tính - So sánh điểm mạnh",
-            image: "images/cv/week1/Slide13.PNG",
+            image: "images/cv/reference/Slide13.PNG",
             notes: "<b>Ưu điểm của Kỹ thuật truyền thống:</b>\n" +
               "- <b>Khả năng giải thích (Explainability):</b> Các thuật toán minh bạch và dễ hiểu hơn.\n" +
               "- <b>Hiệu quả tài nguyên (Resource Efficiency):</b> Yêu cầu ít sức mạnh tính toán và bộ nhớ hơn.\n" +
@@ -2267,7 +2268,7 @@ const coursesData = {
           {
             id: 14,
             title: "Trang 14: Các kỹ thuật Thị giác Máy tính - Ưu điểm",
-            image: "images/cv/week1/Slide14.PNG",
+            image: "images/cv/reference/Slide14.PNG",
             notes: "Một khung để so sánh hai phương pháp dựa trên các tiêu chí:\n\n" +
               "- <b>Hiệu suất (Performance):</b> Độ chính xác và độ chuẩn xác trong các tác vụ khác nhau.\n" +
               "- <b>Khả năng diễn giải (Interpretability):</b> Mức độ dễ hiểu về cách thuật toán hoạt động.\n" +
@@ -2281,7 +2282,7 @@ const coursesData = {
           {
             id: 15,
             title: "Trang 15: Các kỹ thuật Thị giác Máy tính - Khung so sánh",
-            image: "images/cv/week1/Slide15.PNG",
+            image: "images/cv/reference/Slide15.PNG",
             notes: "<b>Điểm mạnh theo tác vụ cụ thể:</b>\n" +
               "- <b>Truyền thống:</b> Tốt cho các tác vụ đơn giản (phát hiện cạnh, xử lý ảnh cơ bản), xử lý thời gian thực (robot, ứng dụng công nghiệp), và các môi trường có tài nguyên thấp (hệ thống nhúng, thiết bị di động).\n" +
               "- <b>Học sâu:</b> Tốt cho các tác vụ phức tạp (phân đoạn ảnh, phát hiện đối tượng), các ứng dụng quy mô lớn (gắn thẻ tự động trên mạng xã hội, chẩn đoán y tế).\n\n" +
@@ -2300,7 +2301,7 @@ const coursesData = {
           {
             id: 16,
             title: "Trang 16: Các kỹ thuật Thị giác Máy tính - Trường hợp sử dụng",
-            image: "images/cv/week1/Slide16.PNG",
+            image: "images/cv/reference/Slide16.PNG",
             notes: "<b>Các trường hợp mà phương pháp truyền thống vượt trội:</b>\n" +
               "- <b>Phân tích hình ảnh y tế:</b> Các thuật toán đơn giản để phát hiện cạnh, hình dạng và họa tiết.\n" +
               "- <b>Hệ thống thị giác thời gian thực:</b> Các ứng dụng yêu cầu xử lý tức thì với độ trễ thấp (ví dụ: kiểm tra dây chuyền lắp ráp tự động).\n" +
@@ -2314,7 +2315,7 @@ const coursesData = {
           {
             id: 17,
             title: "Trang 17: Các kỹ thuật Thị giác Máy tính - Case Study",
-            image: "images/cv/week1/Slide17.PNG",
+            image: "images/cv/reference/Slide17.PNG",
             notes: "<b>Case Study 1: Phương pháp truyền thống trong Hệ thống Lái xe Tự động</b>\n" +
               "- <b>Chi tiết:</b> Phát hiện làn đường bằng các thuật toán phát hiện cạnh.\n" +
               "- <b>Tác động:</b> Xử lý thời gian thực, có khả năng chống chịu với các điều kiện ánh sáng thay đổi.\n\n" +
@@ -2327,7 +2328,7 @@ const coursesData = {
           {
             id: 18,
             title: "Trang 18: Các kỹ thuật Thị giác Máy tính - Xu hướng hiện tại",
-            image: "images/cv/week1/Slide18.PNG",
+            image: "images/cv/reference/Slide18.PNG",
             notes: "<b>Trọng tâm nghiên cứu:</b>\n" +
               "- Các mô hình lai kết hợp kỹ thuật truyền thống với học sâu.\n" +
               "- Cải thiện hiệu quả và khả năng giải thích của các mô hình học sâu.\n" +
@@ -2341,7 +2342,7 @@ const coursesData = {
           {
             id: 19,
             title: "Trang 19: Thách thức và Hướng đi tương lai",
-            image: "images/cv/week1/Slide19.PNG",
+            image: "images/cv/reference/Slide19.PNG",
             notes: "<b>Những thách thức:</b>\n" +
               "- <b>Yêu cầu dữ liệu:</b> Các mô hình học sâu cần các bộ dữ liệu lớn đã được gán nhãn.\n" +
               "- <b>Chi phí tính toán:</b> Yêu cầu tài nguyên cao cho việc huấn luyện và suy luận.\n" +
@@ -2359,7 +2360,7 @@ const coursesData = {
           {
             id: 20,
             title: "Trang 20: Câu hỏi",
-            image: "images/cv/week1/Slide20.PNG",
+            image: "images/cv/reference/Slide20.PNG",
             notes: "Các câu hỏi ôn tập:\n\n" +
               "1. So sánh Thị giác Máy tính và Xử lý ảnh kỹ thuật số?\n" +
               "2. So sánh Học sâu và Học máy?\n" +
@@ -2376,7 +2377,7 @@ const coursesData = {
           {
             id: 21,
             title: "Trang 21: So sánh các lĩnh vực",
-            image: "images/cv/week1/Slide21.PNG",
+            image: "images/cv/reference/Slide21.PNG",
             notes: "Slide này đặt ra sự so sánh giữa ba lĩnh vực liên quan:\n\n" +
                    "- <b>Xử lý ảnh kỹ thuật số (Digital image processing):</b> Tập trung vào việc thao tác, cải thiện hình ảnh. Ví dụ trong ảnh là làm cho ảnh sáng và mịn hơn.\n" +
                    "- <b>Đồ họa máy tính (Computer graphics):</b> Tập trung vào việc tạo ra hình ảnh từ các mô tả hoặc mô hình.\n" +
@@ -2389,7 +2390,7 @@ const coursesData = {
           {
             id: 22,
             title: "Trang 22: Đồ họa máy tính vs Thị giác Máy tính",
-            image: "images/cv/week1/Slide22.PNG",
+            image: "images/cv/reference/Slide22.PNG",
             notes: "Sơ đồ này minh họa sự khác biệt về quy trình giữa Đồ họa máy tính và Thị giác máy tính:\n\n" +
                    "<b>Đồ họa máy tính (Computer Graphics):</b>\n" +
                    "Đi từ một Mô hình Thế giới (World Model) trừu tượng để <b>tạo ra</b> hình ảnh.\n" +
@@ -2403,7 +2404,7 @@ const coursesData = {
           {
             id: 23,
             title: "Trang 23: Biểu đồ giao thoa",
-            image: "images/cv/week1/Slide23.PNG",
+            image: "images/cv/reference/Slide23.PNG",
             notes: "Biểu đồ Venn này cho thấy mối quan hệ và sự giao thoa giữa Đồ họa máy tính và Thị giác máy tính.\n\n" +
                    "<b>Các lĩnh vực riêng của Đồ họa máy tính:</b>\n" +
                    "- Rendering, thiết kế bề mặt, animation, giao diện người dùng.\n\n" +
@@ -2417,7 +2418,7 @@ const coursesData = {
           {
             id: 24,
             title: "Trang 24: Từ Xử lý ảnh đến Thị giác máy tính",
-            image: "images/cv/week1/Slide24.PNG",
+            image: "images/cv/reference/Slide24.PNG",
             notes: "Slide này nhắc lại về 3 cấp độ xử lý để đi từ một hình ảnh thô đến việc hiểu được nó:\n\n" +
                    "1. <b>Xử lý cấp thấp (Low-Level):</b> Ảnh → Ảnh (ví dụ: giảm nhiễu).\n" +
                    "2. <b>Xử lý cấp trung (Mid-Level):</b> Ảnh → Thuộc tính (ví dụ: phân đoạn).\n" +
@@ -2428,7 +2429,7 @@ const coursesData = {
           {
             id: 25,
             title: "Trang 25: Bài tập trên lớp",
-            image: "images/cv/week1/Slide25.PNG",
+            image: "images/cv/reference/Slide25.PNG",
             notes: "Yêu cầu bài tập thực hành trên lớp:\n\n" +
                    "<b>1. Cài đặt OpenCV + Python.</b>\n\n" +
                    "<b>2. Khám phá đoạn mã này:</b>\n" +
@@ -2447,7 +2448,7 @@ const coursesData = {
           {
             id: 26,
             title: "Trang 26: Ảnh kỹ thuật số là gì?",
-            image: "images/cv/week1/Slide26.PNG",
+            image: "images/cv/reference/Slide26.PNG",
             notes: "Một <b>ảnh kỹ thuật số</b> là sự biểu diễn của một hình ảnh hai chiều dưới dạng một tập hợp hữu hạn các giá trị số, được gọi là các phần tử ảnh hay <b>pixel</b>.\n\n" +
               "Quá trình này bao gồm việc chiếu một cảnh (scene) qua một hệ thống tạo ảnh (imaging system) lên một mặt phẳng ảnh, sau đó được số hóa thành một lưới các pixel.",
             terms: {
@@ -2459,7 +2460,7 @@ const coursesData = {
           {
             id: 27,
             title: "Trang 27: Giá trị Pixel",
-            image: "images/cv/week1/Slide27.PNG",
+            image: "images/cv/reference/Slide27.PNG",
             notes: "Các giá trị pixel thường đại diện cho các mức độ xám, màu sắc, độ cao, độ mờ, v.v.\n\n" +
               "Hãy nhớ rằng quá trình <b>số hóa (digitization)</b> ngụ ý rằng một hình ảnh kỹ thuật số là một sự <b>xấp xỉ (approximation)</b> của một cảnh thực tế.",
             terms: {
@@ -2470,7 +2471,7 @@ const coursesData = {
           {
             id: 28,
             title: "Trang 28: Hình ảnh như một hàm số (Ảnh xám)",
-            image: "images/cv/week1/Slide28.PNG",
+            image: "images/cv/reference/Slide28.PNG",
             notes: "Một hình ảnh chứa một số lượng pixel rời rạc.\n\n" +
               "Giá trị của pixel trong ảnh xám (grayscale), hay còn gọi là cường độ (intensity), là một con số duy nhất, thường nằm trong khoảng [0, 255], trong đó 0 là màu đen và 255 là màu trắng.",
             terms: {
@@ -2481,7 +2482,7 @@ const coursesData = {
           {
             id: 29,
             title: "Trang 29: Hình ảnh như một hàm số (Ảnh màu)",
-            image: "images/cv/week1/Slide29.PNG",
+            image: "images/cv/reference/Slide29.PNG",
             notes: "Tương tự ảnh xám, ảnh màu cũng chứa một số lượng pixel rời rạc.\n\n" +
               "Giá trị của pixel trong ảnh màu thường là một vector gồm nhiều con số. Các không gian màu phổ biến bao gồm:\n" +
               "- <b>RGB:</b> [R, G, B] (Đỏ, Xanh lá, Xanh dương)\n" +
@@ -2496,7 +2497,7 @@ const coursesData = {
           {
             id: 30,
             title: "Trang 30: Ảnh xám & Ảnh màu",
-            image: "images/cv/week1/Slide37.PNG",
+            image: "images/cv/reference/Slide37.PNG",
             notes: "Slide này minh họa cách một ảnh màu có thể được biểu diễn:\n\n" +
               "- <b>Ảnh màu:</b> Có thể được xem như sự kết hợp của ba kênh màu riêng biệt: Đỏ (Red), Xanh lá (Green), và Xanh dương (Blue).\n" +
               "- <b>Ảnh xám:</b> Có thể được tạo ra từ một ảnh màu, chỉ chứa thông tin về độ sáng (cường độ).",
@@ -2506,7 +2507,7 @@ const coursesData = {
           {
             id: 31,
             title: "Trang 31: Chuyển đổi từ RGB sang Ảnh xám",
-            image: "images/cv/week1/Slide38.PNG",
+            image: "images/cv/reference/Slide38.PNG",
             notes: "Có nhiều phương pháp để chuyển đổi một pixel màu RGB thành một giá trị mức xám (Intensity - I). Ba phương pháp phổ biến là:\n\n" +
               "1. <b>Phương pháp Lightness (Độ sáng):</b>\n" +
               "   `I = (max(R, G, B) + min(R, G, B)) / 2`\n\n" +
@@ -2523,7 +2524,7 @@ const coursesData = {
           {
             id: 32,
             title: "Trang 32: Các công cụ để học Xử lý ảnh Kỹ thuật số",
-            image: "images/cv/week1/Slide39.PNG",
+            image: "images/cv/reference/Slide39.PNG",
             notes: "So sánh hai công cụ phổ biến để học và làm việc với Xử lý ảnh:\n\n" +
               "<b>Thư viện OPENCV:</b>\n" +
               "- Có các phiên bản cho C++, C#, Java/Python.\n" +
@@ -2543,7 +2544,7 @@ const coursesData = {
           {
             id: 33,
             title: "Trang 33: Sử dụng OpenCV & Matlab",
-            image: "images/cv/week1/Slide40.PNG",
+            image: "images/cv/reference/Slide40.PNG",
             notes: "Ví dụ về cách đọc và hiển thị một hình ảnh bằng OpenCV và Matlab:\n\n" +
               "<b>OpenCV (sử dụng C++):</b>\n" +
               "Đoạn mã cho thấy cách sử dụng các hàm như `cvLoadImage`, `cvNamedWindow`, `cvShowImage` để tải và hiển thị một ảnh trong một cửa sổ.\n\n" +
@@ -2558,7 +2559,7 @@ const coursesData = {
           {
             id: 34,
             title: "Trang 34: Không gian màu - Câu hỏi",
-            image: "images/cv/week1/Slide41.PNG",
+            image: "images/cv/reference/Slide41.PNG",
             notes: "Tại sao màu được thiết kế cho một mục đích cụ thể. Một số phù hợp với cách thiết bị hiển thị (màn hình), một số phù hợp cho in ấn (máy in), và một số khác lại phù hợp hơn với cách con người cảm nhận màu sắc.",
             terms: {
               "Color Space (Không gian màu)": "Một mô hình toán học trừu tượng mô tả cách màu sắc có thể được biểu diễn dưới dạng các bộ giá trị số (tuples), thường là 3 hoặc 4 giá trị. Ví dụ: RGB, CMYK, HSV."
@@ -2568,7 +2569,7 @@ const coursesData = {
           {
             id: 35,
             title: "Trang 35: Không gian màu - RGB & RGBA",
-            image: "images/cv/week1/Slide42.PNG",
+            image: "images/cv/reference/Slide42.PNG",
             notes: "<b>RGB (Red, Green, Blue):</b>\n" +
               "- Sử dụng phương pháp trộn màu cộng (additive color mixing), vì nó mô tả loại ánh sáng cần được phát ra để tạo ra một màu nhất định.\n" +
               "- RGB lưu trữ các giá trị riêng lẻ cho màu đỏ, xanh lá, và xanh dương.\n\n" +
@@ -2582,7 +2583,7 @@ const coursesData = {
           {
             id: 36,
             title: "Trang 36: Không gian màu - CMYK, HSV, HSL",
-            image: "images/cv/week1/Slide43.PNG",
+            image: "images/cv/reference/Slide43.PNG",
             notes: "<b>CMYK (Cyan, Magenta, Yellow, Key/Black):</b>\n" +
               "- Sử dụng phương pháp trộn màu trừ (subtractive color mixing), được dùng trong quá trình in ấn.\n\n" +
               "<b>HSV (Hue, Saturation, Value):</b>\n" +
@@ -2597,7 +2598,7 @@ const coursesData = {
           {
             id: 37,
             title: "Trang 37: Không gian màu - Tuyệt đối",
-            image: "images/cv/week1/Slide44.PNG",
+            image: "images/cv/reference/Slide44.PNG",
             notes: "<b>Không gian màu TUYỆT ĐỐI (ABSOLUTE color space):</b>\n" +
               "- Là một không gian màu trong đó sự khác biệt có thể cảm nhận được giữa các màu sắc liên quan trực tiếp đến khoảng cách giữa các điểm trong không gian màu đó.\n" +
               "- <b>CIEXYZ</b> và <b>sRGB</b> là các ví dụ về không gian màu tuyệt đối.\n" +
@@ -2613,7 +2614,7 @@ const coursesData = {
           {
             id: 38,
             title: "Trang 38: Bảng so sánh các không gian màu",
-            image: "images/cv/week1/Slide38.PNG",
+            image: "images/cv/reference/Slide38.PNG",
             notes: "Bảng này tóm tắt các đặc điểm chính của một số không gian màu phổ biến:\n\n" +
               "- <b>RGB:</b> Trộn màu cộng, dùng cho hiển thị màn hình.\n" +
               "- <b>CMYK:</b> Trộn màu trừ, dùng cho máy in.\n" +
