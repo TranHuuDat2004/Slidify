@@ -1,0 +1,856 @@
+{
+    "title": "Nhập môn Thị giác Máy tính",
+    "description": "Khám phá cách máy tính 'nhìn' và phân tích hình ảnh, từ nhận diện vật thể đến xử lý ảnh cơ bản.",
+    "thumbnail": "images/computer-vision.webp",
+    "sections": [
+        {
+            "title": "Tuần 0: Giới thiệu khóa học CS231n",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa khóa học",
+                    "image": "images/cv/week0/slide_1.png",
+                    "notes": "Bài giảng 1: Giới thiệu khóa học CS231n - Deep Learning for Computer Vision.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Chào mừng đến với CS231n",
+                    "image": "images/cv/week0/slide_2.png",
+                    "notes": "Chào mừng đến với khóa học CS231n.",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Đội ngũ giảng dạy",
+                    "image": "images/cv/week0/slide_3.png",
+                    "notes": "Giới thiệu đội ngũ giảng viên và trợ giảng của khóa học CS231n qua các năm, từ 2015 đến 2023.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Kỷ niệm 10 năm CS231n",
+                    "image": "images/cv/week0/slide_4.png",
+                    "notes": "Giới thiệu các giảng viên đã quay trở lại trong dịp kỷ niệm 10 năm của khóa học, bao gồm các tên tuổi lớn trong ngành AI như Fei-Fei Li và Andrej Karpathy.",
+                    "terms": {}
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Trí tuệ Nhân tạo",
+                    "image": "images/cv/week0/slide_5.png",
+                    "notes": "Hãy bắt đầu câu chuyện của chúng ta từ 'vũ trụ' lớn nhất, khái niệm bao quát nhất: <b>Trí tuệ Nhân tạo (Artificial Intelligence)</b>.\n\nĐây là một lĩnh vực khoa học máy tính với mục tiêu đầy tham vọng là tạo ra những cỗ máy có khả năng suy nghĩ, học hỏi và hành động giống như con người.",
+                    "terms": {
+                        "Artificial Intelligence (AI)": "Trí tuệ nhân tạo, một lĩnh vực rộng lớn của khoa học máy tính, tập trung vào việc tạo ra các cỗ máy thông minh có khả năng thực hiện các tác vụ thường đòi hỏi trí thông minh của con người."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Mối quan hệ với Machine Learning & Computer Vision",
+                    "image": "images/cv/week0/slide_6.png",
+                    "notes": "Bên trong 'vũ trụ' AI rộng lớn đó, có những 'thiên hà' riêng biệt. Hai trong số những 'thiên hà' quan trọng nhất là:\n\n- <b>Học máy (Machine Learning):</b> Đây không phải là toàn bộ AI, mà là một phương pháp tiếp cận mạnh mẽ để đạt được AI. Thay vì lập trình rõ ràng các quy tắc, chúng ta cho máy tính 'học' từ dữ liệu.\n- <b>Thị giác Máy tính (Computer Vision):</b> Đây là một lĩnh vực của AI tập trung vào việc cho máy tính khả năng 'nhìn' và hiểu thế giới qua hình ảnh. Nó có thể sử dụng các phương pháp Machine Learning, nhưng cũng có thể không.",
+                    "terms": {
+                        "Machine Learning (ML)": "Học máy, một lĩnh vực con của AI, tập trung vào việc sử dụng dữ liệu và thuật toán để bắt chước cách con người học, dần dần cải thiện độ chính xác của nó."
+                    }
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Thêm Deep Learning",
+                    "image": "images/cv/week0/slide_7.png",
+                    "notes": "Đi sâu hơn vào 'thiên hà' Machine Learning, chúng ta tìm thấy một 'hệ mặt trời' đang bùng nổ mạnh mẽ, đó là <b>Học sâu (Deep Learning)</b>.\n\nĐây là một nhánh chuyên biệt của Machine Learning, sử dụng các mạng nơ-ron có nhiều lớp để tự động học các biểu diễn phức tạp từ dữ liệu.",
+                    "terms": {}
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Phạm vi của khóa học",
+                    "image": "images/cv/week0/slide_8.png",
+                    "notes": "Vậy khóa học này nằm ở đâu trong bản đồ vũ trụ AI? Chúng ta sẽ tập trung vào một 'hành tinh' cực kỳ thú vị và phát triển nhanh chóng, được tô màu đỏ.\n\nĐây là nơi <b>Thị giác Máy tính</b> và <b>Học sâu</b> giao thoa. Nhiệm vụ của chúng ta là khám phá cách áp dụng các kỹ thuật Deep Learning mạnh mẽ để giải quyết các bài toán Computer Vision đầy thách thức.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Thêm Xử lý Ngôn ngữ Tự nhiên",
+                    "image": "images/cv/week0/slide_9.png",
+                    "notes": "Tất nhiên, vũ trụ AI còn nhiều 'thiên hà' khác. Một trong số đó là <b>Xử lý Ngôn ngữ Tự nhiên (Natural Language Processing - NLP)</b>, lĩnh vực giúp máy tính hiểu và sử dụng ngôn ngữ của con người. Giống như Computer Vision, NLP cũng đã được cách mạng hóa bởi Deep Learning.",
+                    "terms": {
+                        "Natural Language Processing (NLP)": "Xử lý Ngôn ngữ Tự nhiên, một lĩnh vực con của AI, tập trung vào việc cho phép máy tính hiểu, diễn giải và tạo ra ngôn ngữ của con người."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Thêm Nhận dạng Tiếng nói",
+                    "image": "images/cv/week0/slide_10.png",
+                    "notes": "Bên cạnh NLP, có <b>Nhận dạng Tiếng nói (Speech Recognition)</b>, tập trung vào việc chuyển đổi âm thanh giọng nói thành văn bản. Đây cũng là một lĩnh vực được hưởng lợi rất nhiều từ các mô hình Deep Learning.",
+                    "terms": {
+                        "Speech Recognition": "Nhận dạng Tiếng nói, một công nghệ cho phép máy tính nhận dạng và chuyển đổi ngôn ngữ nói thành văn bản."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Thêm Robotics",
+                    "image": "images/cv/week0/slide_11.png",
+                    "notes": "Và còn có <b>Robotics</b>, một lĩnh vực liên ngành khổng lồ. Robotics không chỉ là một 'thiên hà' riêng lẻ, mà nó còn vươn các 'tinh vân' của mình ra và kết nối với nhiều lĩnh vực khác. Một robot cần Computer Vision để 'nhìn', cần NLP để 'nghe' và 'nói', và cần Machine Learning để 'học' cách tương tác với thế giới.",
+                    "terms": {
+                        "Robotics": "Một lĩnh vực kỹ thuật và khoa học máy tính liên ngành, liên quan đến việc thiết kế, xây dựng, vận hành và sử dụng robot."
+                    }
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Bức tranh toàn cảnh",
+                    "image": "images/cv/week0/slide_12.png",
+                    "notes": "Cuối cùng, khi lùi lại để xem bức tranh toàn cảnh, chúng ta nhận ra 'vũ trụ' AI không tồn tại một mình. Nó được xây dựng và nuôi dưỡng bởi kiến thức từ rất nhiều ngành khoa học nền tảng khác.\n\n<b>Toán học</b> và <b>Khoa học Máy tính</b> là ngôn ngữ và công cụ. <b>Khoa học Thần kinh</b> và <b>Tâm lý học</b> cung cấp nguồn cảm hứng về cách bộ não hoạt động. Và <b>Vật lý</b>, <b>Sinh học</b> cung cấp các quy luật của thế giới mà AI đang cố gắng mô phỏng và thấu hiểu.",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Lịch trình hôm nay",
+                    "image": "images/cv/week0/slide_13.png",
+                    "notes": "Nội dung của buổi học hôm nay bao gồm:\n\n- Lược sử ngắn gọn về thị giác máy tính và học sâu.\n- Tổng quan về khóa học CS231n.",
+                    "terms": {}
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Bùng nổ kỷ Cambri",
+                    "image": "images/cv/week0/slide_14.png",
+                    "notes": "Để hiểu về thị giác máy tính, hãy quay ngược thời gian về cội nguồn của chính thị giác: <b>sự sống</b>.\n\nKhoảng 540 triệu năm trước, Trái Đất đã chứng kiến một 'Vụ nổ lớn' của sự tiến hóa, được gọi là <b>Bùng nổ kỷ Cambri</b>. Trong một khoảng thời gian tương đối ngắn, sự sống đã đa dạng hóa một cách chóng mặt. Nhiều nhà khoa học tin rằng, một trong những động lực chính thúc đẩy cuộc cách mạng này chính là sự ra đời của một phát minh đột phá: <b>con mắt</b>.\n\nThị giác đã thay đổi hoàn toàn cuộc chơi sinh tồn, tạo ra một cuộc chạy đua vũ trang giữa kẻ săn mồi và con mồi, và thúc đẩy sự tiến hóa của các hình thái cơ thể phức tạp hơn.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Sự đa dạng của mắt",
+                    "image": "images/cv/week0/slide_15.png",
+                    "notes": "Từ 'phát minh' đầu tiên đó, sự tiến hóa đã không ngừng thử nghiệm và sáng tạo. Kết quả là một sự đa dạng đáng kinh ngạc của các loại mắt trong thế giới tự nhiên, mỗi loại được tối ưu hóa cho một môi trường và một lối sống riêng.\n\n- Mắt kép của côn trùng có thể phát hiện chuyển động cực nhanh.\n- Mắt của tắc kè hoa có thể xoay độc lập và nhìn theo hai hướng cùng lúc.\n- Mắt của con người, với khả năng cảm nhận màu sắc và chiều sâu tinh vi, đã trở thành công cụ chính để chúng ta tương tác và thấu hiểu thế giới.\n\nTất cả đều bắt nguồn từ cùng một nhu cầu cơ bản: chuyển đổi ánh sáng thành thông tin có ý nghĩa.",
+                    "terms": {}
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Camera Obscura",
+                    "image": "images/cv/week0/slide_16.png",
+                    "notes": "Lấy cảm hứng từ chính con mắt sinh học, con người đã bắt đầu hành trình tạo ra 'con mắt nhân tạo' của riêng mình. Một trong những bước đi đầu tiên và quan trọng nhất là <b>Camera Obscura</b> (buồng tối).\n\nCác nhà tư tưởng vĩ đại như Leonardo da Vinci đã nhận ra rằng, nếu ánh sáng từ một cảnh đi qua một lỗ nhỏ vào một không gian tối, nó sẽ tạo ra một hình ảnh đảo ngược của cảnh đó. Nguyên lý quang học đơn giản này đã đặt nền móng cho sự ra đời của nhiếp ảnh và tất cả các loại máy ảnh sau này.",
+                    "terms": {
+                        "Camera Obscura": "Một thiết bị quang học sơ khai chiếu một hình ảnh của môi trường xung quanh lên một màn hình. Nó là một trong những phát minh dẫn đến nhiếp ảnh và máy ảnh."
+                    }
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Thị giác Máy tính ở khắp mọi nơi",
+                    "image": "images/cv/week0/slide_17.png",
+                    "notes": "Từ nguyên lý của Camera Obscura, chúng ta đã đi một chặng đường rất dài. Ngày nay, những 'con mắt nhân tạo' đã trở nên nhỏ gọn, mạnh mẽ và có mặt ở khắp mọi nơi.\n\nTừ chiếc điện thoại trong túi bạn, camera an ninh trên đường phố, máy bay không người lái (drone) trên bầu trời, robot tự hành trên Sao Hỏa, cho đến các thiết bị y tế tinh vi... thị giác nhân tạo đã len lỏi vào mọi ngóc ngách của cuộc sống hiện đại. Đây chính là thế giới mà lĩnh vực Thị giác Máy tính đang cố gắng thấu hiểu và cải thiện.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Chúng ta đến từ đâu?",
+                    "image": "images/cv/week0/slide_18.png",
+                    "notes": "Câu hỏi này mở đầu cho phần lịch sử về nguồn gốc của lĩnh vực thị giác máy tính.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Hubel and Wiesel, 1959",
+                    "image": "images/cv/week0/slide_19.png",
+                    "notes": "Năm 1959, Hubel và Wiesel đã thực hiện một thí nghiệm đột phá bằng cách đo hoạt động não của một con mèo khi cho nó xem các kích thích thị giác khác nhau.\n\nHọ đã phát hiện ra:\n- <b>Tế bào đơn giản (Simple cells):</b> Phản ứng với các đường nét có góc xoay và hướng cụ thể.\n- <b>Tế bào phức tạp (Complex cells):</b> Phản ứng với các đường nét có hướng và chuyển động.\n\nPhát hiện này cho thấy vỏ não thị giác xử lý thông tin theo một hệ thống phân cấp, bắt đầu từ các đặc trưng đơn giản. Đây là một nguồn cảm hứng lớn cho các mạng nơ-ron tích chập (CNN) sau này.",
+                    "terms": {}
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Larry Roberts, 1963",
+                    "image": "images/cv/week0/slide_20.png",
+                    "notes": "Năm 1963, Larry Roberts, trong luận án tiến sĩ của mình, đã đề xuất quy trình 'Nhận thức máy móc về các vật thể rắn ba chiều'.\n\nQuy trình của ông bao gồm việc đi từ một ảnh gốc, qua một ảnh đã được phân biệt (phát hiện cạnh), và sau đó chọn ra các điểm đặc trưng để xây dựng lại mô hình 3D.",
+                    "terms": {}
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Dự án Thị giác Mùa hè",
+                    "image": "images/cv/week0/slide_21.png",
+                    "notes": "Năm 1966, tại MIT, 'Dự án Thị giác Mùa hè' là một nỗ lực tiên phong nhằm xây dựng một hệ thống thị giác nhân tạo có ý nghĩa. Mục tiêu là để một máy tính phân tích một cảnh và xác định các vật thể trong đó.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: David Marr, thập niên 1970",
+                    "image": "images/cv/week0/slide_22.png",
+                    "notes": "David Marr, một nhà khoa học thần kinh và tâm lý học, đã đề xuất một mô hình có ảnh hưởng lớn về cách thị giác hoạt động, bao gồm các giai đoạn biểu diễn hình ảnh:\n\nTừ một ảnh đầu vào, hệ thống thị giác sẽ xử lý để tạo ra một 'phác thảo nguyên sơ' (primal sketch), sau đó là một 'phác thảo 2.5D', và cuối cùng là một mô hình 3D hoàn chỉnh.",
+                    "terms": {}
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Nhận dạng qua các bộ phận (Thập niên 1970)",
+                    "image": "images/cv/week0/slide_23.png",
+                    "notes": "Trong những năm 1970, các nhà nghiên cứu đã khám phá ý tưởng nhận dạng các vật thể bằng cách chia chúng thành các bộ phận hình học đơn giản hơn, chẳng hạn như 'Generalized Cylinders' (Hình trụ tổng quát hóa) và 'Pictorial Structures' (Cấu trúc hình ảnh).",
+                    "terms": {}
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Nhận dạng qua Phát hiện cạnh (Thập niên 1980)",
+                    "image": "images/cv/week0/slide_24.png",
+                    "notes": "Trong những năm 1980, các thuật toán phát hiện cạnh, chẳng hạn như thuật toán Canny nổi tiếng (1986), đã trở thành một công cụ quan trọng để trích xuất thông tin về hình dạng của các vật thể từ hình ảnh.",
+                    "terms": {}
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Mùa đông AI",
+                    "image": "images/cv/week0/slide_25.png",
+                    "notes": "Sau một thời gian phát triển ban đầu đầy hứa hẹn, sự nhiệt tình (và kinh phí!) cho nghiên cứu AI đã suy giảm, một giai đoạn được gọi là 'Mùa đông AI'.\n\nNguyên nhân là do các 'Hệ chuyên gia' (Expert Systems) đã thất bại trong việc thực hiện những lời hứa của chúng. Tuy nhiên, các lĩnh vực con của AI như thị giác máy tính, NLP, robotics... vẫn tiếp tục phát triển.",
+                    "terms": {
+                        "AI Winter (Mùa đông AI)": "Một giai đoạn trong lịch sử của trí tuệ nhân tạo, đặc trưng bởi sự cắt giảm tài trợ và sự suy giảm mối quan tâm của công chúng sau một thời gian kỳ vọng quá cao."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: Trong khi đó...",
+                    "image": "images/cv/week0/slide_26.png",
+                    "notes": "Trong khi đó, các công trình có ảnh hưởng lớn trong lĩnh vực khoa học nhận thức và khoa học thần kinh vẫn tiếp tục được thực hiện, đặt nền móng cho những đột phá sau này.",
+                    "terms": {}
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Nhận thức các cảnh thực tế",
+                    "image": "images/cv/week0/slide_27.png",
+                    "notes": "Nghiên cứu của Irving Biederman (1972) cho thấy con người có thể nhận ra các vật thể trong một cảnh ngay cả khi hình ảnh bị xáo trộn, miễn là các mối quan hệ không gian cơ bản được giữ lại.",
+                    "terms": {}
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Nhận thức Hình ảnh Tuần tự Nhanh (RSVP)",
+                    "image": "images/cv/week0/slide_28.png",
+                    "notes": "Nghiên cứu về Nhận thức Hình ảnh Tuần tự Nhanh (Rapid Serial Visual Perception - RSVP) từ những năm 1970 cho thấy não người có khả năng xử lý và hiểu hình ảnh được trình chiếu với tốc độ cực nhanh.",
+                    "terms": {}
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Tốc độ xử lý của Hệ thống Thị giác Con người",
+                    "image": "images/cv/week0/slide_29.png",
+                    "notes": "Nghiên cứu của Thorpe, Fize & Marlot (1996) cho thấy não người có thể phân biệt được hình ảnh có động vật và không có động vật chỉ trong khoảng <b>150 mili giây</b>, một tốc độ xử lý cực kỳ nhanh.",
+                    "terms": {}
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Tương quan Nơ-ron của việc Nhận dạng",
+                    "image": "images/cv/week0/slide_30.png",
+                    "notes": "Các nghiên cứu về khoa học thần kinh (sử dụng fMRI) đã chỉ ra rằng có những vùng não cụ thể phản ứng mạnh mẽ hơn với các loại đối tượng nhất định. Ví dụ, có những vùng chuyên biệt cho việc nhận dạng khuôn mặt, và những vùng khác cho việc nhận dạng nhà cửa.",
+                    "terms": {}
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Nhận dạng Hình ảnh là một nhiệm vụ cơ bản",
+                    "image": "images/cv/week0/slide_31.png",
+                    "notes": "Nhận dạng hình ảnh là một nhiệm vụ cơ bản cho trí thông minh thị giác, cả ở con người và máy móc.",
+                    "terms": {}
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Nhận dạng qua Phân nhóm (Thập niên 1990)",
+                    "image": "images/cv/week0/slide_32.png",
+                    "notes": "Trong những năm 1990, các nhà nghiên cứu đã phát triển các phương pháp nhận dạng đối tượng bằng cách nhóm các pixel có đặc điểm tương tự lại với nhau, một kỹ thuật được gọi là phân đoạn ảnh (image segmentation). Một ví dụ nổi bật là thuật toán 'Normalized Cuts' (1997).",
+                    "terms": {}
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Nhận dạng qua Đối chiếu (Thập niên 2000)",
+                    "image": "images/cv/week0/slide_33.png",
+                    "notes": "Trong những năm 2000, các thuật toán như SIFT (Scale-Invariant Feature Transform) của David Lowe (1999) đã cách mạng hóa việc nhận dạng đối tượng. SIFT cho phép tìm các điểm đặc trưng (keypoints) trong một hình ảnh và đối chiếu chúng với các điểm đặc trưng trong một hình ảnh khác, ngay cả khi đối tượng bị xoay, thay đổi tỷ lệ, hoặc điều kiện ánh sáng khác nhau.",
+                    "terms": {}
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Phát hiện Khuôn mặt",
+                    "image": "images/cv/week0/slide_34.png",
+                    "notes": "Thuật toán của Viola và Jones (2001) là một trong những ứng dụng thành công đầu tiên của học máy cho thị giác. Nó cho phép phát hiện khuôn mặt trong hình ảnh theo thời gian thực với độ chính xác cao, mở đường cho rất nhiều ứng dụng sau này.",
+                    "terms": {}
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: Các bộ dữ liệu lớn",
+                    "image": "images/cv/week0/slide_35.png",
+                    "notes": "Sự ra đời của các bộ dữ liệu hình ảnh được gán nhãn quy mô lớn, như Caltech 101 và đặc biệt là PASCAL Visual Object Challenge, đã tạo ra một sân chơi chung để các nhà nghiên cứu có thể so sánh và đánh giá các thuật toán nhận dạng đối tượng của họ một cách công bằng.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Học biểu diễn bằng Lan truyền ngược lỗi",
+                    "image": "images/cv/week0/slide_36.png",
+                    "notes": "Bài báo của Rumelhart, Hinton, và Williams (1986) đã giới thiệu lại và phổ biến thuật toán lan truyền ngược (backpropagation) để tính toán gradient trong mạng nơ-ron, cho phép huấn luyện thành công các perceptron đa lớp. Đây là nền tảng của deep learning hiện đại.",
+                    "terms": {
+                        "Perceptron": "Một thuật toán học có giám sát cho các bộ phân loại nhị phân. Nó là một loại mạng nơ-ron nhân tạo đơn giản nhất."
+                    }
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Minsky and Papert, 1969",
+                    "image": "images/cv/week0/slide_37.png",
+                    "notes": "Năm 1969, Minsky và Papert đã xuất bản một cuốn sách chứng minh rằng các Perceptron đơn lớp không thể học được hàm XOR. Điều này đã gây ra rất nhiều sự vỡ mộng trong lĩnh vực này và góp phần vào 'Mùa đông AI' đầu tiên.",
+                    "terms": {}
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Neocognitron: Fukushima, 1980",
+                    "image": "images/cv/week0/slide_38.png",
+                    "notes": "Neocognitron là một mô hình tính toán cho hệ thống thị giác, được lấy cảm hứng trực tiếp từ hệ thống phân cấp của các tế bào đơn giản và phức tạp của Hubel và Wiesel. Nó xen kẽ các lớp tế bào đơn giản (tương tự như tích chập - convolution) và các lớp tế bào phức tạp (tương tự như gộp - pooling), trở thành tiền thân trực tiếp của các mạng nơ-ron tích chập (CNN) hiện đại.",
+                    "terms": {}
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: Backprop: Rumelhart, Hinton, and Williams, 1986",
+                    "image": "images/cv/week0/slide_39.png",
+                    "notes": "Thuật toán lan truyền ngược (Backpropagation) đã được giới thiệu lại, cho phép huấn luyện hiệu quả các mạng nơ-ron đa lớp.",
+                    "terms": {
+                        "Backpropagation": "Lan truyền ngược, một thuật toán được sử dụng rộng rãi để huấn luyện mạng nơ-ron nhân tạo. Nó hoạt động bằng cách tính toán gradient của hàm mất mát đối với các trọng số của mạng."
+                    }
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: Mạng Tích chập: LeCun et al, 1998",
+                    "image": "images/cv/week0/slide_40.png",
+                    "notes": "Yann LeCun và các đồng nghiệp đã áp dụng thuật toán backprop vào một kiến trúc giống Neocognitron, tạo ra mạng LeNet. Mạng này đã học được cách nhận dạng chữ số viết tay và được triển khai trong một hệ thống thương mại của NEC để xử lý séc, rất tương tự với các CNN hiện đại của chúng ta.",
+                    "terms": {}
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: Thập niên 2000: 'Deep Learning'",
+                    "image": "images/cv/week0/slide_41.png",
+                    "notes": "Trong những năm 2000, mọi người đã cố gắng huấn luyện các mạng nơ-ron ngày càng sâu hơn. Tuy nhiên, đây chưa phải là một chủ đề nghiên cứu chính thống vào thời điểm này.",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: Thập niên 2000: Vấn đề",
+                    "image": "images/cv/week0/slide_42.png",
+                    "notes": "Một trong những trở ngại lớn nhất vào thời điểm đó là không có bộ dữ liệu đủ tốt để làm việc.",
+                    "terms": {}
+                },
+                {
+                    "id": 43,
+                    "title": "Trang 43: ImageNet",
+                    "image": "images/cv/week0/slide_43.png",
+                    "notes": "Sự ra đời của ImageNet, một bộ dữ liệu hình ảnh quy mô lớn (hơn 1,4 triệu ảnh, 1000 loại đối tượng), đã thay đổi cuộc chơi. Cuộc thi Thử thách Nhận dạng Hình ảnh Quy mô lớn ImageNet (ILSVRC) đã trở thành thước đo tiêu chuẩn cho các thuật toán thị giác máy tính.",
+                    "terms": {}
+                },
+                {
+                    "id": 44,
+                    "title": "Trang 44: Kết quả ImageNet",
+                    "image": "images/cv/week0/slide_44.png",
+                    "notes": "Biểu đồ này cho thấy tỷ lệ lỗi trong cuộc thi ImageNet qua các năm. Tỷ lệ lỗi đã giảm dần, nhưng vẫn còn khá cao.",
+                    "terms": {}
+                },
+                {
+                    "id": 45,
+                    "title": "Trang 45: AlexNet, 2012",
+                    "image": "images/cv/week0/slide_45.png",
+                    "notes": "Năm 2012, AlexNet, một mạng nơ-ron tích chập sâu, đã tạo ra một bước nhảy vọt ngoạn mục, giảm tỷ lệ lỗi từ 25.8% xuống chỉ còn 16.4%. Đây là khoảnh khắc deep learning bùng nổ.",
+                    "terms": {}
+                },
+                {
+                    "id": 46,
+                    "title": "Trang 46: AlexNet: Deep Learning trở nên phổ biến",
+                    "image": "images/cv/week0/slide_46.png",
+                    "notes": "Kiến trúc của AlexNet, được phát triển bởi Krizhevsky, Sutskever, và Hinton, đã trở thành nền tảng cho rất nhiều mạng CNN sau này.",
+                    "terms": {}
+                },
+                {
+                    "id": 47,
+                    "title": "Trang 47: AlexNet vs. Neocognitron",
+                    "image": "images/cv/week0/slide_47.png",
+                    "notes": "So sánh kiến trúc của AlexNet (2012) và Neocognitron (1980), chúng ta có thể thấy sự tương đồng đáng kinh ngạc. Sự khác biệt lớn nằm ở quy mô, sức mạnh tính toán, và quan trọng nhất là sự tồn tại của thuật toán backpropagation và các bộ dữ liệu lớn như ImageNet.",
+                    "terms": {}
+                },
+                {
+                    "id": 48,
+                    "title": "Trang 48: Bùng nổ Deep Learning",
+                    "image": "images/cv/week0/slide_48.png",
+                    "notes": "Từ năm 2012 đến nay, đã có một sự bùng nổ trong nghiên cứu về Deep Learning. Số lượng bài báo khoa học được nộp tại các hội nghị hàng đầu như CVPR và trên kho lưu trữ arXiv đã tăng theo cấp số nhân, đánh dấu một kỷ nguyên mới cho AI và Thị giác Máy tính.",
+                    "terms": {}
+                },
+                {
+                    "id": 49,
+                    "title": "Trang 49: Deep Learning ở khắp mọi nơi - Kiến trúc",
+                    "image": "images/cv/week0/slide_49.png",
+                    "notes": "Từ 2012 đến nay, Deep Learning đã trở nên phổ biến. Slide này cho thấy sự phát triển của các kiến trúc mạng nơ-ron qua các năm:\n\n- <b>2010 (NEC-UIUC):</b> Vẫn sử dụng các phương pháp truyền thống như HOG, LBP, và SVM.\n- <b>2012 (SuperVision - AlexNet):</b> Một bước đột phá với kiến trúc CNN sâu.\n- <b>2014 (GoogLeNet, VGG):</b> Các mạng nơ-ron trở nên sâu hơn và phức tạp hơn nữa.\n- <b>2015 (MSRA - ResNet):</b> Giới thiệu các kết nối dư (residual connections), cho phép huấn luyện các mạng cực kỳ sâu.",
+                    "terms": {}
+                },
+                {
+                    "id": 50,
+                    "title": "Trang 50: Deep Learning - Các nhiệm vụ cơ bản",
+                    "image": "images/cv/week0/slide_50.png",
+                    "notes": "Sau bước đột phá của AlexNet, Deep Learning đã nhanh chóng chứng tỏ sức mạnh của mình trong các nhiệm vụ cốt lõi của Thị giác Máy tính.\n\n- <b>Phân loại ảnh (Image Classification):</b> Nhiệm vụ cơ bản nhất: 'Trong ảnh này có gì?'. Các mô hình có thể phân loại hàng nghìn loại đối tượng với độ chính xác đáng kinh ngạc.\n- <b>Truy xuất ảnh (Image Retrieval):</b> Không chỉ phân loại, Deep Learning còn có thể 'hiểu' được sự tương đồng về mặt nội dung giữa các hình ảnh, cho phép tìm kiếm các ảnh tương tự một cách hiệu quả.",
+                    "terms": {}
+                },
+                {
+                    "id": 51,
+                    "title": "Trang 51: Deep Learning - Tiến sâu hơn vào sự 'hiểu'",
+                    "image": "images/cv/week0/slide_51.png",
+                    "notes": "Từ việc chỉ trả lời 'có gì', Deep Learning tiến xa hơn đến việc trả lời 'ở đâu' và 'hình dạng như thế nào'.\n\n- <b>Phát hiện đối tượng (Object Detection):</b> Các mô hình như R-CNN, YOLO, SSD đã học được cách không chỉ nhận dạng đối tượng mà còn vẽ một 'hộp giới hạn' (bounding box) xung quanh chúng, xác định chính xác vị trí của chúng trong ảnh.\n- <b>Phân đoạn ảnh (Image Segmentation):</b> Đây là một bước tiến sâu hơn nữa, nơi mô hình phân loại từng pixel trong ảnh, tô màu chính xác vùng thuộc về mỗi đối tượng. Điều này cho phép máy tính có một sự 'hiểu' chi tiết về hình dạng và ranh giới của vật thể.",
+                    "terms": {}
+                },
+                {
+                    "id": 52,
+                    "title": "Trang 52: Deep Learning - Từ ảnh tĩnh đến Video",
+                    "image": "images/cv/week0/slide_52.png",
+                    "notes": "Thế giới thực không phải là ảnh tĩnh, mà là một dòng chảy liên tục của các sự kiện. Deep Learning cũng đã chinh phục lĩnh vực video bằng cách học thêm chiều 'thời gian'.\n\n- <b>Phân loại Video (Video Classification):</b> Các kiến trúc mạng đặc biệt (như 3D CNNs) có thể phân tích cả thông tin không gian (trong một khung hình) và thông tin thời gian (sự thay đổi giữa các khung hình) để phân loại toàn bộ video.\n- <b>Nhận dạng Hoạt động (Activity Recognition):</b> Bằng cách phân tích chuỗi chuyển động, các mô hình có thể xác định các hành động phức tạp của con người, mở ra các ứng dụng trong thể thao, giám sát an ninh, và tương tác người-máy.",
+                    "terms": {}
+                },
+                {
+                    "id": 53,
+                    "title": "Trang 53: Deep Learning - Các ứng dụng độc đáo",
+                    "image": "images/cv/week0/slide_53.png",
+                    "notes": "Ngoài các tác vụ truyền thống, Deep Learning còn mở ra những khả năng hoàn toàn mới:\n\n- <b>Nhận dạng tư thế (Pose Recognition):</b> Các mô hình có thể 'nhìn' vào một người và ước tính vị trí 3D của các khớp xương, tạo ra một bộ xương ảo. Công nghệ này là nền tảng cho các ứng dụng thực tế ảo (VR), theo dõi thể thao, và phân tích hành vi.\n- <b>Chơi game Atari (Học tăng cường):</b> Một trong những thành tựu đáng kinh ngạc nhất là khi các mô hình Deep Reinforcement Learning của DeepMind đã học được cách chơi các game Atari cổ điển chỉ từ các pixel trên màn hình và điểm số. Chúng không được 'dạy' luật chơi, chúng tự 'khám phá' ra chiến lược để chiến thắng.",
+                    "terms": {}
+                },
+                {
+                    "id": 54,
+                    "title": "Trang 54: Deep Learning - Tác động đến Khoa học",
+                    "image": "images/cv/week0/slide_54.png",
+                    "notes": "Sức mạnh của Deep Learning không chỉ giới hạn trong ngành công nghệ, mà còn tạo ra những tác động to lớn đến nghiên cứu khoa học:\n\n- <b>Hình ảnh y tế:</b> Các mô hình có thể phân tích ảnh chụp X-quang hoặc ảnh quét mô học để phát hiện các dấu hiệu ung thư với độ chính xác tương đương hoặc thậm chí vượt qua các chuyên gia con người.\n- <b>Thiên văn học:</b> Tự động phân loại hàng triệu thiên hà từ ảnh chụp của kính thiên văn, giúp các nhà khoa học hiểu hơn về cấu trúc của vũ trụ.\n- <b>Sinh học bảo tồn:</b> Nhận dạng các cá thể động vật hoang dã (như cá voi) dựa trên các đặc điểm hình ảnh, giúp theo dõi quần thể và nỗ lực bảo tồn.",
+                    "terms": {}
+                },
+                {
+                    "id": 55,
+                    "title": "Trang 55: Deep Learning - Kết nối Hình ảnh và Ngôn ngữ",
+                    "image": "images/cv/week0/slide_55.png",
+                    "notes": "Một trong những lĩnh vực thú vị nhất là sự kết hợp giữa Thị giác Máy tính và Xử lý Ngôn ngữ Tự nhiên. Nhiệm vụ <b>Tạo chú thích ảnh (Image Captioning)</b> là một ví dụ điển hình.\n\nCác mô hình này, thường kết hợp kiến trúc CNN (để 'nhìn' ảnh) và RNN (để 'viết' câu), có thể tự động tạo ra một câu mô tả hoàn chỉnh về nội dung của một bức ảnh mà chúng chưa từng thấy trước đây.",
+                    "terms": {}
+                },
+                {
+                    "id": 56,
+                    "title": "Trang 56: Deep Learning - Tiến tới sự 'Thấu hiểu'",
+                    "image": "images/cv/week0/slide_56.png",
+                    "notes": "Các mô hình ngày càng trở nên tinh vi hơn. Chúng không chỉ liệt kê các đối tượng, mà còn bắt đầu 'hiểu' được các mối quan hệ giữa chúng.\n\nSơ đồ này cho thấy một mô hình có thể phân tích một cảnh phức tạp và tạo ra một 'biểu đồ cảnh' (scene graph), mô tả các đối tượng ('person', 'shirt', 'snow', 'ski') và các mối quan hệ giữa chúng ('wear', 'on', 'left of', 'taller than'). Đây là một bước tiến gần hơn đến sự thấu hiểu thực sự.",
+                    "terms": {}
+                },
+                {
+                    "id": 57,
+                    "title": "Trang 57: Deep Learning - Nghệ thuật Sáng tạo",
+                    "image": "images/cv/week0/slide_57.png",
+                    "notes": "Deep Learning không chỉ dùng để phân tích, mà còn có thể sáng tạo. Các kỹ thuật như:\n\n- <b>DeepDream:</b> Tạo ra các hình ảnh ảo giác bằng cách khuếch đại các mẫu mà mạng nơ-ron 'nhìn' thấy trong một bức ảnh.\n- <b>Style Transfer:</b> Tách 'nội dung' của một bức ảnh và 'phong cách' của một bức ảnh khác, sau đó kết hợp chúng lại để tạo ra một tác phẩm nghệ thuật mới (ví dụ: áp dụng phong cách của Van Gogh vào một bức ảnh chụp đường phố).\n\nĐiều này mở ra một lĩnh vực hoàn toàn mới gọi là 'Nghệ thuật AI'.",
+                    "terms": {}
+                },
+                {
+                    "id": 58,
+                    "title": "Trang 58: Deep Learning ở khắp mọi nơi",
+                    "image": "images/cv/week0/slide_58.png",
+                    "notes": "Slide chuyển tiếp, chuẩn bị cho các ví dụ về các mô hình tạo sinh (generative models) tiên tiến nhất.",
+                    "terms": {}
+                },
+                {
+                    "id": 59,
+                    "title": "Trang 59: Deep Learning - Tạo ảnh từ văn bản (Avocado)",
+                    "image": "images/cv/week0/slide_59.png",
+                    "notes": "Đây là một trong những khả năng đáng kinh ngạc nhất của các mô hình Deep Learning hiện đại: <b>tạo ra hình ảnh hoàn toàn mới từ một mô tả văn bản (Text-to-Image Generation)</b>.\n\nSlide này cho thấy kết quả của mô hình DALL-E (từ OpenAI) khi nhận được yêu cầu: <i>'một chiếc ghế bành có hình dạng của một quả bơ, một chiếc ghế bành bắt chước một quả bơ'</i>.\n\nMô hình không chỉ 'hiểu' các khái niệm 'ghế bành' và 'quả bơ' một cách riêng lẻ, mà còn có khả năng <b>kết hợp chúng lại một cách sáng tạo</b> để tạo ra những thiết kế vừa độc đáo, vừa đáp ứng đúng yêu cầu. Điều này cho thấy khả năng 'suy luận' và 'tưởng tượng' ở một mức độ rất cao.",
+                    "terms": {
+                        "Text-to-Image Generation": "Một lĩnh vực trong AI tập trung vào việc tạo ra hình ảnh từ các mô tả bằng ngôn ngữ tự nhiên. Các mô hình nổi bật bao gồm DALL-E, Midjourney, và Stable Diffusion."
+                    }
+                },
+                {
+                    "id": 60,
+                    "title": "Trang 60: Deep Learning - Tạo ảnh từ văn bản (Peach)",
+                    "image": "images/cv/week0/slide_60.png",
+                    "notes": "Một ví dụ khác để củng cố khả năng sáng tạo của mô hình, lần này với yêu cầu: <i>'một chiếc ghế bành có hình dạng của một quả đào'</i>.\n\nKết quả cho thấy sự linh hoạt của mô hình trong việc áp dụng cùng một logic ('ghế bành' + [đối tượng]) cho một khái niệm mới. Nó không chỉ đơn giản là 'vẽ' lại, mà còn cố gắng mô phỏng cả chất liệu, hình dáng và màu sắc đặc trưng của quả đào.",
+                    "terms": {}
+                },
+                {
+                    "id": 61,
+                    "title": "Trang 61: Các yếu tố thúc đẩy",
+                    "image": "images/cv/week0/slide_61.png",
+                    "notes": "Sự bùng nổ của Deep Learning không phải là một sự kiện ngẫu nhiên, mà là kết quả của sự hội tụ của ba trụ cột chính, thường được gọi là 'Tam giác AI':\n\n1. <b>Tính toán (Computation):</b> Sự phát triển của phần cứng, đặc biệt là các Bộ xử lý đồ họa (GPU), đã cung cấp sức mạnh tính toán khổng lồ cần thiết để huấn luyện các mạng nơ-ron phức tạp.\n2. <b>Thuật toán (Algorithms):</b> Những đột phá trong kiến trúc mạng (như ResNet, Transformers) và các kỹ thuật huấn luyện (như Adam optimizer, batch normalization) đã cho phép chúng ta xây dựng các mô hình ngày càng sâu và hiệu quả hơn.\n3. <b>Dữ liệu (Data):</b> Sự bùng nổ của internet và quá trình số hóa đã tạo ra các bộ dữ liệu quy mô cực lớn (như ImageNet), cung cấp 'nhiên liệu' cần thiết để các mô hình học hỏi.",
+                    "terms": {
+                        "GPU (Graphics Processing Unit)": "Bộ xử lý đồ họa, một loại vi xử lý chuyên dụng ban đầu được thiết kế để tăng tốc việc kết xuất đồ họa. Kiến trúc song song của nó làm cho nó cực kỳ hiệu quả cho các phép tính ma trận lớn, vốn là cốt lõi của việc huấn luyện các mô hình deep learning."
+                    }
+                },
+                {
+                    "id": 62,
+                    "title": "Trang 62: GFLOP trên mỗi Đô la (GPU vs CPU)",
+                    "image": "images/cv/week0/slide_62.png",
+                    "notes": "Biểu đồ này minh họa một cách trực quan về trụ cột 'Tính toán'. Nó cho thấy sức mạnh tính toán bạn có thể mua được trên mỗi đô la (đo bằng GFLOP - tỷ phép tính dấu phẩy động mỗi giây) đã tăng lên như thế nào theo thời gian.\n\nRõ ràng, sự tăng trưởng của GPU (chấm đỏ) là vượt trội so với CPU (chấm xanh). 'Vụ nổ Deep Learning' bắt đầu vào khoảng năm 2012, trùng khớp với thời điểm sức mạnh của GPU thực sự cất cánh.",
+                    "terms": {}
+                },
+                {
+                    "id": 63,
+                    "title": "Trang 63: GFLOP trên mỗi Đô la (Tensor Core)",
+                    "image": "images/cv/week0/slide_63.png",
+                    "notes": "Sự phát triển không dừng lại ở đó. Các GPU gần đây (như dòng RTX của NVIDIA) được trang bị thêm <b>'Tensor Cores'</b> (chấm cam).\n\nĐây là các lõi xử lý chuyên dụng được thiết kế riêng để tối ưu hóa cho các phép tính ma trận trong deep learning. Chúng cung cấp một bước nhảy vọt về hiệu suất tính toán so với các lõi GPU thông thường, tiếp tục đẩy nhanh tốc độ phát triển của AI.",
+                    "terms": {
+                        "Tensor Cores": "Các đơn vị xử lý chuyên dụng trong các GPU của NVIDIA, được thiết kế để thực hiện các phép nhân ma trận một cách cực kỳ hiệu quả. Chúng là một yếu tố quan trọng giúp tăng tốc độ huấn luyện và suy luận của các mô hình deep learning."
+                    }
+                },
+                {
+                    "id": 64,
+                    "title": "Trang 64: Sự tăng trưởng và Tác động bùng nổ của AI",
+                    "image": "images/cv/week0/slide_64.png",
+                    "notes": "Sự hội tụ của Tính toán, Thuật toán, và Dữ liệu đã tạo ra một sự tăng trưởng bùng nổ và có tác động sâu rộng:\n\n- <b>Học thuật:</b> Số lượng người tham dự tại các hội nghị AI hàng đầu (như CVPR, NeurIPS) đã tăng theo cấp số nhân, cho thấy sự quan tâm và đầu tư nghiên cứu khổng lồ.\n- <b>Khởi nghiệp:</b> Một làn sóng các công ty khởi nghiệp phát triển hệ thống AI đã ra đời, thu hút lượng vốn đầu tư mạo hiểm kỷ lục.\n- <b>Doanh nghiệp:</b> Doanh thu từ việc áp dụng AI trong các doanh nghiệp đã tăng trưởng mạnh mẽ, chứng tỏ giá trị kinh tế thực tiễn của công nghệ này.",
+                    "terms": {}
+                },
+                {
+                    "id": 65,
+                    "title": "Trang 65: Một chặng đường dài phía trước",
+                    "image": "images/cv/week0/slide_65.png",
+                    "notes": "Đây là một lời nhắc nhở quan trọng. Mặc dù AI và Thị giác Máy tính đã đạt được những thành công đáng kinh ngạc, chúng ta vẫn còn rất xa mới có thể tái tạo được sự linh hoạt, khả năng thích ứng, và sự thấu hiểu sâu sắc của trí thông minh thị giác con người. Vẫn còn vô số thách thức cần phải vượt qua.",
+                    "terms": {}
+                },
+                {
+                    "id": 66,
+                    "title": "Trang 66: Thị giác Máy tính có thể gây hại",
+                    "image": "images/cv/week0/slide_66.png",
+                    "notes": "Bên cạnh những lợi ích, sự phát triển của Thị giác Máy tính cũng đi kèm với những rủi ro và trách nhiệm đạo đức lớn:\n\n- <b>Các định kiến có hại (Harmful Stereotypes):</b> Biểu đồ cho thấy các hệ thống phân loại giới tính thương mại từ các công ty lớn hoạt động kém chính xác hơn đáng kể đối với phụ nữ da màu. Điều này xảy ra khi mô hình được huấn luyện trên các bộ dữ liệu không cân bằng, phản ánh và khuếch đại các định kiến trong xã hội.\n- <b>Ảnh hưởng đến cuộc sống con người:</b> Việc sử dụng AI để quét khuôn mặt và phân tích hành vi trong các cuộc phỏng vấn tuyển dụng đang ngày càng phổ biến. Điều này đặt ra những câu hỏi nghiêm túc về sự công bằng, quyền riêng tư, và nguy cơ các quyết định quan trọng bị tự động hóa một cách thiếu minh bạch.",
+                    "terms": {}
+                },
+                {
+                    "id": 67,
+                    "title": "Trang 67: Thị giác Máy tính có thể cứu mạng",
+                    "image": "images/cv/week0/slide_67.png",
+                    "notes": "Slide này minh họa một ứng dụng thực tế và đầy nhân văn của Thị giác Máy tính trong lĩnh vực y tế, cụ thể là chăm sóc người cao tuổi một cách an toàn và không xâm phạm.\n\n<b>Phân tích hình ảnh:</b>\n- <b>Hệ thống giám sát:</b> Một camera được đặt ở góc phòng, sử dụng thuật toán nhận dạng tư thế (pose estimation) để theo dõi chuyển động và dáng đi của người cao tuổi. Các đường màu xanh lá cây chính là bộ xương ảo được máy tính 'nhìn' thấy.\n- <b>Phát hiện bất thường:</b> Hệ thống có thể tự động phát hiện các sự kiện nguy hiểm như té ngã, hoặc các thay đổi trong dáng đi có thể là triệu chứng sớm của bệnh.\n- <b>Giao diện trung tâm:</b> Dữ liệu được gửi về một máy tính bảng, cho phép người chăm sóc hoặc bác sĩ theo dõi các chỉ số quan trọng từ xa, như phát hiện sớm triệu chứng COVID-19, quản lý các bệnh mãn tính, theo dõi giấc ngủ, chế độ ăn uống...\n\n<b>Các đặc tính của hệ thống:</b>\n- <b>Linh hoạt (Versatile):</b> Có thể theo dõi nhiều loại chỉ số sức khỏe.\n- <b>Có thể mở rộng (Scalable):</b> Dễ dàng triển khai ở nhiều phòng hoặc nhiều nhà.\n- <b>Chi phí thấp (Low-cost)</b> và <b>Không gây phiền hà (Burden-free)</b> cho người được chăm sóc.",
+                    "terms": {}
+                },
+                {
+                    "id": 68,
+                    "title": "Trang 68: Vẫn còn nhiều điều chúng ta chưa biết",
+                    "image": "images/cv/week0/slide_68.png",
+                    "notes": "Mặc dù đã có những bước tiến vượt bậc, vẫn còn rất nhiều điều mà các hệ thống thị giác máy tính hiện tại chưa thể làm được. Hai hình ảnh này minh họa cho những thách thức đó:\n\n<b>Bức ảnh bên trái (Trẻ em khám phá thiên nhiên):</b>\nMột hệ thống AI có thể dễ dàng nhận dạng các đối tượng: 'trẻ em', 'kính lúp', 'lá cây'. Tuy nhiên, nó gặp khó khăn trong việc hiểu được <b>ngữ cảnh và ý định</b> sâu sắc hơn:\n- Sự tò mò và khám phá của trẻ nhỏ.\n- Hành động 'học hỏi' thông qua trải nghiệm thực tế.\n- Mối liên kết xã hội và sự hợp tác giữa những đứa trẻ.\n\n<b>Bức ảnh bên phải (Barack Obama trong phòng thay đồ):</b>\nAI có thể nhận dạng 'một người đàn ông', 'gương', 'cân sức khỏe'. Nhưng nó sẽ thất bại trong việc nắm bắt các <b>sắc thái xã hội và cảm xúc</b> phức tạp:\n- Bối cảnh: Đây là cựu Tổng thống Hoa Kỳ Barack Obama.\n- Hành động: Ông đang đùa vui bằng cách đặt chân lên chiếc cân khi một nhân viên đang đứng trên đó.\n- Cảm xúc: Sự hài hước, không khí thoải mái, và phản ứng của những người xung quanh.\n\nNhững ví dụ này cho thấy thách thức lớn tiếp theo của AI không chỉ là 'nhìn thấy' (seeing), mà là 'thấu hiểu' (understanding) thế giới như con người.",
+                    "terms": {
+                        "Context (Ngữ cảnh)": "Các tình huống hoặc thông tin liên quan giúp làm rõ ý nghĩa của một sự kiện hoặc một đối tượng. Đây là một trong những thách thức lớn nhất đối với AI hiện nay.",
+                        "Intent (Ý định)": "Mục đích hoặc lý do đằng sau một hành động. Máy tính có thể nhận dạng hành động 'cầm kính lúp', nhưng khó có thể suy ra ý định 'khám phá và học hỏi'."
+                    }
+                },
+                {
+                    "id": 69,
+                    "title": "Trang 69: Lịch trình hôm nay (Chuyển tiếp)",
+                    "image": "images/cv/week0/slide_69.png",
+                    "notes": "Kết thúc phần lược sử.\n\nPhần tiếp theo: Tổng quan về khóa học CS231n.",
+                    "terms": {}
+                }
+            ]
+        },
+        {
+            "title": "[Tham khảo thêm]: Tài liệu môn học của thầy Phạm Văn Huy",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa môn học",
+                    "image": "images/cv/reference/slide_1.png",
+                    "notes": "Bài giảng giới thiệu môn Thị giác Máy tính.\n\n<b>Giảng viên:</b> Phạm Văn Huy, Ph.D.\n<b>Khoa:</b> Công nghệ thông tin, Đại học Tôn Đức Thắng, TP.HCM.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Yêu cầu môn học",
+                    "image": "images/cv/reference/slide_2.png",
+                    "notes": "Slide này giới thiệu về các yêu cầu và cách tính điểm của môn học:\n\n<b>Bài tập về nhà (Homework - 20%):</b>\n- Gồm 2 bài, làm theo nhóm ngẫu nhiên.\n- Yêu cầu: Chuẩn bị ở nhà, thuyết trình trên lớp (10 phút), và code (sử dụng OpenCV, Python, Tensorflow/Keras/Pytorch...).\n\n<b>Thuyết trình (Presentation - 20%):</b>\n- Làm cá nhân vào Tuần 10.\n- Yêu cầu: Tài liệu hóa tất cả bài tập về nhà dưới dạng báo cáo và thuyết trình trên lớp.\n\n<b>Dự án cuối kỳ (Final Project - 50%):</b>\n- Làm theo nhóm vào Tuần 12-15.\n- Có hai lựa chọn: Ứng dụng thực tế hoặc Nghiên cứu lý thuyết.\n\n<b>Lưu ý quan trọng:</b> KHÔNG THUYẾT TRÌNH THEO KIỂU ĐỌC - PHẢI GIẢI THÍCH.",
+                    "terms": {
+                        "OpenCV": "Một thư viện mã nguồn mở hàng đầu cho các ứng dụng thị giác máy tính, xử lý ảnh và học máy.",
+                        "TensorFlow": "Một nền tảng mã nguồn mở end-to-end cho học máy, được phát triển bởi Google.",
+                        "PyTorch": "Một thư viện học máy mã nguồn mở dựa trên Torch, được sử dụng cho các ứng dụng như thị giác máy tính và xử lý ngôn ngữ tự nhiên."
+                    }
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Thị giác Máy tính là gì?",
+                    "image": "images/cv/reference/slide_3.png",
+                    "notes": "Thị giác máy tính là một lĩnh vực của Trí tuệ nhân tạo (AI), cho phép máy móc diễn giải và xử lý dữ liệu hình ảnh tương tự như thị giác của con người.\n\n<b>Hệ thống thị giác của con người:</b>\n- Mắt (Eye): Cảm biến để thu nhận hình ảnh từ môi trường.\n- Não (Brain): Chịu trách nhiệm diễn giải để hiểu nội dung hình ảnh.\n\n<b>Hệ thống thị giác máy tính:</b>\n- Đầu vào (Input): Hình ảnh.\n- Thiết bị cảm biến (Sensing device): Camera.\n- Thiết bị diễn giải (Interpreting device): Máy tính.\n- Đầu ra (Output): Dữ liệu có ý nghĩa (ví dụ: tên các vật thể).",
+                    "terms": {
+                        "Computer Vision (Thị giác Máy tính)": "Một lĩnh vực của khoa học máy tính và trí tuệ nhân tạo, tập trung vào việc cho phép máy tính 'nhìn', xác định và xử lý hình ảnh theo cách tương tự như con người."
+                    }
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Từ Xử lý ảnh đến Thị giác máy tính",
+                    "image": "images/cv/reference/slide_4.png",
+                    "notes": "Quá trình đi từ một hình ảnh thô đến việc hiểu được nó có thể được chia thành 3 cấp độ xử lý:\n\n1. <b>Xử lý cấp thấp (Low-Level Processing):</b>\n   - Đầu vào: Hình ảnh. Đầu ra: Hình ảnh.\n   - Các tác vụ: Giảm nhiễu, tăng cường độ tương phản, làm sắc nét hình ảnh.\n\n2. <b>Xử lý cấp trung (Mid-Level Processing):</b>\n   - Đầu vào: Hình ảnh. Đầu ra: Các thuộc tính (attributes).\n   - Các tác vụ: Phân đoạn (segmentation), phân loại (classification).\n\n3. <b>Xử lý cấp cao (High-Level Processing):</b>\n   - Đầu vào: Các thuộc tính. Đầu ra: Sự thấu hiểu (making sense).\n   - Các tác vụ: Nhận dạng đối tượng (object recognition).",
+                    "terms": {
+                        "Image Processing (Xử lý ảnh)": "Thường đề cập đến các hoạt động xử lý cấp thấp, nơi đầu vào và đầu ra đều là hình ảnh. Mục tiêu là cải thiện chất lượng ảnh hoặc trích xuất một số thông tin từ nó.",
+                        "Segmentation (Phân đoạn)": "Quá trình phân chia một hình ảnh kỹ thuật số thành nhiều đoạn (tập hợp các pixel) để đơn giản hóa hoặc thay đổi cách biểu diễn của hình ảnh thành một cái gì đó có ý nghĩa hơn và dễ phân tích hơn.",
+                        "Object Recognition (Nhận dạng đối tượng)": "Một nhiệm vụ trong thị giác máy tính để xác định và nhận dạng các đối tượng trong một hình ảnh hoặc video."
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Các ứng dụng của Thị giác Máy tính",
+                    "image": "images/cv/reference/slide_5.png",
+                    "notes": "Thị giác máy tính có rất nhiều ứng dụng trong thực tế, bao gồm:\n\n- <b>Xe tự lái (Self-driving vehicles):</b> Giúp xe 'nhìn' và hiểu môi trường xung quanh.\n- <b>Nhận dạng khuôn mặt (Facial recognition):</b> Dùng trong bảo mật, mạng xã hội.\n- <b>Y tế (Healthcare):</b> Phân tích hình ảnh y tế như X-quang, MRI để chẩn đoán bệnh.\n- <b>Nhận dạng ký tự quang học (OCR):</b> Chuyển đổi văn bản trong hình ảnh thành văn bản có thể chỉnh sửa.\n- <b>Hình ảnh siêu phân giải (SRI):</b> Nâng cao chất lượng và độ phân giải của hình ảnh.\n- <b>Thực tế tăng cường (AR):</b> Kết hợp thông tin ảo vào thế giới thực.",
+                    "terms": {
+                        "Augmented Reality (AR)": "Công nghệ lồng ghép thông tin ảo (hình ảnh, dữ liệu) vào môi trường thực tế thông qua các thiết bị như điện thoại thông minh hoặc kính.",
+                        "Optical Character Recognition (OCR)": "Công nghệ chuyển đổi các loại tài liệu khác nhau, chẳng hạn như tài liệu giấy được quét, tệp PDF hoặc hình ảnh được chụp bằng máy ảnh kỹ thuật số, thành dữ liệu có thể chỉnh sửa và tìm kiếm."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Lịch sử phát triển của Thị giác Máy tính",
+                    "image": "images/cv/reference/slide_6.png",
+                    "notes": "<b>Nông nghiệp (Agriculture):</b>\n- Giám sát cây trồng và phát hiện bệnh.\n- Tự động hóa việc thu hoạch và phân loại.\n- Phân tích sức khỏe của đất và cây trồng.\n- Ví dụ: Máy bay không người lái (drones) sử dụng thị giác máy tính để theo dõi sức khỏe cây trồng.\n\n<b>An ninh và Giám sát (Security and Surveillance):</b>\n- Tự động giám sát các đoạn phim từ camera CCTV.\n- Hệ thống phát hiện xâm nhập.\n- Nhận dạng biển số xe.\n- Ví dụ: Các camera an ninh thông minh có thể phát hiện và cảnh báo về hoạt động đáng ngờ.",
+                    "terms": {
+                        "CCTV (Closed-Circuit Television)": "Hệ thống truyền hình mạch kín, thường được gọi là giám sát video. Đây là việc sử dụng các camera video để truyền tín hiệu đến một nơi cụ thể, trên một số lượng màn hình giới hạn."
+                    }
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Giới thiệu - Kỹ thuật truyền thống và Deep Learning",
+                    "image": "images/cv/reference/slide_7.png",
+                    "notes": "Thị giác máy tính đã phát triển đáng kể, kết hợp cả hai phương pháp: kỹ thuật truyền thống và học sâu (deep learning).\n\nBài thuyết trình này khám phá lý do tại sao các kỹ thuật truyền thống vẫn còn giá trị mặc cho những tiến bộ của học sâu.",
+                    "terms": {
+                        "Deep Learning (Học sâu)": "Một lĩnh vực con của học máy dựa trên mạng nơ-ron nhân tạo với nhiều lớp (layer). Học sâu là động lực chính đằng sau nhiều tiến bộ gần đây trong AI, bao gồm cả thị giác máy tính.",
+                        "Traditional Techniques (Kỹ thuật truyền thống)": "Trong thị giác máy tính, thuật ngữ này thường đề cập đến các phương pháp không dựa trên deep learning, chẳng hạn như các bộ lọc ảnh (ví dụ: Sobel, Canny), các thuật toán trích xuất đặc trưng thủ công (SIFT, HOG), và các mô hình học máy cổ điển (SVM, K-means)."
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Ứng dụng - Nhận dạng khuôn mặt & Tự động hóa công nghiệp",
+                    "image": "images/cv/reference/slide_8.png",
+                    "notes": "<b>Nhận dạng khuôn mặt (Facial Recognition):</b>\n- Hệ thống an ninh để nhận dạng cá nhân.\n- Xác thực và mở khóa điện thoại di động.\n- Hệ thống chấm công và kiểm soát ra vào.\n- Ví dụ: Công nghệ Face ID của Apple.\n\n<b>Tự động hóa công nghiệp (Industrial Automation):</b>\n- Kiểm tra chất lượng và phát hiện lỗi trong sản xuất.\n- Tự động hóa việc phân loại và sắp xếp dây chuyền lắp ráp.\n- Quản lý và đếm hàng tồn kho.\n- Ví dụ: Tự động kiểm tra các bảng mạch in để tìm lỗi.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Ứng dụng - Y tế & Xe tự lái",
+                    "image": "images/cv/reference/slide_9.png",
+                    "notes": "<b>Hình ảnh Y tế (Medical Imaging):</b>\n- Phát hiện các khối u trong ảnh MRI và CT.\n- Tự động đếm tế bào trong ảnh kính hiển vi.\n- Phân tích ảnh võng mạc để phát hiện bệnh võng mạc tiểu đường.\n- Ví dụ: Sử dụng CNN để phân loại các tổn thương da là lành tính hay ác tính.\n\n<b>Xe tự lái (Autonomous Driving):</b>\n- Phát hiện và giữ làn đường.\n- Phát hiện người đi bộ và chướng ngại vật.\n- Nhận dạng biển báo giao thông.\n- Ví dụ: Hệ thống Autopilot của Tesla sử dụng thị giác máy tính để điều hướng.",
+                    "terms": {}
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Ứng dụng - Nông nghiệp & An ninh giám sát",
+                    "image": "images/cv/reference/slide_10.png",
+                    "notes": "Dòng thời gian phát triển của Thị giác Máy tính:\n\n- <b>Thập niên 1960-1980:</b> Các thí nghiệm ban đầu về xử lý ảnh và trích xuất đặc trưng đơn giản.\n- <b>Thập niên 1990-2000:</b> Phát triển các thuật toán phức tạp như SIFT, HOG và những tiến bộ trong việc phát hiện cạnh (edge detection).\n- <b>Thập niên 2010-Hiện tại:</b> Sự trỗi dậy của các mô hình học sâu (deep learning) như CNNs, GANs, và Transformers.",
+                    "terms": {
+                        "SIFT (Scale-Invariant Feature Transform)": "Một thuật toán trích xuất đặc trưng trong thị giác máy tính để phát hiện và mô tả các đặc trưng cục bộ trong hình ảnh. SIFT rất mạnh mẽ trong việc nhận dạng đối tượng dưới các điều kiện thay đổi về tỷ lệ, góc nhìn và ánh sáng.",
+                        "HOG (Histogram of Oriented Gradients)": "Một bộ mô tả đặc trưng được sử dụng trong xử lý ảnh và thị giác máy tính cho mục đích phát hiện đối tượng. Nó hoạt động bằng cách đếm sự xuất hiện của hướng gradient trong các phần cục bộ của một hình ảnh.",
+                        "CNN (Convolutional Neural Network)": "Mạng Nơ-ron Tích chập, một lớp của mạng nơ-ron nhân tạo, thường được áp dụng để phân tích hình ảnh. CNN là nền tảng của hầu hết các đột phá trong thị giác máy tính gần đây.",
+                        "GAN (Generative Adversarial Network)": "Mạng Đối nghịch Tạo sinh, một lớp của các framework học máy, trong đó hai mạng nơ-ron cạnh tranh với nhau trong một trò chơi. GAN có khả năng tạo ra các hình ảnh mới, chân thực."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Các kỹ thuật Thị giác Máy tính - Tổng quan",
+                    "image": "images/cv/reference/slide_11.png",
+                    "notes": "Sơ đồ này so sánh quy trình làm việc giữa Học máy (truyền thống) và Học sâu:\n\n<b>Học máy (Machine Learning):</b>\n1. <b>Đầu vào (Input):</b> Hình ảnh.\n2. <b>Trích xuất đặc trưng (Feature extraction):</b> Một bước riêng biệt, thường cần sự can thiệp của con người để thiết kế các bộ trích xuất đặc trưng.\n3. <b>Phân loại (Classification):</b> Mô hình học máy sẽ học từ các đặc trưng đã được trích xuất.\n4. <b>Đầu ra (Output):</b> Kết quả.\n\n<b>Học sâu (Deep Learning):</b>\n1. <b>Đầu vào (Input):</b> Hình ảnh.\n2. <b>Trích xuất đặc trưng + Phân loại:</b> Mạng nơ-ron sâu tự động học các đặc trưng cần thiết và thực hiện phân loại trong cùng một quy trình end-to-end.\n3. <b>Đầu ra (Output):</b> Kết quả.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Các kỹ thuật Thị giác Máy tính - So sánh quy trình",
+                    "image": "images/cv/reference/slide_12.png",
+                    "notes": "<b>Kỹ thuật truyền thống (Traditional Techniques):</b>\n- <b>Định nghĩa:</b> Các phương pháp dựa trên các mô hình toán học và các đặc trưng được chế tác thủ công (handcrafted features).\n- <b>Các thuật toán chính:</b> Phát hiện cạnh (Canny, Sobel), Bộ phát hiện đặc trưng (SIFT, SURF), Bộ mô tả (HOG, LBP).\n\n<b>Học sâu trong Thị giác Máy tính (Deep Learning in Computer Vision):</b>\n- <b>Định nghĩa:</b> Sử dụng mạng nơ-ron để tự động học các đặc trưng từ các bộ dữ liệu lớn.\n- <b>Các mô hình chính:</b> CNNs (phân loại ảnh, phát hiện đối tượng), GANs (tạo ảnh, chuyển đổi phong cách), RNNs và Transformers (phân tích video).",
+                    "terms": {
+                        "Handcrafted Features": "Các đặc trưng của một hình ảnh (ví dụ: cạnh, góc, màu sắc) được các chuyên gia con người định nghĩa và trích xuất bằng các thuật toán được thiết kế trước. Trái ngược với các đặc trưng được học tự động bởi các mô hình deep learning.",
+                        "Canny Edge Detector": "Một thuật toán phát hiện cạnh phổ biến trong xử lý ảnh.",
+                        "RNN (Recurrent Neural Network)": "Mạng Nơ-ron Hồi quy, một loại mạng nơ-ron được thiết kế để xử lý dữ liệu dạng chuỗi (sequential data), chẳng hạn như các khung hình trong một video."
+                    }
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Các kỹ thuật Thị giác Máy tính - So sánh điểm mạnh",
+                    "image": "images/cv/reference/slide_13.png",
+                    "notes": "<b>Ưu điểm của Kỹ thuật truyền thống:</b>\n- <b>Khả năng giải thích (Explainability):</b> Các thuật toán minh bạch và dễ hiểu hơn.\n- <b>Hiệu quả tài nguyên (Resource Efficiency):</b> Yêu cầu ít sức mạnh tính toán và bộ nhớ hơn.\n- <b>Độ bền (Robustness):</b> Thường có khả năng chống chịu tốt hơn với các biến thể và nhiễu trong dữ liệu.\n- <b>Tốc độ (Speed):</b> Thường nhanh hơn trong các ứng dụng thời gian thực.\n\n<b>Ưu điểm của Học sâu:</b>\n- <b>Hiệu suất (Performance):</b> Đạt được độ chính xác cao trong các tác vụ phức tạp với bộ dữ liệu lớn.\n- <b>Tự động hóa (Automation):</b> Loại bỏ nhu cầu trích xuất đặc trưng thủ công.\n- <b>Khả năng mở rộng (Scalability):</b> Có thể xử lý các bộ dữ liệu quy mô lớn và các mô hình phức tạp.\n- <b>Tính linh hoạt (Versatility):</b> Áp dụng được cho một loạt các tác vụ ngoài thị giác truyền thống.",
+                    "terms": {}
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Các kỹ thuật Thị giác Máy tính - Ưu điểm",
+                    "image": "images/cv/reference/slide_14.png",
+                    "notes": "Một khung để so sánh hai phương pháp dựa trên các tiêu chí:\n\n- <b>Hiệu suất (Performance):</b> Độ chính xác và độ chuẩn xác trong các tác vụ khác nhau.\n- <b>Khả năng diễn giải (Interpretability):</b> Mức độ dễ hiểu về cách thuật toán hoạt động.\n- <b>Yêu cầu tài nguyên (Resource Requirements):</b> Sức mạnh tính toán, bộ nhớ, và dữ liệu cần thiết.\n- <b>Sự phù hợp của tác vụ (Task Suitability):</b> Các trường hợp sử dụng thích hợp cho mỗi phương pháp.\n\nBiểu đồ cho thấy hiệu suất của các thuật toán học sâu tăng lên đáng kể khi lượng dữ liệu tăng lên, vượt qua các thuật toán học máy cũ hơn.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Các kỹ thuật Thị giác Máy tính - Khung so sánh",
+                    "image": "images/cv/reference/slide_15.png",
+                    "notes": "<b>Điểm mạnh theo tác vụ cụ thể:</b>\n- <b>Truyền thống:</b> Tốt cho các tác vụ đơn giản (phát hiện cạnh, xử lý ảnh cơ bản), xử lý thời gian thực (robot, ứng dụng công nghiệp), và các môi trường có tài nguyên thấp (hệ thống nhúng, thiết bị di động).\n- <b>Học sâu:</b> Tốt cho các tác vụ phức tạp (phân đoạn ảnh, phát hiện đối tượng), các ứng dụng quy mô lớn (gắn thẻ tự động trên mạng xã hội, chẩn đoán y tế).\n\n<b>Xử lý thời gian thực:</b>\n- <b>Truyền thống:</b> Thường nhanh hơn do các phép tính đơn giản hơn.\n- <b>Học sâu:</b> Yêu cầu tài nguyên tính toán đáng kể nhưng các tiến bộ như TensorRT và Edge TPU đang cải thiện khả năng thời gian thực.",
+                    "terms": {
+                        "Real-Time Processing (Xử lý thời gian thực)": "Khả năng của một hệ thống máy tính xử lý dữ liệu và đưa ra phản hồi gần như ngay lập tức, trong một khoảng thời gian rất ngắn.",
+                        "Embedded Systems (Hệ thống nhúng)": "Các hệ thống máy tính chuyên dụng được thiết kế để thực hiện một hoặc một vài chức năng cụ thể, thường được 'nhúng' vào bên trong một hệ thống cơ khí hoặc điện tử lớn hơn."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Các kỹ thuật Thị giác Máy tính - Trường hợp sử dụng",
+                    "image": "images/cv/reference/slide_16.png",
+                    "notes": "<b>Các trường hợp mà phương pháp truyền thống vượt trội:</b>\n- <b>Phân tích hình ảnh y tế:</b> Các thuật toán đơn giản để phát hiện cạnh, hình dạng và họa tiết.\n- <b>Hệ thống thị giác thời gian thực:</b> Các ứng dụng yêu cầu xử lý tức thì với độ trễ thấp (ví dụ: kiểm tra dây chuyền lắp ráp tự động).\n- <b>Ứng dụng với dữ liệu hạn chế:</b> Khi chỉ có các bộ dữ liệu nhỏ, các phương pháp truyền thống có thể hoạt động tốt hơn.\n\n<b>Các phương pháp lai (Hybrid Approaches):</b>\n- <b>Tích hợp:</b> Kết hợp các phương pháp truyền thống với học sâu có thể nâng cao hiệu suất. Ví dụ: Sử dụng các đặc trưng SIFT làm đầu vào cho CNN để trích xuất đặc trưng mạnh mẽ hơn.\n- <b>Lợi ích:</b> Tận dụng thế mạnh của cả hai phương pháp có thể cải thiện độ chính xác, độ bền và hiệu quả tính toán.",
+                    "terms": {}
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Các kỹ thuật Thị giác Máy tính - Case Study",
+                    "image": "images/cv/reference/slide_17.png",
+                    "notes": "<b>Case Study 1: Phương pháp truyền thống trong Hệ thống Lái xe Tự động</b>\n- <b>Chi tiết:</b> Phát hiện làn đường bằng các thuật toán phát hiện cạnh.\n- <b>Tác động:</b> Xử lý thời gian thực, có khả năng chống chịu với các điều kiện ánh sáng thay đổi.\n\n<b>Case Study 2: Học sâu trong Nhận dạng khuôn mặt và Phát hiện đối tượng</b>\n- <b>Chi tiết:</b> Sử dụng CNN cho việc nhận dạng khuôn mặt có độ chính xác cao trong các hệ thống an ninh.\n- <b>Tác động:</b> Cải thiện độ chính xác và khả năng mở rộng cho các cơ sở dữ liệu lớn.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Các kỹ thuật Thị giác Máy tính - Xu hướng hiện tại",
+                    "image": "images/cv/reference/slide_18.png",
+                    "notes": "<b>Trọng tâm nghiên cứu:</b>\n- Các mô hình lai kết hợp kỹ thuật truyền thống với học sâu.\n- Cải thiện hiệu quả và khả năng giải thích của các mô hình học sâu.\n- Phát triển các thuật toán mới trong thị giác truyền thống có thể bổ sung cho học sâu.\n\n<b>Ví dụ trong ngành công nghiệp:</b>\n- <b>Robot:</b> Sử dụng kết hợp cả truyền thống và học sâu để điều hướng và thao tác đối tượng.\n- <b>Chẩn đoán y tế:</b> Các phương pháp lai cho kết quả chính xác và có thể giải thích được hơn.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Thách thức và Hướng đi tương lai",
+                    "image": "images/cv/reference/slide_19.png",
+                    "notes": "<b>Những thách thức:</b>\n- <b>Yêu cầu dữ liệu:</b> Các mô hình học sâu cần các bộ dữ liệu lớn đã được gán nhãn.\n- <b>Chi phí tính toán:</b> Yêu cầu tài nguyên cao cho việc huấn luyện và suy luận.\n- <b>Khả năng diễn giải:</b> Hiểu và tin tưởng vào các quyết định của AI.\n\n<b>Các xu hướng tương lai:</b>\n- Những tiến bộ trong AI có thể giải thích được (Explainable AI) cho cả hai phương pháp.\n- Điện toán biên (Edge computing) để đưa AI mạnh mẽ vào các môi trường có tài nguyên hạn chế.\n- Tiếp tục tích hợp các phương pháp truyền thống và học sâu để nâng cao hiệu suất.",
+                    "terms": {
+                        "Explainable AI (XAI)": "AI có thể giải thích được, một lĩnh vực nghiên cứu tập trung vào việc phát triển các hệ thống AI có thể giải thích các quyết định hoặc dự đoán của chúng cho con người một cách dễ hiểu.",
+                        "Edge Computing (Điện toán biên)": "Một mô hình điện toán phân tán, trong đó việc tính toán được thực hiện gần nguồn dữ liệu nhất có thể (trên chính thiết bị), thay vì gửi dữ liệu lên một đám mây tập trung. Điều này giúp giảm độ trễ và tăng cường quyền riêng tư."
+                    }
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Câu hỏi",
+                    "image": "images/cv/reference/slide_20.png",
+                    "notes": "Các câu hỏi ôn tập:\n\n1. So sánh Thị giác Máy tính và Xử lý ảnh kỹ thuật số?\n2. So sánh Học sâu và Học máy?\n3. Xem một video và trả lời các câu hỏi:\n   a. Tên của bộ dữ liệu đã được sử dụng? Có bao nhiêu ảnh, bao nhiêu danh mục trong bộ dữ liệu?\n   b. Bộ dữ liệu có thể được gán nhãn như thế nào?\n   c. Những thuật toán (mô hình) nào được đề cập trong video?",
+                    "terms": {}
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: So sánh các lĩnh vực",
+                    "image": "images/cv/reference/slide_21.png",
+                    "notes": "Slide này đặt ra sự so sánh giữa ba lĩnh vực liên quan:\n\n- <b>Xử lý ảnh kỹ thuật số (Digital image processing):</b> Tập trung vào việc thao tác, cải thiện hình ảnh. Ví dụ trong ảnh là làm cho ảnh sáng và mịn hơn.\n- <b>Đồ họa máy tính (Computer graphics):</b> Tập trung vào việc tạo ra hình ảnh từ các mô tả hoặc mô hình.\n- <b>Thị giác máy tính (Computer Vision):</b> Tập trung vào việc 'hiểu' và trích xuất thông tin có ý nghĩa từ hình ảnh.",
+                    "terms": {
+                        "Computer Graphics (Đồ họa máy tính)": "Một lĩnh vực của khoa học máy tính tập trung vào việc tạo ra hình ảnh và video bằng máy tính. Nó bao gồm việc tạo mô hình 3D, rendering, và animation."
+                    }
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Đồ họa máy tính vs Thị giác Máy tính",
+                    "image": "images/cv/reference/slide_22.png",
+                    "notes": "Sơ đồ này minh họa sự khác biệt về quy trình giữa Đồ họa máy tính và Thị giác máy tính:\n\n<b>Đồ họa máy tính (Computer Graphics):</b>\nĐi từ một Mô hình Thế giới (World Model) trừu tượng để <b>tạo ra</b> hình ảnh.\n<i>(Từ mô tả → Hình ảnh)</i>\n\n<b>Thị giác máy tính (Computer Vision):</b>\nĐi từ một hình ảnh để <b>suy ra</b> một Mô hình Thế giới.\n<i>(Từ hình ảnh → Mô tả)</i>",
+                    "terms": {}
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Biểu đồ giao thoa",
+                    "image": "images/cv/reference/slide_23.png",
+                    "notes": "Biểu đồ Venn này cho thấy mối quan hệ và sự giao thoa giữa Đồ họa máy tính và Thị giác máy tính.\n\n<b>Các lĩnh vực riêng của Đồ họa máy tính:</b>\n- Rendering, thiết kế bề mặt, animation, giao diện người dùng.\n\n<b>Các lĩnh vực riêng của Thị giác máy tính:</b>\n- Ước tính hình dạng, ước tính chuyển động, nhận dạng, xử lý ảnh.\n\n<b>Phần giao thoa (Mô hình hóa hình ảnh - Visual Modeling):</b>\n- Cả hai lĩnh vực đều làm việc với các khái niệm về hình dạng, ánh sáng, chuyển động, quang học và hình ảnh.",
+                    "terms": {}
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Từ Xử lý ảnh đến Thị giác máy tính",
+                    "image": "images/cv/reference/slide_24.png",
+                    "notes": "Slide này nhắc lại về 3 cấp độ xử lý để đi từ một hình ảnh thô đến việc hiểu được nó:\n\n1. <b>Xử lý cấp thấp (Low-Level):</b> Ảnh → Ảnh (ví dụ: giảm nhiễu).\n2. <b>Xử lý cấp trung (Mid-Level):</b> Ảnh → Thuộc tính (ví dụ: phân đoạn).\n3. <b>Xử lý cấp cao (High-Level):</b> Thuộc tính → Sự thấu hiểu (ví dụ: nhận dạng đối tượng).",
+                    "terms": {}
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Bài tập trên lớp",
+                    "image": "images/cv/reference/slide_25.png",
+                    "notes": "Yêu cầu bài tập thực hành trên lớp:\n\n<b>1. Cài đặt OpenCV + Python.</b>\n\n<b>2. Khám phá đoạn mã này:</b>\n   - Mở file Colab 'Hello OpenCV'.\n   - Tự giải thích code hoặc dùng ChatGPT.\n\n<b>3. Đọc và hiển thị ảnh của riêng bạn:</b>\n   - Làm theo code đã được cung cấp.\n   - Lấy thông tin của ảnh (kích thước, màu sắc).\n   - Thay đổi ảnh một chút.",
+                    "terms": {
+                        "Google Colab": "Một dịch vụ miễn phí của Google cho phép bạn viết và thực thi mã Python trong trình duyệt của mình, đặc biệt hữu ích cho các tác vụ học máy và phân tích dữ liệu mà không cần cài đặt phức tạp."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: Ảnh kỹ thuật số là gì?",
+                    "image": "images/cv/reference/slide_26.png",
+                    "notes": "Một <b>ảnh kỹ thuật số</b> là sự biểu diễn của một hình ảnh hai chiều dưới dạng một tập hợp hữu hạn các giá trị số, được gọi là các phần tử ảnh hay <b>pixel</b>.\n\nQuá trình này bao gồm việc chiếu một cảnh (scene) qua một hệ thống tạo ảnh (imaging system) lên một mặt phẳng ảnh, sau đó được số hóa thành một lưới các pixel.",
+                    "terms": {
+                        "Digital Image (Ảnh kỹ thuật số)": "Sự biểu diễn của một hình ảnh 2D dưới dạng một tập hợp hữu hạn các giá trị số, được gọi là các pixel.",
+                        "Pixel (Picture Element)": "Phần tử nhỏ nhất có thể điều khiển được của một hình ảnh được biểu diễn trên màn hình. Mỗi pixel có một giá trị số đại diện cho độ sáng hoặc màu sắc của nó."
+                    }
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Giá trị Pixel",
+                    "image": "images/cv/reference/slide_27.png",
+                    "notes": "Các giá trị pixel thường đại diện cho các mức độ xám, màu sắc, độ cao, độ mờ, v.v.\n\nHãy nhớ rằng quá trình <b>số hóa (digitization)</b> ngụ ý rằng một hình ảnh kỹ thuật số là một sự <b>xấp xỉ (approximation)</b> của một cảnh thực tế.",
+                    "terms": {
+                        "Digitization (Số hóa)": "Quá trình chuyển đổi thông tin thành định dạng kỹ thuật số. Trong hình ảnh, điều này bao gồm việc lấy mẫu (rời rạc hóa tọa độ không gian) và lượng tử hóa (rời rạc hóa các giá trị mức xám/màu sắc)."
+                    }
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Hình ảnh như một hàm số (Ảnh xám)",
+                    "image": "images/cv/reference/slide_28.png",
+                    "notes": "Một hình ảnh chứa một số lượng pixel rời rạc.\n\nGiá trị của pixel trong ảnh xám (grayscale), hay còn gọi là cường độ (intensity), là một con số duy nhất, thường nằm trong khoảng [0, 255], trong đó 0 là màu đen và 255 là màu trắng.",
+                    "terms": {
+                        "Grayscale (Ảnh xám)": "Một hình ảnh trong đó giá trị của mỗi pixel là một mẫu duy nhất chỉ đại diện cho một lượng ánh sáng; tức là, nó chỉ mang thông tin về cường độ."
+                    }
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Hình ảnh như một hàm số (Ảnh màu)",
+                    "image": "images/cv/reference/slide_29.png",
+                    "notes": "Tương tự ảnh xám, ảnh màu cũng chứa một số lượng pixel rời rạc.\n\nGiá trị của pixel trong ảnh màu thường là một vector gồm nhiều con số. Các không gian màu phổ biến bao gồm:\n- <b>RGB:</b> [R, G, B] (Đỏ, Xanh lá, Xanh dương)\n- <b>Lab:</b> [L, a, b]\n- <b>HSV:</b> [H, S, V] (Hue, Saturation, Value)",
+                    "terms": {
+                        "RGB Color Model": "Một mô hình màu cộng, trong đó ba màu cơ bản của ánh sáng là đỏ, xanh lá, và xanh dương được cộng lại với nhau theo nhiều cách khác nhau để tái tạo ra một dải màu rộng.",
+                        "HSV Color Model": "Biểu diễn màu sắc theo các thuật ngữ Hue (loại màu), Saturation (độ bão hòa/độ đậm của màu), và Value (độ sáng)."
+                    }
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Ảnh xám & Ảnh màu",
+                    "image": "images/cv/reference/slide_37.png",
+                    "notes": "Slide này minh họa cách một ảnh màu có thể được biểu diễn:\n\n- <b>Ảnh màu:</b> Có thể được xem như sự kết hợp của ba kênh màu riêng biệt: Đỏ (Red), Xanh lá (Green), và Xanh dương (Blue).\n- <b>Ảnh xám:</b> Có thể được tạo ra từ một ảnh màu, chỉ chứa thông tin về độ sáng (cường độ).",
+                    "terms": {}
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Chuyển đổi từ RGB sang Ảnh xám",
+                    "image": "images/cv/reference/slide_38.png",
+                    "notes": "Có nhiều phương pháp để chuyển đổi một pixel màu RGB thành một giá trị mức xám (Intensity - I). Ba phương pháp phổ biến là:\n\n1. <b>Phương pháp Lightness (Độ sáng):</b>\n   `I = (max(R, G, B) + min(R, G, B)) / 2`\n\n2. <b>Phương pháp Average (Trung bình):</b>\n   `I = (R + G + B) / 3`\n\n3. <b>Phương pháp Luminosity (Độ chói - Khuyến khích):</b>\n   `I = 0.21 R + 0.72 G + 0.07 B`\n   Phương pháp này tính đến sự nhạy cảm khác nhau của mắt người đối với các màu sắc khác nhau (mắt người nhạy cảm với màu xanh lá nhất).",
+                    "terms": {
+                        "Luminosity Method": "Một phương pháp chuyển đổi ảnh màu sang ảnh xám bằng cách tính tổng có trọng số của các thành phần R, G, B. Các trọng số này được chọn để phù hợp với nhận thức của con người về độ sáng."
+                    }
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Các công cụ để học Xử lý ảnh Kỹ thuật số",
+                    "image": "images/cv/reference/slide_39.png",
+                    "notes": "So sánh hai công cụ phổ biến để học và làm việc với Xử lý ảnh:\n\n<b>Thư viện OPENCV:</b>\n- Có các phiên bản cho C++, C#, Java/Python.\n- Tốt cho lập trình viên.\n- Nhanh và hiệu quả.\n- Là mã nguồn mở (OPEN SOURCE).\n\n<b>MATLAB:</b>\n- Rất dễ lập trình.\n- Kém hiệu quả hơn (so với OpenCV).\n- KHÔNG MIỄN PHÍ (NOT FREE).",
+                    "terms": {
+                        "OpenCV (Open Source Computer Vision Library)": "Một thư viện mã nguồn mở hàng đầu chứa các công cụ lập trình chủ yếu nhắm vào thị giác máy tính thời gian thực.",
+                        "MATLAB": "Một môi trường tính toán số và ngôn ngữ lập trình bậc cao. Nó rất mạnh mẽ cho việc tạo mẫu, phân tích dữ liệu và trực quan hóa, đặc biệt là trong các lĩnh vực kỹ thuật và khoa học."
+                    }
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Sử dụng OpenCV & Matlab",
+                    "image": "images/cv/reference/slide_40.png",
+                    "notes": "Ví dụ về cách đọc và hiển thị một hình ảnh bằng OpenCV và Matlab:\n\n<b>OpenCV (sử dụng C++):</b>\nĐoạn mã cho thấy cách sử dụng các hàm như `cvLoadImage`, `cvNamedWindow`, `cvShowImage` để tải và hiển thị một ảnh trong một cửa sổ.\n\n<b>Matlab:</b>\nChỉ cần hai dòng lệnh đơn giản: `I = imread('cameraman.tif');` để đọc ảnh và `imshow(I)` để hiển thị nó.",
+                    "terms": {}
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Không gian màu - Câu hỏi",
+                    "image": "images/cv/reference/slide_41.png",
+                    "notes": "Tại sao màu được thiết kế cho một mục đích cụ thể. Một số phù hợp với cách thiết bị hiển thị (màn hình), một số phù hợp cho in ấn (máy in), và một số khác lại phù hợp hơn với cách con người cảm nhận màu sắc.",
+                    "terms": {
+                        "Color Space (Không gian màu)": "Một mô hình toán học trừu tượng mô tả cách màu sắc có thể được biểu diễn dưới dạng các bộ giá trị số (tuples), thường là 3 hoặc 4 giá trị. Ví dụ: RGB, CMYK, HSV."
+                    }
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: Không gian màu - RGB & RGBA",
+                    "image": "images/cv/reference/slide_42.png",
+                    "notes": "<b>RGB (Red, Green, Blue):</b>\n- Sử dụng phương pháp trộn màu cộng (additive color mixing), vì nó mô tả loại ánh sáng cần được phát ra để tạo ra một màu nhất định.\n- RGB lưu trữ các giá trị riêng lẻ cho màu đỏ, xanh lá, và xanh dương.\n\n<b>RGBA:</b>\n- Là RGB với một kênh bổ sung, <b>alpha</b>, để chỉ định độ trong suốt (transparency).",
+                    "terms": {
+                        "Additive Color Mixing (Trộn màu cộng)": "Phương pháp tạo ra màu sắc bằng cách trộn các ánh sáng có màu khác nhau. Các màu cơ bản là đỏ, xanh lá, và xanh dương. Khi cả ba được trộn với cường độ tối đa, chúng tạo ra màu trắng. Đây là cách màn hình máy tính và TV hoạt động."
+                    }
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Không gian màu - CMYK, HSV, HSL",
+                    "image": "images/cv/reference/slide_43.png",
+                    "notes": "<b>CMYK (Cyan, Magenta, Yellow, Key/Black):</b>\n- Sử dụng phương pháp trộn màu trừ (subtractive color mixing), được dùng trong quá trình in ấn.\n\n<b>HSV (Hue, Saturation, Value):</b>\n- Còn được gọi là HSB (Hue, Saturation, Brightness). Thường được các nghệ sĩ sử dụng vì nó tự nhiên hơn để tư duy.\n\n<b>HSL (Hue, Saturation, Lightness/Luminance):</b>\n- Khá tương tự như HSV, với 'lightness' (độ sáng) thay thế cho 'value' (giá trị/độ sáng).",
+                    "terms": {
+                        "Subtractive Color Mixing (Trộn màu trừ)": "Phương pháp tạo ra màu sắc bằng cách trộn các loại mực hoặc thuốc nhuộm. Các màu cơ bản là lục lam (Cyan), cánh sen (Magenta), và vàng (Yellow). Khi cả ba được trộn lại, chúng tạo ra màu đen (về lý thuyết). Đây là cách máy in hoạt động."
+                    }
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Không gian màu - Tuyệt đối",
+                    "image": "images/cv/reference/slide_44.png",
+                    "notes": "<b>Không gian màu TUYỆT ĐỐI (ABSOLUTE color space):</b>\n- Là một không gian màu trong đó sự khác biệt có thể cảm nhận được giữa các màu sắc liên quan trực tiếp đến khoảng cách giữa các điểm trong không gian màu đó.\n- <b>CIEXYZ</b> và <b>sRGB</b> là các ví dụ về không gian màu tuyệt đối.\n- Không gian màu L*a*b* đôi khi cũng được coi là tuyệt đối, mặc dù nó cần một thông số điểm trắng (white point) để được xác định đầy đủ.",
+                    "terms": {
+                        "Absolute Color Space": "Một không gian màu trong đó màu sắc có thể được xác định một cách không mơ hồ, không cần tham chiếu đến bất kỳ yếu tố bên ngoài nào. sRGB là không gian màu tuyệt đối tiêu chuẩn cho web.",
+                        "sRGB": "Một không gian màu RGB tiêu chuẩn được tạo ra bởi HP và Microsoft. Đây là không gian màu được sử dụng phổ biến nhất cho màn hình, máy in và Internet."
+                    }
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Bảng so sánh các không gian màu",
+                    "image": "images/cv/reference/slide_38.png",
+                    "notes": "Bảng này tóm tắt các đặc điểm chính của một số không gian màu phổ biến:\n\n- <b>RGB:</b> Trộn màu cộng, dùng cho hiển thị màn hình.\n- <b>CMYK:</b> Trộn màu trừ, dùng cho máy in.\n- <b>YCbCr/YPbPr:</b> Trộn màu cộng, tối ưu cho việc mã hóa video và máy ảnh kỹ thuật số, hiệu quả về băng thông.\n- <b>YUV/YIQ:</b> Trộn màu cộng, các biến thể dùng cho việc mã hóa video cho các hệ TV analog như NTSC, PAL.",
+                    "terms": {
+                        "YUV / YCbCr": "Các không gian màu tách tín hiệu hình ảnh thành một thành phần độ chói (Y - luma) và hai thành phần màu (chroma). Cách này tận dụng việc mắt người nhạy cảm với độ sáng hơn là màu sắc, cho phép nén dữ liệu hình ảnh và video hiệu quả hơn."
+                    }
+                }
+            ]
+        }
+    ]
+}
