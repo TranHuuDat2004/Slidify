@@ -1,0 +1,14 @@
+[
+  {
+    "id": "game_dev",
+    "title": "Phát triển trò chơi với Unity",
+    "description": "Xây dựng 4 game 2D có thể chơi được bằng C# và nắm vững các nguyên tắc cơ bản về phát triển game.",
+    "thumbnail": "images/unity.png"
+  },
+  {
+    "id": "computer_vision",
+    "title": "Nhập môn Thị giác Máy tính",
+    "description": "Khám phá cách máy tính 'nhìn' và phân tích hình ảnh, từ nhận diện vật thể đến xử lý ảnh cơ bản.",
+    "thumbnail": "images/computer-vision.webp"
+  }
+]

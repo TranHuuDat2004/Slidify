@@ -46,7 +46,6 @@
     <footer id="footer-placeholder"></footer>
 
     <!-- Nhúng các file JS cần thiết -->
-    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 
     <script>
@@ -62,24 +61,31 @@
             loadComponent('header.html', 'header-placeholder');
             loadComponent('footer.html', 'footer-placeholder');
 
-            // Hiển thị danh sách môn học
+            // Hiển thị danh sách môn học từ courses.json
             const courseContainer = document.getElementById('course-list-container');
-            for (const courseKey in coursesData) {
-                const course = coursesData[courseKey];
-                const courseCard = document.createElement('a');
-                courseCard.className = 'course-card';
-                // Link đến trang học với tham số ?course=...
-                courseCard.href = `subject.html?course=${courseKey}`;
+            fetch('js/courses.json')
+                .then(response => response.json())
+                .then(courses => {
+                    courses.forEach(course => {
+                        const courseCard = document.createElement('a');
+                        courseCard.className = 'course-card';
+                        // Link đến trang học với tham số ?course=...
+                        courseCard.href = `subject.html?course=${course.id}`;
 
-                courseCard.innerHTML = `
-                    <img src="${course.thumbnail}" alt="${course.title}">
-                    <div class="course-card-content">
-                        <h3>${course.title}</h3>
-                        <p>${course.description}</p>
-                    </div>
-                `;
-                courseContainer.appendChild(courseCard);
-            }
+                        courseCard.innerHTML = `
+                            <img src="${course.thumbnail}" alt="${course.title}">
+                            <div class="course-card-content">
+                                <h3>${course.title}</h3>
+                                <p>${course.description}</p>
+                            </div>
+                        `;
+                        courseContainer.appendChild(courseCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading courses:', error);
+                    courseContainer.innerHTML = '<p>Lỗi khi tải danh sách môn học.</p>';
+                });
         });
     </script>
 </body>
