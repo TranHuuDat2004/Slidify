@@ -158,3 +158,23 @@ Xóa tệp `js/data.js` không còn được sử dụng.
 ```bash
 del "C:\Users\huuda\OneDrive\Documents\GitHub\Slidify\js\data.js"
 ```
+
+## 3. Chuẩn hóa tên tệp Slide (Game Dev)
+
+**Vấn đề:** Các tệp ảnh slide trong các thư mục `images/game-dev/week*` có tên dài và không nhất quán (ví dụ: `lecture06 GUIs, Menus and Particle Systems_page_1.png` hoặc `1763354501236-c488084a-6a3e-49aa-837e-c73b7a103cc2_1.png`). Điều này làm phức tạp việc tham chiếu và quản lý các tệp này.
+
+**Giải pháp:** Chạy một tập lệnh PowerShell trong mỗi thư mục `week` để đổi tên các tệp theo định dạng chuẩn: `slide_NUMBER.png`.
+
+### Lệnh PowerShell đã sử dụng
+
+Lệnh này được thực thi trong từng thư mục con `weekX` của `images/game-dev/`.
+
+```powershell
+Get-ChildItem *.png | Rename-Item -NewName { $_.Name -replace '.*_','slide_' }
+```
+
+**Giải thích lệnh:**
+*   `Get-ChildItem *.png`: Lấy tất cả các tệp có phần mở rộng là `.png` trong thư mục hiện tại.
+*   `|`: Chuyển (pipe) danh sách các tệp này đến lệnh tiếp theo.
+*   `Rename-Item -NewName { ... }`: Đổi tên từng tệp.
+*   `$_.Name -replace '.*_','slide_'`: Đối với mỗi tệp, lấy tên của nó (`$_.Name`) và thay thế phần văn bản khớp với biểu thức chính quy `.*_` (bất kỳ ký tự nào lặp lại từ đầu cho đến dấu `_` cuối cùng) bằng chuỗi `"slide_"`.
