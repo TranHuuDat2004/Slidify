@@ -1060,8 +1060,7 @@
                     "notes": "Các component <b>Collider</b> định nghĩa hình dạng của một đối tượng cho mục đích va chạm vật lý. Một collider là vô hình, không nhất thiết phải có hình dạng giống hệt như mesh của đối tượng, và trên thực tế, một hình dạng xấp xỉ đơn giản thường hiệu quả hơn và không thể phân biệt được trong gameplay.\n\nCó thể thêm nhiều collider vào một đối tượng duy nhất để tạo ra các <b>collider phức hợp (compound colliders)</b>.\n\n Một quy tắc chung là sử dụng <b>mesh colliders</b> cho các vật thể tĩnh trong màn chơi (như mặt đất, tường) và sử dụng các collider nguyên thủy phức hợp để xấp xỉ hình dạng của các đối tượng chuyển động.",
                     "terms": {
                         "Collider": "Một component định nghĩa một hình dạng (như hình hộp, hình cầu) cho mục đích va chạm vật lý. Collider không tự di chuyển, chúng chỉ là hình dạng.",
-                        "Compound Collider": "Một cấu trúc vật lý được tạo ra bằng cách kết hợp nhiều collider nguyên thủy (primitive colliders) trên một Game Object duy nhất (có một Rigidbody). Điều này cho phép tạo ra các hình dạng va chạm phức
-phức mà vẫn hiệu quả về mặt hiệu suất.",
+                        "Compound Collider": "Một cấu trúc vật lý được tạo ra bằng cách kết hợp nhiều collider nguyên thủy (primitive colliders) trên một Game Object duy nhất (có một Rigidbody). Điều này cho phép tạo ra các hình dạng va chạm phứcphức mà vẫn hiệu quả về mặt hiệu suất.",
                         "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
                     }
                 },
@@ -1113,8 +1112,7 @@ phức mà vẫn hiệu quả về mặt hiệu suất.",
                     "id": 28,
                     "title": "Trang 28: 3D Colliders - Mesh Collider (1/2)",
                     "image": "images/game-dev/week3/slide_28.png",
-                    "notes": "<b>Mesh Collider</b> lấy một Mesh Asset và xây dựng Collider của nó dựa trên mesh đó. Nó chính xác hơn nhiều cho việc phát hiện va chạm so với các collider nguyên thủy đối với các mesh phức
-phức.\n\nTheo mặc định, các collider nguyên thủy không va chạm với các Mesh Collider khác. Mesh Collider tốn nhiều tài nguyên tính toán hơn các loại collider nguyên thủy, vì vậy tốt nhất là sử dụng chúng một cách tiết kiệm.",
+                    "notes": "<b>Mesh Collider</b> lấy một Mesh Asset và xây dựng Collider của nó dựa trên mesh đó. Nó chính xác hơn nhiều cho việc phát hiện va chạm so với các collider nguyên thủy đối với các mesh phức phức.\n\nTheo mặc định, các collider nguyên thủy không va chạm với các Mesh Collider khác. Mesh Collider tốn nhiều tài nguyên tính toán hơn các loại collider nguyên thủy, vì vậy tốt nhất là sử dụng chúng một cách tiết kiệm.",
                     "terms": {
                         "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
                     }
@@ -1275,8 +1273,7 @@ phức.\n\nTheo mặc định, các collider nguyên thủy không va chạm v�
                     "image": "images/game-dev/week3/slide_45.png",
                     "notes": "<b>Character Controller</b> là một component đặc biệt dành cho các đối tượng nhân vật. Trong khi Rigidbody cung cấp vật lý <b>đáng tin cậy</b>, đôi khi bạn không muốn điều đó (ví dụ: nhân vật di chuyển với tốc độ cao và nhảy những khoảng cách không tưởng).\n\n Một đối tượng với component Character Controller:\n- <b>Không</b> phản ứng với các lực (thực tế, không nên dùng nó cùng với một Rigidbody).\n- <b>Không</b> áp dụng lực cho các rigidbody khác.\n- Tự động bao gồm một <b>Capsule Collider</b>, do đó nó phản ứng với các va chạm.",
                     "terms": {
-                        "Character Controller": "Một component cung cấp một cách di chuyển nhân vật đơn giản, không dựa trên vật lý thực tế. Nó cho phép bạn dễ dàng tạo ra các chuyển động giống như trong các game platformer hoặc FPS mà không cần phải xử lý các lực phức
-phức của Rigidbody."
+                        "Character Controller": "Một component cung cấp một cách di chuyển nhân vật đơn giản, không dựa trên vật lý thực tế. Nó cho phép bạn dễ dàng tạo ra các chuyển động giống như trong các game platformer hoặc FPS mà không cần phải xử lý các lực phức phức của Rigidbody."
                     }
                 },
                 {
@@ -1651,6 +1648,3 @@ phức của Rigidbody."
         }
     ]
 }
-```/json
-{
-  
