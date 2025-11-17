@@ -235,7 +235,7 @@
                     "id": 22,
                     "title": "Trang 22: C# cơ bản - Các khái niệm bổ sung",
                     "image": "images/game-dev/week1/slide_22.png",
-                    "notes": "Một vài khái niệm bổ sung trong C#:\n\n- <b>Comments (Chú thích):</b> Có 3 loại chính: `//` cho chú thích một dòng, `/* ... */` cho chú thích nhiều dòng, và `///` cho chú thích tài liệu XML.\n- <b>Từ khóa 'is':</b> Dùng để kiểm tra xem một đối tượng có tương thích với một kiểu dữ liệu cho trước hay không.\n- <b>Preprocessor directives (Chỉ thị tiền xử lý):</b> Các lệnh đặc biệt như `#if`, `#elif`, `#else`, `#endif` cho phép trình biên dịch bỏ qua một số dòng code nhất định khi xây dựng và thực thi. Rất hữu ích để viết code chỉ chạy trên một nền tảng cụ thể (ví dụ: Wii, Web) hoặc chỉ trong chế độ gỡ lỗi (DEBUG).",
+                    "notes": "Một vài khái niệm bổ sung trong C#:\n\n- <b>Comments (Chú thích):</b> Có 3 loại chính: `//` cho chú thích một dòng, `/* ... */` cho chú thích nhiều dòng, và `///` cho chú thích tài liệu XML.\n- <b>Từ khóa 'is':</b> Dùng để kiểm tra xem một đối tượng có tương thích với một kiểu dữ liệu cho trước hay không.\n- <b>Preprocessor directives (Chỉ thị tiền xử lặp):</b> Các lệnh đặc biệt như `#if`, `#elif`, `#else`, `#endif` cho phép trình biên dịch bỏ qua một số dòng code nhất định khi xây dựng và thực thi. Rất hữu ích để viết code chỉ chạy trên một nền tảng cụ thể (ví dụ: Wii, Web) hoặc chỉ trong chế độ gỡ lỗi (DEBUG).",
                     "terms": {
                         "Preprocessor Directive": "Một chỉ thị cho trình biên dịch, được xử lý trước khi quá trình biên dịch mã nguồn thực sự bắt đầu. Chúng thường được dùng để biên dịch có điều kiện (conditional compilation).",
                         "is (keyword)": "Một toán tử trong C# dùng để kiểm tra kiểu của một đối tượng tại thời điểm chạy (runtime). Nó trả về `true` nếu đối tượng là một thể hiện của kiểu đó hoặc một kiểu dẫn xuất từ nó."
@@ -319,7 +319,7 @@
                     "id": 30,
                     "title": "Trang 30: Các Component của một Game Object",
                     "image": "images/game-dev/week1/slide_30.png",
-                    "notes": "Mỗi Game Object chứa một bộ sưu tập các component. Dưới đây là một số component phổ biến nhất:\n\n- <b>Transform:</b> Xác định Vị trí, Xoay, và Tỷ lệ của một đối tượng. Đây là component duy nhất mà mọi Game Object đều bắt buộc phải có.\n- <b>Collider:</b> Định nghĩa hình dạng vật lý của đối tượng cho việc xử lý va chạm.\n- <b>Rigidbody:</b> Cho phép đối tượng được điều khiển bởi hệ thống vật lý của Unity (chịu tác động của trọng lực, lực đẩy...).\n- <b>Scripts:</b> Các component chứa mã nguồn để định nghĩa hành vi.\n- <b>Animator:</b> Giao diện để điều khiển hệ thống animation Mecanim.\n- <b>AudioSource:</b> Đại diện cho các nguồn âm thanh trong không gian 3D.\n- <b>Light:</b> Giao diện script cho các component ánh sáng.\n\nMột script có thể có một game object hoặc một component làm biến. Bạn có thể gán các giá trị này trực tiếp từ Editor.",
+                    "notes": "Mỗi Game Object chứa một bộ sưu tập các component. Dưới đây là một số component phổ biến nhất:\n\n- <b>Transform:</b> Xác định Vị trí, Xoay, và Tỷ lệ của một đối tượng. Đây là component duy nhất mà mọi Game Object đều bắt buộc phải có.\n- <b>Collider:</b> Định nghĩa hình dạng vật lý của đối tượng cho việc xử lý va chạm.\n- <b>Rigidbody:</b> Cho phép đối tượng được điều khiển bởi hệ thống vật lý của Unity (chịu tác động của trọng lực, lực đẩy...).\n- <b>Scripts:</b> Các component chứa mã nguồn để định nghĩa hành vi.\n- <b>Animator:</b> Giao diện để điều khiển hệ thống animation Mecanim.\n- <b>AudioSource:</b> Đại diện cho các nguồn âm thanh trong không gian 3D.\n- <b>Light:</b> Giao diện script cho các component ánh sáng.\n\n Một script có thể có một game object hoặc một component làm biến. Bạn có thể gán các giá trị này trực tiếp từ Editor.",
                     "terms": {
                         "Transform": "Một component lưu trữ vị trí, góc xoay và tỷ lệ của một Game Object. Mọi Game Object đều có một Transform.",
                         "Collider": "Một component định nghĩa một hình dạng (như hình hộp, hình cầu) cho mục đích va chạm vật lý. Collider không tự di chuyển, chúng chỉ là hình dạng.",
@@ -349,7 +349,7 @@
                     "id": 33,
                     "title": "Trang 33: Scripts và Game Objects (3/4)",
                     "image": "images/game-dev/week1/slide_33.png",
-                    "notes": "Thông thường, trong game sẽ có nhiều Game Object cùng loại (ví dụ: các đồng xu trong Mario, các điểm checkpoint trong game đua xe...).\n\nMột cách hay để giữ cho các đối tượng này được tổ chức gọn gàng là đặt tất cả chúng làm <b>con (children)</b> của một Game Object rỗng chung.\n\nSau đó, có thể truy cập tất cả các đối tượng con này thông qua component <b>Transform</b> của đối tượng cha. Bằng cách lặp qua `transform` của đối tượng cha, bạn có thể lấy được `transform` của từng đối tượng con.",
+                    "notes": "Thông thường, trong game sẽ có nhiều Game Object cùng loại (ví dụ: các đồng xu trong Mario, các điểm checkpoint trong game đua xe...).\n\n Một cách hay để giữ cho các đối tượng này được tổ chức gọn gàng là đặt tất cả chúng làm <b>con (children)</b> của một Game Object rỗng chung.\n\nSau đó, có thể truy cập tất cả các đối tượng con này thông qua component <b>Transform</b> của đối tượng cha. Bằng cách lặp qua `transform` của đối tượng cha, bạn có thể lấy được `transform` của từng đối tượng con.",
                     "terms": {}
                 },
                 {
@@ -421,7 +421,7 @@
                     "id": 41,
                     "title": "Trang 41: Prefab Assets",
                     "image": "images/game-dev/week1/slide_41.png",
-                    "notes": "<b>Prefab</b> là một loại asset (tài sản) dùng để lưu trữ một Game Object hoàn chỉnh với tất cả các component và thuộc tính của nó.\n\n- Nó hoạt động như một <b>khuôn mẫu (template)</b> cho Game Object đó.\n- Mọi thay đổi bạn thực hiện trên Prefab asset sẽ ngay lập tức được phản ánh trên tất cả các 'thể hiện' (instances) của nó trong Scene.\n- Có thể ghi đè (override) các component và thiết lập cho từng thể hiện một cách riêng lẻ.\n\nMột prefab có thể được 'khởi tạo' (instantiated) một cách tự động tại thời điểm chạy bằng hàm `Instantiate()`.",
+                    "notes": "<b>Prefab</b> là một loại asset (tài sản) dùng để lưu trữ một Game Object hoàn chỉnh với tất cả các component và thuộc tính của nó.\n\n- Nó hoạt động như một <b>khuôn mẫu (template)</b> cho Game Object đó.\n- Mọi thay đổi bạn thực hiện trên Prefab asset sẽ ngay lập tức được phản ánh trên tất cả các 'thể hiện' (instances) của nó trong Scene.\n- Có thể ghi đè (override) các component và thiết lập cho từng thể hiện một cách riêng lẻ.\n\n Một prefab có thể được 'khởi tạo' (instantiated) một cách tự động tại thời điểm chạy bằng hàm `Instantiate()`.",
                     "terms": {
                         "Prefab": "Một Game Object đã được cấu hình sẵn và lưu lại như một Asset. Prefab cho phép bạn tạo, cấu hình và lưu trữ một Game Object cùng với tất cả các component, giá trị thuộc tính và các Game Object con của nó như một tài sản có thể tái sử dụng.",
                         "Instantiate()": "Hàm của Unity dùng để tạo ra một bản sao (clone) của một đối tượng tại thời điểm chạy. Thường được dùng để 'đẻ' ra các đối tượng từ Prefab (ví dụ: tạo viên đạn, kẻ thù...)."
@@ -746,7 +746,7 @@
                     "id": 29,
                     "title": "Trang 29: Quaternions (1/3) - Giới thiệu",
                     "image": "images/game-dev/week2/slide_29.png",
-                    "notes": "<b>Quaternions</b> là các vector bốn chiều của số thực, cho phép ba phép toán: cộng, nhân vô hướng và nhân quaternion. Chúng được sử dụng để biểu diễn các phép xoay.\n\nUnity sử dụng Quaternions bên trong để biểu diễn tất cả các phép xoay vì chúng không bị gimbal lock và có thể dễ dàng được nội suy.\n\nMột quaternion có bốn thành phần: w, x, y, và z. Các thành phần này hoạt động cùng nhau và <b>không bao giờ</b> nên được sửa đổi riêng lẻ.\n\n<b>Quaternions vs. Euler:</b>\n- Quaternions không bị gimbal lock, cung cấp phép nội suy mượt mà hơn.\n- Các phép tính trên quaternion dễ dàng hơn.\n- Về mặt khái niệm, quaternion khó nắm bắt hơn so với góc Euler.",
+                    "notes": "<b>Quaternions</b> là các vector bốn chiều của số thực, cho phép ba phép toán: cộng, nhân vô hướng và nhân quaternion. Chúng được sử dụng để biểu diễn các phép xoay.\n\nUnity sử dụng Quaternions bên trong để biểu diễn tất cả các phép xoay vì chúng không bị gimbal lock và có thể dễ dàng được nội suy.\n\n Một quaternion có bốn thành phần: w, x, y, và z. Các thành phần này hoạt động cùng nhau và <b>không bao giờ</b> nên được sửa đổi riêng lẻ.\n\n<b>Quaternions vs. Euler:</b>\n- Quaternions không bị gimbal lock, cung cấp phép nội suy mượt mà hơn.\n- Các phép tính trên quaternion dễ dàng hơn.\n- Về mặt khái niệm, quaternion khó nắm bắt hơn so với góc Euler.",
                     "terms": {
                         "Quaternion": "Một hệ thống số phức bốn chiều được sử dụng trong đồ họa máy tính để biểu diễn các phép xoay trong không gian 3D. Đây là cách Unity lưu trữ và xử lý tất cả các góc xoay để tránh vấn đề Gimbal Lock."
                     }
@@ -1057,10 +1057,11 @@
                     "id": 22,
                     "title": "Trang 22: 3D Colliders (1/3) - Giới thiệu",
                     "image": "images/game-dev/week3/slide_22.png",
-                    "notes": "Các component <b>Collider</b> định nghĩa hình dạng của một đối tượng cho mục đích va chạm vật lý. Một collider là vô hình, không nhất thiết phải có hình dạng giống hệt như mesh của đối tượng, và trên thực tế, một hình dạng xấp xỉ đơn giản thường hiệu quả hơn và không thể phân biệt được trong gameplay.\n\nCó thể thêm nhiều collider vào một đối tượng duy nhất để tạo ra các <b>collider phức hợp (compound colliders)</b>.\n\nMột quy tắc chung là sử dụng <b>mesh colliders</b> cho các vật thể tĩnh trong màn chơi (như mặt đất, tường) và sử dụng các collider nguyên thủy phức hợp để xấp xỉ hình dạng của các đối tượng chuyển động.",
+                    "notes": "Các component <b>Collider</b> định nghĩa hình dạng của một đối tượng cho mục đích va chạm vật lý. Một collider là vô hình, không nhất thiết phải có hình dạng giống hệt như mesh của đối tượng, và trên thực tế, một hình dạng xấp xỉ đơn giản thường hiệu quả hơn và không thể phân biệt được trong gameplay.\n\nCó thể thêm nhiều collider vào một đối tượng duy nhất để tạo ra các <b>collider phức hợp (compound colliders)</b>.\n\n Một quy tắc chung là sử dụng <b>mesh colliders</b> cho các vật thể tĩnh trong màn chơi (như mặt đất, tường) và sử dụng các collider nguyên thủy phức hợp để xấp xỉ hình dạng của các đối tượng chuyển động.",
                     "terms": {
                         "Collider": "Một component định nghĩa một hình dạng (như hình hộp, hình cầu) cho mục đích va chạm vật lý. Collider không tự di chuyển, chúng chỉ là hình dạng.",
-                        "Compound Collider": "Một cấu trúc vật lý được tạo ra bằng cách kết hợp nhiều collider nguyên thủy (primitive colliders) trên một Game Object duy nhất (có một Rigidbody). Điều này cho phép tạo ra các hình dạng va chạm phức tạp mà vẫn hiệu quả về mặt hiệu suất.",
+                        "Compound Collider": "Một cấu trúc vật lý được tạo ra bằng cách kết hợp nhiều collider nguyên thủy (primitive colliders) trên một Game Object duy nhất (có một Rigidbody). Điều này cho phép tạo ra các hình dạng va chạm phức
+phức mà vẫn hiệu quả về mặt hiệu suất.",
                         "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
                     }
                 },
@@ -1112,7 +1113,8 @@
                     "id": 28,
                     "title": "Trang 28: 3D Colliders - Mesh Collider (1/2)",
                     "image": "images/game-dev/week3/slide_28.png",
-                    "notes": "<b>Mesh Collider</b> lấy một Mesh Asset và xây dựng Collider của nó dựa trên mesh đó. Nó chính xác hơn nhiều cho việc phát hiện va chạm so với các collider nguyên thủy đối với các mesh phức tạp.\n\nTheo mặc định, các collider nguyên thủy không va chạm với các Mesh Collider khác. Mesh Collider tốn nhiều tài nguyên tính toán hơn các loại collider nguyên thủy, vì vậy tốt nhất là sử dụng chúng một cách tiết kiệm.",
+                    "notes": "<b>Mesh Collider</b> lấy một Mesh Asset và xây dựng Collider của nó dựa trên mesh đó. Nó chính xác hơn nhiều cho việc phát hiện va chạm so với các collider nguyên thủy đối với các mesh phức
+phức.\n\nTheo mặc định, các collider nguyên thủy không va chạm với các Mesh Collider khác. Mesh Collider tốn nhiều tài nguyên tính toán hơn các loại collider nguyên thủy, vì vậy tốt nhất là sử dụng chúng một cách tiết kiệm.",
                     "terms": {
                         "Mesh Collider": "Một loại collider lấy hình dạng của nó trực tiếp từ mesh của một mô hình 3D. Nó rất chính xác nhưng tốn nhiều tài nguyên hơn để tính toán va chạm, do đó thường chỉ nên dùng cho các vật thể tĩnh."
                     }
@@ -1226,7 +1228,7 @@
                     "image": "images/game-dev/week3/slide_40.png",
                     "notes": "<b>Joints (Khớp nối)</b> được sử dụng để hạn chế chuyển động của một đối tượng sao cho nó phụ thuộc vào một đối tượng khác. Sự phụ thuộc này được thực hiện bởi vật lý, thay vì phân cấp đối tượng (parenting).\n\n<b>Fixed Joint (Khớp cố định):</b>\nĐược sử dụng để làm cho hai đối tượng dính chặt vào nhau. Cả hai đối tượng phải có component Rigidbody.\n- <b>Connected Body:</b> Tham chiếu (tùy chọn) đến Rigidbody mà khớp nối phụ thuộc vào. Nếu không được đặt, khớp nối sẽ kết nối với thế giới.\n- <b>Break Force / Break Torque:</b> Lực/Mô-men xoắn cần thiết để làm gãy khớp nối này.",
                     "terms": {
-                        "Joint": "Một component vật lý cho phép một Rigidbody được ràng buộc với một Rigidbody khác hoặc một điểm cố định trong không gian. Joints rất cần thiết để tạo ra các cơ chế phức tạp như cửa bản lề, dây xích, hệ thống treo xe..."
+                        "Joint": "Một component vật lý cho phép một Rigidbody được ràng buộc với một Rigidbody khác hoặc một điểm cố định trong không gian. Joints rất cần thiết để tạo ra các cơ chế phức trọng như cửa bản lề, dây xích, hệ thống treo xe..."
                     }
                 },
                 {
@@ -1242,7 +1244,7 @@
                     "id": 42,
                     "title": "Trang 42: Raycasting (1/3) - Giới thiệu",
                     "image": "images/game-dev/week3/slide_42.png",
-                    "notes": "Một <b>tia (ray)</b> là một đường thẳng vô hạn bắt đầu từ một điểm gốc và đi theo một hướng nào đó.\n\nMột <b>raycast</b> là một thủ tục bao gồm việc 'bắn' một tia vào tất cả hoặc một số collider nhất định trong scene. Unity cung cấp hàm static `Physics.Raycast`.\n\nCác tham số chính:\n- <b>ray:</b> Điểm bắt đầu và hướng của tia.\n- <b>distance:</b> Chiều dài của tia.\n- <b>hitInfo:</b> Nếu raycast thành công, biến này sẽ chứa thông tin về nơi va chạm.\n- <b>layerMask:</b> Dùng để chọn lọc bỏ qua các collider khi bắn tia.\n\n`Physics.Raycast` trả về `true` nếu tia giao với một collider, và `false` nếu không.",
+                    "notes": "Một <b>tia (ray)</b> là một đường thẳng vô hạn bắt đầu từ một điểm gốc và đi theo một hướng nào đó.\n\n Một <b>raycast</b> là một thủ tục bao gồm việc 'bắn' một tia vào tất cả hoặc một số collider nhất định trong scene. Unity cung cấp hàm static `Physics.Raycast`.\n\nCác tham số chính:\n- <b>ray:</b> Điểm bắt đầu và hướng của tia.\n- <b>distance:</b> Chiều dài của tia.\n- <b>hitInfo:</b> Nếu raycast thành công, biến này sẽ chứa thông tin về nơi va chạm.\n- <b>layerMask:</b> Dùng để chọn lọc bỏ qua các collider khi bắn tia.\n\n`Physics.Raycast` trả về `true` nếu tia giao với một collider, và `false` nếu không.",
                     "terms": {
                         "Raycasting": "Quá trình 'bắn' ra một tia ảo theo một hướng nhất định để phát hiện xem nó có va chạm với Collider nào trên đường đi hay không. Rất hữu ích cho việc xác định tầm nhìn, bắn súng, tương tác với đối tượng...",
                         "RaycastHit": "Một struct chứa thông tin chi tiết về một va chạm được trả về từ một hàm Raycast (ví dụ: điểm va chạm, khoảng cách, collider đã va chạm)."
@@ -1271,9 +1273,10 @@
                     "id": 45,
                     "title": "Trang 45: Character Controller (1/2)",
                     "image": "images/game-dev/week3/slide_45.png",
-                    "notes": "<b>Character Controller</b> là một component đặc biệt dành cho các đối tượng nhân vật. Trong khi Rigidbody cung cấp vật lý <b>đáng tin cậy</b>, đôi khi bạn không muốn điều đó (ví dụ: nhân vật di chuyển với tốc độ cao và nhảy những khoảng cách không tưởng).\n\nMột đối tượng với component Character Controller:\n- <b>Không</b> phản ứng với các lực (thực tế, không nên dùng nó cùng với một Rigidbody).\n- <b>Không</b> áp dụng lực cho các rigidbody khác.\n- Tự động bao gồm một <b>Capsule Collider</b>, do đó nó phản ứng với các va chạm.",
+                    "notes": "<b>Character Controller</b> là một component đặc biệt dành cho các đối tượng nhân vật. Trong khi Rigidbody cung cấp vật lý <b>đáng tin cậy</b>, đôi khi bạn không muốn điều đó (ví dụ: nhân vật di chuyển với tốc độ cao và nhảy những khoảng cách không tưởng).\n\n Một đối tượng với component Character Controller:\n- <b>Không</b> phản ứng với các lực (thực tế, không nên dùng nó cùng với một Rigidbody).\n- <b>Không</b> áp dụng lực cho các rigidbody khác.\n- Tự động bao gồm một <b>Capsule Collider</b>, do đó nó phản ứng với các va chạm.",
                     "terms": {
-                        "Character Controller": "Một component cung cấp một cách di chuyển nhân vật đơn giản, không dựa trên vật lý thực tế. Nó cho phép bạn dễ dàng tạo ra các chuyển động giống như trong các game platformer hoặc FPS mà không cần phải xử lý các lực phức tạp của Rigidbody."
+                        "Character Controller": "Một component cung cấp một cách di chuyển nhân vật đơn giản, không dựa trên vật lý thực tế. Nó cho phép bạn dễ dàng tạo ra các chuyển động giống như trong các game platformer hoặc FPS mà không cần phải xử lý các lực phức
+phức của Rigidbody."
                     }
                 },
                 {
@@ -1318,6 +1321,336 @@
                     "terms": {}
                 }
             ]
+        },
+        {
+            "title": "Tuần 4: Cameras, Audio, Lights and Shadows",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_1.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 1.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_2.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 2.",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_3.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 3.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_4.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 4.",
+                    "terms": {}
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_5.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 5.",
+                    "terms": {}
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_6.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 6.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_7.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 7.",
+                    "terms": {}
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_8.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 8.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_9.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 9.",
+                    "terms": {}
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_10.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 10.",
+                    "terms": {}
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_11.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 11.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_12.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 12.",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_13.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 13.",
+                    "terms": {}
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_14.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 14.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_15.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 15.",
+                    "terms": {}
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_16.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 16.",
+                    "terms": {}
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_17.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 17.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_18.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 18.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_19.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 19.",
+                    "terms": {}
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_20.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 20.",
+                    "terms": {}
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_21.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 21.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_22.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 22.",
+                    "terms": {}
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_23.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 23.",
+                    "terms": {}
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_24.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 24.",
+                    "terms": {}
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_25.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 25.",
+                    "terms": {}
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_26.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 26.",
+                    "terms": {}
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_27.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 27.",
+                    "terms": {}
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_28.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 28.",
+                    "terms": {}
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_29.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 29.",
+                    "terms": {}
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_30.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 30.",
+                    "terms": {}
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_31.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 31.",
+                    "terms": {}
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_32.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 32.",
+                    "terms": {}
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_33.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 33.",
+                    "terms": {}
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_34.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 34.",
+                    "terms": {}
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_35.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 35.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_36.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 36.",
+                    "terms": {}
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_37.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 37.",
+                    "terms": {}
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_38.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 38.",
+                    "terms": {}
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_39.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 39.",
+                    "terms": {}
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_40.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 40.",
+                    "terms": {}
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_41.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 41.",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_42.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 42.",
+                    "terms": {}
+                },
+                {
+                    "id": 43,
+                    "title": "Trang 43: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_43.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 43.",
+                    "terms": {}
+                },
+                {
+                    "id": 44,
+                    "title": "Trang 44: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_44.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 44.",
+                    "terms": {}
+                },
+                {
+                    "id": 45,
+                    "title": "Trang 45: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_45.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 45.",
+                    "terms": {}
+                },
+                {
+                    "id": 46,
+                    "title": "Trang 46: Tiêu đề tạm thời",
+                    "image": "images/game-dev/week4/slide_46.png",
+                    "notes": "Nội dung ghi chú tạm thời cho slide 46.",
+                    "terms": {}
+                }
+            ]
         }
     ]
 }
+```/json
+{
+  
