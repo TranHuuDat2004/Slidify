@@ -1324,325 +1324,401 @@
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1: Tiêu đề tạm thời",
+                    "title": "Trang 1: Bìa - Cameras, Audio, Lights and Shadows",
                     "image": "images/game-dev/week4/slide_1.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 1.",
+                    "notes": "Bài giảng 4: Camera, Âm thanh, Ánh sáng và Bóng đổ.\n\nTuần này sẽ đi sâu vào các yếu tố thị giác và thính giác cốt lõi để tạo ra một thế giới game sống động và có chiều sâu.",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2: Tiêu đề tạm thời",
+                    "title": "Trang 2: Đề cương bài giảng",
                     "image": "images/game-dev/week4/slide_2.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 2.",
+                    "notes": "Nội dung chính của bài giảng Tuần 4 bao gồm:\n\n1. <b>Cameras</b>.\n2. <b>Audio</b>.\n3. <b>Lights and Shadows</b>.\n4. <b>Câu hỏi ôn tập và Xem trước buổi thực hành</b>.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3: Tiêu đề tạm thời",
+                    "title": "Trang 3: Chuyển tiếp - Cameras",
                     "image": "images/game-dev/week4/slide_3.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 3.",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Tìm hiểu về Camera, 'con mắt' của người chơi trong thế giới game.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4: Tiêu đề tạm thời",
+                    "title": "Trang 4: Giới thiệu về Camera",
                     "image": "images/game-dev/week4/slide_4.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 4.",
-                    "terms": {}
+                    "notes": "<b>Camera</b> là thiết bị thu nhận và hiển thị thế giới game cho người chơi. Chúng có thể được tùy chỉnh, điều khiển bằng script, hoặc làm con của các đối tượng khác. Mỗi scene trong Unity đều cần có ít nhất một camera.\n\nPhân biệt hai không gian tọa độ:\n- <b>Screen Space:</b> Không gian 2D tính bằng pixel, có gốc ở góc dưới bên trái, kích thước bằng độ phân giải màn hình của bạn.\n- <b>Viewport Space:</b> Không gian 2D đã được 'chuẩn hóa', luôn đi từ (0,0) đến (1,1), không phụ thuộc vào độ phân giải.",
+                    "terms": {
+                        "Camera (in Unity)": "Một component thiết yếu hoạt động như con mắt của người chơi, quyết định những gì sẽ được nhìn thấy và render lên màn hình.",
+                        "Screen Space": "Một không gian tọa độ 2D được định nghĩa bằng pixel. Gốc tọa độ (0,0) thường nằm ở góc dưới bên trái của màn hình.",
+                        "Viewport Space": "Một không gian tọa độ 2D đã được chuẩn hóa, không phụ thuộc vào độ phân giải. Tọa độ luôn nằm trong khoảng từ (0,0) đến (1,1)."
+                    }
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5: Tiêu đề tạm thời",
+                    "title": "Trang 5: Phép chiếu của Camera (Projection)",
                     "image": "images/game-dev/week4/slide_5.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 5.",
-                    "terms": {}
+                    "notes": "<b>Viewing Frustum</b> là hình dạng của khu vực không gian mà camera có thể nhìn thấy và render. Phép chiếu (projection) của camera cho phép nó mô phỏng phối cảnh.\n\n- Trong <b>Phép chiếu Phối cảnh (Perspective Projection)</b>, viewing frustum có dạng hình chóp.\n- Trong <b>Phép chiếu Trực giao (Orthographic Projection)</b>, viewing frustum có dạng hình hộp.",
+                    "terms": {
+                        "Viewing Frustum": "Một khối hình học 3D đại diện cho vùng không gian mà một camera có thể nhìn thấy. Bất cứ thứ gì bên trong khối này đều có thể được render.",
+                        "Perspective Projection": "Phép chiếu mô phỏng cách mắt người nhìn thế giới thực, trong đó các vật thể ở xa trông nhỏ hơn. Tạo ra cảm giác về chiều sâu.",
+                        "Orthographic Projection": "Phép chiếu loại bỏ phối cảnh. Các vật thể giữ nguyên kích thước của chúng bất kể khoảng cách. Thường được sử dụng trong các game 2D."
+                    }
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6: Tiêu đề tạm thời",
+                    "title": "Trang 6: Các thành phần của Camera",
                     "image": "images/game-dev/week4/slide_6.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 6.",
-                    "terms": {}
+                    "notes": "Một Game Object Camera thường bao gồm các component chính sau:\n\n- <b>Transform:</b> Component vị trí, xoay, và tỷ lệ của camera.\n- <b>Camera:</b> Component chính định nghĩa các thuộc tính của camera.\n- <b>GUI Layer:</b> Dùng để bật/tắt việc render các giao diện 2D (hệ thống GUI cũ).\n- <b>Flare Layer:</b> Dùng để bật/tắt hiệu ứng Lens Flare.\n- <b>Audio Listener:</b> Tính toán âm thanh đầu ra. <b>Chỉ có thể có một Audio Listener</b> trong toàn bộ scene.",
+                    "terms": {
+                        "Audio Listener": "Component hoạt động như 'đôi tai' của người chơi trong không gian 3D. Nó nhận tín hiệu từ các Audio Source trong scene và phát âm thanh qua loa.",
+                        "Lens Flare": "Một hiệu ứng đồ họa mô phỏng hiện tượng lóe sáng xảy ra khi một nguồn sáng rất mạnh chiếu trực tiếp vào ống kính máy ảnh.",
+                        "Field of View (FOV)": "(Trường nhìn) Góc nhìn của camera, xác định mức độ rộng hay hẹp của cảnh mà camera có thể bao quát.",
+                        "Clipping Planes (Near/Far)": "Hai mặt phẳng ảo xác định giới hạn gần nhất và xa nhất của Viewing Frustum. Bất cứ thứ gì quá gần hoặc quá xa sẽ không được render."
+                    }
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7: Tiêu đề tạm thời",
+                    "title": "Trang 7: Các thành phần của Camera (2/4)",
                     "image": "images/game-dev/week4/slide_7.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 7.",
-                    "terms": {}
+                    "notes": "<b>Clear Flags</b> là một cài đặt của component Camera, quyết định những gì sẽ được vẽ ở những vùng trống trên màn hình (những vùng không có đối tượng nào được render).\n\n- <b>Skybox:</b> Các vùng trống sẽ hiển thị skybox hiện tại của camera.\n- <b>Solid Color:</b> Các vùng trống sẽ hiển thị màu nền (Background Color) của camera.\n- <b>Depth Only:</b> Không vẽ gì vào các vùng trống. Thường được dùng khi có nhiều camera xếp chồng lên nhau.\n- <b>Don't Clear:</b> Cảnh được render ở màn hình trước đó không bị xóa đi. Tạo ra hiệu ứng 'vệt' (smear).",
+                    "terms": {
+                        "Clear Flags": "Một thuộc tính của Camera xác định cách màn hình được xóa trước khi render. Điều này rất quan trọng khi sử dụng nhiều camera.",
+                        "Skybox": "Một khối hộp lớn bao quanh toàn bộ scene, có các texture ở mặt trong để mô phỏng bầu trời và chân trời ở xa."
+                    }
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8: Tiêu đề tạm thời",
+                    "title": "Trang 8: Các thành phần của Camera (3/4)",
                     "image": "images/game-dev/week4/slide_8.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 8.",
-                    "terms": {}
+                    "notes": "Tiếp tục với các thuộc tính của component Camera:\n\n- <b>Background Color:</b> Màu nền sẽ được hiển thị nếu Clear Flags được đặt là 'Solid Color'.\n- <b>Culling Mask:</b> Dùng để render có chọn lọc các nhóm đối tượng dựa trên Layer của chúng. Rất hữu ích để tạo một camera riêng chỉ để render giao diện người dùng (UI).\n- <b>Projection:</b> Phép chiếu Phối cảnh (Perspective) hoặc Trực giao (Orthographic).\n- <b>Field Of View (FOV):</b> Độ rộng của góc nhìn camera, tính bằng độ dọc theo trục Y cục bộ.\n- <b>Clipping planes:</b> Các mặt phẳng Gần (Near) và Xa (Far), xác định giới hạn khoảng cách mà việc vẽ sẽ xảy ra.",
+                    "terms": {
+                        "Culling Mask": "Một thuộc tính trên Camera và Light cho phép bạn chọn lọc các layer mà chúng sẽ tương tác. 'Culling' có nghĩa là loại bỏ hoặc bỏ qua một cái gì đó."
+                    }
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9: Tiêu đề tạm thời",
+                    "title": "Trang 9: Các thành phần của Camera (4/4)",
                     "image": "images/game-dev/week4/slide_9.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 9.",
-                    "terms": {}
+                    "notes": "Các thuộc tính quan trọng khác của Camera:\n\n- <b>Viewport Rect:</b> Bốn giá trị (X, Y, W, H) từ 0 đến 1, xác định phần nào của màn hình sẽ được camera này vẽ lên. (X, Y) là vị trí bắt đầu, (W, H) là chiều rộng và chiều cao.\n- <b>Depth:</b> Vị trí của camera trong thứ tự vẽ. Camera có giá trị Depth lớn hơn sẽ được vẽ đè lên trên camera có giá trị nhỏ hơn.\n- <b>Rendering Path:</b> Các tùy chọn để xác định phương pháp render sẽ được sử dụng.\n- <b>Target Texture:</b> Tham chiếu đến một Render Texture, nơi chứa hình ảnh đầu ra của camera. Hữu ích để tạo màn hình TV trong game, camera giám sát...\n- <b>Occlusion Culling:</b> Bật/tắt tính năng loại bỏ các đối tượng bị che khuất hoàn toàn bởi các đối tượng khác.\n- <b>HDR (High Dynamic Range):</b> Bật/tắt chế độ render dải tương phản động mở rộng, cho hiệu ứng ánh sáng và màu sắc chân thực hơn.",
+                    "terms": {
+                        "Depth (Camera)": "Một số nguyên quyết định thứ tự render của các camera. Camera có Depth cao hơn sẽ được render sau (và do đó vẽ đè lên) camera có Depth thấp hơn.",
+                        "Render Texture": "Một loại Texture đặc biệt có thể được render vào tại thời điểm chạy. Thay vì hiển thị trực tiếp lên màn hình, đầu ra của một camera có thể được chuyển hướng vào một Render Texture.",
+                        "Occlusion Culling": "Một tính năng tối ưu hóa hiệu suất, ngăn chặn Unity render các đối tượng không thể nhìn thấy được từ vị trí của camera vì chúng bị các vật thể khác che khuất."
+                    }
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10: Tiêu đề tạm thời",
+                    "title": "Trang 10: Ví dụ về Camera đi theo",
                     "image": "images/game-dev/week4/slide_10.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 10.",
+                    "notes": "Đây là một kịch bản C# cơ bản để làm cho camera đi theo một đối tượng mục tiêu (target) một cách mượt mà.\n\n- <b>Start():</b> Tính toán `offset` ban đầu, là khoảng cách và hướng từ camera đến mục tiêu.\n- <b>LateUpdate():</b> Được sử dụng thay vì `Update()` để đảm bảo rằng mục tiêu đã hoàn thành tất cả các di chuyển của nó trong frame đó.\n  - Tính toán vị trí `targetCamPos` mà camera muốn hướng tới (vị trí của mục tiêu + offset).\n  - Sử dụng `Vector3.Lerp` để di chuyển vị trí hiện tại của camera về phía `targetCamPos` một cách mượt mà. Giá trị `smoothing * Time.deltaTime` quyết định tốc độ di chuyển.",
                     "terms": {}
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11: Tiêu đề tạm thời",
+                    "title": "Trang 11: Sử dụng nhiều Camera (1/3)",
                     "image": "images/game-dev/week4/slide_11.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 11.",
+                    "notes": "Khi có nhiều camera trong scene, tham số <b>Depth</b> sẽ kiểm soát thứ tự mà các camera vẽ lên cảnh.\n\n- Nếu các giá trị Depth khác nhau, camera có giá trị Depth <b>thấp hơn</b> sẽ được vẽ <b>trước</b>.\n- Nếu các giá trị Depth bằng nhau, camera được thêm vào scene trước sẽ được vẽ trước.\n\nLưu ý rằng tất cả các camera thực chất đều vẽ lại toàn bộ cảnh, nhưng camera cuối cùng (có Depth cao nhất) sẽ vẽ đè lên tất cả những camera khác nếu Clear Flags của nó không được đặt thành 'Depth Only'.",
                     "terms": {}
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12: Tiêu đề tạm thời",
+                    "title": "Trang 12: Sử dụng nhiều Camera (2/3)",
                     "image": "images/game-dev/week4/slide_12.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 12.",
+                    "notes": "Có thể tránh việc camera sau vẽ đè lên camera trước bằng cách thiết lập thuộc tính <b>Clear Flags</b> thành <b>Depth Only</b> ở một trong các camera (thường là camera có Depth cao hơn).\n\nKhi một camera có Clear Flags là 'Depth Only', nó sẽ chỉ vẽ những đối tượng mà nó nhìn thấy. Phần còn lại của màn hình (những vùng trống) sẽ không được vẽ, cho phép hình ảnh từ camera có Depth thấp hơn được nhìn thấy.",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13: Tiêu đề tạm thời",
+                    "title": "Trang 13: Sử dụng nhiều Camera (3/3)",
                     "image": "images/game-dev/week4/slide_13.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 13.",
+                    "notes": "Hai kỹ thuật phổ biến khi sử dụng nhiều camera:\n\n1. <b>Split Screen (Chia màn hình):</b>\n   - Hai camera vẽ lên các phần khác nhau của viewport. Chúng có thể có cùng giá trị Depth vì chúng không vẽ đè lên nhau.\n   - Để chỉ định phần viewport mà mỗi camera sẽ vẽ, hãy sửa đổi thuộc tính <b>Viewport Rect</b> (X, Y, W, H) của chúng.\n\n2. <b>Culling Masks:</b>\n   - Bằng cách gán các đối tượng vào các Layer khác nhau và thiết lập thuộc tính Culling Mask của camera, có thể làm cho mỗi camera chỉ vẽ các đối tượng từ các layer cụ thể. Ví dụ: một camera chỉ vẽ UI, một camera khác vẽ phần còn lại của game.",
                     "terms": {}
                 },
                 {
                     "id": 14,
-                    "title": "Trang 14: Tiêu đề tạm thời",
+                    "title": "Trang 14: Chuyển tiếp - Âm thanh",
                     "image": "images/game-dev/week4/slide_14.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 14.",
+                    "notes": "Kết thúc phần giới thiệu về Camera.\n\nPhần tiếp theo sẽ tập trung vào cách Unity xử lý và phát âm thanh trong game.",
                     "terms": {}
                 },
                 {
                     "id": 15,
-                    "title": "Trang 15: Tiêu đề tạm thời",
+                    "title": "Trang 15: Giới thiệu về Âm thanh",
                     "image": "images/game-dev/week4/slide_15.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 15.",
-                    "terms": {}
+                    "notes": "Trong Unity, âm thanh được sản xuất bởi các <b>Audio Sources</b> (Nguồn âm) và được tiếp nhận bởi một <b>Audio Listener</b> (Bộ thu âm).\n\n- Chỉ có thể có <b>một Audio Listener</b> trong scene, nhưng có thể có <b>nhiều Audio Sources</b>.\n- Cách âm thanh được cảm nhận phụ thuộc vào nhiều yếu tố, bao gồm khoảng cách và vị trí của nguồn âm.\n- Unity có thể mô phỏng các hiệu ứng về khoảng cách và vị trí của nguồn âm so với bộ thu âm và phát chúng cho người dùng.\n- Unity hỗ trợ import các tệp âm thanh định dạng AIFF, WAV, MP3 và Ogg.",
+                    "terms": {
+                        "Audio Source": "Một component hoạt động như một chiếc loa trong không gian game. Nó lấy dữ liệu từ một Audio Clip và phát nó trong scene.",
+                        "Audio Listener": "Component hoạt động như 'đôi tai' của người chơi trong không gian 3D. Nó nhận tín hiệu từ các Audio Source trong scene và phát âm thanh qua loa của máy tính."
+                    }
                 },
                 {
                     "id": 16,
-                    "title": "Trang 16: Tiêu đề tạm thời",
+                    "title": "Trang 16: Audio Clips",
                     "image": "images/game-dev/week4/slide_16.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 16.",
-                    "terms": {}
+                    "notes": "<b>Audio Clips</b> chứa dữ liệu âm thanh được sử dụng bởi Audio Sources. Unity hỗ trợ các định dạng .aif, .wav, .mp3, và .ogg.\n\nCác cài đặt import quan trọng của một Audio Clip bao gồm:\n- <b>Forced to mono:</b> Ép buộc clip âm thanh được mix thành một kênh duy nhất (mono).\n- <b>Load in Background:</b> Tải âm thanh ở một luồng phụ, không làm chặn luồng chính của game (mặc định: tắt).\n- <b>Preload Audio Data:</b> Tải dữ liệu âm thanh trước khi scene bắt đầu (mặc định: bật).\n- <b>Load type:</b> Cách dữ liệu được xử lý (Giải nén khi tải, Nén trong bộ nhớ, hoặc Streaming).",
+                    "terms": {
+                        "Audio Clip": "Một asset chứa dữ liệu âm thanh. Nó có thể được xem như một file nhạc hoặc hiệu ứng âm thanh mà bạn kéo vào dự án.",
+                        "Mono vs. Stereo": "Mono (monophonic) là âm thanh một kênh. Stereo (stereophonic) là âm thanh hai kênh (trái và phải), tạo ra cảm giác về không gian.",
+                        "Streaming (Audio)": "Một kiểu tải âm thanh trong đó file âm thanh được đọc từng phần nhỏ từ ổ đĩa thay vì được tải toàn bộ vào bộ nhớ. Rất hữu ích cho các file nhạc nền dài để tiết kiệm RAM."
+                    }
                 },
                 {
                     "id": 17,
-                    "title": "Trang 17: Tiêu đề tạm thời",
+                    "title": "Trang 17: Audio Source (1/2)",
                     "image": "images/game-dev/week4/slide_17.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 17.",
+                    "notes": "Component Audio Source phát lại một Audio Clip trong scene. Các thuộc tính chính:\n\n- <b>Audio Clip:</b> Clip âm thanh sẽ được phát.\n- <b>Output:</b> Nơi âm thanh sẽ được xuất ra, có thể là Audio Listener hoặc một Audio Mixer.\n- <b>Mute:</b> Nếu được bật, âm thanh sẽ được phát nhưng bị tắt tiếng.\n- <b>Play On Awake:</b> Nếu được bật, âm thanh sẽ tự động phát ngay khi scene được tải.\n- <b>Loop:</b> Bật tính năng này để làm cho Audio Clip lặp lại khi nó phát đến cuối.",
                     "terms": {}
                 },
                 {
                     "id": 18,
-                    "title": "Trang 18: Tiêu đề tạm thời",
+                    "title": "Trang 18: Audio Source (2/2)",
                     "image": "images/game-dev/week4/slide_18.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 18.",
-                    "terms": {}
+                    "notes": "Các thuộc tính quan trọng khác của Audio Source:\n\n- <b>Priority (Độ ưu tiên):</b> Xác định độ ưu tiên của nguồn âm này so với các nguồn âm khác (0: quan trọng nhất, 256: ít quan trọng nhất). Dùng giá trị 0 cho nhạc nền để tránh bị tắt đột ngột.\n- <b>Volume (Âm lượng):</b> Độ lớn của âm thanh ở khoảng cách 1 đơn vị thế giới (1 mét) so với Audio Listener.\n- <b>Pitch (Cao độ):</b> Mức độ thay đổi cao độ do làm chậm/tăng tốc Audio Clip. 1 là tốc độ bình thường.\n- <b>Stereo Pan:</b> Điều chỉnh vị trí của trường âm thanh nổi (stereo field) cho các âm thanh 2D.\n- <b>Spatial Blend:</b> Quyết định mức độ ảnh hưởng của engine âm thanh 3D lên nguồn âm. 0 là 2D hoàn toàn, 1 là 3D hoàn toàn.",
+                    "terms": {
+                        "Pitch": "Cao độ của một âm thanh, tức là mức độ 'cao' hay 'thấp' của nó. Tăng pitch sẽ làm âm thanh nghe cao và nhanh hơn, giảm pitch sẽ làm nó trầm và chậm hơn.",
+                        "Spatial Blend": "Một thanh trượt trên Audio Source cho phép bạn chuyển đổi giữa âm thanh 2D (không bị ảnh hưởng bởi vị trí) và 3D (âm lượng và pan thay đổi theo khoảng cách và vị trí tương đối với Audio Listener)."
+                    }
                 },
                 {
                     "id": 19,
-                    "title": "Trang 19: Tiêu đề tạm thời",
+                    "title": "Trang 19: Audio Source - Cài đặt âm thanh 3D (1/2)",
                     "image": "images/game-dev/week4/slide_19.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 19.",
+                    "notes": "Phần cài đặt 3D Sound Settings của một Audio Source cho phép bạn tùy chỉnh cách âm thanh hoạt động trong không gian 3 chiều.\n\nBiểu đồ hiển thị mối quan hệ giữa các thuộc tính và khoảng cách từ Audio Listener. Nó cho thấy âm lượng (Volume), độ lan tỏa (Spread), và hiệu ứng hồi âm (Reverb Zone) sẽ thay đổi như thế nào khi người nghe di chuyển ra xa nguồn âm.",
                     "terms": {}
                 },
                 {
                     "id": 20,
-                    "title": "Trang 20: Tiêu đề tạm thời",
+                    "title": "Trang 20: Audio Source - Cài đặt âm thanh 3D (2/2)",
                     "image": "images/game-dev/week4/slide_20.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 20.",
-                    "terms": {}
+                    "notes": "Các thuộc tính chính của 3D Sound Settings:\n\n- <b>Doppler Level:</b> Xác định mức độ hiệu ứng Doppler sẽ được áp dụng (0: không có hiệu ứng).\n- <b>Spread:</b> Điều chỉnh góc lan tỏa của âm thanh. Ở 0 độ, âm thanh là mono. Ở 360 độ, nó là stereo hoàn toàn.\n- <b>Volume Rolloff:</b> Cách âm thanh giảm dần theo khoảng cách đến Audio Listener. Có thể là Logarithmic (mặc định), Linear, hoặc một đường cong tùy chỉnh.\n- <b>Min Distance:</b> Trong khoảng cách này, âm thanh sẽ giữ ở mức âm lượng lớn nhất.\n- <b>Max Distance:</b> Khoảng cách mà âm thanh ngừng giảm dần. Vượt qua điểm này, âm thanh sẽ giữ ở mức âm lượng tại MaxDistance.",
+                    "terms": {
+                        "Doppler Effect (Hiệu ứng Doppler)": "Sự thay đổi tần số của sóng (ví dụ: âm thanh) liên quan đến một người quan sát đang di chuyển tương đối so với nguồn sóng. Ví dụ: tiếng còi xe cứu thương nghe cao hơn khi nó tiến lại gần và thấp hơn khi nó đi ra xa.",
+                        "Volume Rolloff": "Sự suy giảm âm lượng của một âm thanh 3D khi khoảng cách giữa Audio Source và Audio Listener tăng lên."
+                    }
                 },
                 {
                     "id": 21,
-                    "title": "Trang 21: Tiêu đề tạm thời",
+                    "title": "Trang 21: Audio Listener",
                     "image": "images/game-dev/week4/slide_21.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 21.",
+                    "notes": "<b>Audio Listener</b> nhận tín hiệu đầu vào từ bất kỳ Audio Source nào trong scene và phát nó. Audio Listener không có thuộc tính nào, nó chỉ đơn giản cần được thêm vào để hoạt động.\n\n- Nó luôn được thêm vào Main Camera theo mặc định và chỉ có thể có <b>một cái duy nhất</b> trong scene.\n- Khi Audio Listener được gắn vào một Game Object, bất kỳ Nguồn âm nào đủ gần nó sẽ được thu lại và phát ra loa máy tính.\n- Nếu Nguồn âm là 3D, Listener sẽ mô phỏng vị trí, vận tốc và hướng của âm thanh trong thế giới 3D.",
                     "terms": {}
                 },
                 {
                     "id": 22,
-                    "title": "Trang 22: Tiêu đề tạm thời",
+                    "title": "Trang 22: Reverb Zones",
                     "image": "images/game-dev/week4/slide_22.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 22.",
-                    "terms": {}
+                    "notes": "<b>Reverb Zones</b> (Vùng hồi âm) lấy một Audio Clip và làm méo nó tùy thuộc vào vị trí của audio listener bên trong vùng hồi âm. Chúng được sử dụng khi bạn muốn thay đổi dần dần từ một điểm không có hiệu ứng môi trường sang một nơi có hiệu ứng, ví dụ như khi bạn đang đi vào một hang động.\n\n- <b>Min Distance:</b> Bán kính của vòng tròn bên trong, xác định vùng có hiệu ứng hồi âm dần dần và vùng hồi âm đầy đủ.\n- <b>Max Distance:</b> Bán kính của vòng tròn bên ngoài, xác định vùng không có hiệu ứng và nơi hiệu ứng hồi âm bắt đầu được áp dụng dần dần.\n- <b>Reverb Preset:</b> Xác định hiệu ứng hồi âm sẽ được sử dụng bởi vùng (hang động, đấu trường, phòng tắm...).",
+                    "terms": {
+                        "Reverb (Hồi âm)": "Sự tồn tại của âm thanh sau khi một âm thanh được tạo ra. Reverb được tạo ra khi một âm thanh hoặc tín hiệu được phản xạ, gây ra một số lượng lớn các tiếng vang tích tụ và sau đó phân rã khi âm thanh bị hấp thụ bởi các bề mặt của các vật thể trong không gian."
+                    }
                 },
                 {
                     "id": 23,
-                    "title": "Trang 23: Tiêu đề tạm thời",
+                    "title": "Trang 23: Scripting - Audio Source (1/2)",
                     "image": "images/game-dev/week4/slide_23.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 23.",
-                    "terms": {}
+                    "notes": "Các biến và hàm hữu ích khi làm việc với Audio Source từ script:\n\n- <b>bool isPlaying:</b> Trả về `true` nếu clip đang được phát.\n- <b>bool loop:</b> Bật/tắt chế độ lặp lại.\n- <b>float minDistance, maxDistance:</b> Khoảng cách nghe được của âm thanh.\n- <b>bool mute:</b> Tắt/bật tiếng của Audio Source.\n- <b>void Play():</b> Phát Audio Clip.\n- <b>void PlayDelayed(float delay):</b> Phát clip sau một khoảng trễ `delay` giây.\n- <b>void PlayOneShot(AudioClip clip, ...):</b> Phát một clip một lần. Âm thanh này sẽ không bị dừng bởi các lệnh `Stop()` khác.\n- <b>void Pause() / Stop():</b> Tạm dừng / Dừng việc phát clip.",
+                    "terms": {
+                        "audio.PlayOneShot()": "Một hàm rất hữu ích của Audio Source để phát các hiệu ứng âm thanh ngắn (như tiếng súng, tiếng bước chân) mà không làm gián đoạn âm thanh chính (nhạc nền) đang phát trên cùng một Audio Source."
+                    }
                 },
                 {
                     "id": 24,
-                    "title": "Trang 24: Tiêu đề tạm thời",
+                    "title": "Trang 24: Scripting - Audio Source (2/2)",
                     "image": "images/game-dev/week4/slide_24.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 24.",
+                    "notes": "Hai ví dụ về scripting cho Audio Source:\n\n<b>Ví dụ 1:</b> Đoạn mã này sẽ Bật/Tắt âm thanh mỗi khi người dùng nhấn phím Space. Nó kiểm tra xem audio có đang phát (`isPlaying`) hay không, nếu có thì `Stop()`, nếu không thì `PlayDelayed(1f)` (phát sau 1 giây).\n\n<b>Ví dụ 2:</b> Đoạn mã này phát một hiệu ứng âm thanh súng (`shootSound`) với âm lượng ngẫu nhiên mỗi khi người dùng nhấn nút 'Fire1'. Nó lấy tham chiếu đến component Audio Source trong hàm `Awake()` và sử dụng `PlayOneShot()` để phát âm thanh.",
                     "terms": {}
                 },
                 {
                     "id": 25,
-                    "title": "Trang 25: Tiêu đề tạm thời",
+                    "title": "Trang 25: Chuyển tiếp - Ánh sáng và Bóng đổ",
                     "image": "images/game-dev/week4/slide_25.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 25.",
+                    "notes": "Kết thúc phần Âm thanh.\n\nPhần tiếp theo sẽ tập trung vào một yếu tố cực kỳ quan trọng để tạo ra không khí và chiều sâu cho game: Ánh sáng và Bóng đổ.",
                     "terms": {}
                 },
                 {
                     "id": 26,
-                    "title": "Trang 26: Tiêu đề tạm thời",
+                    "title": "Trang 26: Giới thiệu về Ánh sáng",
                     "image": "images/game-dev/week4/slide_26.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 26.",
-                    "terms": {}
+                    "notes": "Ánh sáng được dùng để chiếu sáng scene và các đối tượng, tạo ra không khí (mood) và phong vị (flavour) mong muốn cho game.\n\nCó bốn loại ánh sáng cơ bản trong Unity:\n- <b>Point lights (Đèn điểm):</b> Tỏa sáng từ một điểm ra mọi hướng, giống như một bóng đèn.\n- <b>Spot lights (Đèn chiếu):</b> Tỏa sáng từ một điểm theo một hướng nhất định trong một hình nón, giống như đèn pha ô tô.\n- <b>Directional lights (Đèn định hướng):</b> Được đặt ở vị trí vô cực, ảnh hưởng đến mọi thứ trong scene, giống như mặt trời.\n- <b>Area lights (Đèn vùng):</b> Tỏa sáng ra mọi hướng từ một phía của một mặt phẳng hình chữ nhật (chỉ dùng cho lightmap baking).",
+                    "terms": {
+                        "Light (in Unity)": "Một component tạo ra hiệu ứng ánh sáng trong scene. Các loại ánh sáng khác nhau có thể được sử dụng để mô phỏng các nguồn sáng khác nhau, từ mặt trời đến bóng đèn."
+                    }
                 },
                 {
                     "id": 27,
-                    "title": "Trang 27: Tiêu đề tạm thời",
+                    "title": "Trang 27: Point Lights",
                     "image": "images/game-dev/week4/slide_27.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 27.",
-                    "terms": {}
+                    "notes": "<b>Point lights (Đèn điểm)</b> tỏa sáng ra từ một điểm duy nhất theo mọi hướng.\n\n- Chúng có chi phí trung bình đối với bộ xử lý đồ họa (GPU), mặc dù bóng đổ của đèn điểm là loại tốn kém nhất.\n- Đây là loại đèn phổ biến nhất trong game, thường được dùng cho các vụ nổ, bóng đèn, ngọn đuốc...",
+                    "terms": {
+                        "Point Light": "Một nguồn sáng phát ra ánh sáng đồng đều theo mọi hướng từ một điểm duy nhất trong không gian.",
+                        "Cookie (Light)": "Một texture được sử dụng để che chắn hoặc thay đổi hình dạng và màu sắc của ánh sáng, tạo ra các hiệu ứng như ánh sáng chiếu qua cửa sổ hoặc tán lá cây. Với Point Light, cookie phải là một Cubemap."
+                    }
                 },
                 {
                     "id": 28,
-                    "title": "Trang 28: Tiêu đề tạm thời",
+                    "title": "Trang 28: Spot Lights",
                     "image": "images/game-dev/week4/slide_28.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 28.",
-                    "terms": {}
+                    "notes": "<b>Spot lights (Đèn chiếu)</b> chỉ tỏa sáng theo một hướng duy nhất, trong một phạm vi hình nón.\n\n- Chúng là loại đèn tốn kém nhất đối với GPU.\n- Rất phù hợp để làm đèn pin, đèn pha ô tô, hoặc đèn đường chiếu xuống.\n- Có thể được dùng để tạo hiệu ứng ánh sáng chiếu qua cửa sổ.",
+                    "terms": {
+                        "Spot Light": "Một nguồn sáng phát ra ánh sáng từ một điểm duy nhất, giới hạn trong một hình nón. Nó được định nghĩa bởi vị trí, hướng, góc và phạm vi."
+                    }
                 },
                 {
                     "id": 29,
-                    "title": "Trang 29: Tiêu đề tạm thời",
+                    "title": "Trang 29: Directional Lights",
                     "image": "images/game-dev/week4/slide_29.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 29.",
-                    "terms": {}
+                    "notes": "<b>Directional lights (Đèn định hướng)</b> được đặt ở một khoảng cách vô tận (vị trí của nó trong scene không quan trọng, chỉ có góc xoay là quan trọng) và ảnh hưởng đến tất cả các bề mặt của đối tượng trong scene của bạn.\n\n- Đèn định hướng chủ yếu được sử dụng trong các cảnh ngoài trời để mô phỏng ánh sáng mặt trời hoặc ánh trăng.\n- Đây là loại đèn ít tốn kém nhất đối với GPU.",
+                    "terms": {
+                        "Directional Light": "Một nguồn sáng được đặt ở vị trí vô cùng xa. Tất cả các tia sáng từ nó đều song song với nhau. Rất lý tưởng để mô phỏng ánh sáng mặt trời."
+                    }
                 },
                 {
                     "id": 30,
-                    "title": "Trang 30: Tiêu đề tạm thời",
+                    "title": "Trang 30: Area Lights",
                     "image": "images/game-dev/week4/slide_30.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 30.",
-                    "terms": {}
+                    "notes": "<b>Area lights (Đèn vùng)</b> chiếu sáng lên tất cả các đối tượng trong phạm vi của nó. Ánh sáng được phát ra từ một phía của một mặt phẳng hình chữ nhật.\n\nVì việc tính toán ánh sáng này khá tốn tài nguyên xử lý, đèn vùng không khả dụng tại thời điểm chạy (runtime) và chỉ có thể được 'nung' (baked) vào các lightmap.",
+                    "terms": {
+                        "Area Light": "Một nguồn sáng phát ra ánh sáng từ một bề mặt hình chữ nhật. Nó tạo ra các bóng đổ mềm và chân thực hơn so với các loại đèn điểm.",
+                        "Lightmap Baking": "Quá trình tính toán trước các hiệu ứng ánh sáng và bóng đổ của các vật thể tĩnh trong một scene và lưu chúng vào một texture gọi là 'lightmap'. Điều này giúp giảm đáng kể gánh nặng tính toán cho GPU tại thời điểm chạy, cải thiện hiệu suất."
+                    }
                 },
                 {
                     "id": 31,
-                    "title": "Trang 31: Tiêu đề tạm thời",
+                    "title": "Trang 31: Ánh sáng Môi trường (1/2)",
                     "image": "images/game-dev/week4/slide_31.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 31.",
+                    "notes": "Bạn có thể truy cập cài đặt ánh sáng môi trường qua menu <b>Window → Lighting</b>.\n\n- <b>Skybox:</b> Hình ảnh xuất hiện phía sau mọi thứ khác trong scene.\n- <b>Sun (Mặt trời):</b> Chỉ định một Directional Light sẽ hoạt động như mặt trời (chỉ dành cho các skybox thủ tục).\n- <b>Reflection Source (Nguồn phản chiếu):</b> Cho phép chỉ định sử dụng skybox cho các hiệu ứng phản chiếu (mặc định) hoặc chọn một cubemap thay thế.",
                     "terms": {}
                 },
                 {
                     "id": 32,
-                    "title": "Trang 32: Tiêu đề tạm thời",
+                    "title": "Trang 32: Ánh sáng Môi trường (2/2)",
                     "image": "images/game-dev/week4/slide_32.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 32.",
-                    "terms": {}
+                    "notes": "<b>Ambient Light (Ánh sáng xung quanh)</b> là một nguồn sáng không đến từ một điểm cụ thể nào, chiếu sáng tất cả các bề mặt trên màn hình. Có ba nguồn khả dĩ:\n- <b>Color:</b> Một màu phẳng cho ánh sáng.\n- <b>Gradient:</b> Các màu chuyển sắc cho bầu trời, đường chân trời, và mặt đất.\n- <b>Skybox:</b> Các màu từ skybox.\n\nViệc chỉ dựa vào ambient light thường không phải là một ý tưởng hay vì nó quá 'phẳng'. Bạn nên kết hợp với các loại đèn khác. Tuy nhiên, nó rất hữu ích để chiếu sáng đều các đối tượng nhằm tạo ra hiệu ứng ngày hoặc đêm.",
+                    "terms": {
+                        "Ambient Light": "Ánh sáng nền không có hướng cụ thể, chiếu sáng đồng đều toàn bộ scene. Nó giúp làm cho các vùng tối và bóng đổ không bị đen hoàn toàn, trông tự nhiên hơn."
+                    }
                 },
                 {
                     "id": 33,
-                    "title": "Trang 33: Tiêu đề tạm thời",
+                    "title": "Trang 33: Component Ánh sáng (1/2)",
                     "image": "images/game-dev/week4/slide_33.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 33.",
-                    "terms": {}
+                    "notes": "Các thuộc tính chính của component Light:\n\n- <b>Type:</b> Loại ánh sáng (Spot, Directional, Point, Area).\n- <b>Baking:</b> Chế độ xử lý ánh sáng:\n  - <b>Realtime:</b> Ánh sáng được tính toán và cập nhật ở mỗi frame. Có thể thay đổi và tạo bóng đổ động.\n  - <b>Mixed:</b> Kết hợp giữa Realtime và Baked. Dùng cho các nguồn sáng cần chiếu sáng cả đối tượng động và tĩnh.\n  - <b>Baked:</b> Ánh sáng được tính toán trước và lưu vào lightmap. Chỉ ảnh hưởng đến các đối tượng tĩnh.",
+                    "terms": {
+                        "Baking": "Một quá trình tính toán trước các dữ liệu phức tạp (như ánh sáng, bóng đổ) trong Editor thay vì tại thời điểm chạy. Điều này giúp cải thiện đáng kể hiệu suất của game."
+                    }
                 },
                 {
                     "id": 34,
-                    "title": "Trang 34: Tiêu đề tạm thời",
+                    "title": "Trang 34: Component Ánh sáng (2/2)",
                     "image": "images/game-dev/week4/slide_34.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 34.",
-                    "terms": {}
+                    "notes": "Các thuộc tính quan trọng khác của component Light:\n\n- <b>Range:</b> Khoảng cách tối đa mà ánh sáng phát ra (chỉ cho Point/Spot light).\n- <b>Spot Angle:</b> Góc của hình nón ánh sáng, tính bằng độ (chỉ cho Spot light).\n- <b>Color / Intensity:</b> Màu sắc / Cường độ (độ sáng) của ánh sáng.\n- <b>Bounce Intensity:</b> Độ sáng của ánh sáng sau khi nảy lên (dùng cho GI).\n- <b>Shadow Type:</b> Loại bóng đổ được tạo ra bởi nguồn sáng này.\n- <b>Cookie / Cookie Size:</b> Texture mặt nạ cho ánh sáng và kích thước của nó.\n- <b>Draw Halo / Flare:</b> Vẽ một vầng hào quang / lóe sáng tại vị trí của nguồn sáng.\n- <b>Render Mode:</b> Chế độ ưu tiên (Auto, Important, Not Important).\n- <b>Culling Mask:</b> Chọn lọc các layer sẽ bị ảnh hưởng bởi nguồn sáng.",
+                    "terms": {
+                        "Global Illumination (GI)": "(Chiếu sáng toàn cục) Một hệ thống mô phỏng cách ánh sáng được phản xạ gián tiếp từ các bề mặt, tạo ra các hiệu ứng chiếu sáng chân thực hơn."
+                    }
                 },
                 {
                     "id": 35,
-                    "title": "Trang 35: Tiêu đề tạm thời",
+                    "title": "Trang 35: Cookies",
                     "image": "images/game-dev/week4/slide_35.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 35.",
-                    "terms": {}
+                    "notes": "<b>Cookie</b> là một hình ảnh có thể được dùng làm mặt nạ (mask) để quyết định độ sáng của ánh sáng ở các phần khác nhau, dựa trên kênh alpha của nó.\n\n- Nếu là Spot light hoặc Directional light, hình ảnh này phải là một texture 2D.\n- Nếu là Point light, nó phải là một Cubemap.\n\nKhi import một texture để dùng làm cookie, bạn cần thiết lập các thông số:\n- <b>Texture Type:</b> Cookie.\n- <b>Light Type:</b> Loại ánh sáng sẽ sử dụng cookie này.\n- <b>Alpha from Grayscale:</b> Để Unity chuyển đổi ảnh thang độ xám thành một alpha map.",
+                    "terms": {
+                        "Cookie (Light)": "Một texture được sử dụng để che chắn hoặc thay đổi hình dạng và màu sắc của ánh sáng, tạo ra các hiệu ứng như ánh sáng chiếu qua cửa sổ hoặc tán lá cây.",
+                        "Cubemap": "Một tập hợp sáu texture hình vuông được ghép lại với nhau thành các mặt của một khối lập phương ảo. Thường được dùng để thể hiện sự phản chiếu hoặc skybox."
+                    }
                 },
                 {
                     "id": 36,
-                    "title": "Trang 36: Tiêu đề tạm thời",
+                    "title": "Trang 36: Lightmapping (1/2)",
                     "image": "images/game-dev/week4/slide_36.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 36.",
-                    "terms": {}
+                    "notes": "<b>Lightmap</b> là một cấu trúc dữ liệu chứa thông tin về độ sáng đã được 'nung' (baked) của các bề mặt <b>tĩnh</b> trong scene.\n\nCó ba loại lightmapping chính:\n- <b>Non-directional:</b> Trường hợp mặc định, lưu thông tin về lượng ánh sáng mà bề mặt phát ra.\n- <b>Directional:</b> Lưu thêm thông tin về hướng của ánh sáng tới.\n- <b>Directional with Specular:</b> Lưu thêm thông tin cho ánh sáng gián tiếp có tính phản chiếu (specular).",
+                    "terms": {
+                        "Lightmap": "Một texture được tạo ra trong quá trình 'baking', chứa thông tin ánh sáng và bóng đổ cho các vật thể tĩnh trong một scene. Sử dụng lightmap giúp giảm tải tính toán cho GPU tại thời điểm chạy."
+                    }
                 },
                 {
                     "id": 37,
-                    "title": "Trang 37: Tiêu đề tạm thời",
+                    "title": "Trang 37: Lightmapping (2/2)",
                     "image": "images/game-dev/week4/slide_37.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 37.",
+                    "notes": "Slide này minh họa kết quả của quá trình lightmap baking.\n\nCác texture hiển thị là các lightmap đã được tạo ra cho scene. Unity sẽ tự động 'trải' các UV của các đối tượng tĩnh và lưu thông tin ánh sáng, bóng đổ lên các texture này. Khi game chạy, thay vì tính toán ánh sáng lại từ đầu, engine sẽ chỉ cần đọc thông tin từ các lightmap này và áp dụng lên các bề mặt tương ứng, giúp tiết kiệm hiệu suất một cách đáng kể.",
                     "terms": {}
                 },
                 {
                     "id": 38,
-                    "title": "Trang 38: Tiêu đề tạm thời",
+                    "title": "Trang 38: Bóng đổ (Shadows)",
                     "image": "images/game-dev/week4/slide_38.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 38.",
-                    "terms": {}
+                    "notes": "Unity sử dụng kỹ thuật <b>shadow mapping</b> để tạo bóng đổ của các đối tượng trong scene. Bóng được tạo ra bằng cách render lại scene từ góc nhìn của nguồn sáng, tạo ra một 'bản đồ bóng' (shadow map) dưới dạng một texture lưu trữ thông tin về chiều sâu (depth) của mỗi bề mặt.\n\nChất lượng của shadow map phụ thuộc vào hai yếu tố:\n- <b>Độ phân giải (resolution):</b> Shadow map càng lớn, chất lượng bóng đổ càng tốt.\n- <b>Việc lọc (filtering):</b> Bóng đổ cứng (Hard shadows) lấy pixel gần nhất. Bóng đổ mềm (Soft shadows) lấy trung bình của nhiều pixel, tạo ra các bóng đổ trông mượt mà hơn nhưng tốn kém hơn để render.",
+                    "terms": {
+                        "Shadow Mapping": "Một kỹ thuật phổ biến để tạo bóng đổ trong đồ họa máy tính 3D. Nó hoạt động bằng cách render scene từ góc nhìn của nguồn sáng để xác định các khu vực bị che khuất."
+                    }
                 },
                 {
                     "id": 39,
-                    "title": "Trang 39: Tiêu đề tạm thời",
+                    "title": "Trang 39: Bóng đổ Thời gian thực (1/2)",
                     "image": "images/game-dev/week4/slide_39.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 39.",
-                    "terms": {}
+                    "notes": "Bóng đổ thời gian thực (real-time shadows) rất tốn kém về mặt tính toán và tài nguyên, vì vậy nên được sử dụng một cách cẩn thận.\n\n- Bóng đổ mềm tốn nhiều tài nguyên để render hơn bóng đổ cứng.\n- Chi phí tính toán hoàn toàn nằm trên card đồ họa (GPU), vì vậy bóng đổ không ảnh hưởng nhiều đến CPU hay bộ nhớ.\n\nCài đặt chất lượng (<b>Edit → Project Settings → Quality</b>) chứa một mục dành cho Bóng đổ, ảnh hưởng đến toàn bộ dự án Unity.",
+                    "terms": {
+                        "Real-time Shadows": "Bóng đổ được tính toán và cập nhật ở mỗi khung hình. Chúng có thể thay đổi một cách linh động khi các đối tượng và nguồn sáng di chuyển, nhưng rất tốn tài nguyên GPU."
+                    }
                 },
                 {
                     "id": 40,
-                    "title": "Trang 40: Tiêu đề tạm thời",
+                    "title": "Trang 40: Bóng đổ Thời gian thực (2/2)",
                     "image": "images/game-dev/week4/slide_40.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 40.",
-                    "terms": {}
+                    "notes": "Các cài đặt chất lượng cho bóng đổ:\n\n- <b>Shadows:</b> Loại bóng đổ sẽ được sử dụng (Cứng và Mềm, Chỉ Cứng, hoặc Tắt).\n- <b>Shadow resolution:</b> Độ phân giải của shadow map (Thấp, Trung bình, Cao, Rất cao).\n- <b>Shadow Projection:</b> Phương pháp chiếu bóng cho đèn định hướng.\n  - <b>Close Fit:</b> Render bóng có độ phân giải cao hơn nhưng có thể bị 'lung lay' nhẹ khi camera di chuyển.\n  - <b>Stable Fit:</b> Render bóng có độ phân giải thấp hơn nhưng sẽ không bị lung lay.\n- <b>Shadow Distance:</b> Khoảng cách tối đa từ camera mà bóng đổ sẽ được hiển thị.\n- <b>Shadow Cascades:</b> Số lượng các 'tầng' bóng đổ (0, 2, hoặc 4). Số tầng cao hơn cho chất lượng tốt hơn nhưng tốn nhiều hiệu suất hơn.",
+                    "terms": {
+                        "Shadow Cascades": "Một kỹ thuật để cải thiện chất lượng của shadow map cho các cảnh lớn, đặc biệt là với đèn định hướng. Nó chia viewing frustum của camera thành nhiều phần và render một shadow map riêng với độ phân giải khác nhau cho mỗi phần."
+                    }
                 },
                 {
                     "id": 41,
-                    "title": "Trang 41: Tiêu đề tạm thời",
+                    "title": "Trang 41: Bóng đổ Thời gian thực - Đèn định hướng",
                     "image": "images/game-dev/week4/slide_41.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 41.",
-                    "terms": {}
+                    "notes": "Đối với một Đèn định hướng (Directional Light), bóng đổ có ba thuộc tính sau:\n\n- <b>Strength (Độ đậm):</b> Độ tối của bóng đổ. Giá trị từ 0 đến 1.\n- <b>Resolution (Độ phân giải):</b> Mức độ chi tiết của bóng đổ. Có thể được đặt theo Cài đặt Chất lượng chung, hoặc thiết lập riêng cho đèn này ở mức Thấp, Trung bình, Cao hoặc Rất cao.\n- <b>Bias:</b> Xác định bóng đổ gần với vật thể tạo ra nó như thế nào. Giá trị gần 0 có thể gây ra 'mụn bóng' (shadow acne), nhưng giá trị quá cao có thể làm bóng đổ bị 'lơ lửng' (peter panning).\n\nBóng đổ mềm có thêm hai thuộc tính là <b>Softness</b> và <b>Softness Fade</b> để quản lý sự chuyển tiếp từ vùng sáng sang vùng tối.",
+                    "terms": {
+                        "Shadow Acne": "Một lỗi đồ họa xuất hiện dưới dạng các sọc hoặc đốm không đều trên bề mặt của một vật thể khi nó tự đổ bóng lên chính nó.",
+                        "Peter Panning": "Một lỗi đồ họa làm cho bóng đổ trông có vẻ bị tách rời hoặc 'lơ lửng' bên dưới vật thể tạo ra nó, thay vì được kết nối một cách chính xác."
+                    }
                 },
                 {
                     "id": 42,
-                    "title": "Trang 42: Tiêu đề tạm thời",
+                    "title": "Trang 42: Shadow Cascades",
                     "image": "images/game-dev/week4/slide_42.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 42.",
+                    "notes": "<b>Shadow Cascades</b> là một quy trình bao gồm việc chia khu vực nhìn thấy thành các vùng ngày càng lớn, sử dụng cùng một kích thước shadow map cho mỗi vùng. Kết quả là các vật thể ở gần người xem sẽ nhận được nhiều pixel của shadow map hơn các vật thể ở xa.\n\n- <b>Không có cascades (giá trị 0):</b> Shadow texture bao phủ toàn bộ khu vực nhìn thấy, dẫn đến chất lượng bóng đổ thấp ở gần.\n- <b>Với 2 cascades:</b> Khoảng cách bóng đổ được chia thành một phần nhỏ ở gần và một phần lớn ở xa. Đổi lại một chút hiệu suất, chúng ta có được độ phân giải bóng đổ tốt hơn ở gần.",
                     "terms": {}
                 },
                 {
                     "id": 43,
-                    "title": "Trang 43: Tiêu đề tạm thời",
+                    "title": "Trang 43: Tính năng mới trong Unity 5.4",
                     "image": "images/game-dev/week4/slide_43.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 43.",
-                    "terms": {}
+                    "notes": "Unity 5.4 giới thiệu các <b>Hiệu ứng Hình ảnh Điện ảnh (Cinematic Image Effects)</b>, có thể được tìm thấy trên Asset Store.\n\nCác hiệu ứng này cho phép bạn thêm vào game các tính năng đồ họa cao cấp như:\n- <b>Antialiasing (Khử răng cưa):</b> Làm mượt các cạnh bị răng cưa.\n- <b>Camera effects:</b> Các hiệu ứng camera khác nhau.\n- <b>Reflectivity and glowing effects:</b> Các hiệu ứng phản chiếu và phát sáng.\n- <b>Lens aberration and blurriness:</b> Hiệu ứng quang sai ống kính và làm mờ.",
+                    "terms": {
+                        "Antialiasing (Khử răng cưa)": "Một kỹ thuật đồ họa máy tính dùng để làm mịn các cạnh lởm chởm, 'răng cưa' trên các đường chéo và đường cong.",
+                        "Image Effect / Post-processing": "Các hiệu ứng đồ họa được áp dụng lên toàn bộ màn hình sau khi scene đã được render xong. Chúng hoạt động giống như các bộ lọc trong Photoshop."
+                    }
                 },
                 {
                     "id": 44,
-                    "title": "Trang 44: Tiêu đề tạm thời",
+                    "title": "Trang 44: Chuyển tiếp - Câu hỏi & Demo Lab",
                     "image": "images/game-dev/week4/slide_44.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 44.",
+                    "notes": "Kết thúc phần lý thuyết về Ánh sáng và Bóng đổ.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
                     "terms": {}
                 },
                 {
                     "id": 45,
-                    "title": "Trang 45: Tiêu đề tạm thời",
+                    "title": "Trang 45: Bài kiểm tra Tiến độ",
                     "image": "images/game-dev/week4/slide_45.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 45.",
+                    "notes": "Thông báo về Bài kiểm tra Tiến độ 1:\n- <b>Thời gian:</b> Thứ Ba, ngày 8 tháng 11, từ 1h đến 2h chiều.\n- <b>Địa điểm:</b> Phòng LTB03.\n\nNội dung bài kiểm tra:\n- Gồm 20 câu hỏi trắc nghiệm.\n- Bạn có 30 phút để làm bài.\n- Phải được thực hiện trong điều kiện thi cử.\n- Sẽ có nhắc nhở khi còn 5 phút.\n- Trị giá 15% tổng điểm cuối kỳ.\n\n<b>Nhắc nhở:</b> Hãy tự mang theo bút chì và tẩy!",
                     "terms": {}
                 },
                 {
                     "id": 46,
-                    "title": "Trang 46: Tiêu đề tạm thời",
+                    "title": "Trang 46: Xem trước UROP & Buổi thực hành",
                     "image": "images/game-dev/week4/slide_46.png",
-                    "notes": "Nội dung ghi chú tạm thời cho slide 46.",
-                    "terms": {}
+                    "notes": "<b>Lab:</b> Bạn sẽ hoàn thành bài tập Space Shooter.\n\n<b>UROP (Chương trình Cơ hội Nghiên cứu cho sinh viên Đại học):</b>\n- Vị trí thực tập về Game Engine trên Web: Trí tuệ nhân tạo cho Game tổng quát: Chơi và Thu thập dữ liệu trên Web.",
+                    "terms": {
+                        "UROP (Undergraduate Research Opportunities Programme)": "Một chương trình cho phép sinh viên đại học tham gia vào các dự án nghiên cứu thực tế cùng với các giảng viên và nhà nghiên cứu."
+                    }
                 }
             ]
         }
