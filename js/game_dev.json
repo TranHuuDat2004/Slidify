@@ -1721,6 +1721,188 @@
                     }
                 }
             ]
+        },
+        {
+            "title": "Tuần 5: Terrains",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - Terrains",
+                    "image": "images/game-dev/week5/slide_1.png",
+                    "notes": "Bài giảng 5: Địa hình (Terrains).\n\nTuần này chúng ta sẽ học về cách tạo và chỉnh sửa các cảnh quan rộng lớn trong Unity bằng hệ thống Terrain.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week5/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 5 bao gồm:\n\n1. <b>Terrains (Địa hình).</b>\n2. <b>Lab Session 5 (Buổi thực hành 5).</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chuyển tiếp - Terrains",
+                    "image": "images/game-dev/week5/slide_3.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Tìm hiểu về hệ thống tạo địa hình của Unity.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Giới thiệu về Terrains",
+                    "image": "images/game-dev/week5/slide_4.png",
+                    "notes": "Hầu hết các video game đều sử dụng địa hình (terrains). Địa hình có thể là một khu vực có thể được khám phá chủ động (ví dụ: game bắn súng góc nhìn thứ nhất) hoặc là một phần của hậu cảnh để tạo ra ảo giác về một thế giới mở (ví dụ: game đua xe).\n\nĐịa hình có thể được tạo ra tự động trong lúc chơi để tạo ra các thế giới thực sự mở. Ngoài ra, một công dụng phổ biến khác của các dãy núi là để giới hạn thế giới mà người chơi có thể tiếp cận.",
+                    "terms": {
+                        "Terrain": "Một hệ thống trong Unity cho phép bạn tạo ra các cảnh quan rộng lớn. Bạn có thể điêu khắc địa hình, vẽ texture, và thêm cây cối, cỏ."
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Tạo địa hình (Terrain generation)",
+                    "image": "images/game-dev/week5/slide_5.png",
+                    "notes": "Một cách phổ biến để tạo địa hình là xây dựng một mesh (sử dụng các tam giác) từ một <b>heightmap</b> (bản đồ độ cao) và áp dụng một texture lên mesh đó.\n\nMột heightmap là một hình ảnh 2D ở thang độ xám:\n- Mỗi pixel tương ứng với một đỉnh (vertex).\n- Giá trị màu sắc của pixel quyết định chiều cao của nó (trắng là cao nhất, đen là thấp nhất).\n\nHeightmap có thể được tạo ra bằng các công cụ đặc biệt hoặc đơn giản bằng một trình chỉnh sửa ảnh như Photoshop hay Paint.NET.",
+                    "terms": {
+                        "Heightmap": "Một hình ảnh 2D thang độ xám được sử dụng để lưu trữ thông tin về độ cao của một bề mặt. Các giá trị sáng hơn đại diện cho các khu vực cao hơn, và các giá trị tối hơn đại diện cho các khu vực thấp hơn."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Tạo và Chỉnh sửa Terrains",
+                    "image": "images/game-dev/week5/slide_6.png",
+                    "notes": "Trong Unity, địa hình có thể được thêm vào như các đối tượng game từ menu <b>Create → 3D Object → Terrain</b>.\n\nThao tác này sẽ tạo ra một mặt phẳng lớn, hoàn toàn phẳng, và bề mặt có thể được chỉnh sửa bằng các Công cụ Độ cao (Height Tools) có sẵn trong component Terrain (Script).\n\nTừ trái sang phải, các công cụ này là:\n- <b>Raise/Lower Terrain:</b> Nâng/Hạ địa hình.\n- <b>Paint Height:</b> Tô độ cao.\n- <b>Smooth Height:</b> Làm mịn độ cao.\n- <b>Paint Texture:</b> Tô họa tiết.\n- <b>Place Trees:</b> Đặt cây.\n- <b>Paint Details:</b> Tô chi tiết (cỏ, đá nhỏ).\n- <b>Terrain Settings:</b> Cài đặt địa hình.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Công cụ Độ cao (Height Tools)",
+                    "image": "images/game-dev/week5/slide_7.png",
+                    "notes": "Các công cụ Độ cao (ba công cụ đầu tiên) được dùng để 'tô' các thay đổi về độ cao lên địa hình, tương tự như hiệu ứng của các công cụ airbrush trong các trình chỉnh sửa ảnh.\n\n- <b>Raise/Lower Terrain:</b> Nâng địa hình. Nếu giữ phím `Shift`, nó sẽ hạ địa hình.\n- <b>Paint Height:</b> Công cụ này tô địa hình đến một giá trị `Height` (độ cao mục tiêu) cụ thể. Các điểm cao hơn sẽ bị hạ xuống và các điểm thấp hơn sẽ được nâng lên. Giữ phím `Shift` cho phép lấy mẫu độ cao tại một điểm.\n- <b>Smooth Height:</b> Làm mịn các khu vực lân cận, làm mềm cảnh quan và giảm sự xuất hiện của các thay đổi đột ngột.",
+                    "terms": {}
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Textures (1/2)",
+                    "image": "images/game-dev/week5/slide_8.png",
+                    "notes": "Các texture có thể được thêm vào bề mặt của một địa hình.\n\n- Vì địa hình là những đối tượng rất lớn, thông thường người ta sẽ sử dụng một texture có thể lặp lại (tileable) và lát nó trên bề mặt.\n- Một texture sẽ đóng vai trò là hình ảnh nền trên toàn bộ cảnh quan, nhưng bạn cũng có thể 'tô' các vùng có texture khác nhau để mô phỏng các bề mặt đất khác nhau như cỏ, sa mạc và tuyết.\n- Các texture được tô có thể được áp dụng với độ trong suốt thay đổi để bạn có thể tạo ra sự chuyển tiếp dần dần giữa một vùng quê đầy cỏ và một bãi biển đầy cát.",
+                    "terms": {
+                        "Tileable Texture": "Một hình ảnh đã được thiết kế sao cho khi được xếp cạnh nhau, các đường nối giữa chúng không thể nhìn thấy được, tạo ra một bề mặt liền mạch."
+                    }
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Textures (2/2)",
+                    "image": "images/game-dev/week5/slide_9.png",
+                    "notes": "Texture đầu tiên được thêm vào sẽ làm nền, tô toàn bộ địa hình. Các texture còn lại sẽ có sẵn để tô bằng các công cụ cọ vẽ.\n\nCác thuộc tính có sẵn là <b>Brush Size</b> (Kích thước cọ) và <b>Opacity</b> (Độ mờ), hoạt động tương tự như các công cụ khác. Có một cài đặt thứ ba gọi là <b>Target Strength</b> (Cường độ mục tiêu). Cài đặt này thiết lập giá trị độ mờ tối đa mà cọ vẽ sẽ đạt được ngay cả khi nó đi qua cùng một điểm nhiều lần. Điều này rất hữu ích để tạo ra các mảng vá trong một địa hình duy nhất để phá vỡ sự đơn điệu của một khu vực đồng nhất lớn.",
+                    "terms": {}
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Cây cối (1/3)",
+                    "image": "images/game-dev/week5/slide_10.png",
+                    "notes": "Địa hình Unity có thể được trang trí bằng cây cối. Các mảng cây có thể được tô lên địa hình giống như cách tô heightmap và texture, nhưng cây cối là các đối tượng 3D rắn mọc lên từ bề mặt.\n\nUnity sử dụng các tối ưu hóa (ví dụ: <b>billboarding</b> cho cây ở xa) để duy trì hiệu suất render tốt, vì vậy bạn có thể có những khu rừng rậm rạp với hàng ngàn cây mà vẫn giữ được tốc độ khung hình chấp nhận được.\n\nBan đầu, sẽ không có cây nào có sẵn. Nhấp vào nút <b>Edit Trees</b> cho phép bạn thêm cây vào địa hình.",
+                    "terms": {
+                        "Billboarding": "Một kỹ thuật đồ họa trong đó các sprite (hình ảnh 2D) luôn được xoay để đối mặt với camera. Trong Unity Terrain, các cây ở xa được thay thế bằng billboard để giảm đáng kể chi phí render."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Cây cối (2/3)",
+                    "image": "images/game-dev/week5/slide_11.png",
+                    "notes": "Các thuộc tính <b>Brush Size</b> (Kích thước cọ) và <b>Tree Density</b> (Mật độ cây) được dùng để tô cây. <b>Color Variation</b> (Biến thể màu sắc) thêm một chút nhiễu vào màu sắc của các cây được trồng.\n\nChiều cao và chiều rộng của cây cũng có thể được xác định, cũng như yếu tố nhiễu.\n\nNút <b>Mass Place Trees</b> là một cách rất hữu ích để tạo ra một lớp phủ cây tổng thể mà không cần tô vẽ trên toàn bộ cảnh quan.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Cây cối (3/3)",
+                    "image": "images/game-dev/week5/slide_12.png",
+                    "notes": "<b>Thêm Collider cho cây:</b> Bạn có thể thêm một Capsule Collider vào một tree asset mới bằng cách khởi tạo prefab của nó trong scene, thêm Capsule Collider và lưu lại prefab cho cây đã sửa đổi.\n\n<b>Làm cây uốn cong trong gió:</b> Khi có một <b>Wind Zone</b>, có thể làm cho cây uốn cong theo gió. Cần phải thiết lập riêng cho việc này trong <b>Edit Trees → Edit tree</b>. Đặt giá trị `bend` thành 1 sẽ làm cho cây uốn cong theo gió.\n\nUnity có công cụ <b>Tree Creator</b> riêng (Assets → Import Package → Tree Creator) để tạo cây dưới dạng một đối tượng game (3D Object → Tree).",
+                    "terms": {
+                        "Tree Creator": "Một công cụ tích hợp trong Unity cho phép bạn tạo ra các mô hình cây 3D tùy chỉnh một cách thủ tục, bằng cách xác định các thuộc tính cho thân, cành và lá."
+                    }
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Cỏ và các chi tiết khác (1/3)",
+                    "image": "images/game-dev/week5/slide_13.png",
+                    "notes": "Nút <b>Paint Details</b> trên thanh công cụ cho phép tô cỏ/chi tiết. Bạn phải nhấp vào nút <b>Edit Details</b> để kích hoạt các tùy chọn này.\n\n<b>Add Grass Texture:</b> Điều này cho phép chỉ định một texture cho cỏ. Texture chỉ đơn giản là một hình ảnh nhỏ với kênh alpha được đặt thành 0 cho các vùng trống (lưu ý rằng 'cỏ' khá chung chung: bạn có thể tạo hoa hoặc các đối tượng khác với các texture khác nhau).\n\nCác giá trị <b>Min Width, Min Height, Max Width</b> và <b>Max Height</b> chỉ định giới hạn trên và dưới của kích thước của các cụm cỏ được tạo ra.",
+                    "terms": {}
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Cỏ và các chi tiết khác (2/3)",
+                    "image": "images/game-dev/week5/slide_14.png",
+                    "notes": "Giá trị <b>Noise Spread</b> kiểm soát kích thước gần đúng của các mảng vá xen kẽ, với các giá trị cao hơn cho thấy sự biến đổi nhiều hơn trong một khu vực nhất định.\n\nCác cài đặt <b>Healthy/Dry Color</b> hiển thị 'sức khỏe' của các cụm cỏ bằng màu sắc của chúng.\n\nNếu tùy chọn <b>Billboard</b> được bật, các hình ảnh cỏ sẽ xoay để chúng luôn đối mặt với camera.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Cỏ và các chi tiết khác (3/3)",
+                    "image": "images/game-dev/week5/slide_15.png",
+                    "notes": "<b>Add Detail Mesh:</b> Tùy chọn này cho phép bạn rải các bản sao của một mesh xung quanh địa hình.\n\nThuộc tính <b>Detail</b> được sử dụng để chọn một prefab từ dự án của bạn, nó sẽ được thay đổi tỷ lệ theo các giá trị <b>Random Width</b> và <b>Random Height</b> cho các thể hiện riêng lẻ.\n\nCác giá trị <b>Noise Spread</b> và <b>Healthy/Dry Color</b> hoạt động tương tự như đối với cỏ.\n\n<b>Render Mode</b> có thể được đặt thành:\n- <b>Grass:</b> Các thể hiện sẽ được làm phẳng thành hình ảnh 2D - giống như texture cỏ.\n- <b>Vertex Lit:</b> Các chi tiết sẽ được render dưới dạng các đối tượng 3D rắn, được chiếu sáng bằng vertex.",
+                    "terms": {
+                        "Vertex Lit": "Một chế độ render trong đó việc tính toán ánh sáng được thực hiện trên mỗi đỉnh (vertex) của một mesh. Đây là một phương pháp render nhanh nhưng cho chất lượng thấp hơn so với render trên mỗi pixel (Pixel Lit)."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Wind Zones",
+                    "image": "images/game-dev/week5/slide_16.png",
+                    "notes": "Bạn có thể tạo hiệu ứng gió trên địa hình của mình bằng cách thêm một hoặc nhiều đối tượng với component <b>Wind Zone</b>.\n\n- <b>Mode</b> có thể được đặt thành <b>Directional</b> (ảnh hưởng đến toàn bộ địa hình) hoặc <b>Spherical</b> (thổi ra ngoài trong một hình cầu được xác định bởi thuộc tính Radius).\n- Thuộc tính <b>Wind Main</b> quyết định cường độ tổng thể của gió, nhưng có thể được thêm một chút biến thể ngẫu nhiên bằng cách sử dụng <b>Wind Turbulence</b>.\n- Sức mạnh của các cơn gió giật và khoảng thời gian giữa chúng có thể được kiểm soát bằng <b>Wind Pulse Magnitude</b> và <b>Wind Pulse Frequency</b>.",
+                    "terms": {
+                        "Wind Zone": "Một component trong Unity mô phỏng hiệu ứng của gió. Nó có thể ảnh hưởng đến các đối tượng Terrain (cây, cỏ) và các hệ thống hạt (Particle Systems)."
+                    }
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Cài đặt Địa hình (1/4)",
+                    "image": "images/game-dev/week5/slide_17.png",
+                    "notes": "Các cài đặt cơ bản của địa hình:\n\n- <b>Show:</b> Bật/tắt việc hiển thị địa hình.\n- <b>Pixel Error:</b> Các giá trị cao hơn cho độ chính xác thấp hơn (quan hệ giữa độ cao/texture và địa hình) nhưng chi phí render thấp hơn.\n- <b>Base Map Distance:</b> Khoảng cách tối đa mà tại đó các texture địa hình sẽ được hiển thị ở độ phân giải đầy đủ. Vượt qua khoảng cách này, một hình ảnh ghép có độ phân giải thấp hơn sẽ được sử dụng để tăng hiệu quả.\n- <b>Cast Shadows:</b> Bật/tắt việc địa hình có tạo ra bóng đổ hay không.\n- <b>Material:</b> Vật liệu được sử dụng để render địa hình.\n- <b>Reflection Probes:</b> Cách các reflection probe được sử dụng trên địa hình.\n- <b>Thickness:</b> Độ dày mà khối va chạm của địa hình nên mở rộng dọc theo trục Y âm (để ngăn các đối tượng di chuyển tốc độ cao xuyên qua địa hình).",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Cài đặt Địa hình (2/4)",
+                    "image": "images/game-dev/week5/slide_18.png",
+                    "notes": "Cài đặt cho cây và các đối tượng chi tiết:\n\n- <b>Draw:</b> Bật/tắt việc vẽ cây, cỏ và các chi tiết.\n- <b>Detail Distance:</b> Khoảng cách mà vượt qua đó các chi tiết sẽ bị 'cull' (không được vẽ).\n- <b>Detail Density:</b> Số lượng các đối tượng chi tiết/cỏ trong một đơn vị diện tích nhất định.\n- <b>Tree Distance:</b> Khoảng cách mà vượt qua đó cây sẽ bị 'cull'.\n- <b>Billboard Start:</b> Khoảng cách mà tại đó các đối tượng cây 3D sẽ được thay thế bằng các hình ảnh billboard.\n- <b>Fade length:</b> Khoảng cách mà trên đó cây sẽ chuyển tiếp giữa đối tượng 3D và billboard.\n- <b>Max Mesh Trees:</b> Số lượng cây có thể nhìn thấy tối đa dưới dạng các mesh 3D rắn.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Cài đặt Địa hình (3/4)",
+                    "image": "images/game-dev/week5/slide_19.png",
+                    "notes": "Cài đặt Gió (Wind Settings) trên địa hình:\n\n- <b>Speed:</b> Tốc độ của gió khi nó thổi qua cỏ.\n- <b>Size:</b> Kích thước của các gợn sóng trên các khu vực cỏ khi gió thổi qua chúng.\n- <b>Bending:</b> Mức độ mà các đối tượng cỏ bị uốn cong bởi gió.\n- <b>Grass Tint:</b> Tông màu tổng thể được áp dụng cho các đối tượng cỏ.",
+                    "terms": {}
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Cài đặt Địa hình (4/4)",
+                    "image": "images/game-dev/week5/slide_20.png",
+                    "notes": "Cài đặt Độ phân giải (Resolution):\n<b>Lưu ý:</b> Việc sửa đổi độ phân giải sẽ xóa heightmap!\n\n- <b>Terrain Width/Length:</b> Kích thước của đối tượng địa hình theo trục X/Z.\n- <b>Terrain Height:</b> Sự khác biệt theo tọa độ Y giữa giá trị heightmap thấp nhất và cao nhất có thể.\n- <b>Heightmap Resolution:</b> Độ phân giải pixel của heightmap.\n- <b>Detail Resolution:</b> Độ phân giải của bản đồ cho các mảng vá chi tiết/cỏ riêng biệt.\n- <b>Control Texture Resolution:</b> Độ phân giải của 'splatmap' kiểm soát sự pha trộn của các texture địa hình khác nhau.",
+                    "terms": {
+                        "Splatmap": "Một texture được sử dụng trên địa hình để kiểm soát cách các texture khác nhau (cỏ, đất, đá...) được pha trộn với nhau. Mỗi kênh màu (Đỏ, Xanh lá, Xanh dương, Alpha) của splatmap có thể tương ứng với một loại texture bề mặt khác nhau."
+                    }
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Terrain Collider",
+                    "image": "images/game-dev/week5/slide_21.png",
+                    "notes": "<b>Terrain Collider</b> lấy một Terrain và xây dựng Collider của nó dựa trên địa hình đó. Component này được tự động thêm vào khi bạn tạo một đối tượng Terrain.\n\nCác thuộc tính chính:\n- <b>Material:</b> Physic Material được sử dụng cho bề mặt địa hình để chỉ định ma sát và độ nảy của nó.\n- <b>Terrain Data:</b> Dữ liệu địa hình mà collider sẽ lấy hình dạng từ đó.\n- <b>Create Tree Colliders:</b> Khi được chọn, các collider cho cây sẽ được tạo ra.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Chuyển tiếp - Buổi thực hành 5",
+                    "image": "images/game-dev/week5/slide_22.png",
+                    "notes": "Kết thúc phần lý thuyết về Terrains.\n\nPhần tiếp theo sẽ là xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Xem trước Buổi thực hành",
+                    "image": "images/game-dev/week5/slide_23.png",
+                    "notes": "Trong buổi thực hành tuần này, bạn sẽ tạo ra một địa hình với tất cả các tính năng của nó, bao gồm cả âm thanh và ánh sáng.\n\nBài giảng tiếp theo: <b>GUIs, Menus and Data, Particle Systems.</b>",
+                    "terms": {}
+                }
+            ]
         }
     ]
 }
