@@ -2308,6 +2308,367 @@
                     "terms": {}
                 }
             ]
+        },
+        {
+            "title": "Tuần 7: Persistence and Animations",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - Persistence and Animations",
+                    "image": "images/game-dev/week7/slide_1.png",
+                    "notes": "Bài giảng 7: Tính bền bỉ (Lưu trữ dữ liệu) và Animations.\n\nTuần này chúng ta sẽ tìm hiểu cách lưu và tải dữ liệu game, cũng như các kỹ thuật tạo và điều khiển chuyển động cho nhân vật và đối tượng.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week7/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 7 bao gồm:\n\n1. <b>Tính bền bỉ: Tải và Lưu Dữ liệu.</b>\n2. <b>Máy trạng thái hữu hạn, Animations và Animators.</b>\n3. <b>Pha trộn Animations (Blending Animations).</b>\n4. <b>Điều khiển Animation bằng Script.</b>\n5. <b>Câu hỏi ôn tập và Xem trước buổi thực hành.</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chuyển tiếp - Tải và Lưu Dữ liệu",
+                    "image": "images/game-dev/week7/slide_3.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Các kỹ thuật để lưu trữ dữ liệu game giữa các lần chơi và giữa các màn chơi.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Giữa các Scene - Player Preferences",
+                    "image": "images/game-dev/week7/slide_4.png",
+                    "notes": "Cách dễ nhất (và <b>sai lầm!</b>) để lưu và tải dữ liệu giữa các scene là sử dụng <b>PlayerPrefs</b>. Về cơ bản, PlayerPrefs là một hash map cho phép lưu trữ và truy xuất các giá trị bất kỳ lúc nào, và nó không bị phá hủy hoặc xóa khi đóng một scene.\n\nPlayerPrefs cung cấp các phương thức như `GetFloat`, `SetInt`, `GetString`, `HasKey`, `DeleteAll`, v.v.\n\nHàm `Save()` ghi tất cả các thay đổi vào đĩa (không nên gọi trong khi gameplay vì lý do hiệu suất).",
+                    "terms": {
+                        "PlayerPrefs": "Một lớp trong Unity cung cấp một cách đơn giản để lưu và truy xuất các dữ liệu nhỏ (như cài đặt người dùng, điểm cao) giữa các phiên chơi game. Dữ liệu được lưu dưới dạng văn bản thuần túy và không an toàn."
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Giữ đối tượng giữa các Scene (1/2)",
+                    "image": "images/game-dev/week7/slide_5.png",
+                    "notes": "PlayerPrefs <b>không phải</b> là một cách an toàn để lưu thông tin giữa các scene vì nó là văn bản thuần túy! PlayerPrefs chỉ nên được dùng để lưu... tùy chọn của người chơi! (Dữ liệu không quan trọng cho game).\n\nMột cách tốt hơn, bạn có thể lưu dữ liệu trong một đối tượng, và sử dụng `DontDestroyOnLoad` để tránh việc phá hủy một đối tượng khi chuyển từ scene này sang scene khác.\n\n`DontDestroyOnLoad` làm cho đối tượng mục tiêu không bị phá hủy tự động khi tải một scene mới.",
+                    "terms": {
+                        "DontDestroyOnLoad()": "Một hàm static của Unity dùng để đánh dấu một đối tượng không bị phá hủy khi một scene mới được tải. Rất hữu ích để tạo ra các đối tượng quản lý (manager objects) tồn tại xuyên suốt game."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Giữ đối tượng giữa các Scene (2/2)",
+                    "image": "images/game-dev/week7/slide_6.png",
+                    "notes": "Chúng ta có thể tạo một script `GameControl` và gắn nó vào một đối tượng mà chúng ta muốn bảo tồn. Script này sử dụng một mẫu thiết kế gọi là <b>Singleton</b>.\n\nTrong hàm `Awake()`, nó kiểm tra xem đã có một `control` (thể hiện của GameControl) tồn tại hay chưa. Nếu chưa, nó sẽ tự đặt mình làm `control` duy nhất và gọi `DontDestroyOnLoad`. Nếu đã có một `control` khác tồn tại (khi bạn tải lại scene chứa nó), nó sẽ tự hủy để đảm bảo chỉ có một `GameControl` duy nhất trong toàn bộ game.",
+                    "terms": {
+                        "Singleton Pattern": "Một mẫu thiết kế phần mềm đảm bảo rằng một lớp chỉ có một thể hiện (instance) duy nhất và cung cấp một điểm truy cập toàn cục đến thể hiện đó. Rất phổ biến để tạo các đối tượng quản lý như GameManager, AudioManager."
+                    }
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Tính bền bỉ - Lưu vào một File (1/3)",
+                    "image": "images/game-dev/week7/slide_7.png",
+                    "notes": "Làm thế nào bạn có thể lưu dữ liệu giữa các lần thực thi game? Một cách hay để làm điều đó là thông qua <b>Serialization</b>. Serialization là \"quá trình chuyển đổi một đối tượng thành một luồng byte để lưu trữ đối tượng đó hoặc truyền nó vào bộ nhớ, cơ sở dữ liệu hoặc một tệp\".\n\nTrong Unity, bạn có thể chỉ ra rằng một đối tượng có thể được serialize đơn giản bằng cách thêm `[Serializable]` vào trước định nghĩa class. Sau đó, bạn có thể tạo một class chứa tất cả thông tin trạng thái game mà bạn muốn lưu vào một tệp.",
+                    "terms": {
+                        "Serialization": "Quá trình chuyển đổi trạng thái của một đối tượng thành một định dạng (ví dụ: chuỗi, luồng byte) có thể được lưu trữ (vào tệp, bộ nhớ) hoặc truyền đi và sau đó được tái tạo lại. Đây là nền tảng của việc lưu và tải game."
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Tính bền bỉ - Lưu vào một File (2/3)",
+                    "image": "images/game-dev/week7/slide_8.png",
+                    "notes": "Slide này trình bày một kịch bản `GameControl` hoàn chỉnh hơn.\n\n- Một class `PlayerData` được định nghĩa với thuộc tính `[Serializable]` để chứa dữ liệu cần lưu (ví dụ: `health`).\n- Mẫu Singleton `GameControl` được sử dụng để đảm bảo chỉ có một instance duy nhất.\n- Các hàm `Save()` và `Load()` (chưa có nội dung) được tạo ra để xử lý logic lưu và tải dữ liệu.",
+                    "terms": {
+                        "BinaryFormatter": "Một lớp trong .NET dùng để serialize và deserialize một đối tượng (hoặc một đồ thị các đối tượng được kết nối) ở định dạng nhị phân. Dữ liệu nhị phân nhỏ gọn và khó đọc hơn so với văn bản, nhưng không được coi là an toàn."
+                    }
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Tính bền bỉ - Lưu vào một File (3/3)",
+                    "image": "images/game-dev/week7/slide_9.png",
+                    "notes": "Đây là nội dung cho các hàm `Save()` và `Load()`:\n\n- <b>Hàm Save():</b>\n  1. Tạo đường dẫn tệp đầy đủ bằng cách sử dụng `Application.persistentDataPath`.\n  2. Tạo một `BinaryFormatter`.\n  3. Mở (hoặc tạo) một file bằng `FileStream`.\n  4. Tạo một instance của `PlayerData` và sao chép dữ liệu game hiện tại vào đó.\n  5. Dùng `bf.Serialize()` để ghi đối tượng `PlayerData` vào file.\n  6. Đóng file lại.\n\n- <b>Hàm Load():</b>\n  1. Kiểm tra xem file lưu có tồn tại không.\n  2. Nếu có, mở file và dùng `bf.Deserialize()` để đọc dữ liệu từ file và ép kiểu nó trở lại thành `PlayerData`.\n  3. Cập nhật trạng thái game hiện tại từ dữ liệu đã tải.",
+                    "terms": {
+                        "Application.persistentDataPath": "Một thuộc tính static trong Unity trả về một đường dẫn đến một thư mục nơi bạn có thể lưu trữ dữ liệu cần được giữ lại giữa các lần chạy game. Đường dẫn này khác nhau tùy theo hệ điều hành."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Chuyển tiếp - Máy trạng thái hữu hạn & Animations",
+                    "image": "images/game-dev/week7/slide_10.png",
+                    "notes": "Kết thúc phần Tải và Lưu Dữ liệu.\n\nPhần tiếp theo sẽ giới thiệu về một mô hình lý thuyết quan trọng (Máy trạng thái hữu hạn) và cách nó được áp dụng trong hệ thống Animation của Unity.",
+                    "terms": {}
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Máy trạng thái hữu hạn (1/2)",
+                    "image": "images/game-dev/week7/slide_11.png",
+                    "notes": "<b>Máy trạng thái hữu hạn (Finite State Machines - FSMs)</b> là một mô hình toán học được hình thành như một cỗ máy trừu tượng có thể ở trong một trong một số lượng hữu hạn các <b>trạng thái (states)</b>.\n\nCỗ máy chỉ ở trong một trạng thái tại một thời điểm; trạng thái đó được gọi là trạng thái hiện tại. Nó có thể thay đổi từ trạng thái này sang trạng thái khác khi được khởi xướng bởi một sự kiện hoặc điều kiện kích hoạt; điều này được gọi là một <b>sự chuyển đổi (transition)</b>.",
+                    "terms": {
+                        "Finite State Machine (FSM)": "Một mô hình tính toán bao gồm một tập hợp các trạng thái, một trạng thái bắt đầu, các điều kiện đầu vào, và một hàm chuyển đổi xác định trạng thái tiếp theo. Rất phổ biến trong lập trình game để quản lý AI, animation, và logic game."
+                    }
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Máy trạng thái hữu hạn (2/2)",
+                    "image": "images/game-dev/week7/slide_12.png",
+                    "notes": "Các ưu và nhược điểm chính của FSMs:\n\n- <b>Ưu điểm:</b> Đơn giản để triển khai, dễ hình dung.\n- <b>Nhược điểm:</b> Mở rộng kém để xử lý logic phức tạp, không được thiết kế để đối phó với sự đồng thời (concurrency).\n\nChúng ta sẽ sử dụng FSMs cho hai khía cạnh khác nhau trong môn học này: hệ thống animation của Unity (bài giảng này) và Trí tuệ nhân tạo (bài giảng 9).",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Mecanim",
+                    "image": "images/game-dev/week7/slide_13.png",
+                    "notes": "<b>Mecanim</b> là Hệ thống Animation của Unity, cho phép thiết lập animation trên các nhân vật hình người, chuyển đổi giữa các animation, áp dụng animation từ mô hình nhân vật này sang mô hình khác, v.v.\n\nQuy trình làm việc trong Mecanim có thể được chia thành ba giai đoạn chính:\n1. <b>Chuẩn bị và nhập Asset:</b> Được thực hiện bởi các họa sĩ hoặc animator, với các công cụ của bên thứ ba như 3Ds Max hoặc Maya.\n2. <b>Thiết lập nhân vật:</b> Có thể là hình người (humanoid) hoặc chung (generic - sinh vật, đạo cụ hoạt hình, động vật bốn chân, v.v.).\n3. <b>Làm cho nhân vật sống động:</b> Thiết lập các clip animation, máy trạng thái, và scripting.",
+                    "terms": {
+                        "Mecanim": "Tên của hệ thống animation mạnh mẽ và linh hoạt của Unity. Nó bao gồm các công cụ để tạo và quản lý các animation clip, blend tree, và các máy trạng thái phức tạp (Animator Controllers).",
+                        "Animation Clip": "Một asset animation trong Unity chứa dữ liệu về cách một hoặc nhiều thuộc tính của một đối tượng thay đổi theo thời gian (ví dụ: vị trí, góc xoay, màu sắc).",
+                        "Humanoid Rig": "Một cấu trúc xương được tiêu chuẩn hóa trong Mecanim cho các nhân vật hình người. Sử dụng rig này cho phép bạn dễ dàng tái sử dụng các animation trên các mô hình nhân vật khác nhau."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Animation Clips",
+                    "image": "images/game-dev/week7/slide_14.png",
+                    "notes": "<b>Animation Clips</b> có thể được tạo từ Project View hoặc từ cửa sổ Animation.\n\nCửa sổ Animation cho phép bạn tạo ra các animation bằng cách thay đổi các thuộc tính của một đối tượng theo thời gian và đặt các 'keyframe'.\n\nAnimation Clips luôn là một phần của một <b>Animator</b>. Hình ảnh bên dưới cho thấy một animation clip trông như thế nào khi nó được tạo ra, với các thuộc tính như độ dài, có lặp lại không...",
+                    "terms": {
+                        "Animation Window": "Một cửa sổ trong Unity Editor cho phép bạn tạo và chỉnh sửa các Animation Clip trực tiếp bằng cách ghi lại các thay đổi thuộc tính của một Game Object theo thời gian."
+                    }
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: The Animation View",
+                    "image": "images/game-dev/week7/slide_15.png",
+                    "notes": "Cửa sổ Animation hiển thị dòng thời gian (timeline) và các keyframe của animation cho đối tượng game hiện đang được chọn.\n\n- Bên trái, cửa sổ này hiển thị danh sách các thuộc tính được làm hoạt hình.\n- Bằng cách di chuyển vạch đỏ, bạn có thể xem các giá trị này.\n- Nếu chế độ ghi âm được nhấn, việc giới thiệu các giá trị mới sẽ tạo ra các keyframe mới tại thời điểm mà vạch đỏ được đặt.\n- Chế độ xem dòng thời gian có hai chế độ: 'Dope Sheet' và 'Curves'.",
+                    "terms": {
+                        "Keyframe": "Một điểm đánh dấu trên dòng thời gian animation, ghi lại giá trị của một thuộc tính tại một thời điểm cụ thể. Animation được tạo ra bằng cách nội suy các giá trị giữa các keyframe.",
+                        "Dope Sheet": "Một chế độ xem trong Animation Window, hiển thị các keyframe dưới dạng các điểm kim cương trên một dòng thời gian ngang, giúp dễ dàng điều chỉnh thời gian của các sự kiện.",
+                        "Curves View": "Một chế độ xem trong Animation Window, hiển thị sự thay đổi của các giá trị thuộc tính theo thời gian dưới dạng các đồ thị đường cong, cho phép kiểm soát chi tiết hơn về tốc độ và gia tốc của animation."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: The Animation Setup",
+                    "image": "images/game-dev/week7/slide_16.png",
+                    "notes": "Sơ đồ này tóm tắt cách các thành phần animation liên kết với nhau:\n\n1. <b>Animation Clip</b> (ví dụ: 'Cube Bouncing'): Chứa dữ liệu chuyển động (các keyframe).\n2. <b>Animator Controller</b> (ví dụ: 'Cube Animation Controller'): Một máy trạng thái (FSM) quản lý các animation clip và các chuyển đổi (transitions) giữa chúng. Animation Clip được kéo vào cửa sổ Animator để tạo ra một 'trạng thái' (state).\n3. <b>Animator Component:</b> Được gắn vào Game Object (ví dụ: 'Cube'). Nó lấy một Animator Controller làm đầu vào và sử dụng nó để điều khiển các animation trên đối tượng đó.",
+                    "terms": {
+                        "Animator Controller": "Một asset trong Unity cho phép bạn sắp xếp và quản lý một tập hợp các animation clip và các chuyển đổi giữa chúng cho một nhân vật hoặc đối tượng. Về cơ bản, nó là một máy trạng thái hữu hạn cho các animation.",
+                        "Animator Component": "Component được gắn vào một Game Object để gán một Animator Controller cho nó, từ đó làm cho đối tượng đó có thể được diễn hoạt."
+                    }
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Component Animator",
+                    "image": "images/game-dev/week7/slide_17.png",
+                    "notes": "Component <b>Animator</b> cho phép diễn hoạt các thuộc tính của các đối tượng game trong Unity (thay đổi một số giá trị của chúng theo thời gian).\n\n- <b>Controller:</b> Tham chiếu đến một asset Animator Controller.\n- <b>Avatar:</b> Một asset được Unity tạo ra khi một mô hình 3D hình người (humanoid) được nhập vào. Nó liên kết mô hình sẽ được diễn hoạt với animator.",
+                    "terms": {
+                        "Avatar (in Mecanim)": "Một asset trung gian dùng để ánh xạ (map) một cấu trúc xương cụ thể của một mô hình với cấu trúc xương Humanoid chuẩn của Unity. Avatar là thứ cho phép các animation có thể được tái sử dụng trên các nhân vật khác nhau."
+                    }
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Component Animator (Tiếp theo)",
+                    "image": "images/game-dev/week7/slide_18.png",
+                    "notes": "Các thuộc tính quan trọng khác của component Animator:\n\n- <b>Apply Root Motion:</b> Xác định xem animation có thể ảnh hưởng đến Transform của đối tượng được diễn hoạt hay không, hay điều này nên được kiểm soát từ script. Nên bật nếu animation di chuyển mô hình, và tắt nếu animation xảy ra tại chỗ.\n- <b>Update Mode:</b> Xác định xem animation nên được thực thi đồng bộ với engine vật lý (`Animate Physics`), với thời gian không bị co giãn (`Unscaled Time`), hay bình thường.\n- <b>Culling Mode:</b> Cho biết animation có nên được phát khi chúng không được render hay không. `Always Animate` sẽ luôn phát animation. `Based On Renderers` chỉ diễn hoạt nhân vật nếu nó đang được render (tiết kiệm hiệu suất).",
+                    "terms": {
+                        "Root Motion": "Chuyển động của toàn bộ nhân vật được điều khiển bởi chính animation clip, thay vì bằng script. Ví dụ, một animation bước đi sẽ thực sự đẩy nhân vật về phía trước trong thế giới game."
+                    }
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Animator Controller",
+                    "image": "images/game-dev/week7/slide_19.png",
+                    "notes": "<b>Animator Controllers</b> chứa một hoặc nhiều máy trạng thái (state machines) xác định các animation nào đang được phát và cách chúng hòa trộn (blends) với nhau.\n\nCửa sổ Animator Controller chứa các layer animation, các tham số animation và máy trạng thái.",
+                    "terms": {
+                        "Animator Controller Window": "Một cửa sổ đồ họa trong Unity nơi bạn xây dựng và chỉnh sửa Animator Controller. Bạn có thể tạo các trạng thái, định nghĩa các tham số, và thiết lập các chuyển đổi giữa chúng bằng cách kéo thả và nối các đường dẫn."
+                    }
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Các Trạng thái Animation (1/2)",
+                    "image": "images/game-dev/week7/slide_20.png",
+                    "notes": "<b>Animation States</b> là các khối xây dựng của máy trạng thái. Chúng chứa animation (hoặc blend tree) sẽ được phát khi máy trạng thái ở trong trạng thái đó.\n\nCác trạng thái animation được kiểm soát bởi các tham số (parameters) nhận giá trị của chúng từ script. Sự thay đổi trong các tham số này được dùng để kích hoạt các chuyển đổi (transitions) sang các trạng thái khác nhau.\n\nCó ba trạng thái đặc biệt:\n- <b>Entry (màu xanh lá):</b> Điểm bắt đầu của máy trạng thái.\n- <b>Default State (màu cam):</b> Trạng thái mà máy sẽ ở trong khi được kích hoạt lần đầu tiên.\n- <b>Any State (màu xanh dương):</b> Một trạng thái đặc biệt, luôn hiện diện, được dùng để biểu diễn các chuyển đổi phải xảy ra từ bất kỳ trạng thái nào.",
+                    "terms": {
+                        "Animation State": "Một nút trong Animator Controller đại diện cho một animation clip hoặc một blend tree. Một nhân vật luôn ở trong một trạng thái tại một thời điểm.",
+                        "Parameters (Animator)": "Các biến (Float, Int, Bool, Trigger) mà bạn định nghĩa trong Animator Controller để kiểm soát các chuyển đổi giữa các trạng thái. Giá trị của chúng được thiết lập từ script."
+                    }
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Các Trạng thái Animation (2/2)",
+                    "image": "images/game-dev/week7/slide_21.png",
+                    "notes": "Nếu bạn nhấp vào một trạng thái animation, bạn có thể thấy các thuộc tính của nó trong bảng Inspector:\n\n- <b>Name</b> và <b>Tag</b> có thể được chỉ định cho trạng thái cụ thể này.\n- <b>Speed:</b> Tốc độ mà animation được phát. 1 là tốc độ bình thường.\n- <b>Motion:</b> Animation clip hoặc blend tree cho trạng thái.\n- <b>Foot IK:</b> Inverse Kinematics cho bàn chân, để loại bỏ, nếu được chọn, bất kỳ sự trượt chân nào trong animation.\n- <b>Mirror:</b> Lật animation từ trái sang phải.",
+                    "terms": {
+                        "Foot IK (Inverse Kinematics)": "Một tính năng của Mecanim cho phép hệ thống tự động điều chỉnh chân và bàn chân của nhân vật để chúng đặt đúng trên các bề mặt không bằng phẳng, giúp animation trông tự nhiên hơn."
+                    }
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Máy trạng thái con (Sub-State Machines)",
+                    "image": "images/game-dev/week7/slide_22.png",
+                    "notes": "Thông thường một nhân vật có những hành động phức tạp bao gồm một số giai đoạn. Thay vì xử lý toàn bộ hành động bằng một trạng thái duy nhất, sẽ hợp lý hơn nếu xác định các giai đoạn riêng biệt và sử dụng một trạng thái riêng cho mỗi giai đoạn.\n\nCó thể thu gọn một nhóm các trạng thái thành một mục có tên duy nhất trong sơ đồ máy trạng thái. Các nhóm trạng thái được thu gọn này được gọi là <b>máy trạng thái con (sub-state machines)</b>.",
+                    "terms": {
+                        "Sub-State Machine": "Một máy trạng thái được lồng vào bên trong một máy trạng thái khác. Chúng rất hữu ích để tổ chức và đơn giản hóa các Animator Controller phức tạp bằng cách nhóm các trạng thái có liên quan lại với nhau (ví dụ: một sub-state machine cho tất cả các hành động chiến đấu)."
+                    }
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Chuyển đổi Animation (1/2)",
+                    "image": "images/game-dev/week7/slide_23.png",
+                    "notes": "<b>Animation Transitions</b> định nghĩa những gì xảy ra khi bạn chuyển từ một Animation State này sang một cái khác. Chỉ có thể có một transition hoạt động tại bất kỳ thời điểm nào trong một máy trạng thái.\n\nĐối với mỗi transition, có hai nút kiểm tra:\n- <b>Solo:</b> Nếu được chọn, nó sẽ vô hiệu hóa tất cả các animation khác từ trạng thái gốc, ngoại trừ những cái cũng được đánh dấu là Solo.\n- <b>Mute:</b> Vô hiệu hóa animation một cách hiệu quả.\n\nHai nút kiểm tra này chỉ nên được sử dụng để gỡ lỗi (debug).",
+                    "terms": {
+                        "Animation Transition": "Một liên kết giữa hai trạng thái trong Animator Controller, định nghĩa cách hệ thống hòa trộn (blend) từ animation này sang animation khác. Các transition được điều khiển bởi các điều kiện (Conditions) dựa trên các tham số (Parameters)."
+                    }
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Chuyển đổi Animation (2/2)",
+                    "image": "images/game-dev/week7/slide_24.png",
+                    "notes": "Có ba phần chính trong bảng điều khiển Animation Transition:\n\n- <b>Has Exit Time:</b> Nếu được đánh dấu, transition sẽ xảy ra khi animation của trạng thái trước đó kết thúc. <b>Exit Time</b> và các cài đặt khác có thể được sử dụng để tinh chỉnh transition này.\n- <b>Conditions (Điều kiện):</b> Quyết định khi nào transition được kích hoạt, cho phép dựa vào các giá trị tham số (những cái được kiểm soát thông qua script).\n- <b>A Preview window:</b> Cửa sổ xem trước cho thấy transition trông như thế nào trên mô hình.",
+                    "terms": {
+                        "Has Exit Time": "Một cài đặt trên một transition. Nếu bật, transition sẽ chỉ có thể xảy ra sau khi animation của trạng thái hiện tại đã phát được một khoảng thời gian nhất định (được xác định bởi 'Exit Time'). Nếu tắt, transition có thể xảy ra bất cứ lúc nào miễn là các điều kiện (Conditions) của nó được đáp ứng."
+                    }
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Animation Parameters",
+                    "image": "images/game-dev/week7/slide_25.png",
+                    "notes": "<b>Animation Parameters</b> là các biến được định nghĩa bên trong hệ thống animation và có thể được truy cập cũng như gán giá trị từ các script. Các tham số có thể thuộc 4 loại khác nhau:\n\n- <b>Integer, Float, Bool:</b> Các kiểu dữ liệu số và boolean thông thường.\n- <b>Trigger:</b> Một tham số boolean được controller tự động reset lại sau khi nó được sử dụng bởi một transition.\n\nCác tham số có thể được gán giá trị từ một script bằng cách sử dụng các hàm trong lớp Animator như `SetTrigger`, `SetFloat`, `SetInt` và `SetBool`.",
+                    "terms": {
+                        "Trigger (Parameter)": "Một loại tham số không có trạng thái, giống như một sự kiện. Khi được kích hoạt từ script (`SetTrigger`), nó sẽ gây ra một transition và ngay lập tức tự reset. Rất hữu ích cho các hành động xảy ra một lần như tấn công hoặc nhảy."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: Chuyển tiếp - Blending Animations",
+                    "image": "images/game-dev/week7/slide_26.png",
+                    "notes": "Kết thúc phần giới thiệu về các trạng thái và chuyển đổi cơ bản.\n\nPhần tiếp theo sẽ tập trung vào một kỹ thuật mạnh mẽ để tạo ra các chuyển động phức tạp và mượt mà hơn: Blending Animations (Pha trộn Animations).",
+                    "terms": {}
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Blend Trees",
+                    "image": "images/game-dev/week7/slide_27.png",
+                    "notes": "<b>Blend trees</b> được dùng để pha trộn giữa hai hoặc nhiều chuyển động tương tự nhau. Các ví dụ điển hình là pha trộn giữa các animation đi bộ và chạy theo tốc độ của nhân vật, hoặc một nhân vật nghiêng sang trái hoặc phải khi anh ta rẽ trong lúc chạy.\n\nSự khác biệt giữa transitions và blend trees:\n- <b>Transitions:</b> Dùng để chuyển đổi mượt mà từ một Animation State này sang một cái khác.\n- <b>Blend Trees:</b> Dùng để cho phép nhiều animation được pha trộn mượt mà bằng cách kết hợp các phần của chúng ở các mức độ khác nhau. Mức độ đóng góp của mỗi chuyển động vào hiệu ứng cuối cùng được kiểm soát bằng một tham số pha trộn.",
+                    "terms": {
+                        "Blend Tree": "Một loại trạng thái đặc biệt trong Animator Controller cho phép bạn pha trộn nhiều animation clip với nhau dựa trên giá trị của một hoặc nhiều tham số. Rất hữu ích để tạo ra các chuyển động liền mạch như đi bộ/chạy ở các tốc độ khác nhau hoặc nghiêng người khi rẽ."
+                    }
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Blend Trees - 1D",
+                    "image": "images/game-dev/week7/slide_28.png",
+                    "notes": "<b>Blend Tree 1 chiều (1-Dimensional)</b> pha trộn giữa các chuyển động bằng cách sử dụng <b>một</b> tham số. Trong ví dụ này, blend tree pha trộn giữa các animation Chạy (Run), Chạy Phải (RunRight) / Chạy Trái (RunLeft) bằng cách sử dụng tham số `Direction`.\n\nDanh sách các chuyển động chứa các animation khác nhau để pha trộn. Mỗi animation có một `animation clip`, một `threshold` (ngưỡng - giá trị của tham số được sử dụng để bắt đầu/kết thúc việc pha trộn), và một `speed`.",
+                    "terms": {
+                        "1D Blend Tree": "Một loại Blend Tree sử dụng một tham số duy nhất để pha trộn giữa hai hoặc nhiều animation. Thường được dùng để kiểm soát tốc độ (ví dụ: chuyển từ Đứng yên -> Đi bộ -> Chạy)."
+                    }
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Blend Trees - 2D (1/2)",
+                    "image": "images/game-dev/week7/slide_29.png",
+                    "notes": "<b>Blend Tree 2 chiều (2-Dimensional)</b> pha trộn giữa các chuyển động bằng cách sử dụng <b>hai</b> tham số.\n\nTrong ví dụ này, blend tree pha trộn giữa năm animation: Đứng yên (Idle), Đi tới (Walk Forward), Đi lùi (Walk Backwards), Đi ngang sang trái (Walk Strafe Left) và Đi ngang sang phải (Walk Strafe Right).\n\nNó sử dụng các tham số `VelocityX` và `VelocityZ` để pha trộn giữa các animation này.",
+                    "terms": {
+                        "2D Blend Tree": "Một loại Blend Tree sử dụng hai tham số để pha trộn giữa nhiều animation được sắp xếp trên một mặt phẳng 2D. Rất hữu ích cho việc tạo ra các chuyển động đa hướng (ví dụ: đi bộ/chạy theo mọi hướng)."
+                    }
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Blend Trees - 2D (2/2)",
+                    "image": "images/game-dev/week7/slide_30.png",
+                    "notes": "Sơ đồ Pha trộn 2D (2D Blending Diagram) hiển thị mỗi chuyển động được miêu tả bằng một chấm màu xanh. Chấm màu đỏ cho biết các giá trị của hai tham số hiện tại.\n\n- Các vòng tròn xung quanh các chuyển động gần đó cho biết sức ảnh hưởng (trọng số) của những chuyển động đó tại các giá trị tham số hiện tại.\n- Vùng màu xanh xung quanh chuyển động được chọn cho biết sức ảnh hưởng (trọng số) của chuyển động đó cho mỗi điểm trong không gian pha trộn.",
+                    "terms": {}
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Humanoid Avatars",
+                    "image": "images/game-dev/week7/slide_31.png",
+                    "notes": "<b>Avatars</b> là các hệ thống định nghĩa cho biết hệ thống animation cách diễn hoạt các transform của một mô hình. Bạn có thể cấu hình avatar bằng cách nhấp vào mesh của mô hình và đi đến tab 'Rig'.\n\nNếu bạn nhấp vào 'Configure Avatar', bạn có thể cấu hình avatar cho humanoid của mình. Điều này cho phép:\n- <b>Mapping:</b> Ánh xạ giữa các xương và các transform.\n- <b>Muscles:</b> Phạm vi chuyển động của các xương của avatar.",
+                    "terms": {
+                        "Avatar (in Mecanim)": "Một asset trung gian dùng để ánh xạ (map) một cấu trúc xương cụ thể của một mô hình với cấu trúc xương Humanoid chuẩn của Unity. Avatar là thứ cho phép các animation có thể được tái sử dụng trên các nhân vật khác nhau."
+                    }
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Animator Controller Layers (1/2)",
+                    "image": "images/game-dev/week7/slide_32.png",
+                    "notes": "<b>Animator Layers</b> được sử dụng để quản lý các máy trạng thái phức tạp, nhằm diễn hoạt các bộ phận cụ thể của cơ thể. Ví dụ, bạn có thể có một layer cơ sở chăm sóc cho việc di chuyển của avatar, và một layer thứ hai chăm sóc cho việc bắn súng.\n\nMỗi layer có thể đang phát một animation khác nhau cùng một lúc; cả hai được pha trộn tùy thuộc vào cách các layer được cấu hình.\n\nTheo mặc định, tất cả các controller đều có một <b>Base Layer</b> nơi bạn có thể đặt các trạng thái và transition của mình.",
+                    "terms": {
+                        "Animator Layer": "Cho phép bạn quản lý các animation cho các bộ phận cơ thể khác nhau một cách độc lập. Ví dụ, một layer có thể điều khiển chân (đi bộ/chạy) trong khi một layer khác điều khiển phần thân trên (bắn súng, vung kiếm)."
+                    }
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Animator Controller Layers (2/2)",
+                    "image": "images/game-dev/week7/slide_33.png",
+                    "notes": "Có thể chỉ định một số tham số cho mỗi layer:\n\n- <b>Name:</b> Tên của layer.\n- <b>Weight (Trọng số):</b> Mức độ layer ảnh hưởng đến animation cuối cùng. 0 có nghĩa là layer sẽ không ảnh hưởng, trong khi giá trị 1 sẽ chiếm toàn bộ ưu tiên.\n- <b>Mask:</b> Một Avatar Mask được dùng để cô lập các bộ phận cơ thể cho animation.\n- <b>Blending (Pha trộn):</b> Hai loại khác nhau:\n  - <b>Override:</b> Animation của layer này ghi đè lên animation của layer bên dưới.\n  - <b>Additive:</b> Animation được cộng thêm vào animation của layer bên dưới, được gia trọng bởi tham số `Weight`.",
+                    "terms": {
+                        "Avatar Mask": "Một asset cho phép bạn chỉ định các bộ phận cơ thể (đầu, tay, chân...) sẽ bị ảnh hưởng bởi một layer animation. Rất hữu ích để tạo các animation chỉ ảnh hưởng đến phần thân trên (ví dụ: vẫy tay trong khi đang đi bộ)."
+                    }
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Avatar/Body Masks",
+                    "image": "images/game-dev/week7/slide_34.png",
+                    "notes": "Các bộ phận cơ thể cụ thể có thể được bật hoặc tắt một cách chọn lọc trong một animation bằng cách sử dụng một thứ gọi là <b>Body Mask</b>.\n\nBạn có thể nhấp vào phần avatar để chuyển đổi giữa việc bao gồm (màu xanh) hoặc loại trừ (màu đỏ). Ví dụ, nếu chỉ có cánh tay trái của một layer ghi đè có màu xanh, thì chỉ các xương và transform của cánh tay trái sẽ bị sửa đổi bởi animation của layer này. Phần còn lại của cơ thể sẽ được quyết định bởi animation trong base layer.",
+                    "terms": {}
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: The Animator Controller (Tổng quan)",
+                    "image": "images/game-dev/week7/slide_35.png",
+                    "notes": "Sơ đồ này tóm tắt lại toàn bộ quy trình làm việc với Animator:\n\n1. <b>Animation Clips:</b> Các asset chứa dữ liệu chuyển động, thường được nhập cùng với mô hình 3D.\n2. <b>Animator Controller:</b> Asset chứa máy trạng thái. Các Animation Clip được kéo vào đây để tạo thành các trạng thái (ví dụ: `Jumping`, `Grounded`, `Die`).\n3. <b>Avatar:</b> Asset định nghĩa cấu trúc xương của mô hình, giúp Mecanim hiểu cách áp dụng animation.\n4. <b>Animator Component:</b> Được gắn vào Game Object trong Scene. Nó kết nối Animator Controller và Avatar với mô hình để thực hiện diễn hoạt.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Chuyển tiếp - Animation Scripting",
+                    "image": "images/game-dev/week7/slide_36.png",
+                    "notes": "Kết thúc phần giới thiệu về Blend Trees và các thành phần của Animator.\n\nPhần tiếp theo sẽ tập trung vào cách điều khiển Animator Controller từ script.",
+                    "terms": {}
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Ví dụ về Animation Scripting (1/2)",
+                    "image": "images/game-dev/week7/slide_37.png",
+                    "notes": "Đây là một ví dụ về một Animator Controller đơn giản với ba trạng thái: `Idle` (Đứng yên), `Run` (Chạy), `Jump` (Nhảy), và bốn tham số.\n\nCác transition được thiết lập như sau:\n- <b>Idle → Run:</b> Khi `Float Speed > 0.1`.\n- <b>Run → Idle:</b> Khi `Float Speed < 0.1`.\n- <b>Run → Jump:</b> Khi `Trigger Jump` được kích hoạt (`true`).\n- <b>Jump → Run:</b> Khi animation `Jump` đã kết thúc (Exit Time tại 0.90).",
+                    "terms": {}
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Ví dụ về Animation Scripting (2/2)",
+                    "image": "images/game-dev/week7/slide_38.png",
+                    "notes": "Đoạn mã này minh họa cách điều khiển Animator Controller ở trên từ script:\n\n- <b>Dòng 2-6:</b> Sử dụng `Animator.StringToHash()` để chuyển đổi tên của các tham số thành một giá trị 'hash' (số nguyên). Việc thay đổi tham số thông qua hash sẽ hiệu quả hơn so với việc dùng chuỗi trực tiếp.\n- <b>Dòng 10:</b> Lấy tham chiếu đến component Animator trong `Start()`.\n- <b>Dòng 15-21:</b> Trong `Update()`, kiểm tra xem trạng thái hiện tại có phải là 'Run' hay không. Nếu đúng và người dùng nhấn 'Fire1', kích hoạt trigger 'Jump'.\n- <b>Dòng 26-29:</b> Lấy giá trị từ các trục 'Horizontal' và 'Vertical' của Input, sau đó sử dụng chúng để thiết lập giá trị cho tham số 'Speed' và 'Direction' của animator.",
+                    "terms": {
+                        "Animator.StringToHash()": "Một hàm tối ưu hóa hiệu suất, chuyển đổi một tên chuỗi (của trạng thái hoặc tham số) thành một ID số nguyên. Việc sử dụng các hàm Set/Get với ID số nguyên sẽ nhanh hơn đáng kể so với việc sử dụng tên chuỗi ở mỗi frame."
+                    }
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: Lớp Animator",
+                    "image": "images/game-dev/week7/slide_39.png",
+                    "notes": "Các hàm hữu ích của lớp Animator:\n\n- <b>Animator.StringToHash:</b> Tạo ra một id tham số từ một chuỗi.\n- <b>GetBool, GetFloat, GetInteger:</b> Lấy giá trị của các tham số.\n- <b>SetBool, SetFloat, SetInteger, SetTrigger:</b> Thiết lập giá trị của các tham số.\n- <b>ResetTrigger:</b> Reset một tham số trigger.\n- <b>SetLayerWeight:</b> Thiết lập trọng số hiện tại của layer.\n- <b>GetCurrentAnimatorStateInfo:</b> Lấy thông tin về trạng thái hiện tại trên một layer Animator Controller được chỉ định.\n- <b>GetAnimatorTransitionInfo:</b> Lấy thông tin về transition hiện tại trên một layer.",
+                    "terms": {}
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: Các Struct AnimatorStateInfo và AnimatorTransitionInfo",
+                    "image": "images/game-dev/week7/slide_40.png",
+                    "notes": "<b>AnimatorStateInfo:</b> Chứa thông tin về trạng thái hiện tại hoặc trạng thái tiếp theo.\n- <b>length:</b> Thời lượng hiện tại của trạng thái.\n- <b>loop:</b> Trạng thái có đang lặp lại không.\n- <b>nameHash:</b> Tên hash của trạng thái.\n- <b>normalizedTime:</b> Thời gian đã được chuẩn hóa của trạng thái (phần nguyên là số lần lặp, phần thập phân là tiến trình trong lần lặp hiện tại).\n\n<b>AnimatorTransitionInfo:</b> Chứa thông tin về transition hiện tại.\n- <b>fullPathHash:</b> Tên hash duy nhất của transition.\n- <b>normalizedTime:</b> Thời gian đã được chuẩn hóa của transition.",
+                    "terms": {
+                        "normalizedTime": "Một giá trị float cho biết tiến trình của một animation state hoặc transition. Giá trị 0.0 có nghĩa là bắt đầu, 0.5 là giữa, và 1.0 là kết thúc."
+                    }
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: Chuyển tiếp - Câu hỏi & Demo Lab",
+                    "image": "images/game-dev/week7/slide_41.png",
+                    "notes": "Kết thúc phần lý thuyết về Animation Scripting.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: Xem trước Buổi thực hành",
+                    "image": "images/game-dev/week7/slide_42.png",
+                    "notes": "Chúng ta sẽ bắt đầu buổi lab thứ 4: Animations và AI.\n\nBài giảng tiếp theo: <b>Steering Behaviours and Navigation.</b>",
+                    "terms": {}
+                }
+            ]
         }
     ]
 }
