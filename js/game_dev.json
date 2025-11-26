@@ -2669,6 +2669,433 @@
                     "terms": {}
                 }
             ]
+        },
+        {
+            "title": "Tuần 8: Steering and Navigation",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - Steering and Navigation",
+                    "image": "images/game-dev/week8/slide_1.png",
+                    "notes": "Bài giảng 8: Các Hành vi Lèo lái và Điều hướng.\n\nTuần này, chúng ta sẽ khám phá các thuật toán giúp các nhân vật tự trị (autonomous characters) di chuyển một cách thông minh và chân thực trong thế giới game.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week8/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 8 bao gồm:\n\n1. <b>Các Hành vi Lèo lái cho các Nhân vật Tự trị.</b>\n2. <b>Tìm đường (Pathfinding).</b>\n3. <b>Lưới Điều hướng (Navigation Meshes) trong Unity.</b>\n4. <b>Câu hỏi ôn tập và Xem trước buổi thực hành.</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chuyển tiếp - Steering Behaviours",
+                    "image": "images/game-dev/week8/slide_3.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Các Hành vi Lèo lái (Steering Behaviours) cho các nhân vật tự trị.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Giới thiệu Steering Behaviours",
+                    "image": "images/game-dev/week8/slide_4.png",
+                    "notes": "<b>Các hành vi lèo lái (Steering behaviours)</b> nhằm mục đích giúp các nhân vật tự trị di chuyển một cách chân thực, bằng cách sử dụng các lực đơn giản được kết hợp để tạo ra sự điều hướng ngẫu hứng, giống như thật xung quanh môi trường của nhân vật.\n\nChúng không dựa trên các chiến lược phức tạp liên quan đến việc lập kế hoạch đường đi hoặc các tính toán toàn cục, mà thay vào đó sử dụng thông tin cục bộ, chẳng hạn như lực của các 'hàng xóm'. Điều này làm cho chúng đơn giản để hiểu và triển khai, nhưng vẫn có thể tạo ra các mẫu chuyển động rất phức tạp.",
+                    "terms": {
+                        "Steering Behaviours": "Một tập hợp các thuật toán AI giúp các tác tử (agents) di chuyển một cách tự nhiên trong môi trường của chúng. Thay vì tính toán một đường đi hoàn chỉnh, chúng hoạt động dựa trên các lực đơn giản (như tìm kiếm, trốn chạy, lang thang) để tạo ra chuyển động linh hoạt.",
+                        "Autonomous Characters (Agents)": "Các nhân vật trong game (thường là NPC) có khả năng tự đưa ra quyết định và hành động mà không cần sự điều khiển trực tiếp từ người chơi."
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Hướng (Orientation)",
+                    "image": "images/game-dev/week8/slide_5.png",
+                    "notes": "Kịch bản: nhân vật trong hình ảnh muốn thay đổi hướng của mình để đối mặt với mục tiêu.\n\nĐể làm được điều này, chúng ta cần tính toán vector `d` từ nhân vật đến mục tiêu. Sau đó, chuẩn hóa vector `d` để có được vector đơn vị `đu` chỉ hướng tới mục tiêu.\n\nHướng mới (tính bằng radian) có thể được tính bằng hàm `arc tangent` hoặc bằng `arc cosine` của tích vô hướng giữa vector `Up` của nhân vật và vector `đu`.",
+                    "terms": {
+                        "Orientation": "Hướng mà một đối tượng đang đối mặt trong không gian. Trong không gian 2D, nó có thể được biểu diễn bằng một góc duy nhất. Trong 3D, nó thường được biểu diễn bằng góc Euler hoặc Quaternion."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Chuyển động và Hướng",
+                    "image": "images/game-dev/week8/slide_6.png",
+                    "notes": "Chuyển động có thể được thực hiện bằng cách thêm một vector vận tốc `v` vào vị trí hiện tại `c`.\n\nThông thường, sự thay đổi này được nhân với một hệ số thời gian. Giả sử `Δt` là thời gian giữa hai lần gọi liên tiếp đến một hàm cập nhật (ví dụ: `Time.deltaTime`), vị trí mới có thể được xác định bằng công thức `c(t+1) = c(t) + (v * Δt)`.\n\nTrong code, chúng ta có thể cập nhật vị trí và hướng của một tác tử bằng cách lấy vận tốc mong muốn từ hành vi (`behaviour.Move(target)`) và cộng nó vào vị trí hiện tại, nhân với `Time.deltaTime`.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Các loại Steering Behaviours",
+                    "image": "images/game-dev/week8/slide_7.png",
+                    "notes": "Một số hành vi lèo lái phổ biến:\n\n- <b>Seek (Tìm kiếm):</b> Lèo lái nhân vật về phía một vị trí được chỉ định.\n- <b>Flee (Trốn chạy):</b> Ngược lại của Seek.\n- <b>Arrival (Đến nơi):</b> Giống như Seek, nhưng giảm tốc khi đến gần mục tiêu.\n- <b>Wander (Lang thang):</b> Một hành vi lèo lái ngẫu nhiên 'thú vị'.\n- <b>Pursuit (Truy đuổi):</b> Giống như Seek nhưng mục tiêu là một đối tượng đang di chuyển.\n- <b>Evade (Né tránh):</b> Tương tự như Pursuit, nhưng sử dụng Flee để lèo lái ra xa khỏi vị trí tương lai được dự đoán của mục tiêu.\n\nCác khái niệm khác:\n- <b>Flocking (Bầy đàn).</b>\n- <b>Obstacle/Wall Prediction and Avoidance (Dự đoán và Tránh chướng ngại vật/tường).</b>",
+                    "terms": {
+                        "Seek": "Một hành vi lèo lái cơ bản tính toán một lực hướng thẳng đến một mục tiêu. Nhân vật sẽ cố gắng di chuyển đến mục tiêu nhanh nhất có thể.",
+                        "Flee": "Ngược lại của Seek. Tính toán một lực hướng thẳng ra xa khỏi một mục tiêu.",
+                        "Arrival": "Một phiên bản cải tiến của Seek. Khi nhân vật đến gần mục tiêu, nó sẽ giảm tốc một cách mượt mà và dừng lại chính xác tại mục tiêu mà không bị 'vọt lố'."
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Seek (1/2)",
+                    "image": "images/game-dev/week8/slide_8.png",
+                    "notes": "<b>Seek</b> (hay truy đuổi một mục tiêu tĩnh) hoạt động để lèo lái nhân vật về phía một vị trí được chỉ định trong không gian toàn cục. Hành vi này điều chỉnh nhân vật sao cho vận tốc của nó được căn chỉnh xuyên tâm về phía mục tiêu.\n\nLưu ý rằng điều này khác với một lực hấp dẫn (như trọng lực) sẽ tạo ra một đường đi quỹ đạo <i>xung quanh</i> điểm mục tiêu.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Seek (2/2)",
+                    "image": "images/game-dev/week8/slide_9.png",
+                    "notes": "Hàm `seek()` tính toán một 'lực lèo lái' (steering force) để hướng về phía mục tiêu:\n1. <b>Tính Vận tốc Mong muốn (Desired Velocity):</b> Đây là vector chỉ từ vị trí hiện tại đến vị trí mục tiêu.\n2. <b>Chuẩn hóa và Điều chỉnh tốc độ:</b> Chuẩn hóa vector vận tốc mong muốn (để nó chỉ còn là hướng) và sau đó nhân với tốc độ tối đa (`speed`).\n3. <b>Tính Lực lèo lái (Steering Force):</b> Lực lèo lái là sự khác biệt giữa vận tốc mong muốn và vận tốc hiện tại (`currentVelocity`).\n\nTrong `FixedUpdate()`, lực lèo lái này được thêm vào vận tốc hiện tại (có tính đến khối lượng) và sau đó vận tốc mới được áp dụng cho Rigidbody của đối tượng.",
+                    "terms": {}
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Flee",
+                    "image": "images/game-dev/week8/slide_10.png",
+                    "notes": "Hành vi <b>Flee (Trốn chạy)</b> là phiên bản đảo ngược của Seek. Nó hoạt động theo logic tương tự, nhưng Vận tốc Mong muốn (Desired Velocity) được tính toán theo hướng ngược lại:\n\n`desiredVelocity = rigidbody.position - target.position;`\n\nKết quả là lực lèo lái sẽ đẩy nhân vật ra xa khỏi mục tiêu.",
+                    "terms": {}
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Arrival (1/2)",
+                    "image": "images/game-dev/week8/slide_11.png",
+                    "notes": "Hành vi <b>Arrival (Đến nơi)</b> giống hệt với Seek, nhưng thay vì di chuyển đến mục tiêu với tốc độ tối đa, nhân vật sẽ giảm tốc khi đến gần mục tiêu.\n\n- Vận tốc được giảm tuyến tính về 0 khi ở bên trong 'vùng giảm tốc' (slowing area).\n- Điều này đạt được bằng cách thêm một thành phần lèo lái mới (arrival).",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Arrival (2/2)",
+                    "image": "images/game-dev/week8/slide_12.png",
+                    "notes": "Hàm `arrival()` sửa đổi hành vi Seek bằng cách tính toán một `reducedSpeed` (tốc độ đã giảm).\n\n- Nó xác định một `rampedSpeed` dựa trên khoảng cách đến mục tiêu: càng gần, tốc độ càng chậm.\n- `reducedSpeed` sẽ là giá trị nhỏ hơn giữa `speed` (tốc độ tối đa) và `rampedSpeed`.\n- Vận tốc Mong muốn sau đó được tính toán bằng cách sử dụng `reducedSpeed` này thay vì tốc độ tối đa.",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Wander (1/2)",
+                    "image": "images/game-dev/week8/slide_13.png",
+                    "notes": "Hành vi <b>Wander (Lang thang)</b> là một loại lèo lái ngẫu nhiên.\n\nCách tiếp cận tốt hơn là giữ lại một 'lực lèo lái lang thang' và thay đổi nó một cách ngẫu nhiên sau mỗi khoảng thời gian.\n\n- Một vòng tròn tưởng tượng được đặt phía trước tác tử (agent).\n- Lực lèo lái là một vector trỏ đến một điểm trên vòng tròn đó.\n- Điểm này được di chuyển một chút và ngẫu nhiên sau mỗi N frame.\n- Bán kính của vòng tròn quyết định 'sức mạnh' lang thang tối đa.",
+                    "terms": {
+                        "Wander": "Một hành vi lèo lái tạo ra chuyển động ngẫu nhiên nhưng có vẻ tự nhiên. Thay vì chọn một hướng ngẫu nhiên ở mỗi frame, nó tạo ra một lực lèo lái thay đổi từ từ theo thời gian, tạo ra các đường đi cong và mượt mà."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Wander (2/2)",
+                    "image": "images/game-dev/week8/slide_14.png",
+                    "notes": "Hàm `wander()` thực hiện logic lang thang:\n\n- Nó tích lũy thời gian (`acumTime`). Sau mỗi `wanderTime` giây, nó sẽ tạo ra một góc xoay ngẫu nhiên `r`.\n- Lực lèo lái lang thang (`wanderSeering`) được xoay đi một góc `r`.\n- Một 'thành phần lang thang' được tính toán bằng cách nhân `wanderSeering` với bán kính vòng tròn.\n- Vận tốc Mong muốn được tính bằng cách cộng thành phần lang thang vào vận tốc hiện tại, sau đó chuẩn hóa và nhân với tốc độ.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Pursuit (1/2)",
+                    "image": "images/game-dev/week8/slide_15.png",
+                    "notes": "Hành vi <b>Pursuit (Truy đuổi)</b> tương đương với hành vi Seek, nhưng mục tiêu đang di chuyển.\n\nCách tiếp cận tốt hơn là <b>dự đoán</b> mục tiêu sẽ ở đâu trong tương lai và Seek đến vị trí dự đoán đó.\n\n- Một bộ dự đoán dựa trên vận tốc tuyến tính giả định rằng mục tiêu sẽ không rẽ.\n- Seek đến một vị trí được dự đoán trước `T` frame.\n- `T` nên giảm khi tác tử đến gần mục tiêu hơn.",
+                    "terms": {
+                        "Pursuit": "Một hành vi lèo lái thông minh hơn Seek, được sử dụng để đánh chặn một mục tiêu đang di chuyển. Nó hoạt động bằng cách dự đoán vị trí tương lai của mục tiêu và Seek đến điểm đó.",
+                        "Evade": "Ngược lại của Pursuit. Nó dự đoán vị trí tương lai của một kẻ săn đuổi và Flee khỏi điểm đó."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Pursuit (2/2)",
+                    "image": "images/game-dev/week8/slide_16.png",
+                    "notes": "Hàm `pursuit()` thực hiện logic truy đuổi:\n\n- Tính toán `T`, thời gian dự đoán, phụ thuộc vào khoảng cách đến mục tiêu.\n- Tính toán `advance`, là quãng đường mục tiêu sẽ di chuyển trong thời gian `T`.\n- `predictedTarget` là vị trí tương lai của mục tiêu (`target.position + advance`).\n- Phần còn lại của hàm tính toán Vận tốc Mong muốn và Lực lèo lái để Seek đến `predictedTarget` đó.",
+                    "terms": {}
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Evade",
+                    "image": "images/game-dev/week8/slide_17.png",
+                    "notes": "Hành vi <b>Evade (Né tránh)</b> tương đương với hành vi Flee, nhưng mục tiêu cần trốn chạy đang di chuyển (hoặc có thể xem là Pursuit nhưng trốn chạy thay vì tìm kiếm).\n\nLogic của nó là dự đoán vị trí tương lai của mục tiêu và sau đó Flee khỏi vị trí dự đoán đó. Không cần phải giảm thời gian dự đoán `T` theo khoảng cách.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Chuyển tiếp - Pathfinding",
+                    "image": "images/game-dev/week8/slide_18.png",
+                    "notes": "Kết thúc phần giới thiệu về các Hành vi Lèo lái (Steering Behaviours).\n\nPhần tiếp theo sẽ tập trung vào một kỹ thuật AI cơ bản khác: Tìm đường (Pathfinding).",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Giới thiệu Pathfinding",
+                    "image": "images/game-dev/week8/slide_19.png",
+                    "notes": "Một trong những lĩnh vực cơ bản nhất của Trí tuệ nhân tạo (AI) trong game là <b>tìm đường (path-finding)</b>, một khả năng trung tâm cho hầu hết các tương tác của NPC và game thủ.\n\nĐầu tiên, chúng ta cần xây dựng một đồ thị (graph) mà chúng ta có thể tìm kiếm:\n- <b>Nodes (Nút):</b> Biểu diễn các điểm trong không gian 2D hoặc 3D.\n- Các nút có các hàng xóm (các nút liền kề).\n- Các nút lân cận có thể có khoảng cách khác nhau.\n- Các nút có thể được xây dựng thủ công hoặc tự động.",
+                    "terms": {
+                        "Pathfinding": "Quá trình tìm kiếm đường đi ngắn nhất hoặc tốt nhất giữa hai điểm trong một không gian. Đây là một vấn đề phổ biến trong AI của game, giúp các NPC di chuyển một cách thông minh từ điểm A đến điểm B.",
+                        "Graph (Đồ thị)": "Trong khoa học máy tính, đây là một cấu trúc dữ liệu bao gồm một tập hợp các đỉnh (vertices) hoặc nút (nodes) và một tập hợp các cạnh (edges) nối các cặp đỉnh này. Rất hữu ích để biểu diễn các mạng lưới, bản đồ."
+                    }
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Pathfinding - Các loại lưới",
+                    "image": "images/game-dev/week8/slide_20.png",
+                    "notes": "Trong các lưới hình chữ nhật có kết nối 8 chiều, không phải tất cả các tâm ô đều cách đều nhau. Khoảng cách đi thẳng là 1, trong khi khoảng cách đi chéo là √2.\n\nChúng ta cũng có thể sử dụng các lưới lục giác (hexagonal grids), có thể dẫn đến chuyển động trông tự nhiên hơn. Tuy nhiên, chúng cũng tốn kém vì tất cả các khu vực 'không thú vị' đều được bao phủ như nhau.\n\nThay vào đó, chúng ta có thể sử dụng các lưới tùy ý (arbitrary grids):\n- Đặt các nút ở các vị trí cụ thể (ví dụ: trung tâm của một cánh cửa, hành lang).\n- Chỉ cần lưu trữ các điểm ưa thích (ít dữ liệu hơn).\n- Có thể kết hợp các chiến thuật (ví dụ: các điểm để ẩn nấp...).",
+                    "terms": {}
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Pathfinding - Minh họa",
+                    "image": "images/game-dev/week8/slide_21.png",
+                    "notes": "Slide này minh họa các cách khác nhau để biểu diễn thế giới game dưới dạng một đồ thị cho việc tìm đường:\n\n- <b>Lưới ô vuông (Rectangular Grid):</b> Cách tiếp cận đơn giản nhất.\n- <b>Lưới lục giác (Hexagonal Grid):</b> Cho phép chuyển động tự nhiên hơn.\n- <b>Lưới đa giác (Polygon Grid):</b> Phân chia không gian thành các đa giác lồi, thường được dùng trong các thuật toán Navigation Mesh.\n- <b>Đồ thị điểm ưa thích (Points of Interest Graph):</b> Chỉ đặt các nút tại các vị trí quan trọng như cửa ra vào, ngã rẽ.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Pathfinding - Thuật toán",
+                    "image": "images/game-dev/week8/slide_22.png",
+                    "notes": "Một khi đã có lưới, chúng ta cần tính toán cách đi từ A đến B bằng một thuật toán lập kế hoạch đường đi (path planning).\n\n- Cần điểm gốc (A) và mục tiêu (B).\n- Chúng ta thường quan tâm đến con đường hợp lệ ngắn nhất / nhanh nhất.\n\nNếu màn chơi là tĩnh (và mạng lưới tìm đường nhỏ), có thể sử dụng một <b>bảng tra cứu (lookup table)</b> các khoảng cách ngắn nhất đã được tính toán trước.\n\nBảng này có thể được tạo ra bằng <b>thuật toán Dijkstra</b>.",
+                    "terms": {
+                        "Dijkstra's Algorithm": "Một thuật toán tìm đường đi ngắn nhất từ một nút gốc đến tất cả các nút khác trong một đồ thị có trọng số cạnh không âm."
+                    }
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Thuật toán Dijkstra",
+                    "image": "images/game-dev/week8/slide_23.png",
+                    "notes": "Thuật toán của Dijkstra là một thuật toán tìm đường cổ điển rất hiệu quả (thời gian chạy đa thức). Nó tìm đường đi ngắn nhất từ một nút đến mọi nút khác trong mạng lưới. Nó là một biến thể của tìm kiếm theo chiều rộng (breadth first search).\n\nThuật toán của Dijkstra sử dụng một <b>hàng đợi ưu tiên (priority queue)</b>: một danh sách chứa các mục với một mức độ ưu tiên liên quan. Danh sách luôn được sắp xếp sao cho các mục có độ ưu tiên cao nhất nằm ở trên cùng.\n\nThật không may, không có hàng đợi ưu tiên tích hợp sẵn trong C#.",
+                    "terms": {
+                        "Priority Queue": "Một cấu trúc dữ liệu trừu tượng tương tự như một hàng đợi thông thường, nhưng mỗi phần tử có thêm một 'ưu tiên'. Các phần tử có độ ưu tiên cao hơn sẽ được phục vụ trước các phần tử có độ ưu tiên thấp hơn."
+                    }
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Thuật toán Dijkstra (Tiếp theo)",
+                    "image": "images/game-dev/week8/slide_24.png",
+                    "notes": "Cả Dijkstra (và A*) đều tìm kiếm trên một đồ thị `G = (N, E)`. Do đó, chúng ta cần biểu diễn thế giới của mình dưới dạng một đồ thị có trọng số, không định hướng. Với mục đích này, chúng ta tạo ra các lớp:\n\n- <b>E (Edge - Cạnh):</b> một cạnh từ một nút này đến một nút khác, với một chi phí (cost) cho trước.\n- <b>N (Node - Nút):</b> một nút với các thuộc tính cần thiết cho các thuật toán tìm đường.\n\nLớp `E` được định nghĩa với một tham chiếu đến nút đích (`node`) và một chi phí (`cost`) để đi qua cạnh đó.",
+                    "terms": {
+                        "Weighted Graph (Đồ thị có trọng số)": "Một đồ thị trong đó mỗi cạnh được gán một 'trọng số' hoặc 'chi phí'. Chiều dài của một đường đi trong đồ thị có trọng số là tổng các trọng số của các cạnh trên đường đi đó."
+                    }
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Dijkstra - Lớp Node",
+                    "image": "images/game-dev/week8/slide_25.png",
+                    "notes": "Chúng ta định nghĩa lớp Node (`N`) với các thuộc tính cần thiết cho các thuật toán tìm đường:\n\n- <b>`parent` (N):</b> Nút cha trong đường đi tìm được.\n- <b>`g` (double):</b> Chi phí (cost) thực tế để đi từ nút bắt đầu đến nút này.\n- <b>`h` (double):</b> Chi phí ước tính (heuristic) từ nút này đến nút đích. (Chỉ dùng cho A*).\n- <b>`visited` (bool):</b> Đánh dấu nút đã được thăm hay chưa.\n- <b>`adj` (List<E>):</b> Danh sách các cạnh kề với nút này.",
+                    "terms": {
+                        "g cost": "Trong các thuật toán tìm đường như A*, đây là chi phí di chuyển thực tế đã biết từ nút bắt đầu đến nút hiện tại.",
+                        "h cost (heuristic)": "Chi phí ước tính hoặc 'đoán' để đi từ nút hiện tại đến nút đích. Chất lượng của heuristic ảnh hưởng lớn đến hiệu suất của thuật toán A*."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: Dijkstra - Thuật toán",
+                    "image": "images/game-dev/week8/slide_26.png",
+                    "notes": "Đây là mã giả cho thuật toán Dijkstra:\n\n1. Khởi tạo một hàng đợi ưu tiên `pq` và thêm nút bắt đầu (`start`) vào.\n2. Lặp chừng nào `pq` còn chưa rỗng:\n   a. Lấy nút có chi phí `g` thấp nhất ra khỏi `pq`.\n   b. Nếu đó là nút đích, dừng lại.\n   c. Duyệt qua tất cả các hàng xóm (`next.node`) của nút hiện tại.\n   d. Nếu một hàng xóm chưa được thăm, tính toán chi phí mới, đặt cha cho nó và thêm nó vào `pq`.\n   e. Nếu hàng xóm đã được thăm nhưng chúng ta tìm thấy một con đường tốt hơn đến nó, cập nhật lại chi phí và cha của nó.\n3. Trích xuất đường đi từ nút đích ngược về nút bắt đầu.",
+                    "terms": {}
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Dijkstra - Trích xuất đường đi",
+                    "image": "images/game-dev/week8/slide_27.png",
+                    "notes": "Đường đi có thể được trích xuất một cách dễ dàng bằng cách lần theo chuỗi các nút cha (`parent`) từ nút đích (`target`) ngược về nút bắt đầu (`start`).\n\nSau đó, chúng ta đảo ngược (reverse) tuyến đường để trả về đường đi từ đầu đến cuối.",
+                    "terms": {}
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Dijkstra - Ví dụ (1/2)",
+                    "image": "images/game-dev/week8/slide_28.png",
+                    "notes": "Bài tập: sử dụng đồ thị được hiển thị bên dưới, hãy tính toán khoảng cách ngắn nhất từ G đến D bằng thuật toán của Dijkstra.",
+                    "terms": {}
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Dijkstra - Ví dụ (2/2)",
+                    "image": "images/game-dev/week8/slide_29.png",
+                    "notes": "Slide này minh họa từng bước chạy của thuật toán Dijkstra trên đồ thị ví dụ.\n\n- `queue`: Chứa các nút chưa được xử lý, sắp xếp theo chi phí tăng dần.\n- `Xy15`: Ký hiệu cho biết đường đi nhanh nhất đến X (từ gốc) là thông qua Y, và chi phí liên quan là 15.\n\nThuật toán Dijkstra là hoàn chỉnh và luôn tìm thấy đường đi ngắn nhất. Nó cũng hiệu quả. Tuy nhiên, chúng ta có thể cải thiện Dijkstra như thế nào?",
+                    "terms": {}
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Giới thiệu A*",
+                    "image": "images/game-dev/week8/slide_30.png",
+                    "notes": "Dijkstra sử dụng khoảng cách đã đi được cho đến nay và sử dụng một hàng đợi ưu tiên để xem xét các nút trong đồ thị có khoảng cách nhỏ nhất từ điểm bắt đầu.\n\nChúng ta mong đợi sẽ hoạt động tốt hơn nếu chúng ta cũng có thể đoán được một nút gần với mục tiêu đến mức nào.\n\n<b>A* (A-Star)</b> sử dụng một <b>heuristic</b> để ước tính sự hữu ích của một nút đối với mục tiêu. Điều này cho phép thuật toán khám phá đồ thị theo hướng của các khu vực hứa hẹn hơn.\n\n- Heuristic phải <b>admissible (chấp nhận được)</b>, tức là không bao giờ ước tính quá cao khoảng cách thực tế từ A đến B.\n- Heuristic càng gần với khoảng cách thực tế, A* hoạt động càng tốt.",
+                    "terms": {
+                        "A* (A-Star)": "Một thuật toán tìm đường kết hợp các tính năng của thuật toán Dijkstra (ưu tiên các con đường có chi phí thấp) với một heuristic. Nó tìm đường đi ngắn nhất bằng cách cân bằng giữa chi phí đã đi (`g`) và chi phí ước tính còn lại (`h`).",
+                        "Heuristic": "Trong khoa học máy tính, đây là một kỹ thuật được thiết kế để giải quyết một vấn đề nhanh hơn khi các phương pháp cổ điển quá chậm, hoặc để tìm một giải pháp gần đúng khi các phương pháp cổ điển không thể tìm ra bất kỳ giải pháp nào. Về cơ bản, nó là một 'phỏng đoán có học'."
+                    }
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Thuật toán A*",
+                    "image": "images/game-dev/week8/slide_31.png",
+                    "notes": "Đây là mã giả cho thuật toán A*. Nó rất giống với Dijkstra, nhưng có một vài khác biệt chính:\n\n- Nó sử dụng hai danh sách: `open` (tương tự như hàng đợi ưu tiên) và `closed` (chứa các nút đã được xử lý).\n- Khi một nút được thêm vào danh sách `open`, chi phí `h` (heuristic) của nó được tính toán.\n- Khi quyết định nút nào sẽ được xử lý tiếp theo, A* chọn nút trong danh sách `open` có tổng chi phí `g + h` thấp nhất.\n- Các nút đã được xử lý sẽ được chuyển từ `open` sang `closed`.",
+                    "terms": {
+                        "Open List": "Trong thuật toán A*, đây là danh sách các nút đã được phát hiện nhưng chưa được đánh giá. Thuật toán sẽ chọn nút có chi phí `f = g + h` thấp nhất từ danh sách này để xử lý tiếp theo.",
+                        "Closed List": "Trong thuật toán A*, đây là danh sách các nút đã được đánh giá. Thuật toán sẽ không bao giờ xem xét lại các nút trong danh sách này."
+                    }
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Thuật toán A* (Tiếp theo)",
+                    "image": "images/game-dev/week8/slide_32.png",
+                    "notes": "Mã giả tiếp tục:\n\n- Khi duyệt qua các hàng xóm của một nút, nếu một hàng xóm đã có trong danh sách `open` hoặc `closed`, chúng ta sẽ loại bỏ nó khỏi các danh sách đó trước khi thêm lại (nếu tìm thấy đường đi tốt hơn). Điều này là để cập nhật lại vị trí của nó trong hàng đợi ưu tiên.\n- Cuối cùng, hàm `ExtractPath` được gọi để truy ngược đường đi từ nút đích.",
+                    "terms": {}
+                },
+                {
+    "id": 33,
+    "title": "Trang 33: Heuristics",
+    "image": "images/game-dev/week8/slide_33.png",
+    "notes": "Một số loại heuristic phổ biến:\n\n- <b>Manhattan Distance:</b> Khoảng cách được tính bằng cách chỉ di chuyển theo các hướng ngang và dọc (giống như đi trên các đường phố của Manhattan). Công thức: `|x1 - x2| + |y1 - y2|`.\n- <b>Euclidean Distance:</b> Khoảng cách đường chim bay, là khoảng cách thực tế giữa hai điểm. Công thức: `sqrt((x1 - x2)² + (y1 - y2)²)`. \n- <b>Chebyshev Distance:</b> Khoảng cách được tính trên một lưới cho phép di chuyển 8 hướng (ngang, dọc, chéo) với cùng một chi phí. Công thức: `max(|x1 - x2|, |y1 - y2|)`.\n\nNếu chúng ta đặt heuristic `h = 0`, thuật toán A* sẽ hoạt động giống hệt như Dijkstra.",
+    "terms": {
+      "Manhattan Distance": "Một cách đo khoảng cách giữa hai điểm trong một lưới. Nó là tổng của các chênh lệch tuyệt đối của các tọa độ của chúng. Rất hữu ích làm heuristic cho các game chỉ cho phép di chuyển 4 hướng.",
+      "Euclidean Distance": "Khoảng cách đường thẳng thông thường giữa hai điểm trong không gian. Đây là heuristic phổ biến và chính xác nhất cho các game cho phép di chuyển tự do.",
+      "Chebyshev Distance": "Khoảng cách giữa hai điểm trong một lưới cho phép di chuyển 8 hướng với chi phí bằng nhau. Nó được định nghĩa là số bước di chuyển tối thiểu cần thiết để đi từ điểm này đến điểm kia."
+    }
+  },
+  {
+    "id": 34,
+    "title": "Trang 34: Heuristics (Tiếp theo)",
+    "image": "images/game-dev/week8/slide_34.png",
+    "notes": "Các heuristic chấp nhận được (Admissible heuristics):\n\n- Lưới hình chữ nhật, kết nối 4 chiều: Euclidean, Manhattan hoặc Chebyshev.\n- Lưới hình chữ nhật, kết nối 8 chiều: Euclidean hoặc Chebyshev (Đường chéo).\n\nTrong một số trường hợp, chúng ta có thể sử dụng một heuristic chính xác đã được tính toán trước.",
+    "terms": {}
+  },
+  {
+    "id": 35,
+    "title": "Trang 35: A* - Hàm Heuristic",
+    "image": "images/game-dev/week8/slide_35.png",
+    "notes": "Các hàm heuristic của chúng ta được định nghĩa như sau:\n\n- <b>GetHValue:</b> Một hàm `switch` để chọn loại heuristic sẽ được sử dụng (đường thẳng hoặc Manhattan).\n- <b>EuclideanDistance:</b> Triển khai công thức khoảng cách Euclid.\n- <b>ManhattanDistance:</b> Triển khai công thức khoảng cách Manhattan.",
+    "terms": {}
+  },
+  {
+    "id": 36,
+    "title": "Trang 36: Một số sự thật về A*",
+    "image": "images/game-dev/week8/slide_36.png",
+    "notes": "Một số sự thật quan trọng về thuật toán A*:\n\n- Nếu `h(n) = 0`, A* trở thành thuật toán Dijkstra.\n- Nếu `h(n)` không bao giờ lớn hơn khoảng cách thực tế (admissible), A* được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` chính xác bằng khoảng cách thực tế, A* sẽ chỉ đi theo con đường tốt nhất và không bao giờ mở rộng các nút không cần thiết.\n- Nếu `h(n)` đôi khi lớn hơn chi phí thực tế, A* không được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` rất cao so với `g(n)`, A* sẽ biến thành thuật toán Best-First-Search.",
+    "terms": {}
+  },
+  {
+    "id": 37,
+    "title": "Trang 37: Đi theo đường (Path Following)",
+    "image": "images/game-dev/week8/slide_37.png",
+    "notes": "Một khi đã tìm thấy một đường đi tối ưu từ A đến B, tác tử (agent) phải đi theo nó. Có một số phức tạp:\n- Các tác tử khác hoặc các đối tượng di chuyển có thể chiếm các nút trong đồ thị.\n- Màn chơi có thể hoàn toàn động.\n- Sương mù chiến tranh (Fog of War).\n\nCác giải pháp:\n- Tính toán lại (một phần) của đường đi.\n- Sử dụng các nút lớn có thể bị chiếm bởi nhiều tác tử.\n- Chuyển hướng đến nút có sẵn gần nhất.",
+    "terms": {
+      "Path Following": "Sau khi có được một chuỗi các điểm từ thuật toán tìm đường, đây là hành vi lèo lái giúp nhân vật di chuyển mượt mà qua các điểm đó để đến đích."
+    }
+  },
+  {
+    "id": 38,
+    "title": "Trang 38: Chuyển tiếp - Navigation Meshes trong Unity",
+    "image": "images/game-dev/week8/slide_38.png",
+    "notes": "Kết thúc phần giới thiệu về các thuật toán tìm đường lý thuyết.\n\nPhần tiếp theo sẽ tập trung vào giải pháp tìm đường tích hợp sẵn và mạnh mẽ của Unity: Navigation Meshes.",
+    "terms": {}
+  },
+  {
+    "id": 39,
+    "title": "Trang 39: Giới thiệu Navigation Meshes",
+    "image": "images/game-dev/week8/slide_39.png",
+    "notes": "Một <b>Navigation Mesh (hay NavMesh)</b> là một cấu trúc dữ liệu được sử dụng để mô hình hóa các khu vực có thể đi lại của một bản đồ ảo.\n\n- Đó là một tập hợp các đa giác lồi hai chiều (thường là tam giác) xác định khu vực nào của bản đồ ảo có thể được các tác tử đi qua.\n- Mỗi đa giác hoạt động như một nút duy nhất liên kết với các nút liền kề khác.\n- Các đa giác là lồi (convex): bất kỳ điểm nào từ bên trong đa giác có thể được tiếp cận bằng một đường thẳng từ bất kỳ điểm nào khác bên trong cùng một đa giác.",
+    "terms": {
+      "Navigation Mesh (NavMesh)": "Một cấu trúc dữ liệu biểu diễn các khu vực có thể đi lại trong một môi trường game. Thay vì một lưới ô vuông, nó sử dụng các đa giác có hình dạng và kích thước khác nhau để mô tả bề mặt, cho phép các nhân vật di chuyển một cách tự nhiên và thông minh hơn."
+    }
+  },
+  {
+    "id": 40,
+    "title": "Trang 40: NavMesh vs. Tìm đường dựa trên Grid/Waypoint",
+    "image": "images/game-dev/week8/slide_40.png",
+    "notes": "Bốn lợi thế khác của NavMesh so với các hệ thống tìm đường dựa trên waypoint (điểm tham chiếu):\n\n1. Các đồ thị dựa trên waypoint có xu hướng yêu cầu nhiều nút hơn, đặc biệt là trong các khu vực rộng lớn.\n\nHình ảnh minh họa sự khác biệt: đồ thị waypoint (màu đỏ) cần rất nhiều nút được đặt thủ công, trong khi NavMesh (màu xanh) tự động tạo ra một đồ thị đơn giản hơn, chỉ với các nút ở các 'cạnh' của các đa giác.",
+    "terms": {
+      "Waypoint Graph": "Một phương pháp tìm đường trong đó các nhà thiết kế đặt thủ công các nút (waypoint) tại các vị trí quan trọng trong màn chơi. Các nhân vật AI sau đó sẽ tìm đường đi giữa các waypoint này. Phương pháp này đơn giản nhưng kém linh hoạt và tốn nhiều công sức hơn NavMesh."
+    }
+  },{
+    "id": 41,
+    "title": "Trang 41: NavMesh vs. Grid/Waypoint (2/4)",
+    "image": "images/game-dev/week8/slide_41.png",
+    "notes": "Lợi thế thứ hai của NavMesh:\n\n2. <b>Tránh chuyển động zigzag không tự nhiên:</b> Với hệ thống waypoint, đường đi được xác định là một chuỗi các đoạn thẳng nối các điểm, buộc nhân vật phải điều chỉnh và đi theo một cách máy móc. Ngược lại, NavMesh tạo ra một con đường thẳng hơn, tự nhiên hơn xuyên qua các đa giác.",
+    "terms": {}
+  },
+  {
+    "id": 42,
+    "title": "Trang 42: NavMesh vs. Grid/Waypoint (3/4)",
+    "image": "images/game-dev/week8/slide_42.png",
+    "notes": "Lợi thế thứ ba của NavMesh:\n\n3. <b>Tránh chướng ngại vật động một cách mạnh mẽ:</b> Hệ thống NavMesh có các thuật toán tích hợp sẵn để giúp các tác tử (agents) tự động tìm đường đi vòng qua các chướng ngại vật động (dynamic obstacles) mà không cần tính toán lại toàn bộ đường đi.",
+    "terms": {}
+  },
+  {
+    "id": 43,
+    "title": "Trang 43: NavMesh vs. Grid/Waypoint (4/4)",
+    "image": "images/game-dev/week8/slide_43.png",
+    "notes": "Lợi thế thứ tư của NavMesh:\n\n4. <b>Các đường đi mượt mà cho các kích thước nhân vật khác nhau:</b> Hệ thống NavMesh có thể tính toán các đường đi tối ưu cho các tác tử có bán kính khác nhau, đảm bảo chúng di chuyển một cách mượt mà và không bị va chạm vào các góc tường.",
+    "terms": {}
+  },
+  {
+    "id": 44,
+    "title": "Trang 44: NavMesh trong Unity - Các đối tượng",
+    "image": "images/game-dev/week8/slide_44.png",
+    "notes": "Trong Unity, việc tạo NavMesh được xử lý từ cửa sổ Navigation (<b>Window → AI → Navigation</b>). Quá trình tạo ra một NavMesh được gọi là <b>baking</b>.\n\nĐể 'nung' một NavMesh, cần phải cho Unity biết đối tượng nào là <b>navigation static</b>. Những đối tượng này sẽ không di chuyển và có thể được dùng để tính toán các khu vực có thể đi lại. Ví dụ về các đối tượng này là sàn nhà, tường, và các chướng ngại vật tĩnh.",
+    "terms": {
+      "Navigation Static": "Một tùy chọn đánh dấu một Game Object là tĩnh đối với hệ thống Navigation. Unity sẽ sử dụng các đối tượng được đánh dấu này để 'nung' (bake) NavMesh.",
+      "Baking (NavMesh)": "Quá trình Unity phân tích các đối tượng 'Navigation Static' trong scene của bạn và tự động tạo ra một lưới đa giác (NavMesh) biểu diễn các khu vực có thể đi lại."
+    }
+  },
+  {
+    "id": 45,
+    "title": "Trang 45: NavMesh trong Unity - Baking",
+    "image": "images/game-dev/week8/slide_45.png",
+    "notes": "Việc 'nung' NavMesh được thực hiện trong tab <b>Bake</b>, với các đối tượng được chọn. Các thông số quan trọng:\n\n- <b>Agent Radius:</b> Bán kính của tác tử. Xác định con đường hẹp nhất mà một nhân vật có thể đi qua.\n- <b>Agent Height:</b> Chiều cao của tác tử.\n- <b>Max Slope:</b> Ngưỡng độ dốc mà tại đó một con dốc trở thành một bức tường không thể đi được.\n- <b>Step Height:</b> Chiều cao bậc thang tối đa mà nhân vật có thể bước qua.",
+    "terms": {}
+  },
+  {
+    "id": 46,
+    "title": "Trang 46: NavMesh trong Unity - Areas",
+    "image": "images/game-dev/week8/slide_46.png",
+    "notes": "Các bề mặt khác nhau có thể có các chi phí liên quan khác nhau. Ví dụ, di chuyển qua tuyết hoặc bùn có thể tốn nhiều chi phí hơn. Mỗi phần NavMesh có thể được thiết lập với một giá trị chi phí thông qua việc sử dụng <b>Navmesh Areas</b>.\n\nBạn có thể định nghĩa các 'Area' khác nhau (ví dụ: Walkable, Not Walkable, Water) và gán một chi phí (Cost) cho mỗi loại. Sau đó, bạn có thể gán các Area này cho các đối tượng khác nhau trước khi 'bake' NavMesh.",
+    "terms": {
+      "NavMesh Area": "Một loại 'nhãn' có thể được gán cho các phần của NavMesh để chỉ định các thuộc tính đặc biệt, chẳng hạn như chi phí di chuyển (ví dụ: đi qua bùn tốn nhiều chi phí hơn đi trên cỏ)."
+    }
+  },
+  {
+    "id": 47,
+    "title": "Trang 47: NavMesh Agent (Đã gộp từ 47 & 48)",
+    "image": "images/game-dev/week8/slide_47.png",
+    "notes": "Một <b>NavMesh agent</b> là một component được biểu diễn bằng một hình trụ với Bán kính (Radius) và Chiều cao (Height). Tác tử sẽ cố gắng giữ một khoảng cách bằng Bán kính hoặc lớn hơn giữa tâm của nó và các chướng ngại vật xung quanh.\n\nTác tử có thể truy vấn các đường đi đến NavMesh, được biểu diễn dưới dạng một chuỗi các điểm tham chiếu (waypoints). Tuy nhiên, thay vì đi theo đường đi này một cách hoàn hảo, tác tử sẽ sử dụng chuyển động thực tế hơn, kết hợp gia tốc và quay dần dần.\n\nKhi di chuyển, một tác tử sẽ tránh các chướng ngại vật cố định trong scene cũng như các tác tử khác. Thuộc tính <b>Obstacle Avoidance Type</b> và <b>Avoidance Priority</b> quyết định cách tác tử sẽ hành xử khi gặp một tác tử khác.",
+    "terms": {}
+  },
+  {
+    "id": 48,
+    "title": "Trang 48: NavMesh Agent Component (Đã gộp từ 48 & 49)",
+    "image": "images/game-dev/week8/slide_48.png",
+    "notes": "Một component <b>NavMesh Agent</b> có thể được thêm vào một nhân vật để cho phép nó điều hướng từ nơi này đến nơi khác một cách tự động trên một Navigation Mesh. Component này xử lý cả việc tìm đường và việc điều khiển chuyển động của nhân vật.\n\n- <b>Speed / Angular Speed / Acceleration:</b> Tốc độ di chuyển / xoay / gia tốc tối đa.\n- <b>Stopping Distance:</b> Khoảng cách đến mục tiêu mà tại đó tác tử sẽ dừng lại.\n- <b>Auto Braking:</b> Tác tử có nên giảm tốc khi đến gần mục tiêu không.\n- <b>Obstacle Avoidance:</b> Chất lượng và độ ưu tiên của việc tránh chướng ngại vật.\n- <b>Auto Repath:</b> Tự động tính toán lại một đường đi mới nếu đường đi hiện tại không còn hợp lệ.",
+    "terms": {}
+  },
+  {
+    "id": 49,
+    "title": "Trang 49: NavMesh Agent Scripting (Đã gộp từ 50)",
+    "image": "images/game-dev/week8/slide_50.png",
+    "notes": "NavMesh agent có thể được điều khiển trực tiếp từ scripting. Lấy component rất đơn giản: `GetComponent<NavMeshAgent>()`.\n\nViệc thiết lập một đường đi cho tác tử được chỉ định bằng cách gọi hàm <b>SetDestination</b> với một vị trí `Vector3`:\n`agent.SetDestination(target.position);`\n\nCác hàm hữu ích khác:\n- <b>CalculatePath:</b> Tính toán một đường đi đến một điểm và lưu trữ kết quả.\n- <b>Raycast:</b> Dò một đường đi thẳng về phía một vị trí mục tiêu trong NavMesh mà không di chuyển tác tử.\n- <b>Stop / Resume:</b> Dừng/Tiếp tục di chuyển dọc theo đường đi hiện tại.",
+    "terms": {
+      "agent.SetDestination()": "Phương thức chính để ra lệnh cho một NavMesh Agent di chuyển đến một điểm đến cụ thể. Tác tử sẽ tự động tính toán đường đi ngắn nhất trên NavMesh và bắt đầu di chuyển."
+    }
+  },
+  {
+    "id": 50,
+    "title": "Trang 50: NavMesh Obstacle",
+    "image": "images/game-dev/week8/slide_51.png",
+    "notes": "Một <b>NavMesh Obstacle</b> là một đối tượng có thể di chuyển mà một NavMesh agent phải tránh (ví dụ: cửa có thể mở, tường di động, v.v.). Để đánh dấu một game object là một chướng ngại vật NavMesh, bạn cần thêm một component <b>Nav Mesh Obstacle</b> vào đối tượng đó.\n\nCác tham số <b>Radius</b> và <b>Height</b> chỉ định kích thước của hình trụ chặn đường đi của tác tử.\n\nHai tham số khác (<b>Move Threshold</b> và <b>Carve</b>) được dùng để cho phép tác tử tính toán một đường đi khác nếu chướng ngại vật cản đường đến đích.",
+    "terms": {
+      "NavMesh Obstacle": "Một component được sử dụng để mô tả các chướng ngại vật động hoặc có thể di chuyển mà các NavMesh Agent cần phải tránh. Không giống như các đối tượng tĩnh được 'nung' vào NavMesh, các Obstacle có thể thay đổi vị trí tại thời điểm chạy."
+    }
+  },
+  {
+    "id": 51,
+    "title": "Trang 51: Chuyển tiếp - Câu hỏi & Demo Lab",
+    "image": "images/game-dev/week8/slide_52.png",
+    "notes": "Kết thúc phần lý thuyết về Navigation Meshes trong Unity.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+    "terms": {}
+  },
+  {
+    "id": 52,
+    "title": "Trang 52: Xem trước Buổi thực hành",
+    "image": "images/game-dev/week8/slide_53.png",
+    "notes": "Chúng ta sẽ thực hiện thêm các phần demo của Bài tập lớn Phần I.\n\nBài giảng tiếp theo: <b>Game AI: Decision Making.</b>",
+    "terms": {}
+  },
+  {
+    "id": 53,
+    "title": "Trang 53: Cảm ơn & Tổng kết thuật ngữ",
+    "image": "images/game-dev/week8/slide_53.png",
+    "notes": "Cảm ơn bạn đã theo dõi bài giảng Tuần 8. Dưới đây là danh sách tổng hợp các thuật ngữ quan trọng đã xuất hiện trong tuần này để bạn tiện ôn tập.",
+    "terms": {}
+  }
+
+            ]
         }
     ]
 }
