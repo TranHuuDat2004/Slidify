@@ -1903,6 +1903,411 @@
                     "terms": {}
                 }
             ]
+        },
+        {
+            "title": "Tuần 6: GUIs, Menus, Particle Systems",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - GUIs, Menus, Particle Systems",
+                    "image": "images/game-dev/week6/slide_1.png",
+                    "notes": "Bài giảng 6: Giao diện người dùng (GUI), Menu, và Hệ thống hạt.\n\nTuần này chúng ta sẽ khám phá cách xây dựng các yếu tố giao diện và tạo ra các hiệu ứng hình ảnh ấn tượng trong Unity.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week6/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 6 bao gồm:\n\n1. <b>Hệ thống Giao diện người dùng của Unity (The Unity UI System).</b>\n2. <b>Menu và Tải các Scene (Menus and Loading Scenes).</b>\n3. <b>Hệ thống hạt (Particles).</b>\n4. <b>Câu hỏi ôn tập và Xem trước buổi thực hành.</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chuyển tiếp - Hệ thống UI Unity",
+                    "image": "images/game-dev/week6/slide_3.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Tìm hiểu về hệ thống UI mới của Unity.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Giao diện Người dùng Đồ họa",
+                    "image": "images/game-dev/week6/slide_4.png",
+                    "notes": "<b>Giao diện Người dùng Đồ họa (Graphical User Interface - GUI)</b> trong game chịu trách nhiệm trình bày lượng thông tin phù hợp và có liên quan để tạo điều kiện cho người chơi ra quyết định. Nó có thể được trình bày dưới dạng các menu hoặc dưới dạng một <b>Heads-Up Display (HUD)</b>.\n\nMột thiết kế tốt của hệ thống GUI là rất cần thiết cho sự thành công và khả năng chơi được của một game. HUD thường được sử dụng để hiển thị đồng thời nhiều mẩu thông tin bao gồm máu của nhân vật chính, vật phẩm, và chỉ báo về tiến trình của game.\n\nCả GUI (và đặc biệt là HUD) đều có thể ảnh hưởng quan trọng đến sự <b>đắm chìm (immersion)</b> mà người chơi trải nghiệm.",
+                    "terms": {
+                        "GUI (Graphical User Interface)": "Giao diện người dùng đồ họa. Trong game, đây là tất cả các yếu tố hình ảnh mà người chơi có thể tương tác hoặc xem thông tin, chẳng hạn như menu, nút bấm, thanh máu...",
+                        "HUD (Heads-Up Display)": "Một phần của GUI được hiển thị liên tục trên màn hình trong quá trình chơi game, cung cấp các thông tin quan trọng theo thời gian thực (ví dụ: máu, đạn, bản đồ nhỏ).",
+                        "Immersion (Sự đắm chìm)": "Cảm giác của người chơi như thể họ thực sự đang ở bên trong thế giới của trò chơi."
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Canvas (1/2)",
+                    "image": "images/game-dev/week6/slide_5.png",
+                    "notes": "<b>Canvas</b> là khu vực chứa tất cả các yếu tố UI. Trong Unity, nó được đưa vào scene như một game object, với một component Canvas trên đó. Tất cả các yếu tố UI là các game object con của Canvas này.\n\n<b>Thứ tự vẽ của các yếu tố:</b> Các yếu tố UI trong Canvas được vẽ theo cùng thứ tự chúng xuất hiện trong cửa sổ Hierarchy. Nếu hai yếu tố UI chồng chéo lên nhau, cái sau sẽ xuất hiện trên cái trước.\n\nMột tham số quan trọng của canvas là <b>chế độ render (render mode)</b>, có thể được đặt thành:\n- <b>Screen Space - Overlay:</b> Các yếu tố UI được render trên cùng của màn hình.\n- <b>Screen Space - Camera:</b> Các yếu tố UI được render ở một khoảng cách nhất định so với camera.\n- <b>World Space:</b> Canvas hoạt động như bất kỳ đối tượng nào khác trong scene (hữu ích cho các UI là một phần của thế giới game).",
+                    "terms": {
+                        "Canvas": "Thành phần gốc cho tất cả các yếu tố UI trong Unity. Mọi thứ bạn thấy trong UI phải nằm bên trong một Canvas.",
+                        "Hierarchy": "Một cửa sổ trong Unity Editor hiển thị danh sách tất cả các Game Object trong scene hiện tại dưới dạng một cấu trúc cây phân cấp."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Canvas (2/2)",
+                    "image": "images/game-dev/week6/slide_6.png",
+                    "notes": "Các tham số khác của component Canvas là:\n\n- <b>Pixel Perfect:</b> Các yếu tố UI được điều chỉnh đến pixel gần nhất.\n- <b>Render Camera:</b> Camera render các yếu tố UI trong chế độ render 'Screen Space - Camera'.\n- <b>Plane Distance:</b> Khoảng cách giữa Canvas và camera trong chế độ render 'Screen Space - Camera'.\n- <b>Event Camera:</b> Xác định camera nào sẽ nhận sự kiện của người chơi nhấp vào các yếu tố UI trong chế độ render 'World Space'.\n- <b>Sorting Layer</b> và <b>Order in Layer:</b> Kiểm soát thứ tự render của canvas khi so sánh với các renderer khác trên scene.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Sự kiện & Kích hoạt UI (1/2)",
+                    "image": "images/game-dev/week6/slide_7.png",
+                    "notes": "Sự tương tác của một yếu tố UI được điều khiển bởi các <b>Sự kiện (Events)</b>. Bất cứ khi nào một Canvas được tạo ra, một game object <b>EventSystem</b> sẽ tự động được thêm vào scene.\n\nThuộc tính <b>First Selected</b> cho phép chọn một yếu tố UI sẽ được chọn (không phải nhấp!) khi scene bắt đầu. Điều này hữu ích cho các hệ thống UI không dựa trên con trỏ (ví dụ: tay cầm game).\n\nBạn có thể thêm một component <b>Event Trigger</b> vào bất kỳ game object nào để kích hoạt một sự kiện khi người dùng tương tác với nó. Hầu hết các component UI đều phản hồi với ít nhất một sự kiện theo mặc định.",
+                    "terms": {
+                        "EventSystem": "Một game object trong Unity chịu trách nhiệm xử lý các sự kiện đầu vào (nhấp chuột, chạm, bàn phím) và gửi chúng đến các yếu tố UI tương ứng.",
+                        "Event Trigger": "Một component cho phép bạn lắng nghe các sự kiện cụ thể trên một đối tượng (ví dụ: PointerEnter, Click, Drag) và gọi các hàm tương ứng để đáp lại."
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Sự kiện & Kích hoạt UI (2/2)",
+                    "image": "images/game-dev/week6/slide_8.png",
+                    "notes": "Để bắt một sự kiện cụ thể (ví dụ: On Click), một danh sách các trình xử lý sự kiện (event handlers) có thể được liên kết với mỗi yếu tố UI. Đối với mỗi hàm, bạn có thể chỉ định:\n\n- <b>Execution mode (Chế độ thực thi):</b> Off (tắt), Runtime Only (chỉ khi game chạy), hoặc Editor and Runtime (cả trong trình soạn thảo và khi chạy).\n- <b>Object (Đối tượng):</b> Đối tượng sẽ bị thao túng.\n- <b>Function (Hàm):</b> Hàm sẽ được gọi khi sự kiện được kích hoạt. Hàm cần phải là một `public void` với 0 hoặc 1 tham số.\n- <b>Parameters (Tham số):</b> Một tham số tùy chọn có thể là `int`, `float`, `string`, `bool`, hoặc một `Object`.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: UI Rect Transform (1/3)",
+                    "image": "images/game-dev/week6/slide_9.png",
+                    "notes": "<b>UI Rect Transform</b> là một component transform đặc biệt dành cho các yếu tố UI. Nó được dùng để chỉ định kích thước, vị trí và góc xoay của tất cả các yếu tố UI.\n\n<b>Scaling vs. Resizing (Co giãn vs. Thay đổi kích thước):</b> Khuyến khích không nên 'scale' các yếu tố UI, mà thay vào đó hãy 'resize' chúng, vì việc này không ảnh hưởng đến kích thước font chữ, đường viền của các ảnh 'sliced', v.v.\n\nMột yếu tố UI có thể được <b>neo (anchored)</b> vào đối tượng cha của nó. Điều này cho phép yếu tố đó tự động định vị lại và thay đổi kích thước dựa trên Rect Transform của đối tượng cha.",
+                    "terms": {
+                        "Rect Transform": "Component Transform dành riêng cho các yếu tố UI. Nó bao gồm các khái niệm về neo (anchors) và điểm xoay (pivot) để cho phép bố cục linh hoạt và thích ứng với các kích thước màn hình khác nhau.",
+                        "Anchors (Điểm neo)": "Các điểm tham chiếu trên đối tượng cha mà một yếu tố UI sử dụng để xác định vị trí và kích thước của nó. Neo giúp UI co giãn một cách hợp lý khi kích thước của Canvas cha thay đổi."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: UI Rect Transform (2/3)",
+                    "image": "images/game-dev/week6/slide_10.png",
+                    "notes": "Các thuộc tính của Rect Transform:\n\n- <b>Pos (X, Y, Z):</b> Vị trí của điểm xoay (pivot) của hình chữ nhật so với các điểm neo (anchors).\n- <b>Width/Height:</b> Chiều rộng và chiều cao của hình chữ nhật.\n- <b>Anchors Min/Max:</b> Các điểm neo cho góc dưới bên trái và góc trên bên phải của hình chữ nhật, được xác định dưới dạng một phần của kích thước của hình chữ nhật cha.\n- <b>Pivot:</b> Vị trí của điểm xoay mà hình chữ nhật sẽ quay quanh, được xác định dưới dạng một phần của kích thước của chính hình chữ nhật đó.\n- <b>Rotation / Scale:</b> Góc xoay và hệ số co giãn được áp dụng cho đối tượng.",
+                    "terms": {
+                        "Pivot": "Một điểm trên chính Rect Transform (được xác định bằng tọa độ chuẩn hóa từ 0 đến 1) mà đối tượng sẽ xoay và co giãn quanh đó. Nó cũng là điểm tham chiếu cho vị trí 'Pos'."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: UI Rect Transform (3/3)",
+                    "image": "images/game-dev/week6/slide_11.png",
+                    "notes": "Unity cung cấp một vài cài đặt neo có sẵn (anchor presets) tương ứng với các thiết lập được sử dụng nhiều nhất. Chúng có thể được truy cập bằng cách nhấp vào nút được tô sáng trong hình ảnh.\n\nBằng cách nhấn các phím <b>Shift</b> và <b>Alt</b>, bạn sẽ có thể thiết lập tương ứng điểm xoay (pivot) và vị trí của yếu tố UI.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Component Trực quan - UI Text",
+                    "image": "images/game-dev/week6/slide_12.png",
+                    "notes": "Thành phần <b>Text</b> hiển thị một đoạn văn bản không tương tác cho người dùng. Nó có thể được dùng để cung cấp chú thích hoặc nhãn cho các thành phần GUI khác hoặc để hiển thị hướng dẫn.\n\nBạn có thể chỉ định các cài đặt của văn bản như font chữ, màu sắc, kích thước, căn lề, v.v.",
+                    "terms": {
+                        "UI Text": "Một component UI cơ bản dùng để hiển thị văn bản trên màn hình. (Lưu ý: Trong các phiên bản Unity mới hơn, component này đã được thay thế bằng TextMeshPro cho chất lượng và tính năng vượt trội)."
+                    }
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Component Trực quan - UI Image",
+                    "image": "images/game-dev/week6/slide_13.png",
+                    "notes": "Thành phần <b>Image</b> hiển thị một hình ảnh không tương tác. Nó có thể được dùng để trang trí, làm icon, v.v., và hình ảnh cũng có thể được thay đổi từ script. Hình ảnh phải được import dưới dạng một <b>Sprite</b>.\n\nLoại hình ảnh (Image Type) có thể được đặt thành:\n- <b>Simple:</b> Hình ảnh co giãn để vừa với hình chữ nhật, trừ khi `Preserve Aspect` được bật.\n- <b>Sliced:</b> Hình ảnh được xử lý như một sprite 'nine-slice' với các đường viền.\n- <b>Tiled:</b> Hình ảnh được giữ ở kích thước gốc nhưng được lặp lại nhiều lần để lấp đầy hình chữ nhật.\n- <b>Filled:</b> Hình ảnh được hiển thị dần dần từ trống đến đầy.",
+                    "terms": {
+                        "UI Image": "Một component UI hiển thị một hình ảnh 2D (Sprite) trên Canvas.",
+                        "Sprite": "Thuật ngữ của Unity cho một đối tượng đồ họa 2D. Các tệp hình ảnh (PNG, JPG...) phải được import vào Unity với Texture Type là 'Sprite (2D and UI)' để có thể sử dụng với các component UI.",
+                        "Sliced Image (9-slicing)": "Một kỹ thuật cho phép một hình ảnh 2D được co giãn một cách thông minh, giữ cho các góc không bị méo và các cạnh chỉ co giãn theo một chiều. Rất hữu ích cho việc tạo các nút bấm và khung cửa sổ có thể thay đổi kích thước."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Component Tương tác - UI Button",
+                    "image": "images/game-dev/week6/slide_14.png",
+                    "notes": "Thành phần <b>Button</b> phản hồi với một cú nhấp chuột từ người dùng và được dùng để bắt đầu hoặc xác nhận một hành động. Game object UI Button đi kèm với các component <b>Image</b> và <b>Button</b>.\n\nCác thuộc tính chính:\n- <b>Interactable:</b> Bật/tắt việc nút có chấp nhận tương tác từ người dùng hay không.\n- <b>Transition:</b> Xác định cách nút thay đổi diện mạo (màu sắc, sprite, animation) khi được nhấp, thả ra, hoặc khi chuột di chuyển qua nó.\n- <b>Navigation:</b> Cho phép chỉ định cách di chuyển giữa các yếu tố UI bằng các phím mũi tên.\n- <b>OnClick():</b> Danh sách các hàm sẽ được gọi khi nút được nhấp.",
+                    "terms": {
+                        "UI Button": "Một component UI tương tác tiêu chuẩn, cho phép người dùng kích hoạt một sự kiện bằng cách nhấp vào nó.",
+                        "OnClick()": "Một sự kiện (UnityEvent) trên component Button, cho phép bạn gán một hoặc nhiều hàm sẽ được thực thi khi người dùng nhấp vào nút."
+                    }
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Component Tương tác - UI Slider",
+                    "image": "images/game-dev/week6/slide_15.png",
+                    "notes": "Thành phần <b>Slider</b> cho phép người dùng chọn một giá trị số từ một phạm vi được xác định trước bằng cách kéo chuột. Nó có các cài đặt tương tự như Nút, cộng thêm:\n\n- <b>Direction:</b> Hướng của thanh trượt (Trái sang Phải, Phải sang Trái, v.v.).\n- <b>Min and Max Values:</b> Các giá trị tối thiểu và tối đa cho thanh trượt.\n- <b>Whole numbers:</b> Tránh các giá trị có dấu phẩy thập phân.\n- <b>Value:</b> Giá trị hiện tại và mặc định của thanh trượt.",
+                    "terms": {
+                        "UI Slider": "Một component UI tương tác cho phép người dùng chọn một giá trị trong một phạm vi bằng cách kéo một tay cầm (handle) dọc theo một thanh (track)."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Ví dụ - Thanh máu (1/3)",
+                    "image": "images/game-dev/week6/slide_16.png",
+                    "notes": "Ví dụ này bao gồm một <b>UI Image (Trái tim)</b> và một <b>UI Slider (Thanh máu)</b>, chứa một vùng nền (background) và một vùng lấp đầy (fill area).\n\nComponent Slider được cấu hình với các giá trị Min là 0, Max là 100, và Value hiện tại là 100. Vùng `Fill Rect` được gán vào để Slider có thể điều khiển độ rộng của nó, tạo ra hiệu ứng thanh máu đầy/vơi.",
+                    "terms": {}
+                },
+                [
+                    {
+                        "id": 17,
+                        "title": "Trang 17: Ví dụ - Thanh máu (2/3)",
+                        "image": "images/game-dev/week6/slide_17.png",
+                        "notes": "Cấu hình chi tiết cho các hình ảnh của thanh máu:\n\n- <b>Background Image:</b> Hình ảnh nền của thanh trượt. Image Type được đặt là `Sliced` để nó có thể co giãn một cách chính xác mà không làm méo các góc.\n\n- <b>Fill Image:</b> Hình ảnh sẽ lấp đầy thanh trượt. Image Type cũng được đặt là `Sliced`.",
+                        "terms": {}
+                    },
+                    {
+                        "id": 18,
+                        "title": "Trang 18: Ví dụ - Thanh máu (3/3)",
+                        "image": "images/game-dev/week6/slide_18.png",
+                        "notes": "Việc thay đổi giá trị máu và thanh trượt từ một script rất đơn giản:\n\n- Đoạn mã `PlayerHealth.cs` này quản lý máu của người chơi.\n- Nó có một tham chiếu `public Slider healthSlider` mà bạn có thể kéo thả UI Slider vào trong Inspector.\n- Trong hàm `Awake()`, máu hiện tại được thiết lập bằng máu khởi đầu.\n- Khi hàm `TakeDamage(int amount)` được gọi, máu hiện tại sẽ giảm đi, và sau đó giá trị `value` của `healthSlider` sẽ được cập nhật để phản ánh sự thay đổi đó, làm cho thanh máu trên màn hình ngắn lại.",
+                        "terms": {}
+                    },
+                    {
+                        "id": 19,
+                        "title": "Trang 19: Chuyển tiếp - Menu và Tải Scene",
+                        "image": "images/game-dev/week6/slide_19.png",
+                        "notes": "Kết thúc phần giới thiệu các component UI cơ bản.\n\nPhần tiếp theo sẽ tập trung vào cách tạo các menu và quản lý việc chuyển đổi giữa các màn chơi (scenes).",
+                        "terms": {}
+                    },
+                    {
+                        "id": 20,
+                        "title": "Trang 20: Hiệu ứng Mờ dần (1/3)",
+                        "image": "images/game-dev/week6/slide_20.png",
+                        "notes": "Chúng ta sẽ xem một ví dụ về cách làm mờ dần một texture. Đầu tiên, chúng ta sẽ tạo một script để quản lý hiệu ứng này. Chúng ta có thể gán nó vào bất kỳ game object nào trong scene (ví dụ: game manager, camera, v.v.).\n\n- <b>fadeOutTexture:</b> Texture sẽ che phủ màn hình.\n- <b>fadeSpeed:</b> Tốc độ mờ dần.\n- <b>alpha:</b> Giá trị alpha của texture (từ 0 đến 1).\n- <b>drawDepth:</b> Thứ tự trong hệ thống phân cấp vẽ (ưu tiên cao nhất).\n- <b>fadeDir:</b> Hướng mờ (-1 là mờ dần, 1 là hiện dần).",
+                        "terms": {}
+                    },
+                    {
+                        "id": 21,
+                        "title": "Trang 21: Hiệu ứng Mờ dần (2/3)",
+                        "image": "images/game-dev/week6/slide_21.png",
+                        "notes": "Hàm `OnGUI()` được sử dụng để thực hiện hiệu ứng mờ dần. Đây là một hàm sự kiện đặc biệt được gọi ở mỗi frame để vẽ các yếu tố GUI cũ (Immediate Mode GUI).\n\n- Giá trị `alpha` được sửa đổi dần dần, sử dụng `Time.deltaTime` để tính bằng giây.\n- Màu sắc của GUI được đặt, giữ nguyên màu của texture và chỉ thay đổi kênh alpha.\n- Texture che phủ được vẽ lên toàn bộ màn hình.\n\nMột texture màu đen sẽ hoạt động rất tốt cho hiệu ứng mờ dần này.",
+                        "terms": {
+                            "OnGUI()": "Một hàm sự kiện của MonoBehaviour được Unity gọi nhiều lần trong mỗi frame để vẽ và xử lý các sự kiện của hệ thống GUI cũ (còn gọi là Immediate Mode GUI - IMGUI)."
+                        }
+                    },
+                    {
+                        "id": 22,
+                        "title": "Trang 22: Hiệu ứng Mờ dần (3/3)",
+                        "image": "images/game-dev/week6/slide_22.png",
+                        "notes": "Để bắt đầu hiệu ứng mờ dần, chúng ta có thể gọi một hàm bắt đầu một coroutine. Coroutine này sẽ bắt đầu quá trình mờ dần (`BeginFade(1)`), chờ cho đến khi quá trình mờ dần kết thúc, và sau đó tải scene tiếp theo bằng `SceneManager.LoadScene()`.\n\nTrước khi có thể tải một scene, bạn phải thêm nó vào danh sách các scene được sử dụng trong game. Sử dụng <b>File → Build Settings</b> trong Unity và thêm các scene bạn cần vào danh sách.\n\nKhi một scene mới được tải, tất cả các game object từ scene hiện tại sẽ bị phá hủy.",
+                        "terms": {
+                            "SceneManager.LoadScene()": "Hàm static chính trong Unity để tải một Scene. Bạn có thể tải scene bằng tên hoặc bằng chỉ số (build index) của nó trong Build Settings."
+                        }
+                    },
+                    {
+                        "id": 23,
+                        "title": "Trang 23: Tạo một Menu đơn giản (1/3)",
+                        "image": "images/game-dev/week6/slide_23.png",
+                        "notes": "Một menu để chọn các màn chơi (scenes) có thể được đặt trong một <b>scene độc lập</b>. Đây là một ví dụ về một menu với hai màn chơi để tải.\n\nĐối tượng Canvas có một component script (`LoadOnClick.cs`) với mã nguồn sau. Nó chứa một hàm public `LoadScene(int levelIdx)` nhận vào một chỉ số màn chơi và gọi `SceneManager.LoadScene()`.",
+                        "terms": {}
+                    },
+                    {
+                        "id": 24,
+                        "title": "Trang 24: Tạo một Menu đơn giản (2/3)",
+                        "image": "images/game-dev/week6/slide_24.png",
+                        "notes": "Mỗi nút trong menu có một component <b>Button (Script)</b>, chứa một hàm public để gọi khi nút này được nhấp.\n\nVì `LoadOnClick` có một hàm public `LoadScene` với một tham số, hàm này sẽ xuất hiện trong các phương thức có sẵn để gọi trong sự kiện OnClick() của Button.\n\nMỗi nút sẽ truyền một giá trị khác nhau cho tham số, tùy thuộc vào màn chơi cần tải. Ví dụ, nút 'Level01Button' truyền vào số 1, nút 'Level02Button' truyền vào số 2.",
+                        "terms": {}
+                    }
+                ],
+                {
+                    "id": 25,
+                    "title": "Trang 25: Tạo một Menu đơn giản (3/3)",
+                    "image": "images/game-dev/week6/slide_25.png",
+                    "notes": "Tham số được truyền vào hàm (`levelIdx`) tương ứng với thứ tự mà các scene được tải trong cài đặt build (<b>File → Build Settings</b>). Mỗi scene trong danh sách 'Scenes In Build' đều có một chỉ số (index) bắt đầu từ 0.\n\nĐể thêm một màn hình tải (loading screen), chúng ta có thể thêm một hình ảnh với nền đen và một dòng chữ cho biết scene đang được tải. Đặt nó làm một biến public trong cùng script, chúng ta có thể chỉ cần kích hoạt nó (`SetActive(true)`) khi sự kiện được ghi nhận, ngay trước khi tải scene mới.",
+                    "terms": {
+                        "Build Settings": "Một cửa sổ trong Unity Editor nơi bạn quản lý các scene sẽ được đưa vào bản build cuối cùng của game. Thứ tự của các scene trong danh sách này rất quan trọng vì nó quyết định chỉ số (index) của mỗi scene."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: sceneLoaded và delegates",
+                    "image": "images/game-dev/week6/slide_26.png",
+                    "notes": "Có thể thêm một <b>delegate</b> vào sự kiện `SceneManager.sceneLoaded` để phát hiện khi nào một scene đã được tải xong. Một delegate chỉ đơn giản là một hàm ghi lại một sự kiện được kích hoạt bởi Unity.\n\nTrong ví dụ này, hàm `mySceneLoaded` được đăng ký với sự kiện `sceneLoaded` trong `Awake()`. Khi một scene bất kỳ được tải xong, hàm `mySceneLoaded` sẽ được gọi. Nó kiểm tra xem chỉ số của scene vừa được tải có phải là 2 không, và nếu đúng, nó sẽ thay đổi `AudioClip` và phát nhạc mới.",
+                    "terms": {
+                        "Delegate": "Trong C#, đây là một kiểu dữ liệu tham chiếu đến một hoặc nhiều phương thức. Nó cho phép bạn truyền các phương thức như các tham số. Trong Unity, delegates thường được sử dụng để tạo ra các hệ thống sự kiện (event systems).",
+                        "SceneManager.sceneLoaded": "Một sự kiện (event) được kích hoạt mỗi khi một scene được tải xong. Bạn có thể 'đăng ký' các hàm của mình vào sự kiện này để thực thi code ngay sau khi scene mới sẵn sàng."
+                    }
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Tải chồng (Loading Additively)",
+                    "image": "images/game-dev/week6/slide_27.png",
+                    "notes": "Có thể thêm tất cả các đối tượng từ một scene vào scene hiện tại bằng cách sử dụng một chế độ tải khác: `LoadSceneMode.Additive`.\n\nLệnh gọi này tải một màn chơi một cách 'chồng' lên. Không giống như `LoadSceneMode.Single` (mặc định), nó <b>không</b> phá hủy các đối tượng trong scene hiện tại. Các đối tượng từ màn chơi mới được thêm vào scene hiện tại. Điều này hữu ích để tạo ra các thế giới ảo liên tục, nơi nội dung mới được tải vào khi bạn đi qua môi trường.",
+                    "terms": {
+                        "LoadSceneMode.Additive": "Một chế độ tải scene, trong đó scene mới được tải và thêm vào scene hiện tại mà không xóa bỏ các đối tượng đang có. Rất hữu ích cho việc streaming thế giới hoặc quản lý các scene UI."
+                    }
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: TimeScale - Tạm dừng game",
+                    "image": "images/game-dev/week6/slide_28.png",
+                    "notes": "Một cách để tạm dừng game trong Unity là thông qua việc sửa đổi biến `Time.timeScale`.\n\n`timeScale` là tỷ lệ mà thời gian đang trôi qua. Nó cũng có thể được sử dụng cho các hiệu ứng chuyển động chậm (slow motion).\n\n- Khi `timeScale` là <b>1.0</b>: thời gian trôi qua nhanh như thời gian thực.\n- Khi `timeScale` là <b>0.5</b>: thời gian trôi qua chậm hơn 2 lần so với thời gian thực.\n- Khi `timeScale` là <b>0</b>: game về cơ bản là <b>bị tạm dừng</b>.\n\nLưu ý: Các hàm `FixedUpdate()` sẽ không được gọi khi `timeScale` được đặt thành 0.",
+                    "terms": {
+                        "Time.timeScale": "Một thuộc tính static cho phép bạn làm chậm, tăng tốc hoặc tạm dừng hoàn toàn thời gian trong game. Nó ảnh hưởng đến `Time.deltaTime` và các cập nhật vật lý."
+                    }
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Chuyển tiếp - Hệ thống hạt",
+                    "image": "images/game-dev/week6/slide_29.png",
+                    "notes": "Kết thúc phần Menu và Tải Scene.\n\nPhần tiếp theo sẽ giới thiệu về một công cụ mạnh mẽ để tạo ra các hiệu ứng hình ảnh: Hệ thống hạt (Particle Systems).",
+                    "terms": {}
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Billboarding (1/2)",
+                    "image": "images/game-dev/week6/slide_30.png",
+                    "notes": "<b>Billboarding</b> là một kỹ thuật trong đó các texture 2D được vẽ lên các hình chữ nhật 3D (quads) được đặt trong scene. Thông thường, các quads này được xoay về phía camera sao cho chúng luôn đối mặt với người xem. Điều này cho phép tạo ra ảo giác về một mô hình mặc dù với chi phí giảm đi nhiều. Một công dụng phổ biến là cây cối trong hậu cảnh hoặc mây trên trời.\n\nCác loại billboard khác nhau:\n- <b>Spherical:</b> Xoay hoàn toàn về phía camera.\n- <b>Cylindrical:</b> Chỉ xoay quanh một trục (thường là trục Up).\n- <b>Non-rotating:</b> Hai quad tạo thành góc 90 độ với nhau.",
+                    "terms": {
+                        "Billboarding": "Một kỹ thuật đồ họa trong đó các sprite (hình ảnh 2D) luôn được xoay để đối mặt với camera. Rất hữu ích để tạo ra các hiệu ứng như khói, lửa, hoặc các đối tượng ở xa như cây cối mà không tốn nhiều tài nguyên render 3D."
+                    }
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Billboarding (2/2)",
+                    "image": "images/game-dev/week6/slide_31.png",
+                    "notes": "Một số texture hoạt động tốt hơn cho billboarding so với những cái khác:\n- Với cây cối, thân cây nên tròn vì điều này ngăn người chơi nhận thấy sự xoay.\n- Các texture có nền trong suốt sẽ tốt hơn.\n\nVới billboarding, người ta có thể vẽ nhiều đối tượng hơn so với khả năng có thể. Trong game của bạn, bạn có thể thử kết hợp billboarding với các mô hình để đảm bảo trải nghiệm gameplay nhất quán.",
+                    "terms": {}
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Hệ thống hạt (1/2)",
+                    "image": "images/game-dev/week6/slide_32.png",
+                    "notes": "Các sprite (trong game 2D) và mesh (trong 3D) là những cách lý tưởng để mô tả các vật thể 'rắn' trong game. Tuy nhiên, có những thực thể trong game ở dạng lỏng và vô hình, và do đó khó miêu tả bằng mesh hoặc sprite. <b>Hệ thống hạt (Particle Systems)</b> là một phương pháp đồ họa để nắm bắt hành vi của các thực thể này, chẳng hạn như chất lỏng chuyển động, khói, mây, lửa và các phép thuật.\n\nMột hệ thống hạt được cấu tạo bởi một bộ sưu tập các billboard hoặc hạt, trong đó mỗi hạt:\n- Được xoay về phía camera.\n- Có một vị trí ngẫu nhiên ban đầu.\n- Bắt đầu vòng đời của nó khi được tạo ra hoặc phát ra.\n- Có một 'vòng đời' (lifetime).\n- Có một vector vận tốc (velocity).",
+                    "terms": {
+                        "Particle System": "Một component trong Unity dùng để mô phỏng một số lượng lớn các hạt nhỏ và điều khiển chuyển động của chúng để tạo ra các hiệu ứng hình ảnh như lửa, khói, mưa, phép thuật, và các vụ nổ."
+                    }
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Hệ thống hạt (2/2)",
+                    "image": "images/game-dev/week6/slide_33.png",
+                    "notes": "<b>Tốc độ phát thải (emission rate)</b> của hệ thống cho biết gần đúng có bao nhiêu hạt được phát ra <b>mỗi giây</b>. Sự lựa chọn tốc độ phát thải và vòng đời trung bình của hạt quyết định số lượng hạt ở <b>trạng thái ổn định</b> (tức là, nơi phát thải và hạt chết đi xảy ra ở cùng một tốc độ).\n\nCác hạt thường được làm mờ dần khi chúng được tạo ra (faded in) và khi bị phá hủy (faded out). Trong suốt vòng đời của mình, chúng có thể trải qua nhiều thay đổi khác nhau (như vận tốc, màu sắc, kích thước, góc xoay) và bị ảnh hưởng bởi các lực như gió hoặc trọng lực.",
+                    "terms": {}
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Thay đổi Thuộc tính theo Thời gian",
+                    "image": "images/game-dev/week6/slide_34.png",
+                    "notes": "Nhiều thuộc tính số của các hạt hoặc thậm chí của toàn bộ hệ thống có thể được thay đổi theo thời gian. Unity cung cấp nhiều phương pháp khác nhau để chỉ định cách sự thay đổi sẽ xảy ra:\n\n- <b>Constant:</b> Giá trị của thuộc tính được cố định trong suốt vòng đời của nó.\n- <b>Curve:</b> Giá trị được chỉ định bởi một đường cong/đồ thị.\n- <b>Random between two constants:</b> Hai giá trị hằng số xác định giới hạn trên và dưới cho giá trị.\n- <b>Random between two curves:</b> Hai đường cong xác định giới hạn trên và dưới cho giá trị tại một thời điểm nhất định.\n\nĐối với các thuộc tính màu sắc, có hai tùy chọn riêng biệt:\n- <b>Gradient:</b> Giá trị màu được lấy từ một dải màu chuyển sắc.\n- <b>Random between two gradients:</b> Hai dải màu xác định giới hạn trên và dưới cho giá trị màu.",
+                    "terms": {
+                        "Curve Editor": "Một công cụ trực quan trong Unity cho phép bạn chỉnh sửa một đường cong để xác định cách một giá trị thay đổi theo thời gian. Rất hữu ích trong Particle Systems và Animations.",
+                        "Gradient": "Một dải màu chuyển tiếp mượt mà từ màu này sang màu khác. Trong Particle Systems, nó thường được dùng để thay đổi màu của hạt theo thời gian sống của nó."
+                    }
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: Component Hệ thống hạt",
+                    "image": "images/game-dev/week6/slide_35.png",
+                    "notes": "Slide này hiển thị giao diện của component Particle System trong Inspector. Nó bao gồm:\n\n- <b>Các cài đặt toàn cục (Global Settings):</b> Ở trên cùng, xác định các hành vi cơ bản của toàn bộ hệ thống (thời lượng, có lặp lại không, v.v.).\n- <b>Các Modules:</b> Một danh sách các module có thể bật/tắt để thêm các hành vi phức tạp hơn (phát thải, hình dạng, vận tốc theo thời gian, va chạm...).\n- <b>Renderer Module:</b> Ở dưới cùng, quyết định cách các hạt sẽ được vẽ lên màn hình, bao gồm cả Material và Shader sẽ được sử dụng.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Cài đặt Toàn cục",
+                    "image": "images/game-dev/week6/slide_36.png",
+                    "notes": "Các cài đặt toàn cục của Particle System:\n\n- <b>Duration:</b> Khoảng thời gian hệ thống sẽ chạy.\n- <b>Looping:</b> Bật/tắt việc hệ thống có bắt đầu lại sau khi kết thúc hay không.\n- <b>Start Delay:</b> Độ trễ (tính bằng giây) trước khi hệ thống bắt đầu phát ra hạt.\n- <b>Start Lifetime:</b> Vòng đời ban đầu của các hạt.\n- <b>Start Speed / Size / Rotation / Colour:</b> Tốc độ / Kích thước / Góc xoay / Màu sắc ban đầu của mỗi hạt.\n- <b>Gravity Multiplier:</b> Hệ số nhân áp dụng cho trọng lực toàn cục (0: không có trọng lực).\n- <b>Simulation Space:</b> Quyết định các hạt sẽ được mô phỏng trong không gian cục bộ (di chuyển cùng đối tượng cha) hay không gian thế giới.",
+                    "terms": {}
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Modules (1/12) - Emission",
+                    "image": "images/game-dev/week6/slide_37.png",
+                    "notes": "<b>Emission Module (Module Phát thải):</b>\n\nModule này điều chỉnh việc phát ra các hạt từ hệ thống. Nó có thể được đặt thành số lượng hạt mỗi giây (Rate over Time) hoặc mỗi đơn vị khoảng cách (Rate over Distance).\n\n<b>Bursts (Phát xạ đột ngột)</b> được sử dụng để thêm các đợt phát ra thêm các hạt tại các thời điểm cụ thể.",
+                    "terms": {}
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Modules (2/12) - Shape",
+                    "image": "images/game-dev/week6/slide_38.png",
+                    "notes": "<b>Shape Module (Module Hình dạng):</b>\n\nCho biết hình dạng của khối phát thải và nơi các hạt được phóng ra từ bên trong nó. Hình dạng có thể là:\n- <b>Cone (Hình nón)</b>\n- <b>Sphere (Hình cầu)</b>\n- <b>Hemisphere (Hình bán cầu)</b>\n- <b>Box (Hình hộp)</b>\n- <b>Mesh (Lưới)</b>\n- Và các hình dạng khác.",
+                    "terms": {}
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: Modules (3/12) - Velocity over Lifetime",
+                    "image": "images/game-dev/week6/slide_39.png",
+                    "notes": "<b>Velocity over Lifetime Module (Module Vận tốc theo Vòng đời):</b>\n\nGia tốc có thể được áp dụng để thay đổi vận tốc của các hạt trong suốt vòng đời của chúng. Vì tất cả các thay đổi đều diễn ra theo thời gian, có thể chỉ định cách sự thay đổi này sẽ xảy ra thông qua một đường cong (curve).",
+                    "terms": {}
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: Modules (4/12) - Các module khác",
+                    "image": "images/game-dev/week6/slide_40.png",
+                    "notes": "<b>Các module '... Over Lifetime':</b>\n- <b>Limit Velocity:</b> Kiểm soát cách tốc độ của hạt bị giảm theo thời gian.\n- <b>Force:</b> Các hạt có thể được tăng tốc bởi các lực (gió, lực hút...) được chỉ định trong module này.\n- <b>Color:</b> Chỉ định cách màu sắc và độ trong suốt của hạt thay đổi theo thời gian.\n- <b>Size / Rotation:</b> Cho phép các hạt thay đổi kích thước hoặc xoay khi chúng di chuyển.\n\n<b>Các module '... By Speed':</b>\n- <b>Color By Speed:</b> Thay đổi màu của hạt dựa trên tốc độ của nó.\n- <b>Size By Speed:</b> Thay đổi kích thước của hạt dựa trên tốc độ của nó.\n- <b>Rotation By Speed:</b> Thay đổi góc xoay của hạt dựa trên tốc độ của nó.",
+                    "terms": {}
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: Modules (5/12) - Collision",
+                    "image": "images/game-dev/week6/slide_41.png",
+                    "notes": "<b>Collision Module (Module Va chạm):</b>\n\nModule này kiểm soát cách các hạt va chạm với các vật thể rắn trong scene. Va chạm có thể được đặt ở hai chế độ khác nhau (World hoặc Planes).\n\n- <b>Dampen:</b> Phần trăm tốc độ của hạt bị mất sau một vụ va chạm.\n- <b>Bounce:</b> Phần trăm tốc độ của hạt nảy lại sau một vụ va chạm.\n- <b>Lifetime Loss:</b> Phần trăm tổng vòng đời của hạt bị mất nếu nó va chạm.\n- <b>Min Kill Speed:</b> Các hạt di chuyển dưới tốc độ này sau một vụ va chạm sẽ bị loại bỏ.\n- <b>Send Collision Messages:</b> Nếu được bật, các va chạm của hạt có thể được phát hiện từ script bằng hàm `OnParticleCollision`.",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: Modules (6/12) - Collision (World Mode)",
+                    "image": "images/game-dev/week6/slide_42.png",
+                    "notes": "<b>Collision Module - Chế độ World:</b>\n\nTrong chế độ va chạm 'World', các hạt sẽ va chạm với <b>bất kỳ</b> collider nào trong scene. Chi phí xử lý cho tùy chọn này là cao, mặc dù nó thực tế hơn.\n\nHai cài đặt khác có sẵn trong chế độ này:\n- <b>Collides With:</b> Các hạt sẽ chỉ va chạm với các đối tượng trên các layer được chọn.\n- <b>Collision Quality:</b> Điều này ảnh hưởng đến mức độ nghiêm ngặt của các va chạm (ở các mức chất lượng thấp hơn, các hạt đôi khi có thể đi xuyên qua các collider).",
+                    "terms": {}
+                },
+                {
+                    "id": 43,
+                    "title": "Trang 43: Modules (7/12) - Collision (Plane Mode)",
+                    "image": "images/game-dev/week6/slide_43.png",
+                    "notes": "<b>Collision Module - Chế độ Plane:</b>\n\nTrong chế độ va chạm 'Plane', một danh sách các transform (thường là các GameObjects trống) có thể được thêm vào, dưới dạng một tập hợp các mặt phẳng mà các hạt sẽ va chạm. Các mặt phẳng này mở rộng vô hạn trong mặt phẳng XZ cục bộ của đối tượng với trục Y dương chỉ ra vector pháp tuyến của mặt phẳng (mặc dù chúng có thể được xoay).",
+                    "terms": {}
+                },
+                {
+                    "id": 44,
+                    "title": "Trang 44: Modules (8/12) - Triggers",
+                    "image": "images/game-dev/week6/slide_44.png",
+                    "notes": "<b>Triggers Module:</b>\n\nCho phép bạn định nghĩa một collider (tức là một khối lập phương) hoạt động như một trigger cho Particle System. Các hiệu ứng có thể được xác định cho các hạt khi chúng ở <b>bên trong (inside)</b>, <b>bên ngoài (outside)</b>, <b>đi vào (enter)</b> và/hoặc <b>đi ra (exit)</b> khỏi trigger.\n\nCác tùy chọn là:\n- <b>Ignore:</b> không có gì xảy ra.\n- <b>Kill:</b> giết chết hạt.\n- <b>Callback:</b> gọi một hàm tùy chỉnh (qua `OnParticleTrigger`).",
+                    "terms": {}
+                },
+                {
+                    "id": 45,
+                    "title": "Trang 45: Modules (9/12) - Sub-emitters",
+                    "image": "images/game-dev/week6/slide_45.png",
+                    "notes": "<b>Sub Emitters (Bộ phát phụ)</b> là các hệ thống hạt bổ sung được tạo ra tại vị trí của một hạt ở các giai đoạn nhất định trong vòng đời của nó. Các giai đoạn của vòng đời của hạt liên quan đến các hệ thống thứ cấp này là <b>Sinh ra (Birth)</b>, <b>Va chạm (Collision)</b> và <b>Chết (Death)</b>.\n\nHai bộ phát phụ có thể được thêm vào cho mỗi giai đoạn bằng cách sử dụng các mũi tên '+' ở bên phải của inspector.",
+                    "terms": {
+                        "Sub Emitter": "Một Particle System được kích hoạt bởi một hạt từ một Particle System khác. Rất hữu ích để tạo ra các hiệu ứng phức tạp, nhiều tầng lớp (ví dụ: một quả pháo hoa nổ ra các tia lửa nhỏ hơn)."
+                    }
+                },
+                {
+                    "id": 46,
+                    "title": "Trang 46: Modules (10/12) - Renderer",
+                    "image": "images/game-dev/week6/slide_46.png",
+                    "notes": "<b>Renderer Module:</b>\n\nCài đặt của module này xác định cách hình ảnh hoặc mesh của một hạt được biến đổi, tô bóng và bị vẽ đè bởi các hạt khác.\n\n<b>Chế độ Render (Render Mode)</b> xác định cách hình ảnh được render được tạo ra từ hình ảnh đồ họa:\n- <b>Billboard:</b> Hạt luôn đối mặt với camera.\n- <b>Stretched Billboard:</b> Đối mặt với camera nhưng có áp dụng co giãn.\n- <b>Horizontal Billboard:</b> Mặt phẳng hạt song song với mặt phẳng 'sàn' XZ.\n- <b>Vertical Billboard:</b> Hạt thẳng đứng trên trục Y của thế giới nhưng quay mặt về phía camera.\n- <b>Mesh:</b> Hạt được render từ một mesh 3D thay vì một texture.",
+                    "terms": {}
+                },
+                {
+                    "id": 47,
+                    "title": "Trang 47: Modules (11/12) - Renderer Properties",
+                    "image": "images/game-dev/week6/slide_47.png",
+                    "notes": "Các thuộc tính phổ biến của Renderer:\n\n- <b>Material:</b> Material được sử dụng để render hạt.\n- <b>Sort Mode:</b> Thứ tự mà các hạt được vẽ (và do đó bị đè lên nhau).\n- <b>Sorting Fudge:</b> Độ lệch của thứ tự sắp xếp hạt.\n- <b>Cast Shadows / Receive Shadows:</b> Hạt có tạo bóng hoặc nhận bóng hay không.\n- <b>Max Particle Size:</b> Kích thước hạt lớn nhất (bất kể các cài đặt khác), được biểu thị dưới dạng một phần của kích thước viewport.",
+                    "terms": {}
+                },
+                {
+                    "id": 48,
+                    "title": "Trang 48: Modules (12/12) - Renderer Properties",
+                    "image": "images/game-dev/week6/slide_48.png",
+                    "notes": "Các thuộc tính dành riêng cho từng chế độ render:\n\n<b>Chế độ Stretched Billboard:</b>\n- <b>Camera Scale:</b> Độ co giãn được áp dụng tỷ lệ với chuyển động của camera.\n- <b>Speed Scale:</b> Độ co giãn được áp dụng tỷ lệ với tốc độ của hạt.\n- <b>Length Scale:</b> Độ co giãn được áp dụng tỷ lệ với chiều dài của hạt.\n\n<b>Chế độ Billboard:</b>\n- <b>Normal Direction:</b> Độ lệch của các pháp tuyến chiếu sáng được sử dụng cho đồ họa hạt.\n\n<b>Chế độ Mesh:</b>\n- <b>Mesh:</b> Một hoặc nhiều mesh được sử dụng để render các hạt.",
+                    "terms": {}
+                },
+                {
+                    "id": 49,
+                    "title": "Trang 49: Chuyển tiếp - Câu hỏi & Demo Lab",
+                    "image": "images/game-dev/week6/slide_49.png",
+                    "notes": "Kết thúc phần lý thuyết về Hệ thống hạt.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 50,
+                    "title": "Trang 50: Xem trước Buổi thực hành",
+                    "image": "images/game-dev/week6/slide_50.png",
+                    "notes": "Chúng ta sẽ hoàn thành bài tập về địa hình, thêm vào một menu, các hiệu ứng mờ dần (fade-in/out), và các hệ thống hạt.\n\nBài giảng tiếp theo: <b>Persistence and animations.</b>",
+                    "terms": {}
+                }
+            ]
         }
     ]
 }
