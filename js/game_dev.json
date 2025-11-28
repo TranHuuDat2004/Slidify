@@ -3098,6 +3098,563 @@
                     "terms": {}
                 }
             ]
+        },
+        {
+            "title": "Tuần 9: Game AI: Decision Making",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - Game AI: Decision Making",
+                    "image": "images/game-dev/week9/slide_1.png",
+                    "notes": "Bài giảng 9: Trí tuệ nhân tạo trong Game: Ra quyết định.\n\nTuần này, chúng ta sẽ tìm hiểu các kiến trúc AI khác nhau được sử dụng để giúp các nhân vật trong game có thể tự 'suy nghĩ' và quyết định hành động của mình.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week9/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 9 bao gồm:\n\n1. <b>Cây quyết định (Decision Trees).</b>\n2. <b>Máy trạng thái (State Machines).</b>\n3. <b>Cây hành vi (Behaviour Trees).</b>\n4. <b>Câu hỏi ôn tập và Xem trước buổi thực hành.</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Vấn đề Ra quyết định",
+                    "image": "images/game-dev/week9/slide_3.png",
+                    "notes": "<b>Ra quyết định (Decision making):</b> khả năng của một nhân vật để quyết định phải làm gì.\n\n- Nhân vật xử lý một tập hợp thông tin có thể được sử dụng để tạo ra một hành động sẽ được thực hiện.\n- <b>Đầu vào của Bộ ra quyết định:</b> Thông tin mà nhân vật sở hữu.\n  - <b>Kiến thức bên ngoài:</b> Thông tin từ môi trường game (vị trí của các thực thể khác, bố cục màn chơi, hướng của tiếng ồn, v.v.).\n  - <b>Kiến thức bên trong:</b> Trạng thái nội tại của nhân vật (máu, mục tiêu, các hành động trong quá khứ, v.v.).\n- <b>Đầu ra của Bộ ra quyết định:</b> Yêu cầu hành động.",
+                    "terms": {
+                        "Decision Making (AI)": "Trong AI của game, đây là quá trình một tác tử (agent) lựa chọn một hành động từ một tập hợp các hành động có thể có, dựa trên trạng thái hiện tại của nó và của thế giới game."
+                    }
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Chuyển tiếp - Decision Trees",
+                    "image": "images/game-dev/week9/slide_4.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Cây quyết định (Decision Trees).",
+                    "terms": {}
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Giới thiệu Decision Trees",
+                    "image": "images/game-dev/week9/slide_5.png",
+                    "notes": "<b>Cây quyết định (Decision Trees)</b> là những cấu trúc đơn giản, khá nhanh và dễ thực hiện cũng như dễ hiểu. Khái niệm rất đơn giản: với một tập hợp thông tin đầu vào, hãy quyết định điều tốt nhất để thực hiện.\n\nMột cây quyết định được tạo thành từ các <b>nút quyết định (decision nodes)</b>, bắt đầu từ một quyết định đầu tiên ở gốc của nó. Mỗi quyết định có ít nhất hai lựa chọn khả thi.",
+                    "terms": {
+                        "Decision Tree": "Một kiến trúc AI có cấu trúc giống như một cây lưu đồ, trong đó mỗi nút bên trong biểu diễn một 'bài kiểm tra' trên một thuộc tính (ví dụ: 'có nhìn thấy kẻ thù không?'), mỗi nhánh biểu diễn kết quả của bài kiểm tra, và mỗi nút lá biểu diễn một hành động."
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Decision Trees (Tiếp theo)",
+                    "image": "images/game-dev/week9/slide_6.png",
+                    "notes": "Thuật toán bắt đầu tại quyết định đầu tiên (gốc) và tiếp tục đưa ra các lựa chọn tại mỗi nút quyết định cho đến khi quá trình quyết định không còn quyết định nào để xem xét.\n\n- Tại mỗi <b>lá (leaf)</b> của cây, một hành động được đính kèm.\n- Sau đó, hành động đó được thực hiện tự động.\n- Lưu ý rằng cùng một hành động có thể được đặt ở nhiều lá của cây.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Decision Trees (Các quyết định)",
+                    "image": "images/game-dev/week9/slide_7.png",
+                    "notes": "Các quyết định trong một cây thường đơn giản:\n- Thông thường, chúng kiểm tra một <i>giá trị số duy nhất</i>, một <i>enumeration</i>, hoặc một <i>điều kiện boolean duy nhất</i>.\n- Chúng có thể được trao quyền truy cập vào các hoạt động phức tạp (hơn), chẳng hạn như tính toán khoảng cách, kiểm tra tầm nhìn, tìm đường, v.v.\n\nQuyết định có thể được đặt thành chuỗi để phản ánh các mệnh đề <b>AND</b> và <b>OR</b>.",
+                    "terms": {}
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Decision Trees (Binary vs N-ary)",
+                    "image": "images/game-dev/week9/slide_8.png",
+                    "notes": "So sánh giữa cây quyết định nhị phân (Binary) và cây quyết định N-nhánh (N-ary):\n\n- Cây N-nhánh đòi hỏi ít so sánh hơn; nó hiệu quả hơn.\n- <b>Nhưng</b>, cây nhị phân lại phổ biến hơn. Lợi ích về hiệu quả bị mất ở cấp độ mã (do chuỗi các câu lệnh `if`). Ngoài ra, cây quyết định nhị phân dễ được tối ưu hóa hơn.",
+                    "terms": {}
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Decision Trees - Cân bằng",
+                    "image": "images/game-dev/week9/slide_9.png",
+                    "notes": "Một cây được coi là <b>cân bằng (balanced)</b> nếu nó có số lượng lá gần như bằng nhau trên mỗi nhánh. Một cây cân bằng đảm bảo rằng việc chọn một hành động (đến một nút lá) được thực hiện trong thời gian `O(log₂(n))`, trong đó `n` là số nút trong cây.\n\nTrong trường hợp xấu nhất, một cây hoàn toàn không cân bằng có thể trả về một hành động trong `O(n)` quyết định.\n\nTuy nhiên, cấu trúc cây tối ưu phụ thuộc vào các nút quyết định. Các kiểm tra được sử dụng phổ biến nhất nên được đặt gần nút gốc, và các quyết định tốn kém nhất nên được đặt gần các lá hơn.",
+                    "terms": {
+                        "Balanced Tree": "Một cây dữ liệu trong đó độ sâu của các cây con của mọi nút không chênh lệch quá một. Điều này đảm bảo hiệu suất tìm kiếm ổn định và nhanh chóng.",
+                        "Big O Notation (O(log n), O(n))": "Một ký hiệu toán học được sử dụng trong khoa học máy tính để mô tả độ phức tạp về thời gian hoặc không gian của một thuật toán. `O(log n)` (rất nhanh) tốt hơn nhiều so với `O(n)` (tuyến tính)."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Decision Trees - Biến thể (DAG)",
+                    "image": "images/game-dev/week9/slide_10.png",
+                    "notes": "Một <b>Đồ thị có hướng không chu trình (Directed Acyclic Graph - DAG)</b> có thể được tạo ra bằng cách cho phép một số nút nhất định trong cây có thể được tiếp cận bởi các nhánh khác nhau.\n\nCây bên trái là một DAG hợp lệ. Tuy nhiên, cây bên phải là một cây không hợp lệ (nó không phải là không chu trình), và nó có thể tạo ra các vòng lặp vô hạn.",
+                    "terms": {
+                        "Directed Acyclic Graph (DAG)": "Một đồ thị có hướng không chứa bất kỳ chu trình nào. Trong ngữ cảnh cây quyết định, việc sử dụng DAG cho phép tái sử dụng các nhánh con chung, giúp giảm sự trùng lặp."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Decision Trees - Biến thể (Random)",
+                    "image": "images/game-dev/week9/slide_11.png",
+                    "notes": "Một <b>Cây quyết định ngẫu nhiên (Random Decision Tree)</b> là một cây quyết định cho phép sự biến đổi trong hành vi bằng cách đưa vào một yếu tố ngẫu nhiên.\n\nTrong ví dụ, nếu không bị tấn công, nhân vật sẽ 'tung một đồng xu'. Tùy thuộc vào kết quả, nó sẽ đi tuần tra hoặc đứng yên.\n\nCâu hỏi: Điều gì xảy ra nếu cây quyết định này được thực thi ở mỗi frame? (Nhân vật sẽ liên tục thay đổi giữa tuần tra và đứng yên một cách rất nhanh và không tự nhiên).",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Chuyển tiếp - State Machines",
+                    "image": "images/game-dev/week9/slide_12.png",
+                    "notes": "Kết thúc phần giới thiệu về Cây quyết định.\n\nPhần tiếp theo sẽ tập trung vào một kiến trúc AI phổ biến khác: Máy trạng thái (State Machines).",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Máy trạng thái hữu hạn (FSM)",
+                    "image": "images/game-dev/week9/slide_13.png",
+                    "notes": "Một cách tốt hơn để tính đến thế giới bên ngoài tác tử <b>và</b> trạng thái nội tại của nó là một Máy trạng thái hữu hạn (FSM).\n\nMột FSM bao gồm:\n- Một tập hợp hữu hạn các <b>trạng thái</b>. Chừng nào FSM còn ở trong cùng một trạng thái, tác tử sẽ tiếp tục thực hiện cùng một hành động.\n- Một trong các trạng thái này được coi là <b>trạng thái ban đầu (initial state)</b>.\n- Một tập hợp hữu hạn các <b>chuyển đổi (transitions)</b> từ trạng thái này sang trạng thái khác.",
+                    "terms": {
+                        "Finite State Machine (FSM)": "Một mô hình tính toán bao gồm một tập hợp các trạng thái, một trạng thái bắt đầu, các điều kiện đầu vào, và một hàm chuyển đổi xác định trạng thái tiếp theo. Rất phổ biến trong lập trình game để quản lý AI, animation, và logic game."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Ví dụ triển khai FSM (1/6)",
+                    "image": "images/game-dev/week9/slide_14.png",
+                    "notes": "Chúng ta sẽ xem một ví dụ về triển khai FSM cho các hành vi của nhân vật. Có bốn thành phần:\n\n- <b>`Transition` enum:</b> Các nhãn cho các transition có thể được kích hoạt.\n- <b>`StateID` enum:</b> ID của các trạng thái của FSM.\n- <b>`FSMState` class:</b> Lưu trữ các cặp transition-state chỉ ra mối quan hệ giữa các trạng thái gốc và đích, và transition liên kết chúng.\n- <b>`FSMSystem` class:</b> Lớp mà nhân vật sử dụng để xác định hành vi, bao gồm một danh sách các trạng thái có thể có.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Ví dụ triển khai FSM (2/6) - FSMState Class",
+                    "image": "images/game-dev/week9/slide_15.png",
+                    "notes": "Đây là một lớp trừu tượng `FSMState` định nghĩa 'khung sườn' cho một trạng thái.\n\n- Nó chứa một `map` để lưu các transition và `StateID` đích tương ứng.\n- `Add/DeleteTransition`: Các hàm để thêm/xóa các transition khỏi map.\n- `GetOutputState`: Trả về `StateID` của trạng thái tiếp theo, dựa trên một transition đầu vào.\n- `DoBeforeEntering/Leaving`: Các hàm `virtual` có thể được ghi đè để thực hiện các hành động thiết lập hoặc dọn dẹp khi vào/ra một trạng thái.\n- `Reason` và `Act`: Các hàm `abstract` bắt buộc phải được triển khai bởi các lớp con. `Reason` quyết định khi nào nên chuyển trạng thái, và `Act` định nghĩa hành vi của NPC trong trạng thái này.",
+                    "terms": {
+                        "abstract class": "Một lớp không thể được khởi tạo trực tiếp và có thể chứa các phương thức trừu tượng (không có phần thân). Nó hoạt động như một bản thiết kế cho các lớp con.",
+                        "virtual method": "Một phương thức trong lớp cha có thể được ghi đè (overridden) bởi một phương thức có cùng chữ ký trong lớp con."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Ví dụ triển khai FSM (3/6) - FSMSystem Class",
+                    "image": "images/game-dev/week9/slide_16.png",
+                    "notes": "Lớp `FSMSystem` quản lý toàn bộ máy trạng thái.\n\n- Nó chứa một danh sách tất cả các trạng thái (`states`).\n- `currentStateID` và `currentState` theo dõi trạng thái hiện tại.\n- `AddState`: Thêm một trạng thái mới vào hệ thống. Trạng thái đầu tiên được thêm vào sẽ được coi là trạng thái ban đầu.\n- `DeleteState`: Xóa một trạng thái khỏi hệ thống.",
+                    "terms": {}
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Ví dụ triển khai FSM (4/6) - FSMSystem Class II",
+                    "image": "images/game-dev/week9/slide_17.png",
+                    "notes": "Hàm <b>PerformTransition</b> chịu trách nhiệm thay đổi trạng thái của FSM.\n\n1. Nó lấy `StateID` của trạng thái tiếp theo từ trạng thái hiện tại (`currentState`).\n2. Cập nhật `currentStateID`.\n3. Duyệt qua danh sách các trạng thái để tìm đối tượng `FSMState` tương ứng với `currentStateID` mới.\n4. Gọi hàm `DoBeforeLeaving()` của trạng thái cũ.\n5. Cập nhật `currentState` thành đối tượng trạng thái mới.\n6. Gọi hàm `DoBeforeEntering()` của trạng thái mới.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Ví dụ triển khai FSM (5/6) - Cách sử dụng I",
+                    "image": "images/game-dev/week9/slide_18.png",
+                    "notes": "Lớp `NPCControl` này là một `MonoBehaviour` điều khiển một NPC.\n\n- Trong `Start()`, nó gọi `MakeFSM()` để xây dựng máy trạng thái.\n- Trong `Update()`, nó liên tục gọi các phương thức `Reason()` và `Act()` của trạng thái hiện tại.\n- Hàm `MakeFSM()` khởi tạo hai trạng thái (`FollowPathState` và `ChasePlayerState`), định nghĩa các transition giữa chúng, và thêm chúng vào hệ thống FSM.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Ví dụ triển khai FSM (6/6) - Cách sử dụng II",
+                    "image": "images/game-dev/week9/slide_19.png",
+                    "notes": "Đây là các lớp trạng thái cụ thể kế thừa từ `FSMState`.\n\n- Mỗi lớp (ví dụ: `FollowPathState`) định nghĩa `StateID` của riêng nó.\n- <b>Hàm `Reason()`:</b> Chứa logic quyết định khi nào cần chuyển sang trạng thái khác. Ví dụ, nếu người chơi ở gần, nó sẽ kích hoạt transition `SawPlayer`.\n- <b>Hàm `Act()`:</b> Chứa hành vi của NPC trong trạng thái này. Ví dụ, đi theo một con đường tuần tra.",
+                    "terms": {}
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Máy trạng thái phân cấp (Hierarchical)",
+                    "image": "images/game-dev/week9/slide_20.png",
+                    "notes": "Các transition của FSM rất tốt để chỉ ra rằng một sự thay đổi trạng thái nên được thực hiện. Tất cả các trạng thái này đều chia sẻ cùng một <b>bối cảnh (context)</b>. Ví dụ, một robot dọn dẹp di chuyển quanh một màn chơi với một mục tiêu nhất định (dọn dẹp). Trong các trường hợp bình thường, FSM điều khiển robot vận hành nó để thực hiện các quy trình dọn dẹp.",
+                    "terms": {}
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Máy trạng thái phân cấp (Hierarchical)",
+                    "image": "images/game-dev/week9/slide_21.png",
+                    "notes": "Tuy nhiên, các hoàn cảnh bên ngoài hoặc bên trong có thể thay đổi bối cảnh của tác tử. Ví dụ, robot có thể bắt đầu hết pin, hoặc có thể có một trường hợp khẩn cấp. Việc tính đến từng thay đổi bối cảnh này có thể làm <b>tăng gấp đôi</b> số lượng trạng thái trong FSM.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Máy trạng thái phân cấp (Hierarchical)",
+                    "image": "images/game-dev/week9/slide_22.png",
+                    "notes": "Một giải pháp tốt hơn là <b>Máy trạng thái hữu hạn phân cấp (Hierarchical Finite State Machine - HFSM)</b>. Cỗ máy này nhóm các trạng thái thuộc cùng một bối cảnh vào một trạng thái <b>cấp cao hơn (higher-level state)</b>.\n\n- Có một trạng thái cấp cao ban đầu.\n- Có một trạng thái bắt đầu cho mỗi trạng thái cấp cao.\n- Các transition được hạn chế bên trong mỗi trạng thái cấp cao.\n- Các transition giữa các trạng thái cấp cao được kích hoạt từ bất kỳ trạng thái nào trong nguồn.",
+                    "terms": {
+                        "Hierarchical Finite State Machine (HFSM)": "Một phiên bản mở rộng của FSM, cho phép các trạng thái có thể chứa các máy trạng thái con bên trong. Điều này giúp quản lý sự phức tạp và tránh việc lặp lại các transition giống nhau ở nhiều trạng thái."
+                    }
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Cây quyết định và FSMs",
+                    "image": "images/game-dev/week9/slide_23.png",
+                    "notes": "Có thể kết hợp cả FSMs và Cây quyết định trong một cấu trúc duy nhất:\n\n- Các <b>chuyển đổi (transitions)</b> được thay thế bằng các cây quyết định.\n- Các <b>hành động (actions)</b> từ các cây quyết định là các trạng thái.",
+                    "terms": {}
+                },
+                {
+                    "id": 24,
+                    "title": "Trang 24: Chuyển tiếp - Behaviour Trees",
+                    "image": "images/game-dev/week9/slide_24.png",
+                    "notes": "Kết thúc phần giới thiệu về Máy trạng thái.\n\nPhần tiếp theo sẽ tập trung vào một kiến trúc AI hiện đại và mạnh mẽ hơn: Cây hành vi (Behaviour Trees).",
+                    "terms": {}
+                },
+                {
+                    "id": 25,
+                    "title": "Trang 25: Giới thiệu Behaviour Trees",
+                    "image": "images/game-dev/week9/slide_25.png",
+                    "notes": "<b>Cây hành vi (Behaviour trees - BTs)</b> đã trở nên rất phổ biến trong những năm gần đây như một cách linh hoạt, có thể mở rộng và trực quan hơn để mã hóa các hành vi phức tạp của NPC. Một trong những game nổi tiếng đầu tiên sử dụng BTs là Halo 2.\n\nMột số ưu điểm của BTs:\n- Có thể kết hợp nhiều mối quan tâm như tìm đường và lập kế hoạch.\n- Dạng module và có thể mở rộng.\n- Dễ phát triển, ngay cả đối với các nhà phát triển không chuyên về kỹ thuật.\n- Có thể sử dụng GUI để dễ dàng tạo và thao tác với BTs.",
+                    "terms": {
+                        "Behaviour Tree (BT)": "Một kiến trúc AI phổ biến có cấu trúc dạng cây, được dùng để tạo ra các hành vi phức tạp cho NPC. Nó hoạt động bằng cách 'tick' qua cây từ gốc xuống lá, thực thi các nút theo một trật tự logic để quyết định hành động cuối cùng."
+                    }
+                },
+                {
+                    "id": 26,
+                    "title": "Trang 26: A Task (Một Nhiệm vụ)",
+                    "image": "images/game-dev/week9/slide_26.png",
+                    "notes": "Một <b>task (nhiệm vụ)</b> về cơ bản là một hoạt động mà, khi được cấp một ít thời gian CPU, sẽ trả về một giá trị. Trường hợp đơn giản nhất là trả về <b>thành công (success)</b> hoặc <b>thất bại (failure)</b>.\n\nMột BT cơ bản bao gồm 3 loại nút sau:\n- <b>Conditions (Điều kiện):</b> kiểm tra một thuộc tính nào đó của game.\n- <b>Actions (Hành động):</b> thay đổi trạng thái của game; chúng thường thành công.\n- <b>Composites (Hợp thành):</b> bộ sưu tập các task con (điều kiện, hành động, hợp thành).\n\nCác nút hợp thành phổ biến:\n- <b>Selector:</b> trả về 'thành công' ngay khi một hành vi con thành công.\n- <b>Sequence:</b> chỉ trả về 'thành công' nếu <b>tất cả</b> các hành vi con đều thành công.",
+                    "terms": {
+                        "Task (Node)": "Một khối xây dựng cơ bản của một Behaviour Tree. Mỗi nút trong cây là một Task. Các task thường trả về một trong ba trạng thái: Success, Failure, hoặc Running.",
+                        "Selector Node": "Một loại nút hợp thành (composite) thực thi các con của nó theo thứ tự cho đến khi một trong số chúng trả về Success hoặc Running. Nó tương đương với toán tử logic 'OR'.",
+                        "Sequence Node": "Một loại nút hợp thành (composite) thực thi các con của nó theo thứ tự cho đến khi một trong số chúng trả về Failure hoặc Running. Nó chỉ trả về Success nếu tất cả các con đều trả về Success. Tương đương với toán tử logic 'AND'."
+                    }
+                },
+                {
+                    "id": 27,
+                    "title": "Trang 27: Selectors và Sequences",
+                    "image": "images/game-dev/week9/slide_27.png",
+                    "notes": "Hai ví dụ đơn giản về selector và sequence:\n\n- <b>Selector (dấu ?):</b> Sẽ thử 'Attack', nếu thất bại, thử 'Taunt', nếu thất bại, thử 'Stare'. Nó sẽ dừng lại và báo cáo thành công ngay khi một hành động thành công.\n- <b>Sequence (dấu →):</b> Sẽ kiểm tra 'Enemy visible?'. Nếu thành công, nó sẽ thực hiện 'Turn away'. Nếu thành công, nó sẽ thực hiện 'Run away'. Nếu bất kỳ bước nào thất bại, toàn bộ sequence sẽ thất bại.\n\nCâu hỏi: Selector và Sequence tương ứng với các toán tử logic nào? (Selector ~ OR, Sequence ~ AND).",
+                    "terms": {}
+                },
+                {
+                    "id": 28,
+                    "title": "Trang 28: Thứ tự của các Hành động",
+                    "image": "images/game-dev/week9/slide_28.png",
+                    "notes": "Chúng ta có thể sử dụng thứ tự của các hành động để ngụ ý sự ưu tiên. Các hành động con luôn được thực thi theo thứ tự chúng được xác định. Điều này đôi khi dẫn đến hành vi có thể dự đoán được (và nhàm chán).\n\nChúng ta muốn có <b>thứ tự một phần (partial ordering)</b>: một số thứ tự nghiêm ngặt trộn lẫn với một số thứ tự ngẫu nhiên. Do đó, chúng ta sử dụng hai toán tử mới, <b>random Selector</b> và <b>random Sequence</b>.",
+                    "terms": {}
+                },
+                {
+                    "id": 29,
+                    "title": "Trang 29: Cây có Thứ tự một phần",
+                    "image": "images/game-dev/week9/slide_29.png",
+                    "notes": "Slide này minh họa một cây hành vi phức tạp hơn sử dụng các loại nút khác nhau để tạo ra một hành vi ít có thể dự đoán được hơn:\n\n- <b>? (Selector):</b> Chọn một hành động ưu tiên.\n- <b>~? (Random Selector):</b> Thử một hành động con ngẫu nhiên cho đến khi một cái thành công.\n- <b>→ (Sequence):</b> Thực hiện một chuỗi các hành động theo thứ tự.\n- <b>~→ (Random Sequence):</b> Thực hiện các hành động con theo một thứ tự ngẫu nhiên.",
+                    "terms": {}
+                },
+                {
+                    "id": 30,
+                    "title": "Trang 30: Decorators",
+                    "image": "images/game-dev/week9/slide_30.png",
+                    "notes": "<b>Decorators</b> thêm chức năng mở rộng cho một task hiện có. Một decorator có một đứa con duy nhất mà hành vi của nó bị sửa đổi. Một công dụng phổ biến là làm <b>bộ lọc (filters)</b>: nếu và cách một task có thể chạy.\n\nVí dụ, chúng ta có thể thực thi một task lặp đi lặp lại cho đến khi một mục tiêu nào đó đã đạt được.\n\nDecorators cũng có thể được dùng để đảo ngược giá trị trả về của một hành động.",
+                    "terms": {
+                        "Decorator Node": "Một loại nút trong Behaviour Tree chỉ có một con duy nhất. Nó không thực hiện hành vi riêng, mà thay vào đó sửa đổi hoặc biến đổi kết quả của nút con của nó (ví dụ: lặp lại, đảo ngược kết quả, chỉ chạy nếu một điều kiện đúng)."
+                    }
+                },
+                {
+                    "id": 31,
+                    "title": "Trang 31: Quản lý Tài nguyên bằng Decorators",
+                    "image": "images/game-dev/week9/slide_31.png",
+                    "notes": "Các phần riêng lẻ của một BT thường cần truy cập vào cùng một tài nguyên (ví dụ: số lượng giới hạn các instance tìm đường, âm thanh). Chúng ta có thể:\n- Hard-code một truy vấn tài nguyên vào hành vi.\n- Tạo một task điều kiện để thực hiện kiểm tra bằng cách sử dụng một Sequence.\n- Sử dụng một Decorator để bảo vệ tài nguyên.\n\nChúng ta có thể sử dụng <b>semaphores</b>: một cơ chế để đảm bảo một tài nguyên giới hạn không bị đăng ký quá mức. Một decorator sau đó được liên kết với một semaphore, mà semaphore này lại được liên kết với tài nguyên.",
+                    "terms": {
+                        "Semaphore": "Trong lập trình, đây là một biến hoặc một kiểu dữ liệu trừu tượng được dùng để kiểm soát quyền truy cập vào một tài nguyên chung bởi nhiều tiến trình trong một môi trường đa nhiệm."
+                    }
+                },
+                {
+                    "id": 32,
+                    "title": "Trang 32: Đồng thời và Thời gian",
+                    "image": "images/game-dev/week9/slide_32.png",
+                    "notes": "Chúng ta cần tính đến thời gian cần thiết để thực thi một hành động. Nếu chúng ta thực thi mỗi BT trong một luồng riêng, chúng ta có thể:\n- Chờ một khoảng thời gian để các hành động kết thúc (đưa luồng vào trạng thái ngủ).\n- Hết thời gian các task hiện tại và trả về kết quả (ví dụ: thất bại).\n\nQuan trọng nhất, việc chăm sóc sự đồng thời cho phép các task <b>song song (parallel)</b>.\n\n<b>Sequence, Selector và Parallel</b> tạo thành xương sống của hầu hết các BT. Parallel tương tự như sequence nhưng chạy tất cả các task đồng thời.",
+                    "terms": {
+                        "Parallel Node": "Một loại nút hợp thành (composite) thực thi tất cả các nút con của nó cùng một lúc. Chính sách thành công/thất bại của nó có thể được tùy chỉnh (ví dụ: thành công khi M con thành công, thất bại khi N con thất bại)."
+                    }
+                },
+                {
+                    "id": 33,
+                    "title": "Trang 33: Sử dụng Parallel",
+                    "image": "images/game-dev/week9/slide_33.png",
+                    "notes": "Công dụng của nút Parallel:\n\n- Thực thi nhiều hành động đồng thời, chẳng hạn như vừa la hét vừa rơi xuống.\n- Điều khiển một nhóm nhân vật: kết hợp các hành vi cá nhân và nhóm.\n- Chúng ta cũng có thể sử dụng parallel để kiểm tra điều kiện liên tục. Trong ví dụ bên phải, nó liên tục kiểm tra xem 'Player on platform?' trong khi vận hành 'teleporter'. Nếu điều kiện thất bại, toàn bộ nút sẽ thất bại.",
+                    "terms": {}
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Dữ liệu và Tái sử dụng Hành vi",
+                    "image": "images/game-dev/week9/slide_34.png",
+                    "notes": "<b>Dữ liệu:</b> Chúng ta thường cần tham chiếu đến dữ liệu (được chia sẻ) để thực hiện các hành động của một hành vi. Ví dụ, hành động 'mở cửa' cần tham chiếu đến một cánh cửa và căn phòng cụ thể.\n\nCách tiếp cận tốt nhất là tách rời dữ liệu khỏi cây. Cấu trúc dữ liệu trung tâm bên ngoài được gọi là <b>blackboard</b>. Nó có thể lưu trữ bất kỳ loại dữ liệu nào và đáp ứng bất kỳ loại yêu cầu nào.\n\n<b>Tái sử dụng Hành vi:</b> Rõ ràng là các BT, nếu được thiết kế đúng cách, có thể khá modular và do đó việc tái sử dụng toàn bộ hoặc một phần cây là hợp lý.",
+                    "terms": {
+                        "Blackboard": "Một cấu trúc dữ liệu được chia sẻ, hoạt động như một bộ nhớ chung cho một Cây hành vi. Nó cho phép các nút khác nhau trong cây giao tiếp và chia sẻ thông tin với nhau mà không cần kết nối trực tiếp."
+                    }
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: BT - Ví dụ Triển khai (BehaviourTree)",
+                    "image": "images/game-dev/week9/slide_35.png",
+                    "notes": "Đây là lớp `BehaviourTree` chính, quản lý việc thực thi của toàn bộ cây.\n\n- <b>`rootNode`</b>: Nút gốc của cây.\n- <b>`currentNode`</b>: Nút đang được thực thi.\n- <b>`agent`</b>: Tác tử sở hữu cây hành vi này.\n- <b>`execute()`</b>: Hàm chính được gọi ở mỗi lần cập nhật AI. Nó ra lệnh cho nút gốc bắt đầu thực thi.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: BT - Ví dụ Triển khai (Node 1/2)",
+                    "image": "images/game-dev/week9/slide_36.png",
+                    "notes": "Lớp `BTNode` là một lớp trừu tượng cơ sở cho tất cả các nút trong cây.\n\nNó chứa các thuộc tính cơ bản như:\n- Trạng thái hiện tại của nút (`nodeStatus`).\n- Danh sách các nút con (`children`).\n- Tham chiếu đến nút cha (`parent`).\n- Tham chiếu đến toàn bộ cây (`tree`).",
+                    "terms": {}
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: BT - Ví dụ Triển khai (Node 2/2)",
+                    "image": "images/game-dev/week9/slide_37.png",
+                    "notes": "Các phương thức quan trọng trong `BTNode`:\n\n- <b>`update(int nodeStatus)`</b>: Một hàm trừu tượng được gọi bởi một nút con để thông báo kết quả của nó (Thành công/Thất bại) cho cha.\n- <b>`notifyResult()`</b>: Hàm mà một nút con gọi để bắt đầu quá trình cập nhật trạng thái lên cha của nó.\n- <b>`step()`</b>: Hàm để thực thi nút này.",
+                    "terms": {}
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: BT - Ví dụ Triển khai (Root node)",
+                    "image": "images/game-dev/week9/slide_38.png",
+                    "notes": "Giao diện `BTConstants` định nghĩa các hằng số cho các trạng thái của nút: IDLE (Nhàn rỗi), EXECUTING (Đang thực thi), SUCCESS (Thành công), FAILURE (Thất bại).\n\nLớp `BTRootNode` là một loại nút đặc biệt, đóng vai trò là gốc của cây. Hàm `update()` của nó chỉ đơn giản là đặt lại trạng thái hiện tại của cây.",
+                    "terms": {}
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: BT - Ví dụ Triển khai (Selector node)",
+                    "image": "images/game-dev/week9/slide_39.png",
+                    "notes": "Đây là cách triển khai một nút <b>Selector</b>.\n\nHàm `update()` của nó xử lý logic cốt lõi:\n- Nếu một nút con trả về <b>Thất bại (FAILURE)</b>, nó sẽ chuyển sang thực thi nút con tiếp theo trong danh sách.\n- Nếu tất cả các con đều thất bại, Selector sẽ báo cáo Thất bại cho cha của nó.\n- Nếu một nút con trả về <b>Thành công (SUCCESS)</b>, nó sẽ ngay lập tức báo cáo Thành công cho cha của nó mà không cần kiểm tra các con còn lại.",
+                    "terms": {}
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: BT - Ví dụ Triển khai (Sequence node)",
+                    "image": "images/game-dev/week9/slide_40.png",
+                    "notes": "Đây là cách triển khai một nút <b>Sequence</b>.\n\nHàm `update()` của nó xử lý logic cốt lõi:\n- Nếu một nút con trả về <b>Thành công (SUCCESS)</b>, nó sẽ chuyển sang thực thi nút con tiếp theo trong danh sách.\n- Nếu tất cả các con đều thành công, Sequence sẽ báo cáo Thành công cho cha của nó.\n- Nếu một nút con trả về <b>Thất bại (FAILURE)</b>, nó sẽ ngay lập tức báo cáo Thất bại cho cha của nó mà không cần kiểm tra các con còn lại.",
+                    "terms": {}
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: BT - Ví dụ Triển khai (Parallel node)",
+                    "image": "images/game-dev/week9/slide_41.png",
+                    "notes": "Đây là cách triển khai một nút <b>Parallel</b>.\n\nNó theo dõi số lượng con đã thất bại (`curNodesFailed`) và số lượng con đã thành công (`curNodesSucceeded`).\n\nHàm `update()` của nó sẽ kiểm tra xem số lượng con thất bại/thành công đã đạt đến ngưỡng yêu cầu (`nodesToFail`/`nodesToSucceed`) hay chưa. Nếu đã đạt, nó sẽ báo cáo trạng thái tương ứng cho cha của nó.\n\nHàm `step()` của nó khác biệt ở chỗ nó thực thi <b>tất cả</b> các nút con cùng một lúc (hoặc trong cùng một 'tick').",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: BT - Ví dụ Triển khai (Non filter)",
+                    "image": "images/game-dev/week9/slide_42.png",
+                    "notes": "Đây là cách triển khai một <b>Non Filter</b> hay <b>Negation Filter</b> (Bộ lọc Phủ định).\n\nĐây là một loại Decorator. Hàm `update()` của nó rất đơn giản: nó đảo ngược kết quả của nút con. Nếu con trả về Thất bại (FAILURE), nó sẽ báo cáo Thành công (SUCCESS) cho cha, và ngược lại.",
+                    "terms": {}
+                },
+                {
+                    "id": 43,
+                    "title": "Trang 43: BT - Ví dụ Triển khai (Loop filter)",
+                    "image": "images/game-dev/week9/slide_43.png",
+                    "notes": "Đây là cách triển khai một <b>Loop Filter</b> (Bộ lọc Lặp).\n\nDecorator này sẽ thực thi nút con của nó lặp đi lặp lại một số lần (`limit`) nhất định. Nó chỉ báo cáo Thành công (SUCCESS) cho cha sau khi đã thực thi xong đủ số lần lặp.",
+                    "terms": {}
+                },
+                {
+                    "id": 44,
+                    "title": "Trang 44: BT - Ví dụ Triển khai (UntilFails filter)",
+                    "image": "images/game-dev/week9/slide_44.png",
+                    "notes": "Đây là cách triển khai một <b>UntilFails Filter</b>.\n\nDecorator này sẽ liên tục thực thi nút con của nó chừng nào nút con còn trả về Thành công (SUCCESS). Khi nút con trả về Thất bại (FAILURE), bộ lọc này sẽ báo cáo Thất bại cho cha của nó.",
+                    "terms": {}
+                },
+                {
+                    "id": 45,
+                    "title": "Trang 45: BT - Ví dụ Triển khai (Action/Condition)",
+                    "image": "images/game-dev/week9/slide_45.png",
+                    "notes": "Đây là các ví dụ về các nút lá (leaf nodes).\n\n- <b>Nút Condition (IsItemUp):</b> Hàm `step()` của nó thực hiện một bài kiểm tra logic (ví dụ: `agent.isItem(...)`). Dựa trên kết quả, nó sẽ báo cáo Thành công hoặc Thất bại cho cha của nó.\n\n- <b>Nút Action (Fire):</b> Hàm `step()` của nó ra lệnh cho tác tử thực hiện một hành động cụ thể (ví dụ: `agent.setAction(...)`) và sau đó báo cáo Thành công.",
+                    "terms": {}
+                },
+                {
+                    "id": 46,
+                    "title": "Trang 46: Chuyển tiếp - Câu hỏi & Demo Lab",
+                    "image": "images/game-dev/week9/slide_46.png",
+                    "notes": "Kết thúc phần lý thuyết về Cây hành vi.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 47,
+                    "title": "Trang 47: Xem trước Buổi thực hành",
+                    "image": "images/game-dev/week9/slide_47.png",
+                    "notes": "Phần thứ hai của Bài tập thực hành về Animations và AI, bao gồm cả phần đánh giá.",
+                    "terms": {}
+                }
+            ]
+        },
+        {
+            "title": "Tuần 10: 2D Games",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - 2D Games",
+                    "image": "images/game-dev/week10/slide_1.png",
+                    "notes": "Bài giảng 10: Phát triển Game 2D.\n\nTuần này, chúng ta sẽ tìm hiểu về các công cụ và khái niệm đặc thù mà Unity cung cấp để xây dựng các trò chơi 2D.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Đề cương bài giảng",
+                    "image": "images/game-dev/week10/slide_2.png",
+                    "notes": "Nội dung chính của bài giảng Tuần 10 bao gồm:\n\n1. <b>2D Sprites.</b>\n2. <b>2D Physics (Vật lý 2D).</b>\n3. <b>Lab Session 10 (Buổi thực hành 10).</b>",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chuyển tiếp - 2D Sprites",
+                    "image": "images/game-dev/week10/slide_3.png",
+                    "notes": "Chuẩn bị vào phần đầu tiên: Tìm hiểu về Sprites, thành phần đồ họa cơ bản của game 2D.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Chế độ 2D",
+                    "image": "images/game-dev/week10/slide_4.png",
+                    "notes": "Khi tạo một dự án mới trong Unity, có thể thiết lập trình soạn thảo cho Chế độ 2D.\n\nTrong chế độ này, Unity tự động thiết lập một số tham số cho 2D (chẳng hạn như cho texture và sprite).",
+                    "terms": {}
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Scene View - Chế độ 2D",
+                    "image": "images/game-dev/week10/slide_5.png",
+                    "notes": "Cửa sổ Scene View cũng có một nút chuyển đổi qua lại giữa chế độ xem 2D và 3D.\n\nKhi chế độ xem 2D được đặt, tọa độ chiều sâu (`depth`, trục Z) bị bỏ qua, làm cho việc phát triển game 2D dễ dàng hơn nhiều. Camera và chế độ xem được khóa ở một góc nhìn trực giao (orthographic).",
+                    "terms": {}
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Đồ họa 2D",
+                    "image": "images/game-dev/week10/slide_6.png",
+                    "notes": "Các đối tượng đồ họa trong 2D được gọi là <b>Sprites</b>. Về cơ bản, sprite chỉ là các texture thông thường nhưng có các kỹ thuật đặc biệt để kết hợp và quản lý các texture sprite cho hiệu quả và tiện lợi trong quá trình phát triển.\n\nUnity cung cấp một <b>Sprite Editor</b> để thao tác với các sprite. Một công dụng đặc biệt là để chỉnh sửa một hình ảnh để tách nó thành nhiều thành phần. Ví dụ, để giữ cho cánh tay, chân và thân của một nhân vật là các yếu tố riêng biệt trong cùng một hình ảnh.\n\nCác sprite được render bằng một component <b>Sprite Renderer</b> thay vì Mesh Renderer được sử dụng với các đối tượng 3D.",
+                    "terms": {
+                        "Sprite": "Thuật ngữ của Unity cho một đối tượng đồ họa 2D. Các tệp hình ảnh (PNG, JPG...) phải được import vào Unity với Texture Type là 'Sprite (2D and UI)' để có thể sử dụng.",
+                        "Sprite Renderer": "Component chịu trách nhiệm hiển thị một Sprite trên màn hình. Nó tương đương với Mesh Renderer trong môi trường 3D.",
+                        "Sprite Editor": "Một công cụ tích hợp trong Unity cho phép bạn cắt một hình ảnh duy nhất thành nhiều sprite (Sprite Sheet), điều chỉnh đường viền, điểm pivot, v.v."
+                    }
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: 2D Transformations",
+                    "image": "images/game-dev/week10/slide_7.png",
+                    "notes": "Có bốn công cụ điều khiển ở góc trên bên trái để thao tác với các sprite trong scene:\n\n- <b>Drag (Biểu tượng bàn tay, phím tắt Q):</b> Để di chuyển xung quanh scene.\n- <b>Translate (Phím tắt W):</b> Thay đổi vị trí của một sprite.\n- <b>Rotate (Phím tắt E):</b> Xoay một sprite.\n- <b>Scale (Phím tắt R):</b> Thay đổi tỷ lệ của một sprite.\n\nNút cuối cùng (Phím tắt T) cho phép thực hiện tất cả các thay đổi này trên Scene View.",
+                    "terms": {}
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: The Sprite Type",
+                    "image": "images/game-dev/week10/slide_8.png",
+                    "notes": "Khi một hình ảnh được import dưới dạng một sprite, <b>Texture Type</b> phải được đặt thành `Sprite (2D and UI)`.\n\n<b>Sprite Mode</b> có thể nhận hai giá trị:\n- <b>Single:</b> Hình ảnh bao gồm chỉ 1 yếu tố duy nhất.\n- <b>Multiple:</b> Hình ảnh chứa nhiều yếu tố trong cùng một tệp (Sprite Sheet).\n\n<b>Pixels to Units</b> xác định số lượng pixel từ sprite sẽ tương ứng với 1 đơn vị trong không gian thế giới.\n<b>Pivot</b> xác định vị trí của điểm xoay trong sprite.",
+                    "terms": {
+                        "Sprite Sheet": "Một tệp hình ảnh duy nhất chứa nhiều hình ảnh nhỏ hơn (các sprite). Kỹ thuật này giúp tối ưu hóa bộ nhớ và hiệu suất bằng cách giảm số lượng texture cần tải.",
+                        "Pixels Per Unit": "Một cài đặt quan trọng trong phát triển game 2D, xác định tỷ lệ giữa pixel của sprite và đơn vị đo lường trong thế giới game của Unity. Nó ảnh hưởng trực tiếp đến kích thước hiển thị của sprite và cách hệ thống vật lý hoạt động."
+                    }
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Sprite Renderer",
+                    "image": "images/game-dev/week10/slide_9.png",
+                    "notes": "Component <b>Sprite Renderer</b> chịu trách nhiệm vẽ sprite lên màn hình.\n\n- <b>Sprite:</b> Đối tượng Sprite sẽ được render.\n- <b>Color:</b> Màu đỉnh của mesh được render.\n- <b>Material:</b> Material được dùng để render sprite.\n- <b>Sorting Layer:</b> Layer được dùng để xác định ưu tiên xếp chồng của sprite này trong quá trình render.\n- <b>Order in Layer:</b> Ưu tiên xếp chồng của sprite này bên trong layer của nó. Số nhỏ hơn được render trước và các số tiếp theo sẽ xếp chồng lên trên.",
+                    "terms": {
+                        "Sorting Layer": "Một cơ chế trong Unity dùng để nhóm các renderer và xác định thứ tự vẽ của chúng một cách rõ ràng. Các renderer trong một Sorting Layer cao hơn sẽ luôn được vẽ trên các renderer trong một layer thấp hơn.",
+                        "Order in Layer": "Một giá trị số xác định thứ tự vẽ của các renderer bên trong cùng một Sorting Layer. Renderer có giá trị cao hơn sẽ được vẽ trên renderer có giá trị thấp hơn."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Chuyển tiếp - 2D Physics",
+                    "image": "images/game-dev/week10/slide_10.png",
+                    "notes": "Kết thúc phần giới thiệu về Sprites.\n\nPhần tiếp theo sẽ tập trung vào hệ thống vật lý riêng biệt của Unity dành cho các trò chơi 2D.",
+                    "terms": {}
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: 2D Physics",
+                    "image": "images/game-dev/week10/slide_11.png",
+                    "notes": "Unity có một engine vật lý riêng biệt để xử lý vật lý 2D nhằm tận dụng các tối ưu hóa chỉ có sẵn với 2D. Các nguyên tắc cơ bản trong cả hai hệ thống vật lý (2D và 3D) là tương đương. Hầu hết các component vật lý 2D chỉ đơn giản là các phiên bản làm phẳng của các component tương đương 3D, nhưng có một vài ngoại lệ.\n\n2D vs 3D physics:\n- Vật lý 2D và 3D có thể được sử dụng cùng nhau nhưng chúng sẽ không tương tác với nhau.\n- Không có khái niệm về chiều sâu trong 2D: Tất cả vật lý 2D xảy ra trên mặt phẳng XY, với Z = 0.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Rigidbody 2D",
+                    "image": "images/game-dev/week10/slide_12.png",
+                    "notes": "Gắn một component <b>rigidbody 2D</b> vào một game object sẽ đặt đối tượng đó dưới sự kiểm soát của engine vật lý 2D: nó sẽ phản ứng với các lực được áp dụng thông qua scripting API.\n\n- <b>Mass:</b> khối lượng của đối tượng.\n- <b>Linear Drag:</b> hệ số cản ảnh hưởng đến chuyển động tịnh tiến.\n- <b>Angular Drag:</b> hệ số cản ảnh hưởng đến chuyển động quay.\n- <b>Gravity scale:</b> Mức độ mà đối tượng bị ảnh hưởng bởi trọng lực.\n- <b>Fixed angle:</b> Rigidbody có thể xoay khi các lực được áp dụng không?\n- <b>IsKinematic:</b> Rigidbody có bị di chuyển bởi các lực và va chạm không?",
+                    "terms": {
+                        "Rigidbody 2D": "Component cho phép một Sprite hoặc Game Object 2D được điều khiển bởi hệ thống vật lý 2D của Unity. Nó cho phép đối tượng chịu tác động của trọng lực, va chạm, và các lực khác trong không gian 2D."
+                    }
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Kinematic game objects",
+                    "image": "images/game-dev/week10/slide_13.png",
+                    "notes": "Nếu một game object là kinematic, rigidbody <b>không</b> phản ứng với trọng lực hoặc va chạm. Một kinematic body chỉ được di chuyển bằng cách thay đổi transform của nó.\n\nĐiều này thường được sử dụng để giữ một đối tượng dưới sự kiểm soát của script không-vật-lý trong hầu hết thời gian nhưng sau đó chuyển sang vật lý trong một tình huống cụ thể. Ví dụ: một người chơi có thể di chuyển bình thường bằng cách đi bộ (xử lý tốt hơn mà không cần vật lý) nhưng sau đó bị bắn lên không trung bởi một vụ nổ.",
+                    "terms": {
+                        "Is Kinematic (Rigidbody 2D)": "Một thuộc tính của Rigidbody 2D. Khi bật, đối tượng sẽ không phản ứng với các lực vật lý nhưng vẫn có thể gây ra va chạm và kích hoạt trigger. Hữu ích cho các đối tượng chuyển động mà bạn muốn kiểm soát hoàn toàn bằng script (ví dụ: các nền tảng di chuyển)."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Collider 2D (1/3)",
+                    "image": "images/game-dev/week10/slide_14.png",
+                    "notes": "Các <b>2D Colliders</b> cho phép các game object có hình dạng vật lý trong môi trường 2D của scene. Chúng định nghĩa một hình dạng gần đúng của đối tượng sẽ được sử dụng bởi engine vật lý để xác định va chạm với các đối tượng khác.\n\n- <b>Circle Collider 2D:</b> Một hình tròn với một vị trí và bán kính cho trước trong không gian tọa độ cục bộ của một Sprite.\n- <b>Box Collider 2D:</b> Một hình chữ nhật với một vị trí, chiều rộng và chiều cao cho trước. Quan trọng: các cạnh của hình chữ nhật song song với các trục X hoặc Y.",
+                    "terms": {
+                        "Collider 2D": "Các component định nghĩa hình dạng của một đối tượng 2D cho mục đích vật lý. Có nhiều loại khác nhau như Box Collider 2D, Circle Collider 2D, để phù hợp với các hình dạng sprite khác nhau."
+                    }
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Collider 2D (2/3)",
+                    "image": "images/game-dev/week10/slide_15.png",
+                    "notes": "- <b>Edge Collider 2D:</b> Hình dạng của collider được định nghĩa bởi một cạnh dạng tự do gồm các đoạn thẳng. Nó có thể được sử dụng để khớp với hình dạng của đồ họa Sprite với độ chính xác cao.\n- <b>Polygon Collider 2D:</b> Hình dạng của collider được định nghĩa bởi một cạnh dạng tự do gồm các đoạn thẳng <b>phải</b> bao bọc hoàn toàn một khu vực.",
+                    "terms": {}
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Collider 2D (3/3)",
+                    "image": "images/game-dev/week10/slide_16.png",
+                    "notes": "Các collider được đặt làm <b>triggers</b> sẽ <b>không</b> tham gia vào các va chạm vật lý. Thay vào đó, chúng hoạt động như những vùng cảm biến. Nếu một va chạm xảy ra với một trigger 2D collider, các thông điệp sau sẽ được gửi:\n- <b>OnTriggerEnter2D(Collider2D other)</b>\n- <b>OnTriggerExit2D(Collider2D other)</b>\n- <b>OnTriggerStay2D(Collider2D other)</b>\n\nTuy nhiên, một 2D collider không được thiết lập làm trigger sẽ tham gia vào các va chạm vật lý, gửi các thông điệp:\n- <b>OnCollisionEnter2D(Collision2D other)</b>\n- <b>OnCollisionExit2D(Collision2D other)</b>\n- <b>OnCollisionStay2D(Collision2D other)</b>",
+                    "terms": {
+                        "OnTriggerEnter2D": "Một hàm sự kiện của MonoBehaviour được gọi khi một Collider 2D khác đi vào một trigger được gắn vào đối tượng này.",
+                        "OnCollisionEnter2D": "Một hàm sự kiện của MonoBehaviour được gọi khi một Collider 2D đến bắt đầu chạm vào collider của đối tượng này."
+                    }
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Physics Material 2D",
+                    "image": "images/game-dev/week10/slide_17.png",
+                    "notes": "Một <b>Physics Material 2D</b> được sử dụng để điều chỉnh ma sát và độ nảy xảy ra giữa các đối tượng vật lý 2D khi chúng va chạm.\n\n- <b>Friction (Ma sát):</b> Hệ số ma sát cho collider này.\n- <b>Bounciness (Độ nảy):</b> Mức độ mà các va chạm bật ra khỏi bề mặt. Giá trị 0 cho biết không có độ nảy trong khi giá trị 1 cho biết một cú nảy hoàn hảo không mất năng lượng.",
+                    "terms": {
+                        "Physics Material 2D": "Một asset dùng để điều chỉnh các thuộc tính ma sát và độ nảy của các Collider 2D khi chúng va chạm với nhau."
+                    }
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Hinge Joint 2D",
+                    "image": "images/game-dev/week10/slide_18.png",
+                    "notes": "Component <b>Hinge Joint 2D</b> cho phép một đối tượng Sprite được điều khiển bởi vật lý rigidbody được gắn vào một điểm trong không gian mà nó có thể xoay quanh.\n\nSự xoay có thể xảy ra một cách thụ động (để đáp ứng với một va chạm) hoặc được chủ động cung cấp năng lượng bởi một mô-men xoắn động cơ do chính khớp nối cung cấp. Bản lề cũng có thể được thiết lập với các giới hạn để ngăn nó thực hiện một vòng quay đầy đủ.",
+                    "terms": {
+                        "Hinge Joint 2D": "Một khớp nối vật lý 2D ràng buộc một Rigidbody 2D chỉ có thể xoay quanh một điểm duy nhất, giống như một cánh cửa trên bản lề."
+                    }
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Spring Joint 2D",
+                    "image": "images/game-dev/week10/slide_19.png",
+                    "notes": "Component <b>Spring Joint 2D</b> cho phép hai đối tượng Sprite được điều khiển bởi vật lý rigidbody được gắn với nhau như thể bằng một lò xo. Lò xo sẽ tác dụng một lực dọc theo trục của nó giữa hai đối tượng, cố gắng giữ chúng ở một khoảng cách nhất định.",
+                    "terms": {
+                        "Spring Joint 2D": "Một khớp nối vật lý 2D nối hai Rigidbody 2D lại với nhau, cố gắng duy trì một khoảng cách nhất định giữa chúng bằng cách tác dụng một lực giống như lò xo."
+                    }
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Distance Joint 2D",
+                    "image": "images/game-dev/week10/slide_20.png",
+                    "notes": "Component <b>Distance Joint 2D</b> cho phép hai đối tượng Sprite được điều khiển bởi vật lý rigidbody được gắn với nhau để giữ chúng ở một khoảng cách nhất định. Lưu ý rằng không giống như Spring Joint 2D, Distance Joint áp dụng một giới hạn cứng thay vì một lực dần dần để khôi phục khoảng cách mong muốn.",
+                    "terms": {
+                        "Distance Joint 2D": "Một khớp nối vật lý 2D giữ cho hai Rigidbody 2D ở một khoảng cách tối đa cố định so với nhau."
+                    }
+                },
+                {
+                    "id": 21,
+                    "title": "Trang 21: Cài đặt Vật lý 2D",
+                    "image": "images/game-dev/week10/slide_21.png",
+                    "notes": "<b>Physics 2D Manager</b> cho phép chỉnh sửa các cài đặt Physics 2D toàn cục ảnh hưởng đến tất cả các sprite trong game. (<b>Edit → Project Settings → Physics2D</b>).\n\n- <b>Gravity:</b> Lượng trọng lực được áp dụng cho tất cả các đối tượng Rigidbody2D.\n- <b>Default Material:</b> Physics Material 2D mặc định sẽ được sử dụng.\n- <b>Position/Velocity iterations:</b> Số lần lặp được thực hiện bởi engine vật lý để giải quyết vị trí/vận tốc. Số cao hơn cho kết quả chính xác hơn nhưng tốn nhiều thời gian CPU hơn.\n- <b>Raycasts Hit Triggers:</b> Nếu được bật, bất kỳ Raycast nào giao với một Collider được đánh dấu là Trigger sẽ trả về một cú va chạm.",
+                    "terms": {}
+                },
+                {
+                    "id": 22,
+                    "title": "Trang 22: Chuyển tiếp - Buổi thực hành 10",
+                    "image": "images/game-dev/week10/slide_22.png",
+                    "notes": "Kết thúc phần lý thuyết về 2D Physics.\n\nPhần cuối cùng sẽ là xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 23,
+                    "title": "Trang 23: Xem trước Buổi thực hành",
+                    "image": "images/game-dev/week10/slide_23.png",
+                    "notes": "Bài tập Phần II và Chúc mừng Giáng sinh!",
+                    "terms": {}
+                }
+            ]
         }
     ]
 }
