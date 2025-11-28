@@ -1,0 +1,52 @@
+{
+    "title": "Tổ chức Máy tính",
+    "description": "Tìm hiểu về cấu trúc và nguyên tắc hoạt động cốt lõi của hệ thống máy tính, từ phần cứng đến phần mềm.",
+    "thumbnail": "images/computer-organization-thumb.png",
+    "sections": [
+        {
+            "title": "Tuần 1: Introduction",
+            "slides": [
+                {
+                    "id": 1,
+                    "title": "Trang 1: Bìa - Giới thiệu môn học",
+                    "image": "images/computer_organization/week1/slide_1.png",
+                    "notes": "Bài giảng giới thiệu môn học Tổ chức Máy tính (Computer Organisation) từ Đại học Tôn Đức Thắng.",
+                    "terms": {}
+                },
+                {
+                    "id": 2,
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
+                    "image": "images/computer_organization/week1/slide_2.png",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
+                    "terms": {}
+                },
+                {
+                    "id": 3,
+                    "title": "Trang 3: Chính sách cho sinh viên",
+                    "image": "images/computer_organization/week1/slide_3.png",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
+                    "terms": {}
+                },
+                {
+                    "id": 4,
+                    "title": "Trang 4: Ghi nhận các chỉnh sửa",
+                    "image": "images/computer_organization/week1/slide_4.png",
+                    "notes": "Ghi nhận các chỉnh sửa:\n\n- Thay đổi nhỏ ở slide 13 (thay thế hình ảnh mới).",
+                    "terms": {}
+                },
+                {
+                    "id": 5,
+                    "title": "Trang 5: Tại sao nên học Tổ chức Máy tính?",
+                    "image": "images/computer_organization/week1/slide_5.png",
+                    "notes": "Tại sao nên học Tổ chức Máy tính? (Từ người dùng đến người xây dựng)\n\n- Bạn muốn tự gọi mình là một <b>nhà khoa học/chuyên gia máy tính</b>.\n- Bạn muốn <b>xây dựng</b> phần mềm mà mọi người sử dụng.\n- Bạn cần đưa ra các <b>quyết định</b> mua sắm (phần cứng).\n- Bạn cần đưa ra <b>lời khuyên chuyên môn</b>.\n- Phần cứng và phần mềm ảnh hưởng đến hiệu suất:\n  - Thuật toán xác định số lượng câu lệnh (Phương pháp lập trình).\n  - Ngôn ngữ, trình biên dịch, và kiến trúc xác định các chỉ thị máy.\n  - Bộ xử lý và bộ nhớ xác định tốc độ thực thi các chỉ thị.\n- Hiểu về hiệu suất.",
+                    "terms": {
+                        "Computer Scientist (Nhà khoa học máy tính)": "Một chuyên gia nghiên cứu và thiết kế lý thuyết tính toán và ứng dụng của nó.",
+                        "Compiler (Trình biên dịch)": "Một chương trình máy tính dịch mã nguồn được viết bằng một ngôn ngữ lập trình (ngôn ngữ nguồn) thành một ngôn ngữ lập trình khác (ngôn ngữ đích, thường là mã máy).",
+                        "Processor (CPU - Bộ xử lý)": "Bộ xử lý trung tâm, là bộ não của máy tính, thực hiện các chỉ thị của một chương trình máy tính.",
+                        "Memory (Bộ nhớ)": "Đề cập đến các thiết bị vật lý được sử dụng để lưu trữ chương trình hoặc dữ liệu (ví dụ: RAM, ổ cứng) một cách tạm thời hoặc vĩnh viễn."
+                    }
+                }
+            ]
+        }
+    ]
+}

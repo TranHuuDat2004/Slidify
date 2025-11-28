@@ -10,5 +10,11 @@
     "title": "Nhập môn Thị giác Máy tính",
     "description": "Khám phá cách máy tính 'nhìn' và phân tích hình ảnh, từ nhận diện vật thể đến xử lý ảnh cơ bản.",
     "thumbnail": "images/computer-vision.webp"
+  },
+  {
+    "id": "computer_organization",
+    "title": "Tổ chức Máy tính",
+    "description": "Tìm hiểu về cấu trúc và nguyên tắc hoạt động cốt lõi của hệ thống máy tính, từ phần cứng đến phần mềm.",
+    "thumbnail": "images/computer-organization-thumb.png"
   }
 ]
