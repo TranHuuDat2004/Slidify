@@ -2930,171 +2930,173 @@
                     "terms": {}
                 },
                 {
-    "id": 33,
-    "title": "Trang 33: Heuristics",
-    "image": "images/game-dev/week8/slide_33.png",
-    "notes": "Một số loại heuristic phổ biến:\n\n- <b>Manhattan Distance:</b> Khoảng cách được tính bằng cách chỉ di chuyển theo các hướng ngang và dọc (giống như đi trên các đường phố của Manhattan). Công thức: `|x1 - x2| + |y1 - y2|`.\n- <b>Euclidean Distance:</b> Khoảng cách đường chim bay, là khoảng cách thực tế giữa hai điểm. Công thức: `sqrt((x1 - x2)² + (y1 - y2)²)`. \n- <b>Chebyshev Distance:</b> Khoảng cách được tính trên một lưới cho phép di chuyển 8 hướng (ngang, dọc, chéo) với cùng một chi phí. Công thức: `max(|x1 - x2|, |y1 - y2|)`.\n\nNếu chúng ta đặt heuristic `h = 0`, thuật toán A* sẽ hoạt động giống hệt như Dijkstra.",
-    "terms": {
-      "Manhattan Distance": "Một cách đo khoảng cách giữa hai điểm trong một lưới. Nó là tổng của các chênh lệch tuyệt đối của các tọa độ của chúng. Rất hữu ích làm heuristic cho các game chỉ cho phép di chuyển 4 hướng.",
-      "Euclidean Distance": "Khoảng cách đường thẳng thông thường giữa hai điểm trong không gian. Đây là heuristic phổ biến và chính xác nhất cho các game cho phép di chuyển tự do.",
-      "Chebyshev Distance": "Khoảng cách giữa hai điểm trong một lưới cho phép di chuyển 8 hướng với chi phí bằng nhau. Nó được định nghĩa là số bước di chuyển tối thiểu cần thiết để đi từ điểm này đến điểm kia."
-    }
-  },
-  {
-    "id": 34,
-    "title": "Trang 34: Heuristics (Tiếp theo)",
-    "image": "images/game-dev/week8/slide_34.png",
-    "notes": "Các heuristic chấp nhận được (Admissible heuristics):\n\n- Lưới hình chữ nhật, kết nối 4 chiều: Euclidean, Manhattan hoặc Chebyshev.\n- Lưới hình chữ nhật, kết nối 8 chiều: Euclidean hoặc Chebyshev (Đường chéo).\n\nTrong một số trường hợp, chúng ta có thể sử dụng một heuristic chính xác đã được tính toán trước.",
-    "terms": {}
-  },
-  {
-    "id": 35,
-    "title": "Trang 35: A* - Hàm Heuristic",
-    "image": "images/game-dev/week8/slide_35.png",
-    "notes": "Các hàm heuristic của chúng ta được định nghĩa như sau:\n\n- <b>GetHValue:</b> Một hàm `switch` để chọn loại heuristic sẽ được sử dụng (đường thẳng hoặc Manhattan).\n- <b>EuclideanDistance:</b> Triển khai công thức khoảng cách Euclid.\n- <b>ManhattanDistance:</b> Triển khai công thức khoảng cách Manhattan.",
-    "terms": {}
-  },
-  {
-    "id": 36,
-    "title": "Trang 36: Một số sự thật về A*",
-    "image": "images/game-dev/week8/slide_36.png",
-    "notes": "Một số sự thật quan trọng về thuật toán A*:\n\n- Nếu `h(n) = 0`, A* trở thành thuật toán Dijkstra.\n- Nếu `h(n)` không bao giờ lớn hơn khoảng cách thực tế (admissible), A* được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` chính xác bằng khoảng cách thực tế, A* sẽ chỉ đi theo con đường tốt nhất và không bao giờ mở rộng các nút không cần thiết.\n- Nếu `h(n)` đôi khi lớn hơn chi phí thực tế, A* không được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` rất cao so với `g(n)`, A* sẽ biến thành thuật toán Best-First-Search.",
-    "terms": {}
-  },
-  {
-    "id": 37,
-    "title": "Trang 37: Đi theo đường (Path Following)",
-    "image": "images/game-dev/week8/slide_37.png",
-    "notes": "Một khi đã tìm thấy một đường đi tối ưu từ A đến B, tác tử (agent) phải đi theo nó. Có một số phức tạp:\n- Các tác tử khác hoặc các đối tượng di chuyển có thể chiếm các nút trong đồ thị.\n- Màn chơi có thể hoàn toàn động.\n- Sương mù chiến tranh (Fog of War).\n\nCác giải pháp:\n- Tính toán lại (một phần) của đường đi.\n- Sử dụng các nút lớn có thể bị chiếm bởi nhiều tác tử.\n- Chuyển hướng đến nút có sẵn gần nhất.",
-    "terms": {
-      "Path Following": "Sau khi có được một chuỗi các điểm từ thuật toán tìm đường, đây là hành vi lèo lái giúp nhân vật di chuyển mượt mà qua các điểm đó để đến đích."
-    }
-  },
-  {
-    "id": 38,
-    "title": "Trang 38: Chuyển tiếp - Navigation Meshes trong Unity",
-    "image": "images/game-dev/week8/slide_38.png",
-    "notes": "Kết thúc phần giới thiệu về các thuật toán tìm đường lý thuyết.\n\nPhần tiếp theo sẽ tập trung vào giải pháp tìm đường tích hợp sẵn và mạnh mẽ của Unity: Navigation Meshes.",
-    "terms": {}
-  },
-  {
-    "id": 39,
-    "title": "Trang 39: Giới thiệu Navigation Meshes",
-    "image": "images/game-dev/week8/slide_39.png",
-    "notes": "Một <b>Navigation Mesh (hay NavMesh)</b> là một cấu trúc dữ liệu được sử dụng để mô hình hóa các khu vực có thể đi lại của một bản đồ ảo.\n\n- Đó là một tập hợp các đa giác lồi hai chiều (thường là tam giác) xác định khu vực nào của bản đồ ảo có thể được các tác tử đi qua.\n- Mỗi đa giác hoạt động như một nút duy nhất liên kết với các nút liền kề khác.\n- Các đa giác là lồi (convex): bất kỳ điểm nào từ bên trong đa giác có thể được tiếp cận bằng một đường thẳng từ bất kỳ điểm nào khác bên trong cùng một đa giác.",
-    "terms": {
-      "Navigation Mesh (NavMesh)": "Một cấu trúc dữ liệu biểu diễn các khu vực có thể đi lại trong một môi trường game. Thay vì một lưới ô vuông, nó sử dụng các đa giác có hình dạng và kích thước khác nhau để mô tả bề mặt, cho phép các nhân vật di chuyển một cách tự nhiên và thông minh hơn."
-    }
-  },
-  {
-    "id": 40,
-    "title": "Trang 40: NavMesh vs. Tìm đường dựa trên Grid/Waypoint",
-    "image": "images/game-dev/week8/slide_40.png",
-    "notes": "Bốn lợi thế khác của NavMesh so với các hệ thống tìm đường dựa trên waypoint (điểm tham chiếu):\n\n1. Các đồ thị dựa trên waypoint có xu hướng yêu cầu nhiều nút hơn, đặc biệt là trong các khu vực rộng lớn.\n\nHình ảnh minh họa sự khác biệt: đồ thị waypoint (màu đỏ) cần rất nhiều nút được đặt thủ công, trong khi NavMesh (màu xanh) tự động tạo ra một đồ thị đơn giản hơn, chỉ với các nút ở các 'cạnh' của các đa giác.",
-    "terms": {
-      "Waypoint Graph": "Một phương pháp tìm đường trong đó các nhà thiết kế đặt thủ công các nút (waypoint) tại các vị trí quan trọng trong màn chơi. Các nhân vật AI sau đó sẽ tìm đường đi giữa các waypoint này. Phương pháp này đơn giản nhưng kém linh hoạt và tốn nhiều công sức hơn NavMesh."
-    }
-  },{
-    "id": 41,
-    "title": "Trang 41: NavMesh vs. Grid/Waypoint (2/4)",
-    "image": "images/game-dev/week8/slide_41.png",
-    "notes": "Lợi thế thứ hai của NavMesh:\n\n2. <b>Tránh chuyển động zigzag không tự nhiên:</b> Với hệ thống waypoint, đường đi được xác định là một chuỗi các đoạn thẳng nối các điểm, buộc nhân vật phải điều chỉnh và đi theo một cách máy móc. Ngược lại, NavMesh tạo ra một con đường thẳng hơn, tự nhiên hơn xuyên qua các đa giác.",
-    "terms": {}
-  },
-  {
-    "id": 42,
-    "title": "Trang 42: NavMesh vs. Grid/Waypoint (3/4)",
-    "image": "images/game-dev/week8/slide_42.png",
-    "notes": "Lợi thế thứ ba của NavMesh:\n\n3. <b>Tránh chướng ngại vật động một cách mạnh mẽ:</b> Hệ thống NavMesh có các thuật toán tích hợp sẵn để giúp các tác tử (agents) tự động tìm đường đi vòng qua các chướng ngại vật động (dynamic obstacles) mà không cần tính toán lại toàn bộ đường đi.",
-    "terms": {}
-  },
-  {
-    "id": 43,
-    "title": "Trang 43: NavMesh vs. Grid/Waypoint (4/4)",
-    "image": "images/game-dev/week8/slide_43.png",
-    "notes": "Lợi thế thứ tư của NavMesh:\n\n4. <b>Các đường đi mượt mà cho các kích thước nhân vật khác nhau:</b> Hệ thống NavMesh có thể tính toán các đường đi tối ưu cho các tác tử có bán kính khác nhau, đảm bảo chúng di chuyển một cách mượt mà và không bị va chạm vào các góc tường.",
-    "terms": {}
-  },
-  {
-    "id": 44,
-    "title": "Trang 44: NavMesh trong Unity - Các đối tượng",
-    "image": "images/game-dev/week8/slide_44.png",
-    "notes": "Trong Unity, việc tạo NavMesh được xử lý từ cửa sổ Navigation (<b>Window → AI → Navigation</b>). Quá trình tạo ra một NavMesh được gọi là <b>baking</b>.\n\nĐể 'nung' một NavMesh, cần phải cho Unity biết đối tượng nào là <b>navigation static</b>. Những đối tượng này sẽ không di chuyển và có thể được dùng để tính toán các khu vực có thể đi lại. Ví dụ về các đối tượng này là sàn nhà, tường, và các chướng ngại vật tĩnh.",
-    "terms": {
-      "Navigation Static": "Một tùy chọn đánh dấu một Game Object là tĩnh đối với hệ thống Navigation. Unity sẽ sử dụng các đối tượng được đánh dấu này để 'nung' (bake) NavMesh.",
-      "Baking (NavMesh)": "Quá trình Unity phân tích các đối tượng 'Navigation Static' trong scene của bạn và tự động tạo ra một lưới đa giác (NavMesh) biểu diễn các khu vực có thể đi lại."
-    }
-  },
-  {
-    "id": 45,
-    "title": "Trang 45: NavMesh trong Unity - Baking",
-    "image": "images/game-dev/week8/slide_45.png",
-    "notes": "Việc 'nung' NavMesh được thực hiện trong tab <b>Bake</b>, với các đối tượng được chọn. Các thông số quan trọng:\n\n- <b>Agent Radius:</b> Bán kính của tác tử. Xác định con đường hẹp nhất mà một nhân vật có thể đi qua.\n- <b>Agent Height:</b> Chiều cao của tác tử.\n- <b>Max Slope:</b> Ngưỡng độ dốc mà tại đó một con dốc trở thành một bức tường không thể đi được.\n- <b>Step Height:</b> Chiều cao bậc thang tối đa mà nhân vật có thể bước qua.",
-    "terms": {}
-  },
-  {
-    "id": 46,
-    "title": "Trang 46: NavMesh trong Unity - Areas",
-    "image": "images/game-dev/week8/slide_46.png",
-    "notes": "Các bề mặt khác nhau có thể có các chi phí liên quan khác nhau. Ví dụ, di chuyển qua tuyết hoặc bùn có thể tốn nhiều chi phí hơn. Mỗi phần NavMesh có thể được thiết lập với một giá trị chi phí thông qua việc sử dụng <b>Navmesh Areas</b>.\n\nBạn có thể định nghĩa các 'Area' khác nhau (ví dụ: Walkable, Not Walkable, Water) và gán một chi phí (Cost) cho mỗi loại. Sau đó, bạn có thể gán các Area này cho các đối tượng khác nhau trước khi 'bake' NavMesh.",
-    "terms": {
-      "NavMesh Area": "Một loại 'nhãn' có thể được gán cho các phần của NavMesh để chỉ định các thuộc tính đặc biệt, chẳng hạn như chi phí di chuyển (ví dụ: đi qua bùn tốn nhiều chi phí hơn đi trên cỏ)."
-    }
-  },
-  {
-    "id": 47,
-    "title": "Trang 47: NavMesh Agent (Đã gộp từ 47 & 48)",
-    "image": "images/game-dev/week8/slide_47.png",
-    "notes": "Một <b>NavMesh agent</b> là một component được biểu diễn bằng một hình trụ với Bán kính (Radius) và Chiều cao (Height). Tác tử sẽ cố gắng giữ một khoảng cách bằng Bán kính hoặc lớn hơn giữa tâm của nó và các chướng ngại vật xung quanh.\n\nTác tử có thể truy vấn các đường đi đến NavMesh, được biểu diễn dưới dạng một chuỗi các điểm tham chiếu (waypoints). Tuy nhiên, thay vì đi theo đường đi này một cách hoàn hảo, tác tử sẽ sử dụng chuyển động thực tế hơn, kết hợp gia tốc và quay dần dần.\n\nKhi di chuyển, một tác tử sẽ tránh các chướng ngại vật cố định trong scene cũng như các tác tử khác. Thuộc tính <b>Obstacle Avoidance Type</b> và <b>Avoidance Priority</b> quyết định cách tác tử sẽ hành xử khi gặp một tác tử khác.",
-    "terms": {}
-  },
-  {
-    "id": 48,
-    "title": "Trang 48: NavMesh Agent Component (Đã gộp từ 48 & 49)",
-    "image": "images/game-dev/week8/slide_48.png",
-    "notes": "Một component <b>NavMesh Agent</b> có thể được thêm vào một nhân vật để cho phép nó điều hướng từ nơi này đến nơi khác một cách tự động trên một Navigation Mesh. Component này xử lý cả việc tìm đường và việc điều khiển chuyển động của nhân vật.\n\n- <b>Speed / Angular Speed / Acceleration:</b> Tốc độ di chuyển / xoay / gia tốc tối đa.\n- <b>Stopping Distance:</b> Khoảng cách đến mục tiêu mà tại đó tác tử sẽ dừng lại.\n- <b>Auto Braking:</b> Tác tử có nên giảm tốc khi đến gần mục tiêu không.\n- <b>Obstacle Avoidance:</b> Chất lượng và độ ưu tiên của việc tránh chướng ngại vật.\n- <b>Auto Repath:</b> Tự động tính toán lại một đường đi mới nếu đường đi hiện tại không còn hợp lệ.",
-    "terms": {}
-  },
-  {
-    "id": 49,
-    "title": "Trang 49: NavMesh Agent Scripting (Đã gộp từ 50)",
-    "image": "images/game-dev/week8/slide_50.png",
-    "notes": "NavMesh agent có thể được điều khiển trực tiếp từ scripting. Lấy component rất đơn giản: `GetComponent<NavMeshAgent>()`.\n\nViệc thiết lập một đường đi cho tác tử được chỉ định bằng cách gọi hàm <b>SetDestination</b> với một vị trí `Vector3`:\n`agent.SetDestination(target.position);`\n\nCác hàm hữu ích khác:\n- <b>CalculatePath:</b> Tính toán một đường đi đến một điểm và lưu trữ kết quả.\n- <b>Raycast:</b> Dò một đường đi thẳng về phía một vị trí mục tiêu trong NavMesh mà không di chuyển tác tử.\n- <b>Stop / Resume:</b> Dừng/Tiếp tục di chuyển dọc theo đường đi hiện tại.",
-    "terms": {
-      "agent.SetDestination()": "Phương thức chính để ra lệnh cho một NavMesh Agent di chuyển đến một điểm đến cụ thể. Tác tử sẽ tự động tính toán đường đi ngắn nhất trên NavMesh và bắt đầu di chuyển."
-    }
-  },
-  {
-    "id": 50,
-    "title": "Trang 50: NavMesh Obstacle",
-    "image": "images/game-dev/week8/slide_51.png",
-    "notes": "Một <b>NavMesh Obstacle</b> là một đối tượng có thể di chuyển mà một NavMesh agent phải tránh (ví dụ: cửa có thể mở, tường di động, v.v.). Để đánh dấu một game object là một chướng ngại vật NavMesh, bạn cần thêm một component <b>Nav Mesh Obstacle</b> vào đối tượng đó.\n\nCác tham số <b>Radius</b> và <b>Height</b> chỉ định kích thước của hình trụ chặn đường đi của tác tử.\n\nHai tham số khác (<b>Move Threshold</b> và <b>Carve</b>) được dùng để cho phép tác tử tính toán một đường đi khác nếu chướng ngại vật cản đường đến đích.",
-    "terms": {
-      "NavMesh Obstacle": "Một component được sử dụng để mô tả các chướng ngại vật động hoặc có thể di chuyển mà các NavMesh Agent cần phải tránh. Không giống như các đối tượng tĩnh được 'nung' vào NavMesh, các Obstacle có thể thay đổi vị trí tại thời điểm chạy."
-    }
-  },
-  {
-    "id": 51,
-    "title": "Trang 51: Chuyển tiếp - Câu hỏi & Demo Lab",
-    "image": "images/game-dev/week8/slide_52.png",
-    "notes": "Kết thúc phần lý thuyết về Navigation Meshes trong Unity.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
-    "terms": {}
-  },
-  {
-    "id": 52,
-    "title": "Trang 52: Xem trước Buổi thực hành",
-    "image": "images/game-dev/week8/slide_53.png",
-    "notes": "Chúng ta sẽ thực hiện thêm các phần demo của Bài tập lớn Phần I.\n\nBài giảng tiếp theo: <b>Game AI: Decision Making.</b>",
-    "terms": {}
-  },
-  {
-    "id": 53,
-    "title": "Trang 53: Cảm ơn & Tổng kết thuật ngữ",
-    "image": "images/game-dev/week8/slide_53.png",
-    "notes": "Cảm ơn bạn đã theo dõi bài giảng Tuần 8. Dưới đây là danh sách tổng hợp các thuật ngữ quan trọng đã xuất hiện trong tuần này để bạn tiện ôn tập.",
-    "terms": {}
-  }
-
+                    "id": 33,
+                    "title": "Trang 33: Heuristics",
+                    "image": "images/game-dev/week8/slide_33.png",
+                    "notes": "Một số loại heuristic phổ biến:\n\n- <b>Manhattan Distance:</b> Khoảng cách được tính bằng cách chỉ di chuyển theo các hướng ngang và dọc (giống như đi trên các đường phố của Manhattan). Công thức: `|x1 - x2| + |y1 - y2|`.\n- <b>Euclidean Distance:</b> Khoảng cách đường chim bay, là khoảng cách thực tế giữa hai điểm. Công thức: `sqrt((x1 - x2)² + (y1 - y2)²)`. \n- <b>Chebyshev Distance:</b> Khoảng cách được tính trên một lưới cho phép di chuyển 8 hướng (ngang, dọc, chéo) với cùng một chi phí. Công thức: `max(|x1 - x2|, |y1 - y2|)`.\n\nNếu chúng ta đặt heuristic `h = 0`, thuật toán A* sẽ hoạt động giống hệt như Dijkstra.",
+                    "terms": {
+                        "Manhattan Distance": "Một cách đo khoảng cách giữa hai điểm trong một lưới. Nó là tổng của các chênh lệch tuyệt đối của các tọa độ của chúng. Rất hữu ích làm heuristic cho các game chỉ cho phép di chuyển 4 hướng.",
+                        "Euclidean Distance": "Khoảng cách đường thẳng thông thường giữa hai điểm trong không gian. Đây là heuristic phổ biến và chính xác nhất cho các game cho phép di chuyển tự do.",
+                        "Chebyshev Distance": "Khoảng cách giữa hai điểm trong một lưới cho phép di chuyển 8 hướng với chi phí bằng nhau. Nó được định nghĩa là số bước di chuyển tối thiểu cần thiết để đi từ điểm này đến điểm kia."
+                    }
+                },
+                {
+                    "id": 34,
+                    "title": "Trang 34: Heuristics (Tiếp theo)",
+                    "image": "images/game-dev/week8/slide_34.png",
+                    "notes": "Các heuristic chấp nhận được (Admissible heuristics):\n\n- Lưới hình chữ nhật, kết nối 4 chiều: Euclidean, Manhattan hoặc Chebyshev.\n- Lưới hình chữ nhật, kết nối 8 chiều: Euclidean hoặc Chebyshev (Đường chéo).\n\nTrong một số trường hợp, chúng ta có thể sử dụng một heuristic chính xác đã được tính toán trước.",
+                    "terms": {}
+                },
+                {
+                    "id": 35,
+                    "title": "Trang 35: A* - Hàm Heuristic",
+                    "image": "images/game-dev/week8/slide_35.png",
+                    "notes": "Các hàm heuristic của chúng ta được định nghĩa như sau:\n\n- <b>GetHValue:</b> Một hàm `switch` để chọn loại heuristic sẽ được sử dụng (đường thẳng hoặc Manhattan).\n- <b>EuclideanDistance:</b> Triển khai công thức khoảng cách Euclid.\n- <b>ManhattanDistance:</b> Triển khai công thức khoảng cách Manhattan.",
+                    "terms": {}
+                },
+                {
+                    "id": 36,
+                    "title": "Trang 36: Một số sự thật về A*",
+                    "image": "images/game-dev/week8/slide_36.png",
+                    "notes": "Một số sự thật quan trọng về thuật toán A*:\n\n- Nếu `h(n) = 0`, A* trở thành thuật toán Dijkstra.\n- Nếu `h(n)` không bao giờ lớn hơn khoảng cách thực tế (admissible), A* được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` chính xác bằng khoảng cách thực tế, A* sẽ chỉ đi theo con đường tốt nhất và không bao giờ mở rộng các nút không cần thiết.\n- Nếu `h(n)` đôi khi lớn hơn chi phí thực tế, A* không được đảm bảo sẽ tìm thấy đường đi ngắn nhất.\n- Nếu `h(n)` rất cao so với `g(n)`, A* sẽ biến thành thuật toán Best-First-Search.",
+                    "terms": {}
+                },
+                {
+                    "id": 37,
+                    "title": "Trang 37: Đi theo đường (Path Following)",
+                    "image": "images/game-dev/week8/slide_37.png",
+                    "notes": "Một khi đã tìm thấy một đường đi tối ưu từ A đến B, tác tử (agent) phải đi theo nó. Có một số phức tạp:\n- Các tác tử khác hoặc các đối tượng di chuyển có thể chiếm các nút trong đồ thị.\n- Màn chơi có thể hoàn toàn động.\n- Sương mù chiến tranh (Fog of War).\n\nCác giải pháp:\n- Tính toán lại (một phần) của đường đi.\n- Sử dụng các nút lớn có thể bị chiếm bởi nhiều tác tử.\n- Chuyển hướng đến nút có sẵn gần nhất.",
+                    "terms": {
+                        "Path Following": "Sau khi có được một chuỗi các điểm từ thuật toán tìm đường, đây là hành vi lèo lái giúp nhân vật di chuyển mượt mà qua các điểm đó để đến đích."
+                    }
+                },
+                {
+                    "id": 38,
+                    "title": "Trang 38: Chuyển tiếp - Navigation Meshes trong Unity",
+                    "image": "images/game-dev/week8/slide_38.png",
+                    "notes": "Kết thúc phần giới thiệu về các thuật toán tìm đường lý thuyết.\n\nPhần tiếp theo sẽ tập trung vào giải pháp tìm đường tích hợp sẵn và mạnh mẽ của Unity: Navigation Meshes.",
+                    "terms": {}
+                },
+                {
+                    "id": 39,
+                    "title": "Trang 39: Giới thiệu Navigation Meshes",
+                    "image": "images/game-dev/week8/slide_39.png",
+                    "notes": "Một <b>Navigation Mesh (hay NavMesh)</b> là một cấu trúc dữ liệu được sử dụng để mô hình hóa các khu vực có thể đi lại của một bản đồ ảo.\n\n- Đó là một tập hợp các đa giác lồi hai chiều (thường là tam giác) xác định khu vực nào của bản đồ ảo có thể được các tác tử đi qua.\n- Mỗi đa giác hoạt động như một nút duy nhất liên kết với các nút liền kề khác.\n- Các đa giác là lồi (convex): bất kỳ điểm nào từ bên trong đa giác có thể được tiếp cận bằng một đường thẳng từ bất kỳ điểm nào khác bên trong cùng một đa giác.",
+                    "terms": {
+                        "Navigation Mesh (NavMesh)": "Một cấu trúc dữ liệu biểu diễn các khu vực có thể đi lại trong một môi trường game. Thay vì một lưới ô vuông, nó sử dụng các đa giác có hình dạng và kích thước khác nhau để mô tả bề mặt, cho phép các nhân vật di chuyển một cách tự nhiên và thông minh hơn."
+                    }
+                },
+                {
+                    "id": 40,
+                    "title": "Trang 40: NavMesh vs. Tìm đường dựa trên Grid/Waypoint",
+                    "image": "images/game-dev/week8/slide_40.png",
+                    "notes": "Bốn lợi thế khác của NavMesh so với các hệ thống tìm đường dựa trên waypoint (điểm tham chiếu):\n\n1. Các đồ thị dựa trên waypoint có xu hướng yêu cầu nhiều nút hơn, đặc biệt là trong các khu vực rộng lớn.\n\nHình ảnh minh họa sự khác biệt: đồ thị waypoint (màu đỏ) cần rất nhiều nút được đặt thủ công, trong khi NavMesh (màu xanh) tự động tạo ra một đồ thị đơn giản hơn, chỉ với các nút ở các 'cạnh' của các đa giác.",
+                    "terms": {
+                        "Waypoint Graph": "Một phương pháp tìm đường trong đó các nhà thiết kế đặt thủ công các nút (waypoint) tại các vị trí quan trọng trong màn chơi. Các nhân vật AI sau đó sẽ tìm đường đi giữa các waypoint này. Phương pháp này đơn giản nhưng kém linh hoạt và tốn nhiều công sức hơn NavMesh."
+                    }
+                },
+                {
+                    "id": 41,
+                    "title": "Trang 41: NavMesh vs. Grid/Waypoint (2/4)",
+                    "image": "images/game-dev/week8/slide_41.png",
+                    "notes": "Lợi thế thứ hai của NavMesh:\n\n2. <b>Tránh chuyển động zigzag không tự nhiên:</b> Với hệ thống waypoint, đường đi được xác định là một chuỗi các đoạn thẳng nối các điểm, buộc nhân vật phải điều chỉnh và đi theo một cách máy móc. Ngược lại, NavMesh tạo ra một con đường thẳng hơn, tự nhiên hơn xuyên qua các đa giác.",
+                    "terms": {}
+                },
+                {
+                    "id": 42,
+                    "title": "Trang 42: NavMesh vs. Grid/Waypoint (3/4)",
+                    "image": "images/game-dev/week8/slide_42.png",
+                    "notes": "Lợi thế thứ ba của NavMesh:\n\n3. <b>Tránh chướng ngại vật động một cách mạnh mẽ:</b> Hệ thống NavMesh có các thuật toán tích hợp sẵn để giúp các tác tử (agents) tự động tìm đường đi vòng qua các chướng ngại vật động (dynamic obstacles) mà không cần tính toán lại toàn bộ đường đi.",
+                    "terms": {}
+                },
+                {
+                    "id": 43,
+                    "title": "Trang 43: NavMesh vs. Grid/Waypoint (4/4)",
+                    "image": "images/game-dev/week8/slide_43.png",
+                    "notes": "Lợi thế thứ tư của NavMesh:\n\n4. <b>Các đường đi mượt mà cho các kích thước nhân vật khác nhau:</b> Hệ thống NavMesh có thể tính toán các đường đi tối ưu cho các tác tử có bán kính khác nhau, đảm bảo chúng di chuyển một cách mượt mà và không bị va chạm vào các góc tường.",
+                    "terms": {}
+                },
+                {
+                    "id": 44,
+                    "title": "Trang 44: NavMesh trong Unity - Các đối tượng",
+                    "image": "images/game-dev/week8/slide_44.png",
+                    "notes": "Trong Unity, việc tạo NavMesh được xử lý từ cửa sổ Navigation (<b>Window → AI → Navigation</b>). Quá trình tạo ra một NavMesh được gọi là <b>baking</b>.\n\nĐể 'nung' một NavMesh, cần phải cho Unity biết đối tượng nào là <b>navigation static</b>. Những đối tượng này sẽ không di chuyển và có thể được dùng để tính toán các khu vực có thể đi lại. Ví dụ về các đối tượng này là sàn nhà, tường, và các chướng ngại vật tĩnh.",
+                    "terms": {
+                        "Navigation Static": "Một tùy chọn đánh dấu một Game Object là tĩnh đối với hệ thống Navigation. Unity sẽ sử dụng các đối tượng được đánh dấu này để 'nung' (bake) NavMesh.",
+                        "Baking (NavMesh)": "Quá trình Unity phân tích các đối tượng 'Navigation Static' trong scene của bạn và tự động tạo ra một lưới đa giác (NavMesh) biểu diễn các khu vực có thể đi lại."
+                    }
+                },
+                {
+                    "id": 45,
+                    "title": "Trang 45: NavMesh trong Unity - Baking",
+                    "image": "images/game-dev/week8/slide_45.png",
+                    "notes": "Việc 'nung' NavMesh được thực hiện trong tab <b>Bake</b>, với các đối tượng được chọn. Các thông số quan trọng:\n\n- <b>Agent Radius:</b> Bán kính của tác tử. Xác định con đường hẹp nhất mà một nhân vật có thể đi qua.\n- <b>Agent Height:</b> Chiều cao của tác tử.\n- <b>Max Slope:</b> Ngưỡng độ dốc mà tại đó một con dốc trở thành một bức tường không thể đi được.\n- <b>Step Height:</b> Chiều cao bậc thang tối đa mà nhân vật có thể bước qua.",
+                    "terms": {}
+                },
+                {
+                    "id": 46,
+                    "title": "Trang 46: NavMesh trong Unity - Areas",
+                    "image": "images/game-dev/week8/slide_46.png",
+                    "notes": "Các bề mặt khác nhau có thể có các chi phí di chuyển khác nhau. Ví dụ, đi qua bùn có thể tốn nhiều 'chi phí' hơn đi trên cỏ. Mỗi phần của NavMesh có thể được thiết lập với một giá trị chi phí thông qua việc sử dụng <b>NavMesh Areas</b>.\n\nBạn có thể định nghĩa các 'Area' (Khu vực) khác nhau như 'Walkable' (Có thể đi), 'Not Walkable' (Không thể đi), 'Water' (Nước) và gán một chi phí (Cost) cho mỗi loại. Các tác tử (agents) sẽ ưu tiên các con đường có tổng chi phí thấp hơn.",
+                    "terms": {
+                        "NavMesh Area": "Một loại 'nhãn' có thể được gán cho các phần của NavMesh để chỉ định các thuộc tính đặc biệt, chẳng hạn như chi phí di chuyển. Điều này cho phép AI đưa ra các quyết định thông minh hơn, ví dụ như tránh đi qua bùn lầy trừ khi đó là con đường duy nhất."
+                    }
+                },
+                {
+                    "id": 47,
+                    "title": "Trang 47: NavMesh Agent (1/4) - Giới thiệu",
+                    "image": "images/game-dev/week8/slide_47.png",
+                    "notes": "Một <b>NavMesh agent</b> là một component giúp một nhân vật có thể tìm đường và di chuyển trong thế giới game. Nó được biểu diễn vật lý bằng một hình trụ với Bán kính (Radius) và Chiều cao (Height).\n\nAgent có khả năng truy vấn các đường đi trên NavMesh. Thay vì đi theo các đoạn thẳng nối các điểm một cách máy móc, agent sẽ di chuyển một cách thực tế hơn, có gia tốc và quay dần dần.\n\nKhi di chuyển, agent sẽ tự động tránh các chướng ngại vật cố định và cả các agent khác.",
+                    "terms": {
+                        "NavMesh Agent": "Một component cho phép một Game Object tìm đường một cách thông minh trên NavMesh. Nó xử lý cả việc tìm đường đi phức tạp và việc di chuyển cục bộ (local movement) như tránh chướng ngại vật."
+                    }
+                },
+                {
+                    "id": 48,
+                    "title": "Trang 48: NavMesh Agent (2/4) - Component",
+                    "image": "images/game-dev/week8/slide_48.png",
+                    "notes": "Component <b>NavMesh Agent</b> có thể được thêm vào một nhân vật để cho phép nó điều hướng tự động trên NavMesh. Component này xử lý cả việc tìm đường và điều khiển chuyển động của nhân vật.",
+                    "terms": {}
+                },
+                {
+                    "id": 49,
+                    "title": "Trang 49: NavMesh Agent (3/4) - Các tham số",
+                    "image": "images/game-dev/week8/slide_49.png",
+                    "notes": "Các tham số chính của NavMesh Agent:\n\n- <b>Speed / Angular Speed / Acceleration:</b> Tốc độ di chuyển / xoay / gia tốc tối đa của agent.\n- <b>Stopping Distance:</b> Khoảng cách đến mục tiêu mà tại đó agent sẽ dừng lại.\n- <b>Auto Braking:</b> Agent có nên giảm tốc khi đến gần mục tiêu không.\n- <b>Obstacle Avoidance Quality:</b> Chất lượng của việc tránh chướng ngại vật.\n- <b>Auto Repath:</b> Tự động tính toán lại một đường đi mới nếu đường đi hiện tại không còn hợp lệ.\n- <b>Area Mask:</b> Các loại NavMesh Area mà agent này có thể đi qua.",
+                    "terms": {}
+                },
+                {
+                    "id": 50,
+                    "title": "Trang 50: NavMesh Agent (4/4) - Scripting",
+                    "image": "images/game-dev/week8/slide_50.png",
+                    "notes": "NavMesh agent có thể được điều khiển trực tiếp từ script. Việc lấy component rất đơn giản: `GetComponent<NavMeshAgent>()`.\n\nĐể ra lệnh cho agent di chuyển, bạn chỉ cần gọi hàm <b>SetDestination</b> với một vị trí `Vector3`:\n`agent.SetDestination(target.position);`\n\nCác hàm hữu ích khác bao gồm `Stop()`, `Resume()`, và `CalculatePath()` để tính toán một đường đi mà không cần di chuyển.",
+                    "terms": {
+                        "agent.SetDestination()": "Phương thức chính để ra lệnh cho một NavMesh Agent di chuyển đến một điểm đến cụ thể. Tác tử sẽ tự động tính toán đường đi ngắn nhất trên NavMesh và bắt đầu di chuyển."
+                    }
+                },
+                {
+                    "id": 51,
+                    "title": "Trang 51: NavMesh Obstacle",
+                    "image": "images/game-dev/week8/slide_51.png",
+                    "notes": "Một <b>NavMesh Obstacle</b> là một chướng ngại vật <b>có thể di chuyển</b> mà một NavMesh agent phải tránh (ví dụ: cửa ra vào, tường di động...). Để đánh dấu một game object là một chướng ngại vật NavMesh, bạn cần thêm component <b>Nav Mesh Obstacle</b> vào đối tượng đó.\n\nComponent này cho phép các agent tự động tính toán lại đường đi để đi vòng qua chướng ngại vật khi nó xuất hiện trên đường đi của chúng.",
+                    "terms": {
+                        "NavMesh Obstacle": "Một component được sử dụng để mô tả các chướng ngại vật động hoặc có thể di chuyển mà các NavMesh Agent cần phải tránh. Không giống như các đối tượng tĩnh được 'nung' vào NavMesh, các Obstacle có thể thay đổi vị trí tại thời điểm chạy."
+                    }
+                },
+                {
+                    "id": 52,
+                    "title": "Trang 52: Chuyển tiếp - Câu hỏi & Demo Lab",
+                    "image": "images/game-dev/week8/slide_52.png",
+                    "notes": "Kết thúc phần lý thuyết về Navigation Meshes trong Unity.\n\nPhần cuối cùng sẽ là các câu hỏi kiểm tra và xem trước nội dung buổi thực hành (Lab).",
+                    "terms": {}
+                },
+                {
+                    "id": 53,
+                    "title": "Trang 53: Xem trước buổi thực hành",
+                    "image": "images/game-dev/week8/slide_53.png",
+                    "notes": "Chúng ta sẽ thực hiện thêm các phần demo của Bài tập lớn Phần I.\n\nBài giảng tiếp theo: <b>Game AI: Decision Making.</b>",
+                    "terms": {}
+                }
             ]
         }
     ]
