@@ -15,6 +15,12 @@
     "id": "computer_organization",
     "title": "Tổ chức Máy tính",
     "description": "Tìm hiểu về cấu trúc và nguyên tắc hoạt động cốt lõi của hệ thống máy tính, từ phần cứng đến phần mềm.",
-    "thumbnail": "images/computer-organization-thumb.png"
+    "thumbnail": "images/computer-organization.png"
+  },
+  {
+    "id": "calculus",
+    "title": "MA1521: Giải tích cho Máy tính",
+    "description": "Các khái niệm nền tảng về Giải tích, bao gồm Giới hạn, Đạo hàm, Tích phân và các chủ đề liên quan.",
+    "thumbnail": "images/calculus-thumb.png"
   }
 ]

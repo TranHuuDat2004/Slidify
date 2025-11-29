@@ -89,6 +89,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const slideNotesEl = document.getElementById('slide-notes-content');
 
             // --- CÁC HÀM CHỨC NĂNG ---
+            // Hàm áp dụng mức zoom
+            function applyZoom(zoomLevel) {
+                slideImageEl.style.width = `${zoomLevel * 100}%`;
+                saveWidth(zoomLevel * 100);
+
+                // Cập nhật trạng thái active cho nút zoom
+                document.querySelectorAll('.zoom-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (parseFloat(btn.dataset.zoom) === zoomLevel) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            // Gắn sự kiện cho các nút zoom
+            document.querySelector('.zoom-controls').addEventListener('click', (event) => {
+                const clickedButton = event.target.closest('.zoom-btn');
+                if (clickedButton) {
+                    const zoomLevel = parseFloat(clickedButton.dataset.zoom);
+                    applyZoom(zoomLevel);
+                }
+            });
+
+            // Áp dụng mức zoom đã lưu khi tải trang
+            const initialZoomLevel = getSavedWidth() / 100;
+            applyZoom(initialZoomLevel);
             function displaySlide(slideId, sectionIndex) {
                 const prevBtn = document.getElementById('prev-slide-btn');
                 const nextBtn = document.getElementById('next-slide-btn');

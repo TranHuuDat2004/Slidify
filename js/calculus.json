@@ -1,0 +1,1783 @@
+{
+  "title": "MA1521: Giải tích cho Máy tính",
+  "sections": [
+    {
+      "title": "Chương 0: Tiền Giải tích (Pre-Calculus)",
+      "slides": [
+        {
+          "id": 1,
+          "title": "Trang 1: Bìa & Mục lục",
+          "image": "images/calculus/week0/MA1521Chap0_page_1.png",
+          "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Giảng viên: Wang Fei<br>Khoa Toán học</p><hr><h3>Mục lục tổng quan</h3><p>Danh sách các chương và số trang tương ứng.</p>",
+          "terms": {}
+        },
+        {
+          "id": 2,
+          "title": "Trang 2: Nội dung & Khối lượng công việc",
+          "image": "images/calculus/week0/MA1521Chap0_page_2.png",
+          "notes": "<h3>Nội dung sẽ học trong môn MA1521</h3><ul><li>Chương 0: Tiền Giải tích</li><li>Chương 1: Giới hạn và Liên tục</li><li>Chương 2: Đạo hàm và Ứng dụng</li><li>Chương 3: Chuỗi và Dãy số</li><li>Chương 4: Đạo hàm riêng</li><li>Chương 5: Tối ưu hóa</li><li>Chương 6: Tích phân và Ứng dụng</li><li>Chương 7: Phương trình vi phân thường</li></ul><hr><h3>Khối lượng công việc & Đánh giá</h3><p><b>Khối lượng công việc:</b></p><ul><li>Lý thuyết: 1.5 x 2 giờ mỗi tuần.</li><li>Thực hành: 1 giờ mỗi tuần.</li></ul><p><b>Đánh giá:</b></p><ul><li>Bài tập về nhà: <b>15%</b></li><li>Tham gia thực hành: <b>5%</b></li><li>Thi giữa kỳ: <b>20%</b></li><li>Thi cuối kỳ: <b>60%</b></li></ul>",
+          "terms": {}
+        },
+        {
+          "id": 3,
+          "title": "Trang 3: Giới thiệu về Tập hợp",
+          "image": "images/calculus/week0/MA1521Chap0_page_3.png",
+          "notes": "<h3>Chương 0: Tiền Giải tích - Tập hợp</h3><p>Một <b>tập hợp (set)</b> là một bộ sưu tập các <b>đối tượng (objects)</b>. Các đối tượng trong tập hợp được gọi là <b>phần tử (elements)</b>. Có hai cách để mô tả một tập hợp:</p><ul><li><b>Liệt kê:</b> Ví dụ, <code>A = {-1, 1}</code></li><li><b>Mô tả thuộc tính:</b> Ví dụ, <code>{x | x² = 1}</code></li></ul><hr><h3>Quan hệ trong Tập hợp</h3><ul><li>Nếu <b>a là một phần tử</b> của tập hợp A, ta viết: <code>a ∈ A</code>.</li><li>Nếu mọi phần tử của tập hợp A cũng là phần tử của tập hợp B, ta nói A là một <b>tập hợp con (subset)</b> của B: <code>A ⊂ B</code>.</li><li>Hai tập hợp là <b>bằng nhau (equal)</b> nếu chúng có cùng các phần tử, không phân biệt thứ tự.</li></ul>",
+          "terms": {
+            "Set (Tập hợp)": "Một bộ sưu tập các đối tượng riêng biệt, được gọi là các phần tử.",
+            "Element (Phần tử)": "Một đối tượng riêng lẻ bên trong một tập hợp.",
+            "Subset (Tập hợp con)": "Tập hợp A là tập hợp con của B nếu mọi phần tử của A cũng là phần tử của B.",
+            "∈": "Ký hiệu 'là một phần tử của'.",
+            "⊂": "Ký hiệu 'là một tập hợp con của'."
+          }
+        },
+        {
+          "id": 4,
+          "title": "Trang 4: Phép toán Tập hợp & Hệ thống số",
+          "image": "images/calculus/week0/MA1521Chap0_page_4.png",
+          "notes": "<h3>Các phép toán trên Tập hợp</h3><ul><li><b>Phép hợp (Union) <code>A ∪ B</code>:</b> Gồm các phần tử thuộc A <i>hoặc</i> thuộc B.</li><li><b>Phép giao (Intersection) <code>A ∩ B</code>:</b> Gồm các phần tử thuộc cả A <i>và</i> B.</li><li><b>Phép hiệu (Difference) <code>A \\ B</code>:</b> Gồm các phần tử thuộc A <i>nhưng không</i> thuộc B.</li></ul><hr><h3>Hệ thống số</h3><ul><li><b>ℕ:</b> Tập hợp các số tự nhiên {1, 2, 3, ...}.</li><li><b>ℤ:</b> Tập hợp các số nguyên {..., -1, 0, 1, ...}.</li><li><b>ℚ:</b> Tập hợp các số hữu tỉ (dạng m/n).</li><li><b>ℝ:</b> Tập hợp các số thực.</li><li><b>∅:</b> Tập hợp rỗng (không có phần tử nào).</li></ul>",
+          "terms": {
+            "Union (Phép hợp)": "Phép toán kết hợp tất cả các phần tử từ hai hoặc nhiều tập hợp.",
+            "Intersection (Phép giao)": "Phép toán lấy ra các phần tử chung giữa hai hoặc nhiều tập hợp.",
+            "Real numbers (ℝ)": "(Số thực) Tất cả các số trên trục số, bao gồm cả số hữu tỉ và vô tỉ.",
+            "Empty set (∅)": "(Tập hợp rỗng) Tập hợp duy nhất không chứa bất kỳ phần tử nào."
+          }
+        },
+        {
+          "id": 5,
+          "title": "Trang 5: Các khoảng (Intervals)",
+          "image": "images/calculus/week0/MA1521Chap0_page_5.png",
+          "notes": "<h3>Các khoảng Hữu hạn</h3><p>Một số tập hợp con của ℝ có thể được biểu diễn dưới dạng các khoảng. Giả sử a < b:</p><ul><li><code>(a, b) = {x ∈ ℝ | a < x < b}</code> (khoảng mở, không bao gồm a và b)</li><li><code>[a, b] = {x ∈ ℝ | a ≤ x ≤ b}</code> (khoảng đóng, bao gồm cả a và b)</li><li><code>[a, b) = {x ∈ ℝ | a ≤ x < b}</code></li><li><code>(a, b] = {x ∈ ℝ | a < x ≤ b}</code></li></ul><hr><h3>Các khoảng Vô hạn</h3><ul><li><code>(a, ∞) = {x ∈ ℝ | x > a}</code></li><li><code>[a, ∞) = {x ∈ ℝ | x ≥ a}</code></li><li><code>(-∞, a) = {x ∈ ℝ | x < a}</code></li><li><code>(-∞, a] = {x ∈ ℝ | x ≤ a}</code></li></ul>",
+          "terms": {
+            "Interval (Khoảng)": "Một tập hợp các số thực nằm giữa hai số cho trước, có thể bao gồm hoặc không bao gồm hai số đó.",
+            "Open Interval (Khoảng mở)": "Một khoảng không bao gồm các điểm cuối của nó, ký hiệu bằng dấu ngoặc đơn `( )`.",
+            "Closed Interval (Khoảng đóng)": "Một khoảng bao gồm cả các điểm cuối của nó, ký hiệu bằng dấu ngoặc vuông `[ ]`."
+          }
+        },
+        {
+          "id": 6,
+          "title": "Trang 6: Giới thiệu về Hàm số",
+          "image": "images/calculus/week0/MA1521Chap0_page_6.png",
+          "notes": "<h3>Định nghĩa Hàm số</h3><p>Cho X và Y là hai tập hợp. Một <b>hàm số (function)</b> <code>f: X → Y</code> là một <b>quy tắc (rule)</b> gán cho <i>mỗi phần tử</i> trong X với một phần tử <i>duy nhất</i> trong Y.</p><ul><li>Nếu hàm f gán phần tử x ∈ X cho phần tử y ∈ Y, ta nói y là <b>ảnh (image)</b> của x qua f, và viết là <code>y = f(x)</code>.</li></ul><hr><h3>Miền xác định, Đối miền và Miền giá trị</h3><ul><li><b>Miền xác định (domain)</b> của f là tập hợp X.</li><li><b>Đối miền (codomain)</b> của f là tập hợp Y.</li><li><b>Miền giá trị (range)</b> của f là tập hợp con của Y, bao gồm tất cả các ảnh <code>f(x)</code> với mọi x ∈ X.</li></ul>",
+          "terms": {
+            "Function (Hàm số)": "Một quy tắc αντιστοιχίζει mỗi phần tử đầu vào (input) từ một tập hợp (miền xác định) với đúng một phần tử đầu ra (output) từ một tập hợp khác (đối miền).",
+            "Domain (Miền xác định)": "Tập hợp tất cả các giá trị đầu vào hợp lệ của một hàm số.",
+            "Codomain (Đối miền)": "Tập hợp chứa tất cả các giá trị đầu ra có thể có của một hàm số.",
+            "Range (Miền giá trị)": "Tập hợp con của đối miền, bao gồm tất cả các giá trị đầu ra thực tế mà hàm số tạo ra."
+          }
+        },
+        {
+          "id": 7,
+          "title": "Trang 7: Hàm giá trị tuyệt đối",
+          "image": "images/calculus/week0/MA1521Chap0_page_7.png",
+          "notes": "<h3>Hàm giá trị tuyệt đối</h3><p>Định nghĩa hàm giá trị tuyệt đối:</p><code>f(x) = |x| = { x, nếu x ≥ 0; -x, nếu x < 0 }</code><p><b>Miền xác định (Domain):</b> ℝ (Tất cả các số thực)<br><b>Miền giá trị (Range):</b> {x ∈ ℝ | x ≥ 0} (Tất cả các số thực không âm)</p><ul><li>|x| biểu diễn <b>khoảng cách (distance)</b> giữa x và gốc tọa độ O.</li><li>|x| < c ⇔ -c < x < c</li><li>|x| > c ⇔ x < -c hoặc x > c</li></ul><hr><h3>Đa thức (Polynomials)</h3><p>Một <b>đa thức</b> là một hàm có dạng:</p><code>P(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</code><ul><li>a₀, a₁, ..., aₙ là các <b>hệ số (coefficients)</b> của P(x).</li><li>Nếu aₙ ≠ 0, thì n là <b>bậc (degree)</b> của P(x).</li><li>Đa thức bậc 1 là hàm <b>tuyến tính (linear)</b>.</li><li>Đa thức bậc 2 là hàm <b>bậc hai (quadratic)</b>.</li></ul>",
+          "terms": {
+            "Absolute value function": "(Hàm giá trị tuyệt đối) Một hàm trả về giá trị không âm của một số, không phụ thuộc vào dấu của nó. Về mặt hình học, nó là khoảng cách của số đó đến 0.",
+            "Polynomial": "(Đa thức) Một biểu thức bao gồm các biến và các hệ số, chỉ sử dụng các phép toán cộng, trừ, nhân và lũy thừa với số mũ nguyên không âm.",
+            "Degree (of a polynomial)": "(Bậc của đa thức) Số mũ cao nhất của biến trong một đa thức.",
+            "Quadratic function": "(Hàm bậc hai) Một hàm đa thức bậc 2, có đồ thị là một đường parabol."
+          }
+        },
+        {
+          "id": 8,
+          "title": "Trang 8: Các loại Đa thức & Đồ thị",
+          "image": "images/calculus/week0/MA1521Chap0_page_8.png",
+          "notes": "<h3>Các loại Đa thức</h3><ul><li>Đa thức bậc 3 được gọi là hàm <b>bậc ba (cubic)</b>.</li><li>Đa thức bậc 4 được gọi là hàm <b>bậc bốn (quartic)</b>.</li><li>Đa thức bậc 5 được gọi là hàm <b>bậc năm (quintic)</b>.</li></ul><hr><h3>Đồ thị của Đa thức</h3><p>Cho hàm <code>f(x) = (x - x₁)(x - x₂)</code>, với x₁ < x₂. Đồ thị của hàm này là một parabol cắt trục hoành tại hai điểm x₁ và x₂.</p><p>Cho hàm <code>f(x) = (x - x₁)(x - x₂)(x - x₃)</code>, với x₁ < x₂ < x₃. Đồ thị của hàm này là một đường cong bậc ba cắt trục hoành tại ba điểm x₁, x₂ và x₃.</p>",
+          "terms": {
+            "Cubic function": "(Hàm bậc ba) Một hàm đa thức bậc 3.",
+            "Quartic function": "(Hàm bậc bốn) Một hàm đa thức bậc 4."
+          }
+        },
+        {
+          "id": 9,
+          "title": "Trang 9: Đồ thị Đa thức & Hàm hữu tỉ",
+          "image": "images/calculus/week0/MA1521Chap0_page_9.png",
+          "notes": "<h3>Đồ thị của Đa thức (tiếp)</h3><p>Xét hàm <code>f(x) = (x - x₁)(x - x₂) ... (x - xₙ)</code>, với x₁ < x₂ < ... < xₙ. Hình dạng tổng thể của đồ thị phụ thuộc vào n là số chẵn hay lẻ.</p><ul><li>Nếu <b>n là số lẻ</b>, hai đầu của đồ thị sẽ đi về hai hướng trái ngược nhau (một đầu tiến đến -∞, một đầu tiến đến +∞).</li><li>Nếu <b>n là số chẵn</b>, hai đầu của đồ thị sẽ cùng đi về một hướng (cùng tiến đến +∞ hoặc cùng tiến đến -∞).</li></ul><hr><h3>Hàm hữu tỉ (Rational Functions)</h3><p>Một <b>hàm hữu tỉ</b> R(x) là một hàm có dạng:</p><code>R(x) = P(x) / Q(x)</code><p>Trong đó P, Q là các đa thức, và Q(x) không đồng nhất bằng 0.</p><p>Mọi đa thức đều là một hàm hữu tỉ bằng cách đặt Q(x) = 1.</p>",
+          "terms": {
+            "Rational function": "(Hàm hữu tỉ) Một hàm số có thể được biểu diễn dưới dạng thương của hai đa thức."
+          }
+        },
+        {
+          "id": 10,
+          "title": "Trang 10: Hàm đại số & Ví dụ",
+          "image": "images/calculus/week0/MA1521Chap0_page_10.png",
+          "notes": "<h3>Hàm đại số (Algebraic Functions)</h3><p>Một <b>hàm đại số</b> là một hàm được xây dựng từ các đa thức bằng cách sử dụng các phép toán đại số:</p><ul><li>Cộng, trừ, nhân, chia</li><li>Lấy căn</li><li>Hợp (composite)</li></ul><hr><h3>Ví dụ: Tìm miền xác định</h3><p>Tìm miền xác định của hàm <code>f(x) = 1/(x⁴ - 16) + 2/(x⁴ + 16)</code>.</p><p>Đối với phân thức P(x)/Q(x), miền xác định khi Q(x) ≠ 0.</p><ul><li><code>x⁴ - 16 = (x² + 4)(x - 2)(x + 2)</code>. Do đó, <code>x⁴ - 16 ≠ 0 ⇔ x ≠ ±2</code>.</li><li><code>x⁴ + 16 ≥ 16 > 0</code> với mọi x ∈ ℝ.</li></ul><p>Vậy, miền xác định của f là {x ∈ ℝ | x ≠ ±2}.</p>",
+          "terms": {
+            "Algebraic function": "(Hàm đại số) Một hàm số có thể được định nghĩa là nghiệm của một phương trình đa thức."
+          }
+        },
+        {
+          "id": 11,
+          "title": "Trang 11: Ví dụ về Miền xác định",
+          "image": "images/calculus/week0/MA1521Chap0_page_11.png",
+          "notes": "<h3>Ví dụ: Tìm miền xác định (tiếp)</h3><p>Tìm miền xác định của hàm <code>f(x) = sqrt(16 - x²) + 6 / sqrt((x+1)(x-2)(5-x))</code>.</p><p><b>Đối với hàm căn bậc hai <code>sqrt(g(x))</code>, điều kiện là <code>g(x) ≥ 0</code>.</b></p><ul><li><code>16 - x² ≥ 0 ⇔ (4-x)(4+x) ≥ 0 ⇔ -4 ≤ x ≤ 4</code>.</li></ul><p><b>Đối với mẫu số <code>sqrt(h(x))</code>, điều kiện là <code>h(x) > 0</code>.</b></p><ul><li><code>(x+1)(x-2)(5-x) > 0</code>. Lập bảng xét dấu hoặc phân tích, ta có <code>x < -1</code> hoặc <code>2 < x < 5</code>.</li></ul><p><b>Kết hợp cả hai điều kiện:</b> Giao của hai tập hợp <code>[-4, 4]</code> và <code>(-∞, -1) ∪ (2, 5)</code>, ta được miền xác định cuối cùng là <code>{x ∈ ℝ | -4 ≤ x < -1 hoặc 2 < x ≤ 4}</code>.</p>",
+          "terms": {}
+        },
+        {
+          "id": 12,
+          "title": "Trang 12: Ví dụ về Bất phương trình",
+          "image": "images/calculus/week0/MA1521Chap0_page_12.png",
+          "notes": "<h3>Ví dụ: Giải bất phương trình chứa giá trị tuyệt đối</h3><p>Giải bất phương trình: <code>|x + 2| ≥ |2x - 3|</code></p><p>Ta sử dụng tính chất: <code>|a| ≥ |b| ⇔ a² ≥ b² ⇔ a² - b² ≥ 0 ⇔ (a - b)(a + b) ≥ 0</code>.</p><ul><li>Áp dụng, ta có: <code>[(x+2) - (2x-3)][(x+2) + (2x-3)] ≥ 0</code></li><li><code>⇔ (-x + 5)(3x - 1) ≥ 0</code></li><li>Lập bảng xét dấu, ta tìm được nghiệm là <code>1/3 ≤ x ≤ 5</code>.</li></ul><hr><h3>Ví dụ: Giải bất phương trình hữu tỉ</h3><p>Giải bất phương trình: <code>x ≤ 3x / (x + 2)</code></p><ul><li>Chuyển vế và quy đồng: <code>x - 3x / (x+2) ≤ 0 ⇔ [x(x+2) - 3x] / (x+2) ≤ 0</code></li><li><code>⇔ x(x-1) / (x+2) ≤ 0</code></li><li>Điều kiện: <code>x ≠ -2</code>.</li><li>Lập bảng xét dấu cho biểu thức <code>x(x-1)/(x+2)</code>, ta tìm được nghiệm là <code>x < -2</code> hoặc <code>0 ≤ x ≤ 1</code>.</li></ul>",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 1: Giới hạn và Liên tục",
+      "slides": [
+        {
+          "id": 7,
+          "title": "Trang 1",
+          "image": "images/calculus/week1/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 8,
+          "title": "Trang 2",
+          "image": "images/calculus/week1/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 9,
+          "title": "Trang 3",
+          "image": "images/calculus/week1/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 10,
+          "title": "Trang 4",
+          "image": "images/calculus/week1/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 11,
+          "title": "Trang 5",
+          "image": "images/calculus/week1/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 12,
+          "title": "Trang 6",
+          "image": "images/calculus/week1/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 13,
+          "title": "Trang 7",
+          "image": "images/calculus/week1/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 14,
+          "title": "Trang 8",
+          "image": "images/calculus/week1/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 15,
+          "title": "Trang 9",
+          "image": "images/calculus/week1/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 16,
+          "title": "Trang 10",
+          "image": "images/calculus/week1/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 17,
+          "title": "Trang 11",
+          "image": "images/calculus/week1/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 18,
+          "title": "Trang 12",
+          "image": "images/calculus/week1/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 19,
+          "title": "Trang 13",
+          "image": "images/calculus/week1/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 20,
+          "title": "Trang 14",
+          "image": "images/calculus/week1/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 21,
+          "title": "Trang 15",
+          "image": "images/calculus/week1/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 22,
+          "title": "Trang 16",
+          "image": "images/calculus/week1/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 23,
+          "title": "Trang 17",
+          "image": "images/calculus/week1/page_17.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 24,
+          "title": "Trang 18",
+          "image": "images/calculus/week1/page_18.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 25,
+          "title": "Trang 19",
+          "image": "images/calculus/week1/page_19.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 26,
+          "title": "Trang 20",
+          "image": "images/calculus/week1/page_20.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 27,
+          "title": "Trang 21",
+          "image": "images/calculus/week1/page_21.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 28,
+          "title": "Trang 22",
+          "image": "images/calculus/week1/page_22.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 29,
+          "title": "Trang 23",
+          "image": "images/calculus/week1/page_23.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 30,
+          "title": "Trang 24",
+          "image": "images/calculus/week1/page_24.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 31,
+          "title": "Trang 25",
+          "image": "images/calculus/week1/page_25.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 32,
+          "title": "Trang 26",
+          "image": "images/calculus/week1/page_26.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 33,
+          "title": "Trang 27",
+          "image": "images/calculus/week1/page_27.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 34,
+          "title": "Trang 28",
+          "image": "images/calculus/week1/page_28.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 35,
+          "title": "Trang 29",
+          "image": "images/calculus/week1/page_29.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 2: Đạo hàm và Ứng dụng",
+      "slides": [
+        {
+          "id": 36,
+          "title": "Trang 1",
+          "image": "images/calculus/week2/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 37,
+          "title": "Trang 2",
+          "image": "images/calculus/week2/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 38,
+          "title": "Trang 3",
+          "image": "images/calculus/week2/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 39,
+          "title": "Trang 4",
+          "image": "images/calculus/week2/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 40,
+          "title": "Trang 5",
+          "image": "images/calculus/week2/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 41,
+          "title": "Trang 6",
+          "image": "images/calculus/week2/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 42,
+          "title": "Trang 7",
+          "image": "images/calculus/week2/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 43,
+          "title": "Trang 8",
+          "image": "images/calculus/week2/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 44,
+          "title": "Trang 9",
+          "image": "images/calculus/week2/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 45,
+          "title": "Trang 10",
+          "image": "images/calculus/week2/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 46,
+          "title": "Trang 11",
+          "image": "images/calculus/week2/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 47,
+          "title": "Trang 12",
+          "image": "images/calculus/week2/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 48,
+          "title": "Trang 13",
+          "image": "images/calculus/week2/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 49,
+          "title": "Trang 14",
+          "image": "images/calculus/week2/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 50,
+          "title": "Trang 15",
+          "image": "images/calculus/week2/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 51,
+          "title": "Trang 16",
+          "image": "images/calculus/week2/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 52,
+          "title": "Trang 17",
+          "image": "images/calculus/week2/page_17.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 53,
+          "title": "Trang 18",
+          "image": "images/calculus/week2/page_18.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 54,
+          "title": "Trang 19",
+          "image": "images/calculus/week2/page_19.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 55,
+          "title": "Trang 20",
+          "image": "images/calculus/week2/page_20.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 56,
+          "title": "Trang 21",
+          "image": "images/calculus/week2/page_21.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 57,
+          "title": "Trang 22",
+          "image": "images/calculus/week2/page_22.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 58,
+          "title": "Trang 23",
+          "image": "images/calculus/week2/page_23.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 59,
+          "title": "Trang 24",
+          "image": "images/calculus/week2/page_24.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 60,
+          "title": "Trang 25",
+          "image": "images/calculus/week2/page_25.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 61,
+          "title": "Trang 26",
+          "image": "images/calculus/week2/page_26.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 62,
+          "title": "Trang 27",
+          "image": "images/calculus/week2/page_27.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 63,
+          "title": "Trang 28",
+          "image": "images/calculus/week2/page_28.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 64,
+          "title": "Trang 29",
+          "image": "images/calculus/week2/page_29.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 65,
+          "title": "Trang 30",
+          "image": "images/calculus/week2/page_30.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 66,
+          "title": "Trang 31",
+          "image": "images/calculus/week2/page_31.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 67,
+          "title": "Trang 32",
+          "image": "images/calculus/week2/page_32.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 68,
+          "title": "Trang 33",
+          "image": "images/calculus/week2/page_33.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 69,
+          "title": "Trang 34",
+          "image": "images/calculus/week2/page_34.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 70,
+          "title": "Trang 35",
+          "image": "images/calculus/week2/page_35.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 71,
+          "title": "Trang 36",
+          "image": "images/calculus/week2/page_36.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 72,
+          "title": "Trang 37",
+          "image": "images/calculus/week2/page_37.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 73,
+          "title": "Trang 38",
+          "image": "images/calculus/week2/page_38.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 74,
+          "title": "Trang 39",
+          "image": "images/calculus/week2/page_39.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 75,
+          "title": "Trang 40",
+          "image": "images/calculus/week2/page_40.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 76,
+          "title": "Trang 41",
+          "image": "images/calculus/week2/page_41.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 77,
+          "title": "Trang 42",
+          "image": "images/calculus/week2/page_42.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 78,
+          "title": "Trang 43",
+          "image": "images/calculus/week2/page_43.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 79,
+          "title": "Trang 44",
+          "image": "images/calculus/week2/page_44.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 80,
+          "title": "Trang 45",
+          "image": "images/calculus/week2/page_45.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 81,
+          "title": "Trang 46",
+          "image": "images/calculus/week2/page_46.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 82,
+          "title": "Trang 47",
+          "image": "images/calculus/week2/page_47.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 83,
+          "title": "Trang 48",
+          "image": "images/calculus/week2/page_48.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 84,
+          "title": "Trang 49",
+          "image": "images/calculus/week2/page_49.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 85,
+          "title": "Trang 50",
+          "image": "images/calculus/week2/page_50.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 86,
+          "title": "Trang 51",
+          "image": "images/calculus/week2/page_51.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 3: Chuỗi và Dãy số",
+      "slides": [
+        {
+          "id": 87,
+          "title": "Trang 1",
+          "image": "images/calculus/week3/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 88,
+          "title": "Trang 2",
+          "image": "images/calculus/week3/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 89,
+          "title": "Trang 3",
+          "image": "images/calculus/week3/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 90,
+          "title": "Trang 4",
+          "image": "images/calculus/week3/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 91,
+          "title": "Trang 5",
+          "image": "images/calculus/week3/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 92,
+          "title": "Trang 6",
+          "image": "images/calculus/week3/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 93,
+          "title": "Trang 7",
+          "image": "images/calculus/week3/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 94,
+          "title": "Trang 8",
+          "image": "images/calculus/week3/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 95,
+          "title": "Trang 9",
+          "image": "images/calculus/week3/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 96,
+          "title": "Trang 10",
+          "image": "images/calculus/week3/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 97,
+          "title": "Trang 11",
+          "image": "images/calculus/week3/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 98,
+          "title": "Trang 12",
+          "image": "images/calculus/week3/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 99,
+          "title": "Trang 13",
+          "image": "images/calculus/week3/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 100,
+          "title": "Trang 14",
+          "image": "images/calculus/week3/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 101,
+          "title": "Trang 15",
+          "image": "images/calculus/week3/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 102,
+          "title": "Trang 16",
+          "image": "images/calculus/week3/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 103,
+          "title": "Trang 17",
+          "image": "images/calculus/week3/page_17.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 104,
+          "title": "Trang 18",
+          "image": "images/calculus/week3/page_18.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 105,
+          "title": "Trang 19",
+          "image": "images/calculus/week3/page_19.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 106,
+          "title": "Trang 20",
+          "image": "images/calculus/week3/page_20.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 107,
+          "title": "Trang 21",
+          "image": "images/calculus/week3/page_21.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 108,
+          "title": "Trang 22",
+          "image": "images/calculus/week3/page_22.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 109,
+          "title": "Trang 23",
+          "image": "images/calculus/week3/page_23.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 110,
+          "title": "Trang 24",
+          "image": "images/calculus/week3/page_24.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 111,
+          "title": "Trang 25",
+          "image": "images/calculus/week3/page_25.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 112,
+          "title": "Trang 26",
+          "image": "images/calculus/week3/page_26.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 113,
+          "title": "Trang 27",
+          "image": "images/calculus/week3/page_27.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 114,
+          "title": "Trang 28",
+          "image": "images/calculus/week3/page_28.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 115,
+          "title": "Trang 29",
+          "image": "images/calculus/week3/page_29.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 116,
+          "title": "Trang 30",
+          "image": "images/calculus/week3/page_30.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 117,
+          "title": "Trang 31",
+          "image": "images/calculus/week3/page_31.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 118,
+          "title": "Trang 32",
+          "image": "images/calculus/week3/page_32.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 119,
+          "title": "Trang 33",
+          "image": "images/calculus/week3/page_33.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 120,
+          "title": "Trang 34",
+          "image": "images/calculus/week3/page_34.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 121,
+          "title": "Trang 35",
+          "image": "images/calculus/week3/page_35.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 122,
+          "title": "Trang 36",
+          "image": "images/calculus/week3/page_36.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 123,
+          "title": "Trang 37",
+          "image": "images/calculus/week3/page_37.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 124,
+          "title": "Trang 38",
+          "image": "images/calculus/week3/page_38.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 125,
+          "title": "Trang 39",
+          "image": "images/calculus/week3/page_39.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 4: Đạo hàm riêng",
+      "slides": [
+        {
+          "id": 126,
+          "title": "Trang 1",
+          "image": "images/calculus/week4/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 127,
+          "title": "Trang 2",
+          "image": "images/calculus/week4/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 128,
+          "title": "Trang 3",
+          "image": "images/calculus/week4/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 129,
+          "title": "Trang 4",
+          "image": "images/calculus/week4/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 130,
+          "title": "Trang 5",
+          "image": "images/calculus/week4/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 131,
+          "title": "Trang 6",
+          "image": "images/calculus/week4/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 132,
+          "title": "Trang 7",
+          "image": "images/calculus/week4/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 133,
+          "title": "Trang 8",
+          "image": "images/calculus/week4/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 134,
+          "title": "Trang 9",
+          "image": "images/calculus/week4/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 135,
+          "title": "Trang 10",
+          "image": "images/calculus/week4/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 136,
+          "title": "Trang 11",
+          "image": "images/calculus/week4/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 137,
+          "title": "Trang 12",
+          "image": "images/calculus/week4/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 138,
+          "title": "Trang 13",
+          "image": "images/calculus/week4/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 139,
+          "title": "Trang 14",
+          "image": "images/calculus/week4/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 140,
+          "title": "Trang 15",
+          "image": "images/calculus/week4/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 141,
+          "title": "Trang 16",
+          "image": "images/calculus/week4/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 142,
+          "title": "Trang 17",
+          "image": "images/calculus/week4/page_17.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 5: Tối ưu hóa",
+      "slides": [
+        {
+          "id": 143,
+          "title": "Trang 1",
+          "image": "images/calculus/week5/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 144,
+          "title": "Trang 2",
+          "image": "images/calculus/week5/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 145,
+          "title": "Trang 3",
+          "image": "images/calculus/week5/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 146,
+          "title": "Trang 4",
+          "image": "images/calculus/week5/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 147,
+          "title": "Trang 5",
+          "image": "images/calculus/week5/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 148,
+          "title": "Trang 6",
+          "image": "images/calculus/week5/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 149,
+          "title": "Trang 7",
+          "image": "images/calculus/week5/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 150,
+          "title": "Trang 8",
+          "image": "images/calculus/week5/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 151,
+          "title": "Trang 9",
+          "image": "images/calculus/week5/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 152,
+          "title": "Trang 10",
+          "image": "images/calculus/week5/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 153,
+          "title": "Trang 11",
+          "image": "images/calculus/week5/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 154,
+          "title": "Trang 12",
+          "image": "images/calculus/week5/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 155,
+          "title": "Trang 13",
+          "image": "images/calculus/week5/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 156,
+          "title": "Trang 14",
+          "image": "images/calculus/week5/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 157,
+          "title": "Trang 15",
+          "image": "images/calculus/week5/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 158,
+          "title": "Trang 16",
+          "image": "images/calculus/week5/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 159,
+          "title": "Trang 17",
+          "image": "images/calculus/week5/page_17.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 6: Tích phân và Ứng dụng",
+      "slides": [
+        {
+          "id": 160,
+          "title": "Trang 1",
+          "image": "images/calculus/week6/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 161,
+          "title": "Trang 2",
+          "image": "images/calculus/week6/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 162,
+          "title": "Trang 3",
+          "image": "images/calculus/week6/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 163,
+          "title": "Trang 4",
+          "image": "images/calculus/week6/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 164,
+          "title": "Trang 5",
+          "image": "images/calculus/week6/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 165,
+          "title": "Trang 6",
+          "image": "images/calculus/week6/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 166,
+          "title": "Trang 7",
+          "image": "images/calculus/week6/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 167,
+          "title": "Trang 8",
+          "image": "images/calculus/week6/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 168,
+          "title": "Trang 9",
+          "image": "images/calculus/week6/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 169,
+          "title": "Trang 10",
+          "image": "images/calculus/week6/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 170,
+          "title": "Trang 11",
+          "image": "images/calculus/week6/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 171,
+          "title": "Trang 12",
+          "image": "images/calculus/week6/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 172,
+          "title": "Trang 13",
+          "image": "images/calculus/week6/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 173,
+          "title": "Trang 14",
+          "image": "images/calculus/week6/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 174,
+          "title": "Trang 15",
+          "image": "images/calculus/week6/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 175,
+          "title": "Trang 16",
+          "image": "images/calculus/week6/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 176,
+          "title": "Trang 17",
+          "image": "images/calculus/week6/page_17.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 177,
+          "title": "Trang 18",
+          "image": "images/calculus/week6/page_18.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 178,
+          "title": "Trang 19",
+          "image": "images/calculus/week6/page_19.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 179,
+          "title": "Trang 20",
+          "image": "images/calculus/week6/page_20.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 180,
+          "title": "Trang 21",
+          "image": "images/calculus/week6/page_21.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 181,
+          "title": "Trang 22",
+          "image": "images/calculus/week6/page_22.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 182,
+          "title": "Trang 23",
+          "image": "images/calculus/week6/page_23.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 183,
+          "title": "Trang 24",
+          "image": "images/calculus/week6/page_24.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 184,
+          "title": "Trang 25",
+          "image": "images/calculus/week6/page_25.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 185,
+          "title": "Trang 26",
+          "image": "images/calculus/week6/page_26.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 186,
+          "title": "Trang 27",
+          "image": "images/calculus/week6/page_27.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 187,
+          "title": "Trang 28",
+          "image": "images/calculus/week6/page_28.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 188,
+          "title": "Trang 29",
+          "image": "images/calculus/week6/page_29.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 189,
+          "title": "Trang 30",
+          "image": "images/calculus/week6/page_30.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 190,
+          "title": "Trang 31",
+          "image": "images/calculus/week6/page_31.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 191,
+          "title": "Trang 32",
+          "image": "images/calculus/week6/page_32.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 192,
+          "title": "Trang 33",
+          "image": "images/calculus/week6/page_33.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 193,
+          "title": "Trang 34",
+          "image": "images/calculus/week6/page_34.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 194,
+          "title": "Trang 35",
+          "image": "images/calculus/week6/page_35.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 6.2",
+      "slides": [
+        {
+          "id": 195,
+          "title": "Trang 1",
+          "image": "images/calculus/week6.2/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 196,
+          "title": "Trang 2",
+          "image": "images/calculus/week6.2/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 197,
+          "title": "Trang 3",
+          "image": "images/calculus/week6.2/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 198,
+          "title": "Trang 4",
+          "image": "images/calculus/week6.2/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 199,
+          "title": "Trang 5",
+          "image": "images/calculus/week6.2/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 200,
+          "title": "Trang 6",
+          "image": "images/calculus/week6.2/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 201,
+          "title": "Trang 7",
+          "image": "images/calculus/week6.2/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 202,
+          "title": "Trang 8",
+          "image": "images/calculus/week6.2/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 203,
+          "title": "Trang 9",
+          "image": "images/calculus/week6.2/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 204,
+          "title": "Trang 10",
+          "image": "images/calculus/week6.2/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 205,
+          "title": "Trang 11",
+          "image": "images/calculus/week6.2/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 206,
+          "title": "Trang 12",
+          "image": "images/calculus/week6.2/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 207,
+          "title": "Trang 13",
+          "image": "images/calculus/week6.2/page_13.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    },
+    {
+      "title": "Chương 7: Phương trình vi phân thường",
+      "slides": [
+        {
+          "id": 208,
+          "title": "Trang 1",
+          "image": "images/calculus/week7/page_1.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 209,
+          "title": "Trang 2",
+          "image": "images/calculus/week7/page_2.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 210,
+          "title": "Trang 3",
+          "image": "images/calculus/week7/page_3.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 211,
+          "title": "Trang 4",
+          "image": "images/calculus/week7/page_4.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 212,
+          "title": "Trang 5",
+          "image": "images/calculus/week7/page_5.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 213,
+          "title": "Trang 6",
+          "image": "images/calculus/week7/page_6.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 214,
+          "title": "Trang 7",
+          "image": "images/calculus/week7/page_7.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 215,
+          "title": "Trang 8",
+          "image": "images/calculus/week7/page_8.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 216,
+          "title": "Trang 9",
+          "image": "images/calculus/week7/page_9.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 217,
+          "title": "Trang 10",
+          "image": "images/calculus/week7/page_10.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 218,
+          "title": "Trang 11",
+          "image": "images/calculus/week7/page_11.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 219,
+          "title": "Trang 12",
+          "image": "images/calculus/week7/page_12.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 220,
+          "title": "Trang 13",
+          "image": "images/calculus/week7/page_13.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 221,
+          "title": "Trang 14",
+          "image": "images/calculus/week7/page_14.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 222,
+          "title": "Trang 15",
+          "image": "images/calculus/week7/page_15.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 223,
+          "title": "Trang 16",
+          "image": "images/calculus/week7/page_16.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 224,
+          "title": "Trang 17",
+          "image": "images/calculus/week7/page_17.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 225,
+          "title": "Trang 18",
+          "image": "images/calculus/week7/page_18.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 226,
+          "title": "Trang 19",
+          "image": "images/calculus/week7/page_19.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 227,
+          "title": "Trang 20",
+          "image": "images/calculus/week7/page_20.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 228,
+          "title": "Trang 21",
+          "image": "images/calculus/week7/page_21.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 229,
+          "title": "Trang 22",
+          "image": "images/calculus/week7/page_22.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 230,
+          "title": "Trang 23",
+          "image": "images/calculus/week7/page_23.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 231,
+          "title": "Trang 24",
+          "image": "images/calculus/week7/page_24.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 232,
+          "title": "Trang 25",
+          "image": "images/calculus/week7/page_25.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 233,
+          "title": "Trang 26",
+          "image": "images/calculus/week7/page_26.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 234,
+          "title": "Trang 27",
+          "image": "images/calculus/week7/page_27.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 235,
+          "title": "Trang 28",
+          "image": "images/calculus/week7/page_28.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 236,
+          "title": "Trang 29",
+          "image": "images/calculus/week7/page_29.png",
+          "notes": "",
+          "terms": {}
+        },
+        {
+          "id": 237,
+          "title": "Trang 30",
+          "image": "images/calculus/week7/page_30.png",
+          "notes": "",
+          "terms": {}
+        }
+      ]
+    }
+  ]
+}
