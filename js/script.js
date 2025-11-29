@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 slideTitleEl.textContent = currentSlideData.title;
                 slideImageEl.src = currentSlideData.image;
-                slideNotesEl.innerHTML = currentSlideData.notes;
+                slideNotesEl.innerHTML = currentSlideData.notes.trim() === '' ? 'Nội dung đang được soạn thảo hoặc đang cập nhật.' : currentSlideData.notes;
 
                 const notesSection = document.querySelector('.notes-section');
                 const termsColumn = document.getElementById('terms-column');
