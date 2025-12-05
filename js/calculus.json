@@ -119,215 +119,421 @@
           "image": "images/calculus/week0/MA1521Chap0_page_12.png",
           "notes": "<h3>Ví dụ: Giải bất phương trình chứa giá trị tuyệt đối</h3><p>Giải bất phương trình: <code>|x + 2| ≥ |2x - 3|</code></p><p>Ta sử dụng tính chất: <code>|a| ≥ |b| ⇔ a² ≥ b² ⇔ a² - b² ≥ 0 ⇔ (a - b)(a + b) ≥ 0</code>.</p><ul><li>Áp dụng, ta có: <code>[(x+2) - (2x-3)][(x+2) + (2x-3)] ≥ 0</code></li><li><code>⇔ (-x + 5)(3x - 1) ≥ 0</code></li><li>Lập bảng xét dấu, ta tìm được nghiệm là <code>1/3 ≤ x ≤ 5</code>.</li></ul><hr><h3>Ví dụ: Giải bất phương trình hữu tỉ</h3><p>Giải bất phương trình: <code>x ≤ 3x / (x + 2)</code></p><ul><li>Chuyển vế và quy đồng: <code>x - 3x / (x+2) ≤ 0 ⇔ [x(x+2) - 3x] / (x+2) ≤ 0</code></li><li><code>⇔ x(x-1) / (x+2) ≤ 0</code></li><li>Điều kiện: <code>x ≠ -2</code>.</li><li>Lập bảng xét dấu cho biểu thức <code>x(x-1)/(x+2)</code>, ta tìm được nghiệm là <code>x < -2</code> hoặc <code>0 ≤ x ≤ 1</code>.</li></ul>",
           "terms": {}
-        }
-      ]
-    },
-    {
-      "title": "Chương 1: Giới hạn và Liên tục",
-      "slides": [
-        {
-          "id": 7,
-          "title": "Trang 1",
-          "image": "images/calculus/week1/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 8,
-          "title": "Trang 2",
-          "image": "images/calculus/week1/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 9,
-          "title": "Trang 3",
-          "image": "images/calculus/week1/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 10,
-          "title": "Trang 4",
-          "image": "images/calculus/week1/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 11,
-          "title": "Trang 5",
-          "image": "images/calculus/week1/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 12,
-          "title": "Trang 6",
-          "image": "images/calculus/week1/page_6.png",
-          "notes": "",
-          "terms": {}
         },
         {
           "id": 13,
-          "title": "Trang 7",
-          "image": "images/calculus/week1/page_7.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 13: Hàm lượng giác",
+          "image": "images/calculus/week0/MA1521Chap0_page_13.png",
+          "notes": "<h3>Hàm lượng giác (Trigonometric Functions)</h3><p>Các hàm lượng giác cơ bản bao gồm <code>sin x, cos x, tan x, cot x, sec x, csc x</code>. Chúng là tỷ lệ các cạnh của một tam giác vuông.</p><ul><li>Được định nghĩa trên vòng tròn đơn vị, với <code>sin x</code> là tung độ (y) và <code>cos x</code> là hoành độ (x) của điểm trên vòng tròn.</li></ul><hr><h3>Đồ thị các hàm lượng giác</h3><p>Đồ thị của các hàm <code>y = sin x</code>, <code>y = cos x</code>, và <code>y = tan x</code> cho thấy tính tuần hoàn và các đặc điểm của chúng.</p>",
+          "terms": {
+            "Trigonometric functions": "(Hàm lượng giác) Các hàm của một góc, quan trọng trong việc nghiên cứu các tam giác và mô hình hóa các hiện tượng tuần hoàn. Các hàm cơ bản là sin, cos, và tan."
+          }
         },
         {
           "id": 14,
-          "title": "Trang 8",
-          "image": "images/calculus/week1/page_8.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 14: Định nghĩa và Hằng đẳng thức lượng giác",
+          "image": "images/calculus/week0/MA1521Chap0_page_14.png",
+          "notes": "<h3>Định nghĩa lượng giác theo tọa độ</h3><p>Cho một điểm P(x, y) và góc θ, với r = sqrt(x² + y²), ta có:</p><ul><li><code>sin θ = y/r</code></li><li><code>cos θ = x/r</code></li><li><code>tan θ = y/x</code></li><li><code>csc θ = r/y</code></li><li><code>sec θ = r/x</code></li><li><code>cot θ = r/y</code></li></ul><hr><h3>Các hằng đẳng thức lượng giác</h3><ul><li><b>Cơ bản:</b> <code>sin²θ + cos²θ = 1</code>; <code>tan θ = sin θ / cos θ</code></li><li><b>Công thức cộng:</b> <code>sin(α ± β) = sin α cos β ± cos α sin β</code></li><li><b>Công thức góc đôi:</b> <code>sin 2α = 2 sin α cos α</code></li><li><b>Tính tuần hoàn:</b> <code>sin(α + 2π) = sin α</code></li></ul>",
+          "terms": {
+            "Trigonometric Identities": "(Hằng đẳng thức lượng giác) Các phương trình liên quan đến các hàm lượng giác và đúng với mọi giá trị của các biến.",
+            "Periodicity": "(Tính tuần hoàn) Một hàm số được gọi là tuần hoàn nếu giá trị của nó lặp lại sau những khoảng đều đặn."
+          }
         },
         {
           "id": 15,
-          "title": "Trang 9",
-          "image": "images/calculus/week1/page_9.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 15: Hàm 1-1 (One-to-one)",
+          "image": "images/calculus/week0/MA1521Chap0_page_15.png",
+          "notes": "<h3>Hàm 1-1 (One-to-one Functions)</h3><p>Một hàm số được gọi là 1-1 nếu nó không bao giờ nhận cùng một giá trị hai lần.</p><ul><li><b>Kiểm tra bằng đường ngang (Horizontal line test):</b> Một hàm là 1-1 nếu và chỉ nếu không có đường ngang nào cắt đồ thị của nó nhiều hơn <b>một lần</b>.</li></ul><p><b>Định nghĩa chính thức:</b></p><p>Hàm f được gọi là 1-1 nếu với mọi a, b thuộc miền xác định D, ta có:</p><code>f(a) = f(b) ⇒ a = b</code><hr><h3>Ví dụ về hàm 1-1</h3><p>Các hàm <code>f(x) = sqrt(x)</code> và <code>g(x) = 1/x</code> đều là các hàm 1-1.</p>",
+          "terms": {
+            "One-to-one function": "(Hàm 1-1 hay đơn ánh) Một hàm số trong đó mỗi phần tử của miền giá trị tương ứng với đúng một phần tử của miền xác định. Nghĩa là, các đầu vào khác nhau luôn tạo ra các đầu ra khác nhau."
+          }
         },
         {
           "id": 16,
-          "title": "Trang 10",
-          "image": "images/calculus/week1/page_10.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 16: Hàm ngược",
+          "image": "images/calculus/week0/MA1521Chap0_page_16.png",
+          "notes": "<h3>Hàm ngược (Inverse Functions)</h3><p>Các hàm <code>f(x) = sqrt(x)</code> và <code>h(x) = x³</code> là các phép toán ngược của nhau. Nếu áp dụng f rồi đến h, hoặc h rồi đến f, ta sẽ quay lại giá trị x ban đầu.</p><p><b>Định nghĩa:</b> Cho f là một hàm 1-1 với miền xác định A và miền giá trị B. <b>Hàm ngược</b> của nó, ký hiệu là <code>f⁻¹</code>, là một hàm có:</p><ul><li>Miền xác định là B và miền giá trị là A.</li><li>Thỏa mãn: <code>f⁻¹(y) = x ⇔ y = f(x)</code> với mọi x ∈ A, y ∈ B.</li></ul><hr><h3>Hàm sin ngược (Inverse Sine Function)</h3><p>Hàm <code>y = sin x</code> không phải là hàm 1-1 trên toàn bộ ℝ. Tuy nhiên, nếu ta giới hạn miền xác định của nó trong khoảng <code>[-π/2, π/2]</code>, thì nó trở thành hàm 1-1 với miền giá trị là <code>[-1, 1]</code>.</p><p><b>Hàm sin ngược</b> <code>sin⁻¹</code> được định nghĩa với miền xác định là <code>[-1, 1]</code> và miền giá trị là <code>[-π/2, π/2]</code>.</p>",
+          "terms": {
+            "Inverse function": "(Hàm ngược) Một hàm số 'đảo ngược' lại tác dụng của một hàm số khác. Nếu f(x) = y, thì hàm ngược f⁻¹(y) = x.",
+            "Inverse Sine Function (sin⁻¹ hay arcsin)": "Hàm ngược của hàm sin. Nó trả về một góc có giá trị sin là một số cho trước. Miền giá trị của nó thường được giới hạn trong khoảng [-π/2, π/2]."
+          }
         },
         {
           "id": 17,
-          "title": "Trang 11",
-          "image": "images/calculus/week1/page_11.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 17: Hàm Cosine và Tangent ngược",
+          "image": "images/calculus/week0/MA1521Chap0_page_17.png",
+          "notes": "<h3>Hàm Cosine ngược (Inverse Cosine)</h3><p>Tương tự hàm sin, hàm <code>y = cos x</code> không phải là hàm 1-1 trên ℝ. Nhưng nếu ta giới hạn miền xác định trong khoảng <code>[0, π]</code>, nó sẽ trở thành hàm 1-1 với miền giá trị là <code>[-1, 1]</code>.</p><p>Hàm <b>cosine ngược</b> <code>cos⁻¹</code> được định nghĩa với miền xác định là <code>[-1, 1]</code> và miền giá trị là <code>[0, π]</code>.</p><hr><h3>Các hàm lượng giác ngược khác</h3><ul><li>Hàm <code>tan⁻¹ x</code> có miền xác định là ℝ và miền giá trị là <code>(-π/2, π/2)</code>.</li><li>Hàm <code>cot⁻¹ x</code> có miền xác định là ℝ và miền giá trị là <code>(0, π)</code>.</li></ul>",
+          "terms": {
+            "Inverse Cosine Function (cos⁻¹ hay arccos)": "Hàm ngược của hàm cosine. Nó trả về một góc có giá trị cosine là một số cho trước. Miền giá trị của nó thường được giới hạn trong khoảng [0, π].",
+            "Inverse Tangent Function (tan⁻¹ hay arctan)": "Hàm ngược của hàm tangent. Miền giá trị của nó thường được giới hạn trong khoảng (-π/2, π/2)."
+          }
         },
         {
           "id": 18,
-          "title": "Trang 12",
-          "image": "images/calculus/week1/page_12.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 18: Hàm mũ và Logarit",
+          "image": "images/calculus/week0/MA1521Chap0_page_18.png",
+          "notes": "<h3>Hàm mũ (Exponential Functions)</h3><p>Cho a > 0 và a ≠ 1, xét hàm mũ <code>f(x) = aˣ</code>, với x ∈ ℝ.</p><ul><li>Hàm <code>aˣ</code> là một hàm 1-1 và có miền giá trị là ℝ⁺ (các số thực dương).</li><li>Nó có một hàm ngược là hàm <b>logarit cơ số a</b>: <code>ℝ⁺ → ℝ</code>.</li><li><code>y = logₐ x ⇔ x = aʸ</code>.</li></ul><hr><h3>Hàm Logarit tự nhiên</h3><p>Cho <b>số Euler</b> <code>e = 1 + 1/1! + 1/2! + ... ≈ 2.71828...</code></p><p>Ta gọi <code>logₑ x = ln x</code> là <b>hàm logarit tự nhiên</b>.</p>",
+          "terms": {
+            "Exponential function": "(Hàm mũ) Một hàm số có dạng f(x) = aˣ, trong đó a là một hằng số dương khác 1.",
+            "Logarithmic function": "(Hàm logarit) Hàm ngược của hàm mũ. Nếu y = aˣ, thì logₐ(y) = x.",
+            "Euler's number (e)": "(Số Euler) Một hằng số toán học xấp xỉ 2.71828, là cơ số của logarit tự nhiên.",
+            "Natural logarithm (ln)": "(Logarit tự nhiên) Logarit cơ số e."
+          }
         },
         {
           "id": 19,
-          "title": "Trang 13",
-          "image": "images/calculus/week1/page_13.png",
-          "notes": "",
+          "title": "Trang 19: Tính chất và Ví dụ",
+          "image": "images/calculus/week0/MA1521Chap0_page_19.png",
+          "notes": "<h3>Tính chất của hàm Mũ và Logarit</h3><p><b>Hàm mũ:</b></p><ul><li><code>a⁰ = 1</code></li><li><code>aˣaʸ = aˣ⁺ʸ</code></li></ul><p><b>Hàm logarit:</b></p><ul><li><code>logₐ xy = logₐ x + logₐ y</code></li><li><code>logₐ (x/y) = logₐ x - logₐ y</code></li><li><code>logₐ (xᵇ) = b logₐ x</code></li><li><code>logₐ x = logₓ b / logₐ b</code> (Công thức đổi cơ số)</li></ul><p><b>Mối quan hệ:</b></p><ul><li><code>a<sup>logₐ x</sup> = x</code></li><li><code>logₐ(aˣ) = x</code></li></ul><hr><h3>Ví dụ: Chứng minh</h3><p>Chứng minh rằng <code>a<sup>ln b</sup> = b<sup>ln a</sup></code> với a, b > 0.</p>",
           "terms": {}
         },
         {
           "id": 20,
-          "title": "Trang 14",
-          "image": "images/calculus/week1/page_14.png",
-          "notes": "",
+          "title": "Trang 20: Ví dụ về Miền xác định",
+          "image": "images/calculus/week0/MA1521Chap0_page_20.png",
+          "notes": "<h3>Ví dụ: Tìm miền xác định</h3><p>Tìm miền xác định của <code>f(x) = cos(ln(5-x)) + tan(sqrt(x-3))</code>.</p><p>Ta xét các điều kiện:</p><ol><li><b>Hàm ln(5-x)</b> được xác định khi <code>5 - x > 0 ⇔ x < 5</code>.</li><li><b>Hàm sqrt(x-3)</b> được xác định khi <code>x - 3 ≥ 0 ⇔ x ≥ 3</code>.</li><li><b>Hàm tan(u)</b> được xác định khi <code>u ≠ π/2 + kπ</code>. Do đó, <code>sqrt(x-3) ≠ π/2, 3π/2, ...</code></li></ol><p>Kết hợp điều kiện 1 và 2, ta có <code>3 ≤ x < 5</code>.</p><p>Vậy, miền xác định cuối cùng là <code>[3, 5)</code>.",
           "terms": {}
         },
         {
           "id": 21,
-          "title": "Trang 15",
-          "image": "images/calculus/week1/page_15.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 21: Ví dụ về Đồ thị",
+          "image": "images/calculus/week0/MA1521Chap0_page_21.png",
+          "notes": "<h3>Vẽ đồ thị (Graph Sketching)</h3><p>Cho một hàm f(x), ta có thể thực hiện các phép biến đổi đồ thị cơ bản:</p><ul><li><code>f(x - k)</code>: Dịch sang <b>phải</b> k đơn vị.</li><li><code>f(x + k)</code>: Dịch sang <b>trái</b> k đơn vị.</li><li><code>f(x) + k</code>: Dịch lên <b>trên</b> k đơn vị.</li><li><code>f(x) - k</code>: Dịch xuống <b>dưới</b> k đơn vị.</li><li><code>f(-x)</code>: Đối xứng qua trục <b>y</b>.</li><li><code>-f(x)</code>: Đối xứng qua trục <b>x</b>.</li><li><code>k f(x)</code>: Giãn/co theo trục <b>y</b> một hệ số k.</li><li><code>f(kx)</code>: Giãn/co theo trục <b>x</b> một hệ số 1/k.</li></ul><hr><h3>Ví dụ: Vẽ đồ thị</h3><p>Vẽ đồ thị của hàm <code>y = -5 - 4 / (x+1)³</code>. Ta có thể vẽ đồ thị này bằng cách thực hiện tuần tự các phép biến đổi từ đồ thị cơ bản <code>y = 1/x³</code>.</p>",
+          "terms": {
+            "Graph Sketching": "(Vẽ đồ thị) Quá trình tạo ra một bản vẽ thô của đồ thị một hàm số, thể hiện các đặc điểm quan trọng của nó như giao điểm với các trục, tiệm cận, và hình dạng tổng thể."
+          }
         },
         {
           "id": 22,
-          "title": "Trang 16",
-          "image": "images/calculus/week1/page_16.png",
-          "notes": "",
+          "title": "Trang 22: Ví dụ về Vẽ Đồ thị",
+          "image": "images/calculus/week0/MA1521Chap0_page_22.png",
+          "notes": "<h3>Ví dụ: Vẽ đồ thị (tiếp)</h3><p>Vẽ đồ thị của hàm <code>y = ln(-x - 3) = ln(-(x + 3))</code>. Các bước thực hiện:</p><ol><li>Bắt đầu với đồ thị cơ bản của <code>y = ln x</code>.</li><li>Lấy đối xứng qua trục y để được <code>y = ln(-x)</code>.</li><li>Dịch đồ thị sang trái 3 đơn vị để được <code>y = ln(-(x+3))</code>.</li></ol><hr><h3>Ví dụ: Vẽ đồ thị hàm mũ</h3><p>Vẽ đồ thị của hàm <code>y = 1 - 2e<sup>-x-2</sup> = 1 - 2e<sup>-(x+2)</sup></code>. Các bước thực hiện từ đồ thị <code>y = eˣ</code>.</p>",
           "terms": {}
         },
         {
           "id": 23,
-          "title": "Trang 17",
-          "image": "images/calculus/week1/page_17.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 23: Không gian Ba chiều",
+          "image": "images/calculus/week0/MA1521Chap0_page_23.png",
+          "notes": "<h3>Không gian Ba chiều</h3><p><b>Không gian ba chiều</b> là tập hợp các điểm ℝ³ = {(x, y, z) | x, y, z ∈ ℝ}.</p><ul><li>Vector <code>OA</code> được gọi là <b>vector vị trí (position vector)</b> của điểm A.</li><li>Độ dài của nó được ký hiệu là <code>|OA| = sqrt(x₁² + y₁² + z₁²)</code>.</li></ul><hr><h3>Tính chất của Vector trong không gian 3D</h3><ul><li>Nếu v ≠ 0, thì <code>v / |v|</code> là một <b>vector đơn vị (unit vector)</b>.</li><li>Hai vector u và v là <b>song song (parallel)</b> nếu và chỉ nếu u = λv với một số λ ∈ ℝ.</li><li>Vector <code>AB</code> nối hai điểm A(x₁, y₁, z₁) và B(x₂, y₂, z₂) được tính bằng <code>(x₂ - x₁, y₂ - y₁, z₂ - z₁)</code>.</li></ul>",
+          "terms": {
+            "Three-dimensional space (ℝ³)": "(Không gian ba chiều) Mô hình hình học của vũ trụ vật chất trong đó chúng ta sống, được mô tả bởi ba chiều: chiều dài, chiều rộng và chiều cao.",
+            "Position vector": "(Vector vị trí) Một vector biểu diễn vị trí của một điểm P trong không gian so với một điểm gốc O. Nó có điểm đầu ở O và điểm cuối ở P.",
+            "Unit vector": "(Vector đơn vị) Một vector có độ dài (độ lớn) bằng 1."
+          }
         },
         {
           "id": 24,
-          "title": "Trang 18",
-          "image": "images/calculus/week1/page_18.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 24: Đường thẳng & Tích vô hướng",
+          "image": "images/calculus/week0/MA1521Chap0_page_24.png",
+          "notes": "<h3>Đường thẳng trong không gian 3D</h3><p>Xét đường thẳng L đi qua hai điểm A, B.</p><ul><li>Vector <code>u = AB</code> là một <b>vector chỉ phương (direction vector)</b>.</li><li>Phương trình của đường thẳng L có thể được biểu diễn dưới dạng: <code>r = a + λ(b - a)</code>, với r là vector vị trí của một điểm bất kỳ trên L, và λ ∈ ℝ.</li></ul><hr><h3>Tích vô hướng (Scalar Products)</h3><p>Cho hai vector u và v. <b>Tích vô hướng</b> của chúng được định nghĩa là:</p><code>u • v = x₁x₂ + y₁y₂ + z₁z₂</code><p><b>Ý nghĩa hình học:</b> <code>u • v = |u||v| cos θ</code>, với θ là góc giữa u và v.</p><p><b>Tính chất:</b> Hai vector u và v <b>vuông góc (perpendicular)</b> nếu và chỉ nếu <code>u • v = 0</code>.</p>",
+          "terms": {
+            "Direction vector": "(Vector chỉ phương) Một vector xác định hướng của một đường thẳng. Bất kỳ vector nào song song với đường thẳng đều có thể là vector chỉ phương của nó.",
+            "Scalar product (Dot product)": "(Tích vô hướng) Một phép toán đại số nhận hai vector và trả về một số vô hướng duy nhất. Rất hữu ích để tính góc giữa hai vector."
+          }
         },
         {
           "id": 25,
-          "title": "Trang 19",
-          "image": "images/calculus/week1/page_19.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 25: Mặt phẳng & Tích có hướng",
+          "image": "images/calculus/week0/MA1521Chap0_page_25.png",
+          "notes": "<h3>Mặt phẳng trong không gian 3D</h3><p>Xét mặt phẳng Π chứa điểm A với vector vị trí u, và có <b>vector pháp tuyến (normal vector)</b> là n.</p><p>Một điểm P bất kỳ với vector vị trí r nằm trên mặt phẳng Π nếu và chỉ nếu vector <code>AP</code> vuông góc với n.</p><ul><li><code>AP ⊥ n ⇔ AP • n = 0 ⇔ (r - u) • n = 0</code></li><li>Do đó, phương trình của mặt phẳng Π là: <code>r • n = u • n</code>.</li></ul><hr><h3>Tích có hướng (Vector Products)</h3><p>Cho hai vector u và v. <b>Tích có hướng</b> của chúng được định nghĩa bằng định thức:</p><code>u x v = | i  j  k | |x₁ y₁ z₁| |x₂ y₂ z₂|</code><p><b>Ý nghĩa hình học:</b></p><ul><li><code>u x v</code> là một vector <b>vuông góc</b> với cả u và v, có hướng được xác định bởi quy tắc bàn tay phải.</li><li><code>|u x v|</code> biểu diễn <b>diện tích</b> của hình bình hành được tạo bởi u và v.</li></ul>",
+          "terms": {
+            "Plane (Mặt phẳng)": "Một bề mặt phẳng hai chiều kéo dài vô tận trong không gian ba chiều.",
+            "Normal vector": "(Vector pháp tuyến) Một vector vuông góc với một bề mặt (ví dụ: một mặt phẳng) tại một điểm nhất định.",
+            "Vector product (Cross product)": "(Tích có hướng) Một phép toán nhị phân trên hai vector trong không gian ba chiều, kết quả là một vector vuông góc với cả hai vector ban đầu."
+          }
         },
         {
           "id": 26,
-          "title": "Trang 20",
-          "image": "images/calculus/week1/page_20.png",
-          "notes": "",
+          "title": "Trang 26: Tích có hướng & Ví dụ",
+          "image": "images/calculus/week0/MA1521Chap0_page_26.png",
+          "notes": "<h3>Tính chất của Tích có hướng</h3><ul><li><code>u x v = -v x u</code> (phản giao hoán)</li><li><code>i x j = k; j x k = i; k x i = j</code></li><li><code>u x 0 = 0 ⇔ u || v</code></li><li><code>(u x v) • w = (w x u) • v</code></li></ul><p><b>Ứng dụng:</b> Vector pháp tuyến của một mặt phẳng Π chứa hai vector không song song u và v được cho bởi <code>n = u x v</code>.</p><hr><h3>Ví dụ: Tìm phương trình đường thẳng</h3><p>Tìm phương trình đường thẳng L đi qua hai điểm (-2, -1, 0) và (3, 2, -3).</p><ul><li>Vector chỉ phương: <code>u = (3, 2, -3) - (-2, -1, 0) = (5, 3, -3)</code>.</li><li>Phương trình: <code>r = (-2, -1, 0) + λ(5, 3, -3)</code>.</li></ul>",
           "terms": {}
         },
         {
           "id": 27,
-          "title": "Trang 21",
-          "image": "images/calculus/week1/page_21.png",
-          "notes": "",
+          "title": "Trang 27: Ví dụ về Mặt phẳng",
+          "image": "images/calculus/week0/MA1521Chap0_page_27.png",
+          "notes": "<h3>Ví dụ: Tìm phương trình mặt phẳng</h3><p><b>Trường hợp 1:</b> Tìm phương trình mặt phẳng Π, nếu nó chứa điểm (2, 2, 2) và vuông góc với vector <code>3i + j - 2k</code>.</p><ul><li>Vector pháp tuyến: <code>n = (3, 1, -2)</code>.</li><li>Phương trình: <code>(x, y, z) • (3, 1, -2) = (2, 2, 2) • (3, 1, -2)</code></li><li><code>⇔ 3x + y - 2z = 6 + 2 - 4 = 4</code>.</li></ul><hr><h3>Ví dụ: Tìm phương trình mặt phẳng (tiếp)</h3><p><b>Trường hợp 2:</b> Tìm phương trình mặt phẳng Π, nếu nó chứa điểm (2, 2, 2) và đường thẳng <code>r = i - 2j + 3k + λ(3i + j - 2k)</code>.</p><ul><li>Để tìm vector pháp tuyến n, ta cần hai vector song song với Π.</li><li>Vector thứ nhất là vector chỉ phương của đường thẳng: <code>(3, 1, -2)</code>.</li><li>Vector thứ hai là vector nối điểm trên đường thẳng (1, -2, 3) với điểm trên mặt phẳng (2, 2, 2): <code>(2, 2, 2) - (1, -2, 3) = (1, 4, -1)</code>.</li><li>Vector pháp tuyến <code>n = (3, 1, -2) x (1, 4, -1) = (7, 1, 11)</code>.</li><li>Phương trình: <code>7x + y + 11z = 38</code>.</li></ul>",
           "terms": {}
         },
         {
           "id": 28,
-          "title": "Trang 22",
-          "image": "images/calculus/week1/page_22.png",
-          "notes": "",
+          "title": "Trang 28: Ví dụ về Mặt phẳng & Vector đơn vị",
+          "image": "images/calculus/week0/MA1521Chap0_page_28.png",
+          "notes": "<h3>Ví dụ: Tìm phương trình mặt phẳng</h3><p>Tìm phương trình mặt phẳng Π chứa hai đường thẳng song song L₁ và L₂.</p><p><b>Giải pháp:</b></p><ul><li>Lấy hai vector song song với Π: vector chỉ phương của L₁ là <code>(3, 1, -2)</code> và vector nối một điểm trên L₁ với một điểm trên L₂ là <code>(1, -2, 3) - (1, 0, 3) = (0, -2, 0)</code>.</li><li>Tính vector pháp tuyến <code>n</code> bằng tích có hướng của hai vector trên.</li><li>Sử dụng một điểm bất kỳ để tìm phương trình mặt phẳng.</li></ul><hr><h3>Ví dụ: Tìm vector đơn vị</h3><p>Cho <code>u = i - 2j + 2k</code>. Tìm vector đơn vị v sao cho <code>u • v</code> có giá trị lớn nhất/nhỏ nhất.</p><ul><li><code>u • v = |u||v| cos θ</code>. Vì |u| và |v| là hằng số, tích vô hướng lớn nhất khi <code>cos θ = 1</code> (θ = 0) và nhỏ nhất khi <code>cos θ = -1</code> (θ = π).</li><li><b>Lớn nhất:</b> v song song cùng chiều với u. <code>v = u / |u| = (1/3)i - (2/3)j + (2/3)k</code>.</li><li><b>Nhỏ nhất:</b> v song song ngược chiều với u. <code>v = -u / |u|</code>.</li></ul>",
           "terms": {}
         },
         {
           "id": 29,
-          "title": "Trang 23",
-          "image": "images/calculus/week1/page_23.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 29: Số phức (Complex Numbers)",
+          "image": "images/calculus/week0/MA1521Chap0_page_29.png",
+          "notes": "<h3>Giới thiệu Số phức</h3><p>Đặt <code>i = sqrt(-1)</code>. Tập hợp các <b>số phức (complex numbers)</b> được ký hiệu là ℂ = {a + bi | a, b ∈ ℝ}.</p><ul><li>Một số phức <code>z = a + bi</code> có thể được biểu diễn như một điểm (a, b) trên mặt phẳng phức.</li><li><b>a</b> là <b>phần thực (real part)</b>, ký hiệu Re(z).</li><li><b>b</b> là <b>phần ảo (imaginary part)</b>, ký hiệu Im(z).</li><li><code>z* = a - bi</code> là <b>số phức liên hợp (conjugate)</b> của z.</li><li><code>|z| = sqrt(a² + b²)</code> là <b>mô-đun (modulus)</b> của z.</li></ul><hr><h3>Dạng lượng giác và Công thức Euler</h3><ul><li>Góc θ giữa z và trục thực được gọi là <b>argument</b> của z, ký hiệu là arg(z).</li><li>Khi đó, <code>a = |z| cos θ</code> và <code>b = |z| sin θ</code>.</li><li><code>z = |z|(cos θ + i sin θ)</code> được gọi là <b>dạng lượng giác (polar form)</b> của z.</li><li><b>Công thức Euler:</b> <code>e<sup>iθ</sup> = cos θ + i sin θ</code>.</li></ul>",
+          "terms": {
+            "Complex number": "(Số phức) Một số có thể được biểu diễn dưới dạng a + bi, trong đó a và b là các số thực và i là đơn vị ảo, thỏa mãn i² = -1.",
+            "Imaginary part": "(Phần ảo) Hệ số b của đơn vị ảo i trong một số phức a + bi.",
+            "Modulus (of a complex number)": "(Mô-đun của số phức) Khoảng cách từ gốc tọa độ đến điểm biểu diễn số phức đó trên mặt phẳng phức. |z| = sqrt(a² + b²).",
+            "Euler's formula": "(Công thức Euler) Một công thức toán học trong giải tích phức thiết lập mối quan hệ sâu sắc giữa các hàm lượng giác và hàm mũ phức."
+          }
         },
         {
           "id": 30,
-          "title": "Trang 24",
-          "image": "images/calculus/week1/page_24.png",
-          "notes": "",
-          "terms": {}
+          "title": "Trang 30: Các phép toán trên Số phức",
+          "image": "images/calculus/week0/MA1521Chap0_page_30.png",
+          "notes": "<h3>Các phép toán Số học trên ℂ</h3><p><b>Cộng và Trừ:</b></p><code>(a + bi) ± (c + di) = (a ± c) + (b ± d)i</code><p><b>Nhân:</b></p><ul><li>Dạng đại số: <code>(a + bi)(c + di) = (ac - bd) + (ad + bc)i</code></li><li>Dạng lượng giác: <code>z₁z₂ = |z₁||z₂|e<sup>i(α+β)</sup></code></li><li><code>zz* = (a + bi)(a - bi) = a² + b² = |z|²</code></li></ul><p><b>Định lý De Moivre:</b></p><code>(cos θ + i sin θ)ⁿ = cos(nθ) + i sin(nθ)</code>, với n ∈ ℤ.",
+          "terms": {
+            "De Moivre's theorem": "(Định lý De Moivre) Một công thức quan trọng cho lũy thừa của số phức. Nó phát biểu rằng với mọi số phức (và đặc biệt là với mọi số thực) x và mọi số nguyên n, ta có (cos x + i sin x)ⁿ = cos(nx) + i sin(nx)."
+          }
         },
         {
           "id": 31,
-          "title": "Trang 25",
-          "image": "images/calculus/week1/page_25.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 32,
-          "title": "Trang 26",
-          "image": "images/calculus/week1/page_26.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 33,
-          "title": "Trang 27",
-          "image": "images/calculus/week1/page_27.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 34,
-          "title": "Trang 28",
-          "image": "images/calculus/week1/page_28.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 35,
-          "title": "Trang 29",
-          "image": "images/calculus/week1/page_29.png",
-          "notes": "",
+          "title": "Trang 31: Phép chia & Ví dụ cuối",
+          "image": "images/calculus/week0/MA1521Chap0_page_31.png",
+          "notes": "<h3>Phép chia trên ℂ</h3><p>Để chia hai số phức, ta nhân cả tử và mẫu với số phức liên hợp của mẫu:</p><code>(a + bi) / (c + di) = [(a + bi)(c - di)] / [(c + di)(c - di)] = [(ac + bd) + (bc - ad)i] / (c² + d²)</code><p><b>Dạng lượng giác:</b></p><code>z₁ / z₂ = (|z₁| / |z₂|) e<sup>i(α-β)</sup></code><hr><h3>Ví dụ cuối cùng</h3><p>Chứng minh các đồng nhất thức lượng giác sau bằng cách sử dụng số phức:</p><ul><li><code>1 + cos θ + i sin θ</code></li><li><code>1 + cos θ - i sin θ</code></li></ul><p><b>Gợi ý giải:</b> Đặt z = cos θ + i sin θ. Khi đó |z| = 1 và z* = cos θ - i sin θ. Sử dụng các tính chất này để biến đổi biểu thức.</p>",
           "terms": {}
         }
+      ]
+    },
+    {
+  "title": "Chương 1: Giới hạn và Liên tục (Limit and Continuity)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 1",
+      "image": "images/calculus/week1/MA1521Chap1_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 1: Giới hạn và Liên tục.</p><hr><h3>Mục lục Chương 1</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này.</p>",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Đường thẳng & Đường tiếp tuyến",
+      "image": "images/calculus/week1/MA1521Chap1_page_2.png",
+      "notes": "<h3>Đường thẳng (The Straight Line)</h3><p>Một đường thẳng được xác định duy nhất bởi 2 điểm phân biệt A(x₀, y₀) và B(x₁, y₁).</p><p><b>Hệ số góc (slope)</b> của đường thẳng được định nghĩa là:</p><code>m = (y₁ - y₀) / (x₁ - x₀)</code><hr><h3>Đường tiếp tuyến (The Tangent Line)</h3><p>Xét parabol <code>y = x²</code>. Để tìm hệ số góc của <b>đường tiếp tuyến</b> tại điểm P(1, 1), ta xét một điểm Q(x, x²) khác trên đường cong.</p><p>Hệ số góc của đường thẳng PQ là <code>m_PQ = (x² - 1) / (x - 1)</code>.</p><p>Khi điểm Q tiến dần đến P (tức là x tiến dần đến 1), đường thẳng PQ sẽ tiến dần đến đường tiếp tuyến tại P. Hệ số góc của đường tiếp tuyến chính là <b>giới hạn (limit)</b> của <code>m_PQ</code> khi Q → P.</p>",
+      "terms": {
+        "Slope (Hệ số góc)": "Một đại lượng đo độ dốc của một đường thẳng. Nó được tính bằng tỷ lệ giữa sự thay đổi theo chiều dọc (rise) và sự thay đổi theo chiều ngang (run).",
+        "Tangent Line (Đường tiếp tuyến)": "Một đường thẳng 'chạm' vào một đường cong tại một điểm duy nhất và có cùng hệ số góc với đường cong tại điểm đó."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Vận tốc tức thời & Định nghĩa Giới hạn",
+      "image": "images/calculus/week1/MA1521Chap1_page_3.png",
+      "notes": "<h3>Ví dụ: Vận tốc tức thời</h3><p>Một quả bóng rơi từ độ cao 450m. Quãng đường đi được là <code>s(t) = 4.9t²</code>. Tìm <b>vận tốc tức thời (instantaneous velocity)</b> tại thời điểm t = 5 giây.</p><p>Vận tốc trung bình trong khoảng thời gian [5, 5+h] là <code>V_[5, 5+h] = Δs / Δt = [s(5+h) - s(5)] / h</code>.</p><p>Vận tốc tức thời tại t = 5 là giới hạn của vận tốc trung bình khi khoảng thời gian h tiến dần về 0: <code>v = lim(h→0) V_[5, 5+h]</code>.</p><hr><h3>Định nghĩa Giới hạn (Definition of Limit)</h3><p><b>Định nghĩa:</b> Nếu f(x) tiến đến <b>gần tùy ý</b> giá trị L bằng cách lấy x <b>đủ gần</b> giá trị a (nhưng không bằng a), thì ta viết:</p><code>lim(x→a) f(x) = L</code><p><b>Lưu ý:</b></p><ul><li>Giới hạn của f(x) khi x → a chỉ phụ thuộc vào giá trị của f(x) ở <b>lân cận a</b>.</li><li>Giới hạn này <b>không phụ thuộc</b> vào giá trị của f(x) <b>tại a</b>.</li></ul>",
+      "terms": {
+        "Instantaneous velocity": "(Vận tốc tức thời) Tốc độ và hướng của một vật thể tại một thời điểm cụ thể. Trong giải tích, nó là đạo hàm của hàm vị trí theo thời gian.",
+        "Limit (Giới hạn)": "Giá trị mà một hàm số 'tiến đến' khi biến số của hàm tiến đến một giá trị cho trước."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Trang 4: Ví dụ & Các định luật Giới hạn",
+      "image": "images/calculus/week1/MA1521Chap1_page_4.png",
+      "notes": "<h3>Ví dụ: Tìm giới hạn</h3><p>Tìm <code>lim(x→1) (x² - 1) / (x - 1)</code>.</p><p>Lưu ý rằng hàm <code>f(x) = (x² - 1) / (x - 1)</code> không xác định tại x = 1. Tuy nhiên, với mọi x ≠ 1, ta có:</p><code>f(x) = (x - 1)(x + 1) / (x - 1) = x + 1</code><p>Đồ thị của f(x) là đường thẳng y = x + 1, với một 'lỗ hổng' tại điểm (1, 2). Khi x tiến đến 1, giá trị của f(x) tiến đến 2. Do đó, giới hạn bằng 2.</p><hr><h3>Các định luật Giới hạn (Limit Laws)</h3><ul><li><b>Giới hạn của hằng số:</b> <code>lim(x→a) c = c</code>.</li><li><b>Giới hạn của biến:</b> <code>lim(x→a) x = a</code>.</li><li><b>Giới hạn của hằng số nhân với hàm:</b> <code>lim(x→a) [c * f(x)] = c * lim(x→a) f(x)</code>.</li></ul>",
+      "terms": {}
+    },
+    {
+    "id": 5,
+    "title": "Trang 5: Các định luật Giới hạn (tiếp)",
+    "image": "images/calculus/week1/MA1521Chap1_page_5.png",
+    "notes": "<h3>Giới hạn của Tổng, Hiệu, Tích, Thương</h3><p>Giả sử <code>lim(x→a) f(x) = L</code> và <code>lim(x→a) g(x) = M</code>. Khi đó:</p><ul><li><b>Giới hạn của Tổng:</b> <code>lim(x→a) [f(x) + g(x)] = L + M</code>.</li><li><b>Giới hạn của Hiệu:</b> <code>lim(x→a) [f(x) - g(x)] = L - M</code>.</li><li><b>Giới hạn của Tích:</b> <code>lim(x→a) [f(x)g(x)] = L * M</code>.</li><li><b>Giới hạn của Thương:</b> <code>lim(x→a) [f(x)/g(x)] = L / M</code>, với điều kiện M ≠ 0.</li></ul><hr><h3>Giới hạn của Lũy thừa và Căn</h3><ul><li><b>Lũy thừa:</b> <code>lim(x→a) [f(x)]ⁿ = [lim(x→a) f(x)]ⁿ</code>.</li><li><b>Căn:</b> <code>lim(x→a) sqrt(f(x)) = sqrt(lim(x→a) f(x))</code>, với điều kiện f(x) ≥ 0.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 6,
+    "title": "Trang 6: Ví dụ & Tính chất thay thế",
+    "image": "images/calculus/week1/MA1521Chap1_page_6.png",
+    "notes": "<h3>Ví dụ về Định luật Giới hạn</h3><p>Các ví dụ minh họa cách áp dụng các định luật giới hạn để tìm giới hạn của một đa thức. Về cơ bản, chúng ta có thể tính giới hạn của từng số hạng riêng lẻ rồi cộng/trừ chúng lại.</p><hr><h3>Tính chất Thay thế Trực tiếp (Substitution Property)</h3><p><b>Định lý:</b> Nếu f là một hàm <b>đa thức</b> hoặc <b>hữu tỉ</b> và a nằm trong miền xác định của f, thì:</p><code>lim(x→a) f(x) = f(a)</code><p>Điều này có nghĩa là chúng ta có thể tìm giới hạn bằng cách thay trực tiếp giá trị của a vào hàm.</p><p>Một hàm thỏa mãn điều kiện trên được gọi là <b>liên tục (continuous)</b> tại a.</p>",
+    "terms": {
+      "Substitution Property": "(Tính chất Thay thế) Một phương pháp tìm giới hạn của các hàm liên tục bằng cách thay trực tiếp giá trị mà biến số tiến đến vào hàm số.",
+      "Continuous": "(Liên tục) Một hàm số được gọi là liên tục tại một điểm nếu đồ thị của nó không bị 'gián đoạn' hay có 'lỗ hổng' tại điểm đó. Về mặt toán học, lim(x→a) f(x) = f(a)."
+    }
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Định nghĩa & Ví dụ về Tính liên tục",
+    "image": "images/calculus/week1/MA1521Chap1_page_7.png",
+    "notes": "<h3>Định nghĩa Tính liên tục (Definition of Continuity)</h3><p>Một hàm f là <b>liên tục tại một số a</b> nếu <code>lim(x→a) f(x) = f(a)</code>.</p><p>Định nghĩa này bao gồm 3 tính chất:</p><ol><li>f(a) được xác định (tức là a nằm trong miền xác định của f).</li><li>lim(x→a) f(x) tồn tại.</li><li>lim(x→a) f(x) = f(a).</li></ol><p>Nếu một hàm không liên tục tại a, ta nói nó <b>gián đoạn (discontinuous)</b> tại a.</p><hr><h3>Ví dụ về Gián đoạn có thể loại bỏ</h3><p>Hàm <code>f(x) = (x² - x - 2) / (x - 2)</code> không xác định tại x = 2. Tuy nhiên, giới hạn của nó khi x → 2 tồn tại và bằng 3. Do đó, ta có thể 'định nghĩa lại' <code>f(2) = 3</code> để loại bỏ điểm gián đoạn. Đây được gọi là <b>gián đoạn có thể loại bỏ (removable discontinuity)</b>.</p>",
+    "terms": {
+      "Discontinuous": "(Gián đoạn) Một hàm số không liên tục tại một điểm.",
+      "Removable discontinuity": "(Gián đoạn có thể loại bỏ) Một 'lỗ hổng' trên đồ thị có thể được 'lấp đầy' bằng cách định nghĩa lại giá trị của hàm tại điểm đó để làm cho nó trở nên liên tục."
+    }
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Tính chất của Hàm liên tục",
+    "image": "images/calculus/week1/MA1521Chap1_page_8.png",
+    "notes": "<h3>Tính chất của Hàm liên tục</h3><p>Giả sử f và g là các hàm liên tục tại a, và c là một hằng số. Khi đó, các hàm sau cũng liên tục tại a:</p><ul><li><code>c * f</code></li><li><code>f + g</code></li><li><code>f - g</code></li><li><code>f * g</code></li><li><code>f / g</code>, với điều kiện g(a) ≠ 0.</li></ul><hr><h3>Định lý</h3><p>Nếu f và g là các hàm liên tục tại a, thì các hàm trên đều liên tục tại a.</p>",
+    "terms": {}
+  },
+  {
+    "id": 9,
+    "title": "Trang 9: Các lớp hàm liên tục & Ví dụ",
+    "image": "images/calculus/week1/MA1521Chap1_page_9.png",
+    "notes": "<h3>Các lớp hàm liên tục</h3><p>Các lớp hàm sau đây là liên tục trên miền xác định của chúng:</p><ul><li>Đa thức (trên ℝ)</li><li>Hàm hữu tỉ</li><li>Hàm đại số</li><li>Hàm lượng giác</li><li>Hàm mũ (trên ℝ)</li><li>Hàm logarit (trên ℝ⁺)</li></ul><p><b>Định lý về hàm hợp:</b> Nếu <code>lim(x→a) f(x) = b</code> và g liên tục tại b, thì <code>lim(x→a) g(f(x)) = g(b)</code>.</p><hr><h3>Ví dụ tính giới hạn</h3><p>Các ví dụ minh họa cách áp dụng tính chất thay thế và các định luật giới hạn cho các hàm lượng giác, logarit và mũ phức tạp hơn.</p>",
+    "terms": {}
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Ví dụ về Giới hạn (tiếp)",
+    "image": "images/calculus/week1/MA1521Chap1_page_10.png",
+    "notes": "<h3>Ví dụ 1</h3><p>Tìm <code>lim(x→1) (x² - 1) / (x - 1)</code>.</p><ul><li>Thay thế trực tiếp (direct substitution) cho kết quả dạng <code>0/0</code> (dạng vô định), nên không áp dụng được.</li><li>Lưu ý rằng x=1 <b>không</b> nằm trong miền xác định của f(x).</li><li>Khi x ≠ 1, ta có <code>f(x) = x + 1</code>.</li><li>Vì giới hạn chỉ quan tâm đến giá trị lân cận, ta có: <code>lim(x→1) f(x) = lim(x→1) (x + 1) = 2</code>.</li></ul><hr><h3>Ví dụ 2</h3><p>Cho <code>f(x) = (x² - 1) / (x - 1)</code>. Đặt <code>g(x) = x + 1</code>.</p><p>Hàm f(x) và g(x) bằng nhau với mọi x ≠ 1. Do đó, giới hạn của chúng khi x → 1 là như nhau. Ta kết luận <code>lim(x→1) f(x) = 2</code>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 11,
+    "title": "Trang 11: Ví dụ & Giới hạn của hàm hữu tỉ",
+    "image": "images/calculus/week1/MA1521Chap1_page_11.png",
+    "notes": "<h3>Kết luận Trực quan</h3><p><b>Định lý:</b> Nếu <code>f(x) = g(x)</code> với mọi x ở lân cận a, ngoại trừ có thể tại a, thì <code>lim(x→a) f(x) = lim(x→a) g(x)</code>.</p><hr><h3>Ví dụ: Nhân liên hợp</h3><p>Tìm <code>lim(x→0) [sqrt(x² + 9) - 3] / x²</code>.</p><p>Thay thế trực tiếp cho dạng <code>0/0</code>. Ta sử dụng phương pháp nhân với biểu thức liên hợp:</p><code>= lim(x→0) [(x² + 9) - 9] / [x²(sqrt(x² + 9) + 3)]</code><br><code>= lim(x→0) x² / [x²(sqrt(x² + 9) + 3)]</code><br><code>= lim(x→0) 1 / (sqrt(x² + 9) + 3) = 1/6</code><hr><h3>Giới hạn của Hàm hữu tỉ</h3><p>Phương pháp <b>phân tích thành nhân tử (factorization)</b>:</p><ol><li>Phân tích cả tử và mẫu thành nhân tử.</li><li>Triệt tiêu các nhân tử chung.</li><li>Rút gọn về một hàm liên tục và áp dụng tính chất thay thế.</li></ol>",
+    "terms": {
+      "Factorization": "(Phân tích thành nhân tử) Quá trình viết một biểu thức dưới dạng tích của các nhân tử.",
+      "Conjugate expression": "(Biểu thức liên hợp) Đối với một biểu thức có dạng `a - b`, biểu thức liên hợp của nó là `a + b`. Nhân một biểu thức với liên hợp của nó thường giúp loại bỏ các dấu căn."
+    }
+  },
+        {
+    "id": 12,
+    "title": "Trang 12: Ví dụ & Giới hạn Hàm đại số",
+    "image": "images/calculus/week1/MA1521Chap1_page_12.png",
+    "notes": "<h3>Ví dụ về Phân tích thành nhân tử</h3><p>Tìm <code>lim(x→-3) (x² + x - 12) / (9 - x²)</code>.</p><p>Phân tích tử và mẫu: <code>[(x+4)(x-3)] / [(3-x)(3+x)]</code>.</p><p>Rút gọn <code>(x-3)</code> và <code>(3-x)</code> thành <code>-1</code>, ta được <code>lim(x→-3) -(x+4) / (3+x)</code>. Kết quả này không tồn tại vì mẫu số tiến về 0.</p><hr><h3>Giới hạn của Hàm đại số</h3><p>Chúng ta sử dụng phương pháp <b>hợp lý hóa (rationalization)</b>:</p><ol><li>Với một hàm đại số, nhân cả tử và mẫu với <b>biểu thức liên hợp (conjugate)</b>.</li><li>Hợp lý hóa tử và/hoặc mẫu.</li><li>Phân tích thành nhân tử nếu cần.</li><li>Triệt tiêu các nhân tử chung.</li><li>Rút gọn về một hàm liên tục.</li></ol>",
+    "terms": {}
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Ví dụ & Hàm Heaviside",
+    "image": "images/calculus/week1/MA1521Chap1_page_13.png",
+    "notes": "<h3>Ví dụ về Hợp lý hóa</h3><p>Các ví dụ minh họa cách sử dụng phương pháp nhân liên hợp để khử dạng vô định <code>0/0</code> và tìm giới hạn của các hàm chứa căn thức.</p><hr><h3>Hàm Heaviside</h3><p>Định nghĩa <b>hàm Heaviside (hàm bước đơn vị)</b>:</p><code>H(x) = { 0, nếu x < 0; 1, nếu x ≥ 0 }</code><p>Khi x tiến đến 0 từ bên trái (x → 0⁻), H(x) tiến đến 0.</p><p>Khi x tiến đến 0 từ bên phải (x → 0⁺), H(x) tiến đến 1.</p><p>Vì giới hạn trái và giới hạn phải khác nhau, giới hạn của H(x) khi x → 0 <b>không tồn tại</b>.</p>",
+    "terms": {
+      "Heaviside function": "(Hàm Heaviside hay hàm bước đơn vị) Một hàm số gián đoạn có giá trị bằng 0 cho các số âm và bằng 1 cho các số dương."
+    }
+  },
+  {
+    "id": 14,
+    "title": "Trang 14: Giới hạn một phía",
+    "image": "images/calculus/week1/MA1521Chap1_page_14.png",
+    "notes": "<h3>Giới hạn một phía (One-Sided Limits)</h3><p><b>Định nghĩa:</b></p><ul><li><b>Giới hạn phải (right-hand limit):</b> Nếu f(x) tiến đến L khi x tiến đến a từ <b>bên phải</b>, ta viết <code>lim(x→a⁺) f(x) = L</code>.</li><li><b>Giới hạn trái (left-hand limit):</b> Nếu f(x) tiến đến L khi x tiến đến a từ <b>bên trái</b>, ta viết <code>lim(x→a⁻) f(x) = L</code>.</li></ul><hr><h3>Giới hạn & Giới hạn một phía</h3><p>Các định luật giới hạn cũng áp dụng cho giới hạn một phía.</p><p><b>Định lý:</b></p><code>lim(x→a) f(x) = L ⇔ lim(x→a⁻) f(x) = L và lim(x→a⁺) f(x) = L</code><p>Nghĩa là, giới hạn tại một điểm tồn tại khi và chỉ khi cả giới hạn trái và giới hạn phải đều tồn tại và bằng nhau.</p>",
+    "terms": {
+      "One-sided limit": "(Giới hạn một phía) Giới hạn của một hàm số khi biến số tiến đến một điểm từ một phía duy nhất (từ bên trái hoặc bên phải)."
+    }
+  },
+  {
+    "id": 15,
+    "title": "Trang 15: Ví dụ về Giới hạn một phía",
+    "image": "images/calculus/week1/MA1521Chap1_page_15.png",
+    "notes": "<h3>Ví dụ: Tìm giới hạn của |x|</h3><p>Tìm <code>lim(x→0) |x|</code>.</p><ul><li>Khi x > 0, |x| = x. Do đó, <code>lim(x→0⁺) |x| = lim(x→0⁺) x = 0</code>.</li><li>Khi x < 0, |x| = -x. Do đó, <code>lim(x→0⁻) |x| = lim(x→0⁻) -x = 0</code>.</li><li>Vì giới hạn trái và giới hạn phải đều bằng 0, ta kết luận <code>lim(x→0) |x| = 0</code>.</li></ul><hr><h3>Ví dụ: Tìm giới hạn của |x|/x</h3><p>Tìm <code>lim(x→0) |x| / x</code>.</p><ul><li>Khi x > 0, |x|/x = x/x = 1. Do đó, <code>lim(x→0⁺) |x|/x = 1</code>.</li><li>Khi x < 0, |x|/x = -x/x = -1. Do đó, <code>lim(x→0⁻) |x|/x = -1</code>.</li><li>Vì giới hạn trái (-1) và giới hạn phải (1) khác nhau, giới hạn <b>không tồn tại</b>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 16,
+    "title": "Trang 16: Liên tục một phía & Gián đoạn bước nhảy",
+    "image": "images/calculus/week1/MA1521Chap1_page_16.png",
+    "notes": "<h3>Liên tục một phía (One-Sided Continuity)</h3><p>Một hàm f là:</p><ul><li><b>Liên tục từ bên phải</b> tại a nếu <code>lim(x→a⁺) f(x) = f(a)</code>.</li><li><b>Liên tục từ bên trái</b> tại a nếu <code>lim(x→a⁻) f(x) = f(a)</code>.</li></ul><p><b>Mệnh đề:</b> Một hàm f liên tục tại a khi và chỉ khi nó liên tục cả từ bên trái và bên phải tại a.</p><hr><h3>Gián đoạn bước nhảy (Jump Discontinuity)</h3><p>Xét <b>hàm sàn (floor function)</b> <code>f(x) = [x]</code>, là số nguyên lớn nhất nhỏ hơn hoặc bằng x.</p><p>Tại mỗi số nguyên n, giới hạn trái <code>lim(x→n⁻) f(x) = n - 1</code> trong khi giới hạn phải <code>lim(x→n⁺) f(x) = n</code>. Vì hai giới hạn một phía khác nhau, hàm có một 'bước nhảy'. Đây được gọi là <b>gián đoạn bước nhảy</b>.</p>",
+    "terms": {
+      "Jump discontinuity": "(Gián đoạn bước nhảy) Một loại gián đoạn xảy ra khi giới hạn trái và giới hạn phải tại một điểm đều tồn tại nhưng không bằng nhau.",
+      "Floor function": "(Hàm sàn) Một hàm số cho một số thực đầu vào, trả về số nguyên lớn nhất nhỏ hơn hoặc bằng số đó."
+    }
+  },
+  {
+    "id": 17,
+    "title": "Trang 17: Liên tục trên một khoảng & Ví dụ",
+    "image": "images/calculus/week1/MA1521Chap1_page_17.png",
+    "notes": "<h3>Liên tục trên một khoảng (Continuity on an Interval)</h3><p>Một hàm f là <b>liên tục trên một khoảng</b> nếu nó liên tục tại mọi số trong khoảng đó.</p><ul><li>Đối với <b>khoảng mở (a, b)</b>: f liên tục tại mọi x ∈ (a, b).</li><li>Đối với <b>khoảng đóng [a, b]</b>: f liên tục trên (a, b), liên tục từ bên phải tại a, và liên tục từ bên trái tại b.</li></ul><hr><h3>Ví dụ: Tìm hằng số c</h3><p>Tìm giá trị của hằng số c sao cho hàm f(x) sau đây liên tục trên [-2, 4]:</p><code>f(x) = { x³ + 2, nếu -2 ≤ x ≤ 2; (x-2)² + c, nếu 2 < x ≤ 4 }</code><p>Để hàm liên tục tại điểm chuyển tiếp x = 2, ta cần <code>lim(x→2⁻) f(x) = lim(x→2⁺) f(x) = f(2)</code>.</p><ul><li><code>lim(x→2⁻) f(x) = 2³ + 2 = 10</code>.</li><li><code>lim(x→2⁺) f(x) = (2-2)² + c = c</code>.</li></ul><p>Do đó, ta phải có <code>c = 10</code>.",
+    "terms": {}
+  },
+  {
+    "id": 18,
+    "title": "Trang 18: Định lý Kẹp",
+    "image": "images/calculus/week1/MA1521Chap1_page_18.png",
+    "notes": "<h3>Định lý Kẹp (Squeeze Theorem)</h3><p><b>Định lý:</b> Cho các hàm f, g, h thỏa mãn:</p><ul><li><code>f(x) ≤ g(x) ≤ h(x)</code> với mọi x ở lân cận a (ngoại trừ có thể tại a), và</li><li><code>lim(x→a) f(x) = lim(x→a) h(x) = L</code>.</li></ul><p>Khi đó, <code>lim(x→a) g(x)</code> tồn tại và bằng L.</p><hr><h3>Ví dụ</h3><p>Tìm <code>lim(x→0) x² sin(1/x)</code>.</p><p>Ta biết rằng <code>-1 ≤ sin(1/x) ≤ 1</code> với mọi x ≠ 0.</p><p>Nhân cả ba vế với x² (luôn ≥ 0), ta có: <code>-x² ≤ x² sin(1/x) ≤ x²</code>.</p><p>Vì <code>lim(x→0) -x² = 0</code> và <code>lim(x→0) x² = 0</code>, theo Định lý Kẹp, ta kết luận <code>lim(x→0) x² sin(1/x) = 0</code>.</p>",
+    "terms": {
+      "Squeeze Theorem (Định lý Kẹp)": "Một định lý trong giải tích liên quan đến giới hạn của một hàm số. Nếu một hàm số bị 'kẹp' giữa hai hàm số khác cùng tiến đến một giới hạn chung tại một điểm, thì hàm số bị kẹp đó cũng tiến đến giới hạn đó."
+    }
+  },
+   {
+    "id": 19,
+    "title": "Trang 19: Ví dụ về Định lý Kẹp",
+    "image": "images/calculus/week1/MA1521Chap1_page_19.png",
+    "notes": "<h3>Ví dụ 1: Chứng minh</h3><p>Giả sử <code>lim(x→a) f(x) = 0</code>. Chứng minh rằng <code>lim(x→a) f(x) sin(g(x)) = 0</code>.</p><p><b>Chứng minh:</b></p><ul><li>Với mọi x ở lân cận a, ta có <code>-1 ≤ sin(g(x)) ≤ 1</code>.</li><li>Nhân các vế với |f(x)| (luôn ≥ 0), ta được: <code>-|f(x)| ≤ |f(x)| sin(g(x)) ≤ |f(x)|</code>.</li><li>Lưu ý rằng <code>|f(x) sin(g(x))| ≤ |f(x)|</code>.</li><li>Vì <code>lim(x→a) |f(x)| = 0</code>, theo Định lý Kẹp, ta có <code>lim(x→a) |f(x) sin(g(x))| = 0</code>.</li><li>Điều này suy ra <code>lim(x→a) f(x) sin(g(x)) = 0</code>.</li></ul><hr><h3>Ví dụ 2: Tính giới hạn</h3><p>Sử dụng Định lý Kẹp để tính giới hạn của một biểu thức phức tạp hơn khi x tiến đến 0 từ bên phải.</p>",
+    "terms": {}
+  },
+  {
+    "id": 20,
+    "title": "Trang 20: Giới hạn của sin(θ)/θ",
+    "image": "images/calculus/week1/MA1521Chap1_page_20.png",
+    "notes": "<h3>Ví dụ về Định lý Kẹp (tiếp)</h3><p>Xét một hàm số kỳ lạ được định nghĩa khác nhau cho số hữu tỉ và số vô tỉ. Bằng cách kẹp hàm số này giữa 0 và x², ta có thể chứng minh giới hạn của nó khi x → 0 là 0 bằng Định lý Kẹp.</p><hr><h3>Giới hạn <code>lim(θ→0) sin(θ)/θ</code></h3><p>Đây là một trong những giới hạn lượng giác quan trọng nhất.</p><p>Bằng cách so sánh diện tích của các hình tam giác và hình quạt trong một cung tròn đơn vị, ta có thể chứng minh được bất đẳng thức:</p><code>cos θ < sin θ / θ < 1</code><p>Khi cho θ → 0⁺, vì <code>lim(θ→0⁺) cos θ = 1</code> và <code>lim(θ→0⁺) 1 = 1</code>, theo Định lý Kẹp, ta suy ra:</p><code>lim(θ→0⁺) sin θ / θ = 1</code>",
+    "terms": {
+      "lim(θ→0) sin(θ)/θ = 1": "Một giới hạn lượng giác cơ bản và cực kỳ quan trọng, là nền tảng cho việc tính đạo hàm của các hàm lượng giác."
+    }
+  },
+  {
+    "id": 21,
+    "title": "Trang 21: Giới hạn lượng giác & Ví dụ",
+    "image": "images/calculus/week1/MA1521Chap1_page_21.png",
+    "notes": "<h3>Các giới hạn lượng giác cơ bản</h3><p><b>Định lý:</b></p><ul><li><code>lim(θ→0) sin θ / θ = 1</code></li><li><code>lim(θ→0) (1 - cos θ) / θ = 0</code> (có thể chứng minh từ giới hạn trên)</li><li><code>lim(θ→0) tan θ / θ = 1</code></li></ul><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách biến đổi các biểu thức để đưa về dạng giới hạn lượng giác cơ bản và áp dụng các định luật giới hạn để tìm kết quả.</p>",
+    "terms": {}
+  },
+  {
+    "id": 22,
+    "title": "Trang 22: Giới hạn tại Vô cực",
+    "image": "images/calculus/week1/MA1521Chap1_page_22.png",
+    "notes": "<h3>Giới hạn tại Vô cực (Limit at Infinity)</h3><p>Xét đồ thị của hàm <code>f(x) = 1/x</code>.</p><ul><li>Khi x ngày càng lớn (tiến đến +∞), giá trị của 1/x ngày càng gần 0.</li><li>Ta ký hiệu điều này là: <code>lim(x→∞) 1/x = 0</code>.</li></ul><hr><h3>Định nghĩa</h3><p><b>Giới hạn tại dương vô cực:</b> Nếu f(x) tiến đến gần tùy ý giá trị L bằng cách lấy x đủ lớn, ta viết:</p><code>lim(x→∞) f(x) = L</code><p><b>Giới hạn tại âm vô cực:</b> Nếu f(x) tiến đến gần tùy ý giá trị L bằng cách lấy x đủ lớn về mặt giá trị tuyệt đối nhưng là số âm, ta viết:</p><code>lim(x→-∞) f(x) = L</code>",
+    "terms": {
+      "Limit at Infinity": "(Giới hạn tại vô cực) Hành vi của một hàm số khi biến số của nó tăng hoặc giảm không giới hạn. Nếu giới hạn này tồn tại và bằng một số hữu hạn L, thì đường thẳng y = L được gọi là một tiệm cận ngang."
+    }
+  },
+  {
+    "id": 23,
+    "title": "Trang 23: Ví dụ & Các Dữ kiện Hữu ích",
+    "image": "images/calculus/week1/MA1521Chap1_page_23.png",
+    "notes": "<h3>Ví dụ về Giới hạn tại Vô cực</h3><p>Các ví dụ minh họa cách áp dụng các định luật giới hạn cho các hàm hợp khi x tiến đến vô cực. Ví dụ, <code>lim(x→∞) sin(3/x²) = sin(lim(x→∞) 3/x²) = sin(0) = 0</code>.</p><hr><h3>Một số Dữ kiện Hữu ích</h3><ul><li><code>lim(x→∞) 1/x = 0</code></li><li><code>lim(x→-∞) 1/x = 0</code></li><li><code>lim(x→-∞) eˣ = 0</code></li><li><code>lim(x→-∞) tan⁻¹(x) = -π/2</code></li><li><code>lim(x→∞) tan⁻¹(x) = π/2</code></li></ul><p><b>Phương pháp chính để tính giới hạn của hàm hữu tỉ tại vô cực:</b> Chia cả tử và mẫu cho lũy thừa cao nhất của x xuất hiện ở mẫu số.</p>",
+    "terms": {}
+  },
+   {
+    "id": 24,
+    "title": "Trang 24: Ví dụ về Giới hạn tại Vô cực",
+    "image": "images/calculus/week1/MA1521Chap1_page_24.png",
+    "notes": "<h3>Ví dụ về Giới hạn của Hàm đại số</h3><p>Để tính giới hạn của một hàm đại số dạng f(x)/g(x) tại ±∞, ta chia cả tử và mẫu cho lũy thừa <b>cao nhất</b> của x.</p><hr><h3>Một số Dữ kiện</h3><ul><li>Nếu bậc của f(x) = bậc của g(x), giới hạn sẽ là một hằng số khác 0.</li><li>Nếu bậc của f(x) < bậc của g(x), giới hạn sẽ bằng 0.</li></ul><hr><h3>Ví dụ khác</h3><p>Các ví dụ minh họa cách áp dụng các định luật giới hạn và Định lý Kẹp để giải quyết các giới hạn phức tạp hơn tại vô cực.</p>",
+    "terms": {}
+  },
+  {
+    "id": 25,
+    "title": "Trang 25: Giới hạn Vô hạn",
+    "image": "images/calculus/week1/MA1521Chap1_page_25.png",
+    "notes": "<h3>Ví dụ về Giới hạn Vô hạn</h3><p>Xét hàm <code>f(x) = 1/x²</code>. Khi x tiến đến 0, f(x) trở nên lớn tùy ý.</p><p>Ta viết: <code>lim(x→0) 1/x² = ∞</code>.</p><hr><h3>Định nghĩa Giới hạn Vô hạn</h3><p><b>Định nghĩa:</b></p><ul><li>Nếu f(x) trở nên <b>lớn tùy ý</b> bằng cách lấy x đủ gần a, ta viết: <code>lim(x→a) f(x) = ∞</code>.</li><li>Nếu f(x) trở nên <b>âm lớn tùy ý</b> bằng cách lấy x đủ gần a, ta viết: <code>lim(x→a) f(x) = -∞</code>.</li></ul><p><b>Lưu ý:</b> ∞ và -∞ không phải là các con số. Khi một giới hạn bằng ±∞, ta vẫn nói rằng giới hạn đó <b>không tồn tại</b>.</p>",
+    "terms": {
+      "Infinite Limit": "(Giới hạn vô hạn) Xảy ra khi giá trị của một hàm số tăng hoặc giảm không giới hạn khi biến số tiến đến một giá trị nhất định. Đường thẳng x = a trong trường hợp này được gọi là một tiệm cận đứng."
+    }
+  },
+  {
+    "id": 26,
+    "title": "Trang 26: Các loại Giới hạn Vô hạn & Ví dụ",
+    "image": "images/calculus/week1/MA1521Chap1_page_26.png",
+    "notes": "<h3>Các loại Giới hạn Vô hạn</h3><p>Tương tự, chúng ta có thể định nghĩa các <b>giới hạn vô hạn một phía</b>:</p><ul><li><code>lim(x→a⁺) f(x) = ∞</code></li><li><code>lim(x→a⁻) f(x) = -∞</code></li></ul><p>Và <b>giới hạn vô hạn tại vô cực</b>:</p><ul><li><code>lim(x→∞) f(x) = ∞</code></li><li><code>lim(x→-∞) f(x) = -∞</code></li></ul><hr><h3>Ví dụ</h3><p>Xác định các giới hạn vô hạn bằng cách xét dấu của tử số và mẫu số khi biến số tiến đến một điểm từ một phía.</p>",
+    "terms": {}
+  },
+  {
+    "id": 27,
+    "title": "Trang 27: Định lý Giá trị Trung gian",
+    "image": "images/calculus/week1/MA1521Chap1_page_27.png",
+    "notes": "<h3>Định lý Giá trị Trung gian (Intermediate Value Theorem - IVT)</h3><p>Cho f là một hàm <b>liên tục</b> trên khoảng đóng <code>[a, b]</code>. Giả sử <code>f(a) < 0</code> và <code>f(b) > 0</code>.</p><ul><li>Khi x di chuyển từ a đến b, f(x) di chuyển một cách mượt mà từ giá trị âm sang giá trị dương.</li><li>Vì f là liên tục, đồ thị của nó không có 'bước nhảy' hay 'lỗ hổng'.</li><li>Do đó, đồ thị phải cắt trục x tại một điểm nào đó giữa a và b.</li></ul><hr><h3>Phiên bản Đơn giản của IVT</h3><p>Nếu f(a)f(b) < 0, thì tồn tại một số c ∈ (a, b) sao cho f(c) = 0.</p><p><b>Lưu ý:</b></p><ul><li>Định lý <b>KHÔNG</b> cho biết giá trị của nghiệm c.</li><li>Định lý <b>KHÔNG</b> cho biết số lượng nghiệm.</li></ul>",
+    "terms": {
+      "Intermediate Value Theorem (IVT)": "(Định lý Giá trị Trung gian) Một định lý phát biểu rằng nếu một hàm số f là liên tục trên một khoảng đóng [a, b], thì nó sẽ nhận mọi giá trị nằm giữa f(a) và f(b)."
+    }
+  },
+  {
+    "id": 28,
+    "title": "Trang 28: Ví dụ về Định lý Giá trị Trung gian",
+    "image": "images/calculus/week1/MA1521Chap1_page_28.png",
+    "notes": "<h3>Ví dụ 1: Chứng minh tồn tại nghiệm</h3><p>Chứng minh rằng có một nghiệm thực cho phương trình <code>4x³ - 6x² + 3x - 2 = 0</code>.</p><p><b>Giải pháp:</b></p><ul><li>Đặt <code>f(x) = 4x³ - 6x² + 3x - 2</code>. Đây là một đa thức, do đó nó liên tục trên ℝ.</li><li>Để sử dụng IVT, ta cần tìm hai số a và b sao cho f(a) < 0 và f(b) > 0.</li><li>Thử các giá trị: <code>f(0) = -2 < 0</code> và <code>f(2) = 12 > 0</code>.</li><li>Vì f liên tục trên [0, 2], theo IVT, phải tồn tại một số c ∈ (0, 2) sao cho f(c) = 0.</li></ul><hr><h3>Ví dụ 2: Chứng minh tồn tại nghiệm (tiếp)</h3><p>Chứng minh rằng có một nghiệm thực cho phương trình <code>3 ln x + x³ = 7e⁻ˣ</code>. Tương tự, ta chuyển vế để có f(x) = 0 và tìm hai giá trị a, b sao cho f(a) và f(b) trái dấu.</p>",
+    "terms": {}
+  },
+  {
+    "id": 29,
+    "title": "Trang 29: Phiên bản tổng quát của IVT & Ví dụ",
+    "image": "images/calculus/week1/MA1521Chap1_page_29.png",
+    "notes": "<h3>Định lý Giá trị Trung gian (Phiên bản Tổng quát)</h3><p>Cho f là một hàm <b>liên tục</b> trên <code>[a, b]</code> với <code>f(a) ≠ f(b)</code>.</p><p>Cho N là một số bất kỳ nằm giữa f(a) và f(b).</p><p>Khi đó, tồn tại một số <b>c ∈ (a, b)</b> sao cho <b>f(c) = N</b>.</p><hr><h3>Ví dụ: Điểm bất động</h3><p>Một dải cao su có chiều dài 1 được kéo dãn và đặt trên khoảng [0, 1].</p><p><b>Giải pháp:</b></p><ul><li>Đặt f(x) là vị trí của điểm x sau khi kéo dãn. f là liên tục trên [0, 1].</li><li>Định nghĩa hàm <code>g(x) = f(x) - x</code>. g cũng liên tục trên [0, 1].</li><li><code>g(0) = f(0) - 0 ≥ 0</code>.</li><li><code>g(1) = f(1) - 1 ≤ 0</code>.</li><li>Theo IVT, tồn tại một c ∈ (0, 1) sao cho g(c) = 0, tức là f(c) = c. Đây được gọi là một điểm bất động.</li></ul>",
+    "terms": {
+      "Fixed point": "(Điểm bất động) Một điểm của một hàm số được ánh xạ vào chính nó. Tức là, x là một điểm bất động của hàm f nếu f(x) = x."
+    }
+  }
+        
       ]
     },
     {
