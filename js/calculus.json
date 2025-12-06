@@ -993,993 +993,884 @@
             "Recursive definition": "(Định nghĩa đệ quy/quy nạp) Một cách định nghĩa một dãy số trong đó mỗi số hạng được định nghĩa như một hàm của các số hạng đứng trước nó."
           }
         },
-         {
-    "id": 4,
-    "title": "Trang 4: Giới hạn của Dãy số",
-    "image": "images/calculus/week3/MA1521Chap3_page_4.png",
-    "notes": "<h3>Giới hạn của Dãy số (Limit of Sequence)</h3><p>Vì một dãy số có thể được xem như một hàm số, ta có thể nói về <b>giới hạn của dãy số</b>.</p><p><b>Ví dụ:</b> Xét dãy <code>{ n / (n+1) }</code>. Khi n ngày càng lớn, số hạng <code>aₙ = n/(n+1)</code> tiến dần đến 1. Ta viết:</p><code>lim(n→∞) n / (n+1) = 1</code><hr><h3>Định nghĩa</h3><p>Giới hạn của dãy số {aₙ} là L nếu aₙ tiến đến <b>gần tùy ý</b> giá trị L bằng cách lấy n <b>đủ lớn</b>.</p><ul><li>Nếu <code>lim(n→∞) aₙ</code> tồn tại (và là một số hữu hạn), ta nói dãy số <b>hội tụ (convergent)</b>.</li><li>Ngược lại, ta nói dãy số <b>phân kỳ (divergent)</b>.</li><li>Giới hạn cũng có thể là ∞ hoặc -∞, trong trường hợp đó dãy số cũng phân kỳ.</li></ul>",
-    "terms": {
-      "Limit of a Sequence": "(Giới hạn của dãy số) Giá trị mà các số hạng của một dãy số tiến đến khi chỉ số n tiến ra vô cực.",
-      "Convergent": "(Hội tụ) Một dãy số được gọi là hội tụ nếu nó có một giới hạn hữu hạn.",
-      "Divergent": "(Phân kỳ) Một dãy số không hội tụ. Điều này có thể xảy ra nếu nó tiến đến vô cực hoặc dao động không ngừng."
-    }
-  },
-  {
-    "id": 5,
-    "title": "Trang 5: Các định luật Giới hạn cho Dãy số",
-    "image": "images/calculus/week3/MA1521Chap3_page_5.png",
-    "notes": "<h3>Mối liên hệ giữa Giới hạn của Hàm và Dãy</h3><p><b>Định lý:</b> Cho f là một hàm số và {aₙ} là một dãy số sao cho <code>aₙ = f(n)</code> với mọi n.</p><p>Nếu <code>lim(x→∞) f(x) = L</code>, thì <code>lim(n→∞) aₙ = L</code>.</p><p>Định lý này cho phép chúng ta sử dụng các công cụ tính giới hạn của hàm số (như Quy tắc L'Hôpital) để tìm giới hạn của dãy số.</p><hr><h3>Lưu ý</h3><p>Chúng ta <b>KHÔNG THỂ</b> áp dụng định lý này nếu:</p><ul><li>Hàm f(x) tương ứng không được xác định trên các số thực (ví dụ: giai thừa <code>n!</code>).</li><li>Giới hạn của hàm f(x) không tồn tại. Trong trường hợp này, ta không thể kết luận gì về giới hạn của dãy số aₙ. Ví dụ: <code>lim(x→∞) sin(πx)</code> không tồn tại, nhưng <code>lim(n→∞) sin(nπ) = 0</code>.</li></ul>",
-    "terms": {}
-  },
-  {
-    "id": 6,
-    "title": "Trang 6: Các định luật Giới hạn & Định lý Kẹp",
-    "image": "images/calculus/week3/MA1521Chap3_page_6.png",
-    "notes": "<h3>Các định luật Giới hạn cho Dãy số</h3><p>Giả sử {aₙ} và {bₙ} là các dãy hội tụ. Các định luật về giới hạn của tổng, hiệu, tích, thương và hằng số nhân với dãy hoàn toàn tương tự như đối với hàm số.</p><hr><h3>Định lý Kẹp (Squeeze Theorem) cho Dãy số</h3><p>Giả sử có ba dãy số {aₙ}, {bₙ}, {cₙ} thỏa mãn <code>aₙ ≤ bₙ ≤ cₙ</code> với mọi n đủ lớn.</p><p>Nếu <code>lim(n→∞) aₙ = L</code> và <code>lim(n→∞) cₙ = L</code>, thì <code>lim(n→∞) bₙ = L</code>.</p><hr><h3>Ví dụ</h3><p>Chứng minh <code>lim(n→∞) |aₙ| = 0 ⇒ lim(n→∞) aₙ = 0</code> bằng cách sử dụng bất đẳng thức <code>-|aₙ| ≤ aₙ ≤ |aₙ|</code> và Định lý Kẹp.</p>",
-    "terms": {}
-  },
-  {
-    "id": 7,
-    "title": "Trang 7: Dãy đơn điệu",
-    "image": "images/calculus/week3/MA1521Chap3_page_7.png",
-    "notes": "<h3>Dãy đơn điệu (Monotonic Sequences)</h3><p>Tương tự như các hàm tăng/giảm, chúng ta có thể nói về các dãy số tăng/giảm.</p><p><b>Định nghĩa:</b></p><ul><li>Dãy {aₙ} được gọi là <b>tăng (increasing)</b> nếu <code>aₙ < aₙ₊₁</code> với mọi n.</li><li>Dãy {aₙ} được gọi là <b>giảm (decreasing)</b> nếu <code>aₙ > aₙ₊₁</code> với mọi n.</li><li>Dãy {aₙ} được gọi là <b>đơn điệu (monotonic)</b> nếu nó hoặc là tăng, hoặc là giảm.</li></ul>",
-    "terms": {
-      "Monotonic Sequence": "(Dãy đơn điệu) Một dãy số không giảm hoặc không tăng. Tức là các số hạng của nó chỉ đi theo một 'hướng'."
-    }
-  },
-  {
-    "id": 8,
-    "title": "Trang 8: Ví dụ về Dãy đơn điệu",
-    "image": "images/calculus/week3/MA1521Chap3_page_8.png",
-    "notes": "<h3>Ví dụ 1: Chứng minh dãy giảm</h3><p>Chứng tỏ rằng dãy <code>aₙ = 3 / (n+5)</code> là dãy giảm.</p><p>Có nhiều cách để chứng minh, ví dụ:</p><ol><li><b>So sánh trực tiếp:</b> Chứng minh <code>aₙ > aₙ₊₁</code>.</li><li><b>Xét hiệu:</b> Chứng minh <code>aₙ₊₁ - aₙ < 0</code>.</li><li><b>Xét tỷ lệ:</b> Chứng minh <code>aₙ₊₁ / aₙ < 1</code> (nếu các số hạng dương).</li><li><b>Sử dụng hàm số:</b> Xét hàm <code>f(x) = 3/(x+5)</code>. Vì <code>f'(x) < 0</code>, hàm số giảm, do đó dãy số cũng giảm.</li></ol><hr><h3>Ví dụ 2: Xác định tính đơn điệu</h3><p>Xác định xem các dãy <code>aₙ = n / (n² + 1)</code> và <code>aₙ = n! / nⁿ</code> là tăng hay giảm.</p>",
-    "terms": {}
-  },
-  {
+        {
+          "id": 4,
+          "title": "Trang 4: Giới hạn của Dãy số",
+          "image": "images/calculus/week3/MA1521Chap3_page_4.png",
+          "notes": "<h3>Giới hạn của Dãy số (Limit of Sequence)</h3><p>Vì một dãy số có thể được xem như một hàm số, ta có thể nói về <b>giới hạn của dãy số</b>.</p><p><b>Ví dụ:</b> Xét dãy <code>{ n / (n+1) }</code>. Khi n ngày càng lớn, số hạng <code>aₙ = n/(n+1)</code> tiến dần đến 1. Ta viết:</p><code>lim(n→∞) n / (n+1) = 1</code><hr><h3>Định nghĩa</h3><p>Giới hạn của dãy số {aₙ} là L nếu aₙ tiến đến <b>gần tùy ý</b> giá trị L bằng cách lấy n <b>đủ lớn</b>.</p><ul><li>Nếu <code>lim(n→∞) aₙ</code> tồn tại (và là một số hữu hạn), ta nói dãy số <b>hội tụ (convergent)</b>.</li><li>Ngược lại, ta nói dãy số <b>phân kỳ (divergent)</b>.</li><li>Giới hạn cũng có thể là ∞ hoặc -∞, trong trường hợp đó dãy số cũng phân kỳ.</li></ul>",
+          "terms": {
+            "Limit of a Sequence": "(Giới hạn của dãy số) Giá trị mà các số hạng của một dãy số tiến đến khi chỉ số n tiến ra vô cực.",
+            "Convergent": "(Hội tụ) Một dãy số được gọi là hội tụ nếu nó có một giới hạn hữu hạn.",
+            "Divergent": "(Phân kỳ) Một dãy số không hội tụ. Điều này có thể xảy ra nếu nó tiến đến vô cực hoặc dao động không ngừng."
+          }
+        },
+        {
+          "id": 5,
+          "title": "Trang 5: Các định luật Giới hạn cho Dãy số",
+          "image": "images/calculus/week3/MA1521Chap3_page_5.png",
+          "notes": "<h3>Mối liên hệ giữa Giới hạn của Hàm và Dãy</h3><p><b>Định lý:</b> Cho f là một hàm số và {aₙ} là một dãy số sao cho <code>aₙ = f(n)</code> với mọi n.</p><p>Nếu <code>lim(x→∞) f(x) = L</code>, thì <code>lim(n→∞) aₙ = L</code>.</p><p>Định lý này cho phép chúng ta sử dụng các công cụ tính giới hạn của hàm số (như Quy tắc L'Hôpital) để tìm giới hạn của dãy số.</p><hr><h3>Lưu ý</h3><p>Chúng ta <b>KHÔNG THỂ</b> áp dụng định lý này nếu:</p><ul><li>Hàm f(x) tương ứng không được xác định trên các số thực (ví dụ: giai thừa <code>n!</code>).</li><li>Giới hạn của hàm f(x) không tồn tại. Trong trường hợp này, ta không thể kết luận gì về giới hạn của dãy số aₙ. Ví dụ: <code>lim(x→∞) sin(πx)</code> không tồn tại, nhưng <code>lim(n→∞) sin(nπ) = 0</code>.</li></ul>",
+          "terms": {}
+        },
+        {
+          "id": 6,
+          "title": "Trang 6: Các định luật Giới hạn & Định lý Kẹp",
+          "image": "images/calculus/week3/MA1521Chap3_page_6.png",
+          "notes": "<h3>Các định luật Giới hạn cho Dãy số</h3><p>Giả sử {aₙ} và {bₙ} là các dãy hội tụ. Các định luật về giới hạn của tổng, hiệu, tích, thương và hằng số nhân với dãy hoàn toàn tương tự như đối với hàm số.</p><hr><h3>Định lý Kẹp (Squeeze Theorem) cho Dãy số</h3><p>Giả sử có ba dãy số {aₙ}, {bₙ}, {cₙ} thỏa mãn <code>aₙ ≤ bₙ ≤ cₙ</code> với mọi n đủ lớn.</p><p>Nếu <code>lim(n→∞) aₙ = L</code> và <code>lim(n→∞) cₙ = L</code>, thì <code>lim(n→∞) bₙ = L</code>.</p><hr><h3>Ví dụ</h3><p>Chứng minh <code>lim(n→∞) |aₙ| = 0 ⇒ lim(n→∞) aₙ = 0</code> bằng cách sử dụng bất đẳng thức <code>-|aₙ| ≤ aₙ ≤ |aₙ|</code> và Định lý Kẹp.</p>",
+          "terms": {}
+        },
+        {
+          "id": 7,
+          "title": "Trang 7: Dãy đơn điệu",
+          "image": "images/calculus/week3/MA1521Chap3_page_7.png",
+          "notes": "<h3>Dãy đơn điệu (Monotonic Sequences)</h3><p>Tương tự như các hàm tăng/giảm, chúng ta có thể nói về các dãy số tăng/giảm.</p><p><b>Định nghĩa:</b></p><ul><li>Dãy {aₙ} được gọi là <b>tăng (increasing)</b> nếu <code>aₙ < aₙ₊₁</code> với mọi n.</li><li>Dãy {aₙ} được gọi là <b>giảm (decreasing)</b> nếu <code>aₙ > aₙ₊₁</code> với mọi n.</li><li>Dãy {aₙ} được gọi là <b>đơn điệu (monotonic)</b> nếu nó hoặc là tăng, hoặc là giảm.</li></ul>",
+          "terms": {
+            "Monotonic Sequence": "(Dãy đơn điệu) Một dãy số không giảm hoặc không tăng. Tức là các số hạng của nó chỉ đi theo một 'hướng'."
+          }
+        },
+        {
+          "id": 8,
+          "title": "Trang 8: Ví dụ về Dãy đơn điệu",
+          "image": "images/calculus/week3/MA1521Chap3_page_8.png",
+          "notes": "<h3>Ví dụ 1: Chứng minh dãy giảm</h3><p>Chứng tỏ rằng dãy <code>aₙ = 3 / (n+5)</code> là dãy giảm.</p><p>Có nhiều cách để chứng minh, ví dụ:</p><ol><li><b>So sánh trực tiếp:</b> Chứng minh <code>aₙ > aₙ₊₁</code>.</li><li><b>Xét hiệu:</b> Chứng minh <code>aₙ₊₁ - aₙ < 0</code>.</li><li><b>Xét tỷ lệ:</b> Chứng minh <code>aₙ₊₁ / aₙ < 1</code> (nếu các số hạng dương).</li><li><b>Sử dụng hàm số:</b> Xét hàm <code>f(x) = 3/(x+5)</code>. Vì <code>f'(x) < 0</code>, hàm số giảm, do đó dãy số cũng giảm.</li></ol><hr><h3>Ví dụ 2: Xác định tính đơn điệu</h3><p>Xác định xem các dãy <code>aₙ = n / (n² + 1)</code> và <code>aₙ = n! / nⁿ</code> là tăng hay giảm.</p>",
+          "terms": {}
+        },
+        {
+          "id": 9,
+          "title": "Trang 9: Ví dụ & Giới thiệu Chuỗi",
+          "image": "images/calculus/week3/MA1521Chap3_page_9.png",
+          "notes": "<h3>Ví dụ: Nghịch lý Zeno (biến thể)</h3><p>Một đoạn thẳng có độ dài 1. Ta cắt đi một nửa ở ngày đầu tiên. Ở ngày thứ hai, ta cắt đi một nửa của phần còn lại, và cứ tiếp tục như vậy. Tổng độ dài đã cắt sau n ngày là bao nhiêu?</p><p>Tổng độ dài đã cắt là: <code>Sₙ = 1/2 + 1/4 + 1/8 + ... + 1/2ⁿ</code>.</p><hr><h3>Ví dụ: Bài toán bàn cờ</h3><p>Đặt 1 hạt gạo vào ô đầu tiên của bàn cờ. Các ô tiếp theo có số hạt gạo gấp đôi ô trước đó. Tổng số hạt gạo trên bàn cờ là bao nhiêu?</p><p>Tổng số hạt gạo là: <code>S₆₄ = 1 + 2 + 4 + ... + 2⁶³</code>.</p>",
+          "terms": {}
+        },
+        {
+          "id": 10,
+          "title": "Trang 10: Chuỗi (Series) & Chuỗi cấp số nhân",
+          "image": "images/calculus/week3/MA1521Chap3_page_10.png",
+          "notes": "<h3>Chuỗi (Series)</h3><p>Cho {aₙ} là một dãy số. Tổng của n số hạng đầu tiên tạo thành một dãy số mới {Sₙ}, gọi là <b>dãy các tổng riêng (sequence of partial sums)</b>.</p><code>Sₙ = a₁ + a₂ + ... + aₙ</code><p>Giới hạn của dãy Sₙ khi n → ∞ được gọi là một <b>chuỗi vô hạn (infinite series)</b>:</p><code>lim(n→∞) Sₙ = Σ(n=1 to ∞) aₙ</code><ul><li>Nếu dãy {Sₙ} hội tụ, ta nói chuỗi Σaₙ <b>hội tụ (convergent)</b>.</li><li>Nếu dãy {Sₙ} phân kỳ, ta nói chuỗi Σaₙ <b>phân kỳ (divergent)</b>.</li></ul><hr><h3>Ví dụ: Chuỗi cấp số nhân</h3><p>Các ví dụ minh họa về chuỗi cấp số nhân. Một chuỗi cấp số nhân hội tụ nếu và chỉ nếu giá trị tuyệt đối của công bội nhỏ hơn 1.</p>",
+          "terms": {
+            "Series (Chuỗi)": "Tổng của các số hạng của một dãy số. Một chuỗi vô hạn là giới hạn của dãy các tổng riêng.",
+            "Partial Sum (Tổng riêng)": "Tổng của một số hữu hạn các số hạng đầu tiên của một dãy số.",
+            "Geometric Series (Chuỗi cấp số nhân)": "Một chuỗi trong đó tỷ lệ giữa hai số hạng liên tiếp là một hằng số, gọi là công bội."
+          }
+        },
+        {
+          "id": 11,
+          "title": "Trang 11: Chuỗi cấp số nhân & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_11.png",
+          "notes": "<h3>Chuỗi cấp số nhân (The Geometric Series)</h3><p>Xét một dãy cấp số nhân <code>a, ar, ar², ..., arⁿ⁻¹,...</code>. Tổng của nó được gọi là một <b>chuỗi cấp số nhân</b>.</p><p>Tổng của n số hạng đầu tiên là:</p><code>Sₙ = a(1 - rⁿ) / (1 - r)</code><p>Tổng của chuỗi vô hạn là giới hạn của Sₙ khi n → ∞:</p><code>Σ(n=1 to ∞) arⁿ⁻¹ = { a / (1 - r), nếu |r| < 1; phân kỳ, nếu |r| ≥ 1 }</code><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách xác định sự hội tụ của một chuỗi bằng cách đưa nó về dạng chuỗi cấp số nhân và kiểm tra công bội r.</p>",
+          "terms": {}
+        },
+        {
+          "id": 12,
+          "title": "Trang 12: Ví dụ về Chuỗi cấp số nhân",
+          "image": "images/calculus/week3/MA1521Chap3_page_12.png",
+          "notes": "<h3>Ví dụ 1: Tính tổng chuỗi</h3><p>Tính tổng của chuỗi cấp số nhân <code>Σ(n=1 to ∞) 5ⁿ / 3ⁿ⁺¹</code>. Bằng cách biến đổi, ta có thể viết lại chuỗi dưới dạng <code>Σ (5/9) * (5/3)ⁿ⁻¹</code>. Vì công bội r = 5/3 > 1, chuỗi này phân kỳ.</p><hr><h3>Ví dụ 2: Tìm khoảng hội tụ</h3><p>Tìm khoảng giá trị của x để chuỗi <code>Σ(n=1 to ∞) (2x-1)ⁿ⁻² / 3ⁿ⁻¹</code> hội tụ.</p><p>Đây là một chuỗi cấp số nhân với công bội <code>r = (2x-1)/3</code>. Chuỗi hội tụ khi <code>|r| < 1</code>.</p><p>Giải bất phương trình <code>|(2x-1)/3| < 1</code>, ta được <code>-1 < x < 2</code>. Đây chính là khoảng hội tụ.</p>",
+          "terms": {
+            "Interval of Convergence": "(Khoảng hội tụ) Tập hợp tất cả các giá trị của biến số x mà tại đó một chuỗi lũy thừa hội tụ."
+          }
+        },
+        {
+          "id": 13,
+          "title": "Trang 13: Chuỗi lồng (Telescoping Series)",
+          "image": "images/calculus/week3/MA1521Chap3_page_13.png",
+          "notes": "<h3>Ví dụ về Chuỗi lồng</h3><p>Xét chuỗi <code>Σ 1 / (n(n+1))</code> có hội tụ không?</p><p>Ta có thể phân tích số hạng tổng quát: <code>aₙ = 1/n - 1/(n+1)</code>.</p><p>Khi tính tổng riêng Sₙ, các số hạng ở giữa sẽ triệt tiêu lẫn nhau:</p><code>Sₙ = (1 - 1/2) + (1/2 - 1/3) + ... + (1/n - 1/(n+1)) = 1 - 1/(n+1)</code><p>Lấy giới hạn khi n → ∞, ta có <code>lim Sₙ = 1</code>. Vậy chuỗi hội tụ và có tổng bằng 1.</p><hr><h3>Chuỗi lồng (Telescoping Series)</h3><p>Tổng riêng của một chuỗi lồng chỉ có một số hữu hạn các số hạng sau khi triệt tiêu. Việc tính toán như vậy được gọi là <b>phương pháp sai phân (method of differences)</b>.</p>",
+          "terms": {
+            "Telescoping Series": "(Chuỗi lồng hay chuỗi triệt tiêu) Một chuỗi trong đó hầu hết các số hạng đều bị triệt tiêu khi tính tổng riêng, chỉ còn lại một vài số hạng đầu và cuối."
+          }
+        },
+        {
+          "id": 14,
+          "title": "Trang 14: Tiêu chuẩn Tỷ lệ (Ratio Test)",
+          "image": "images/calculus/week3/MA1521Chap3_page_14.png",
+          "notes": "<h3>Giới thiệu Tiêu chuẩn Tỷ lệ</h3><p>Xét chuỗi Σaₙ. Chúng ta có thể biết được sự hội tụ của nó bằng cách kiểm tra tỷ lệ của các số hạng liên tiếp hay không?</p><p>Nếu <code>|aₙ₊₁ / aₙ| = L</code>, thì chuỗi |aₙ| giống như một chuỗi cấp số nhân có công bội L. Do đó, ta có thể kỳ vọng rằng chuỗi sẽ hội tụ nếu |L| < 1.</p><hr><h3>Định lý Tiêu chuẩn Tỷ lệ</h3><p>Cho Σaₙ là một chuỗi. Giả sử <code>lim(n→∞) |aₙ₊₁ / aₙ| = L</code>.</p><ul><li>Nếu <code>0 ≤ L < 1</code>, chuỗi <b>hội tụ tuyệt đối</b> (và do đó hội tụ).</li><li>Nếu <code>1 < L ≤ ∞</code>, chuỗi <b>phân kỳ</b>.</li><li>Nếu <code>L = 1</code>, tiêu chuẩn này <b>không kết luận được</b>.</li></ul>",
+          "terms": {
+            "Ratio Test": "(Tiêu chuẩn Tỷ lệ hay Tiêu chuẩn D'Alembert) Một bài kiểm tra sự hội tụ của chuỗi, rất hữu ích cho các chuỗi có chứa giai thừa hoặc lũy thừa.",
+            "Absolute Convergence": "(Hội tụ tuyệt đối) Một chuỗi Σaₙ được gọi là hội tụ tuyệt đối nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ. Hội tụ tuyệt đối suy ra hội tụ."
+          }
+        },
+        {
+          "id": 15,
+          "title": "Trang 15: Ví dụ & Tiêu chuẩn Căn (Root Test)",
+          "image": "images/calculus/week3/MA1521Chap3_page_15.png",
+          "notes": "<h3>Ví dụ về Tiêu chuẩn Tỷ lệ</h3><p>Các ví dụ minh họa cách áp dụng Tiêu chuẩn Tỷ lệ để xác định sự hội tụ của chuỗi có chứa giai thừa và lũy thừa.</p><hr><h3>Giới thiệu Tiêu chuẩn Căn</h3><p>Nếu <code>lim(n→∞) ⁿ√|aₙ| = L</code>, thì chuỗi |aₙ| cũng 'tương tự' như một chuỗi cấp số nhân có công bội L.</p><p>Ta có thể đoán rằng Tiêu chuẩn Căn sẽ có cùng kết luận như Tiêu chuẩn Tỷ lệ. Chúng có cùng ưu điểm và nhược điểm. Tuy nhiên, đôi khi Tiêu chuẩn Căn hoạt động tốt hơn.</p>",
+          "terms": {}
+        },
+        {
+          "id": 16,
+          "title": "Trang 16: Tiêu chuẩn Căn & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_16.png",
+          "notes": "<h3>Định lý Tiêu chuẩn Căn (The Root Test)</h3><p>Cho Σaₙ là một chuỗi. Giả sử <code>lim(n→∞) ⁿ√|aₙ| = L</code>.</p><ul><li>Nếu <code>0 ≤ L < 1</code>, chuỗi <b>hội tụ tuyệt đối</b>.</li><li>Nếu <code>1 < L ≤ ∞</code>, chuỗi <b>phân kỳ</b>.</li><li>Nếu <code>L = 1</code>, tiêu chuẩn này <b>không kết luận được</b>.</li></ul><hr><h3>Ví dụ</h3><p>Tiêu chuẩn Căn có thể hoạt động tốt hơn Tiêu chuẩn Tỷ lệ trong một số trường hợp, chẳng hạn như ví dụ về chuỗi có các số hạng chẵn và lẻ được định nghĩa khác nhau. Trong ví dụ này, Tiêu chuẩn Tỷ lệ không đưa ra kết luận, nhưng Tiêu chuẩn Căn cho thấy chuỗi hội tụ.</p>",
+          "terms": {
+            "Root Test": "(Tiêu chuẩn Căn hay Tiêu chuẩn Cauchy) Một bài kiểm tra sự hội tụ của chuỗi, đặc biệt hữu ích cho các chuỗi có số hạng chứa lũy thừa bậc n."
+          }
+        },
+        {
+          "id": 17,
+          "title": "Trang 17: Chuỗi lũy thừa",
+          "image": "images/calculus/week3/MA1521Chap3_page_17.png",
+          "notes": "<h3>Chuỗi lũy thừa (Power Series)</h3><p>Một <b>chuỗi lũy thừa</b> tâm tại 0 là một chuỗi có dạng:</p><code>Σ(n=0 to ∞) cₙxⁿ = c₀ + c₁x + c₂x² + ...</code><p>Một chuỗi lũy thừa tâm tại a là một chuỗi có dạng:</p><code>Σ(n=0 to ∞) cₙ(x-a)ⁿ = c₀ + c₁(x-a) + c₂(x-a)² + ...</code><ul><li>Các cₙ là các hằng số, gọi là các <b>hệ số (coefficients)</b>.</li><li>x là một biến số.</li></ul><p>Bài toán chính là: Tìm tất cả các giá trị x để chuỗi lũy thừa hội tụ.</p>",
+          "terms": {
+            "Power Series": "(Chuỗi lũy thừa) Một chuỗi vô hạn có dạng Σcₙ(x-a)ⁿ. Nó có thể được xem như một 'đa thức bậc vô hạn'."
+          }
+        },
+        {
+          "id": 18,
+          "title": "Trang 18: Ví dụ về Sự hội tụ của Chuỗi lũy thừa",
+          "image": "images/calculus/week3/MA1521Chap3_page_18.png",
+          "notes": "<h3>Ví dụ</h3><p>Kiểm tra sự hội tụ của chuỗi <code>Σ xⁿ/√n</code>.</p><p>Để kiểm tra, ta sử dụng <b>Tiêu chuẩn Tỷ lệ</b> cho hội tụ tuyệt đối. Ta tính giới hạn của <code>|aₙ₊₁/aₙ|</code> khi n → ∞.</p><p>Kết quả giới hạn là <code>|x|</code>. Theo Tiêu chuẩn Tỷ lệ:</p><ul><li>Chuỗi <b>hội tụ</b> nếu <code>|x| < 1</code>.</li><li>Chuỗi <b>phân kỳ</b> nếu <code>|x| > 1</code>.</li></ul><p>Trường hợp <code>|x| = 1</code> (tức x = ±1) sẽ được tìm hiểu sau.</p>",
+          "terms": {}
+        },
+        {
+          "id": 19,
+          "title": "Trang 19: Định lý Hội tụ & Bán kính Hội tụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_19.png",
+          "notes": "<h3>Định lý Hội tụ cho Chuỗi lũy thừa</h3><p>Cho chuỗi lũy thừa <code>Σ cₙ(x-a)ⁿ</code>. Sự hội tụ của nó chỉ có thể xảy ra theo một trong ba khả năng sau:</p><ol><li>Chuỗi chỉ hội tụ tại x = a.</li><li>Chuỗi hội tụ với mọi x ∈ ℝ.</li><li>Tồn tại một số R > 0 sao cho chuỗi hội tụ nếu <code>|x-a| < R</code> và phân kỳ nếu <code>|x-a| > R</code>.</li></ol><hr><h3>Bán kính Hội tụ</h3><p>Số R trong trường hợp (iii) được gọi là <b>bán kính hội tụ (radius of convergence)</b>.</p><ul><li>Trường hợp (i): R = 0.</li><li>Trường hợp (ii): R = ∞.</li></ul><p><b>Lưu ý:</b> Định lý không kết luận về sự hội tụ tại các điểm cuối x = a ± R.</p>",
+          "terms": {
+            "Radius of Convergence": "(Bán kính hội tụ) Một số không âm R sao cho một chuỗi lũy thừa hội tụ nếu biến số nằm trong khoảng cách R so với tâm của chuỗi, và phân kỳ nếu nằm ngoài khoảng cách đó."
+          }
+        },
+        {
+          "id": 20,
+          "title": "Trang 20: Tìm Bán kính Hội tụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_20.png",
+          "notes": "<h3>Làm thế nào để tính Bán kính Hội tụ R?</h3><p>Bán kính hội tụ R của một chuỗi lũy thừa tồn tại. Để tìm nó, ta có thể sử dụng Tiêu chuẩn Tỷ lệ hoặc Tiêu chuẩn Căn.</p><p><b>Sử dụng Tiêu chuẩn Tỷ lệ:</b></p><p>Giả sử <code>lim(n→∞) |cₙ₊₁/cₙ| = L</code>. Khi đó chuỗi hội tụ nếu <code>L|x-a| < 1</code>.</p><p>Điều này tương đương với <code>|x-a| < 1/L</code>. Do đó, bán kính hội tụ là <code>R = 1/L</code>.</p><p><b>Sử dụng Tiêu chuẩn Căn:</b></p><p>Giả sử <code>lim(n→∞) ⁿ√|cₙ| = L</code>. Tương tự, ta có bán kính hội tụ <code>R = 1/L</code>.</p>",
+          "terms": {}
+        },
+        {
+          "id": 21,
+          "title": "Trang 21: Biểu diễn hàm bằng Chuỗi lũy thừa",
+          "image": "images/calculus/week3/MA1521Chap3_page_21.png",
+          "notes": "<h3>Biểu diễn hàm bằng Chuỗi lũy thừa</h3><p>Ta đã biết công thức của chuỗi cấp số nhân:</p><code>Σ(n=0 to ∞) xⁿ = 1 + x + x² + ... = 1 / (1 - x)</code>, với |x| < 1.<p>Điều này cho ta một <b>biểu diễn chuỗi lũy thừa (power series representation)</b> của hàm <code>f(x) = 1/(1-x)</code> tâm tại 0.</p><hr><h3>Ví dụ</h3><p>Tìm biểu diễn chuỗi lũy thừa của <code>1 / (1 + x²)</code>.</p><p>Ta thay x bằng <code>-x²</code> trong công thức trên:</p><code>1 / (1 - (-x²)) = Σ(n=0 to ∞) (-x²)ⁿ = Σ(n=0 to ∞) (-1)ⁿx²ⁿ</code><p>Đẳng thức này đúng khi <code>|-x²| < 1</code>, tức là <code>|x| < 1</code>.</p>",
+          "terms": {
+            "Power Series Representation": "(Biểu diễn chuỗi lũy thừa) Việc biểu diễn một hàm số dưới dạng một chuỗi lũy thừa. Nhiều hàm số quan trọng có thể được biểu diễn theo cách này."
+          }
+        },
+        {
+          "id": 22,
+          "title": "Trang 22: Ví dụ về Biểu diễn Chuỗi lũy thừa",
+          "image": "images/calculus/week3/MA1521Chap3_page_22.png",
+          "notes": "<h3>Ví dụ</h3><p>Các ví dụ minh họa cách sử dụng các phép biến đổi đại số (như phân tích thành phân thức đơn giản) và công thức chuỗi cấp số nhân để tìm biểu diễn chuỗi lũy thừa cho các hàm phức tạp hơn và xác định bán kính hội tụ của chúng.</p>",
+          "terms": {}
+        },
+        {
+          "id": 23,
+          "title": "Trang 23: Lấy Đạo hàm Chuỗi lũy thừa & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_23.png",
+          "notes": "<h3>Lấy Đạo hàm và Tích phân của Chuỗi lũy thừa</h3><p><b>Định lý (Đạo hàm/Tích phân từng số hạng):</b></p><p>Nếu chuỗi lũy thừa <code>Σ cₙ(x-a)ⁿ</code> có bán kính hội tụ R > 0, thì hàm f được định nghĩa bởi chuỗi đó là khả vi (và do đó liên tục) trên khoảng (a-R, a+R).</p><p>Hơn nữa, đạo hàm và tích phân của f có thể được tính bằng cách lấy đạo hàm/tích phân <b>từng số hạng</b> của chuỗi.</p><hr><h3>Ví dụ</h3><p>Bắt đầu từ <code>Σ xⁿ = 1/(1-x)</code>, ta có thể lấy đạo hàm hai vế để tìm biểu diễn chuỗi cho các hàm khác như <code>1/(1-x)²</code>, và sau đó tiếp tục lấy đạo hàm để tìm chuỗi cho <code>2/(1-x)³</code>.</p>",
+          "terms": {}
+        },
+        {
+          "id": 24,
+          "title": "Trang 24: Hệ số của Chuỗi lũy thừa",
+          "image": "images/calculus/week3/MA1521Chap3_page_24.png",
+          "notes": "<h3>Hệ số của Biểu diễn Chuỗi lũy thừa</h3><p>Giả sử hàm f(x) có một biểu diễn chuỗi lũy thừa <code>Σ cₙxⁿ</code> với bán kính hội tụ R > 0. Vậy các hệ số cₙ là gì?</p><p>Bằng cách lấy đạo hàm liên tiếp của f(x) và thay giá trị x = 0, ta có thể tìm ra mối quan hệ giữa các hệ số cₙ và các đạo hàm của f tại 0:</p><code>f⁽ᵏ⁾(0) = k! * cₖ</code><p>Điều này suy ra:</p><code>cₙ = f⁽ⁿ⁾(0) / n!</code>",
+          "terms": {}
+        },
+        {
+          "id": 25,
+          "title": "Trang 25: Chuỗi Taylor và Maclaurin",
+          "image": "images/calculus/week3/MA1521Chap3_page_25.png",
+          "notes": "<h3>Chuỗi Maclaurin</h3><p><b>Định lý:</b> Nếu f có một biểu diễn chuỗi lũy thừa tâm tại 0 với bán kính hội tụ R > 0, thì các hệ số được cho bởi <code>cₙ = f⁽ⁿ⁾(0) / n!</code>. Chuỗi này được gọi là <b>chuỗi Maclaurin</b> của f.</p><code>f(x) = Σ(n=0 to ∞) [f⁽ⁿ⁾(0) / n!] * xⁿ</code><hr><h3>Chuỗi Taylor</h3><p><b>Định lý:</b> Tương tự, nếu f có một biểu diễn chuỗi lũy thừa tâm tại a, thì chuỗi đó được gọi là <b>chuỗi Taylor</b> của f tại a.</p><code>f(x) = Σ(n=0 to ∞) [f⁽ⁿ⁾(a) / n!] * (x-a)ⁿ</code>",
+          "terms": {
+            "Taylor Series": "(Chuỗi Taylor) Biểu diễn một hàm số dưới dạng một tổng vô hạn các số hạng, được tính từ các giá trị đạo hàm của hàm số tại một điểm duy nhất.",
+            "Maclaurin Series": "(Chuỗi Maclaurin) Một trường hợp đặc biệt của chuỗi Taylor, khi chuỗi được khai triển tại điểm a = 0."
+          }
+        },
+        {
+          "id": 26,
+          "title": "Trang 26: Tiêu chuẩn Phân kỳ & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_26.png",
+          "notes": "<h3>Tiêu chuẩn Phân kỳ (Test for Divergence)</h3><p><b>Định lý:</b> Nếu chuỗi Σaₙ hội tụ, thì <code>lim(n→∞) aₙ = 0</code>.</p><p><b>Hệ quả (Tiêu chuẩn Phân kỳ):</b></p><p>Nếu <code>lim(n→∞) aₙ</code> không tồn tại, hoặc tồn tại nhưng khác 0, thì chuỗi Σaₙ <b>phân kỳ</b>.</p><hr><h3>Ví dụ</h3><p>Xét chuỗi <code>Σ n² / (5n² + 4)</code>. Vì <code>lim(n→∞) n² / (5n² + 4) = 1/5 ≠ 0</code>, chuỗi này phân kỳ.</p><p><b>Lưu ý:</b> Nếu <code>lim aₙ = 0</code>, tiêu chuẩn này không kết luận được gì. Chuỗi có thể hội tụ hoặc phân kỳ.</p>",
+          "terms": {
+            "Test for Divergence": "(Tiêu chuẩn Phân kỳ) Một bài kiểm tra cơ bản. Nếu giới hạn của số hạng tổng quát của một chuỗi không bằng 0, thì chuỗi đó phân kỳ."
+          }
+        },
+        {
+          "id": 27,
+          "title": "Trang 27: Tiêu chuẩn So sánh & Chuỗi p",
+          "image": "images/calculus/week3/MA1521Chap3_page_27.png",
+          "notes": "<h3>So sánh với một chuỗi đã biết</h3><p>Xét chuỗi <code>Σ 1 / (sqrt(n) + 1)</code>. Giới hạn của số hạng tổng quát bằng 0, nên Tiêu chuẩn Phân kỳ không kết luận được.</p><p>Tuy nhiên, ta thấy rằng với n lớn, <code>1 / (sqrt(n) + 1)</code> 'tương tự' như <code>1 / sqrt(n)</code>. Các số hạng của chuỗi Σ1/sqrt(n) là 'lớn'. Có vẻ như chuỗi ban đầu cũng phân kỳ. Liệu 'so sánh' này có đúng không?</p><hr><h3>Chuỗi p (p-Series)</h3><p>Chuỗi có dạng <code>Σ 1/nᵖ</code> được gọi là <b>chuỗi p</b>. Vấn đề là: Với những giá trị nào của p thì chuỗi này hội tụ?</p>",
+          "terms": {
+            "Comparison Test": "(Tiêu chuẩn So sánh) Một phương pháp xác định sự hội tụ hoặc phân kỳ của một chuỗi bằng cách so sánh nó với một chuỗi khác đã biết tính chất hội tụ.",
+            "p-Series": "(Chuỗi p) Một chuỗi có dạng Σ 1/nᵖ. Nó hội tụ nếu p > 1 và phân kỳ nếu p ≤ 1."
+          }
+        },
+        {
+          "id": 28,
+          "title": "Trang 28: Chuỗi Điều hòa",
+          "image": "images/calculus/week3/MA1521Chap3_page_28.png",
+          "notes": "<h3>Chuỗi Điều hòa (Harmonic Series)</h3><p><b>Chuỗi điều hòa</b> là chuỗi p với p = 1: <code>Σ 1/n = 1 + 1/2 + 1/3 + ...</code></p><p>Mặc dù các số hạng của nó tiến đến 0, chuỗi này lại <b>phân kỳ</b>.</p><p>Để chứng minh, ta xét các tổng riêng <code>S₂ⁿ</code> và nhóm các số hạng lại. Ta có thể chỉ ra rằng <code>S₂ⁿ > 1 + n/2</code>. Khi n → ∞, <code>S₂ⁿ</code> cũng tiến đến ∞.</p>",
+          "terms": {
+            "Harmonic Series": "(Chuỗi Điều hòa) Chuỗi Σ 1/n. Đây là ví dụ kinh điển của một chuỗi có số hạng tổng quát tiến về 0 nhưng bản thân chuỗi lại phân kỳ."
+          }
+        },
+        {
+          "id": 29,
+          "title": "Trang 29: Định lý Chuỗi p & Tiêu chuẩn So sánh",
+          "image": "images/calculus/week3/MA1521Chap3_page_29.png",
+          "notes": "<h3>Định lý về Chuỗi p</h3><p>Chuỗi p <code>Σ 1/nᵖ</code> <b>hội tụ</b> nếu <code>p > 1</code> và <b>phân kỳ</b> nếu <code>p ≤ 1</code>.</p><hr><h3>Tiêu chuẩn So sánh (The Comparison Test)</h3><p><b>Định lý:</b> Cho Σaₙ và Σbₙ là các chuỗi có số hạng không âm.</p><p>a) Nếu <code>Σbₙ</code> <b>hội tụ</b> và <code>aₙ ≤ bₙ</code> với mọi n đủ lớn, thì <code>Σaₙ</code> cũng <b>hội tụ</b>.</p><p>b) Nếu <code>Σbₙ</code> <b>phân kỳ</b> và <code>aₙ ≥ bₙ</code> với mọi n đủ lớn, thì <code>Σaₙ</code> cũng <b>phân kỳ</b>.</p>",
+          "terms": {}
+        },
+        {
+          "id": 30,
+          "title": "Trang 30: Ví dụ & Tiêu chuẩn So sánh giới hạn",
+          "image": "images/calculus/week3/MA1521Chap3_page_30.png",
+          "notes": "<h3>Ví dụ về Tiêu chuẩn So sánh</h3><p>Để sử dụng Tiêu chuẩn So sánh, ta phải 'đoán' xem chuỗi hội tụ hay phân kỳ, sau đó tìm một chuỗi đã biết tính chất để so sánh.</p><p><b>Ví dụ:</b> <code>Σ ln(n)/n</code>. Vì <code>ln(n) > 1</code> với n ≥ 3, ta có <code>ln(n)/n > 1/n</code>. Mà chuỗi điều hòa <code>Σ 1/n</code> phân kỳ, do đó chuỗi ban đầu cũng phân kỳ.</p><hr><h3>Tiêu chuẩn So sánh Giới hạn (The Limit Comparison Test)</h3><p><b>Định lý:</b> Cho Σaₙ và Σbₙ là các chuỗi có số hạng dương. Nếu <code>lim(n→∞) aₙ/bₙ = c</code>, trong đó c là một số hữu hạn và c > 0, thì hai chuỗi <b>cùng hội tụ hoặc cùng phân kỳ</b>.</p>",
+          "terms": {
+            "Limit Comparison Test": "(Tiêu chuẩn So sánh Giới hạn) Một phương pháp so sánh hai chuỗi bằng cách lấy giới hạn của tỷ lệ giữa các số hạng tổng quát của chúng. Rất hữu ích khi các số hạng của chuỗi 'tương tự' như các số hạng của một chuỗi đã biết."
+          }
+        },
+        {
+          "id": 31,
+          "title": "Trang 31: Ví dụ & Chuỗi đan dấu",
+          "image": "images/calculus/week3/MA1521Chap3_page_31.png",
+          "notes": "<h3>Ví dụ về Tiêu chuẩn So sánh Giới hạn</h3><p>Các ví dụ minh họa cách 'đoán' hành vi của một chuỗi phức tạp bằng cách chỉ giữ lại các số hạng có bậc cao nhất ở tử và mẫu, sau đó áp dụng Tiêu chuẩn So sánh Giới hạn để xác nhận dự đoán đó.</p><hr><h3>Chuỗi đan dấu (Alternating Series)</h3><p>Làm thế nào với các chuỗi có các số hạng không phải lúc nào cũng dương?</p><p><b>Chuỗi điều hòa đan dấu</b> có dạng:</p><code>Σ (-1)ⁿ⁻¹ / n = 1 - 1/2 + 1/3 - 1/4 + ...</code><p>Chuỗi này có hội tụ không? Đồ thị của các tổng riêng cho thấy nó dường như hội tụ về một giá trị nào đó.</p>",
+          "terms": {
+            "Alternating Series": "(Chuỗi đan dấu) Một chuỗi vô hạn có các số hạng đan xen giữa dương và âm."
+          }
+        },
+        {
+          "id": 32,
+          "title": "Trang 32: Tiêu chuẩn Chuỗi đan dấu & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_32.png",
+          "notes": "<h3>Tiêu chuẩn Chuỗi đan dấu (Alternating Series Test)</h3><p>Nếu chuỗi đan dấu <code>Σ (-1)ⁿ⁻¹ bₙ</code> (với bₙ > 0) thỏa mãn hai điều kiện:</p><ol><li><code>bₙ₊₁ ≤ bₙ</code> với mọi n (dãy bₙ là dãy giảm).</li><li><code>lim(n→∞) bₙ = 0</code>.</li></ol><p>thì chuỗi đó <b>hội tụ</b>.</p><hr><h3>Ví dụ</h3><p>Các ví dụ áp dụng Tiêu chuẩn Chuỗi đan dấu để xác định sự hội tụ của các chuỗi có các số hạng đổi dấu.</p>",
+          "terms": {
+            "Alternating Series Test": "(Tiêu chuẩn Chuỗi đan dấu hay Tiêu chuẩn Leibniz) Một bài kiểm tra sự hội tụ cho các chuỗi đan dấu. Nếu giá trị tuyệt đối của các số hạng giảm dần và tiến về 0, thì chuỗi hội tụ."
+          }
+        },
+        {
+          "id": 33,
+          "title": "Trang 33: Hội tụ Tuyệt đối & Hội tụ có điều kiện",
+          "image": "images/calculus/week3/MA1521Chap3_page_33.png",
+          "notes": "<h3>Hội tụ Tuyệt đối và Hội tụ có điều kiện</h3><p><b>Định nghĩa:</b></p><ul><li>Một chuỗi Σaₙ được gọi là <b>hội tụ tuyệt đối (absolutely convergent)</b> nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ.</li><li>Một chuỗi Σaₙ được gọi là <b>hội tụ có điều kiện (conditionally convergent)</b> nếu nó hội tụ, nhưng chuỗi Σ|aₙ| lại phân kỳ.</li></ul><p><b>Ví dụ:</b> Chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> hội tụ (theo Tiêu chuẩn Chuỗi đan dấu), nhưng chuỗi các giá trị tuyệt đối của nó là <code>Σ 1/n</code> (chuỗi điều hòa) lại phân kỳ. Do đó, nó hội tụ có điều kiện.</p><p><b>Định lý:</b> Nếu một chuỗi hội tụ tuyệt đối, thì nó cũng hội tụ.</p>",
+          "terms": {
+            "Conditionally Convergent": "(Hội tụ có điều kiện) Một chuỗi hội tụ nhưng không hội tụ tuyệt đối."
+          }
+        },
+        {
+          "id": 34,
+          "title": "Trang 34: Tổng kết các Tiêu chuẩn & Kết luận",
+          "image": "images/calculus/week3/MA1521Chap3_page_34.png",
+          "notes": "<h3>Sơ đồ chiến lược kiểm tra sự hội tụ của chuỗi</h3><p>Sơ đồ này cung cấp một quy trình từng bước để quyết định nên sử dụng tiêu chuẩn nào khi đối mặt với một chuỗi bất kỳ, bắt đầu từ việc kiểm tra <code>lim aₙ</code> (Tiêu chuẩn Phân kỳ) cho đến các tiêu chuẩn phức tạp hơn như Tiêu chuẩn Tỷ lệ hay So sánh.</p><hr><h3>Kết luận</h3><p>Chương này đã giới thiệu các khái niệm cơ bản về dãy số và chuỗi, cùng với các công cụ chính để xác định sự hội tụ của chúng. Đây là nền tảng cho việc nghiên cứu Chuỗi Taylor và các ứng dụng của chuỗi trong giải tích.</p>",
+          "terms": {}
+        },
+        {
+          "id": 35,
+          "title": "Trang 35: Tiêu chuẩn Chuỗi đan dấu & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_35.png",
+          "notes": "<h3>Tiêu chuẩn Chuỗi đan dấu (The Alternating Series Test)</h3><p><b>Định nghĩa:</b> Một <b>chuỗi đan dấu</b> là một chuỗi có các số hạng đổi dấu liên tiếp giữa dương và âm.</p><p><b>Tiêu chuẩn Leibniz:</b> Cho Σaₙ là một chuỗi đan dấu. Giả sử <code>lim(n→∞) |aₙ| = 0</code> và dãy {|aₙ|} là dãy giảm. Khi đó, chuỗi Σaₙ <b>hội tụ</b>.</p><hr><h3>Ví dụ</h3><p>Chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> là hội tụ, mặc dù chuỗi điều hòa <code>Σ 1/n</code> là phân kỳ.</p>",
+          "terms": {}
+        },
+        {
+          "id": 36,
+          "title": "Trang 36: Hội tụ Tuyệt đối & Có điều kiện",
+          "image": "images/calculus/week3/MA1521Chap3_page_36.png",
+          "notes": "<h3>Hội tụ Tuyệt đối (Absolute Convergence)</h3><p><b>Định nghĩa:</b> Một chuỗi Σaₙ được gọi là <b>hội tụ tuyệt đối</b> nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ.</p><p><b>Định lý:</b> Nếu một chuỗi hội tụ tuyệt đối, thì nó cũng hội tụ.</p><p><b>Lưu ý:</b> Nếu Σ|aₙ| phân kỳ, ta chưa thể kết luận gì về sự hội tụ của Σaₙ.</p><hr><h3>Hội tụ có điều kiện (Conditionally Convergent)</h3><p><b>Định nghĩa:</b> Một chuỗi được gọi là <b>hội tụ có điều kiện</b> nếu nó hội tụ, nhưng không hội tụ tuyệt đối (tức là Σ|aₙ| phân kỳ).</p><p><b>Ví dụ:</b> <code>Σ (-1)ⁿ⁻¹/n</code> hội tụ có điều kiện, trong khi <code>Σ (-1)ⁿ⁻¹/n²</code> hội tụ tuyệt đối.</p>",
+          "terms": {
+            "Absolute Convergence": "(Hội tụ tuyệt đối) Một chuỗi Σaₙ được gọi là hội tụ tuyệt đối nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ. Hội tụ tuyệt đối suy ra hội tụ.",
+            "Conditionally Convergent": "(Hội tụ có điều kiện) Một chuỗi hội tụ nhưng không hội tụ tuyệt đối."
+          }
+        },
+        {
+          "id": 37,
+          "title": "Trang 37: Chứng minh & Ví dụ",
+          "image": "images/calculus/week3/MA1521Chap3_page_37.png",
+          "notes": "<h3>Chứng minh Định lý Hội tụ Tuyệt đối</h3><p>Ý tưởng của việc chứng minh là tách chuỗi aₙ thành hai chuỗi số không âm aₙ⁺ và aₙ⁻. Nếu chuỗi Σ|aₙ| hội tụ, ta có thể chứng minh được rằng cả hai chuỗi Σaₙ⁺ và Σaₙ⁻ đều hội tụ. Vì aₙ = aₙ⁺ - aₙ⁻, nên chuỗi Σaₙ cũng hội tụ.</p><hr><h3>Ví dụ</h3><p>Kiểm tra sự hội tụ của <code>Σ cos(nπ) / n²</code>.</p><p>Ta xét chuỗi các giá trị tuyệt đối: <code>Σ |cos(nπ)| / n²</code>. Vì <code>|cos(nπ)| ≤ 1</code>, ta có <code>|cos(nπ)| / n² ≤ 1/n²</code>. Mà chuỗi p <code>Σ 1/n²</code> hội tụ (vì p=2 > 1). Theo Tiêu chuẩn So sánh, chuỗi các giá trị tuyệt đối hội tụ. Do đó, chuỗi ban đầu hội tụ tuyệt đối.</p>",
+          "terms": {}
+        },
+        {
+          "id": 38,
+          "title": "Trang 38: Ví dụ về tính tổng Chuỗi",
+          "image": "images/calculus/week3/MA1521Chap3_page_38.png",
+          "notes": "<h3>Ví dụ: Tính tổng chuỗi đan dấu</h3><p>Cho biết <code>Σ 1/n² = π²/6</code>. Tính <code>Σ (-1)ⁿ⁻¹ / n²</code>.</p><p><b>Giải pháp:</b></p><p>Ta có thể tách chuỗi đan dấu thành hiệu của hai chuỗi con: (tổng các số hạng dương) - (tổng các số hạng âm). Bằng cách biến đổi và sử dụng giá trị đã cho, ta có thể tìm được tổng của chuỗi đan dấu là <code>π²/12</code>.</p><hr><h3>Ví dụ: Sắp xếp lại số hạng</h3><p>Liệu ta có thể tính tổng của chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> bằng cách tương tự không?</p><p>Nếu ta cố gắng tách thành (tổng số hạng dương) - (tổng số hạng âm), ta sẽ nhận được dạng <code>∞ - ∞</code>, là một dạng vô định. Điều này cho thấy có một sự khác biệt cơ bản giữa hai loại chuỗi này.</p>",
+          "terms": {}
+        },
+        {
+          "id": 39,
+          "title": "Trang 39: Sự ảnh hưởng của việc Sắp xếp lại",
+          "image": "images/calculus/week3/MA1521Chap3_page_39.png",
+          "notes": "<h3>Sự hội tụ có điều kiện và việc Sắp xếp lại</h3><p><b>Định lý (Định lý Sắp xếp lại Riemann):</b></p><ul><li>Nếu một chuỗi <b>hội tụ tuyệt đối</b>, thì mọi cách sắp xếp lại (rearrangement) các số hạng của nó đều cho cùng một tổng.</li><li>Nếu một chuỗi <b>hội tụ có điều kiện</b>, thì có thể tồn tại các cách sắp xếp lại khác nhau cho các tổng khác nhau. Hơn nữa, với mọi số L bất kỳ (kể cả ±∞), tồn tại một cách sắp xếp lại các số hạng của chuỗi sao cho tổng của nó là L.</li></ul><p><b>Kết luận:</b> Nếu một chuỗi hội tụ có điều kiện, chúng ta không nên thay đổi thứ tự của các số hạng khi tính tổng.</p><hr><h3>Ví dụ</h3><p>Minh họa cách sắp xếp lại các số hạng của chuỗi điều hòa đan dấu để làm cho nó tiến đến 1 thay vì giá trị gốc (ln 2).</p>",
+          "terms": {
+            "Rearrangement (of a series)": "(Sắp xếp lại một chuỗi) Một chuỗi mới được tạo ra bằng cách thay đổi thứ tự của các số hạng của chuỗi ban đầu.",
+            "Riemann Series Theorem": "(Định lý Chuỗi Riemann) Phát biểu rằng nếu một chuỗi vô hạn hội tụ có điều kiện, thì các số hạng của nó có thể được sắp xếp lại để tạo thành một chuỗi mới hội tụ về một giá trị thực bất kỳ, hoặc phân kỳ."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Chương 4: Đạo hàm riêng (Partial Derivatives)",
+      "slides": [
+        {
+          "id": 1,
+          "title": "Trang 1: Bìa & Mục lục Chương 4",
+          "image": "images/calculus/week4/MA1521Chap4_page_1.png",
+          "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 4: Đạo hàm riêng.</p><hr><h3>Mục lục Chương 4</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này, bao gồm Hàm nhiều biến, Đạo hàm riêng, Đạo hàm theo hướng, và các ứng dụng.</p>",
+          "terms": {}
+        },
+        {
+          "id": 2,
+          "title": "Trang 2: Hàm nhiều biến",
+          "image": "images/calculus/week4/MA1521Chap4_page_2.png",
+          "notes": "<h3>Hàm nhiều hơn một biến</h3><p>Một số đối tượng được xác định bởi nhiều hơn một <b>biến độc lập (independent variables)</b>.</p><ul><li>Diện tích hình chữ nhật: <code>A = xy</code></li><li>Thể tích hình nón: <code>V = (1/3)πr²h</code></li><li>Năng lượng động học: <code>Eₖ = (1/2)mv²</code></li></ul><hr><h3>Hàm hai biến</h3><p>Cho <code>z = f(x, y)</code> là một hàm số của hai biến x, y.</p><ul><li>Miền xác định (domain) D là tập hợp con lớn nhất của ℝ² mà tại đó f được xác định rõ.</li></ul><p><b>Ví dụ:</b> Tìm miền xác định của <code>f(x,y) = sqrt(x+y+2) / (x-1) + ln(9-x²-y²)</code>. Ta cần xét các điều kiện: <code>x+y+2 ≥ 0</code>, <code>x-1 ≠ 0</code>, và <code>9-x²-y² > 0</code>.",
+          "terms": {
+            "Function of several variables": "(Hàm nhiều biến) Một hàm số có đầu vào là một bộ nhiều số (vector) thay vì một số duy nhất.",
+            "Independent variables": "(Biến độc lập) Các biến đầu vào của một hàm mà giá trị của chúng có thể được chọn một cách tự do."
+          }
+        },
+        {
+          "id": 3,
+          "title": "Trang 3: Miền xác định & Đồ thị",
+          "image": "images/calculus/week4/MA1521Chap4_page_3.png",
+          "notes": "<h3>Ví dụ về Miền xác định</h3><p>Các ví dụ minh họa cách tìm miền xác định của các hàm hai biến bằng cách giải các bất phương trình. Miền xác định thường là một vùng trong mặt phẳng xy.</p><hr><h3>Đồ thị của Hàm hai biến</h3><p>Đồ thị của hàm <code>z = f(x, y)</code> là tập hợp các điểm <code>{(x, y, z) ∈ ℝ³ | (x, y) ∈ D và z = f(x, y)}</code>.</p><p>Đồ thị này là một <b>bề mặt (surface)</b> trong không gian ba chiều.</p><p>Để hình dung bề mặt này, thay vì vẽ trực tiếp, ta thường vẽ các <b>đường mức (level curves)</b>. Một đường mức <code>z₀</code> là tập hợp các điểm (x, y) sao cho <code>f(x, y) = z₀</code>. Đây là giao của bề mặt với mặt phẳng ngang <code>z = z₀</code>.</p>",
+          "terms": {
+            "Graph of a two-variable function": "(Đồ thị của hàm hai biến) Một bề mặt trong không gian 3D, trong đó chiều cao z tại mỗi điểm (x, y) được cho bởi giá trị f(x, y).",
+            "Level Curve": "(Đường mức) Một đường cong trên mặt phẳng xy mà tại đó hàm f(x, y) có một giá trị không đổi. Tập hợp các đường mức tạo thành một bản đồ đường đồng mức (contour map)."
+          }
+        },
+        {
+          "id": 4,
+          "title": "Trang 4: Ví dụ về Đường mức",
+          "image": "images/calculus/week4/MA1521Chap4_page_4.png",
+          "notes": "<h3>Ví dụ về Đường mức</h3><p>Các ví dụ minh họa các đường mức cho các hàm số khác nhau:</p><ul><li><code>f(x, y) = 10 - 2x - y</code>. Các đường mức là các đường thẳng song song <code>2x + y = 10 - z₀</code>.</li><li><code>f(x, y) = x² + y²</code>. Các đường mức là các đường tròn đồng tâm <code>x² + y² = z₀</code>.</li></ul>",
+          "terms": {}
+        },
+        {
+          "id": 5,
+          "title": "Trang 5: Đạo hàm riêng",
+          "image": "images/calculus/week4/MA1521Chap4_page_5.png",
+          "notes": "<h3>Đạo hàm riêng (Partial Derivatives)</h3><p>Cho <code>z = f(x, y)</code>. Làm thế nào để xác định tốc độ thay đổi?</p><p><b>Giữ y cố định:</b> Ta coi y là hằng số và chỉ xét sự thay đổi theo x. Đạo hàm của z theo x xác định tốc độ thay đổi của z dọc theo hướng x. Đây được gọi là <b>đạo hàm riêng</b> của f theo x:</p><code>∂z/∂x = lim(Δx→0) [f(x+Δx, y) - f(x, y)] / Δx</code><p><b>Giữ x cố định:</b> Tương tự, đạo hàm riêng của f theo y là:</p><code>∂z/∂y = lim(Δy→0) [f(x, y+Δy) - f(x, y)] / Δy</code><hr><h3>Ký hiệu & Gradient</h3><p>Các ký hiệu khác: <code>∂f/∂x = fₓ</code>, <code>∂f/∂y = fᵧ</code>.</p><p><b>Gradient</b> của z = f(x, y) là một vector của các đạo hàm riêng:</p><code>∇f(x, y) = (fₓ, fᵧ)</code>",
+          "terms": {
+            "Partial Derivative": "(Đạo hàm riêng) Đạo hàm của một hàm nhiều biến theo một trong các biến đó, trong khi các biến khác được giữ không đổi.",
+            "Gradient": "(Gradient) Một vector chứa tất cả các đạo hàm riêng của một hàm nhiều biến. Vector gradient luôn trỏ về hướng có tốc độ tăng lớn nhất của hàm."
+          }
+        },
+        {
+          "id": 6,
+          "title": "Trang 6: Ví dụ & Đạo hàm theo hướng",
+          "image": "images/calculus/week4/MA1521Chap4_page_6.png",
+          "notes": "<h3>Ví dụ về Đạo hàm riêng</h3><p>Các ví dụ minh họa cách tính đạo hàm riêng bằng cách coi các biến khác là hằng số và áp dụng các quy tắc đạo hàm thông thường (Quy tắc Tích, Quy tắc Thương...). Sau đó, kết hợp chúng lại để tìm vector gradient ∇f.</p><hr><h3>Đạo hàm theo hướng (Directional Derivatives)</h3><p>Đạo hàm riêng fₓ và fᵧ cho ta biết tốc độ thay đổi theo hướng x và y. Vậy tốc độ thay đổi của z dọc theo một vector đơn vị bất kỳ <code>u = u₁i + u₂j</code> là gì?</p><p><b>Định nghĩa:</b> <b>Đạo hàm theo hướng</b> của z = f(x, y) dọc theo một vector đơn vị u được cho bởi:</p><code>Dᵤf(x, y) = ∇f(x, y) • u</code><p>Nó được tính bằng tích vô hướng của vector gradient và vector chỉ hướng.</p>",
+          "terms": {
+            "Directional Derivative": "(Đạo hàm theo hướng) Tốc độ thay đổi của một hàm nhiều biến dọc theo một hướng cho trước. Nó tổng quát hóa khái niệm đạo hàm riêng."
+          }
+        },
+        {
+          "id": 7,
+          "title": "Trang 7: Ý nghĩa Hình học của Gradient",
+          "image": "images/calculus/week4/MA1521Chap4_page_7.png",
+          "notes": "<h3>Ý nghĩa Hình học của Đạo hàm theo hướng</h3><p>Từ công thức <code>Dᵤf = ∇f • u = |∇f||u|cosθ</code> (với |u|=1), ta có <code>Dᵤf = |∇f|cosθ</code>.</p><p>Điều này cho thấy:</p><ul><li>f <b>tăng nhanh nhất</b> theo hướng của <b>∇f</b> (khi cosθ = 1, θ = 0).</li><li>f <b>giảm nhanh nhất</b> theo hướng của <b>-∇f</b> (khi cosθ = -1, θ = π).</li><li>Bất kỳ hướng u nào <b>vuông góc</b> với ∇f đều là một hướng có tốc độ thay đổi bằng 0.</li></ul><hr><h3>Ví dụ</h3><p>Ví dụ minh họa cách tìm gradient, đạo hàm theo hướng, hướng tăng nhanh nhất, và hướng có tốc độ thay đổi bằng 0 cho một hàm cụ thể tại một điểm.</p>",
+          "terms": {}
+        },
+        {
+          "id": 8,
+          "title": "Trang 8: Mặt phẳng tiếp tuyến",
+          "image": "images/calculus/week4/MA1521Chap4_page_8.png",
+          "notes": "<h3>Mặt phẳng tiếp tuyến (Tangent Plane)</h3><p>Cho z = f(x, y) là một bề mặt. Tại một điểm (x₀, y₀, z₀), ta có thể tìm vector pháp tuyến cho bề mặt bằng cách lấy tích có hướng của hai vector tiếp tuyến, và từ đó suy ra phương trình mặt phẳng tiếp tuyến.</p><p>Phương trình của <b>mặt phẳng tiếp tuyến</b> với bề mặt z = f(x, y) tại điểm (x₀, y₀, z₀) là:</p><code>z - z₀ = fₓ(x₀, y₀)(x - x₀) + fᵧ(x₀, y₀)(y - y₀)</code>",
+          "terms": {
+            "Tangent Plane": "(Mặt phẳng tiếp tuyến) Một mặt phẳng 'chạm' vào một bề mặt tại một điểm duy nhất. Nó là sự tổng quát hóa của đường tiếp tuyến cho các bề mặt trong không gian 3D."
+          }
+        },
+        {
+          "id": 9,
+          "title": "Trang 9: Xấp xỉ Tuyến tính",
+          "image": "images/calculus/week4/MA1521Chap4_page_9.png",
+          "notes": "<h3>Xấp xỉ Tuyến tính (Linear Approximation)</h3><p>Tương tự như hàm một biến được xấp xỉ bởi đường tiếp tuyến, hàm hai biến <code>z = f(x, y)</code> có thể được xấp xỉ bởi <b>mặt phẳng tiếp tuyến</b> của nó.</p><p>Với (x, y) gần (x₀, y₀), ta có:</p><code>f(x, y) ≈ f(x₀, y₀) + fₓ(x₀, y₀)(x - x₀) + fᵧ(x₀, y₀)(y - y₀)</code><p>Đây được gọi là <b>tuyến tính hóa (linearization)</b> của f tại (x₀, y₀).</p>",
+          "terms": {
+            "Linearization": "(Tuyến tính hóa) Quá trình xấp xỉ một hàm số bằng một hàm tuyến tính (mặt phẳng tiếp tuyến) tại một điểm. Rất hữu ích trong việc đơn giản hóa các bài toán phức tạp."
+          }
+        },
+        {
+          "id": 10,
+          "title": "Trang 10: Quy tắc Chuỗi",
+          "image": "images/calculus/week4/MA1521Chap4_page_10.png",
+          "notes": "<h3>Quy tắc Chuỗi (Chain Rule) cho Hàm nhiều biến</h3><p>Giả sử z = f(x, y), trong đó x = x(t) và y = y(t). Khi đó, z trở thành một hàm của t: <code>z = f(x(t), y(t))</code>. Đạo hàm của z theo t là gì?</p><p><b>Quy tắc Chuỗi:</b></p><code>dz/dt = (∂z/∂x)(dx/dt) + (∂z/∂y)(dy/dt)</code>",
+          "terms": {}
+        },
+        {
+          "id": 11,
+          "title": "Trang 11: Đạo hàm Ngầm & Đạo hàm riêng cấp cao",
+          "image": "images/calculus/week4/MA1521Chap4_page_11.png",
+          "notes": "<h3>Đạo hàm Ngầm (xem lại)</h3><p>Đối với một phương trình ngầm <code>F(x, y) = 0</code>, ta có thể tìm <code>dy/dx</code> bằng công thức:</p><code>dy/dx = -Fₓ / Fᵧ</code><hr><h3>Đạo hàm riêng cấp cao (Higher Order Partial Derivatives)</h3><p>Vì fₓ và fᵧ cũng là các hàm hai biến, ta có thể tiếp tục lấy đạo hàm riêng của chúng để có các <b>đạo hàm riêng cấp hai</b>:</p><ul><li><code>(fₓ)ₓ = fₓₓ = ∂²f/∂x²</code></li><li><code>(fₓ)ᵧ = fₓᵧ = ∂²f/∂y∂x</code></li><li><code>(fᵧ)ₓ = fᵧₓ = ∂²f/∂x∂y</code></li><li><code>(fᵧ)ᵧ = fᵧᵧ = ∂²f/∂y²</code></li></ul><p><b>Định lý Clairaut:</b> Nếu các đạo hàm riêng cấp hai fₓᵧ và fᵧₓ đều liên tục, thì chúng bằng nhau: <code>fₓᵧ = fᵧₓ</code>.</p>",
+          "terms": {
+            "Higher Order Partial Derivatives": "(Đạo hàm riêng cấp cao) Các đạo hàm riêng được tính bằng cách lấy đạo hàm riêng của một hàm nhiều hơn một lần.",
+            "Clairaut's Theorem": "(Định lý Clairaut) Phát biểu rằng thứ tự lấy đạo hàm riêng hỗn hợp không quan trọng, miễn là các đạo hàm đó liên tục."
+          }
+        },
+        {
+          "id": 12,
+          "title": "Trang 12: Ví dụ & Hàm nhiều biến hơn",
+          "image": "images/calculus/week4/MA1521Chap4_page_12.png",
+          "notes": "<h3>Ví dụ về Đạo hàm riêng cấp cao</h3><p>Các ví dụ minh họa cách tính các đạo hàm riêng cấp hai và kiểm chứng Định lý Clairaut.</p><hr><h3>Hàm nhiều biến hơn</h3><p>Các khái niệm về hàm số, đạo hàm riêng, gradient, đạo hàm theo hướng, và quy tắc chuỗi có thể được mở rộng một cách tự nhiên cho các hàm có ba hoặc nhiều biến hơn (ví dụ: w = f(x, y, z)).</p>",
+          "terms": {}
+        },
+        {
+          "id": 13,
+          "title": "Trang 13: Mặt phẳng tiếp tuyến (Tổng quát)",
+          "image": "images/calculus/week4/MA1521Chap4_page_13.png",
+          "notes": "<h3>Mặt phẳng tiếp tuyến (xem lại)</h3><p>Xét một bề mặt được cho bởi phương trình <code>F(x, y, z) = c</code>. Bề mặt này là một 'đường mức' của hàm ba biến F.</p><p>Vector gradient ∇F(x₀, y₀, z₀) là vector pháp tuyến của bề mặt tại điểm P(x₀, y₀, z₀).</p><p>Do đó, phương trình của <b>mặt phẳng tiếp tuyến</b> tại P là:</p><code>Fₓ(P)(x - x₀) + Fᵧ(P)(y - y₀) + F₂(P)(z - z₀) = 0</code><p>Một bề mặt là <b>trơn (nonsingular)</b> tại P nếu ∇F(P) ≠ 0.</p>",
+          "terms": {
+            "Nonsingular": "(Trơn hay không suy biến) Một điểm trên một bề mặt được gọi là trơn nếu bề mặt đó có một mặt phẳng tiếp tuyến được xác định rõ tại điểm đó. Điều này xảy ra khi gradient không phải là vector không."
+          }
+        },
+        {
+          "id": 14,
+          "title": "Trang 14: Ví dụ về Mặt phẳng tiếp tuyến",
+          "image": "images/calculus/week4/MA1521Chap4_page_14.png",
+          "notes": "<h3>Ví dụ</h3><p>Tìm tất cả các điểm không trơn trên bề mặt <code>x² + y² = z²</code> và xác định các mặt phẳng tiếp tuyến.</p><p><b>Giải pháp:</b></p><ul><li>Đặt <code>f(x, y, z) = x² + y² - z²</code>.</li><li>Tính các đạo hàm riêng: <code>fₓ = 2x, fᵧ = 2y, f₂ = -2z</code>.</li><li>Các đạo hàm này đồng thời bằng 0 chỉ tại điểm (0, 0, 0). Vậy đây là điểm suy biến (singular point) duy nhất.</li><li>Tại một điểm trơn bất kỳ (x₀, y₀, z₀), phương trình mặt phẳng tiếp tuyến là:<code>2x₀(x - x₀) + 2y₀(y - y₀) - 2z₀(z - z₀) = 0</code></li><li><code>⇔ x₀x + y₀y - z₀z = x₀² + y₀² - z₀² = 0</code> (vì điểm đó nằm trên bề mặt).</li></ul>",
+          "terms": {}
+        },
+        {
+          "id": 15,
+          "title": "Trang 15: Ví dụ & Hàm nhiều biến hơn",
+          "image": "images/calculus/week4/MA1521Chap4_page_15.png",
+          "notes": "<h3>Ví dụ về Đạo hàm riêng cấp cao</h3><p>Các ví dụ minh họa cách tính các đạo hàm riêng cấp hai và kiểm chứng Định lý Clairaut (<code>fₓᵧ = fᵧₓ</code>).</p><hr><h3>Hàm nhiều biến hơn (More Variables)</h3><p>Các khái niệm về hàm số, đạo hàm riêng, gradient, đạo hàm theo hướng, và quy tắc chuỗi có thể được mở rộng một cách tự nhiên cho các hàm có ba hoặc nhiều biến hơn (ví dụ: <code>w = f(x, y, z)</code>).</p><ul><li><b>Bề mặt mức (Level surface):</b> <code>f(x, y, z) = c</code>.</li><li><b>Gradient:</b> <code>∇f = fₓi + fᵧj + f₂k</code>.</li><li><b>Đạo hàm theo hướng:</b> <code>Dᵤf = ∇f • u</code>.</li><li><b>Quy tắc chuỗi:</b> <code>dw/dt = (∂w/∂x)(dx/dt) + (∂w/∂y)(dy/dt) + (∂w/∂z)(dz/dt)</code>.</li></ul>",
+          "terms": {
+            "Level Surface": "(Bề mặt mức) Sự tổng quát hóa của đường mức cho các hàm ba biến. Nó là một bề mặt trong không gian 3D mà tại đó hàm f(x, y, z) có một giá trị không đổi."
+          }
+        },
+        {
+          "id": 16,
+          "title": "Trang 16: Mặt phẳng tiếp tuyến (Tổng quát)",
+          "image": "images/calculus/week4/MA1521Chap4_page_16.png",
+          "notes": "<h3>Mặt phẳng tiếp tuyến (Tangent Plane)</h3><p>Vector gradient ∇F(x₀, y₀, z₀) là vector pháp tuyến của bề mặt mức <code>F(x, y, z) = c</code> tại điểm P(x₀, y₀, z₀).</p><p>Do đó, phương trình của <b>mặt phẳng tiếp tuyến</b> tại P là:</p><code>Fₓ(P)(x - x₀) + Fᵧ(P)(y - y₀) + F₂(P)(z - z₀) = 0</code><hr><h3>Điểm trơn và Điểm suy biến</h3><p><b>Định nghĩa:</b></p><ul><li>Một bề mặt là <b>trơn (nonsingular/smooth)</b> tại P nếu các đạo hàm riêng fₓ, fᵧ, f₂ tồn tại tại P và ít nhất một trong số chúng khác không (tức là ∇f(P) ≠ 0).</li><li>Bề mặt là <b>suy biến (singular)</b> tại P nếu nó không trơn tại P.</li></ul>",
+          "terms": {
+            "Nonsingular": "(Trơn hay không suy biến) Một điểm trên một bề mặt được gọi là trơn nếu bề mặt đó có một mặt phẳng tiếp tuyến được xác định rõ tại điểm đó. Điều này xảy ra khi gradient không phải là vector không.",
+            "Singular": "(Suy biến) Một điểm trên bề mặt mà tại đó bề mặt không 'trơn', ví dụ như có một góc nhọn hoặc một điểm chóp. Tại điểm này, gradient bằng vector không."
+          }
+        },
+        {
+          "id": 17,
+          "title": "Trang 17: Mặt phẳng tiếp tuyến & Ví dụ",
+          "image": "images/calculus/week4/MA1521Chap4_page_17.png",
+          "notes": "<h3>Mặt phẳng tiếp tuyến (Tangent Plane)</h3><p>Nhắc lại phương trình mặt phẳng tiếp tuyến của <code>z = f(x, y)</code>. Ta có thể suy ra các công thức cho đạo hàm riêng của z theo x và y nếu z được định nghĩa ngầm bởi phương trình <code>F(x, y, z) = c</code>.</p><p><b>Định lý:</b> Giả sử bề mặt <code>F(x, y, z) = c</code> là trơn (nonsingular) tại điểm P(x₀, y₀, z₀). Khi đó, mặt phẳng tiếp tuyến của nó tại P được cho bởi:</p><code>Fₓ(P)(x - x₀) + Fᵧ(P)(y - y₀) + F₂(P)(z - z₀) = 0</code><hr><h3>Ví dụ</h3><p>Tìm tất cả các điểm không trơn trên bề mặt <code>x² + y² = z²</code> và xác định các mặt phẳng tiếp tuyến.</p><p><b>Giải pháp:</b></p><ul><li>Đặt <code>f(x, y, z) = x² + y² - z²</code>.</li><li>Tính các đạo hàm riêng: <code>fₓ = 2x, fᵧ = 2y, f₂ = -2z</code>.</li><li>Điểm suy biến (singular point) duy nhất là (0, 0, 0).</li><li>Tại một điểm trơn bất kỳ (x₀, y₀, z₀), phương trình mặt phẳng tiếp tuyến là: <code>x₀x + y₀y - z₀z = 0</code>.</li></ul>",
+          "terms": {}
+        }
+      ]
+    },
+    {
+  "title": "Chương 5: Tối ưu hóa (Optimization)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 5",
+      "image": "images/calculus/week5/MA1521Chap5_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 5: Tối ưu hóa.</p><hr><h3>Mục lục Chương 5</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này, bao gồm các Giá trị Cực trị, Điểm tới hạn, Tối ưu hóa trên miền đóng, và Nhân tử Lagrange.</p>",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Giá trị Cực trị",
+      "image": "images/calculus/week5/MA1521Chap5_page_2.png",
+      "notes": "<h3>Giá trị Cực trị (Extreme Values)</h3><p><b>Hàm một biến:</b></p><ul><li>f có một <b>cực đại toàn cục (global maximum)</b> tại c nếu <code>f(c) ≥ f(x)</code> với mọi x.</li><li>f có một <b>cực tiểu toàn cục (global minimum)</b> tại c nếu <code>f(c) ≤ f(x)</code> với mọi x.</li></ul><p><b>Hàm hai biến:</b></p><ul><li>z = f(x, y) có một <b>cực đại toàn cục</b> tại (a, b) nếu <code>f(a, b) ≥ f(x, y)</code> với mọi (x, y).</li><li>z = f(x, y) có một <b>cực tiểu toàn cục</b> tại (a, b) nếu <code>f(a, b) ≤ f(x, y)</code> với mọi (x, y).</li></ul><hr><h3>Định lý Giá trị Cực trị cho Hàm hai biến</h3><p>Nếu z = f(x, y) là một hàm <b>liên tục</b> trên một miền <b>đóng, bị chặn (closed, bounded)</b> D, thì f sẽ đạt được các giá trị cực trị tuyệt đối trên D.</p>",
+      "terms": {
+        "Global Maximum": "(Cực đại toàn cục) Giá trị lớn nhất mà một hàm số đạt được trên toàn bộ miền xác định của nó.",
+        "Global Minimum": "(Cực tiểu toàn cục) Giá trị nhỏ nhất mà một hàm số đạt được trên toàn bộ miền xác định của nó.",
+        "Closed, Bounded Domain": "(Miền đóng, bị chặn) Một tập hợp các điểm trong không gian bao gồm cả các điểm biên của nó (đóng) và có thể được chứa hoàn toàn trong một vòng tròn/quả cầu có bán kính hữu hạn (bị chặn)."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Cực trị Địa phương",
+      "image": "images/calculus/week5/MA1521Chap5_page_3.png",
+      "notes": "<h3>Giá trị Cực trị Địa phương (Local Extreme Values)</h3><p><b>Định nghĩa:</b></p><ul><li>f có một <b>cực đại địa phương (local maximum)</b> tại (a, b) nếu <code>f(a, b) ≥ f(x, y)</code> với mọi (x, y) ở <b>lân cận</b> (a, b).</li><li>f có một <b>cực tiểu địa phương (local minimum)</b> tại (a, b) nếu <code>f(a, b) ≤ f(x, y)</code> với mọi (x, y) ở <b>lân cận</b> (a, b).</li></ul><hr><h3>Định lý Fermat cho Hàm một biến (nhắc lại)</h3><p>Nếu y = f(x) có một cực trị địa phương tại c và f'(c) tồn tại, thì f'(c) = 0. Về mặt hình học, điều này có nghĩa là đường tiếp tuyến phải nằm ngang.</p>",
+      "terms": {
+        "Local Maximum": "(Cực đại địa phương) Giá trị lớn nhất của một hàm số trong một vùng lân cận nhất định.",
+        "Local Minimum": "(Cực tiểu địa phương) Giá trị nhỏ nhất của một hàm số trong một vùng lân cận nhất định."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Trang 4: Cực trị Địa phương & Điểm tới hạn",
+      "image": "images/calculus/week5/MA1521Chap5_page_4.png",
+      "notes": "<h3>Cực trị Địa phương cho Hàm hai biến</h3><p>Nếu y = f(x, y) có một cực trị địa phương tại (a, b), ta kỳ vọng rằng mặt phẳng tiếp tuyến tại (a, b), nếu tồn tại, phải nằm ngang. Điều này có nghĩa là <code>fₓ(a, b) = 0</code> và <code>fᵧ(a, b) = 0</code>.</p><hr><h3>Tiêu chuẩn Đạo hàm bậc nhất</h3><p>Nếu z = f(x, y) có một cực trị địa phương tại (a, b) và các đạo hàm riêng fₓ, fᵧ tồn tại, thì <code>fₓ(a, b) = 0</code> và <code>fᵧ(a, b) = 0</code>.</p><hr><h3>Điểm tới hạn (Critical Point)</h3><p><b>Định nghĩa:</b> Một điểm (a, b) trong miền xác định D được gọi là <b>điểm tới hạn</b> nếu <code>fₓ(a, b) = fᵧ(a, b) = 0</code>, hoặc ít nhất một trong hai đạo hàm riêng không tồn tại.</p><p><b>Hệ quả:</b> Nếu z = f(x, y) có một cực trị địa phương tại (a, b), thì (a, b) là một điểm tới hạn của f.</p>",
+      "terms": {
+        "Critical Point": "(Điểm tới hạn) Một điểm trong miền xác định của một hàm nhiều biến tại đó gradient bằng vector không hoặc không tồn tại. Các điểm tới hạn là các 'ứng cử viên' cho các vị trí có cực trị địa phương."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Trang 5: Tiêu chuẩn Đạo hàm cấp hai",
+      "image": "images/calculus/week5/MA1521Chap5_page_5.png",
+      "notes": "<h3>Tiêu chuẩn Đạo hàm cấp hai</h3><p>Giả sử (a, b) là một điểm tới hạn của z = f(x, y). Làm thế nào để xác định nó là cực đại, cực tiểu, hay không phải cả hai?</p><p><b>Định nghĩa:</b> Một điểm tới hạn (a, b) được gọi là <b>điểm yên ngựa (saddle point)</b> nếu f không có cực trị địa phương tại đó.</p><hr><h3>Nhắc lại Hàm một biến</h3><p>Nếu f''(c) > 0, f có cực tiểu địa phương tại c. Nếu f''(c) < 0, f có cực đại địa phương tại c.</p><hr><h3>Tiêu chuẩn Đạo hàm cấp hai cho Hàm hai biến</h3><p>Định nghĩa ma trận <b>Hessian</b> H(x, y) và định thức của nó D(x, y) = fₓₓfᵧᵧ - (fₓᵧ)². Giả sử fₓ(a, b) = fᵧ(a, b) = 0.</p><ul><li>Nếu D(a, b) > 0 và fₓₓ(a, b) > 0, thì f có <b>cực tiểu địa phương</b> tại (a, b).</li><li>Nếu D(a, b) > 0 và fₓₓ(a, b) < 0, thì f có <b>cực đại địa phương</b> tại (a, b).</li><li>Nếu D(a, b) < 0, thì f có <b>điểm yên ngựa</b> tại (a, b).</li><li>Nếu D(a, b) = 0, tiêu chuẩn này không kết luận được.</li></ul>",
+      "terms": {
+        "Saddle Point": "(Điểm yên ngựa) Một điểm tới hạn không phải là cực trị địa phương. Tại điểm này, đồ thị có dạng giống như một cái yên ngựa.",
+        "Second Derivative Test": "(Tiêu chuẩn Đạo hàm cấp hai) Một phương pháp sử dụng các đạo hàm riêng cấp hai để xác định xem một điểm tới hạn là cực đại địa phương, cực tiểu địa phương, hay điểm yên ngựa.",
+        "Hessian Matrix": "(Ma trận Hessian) Một ma trận vuông chứa các đạo hàm riêng cấp hai của một hàm nhiều biến."
+      }
+    },
+    {
+      "id": 6,
+      "title": "Trang 6: Ví dụ về Tiêu chuẩn Đạo hàm cấp hai",
+      "image": "images/calculus/week5/MA1521Chap5_page_6.png",
+      "notes": "<h3>Ví dụ</h3><p>Tìm các cực trị địa phương của hàm <code>f(x, y) = x³ - y³ - 2xy + 6</code>.</p><ol><li><b>Tìm điểm tới hạn:</b> Giải hệ phương trình fₓ = 0 và fᵧ = 0, ta tìm được hai điểm tới hạn là (0, 0) và (-2/3, 2/3).</li><li><b>Tính đạo hàm cấp hai:</b> Tính fₓₓ, fᵧᵧ, và fₓᵧ.</li><li><b>Áp dụng Tiêu chuẩn Đạo hàm cấp hai:</b><ul><li>Tại (0, 0): D(0, 0) = -4 < 0 ⇒ (0, 0) là một điểm yên ngựa.</li><li>Tại (-2/3, 2/3): D > 0 và fₓₓ = -4 < 0 ⇒ f có một cực đại địa phương tại (-2/3, 2/3).</li></ul></li></ol>",
+      "terms": {}
+    },
+    {
+      "id": 7,
+      "title": "Trang 7: Ví dụ về Cực trị Tuyệt đối",
+      "image": "images/calculus/week5/MA1521Chap5_page_7.png",
+      "notes": "<h3>Ví dụ 1: Tìm cực trị tuyệt đối</h3><p>Tìm cực trị tuyệt đối của <code>T(x,y) = x² + 2y² - x</code> trên miền đóng <code>D = {(x, y) | x² + y² ≤ 1}</code>.</p><p><b>Bước 1: Tìm điểm tới hạn bên trong D.</b></p><ul><li>Giải hệ Tₓ = 0 và Tᵧ = 0, ta được điểm tới hạn là (1/2, 0). Điểm này nằm trong D.</li></ul><p><b>Bước 2: Tìm các giá trị cực trị trên biên của D.</b></p><ul><li>Biên là đường tròn x² + y² = 1. Ta tham số hóa biên hoặc thay thế y² = 1 - x² vào T, biến nó thành một hàm một biến f(x) trên [-1, 1].</li><li>Tìm các giá trị cực trị của f(x) trên [-1, 1] bằng Phương pháp Khoảng đóng.</li></ul><p><b>Bước 3: So sánh tất cả các giá trị.</b></p><p>So sánh giá trị của T tại điểm tới hạn và các điểm cực trị trên biên để tìm ra cực đại và cực tiểu tuyệt đối.</p>",
+      "terms": {}
+    },
+    {
+  "id": 8,
+  "title": "Trang 8: Cực trị Tuyệt đối trên Miền đóng & Ví dụ",
+  "image": "images/calculus/week5/MA1521Chap5_page_8.png",
+  "notes": "<h3>Cực trị Tuyệt đối trên Miền đóng, bị chặn</h3><p>Giả sử z = f(x, y) liên tục trên một miền đóng và bị chặn D.</p><p><b>Bước 1:</b> Tìm các điểm tới hạn của f ở <b>phần trong</b> của D.</p><p><b>Bước 2:</b> Tìm các giá trị cực trị của f trên <b>biên</b> của D. Thường bằng cách tham số hóa biên và đưa bài toán về hàm một biến.</p><p><b>Bước 3:</b> So sánh các giá trị của f(x, y) tại các điểm thu được ở Bước 1 và 2 để tìm ra cực đại và cực tiểu tuyệt đối.</p><hr><h3>Ví dụ</h3><p>Tìm cực trị tuyệt đối của <code>T(x,y) = x² + 2y² - x</code> trên miền <code>D = {(x, y) | x² + y² ≤ 1}</code>.</p><ol><li><b>Điểm tới hạn trong D:</b> (1/2, 0).</li><li><b>Cực trị trên biên:</b> Thay <code>y² = 1 - x²</code>, ta tìm cực trị của hàm <code>f(x) = -x² - x + 2</code> trên [-1, 1]. Các điểm cần xét là x=-1, x=1 (điểm cuối) và x=-1/2 (điểm tới hạn của f(x)).</li><li><b>So sánh các giá trị:</b> So sánh T(1/2, 0), T tại các điểm tìm được trên biên. Kết luận: Cực tiểu tuyệt đối là -1/4 tại (1/2, 0), và Cực đại tuyệt đối là 9/4 tại (-1/2, ±√3/2).</li></ol>",
+  "terms": {}
+},
+    {
     "id": 9,
-    "title": "Trang 9: Ví dụ & Giới thiệu Chuỗi",
-    "image": "images/calculus/week3/MA1521Chap3_page_9.png",
-    "notes": "<h3>Ví dụ: Nghịch lý Zeno (biến thể)</h3><p>Một đoạn thẳng có độ dài 1. Ta cắt đi một nửa ở ngày đầu tiên. Ở ngày thứ hai, ta cắt đi một nửa của phần còn lại, và cứ tiếp tục như vậy. Tổng độ dài đã cắt sau n ngày là bao nhiêu?</p><p>Tổng độ dài đã cắt là: <code>Sₙ = 1/2 + 1/4 + 1/8 + ... + 1/2ⁿ</code>.</p><hr><h3>Ví dụ: Bài toán bàn cờ</h3><p>Đặt 1 hạt gạo vào ô đầu tiên của bàn cờ. Các ô tiếp theo có số hạt gạo gấp đôi ô trước đó. Tổng số hạt gạo trên bàn cờ là bao nhiêu?</p><p>Tổng số hạt gạo là: <code>S₆₄ = 1 + 2 + 4 + ... + 2⁶³</code>.</p>",
+    "title": "Trang 9: Ví dụ về Cực trị trên miền tam giác",
+    "image": "images/calculus/week5/MA1521Chap5_page_9.png",
+    "notes": "<h3>Ví dụ: Cực trị trên miền đóng</h3><p>Tìm cực trị của <code>f(x, y) = 2 + 2x + 2y - x² - y²</code> trên miền tam giác đóng giới hạn bởi các đường x=0, y=0, và x+y=9.</p><p><b>Bước 1: Tìm điểm tới hạn bên trong.</b></p><ul><li>Giải hệ fₓ = 0 và fᵧ = 0, ta được điểm tới hạn (1, 1). f(1, 1) = 4.</li></ul><p><b>Bước 2: Tìm cực trị trên các cạnh biên.</b></p><ul><li><b>Cạnh (0,0) đến (9,0):</b> Hàm trở thành <code>f(x, 0) = 2 + 2x - x²</code>. Tìm cực trị của hàm này trên [0, 9].</li><li><b>Cạnh (0,0) đến (0,9):</b> Hàm trở thành <code>f(0, y) = 2 + 2y - y²</code>. Tìm cực trị của hàm này trên [0, 9].</li><li><b>Cạnh x+y=9:</b> Thay y = 9-x vào f, ta được hàm một biến <code>f(x, 9-x)</code>. Tìm cực trị của hàm này trên [0, 9].</li></ul><p><b>Bước 3: So sánh tất cả các giá trị.</b> So sánh giá trị của f tại (1,1) và tất cả các điểm cực trị tìm được trên biên để tìm ra cực đại và cực tiểu tuyệt đối.</p>",
     "terms": {}
   },
   {
     "id": 10,
-    "title": "Trang 10: Chuỗi (Series) & Chuỗi cấp số nhân",
-    "image": "images/calculus/week3/MA1521Chap3_page_10.png",
-    "notes": "<h3>Chuỗi (Series)</h3><p>Cho {aₙ} là một dãy số. Tổng của n số hạng đầu tiên tạo thành một dãy số mới {Sₙ}, gọi là <b>dãy các tổng riêng (sequence of partial sums)</b>.</p><code>Sₙ = a₁ + a₂ + ... + aₙ</code><p>Giới hạn của dãy Sₙ khi n → ∞ được gọi là một <b>chuỗi vô hạn (infinite series)</b>:</p><code>lim(n→∞) Sₙ = Σ(n=1 to ∞) aₙ</code><ul><li>Nếu dãy {Sₙ} hội tụ, ta nói chuỗi Σaₙ <b>hội tụ (convergent)</b>.</li><li>Nếu dãy {Sₙ} phân kỳ, ta nói chuỗi Σaₙ <b>phân kỳ (divergent)</b>.</li></ul><hr><h3>Ví dụ: Chuỗi cấp số nhân</h3><p>Các ví dụ minh họa về chuỗi cấp số nhân. Một chuỗi cấp số nhân hội tụ nếu và chỉ nếu giá trị tuyệt đối của công bội nhỏ hơn 1.</p>",
+    "title": "Trang 10: Bất đẳng thức AM-GM & Cực trị có điều kiện",
+    "image": "images/calculus/week5/MA1521Chap5_page_10.png",
+    "notes": "<h3>Ví dụ: Tối đa hóa xyz</h3><p>Chứng minh rằng <code>(x+y+z)/3 ≥ ³√(xyz)</code> (Bất đẳng thức AM-GM cho n=3).</p><p>Bài toán tương đương với việc tối đa hóa hàm <code>f(x, y, z) = xyz</code> với điều kiện <code>x+y+z = A</code>. Bằng cách tìm điểm tới hạn, ta có thể chứng minh giá trị lớn nhất xảy ra khi x=y=z, từ đó suy ra bất đẳng thức.</p><hr><h3>Cực trị có điều kiện (Extreme Values with Restriction)</h3><p>Xét lại bài toán tìm cực trị của <code>T(x, y) = x² + 2y²</code> với điều kiện <code>x² + y² = 1</code>.</p><p>Về mặt hình học, ta đang tìm điểm cao nhất và thấp nhất trên đường giao của bề mặt T(x, y) và hình trụ x² + y² = 1.</p><p>Tại các điểm cực trị, các đường mức của T(x, y) phải <b>tiếp xúc</b> với đường cong điều kiện g(x, y) = 0. Điều này có nghĩa là các vector gradient của chúng phải song song với nhau: <code>∇T = λ∇g</code>.</p>",
     "terms": {
-      "Series (Chuỗi)": "Tổng của các số hạng của một dãy số. Một chuỗi vô hạn là giới hạn của dãy các tổng riêng.",
-      "Partial Sum (Tổng riêng)": "Tổng của một số hữu hạn các số hạng đầu tiên của một dãy số.",
-      "Geometric Series (Chuỗi cấp số nhân)": "Một chuỗi trong đó tỷ lệ giữa hai số hạng liên tiếp là một hằng số, gọi là công bội."
+      "AM-GM Inequality": "(Bất đẳng thức Trung bình cộng - Trung bình nhân) Phát biểu rằng trung bình cộng của một tập hợp các số thực không âm luôn lớn hơn hoặc bằng trung bình nhân của chúng.",
+      "Constrained Optimization": "(Tối ưu hóa có điều kiện) Quá trình tối ưu hóa một hàm mục tiêu với một hoặc nhiều ràng buộc."
     }
   },
   {
     "id": 11,
-    "title": "Trang 11: Chuỗi cấp số nhân & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_11.png",
-    "notes": "<h3>Chuỗi cấp số nhân (The Geometric Series)</h3><p>Xét một dãy cấp số nhân <code>a, ar, ar², ..., arⁿ⁻¹,...</code>. Tổng của nó được gọi là một <b>chuỗi cấp số nhân</b>.</p><p>Tổng của n số hạng đầu tiên là:</p><code>Sₙ = a(1 - rⁿ) / (1 - r)</code><p>Tổng của chuỗi vô hạn là giới hạn của Sₙ khi n → ∞:</p><code>Σ(n=1 to ∞) arⁿ⁻¹ = { a / (1 - r), nếu |r| < 1; phân kỳ, nếu |r| ≥ 1 }</code><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách xác định sự hội tụ của một chuỗi bằng cách đưa nó về dạng chuỗi cấp số nhân và kiểm tra công bội r.</p>",
-    "terms": {}
+    "title": "Trang 11: Phương pháp Nhân tử Lagrange",
+    "image": "images/calculus/week5/MA1521Chap5_page_11.png",
+    "notes": "<h3>Phương pháp Nhân tử Lagrange (The Method of Lagrange Multipliers)</h3><p>Để tìm các giá trị cực đại và cực tiểu địa phương của hàm <code>z = f(x, y)</code> với điều kiện ràng buộc <code>g(x, y) = 0</code>:</p><p>Tìm tất cả các giá trị x, y, và λ thỏa mãn đồng thời hệ phương trình:</p><ul><li><code>fₓ = λgₓ</code></li><li><code>fᵧ = λgᵧ</code></li><li><code>g(x, y) = 0</code></li></ul><p>Đánh giá f tại tất cả các điểm (x, y) tìm được. Giá trị lớn nhất là cực đại, giá trị nhỏ nhất là cực tiểu.</p><hr><h3>Tối ưu hóa Tuyệt đối với Ràng buộc</h3><p>Để tìm cực trị tuyệt đối của f(x, y) với điều kiện g(x, y) = 0:</p><ol><li>Kiểm tra các điểm trên đường cong g(x, y) = 0 mà tại đó ∇g = 0 (nếu có).</li><li>Sử dụng Nhân tử Lagrange để tìm các điểm cực trị trên phần còn lại của đường cong.</li><li>So sánh các giá trị của f tại các điểm thu được.</li></ol>",
+    "terms": {
+      "Lagrange Multiplier": "(Nhân tử Lagrange) Một kỹ thuật trong tối ưu hóa toán học để tìm các điểm cực trị của một hàm số với một hoặc nhiều ràng buộc. Hằng số λ được gọi là nhân tử Lagrange."
+    }
   },
   {
     "id": 12,
-    "title": "Trang 12: Ví dụ về Chuỗi cấp số nhân",
-    "image": "images/calculus/week3/MA1521Chap3_page_12.png",
-    "notes": "<h3>Ví dụ 1: Tính tổng chuỗi</h3><p>Tính tổng của chuỗi cấp số nhân <code>Σ(n=1 to ∞) 5ⁿ / 3ⁿ⁺¹</code>. Bằng cách biến đổi, ta có thể viết lại chuỗi dưới dạng <code>Σ (5/9) * (5/3)ⁿ⁻¹</code>. Vì công bội r = 5/3 > 1, chuỗi này phân kỳ.</p><hr><h3>Ví dụ 2: Tìm khoảng hội tụ</h3><p>Tìm khoảng giá trị của x để chuỗi <code>Σ(n=1 to ∞) (2x-1)ⁿ⁻² / 3ⁿ⁻¹</code> hội tụ.</p><p>Đây là một chuỗi cấp số nhân với công bội <code>r = (2x-1)/3</code>. Chuỗi hội tụ khi <code>|r| < 1</code>.</p><p>Giải bất phương trình <code>|(2x-1)/3| < 1</code>, ta được <code>-1 < x < 2</code>. Đây chính là khoảng hội tụ.</p>",
-    "terms": {
-      "Interval of Convergence": "(Khoảng hội tụ) Tập hợp tất cả các giá trị của biến số x mà tại đó một chuỗi lũy thừa hội tụ."
-    }
+    "title": "Trang 12: Ví dụ về Nhân tử Lagrange",
+    "image": "images/calculus/week5/MA1521Chap5_page_12.png",
+    "notes": "<h3>Ví dụ: Tối đa hóa diện tích hình chữ nhật nội tiếp ellipse</h3><p>Tìm diện tích lớn nhất của một hình chữ nhật nội tiếp trong ellipse <code>x²/a² + y²/b² = 1</code>.</p><p><b>Thiết lập bài toán:</b></p><ul><li><b>Mục tiêu:</b> Tối đa hóa Diện tích <code>f(x, y) = 4xy</code>.</li><li><b>Ràng buộc:</b> <code>g(x, y) = x²/a² + y²/b² - 1 = 0</code>.</li></ul><p><b>Áp dụng Nhân tử Lagrange:</b></p><p>Giải hệ phương trình <code>∇f = λ∇g</code>, ta có:</p><ul><li><code>4y = λ(2x/a²)</code></li><li><code>4x = λ(2y/b²)</code></li></ul><p>Kết hợp với phương trình ràng buộc, ta giải ra được x, y và từ đó tìm được diện tích lớn nhất là <code>2ab</code>.</p>",
+    "terms": {}
   },
   {
     "id": 13,
-    "title": "Trang 13: Chuỗi lồng (Telescoping Series)",
-    "image": "images/calculus/week3/MA1521Chap3_page_13.png",
-    "notes": "<h3>Ví dụ về Chuỗi lồng</h3><p>Xét chuỗi <code>Σ 1 / (n(n+1))</code> có hội tụ không?</p><p>Ta có thể phân tích số hạng tổng quát: <code>aₙ = 1/n - 1/(n+1)</code>.</p><p>Khi tính tổng riêng Sₙ, các số hạng ở giữa sẽ triệt tiêu lẫn nhau:</p><code>Sₙ = (1 - 1/2) + (1/2 - 1/3) + ... + (1/n - 1/(n+1)) = 1 - 1/(n+1)</code><p>Lấy giới hạn khi n → ∞, ta có <code>lim Sₙ = 1</code>. Vậy chuỗi hội tụ và có tổng bằng 1.</p><hr><h3>Chuỗi lồng (Telescoping Series)</h3><p>Tổng riêng của một chuỗi lồng chỉ có một số hữu hạn các số hạng sau khi triệt tiêu. Việc tính toán như vậy được gọi là <b>phương pháp sai phân (method of differences)</b>.</p>",
-    "terms": {
-      "Telescoping Series": "(Chuỗi lồng hay chuỗi triệt tiêu) Một chuỗi trong đó hầu hết các số hạng đều bị triệt tiêu khi tính tổng riêng, chỉ còn lại một vài số hạng đầu và cuối."
-    }
+    "title": "Trang 13: Ví dụ về Nhân tử Lagrange (tiếp)",
+    "image": "images/calculus/week5/MA1521Chap5_page_13.png",
+    "notes": "<h3>Ví dụ: Khoảng cách ngắn nhất</h3><p>Tìm khoảng cách ngắn nhất từ điểm P(x₀, y₀) đến đường thẳng ax + by = c.</p><p><b>Thiết lập bài toán:</b></p><ul><li><b>Mục tiêu:</b> Tối thiểu hóa bình phương khoảng cách <code>f(x, y) = (x - x₀)² + (y - y₀)²</code>.</li><li><b>Ràng buộc:</b> <code>g(x, y) = ax + by - c = 0</code>.</li></ul><p><b>Áp dụng Nhân tử Lagrange:</b></p><p>Giải hệ phương trình <code>∇f = λ∇g</code>, ta có thể tìm được tọa độ (x, y) của điểm trên đường thẳng gần P nhất. Thay các tọa độ này vào công thức khoảng cách, ta thu được công thức tính khoảng cách từ một điểm đến một đường thẳng quen thuộc.</p>",
+    "terms": {}
   },
   {
     "id": 14,
-    "title": "Trang 14: Tiêu chuẩn Tỷ lệ (Ratio Test)",
-    "image": "images/calculus/week3/MA1521Chap3_page_14.png",
-    "notes": "<h3>Giới thiệu Tiêu chuẩn Tỷ lệ</h3><p>Xét chuỗi Σaₙ. Chúng ta có thể biết được sự hội tụ của nó bằng cách kiểm tra tỷ lệ của các số hạng liên tiếp hay không?</p><p>Nếu <code>|aₙ₊₁ / aₙ| = L</code>, thì chuỗi |aₙ| giống như một chuỗi cấp số nhân có công bội L. Do đó, ta có thể kỳ vọng rằng chuỗi sẽ hội tụ nếu |L| < 1.</p><hr><h3>Định lý Tiêu chuẩn Tỷ lệ</h3><p>Cho Σaₙ là một chuỗi. Giả sử <code>lim(n→∞) |aₙ₊₁ / aₙ| = L</code>.</p><ul><li>Nếu <code>0 ≤ L < 1</code>, chuỗi <b>hội tụ tuyệt đối</b> (và do đó hội tụ).</li><li>Nếu <code>1 < L ≤ ∞</code>, chuỗi <b>phân kỳ</b>.</li><li>Nếu <code>L = 1</code>, tiêu chuẩn này <b>không kết luận được</b>.</li></ul>",
-    "terms": {
-      "Ratio Test": "(Tiêu chuẩn Tỷ lệ hay Tiêu chuẩn D'Alembert) Một bài kiểm tra sự hội tụ của chuỗi, rất hữu ích cho các chuỗi có chứa giai thừa hoặc lũy thừa.",
-      "Absolute Convergence": "(Hội tụ tuyệt đối) Một chuỗi Σaₙ được gọi là hội tụ tuyệt đối nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ. Hội tụ tuyệt đối suy ra hội tụ."
-    }
+    "title": "Trang 14: Nhân tử Lagrange cho nhiều biến",
+    "image": "images/calculus/week5/MA1521Chap5_page_14.png",
+    "notes": "<h3>Nhân tử Lagrange cho nhiều biến hơn</h3><p>Phương pháp Nhân tử Lagrange có thể được mở rộng cho các hàm có ba hoặc nhiều biến hơn.</p><p>Để tìm các giá trị cực trị của <code>w = f(x, y, z)</code> với điều kiện <code>g(x, y, z) = 0</code>, ta giải hệ phương trình <code>∇f = λ∇g</code>, tức là:</p><ul><li><code>fₓ = λgₓ</code></li><li><code>fᵧ = λgᵧ</code></li><li><code>f₂ = λg₂</code></li><li><code>g(x, y, z) = 0</code></li></ul><hr><h3>Cực trị Tuyệt đối với Ràng buộc</h3><p>Để tìm cực trị tuyệt đối của f với điều kiện g=0 trên một bề mặt bị chặn (bounded surface), ta thực hiện các bước tương tự như phương pháp khoảng đóng: tìm các điểm cực trị trên phần trong của bề mặt bằng Nhân tử Lagrange và so sánh với các giá trị trên biên của bề mặt đó.</p>",
+    "terms": {}
   },
   {
     "id": 15,
-    "title": "Trang 15: Ví dụ & Tiêu chuẩn Căn (Root Test)",
-    "image": "images/calculus/week3/MA1521Chap3_page_15.png",
-    "notes": "<h3>Ví dụ về Tiêu chuẩn Tỷ lệ</h3><p>Các ví dụ minh họa cách áp dụng Tiêu chuẩn Tỷ lệ để xác định sự hội tụ của chuỗi có chứa giai thừa và lũy thừa.</p><hr><h3>Giới thiệu Tiêu chuẩn Căn</h3><p>Nếu <code>lim(n→∞) ⁿ√|aₙ| = L</code>, thì chuỗi |aₙ| cũng 'tương tự' như một chuỗi cấp số nhân có công bội L.</p><p>Ta có thể đoán rằng Tiêu chuẩn Căn sẽ có cùng kết luận như Tiêu chuẩn Tỷ lệ. Chúng có cùng ưu điểm và nhược điểm. Tuy nhiên, đôi khi Tiêu chuẩn Căn hoạt động tốt hơn.</p>",
+    "title": "Trang 15: Ví dụ về Nhân tử Lagrange cho 3 biến",
+    "image": "images/calculus/week5/MA1521Chap5_page_15.png",
+    "notes": "<h3>Ví dụ 1: Bất đẳng thức AM-GM</h3><p>Chứng minh Bất đẳng thức AM-GM <code>(x+y+z)/3 ≥ ³√(xyz)</code> bằng cách tối đa hóa hàm <code>f(x, y, z) = xyz</code> với điều kiện <code>g(x, y, z) = x + y + z - A = 0</code>.</p><p>Sử dụng Nhân tử Lagrange, ta tìm được giá trị lớn nhất xảy ra khi <code>x = y = z = A/3</code>, từ đó suy ra bất đẳng thức.</p><hr><h3>Ví dụ 2: Cực trị trên mặt cầu</h3><p>Tìm giá trị lớn nhất và nhỏ nhất của <code>f(x, y, z) = ax + by + cz</code> trên mặt cầu đơn vị <code>x² + y² + z² = 1</code>.</p><p>Áp dụng Nhân tử Lagrange, ta giải hệ phương trình và tìm được giá trị lớn nhất là <code>sqrt(a²+b²+c²)</code> và giá trị nhỏ nhất là <code>-sqrt(a²+b²+c²)</code>.</p>",
     "terms": {}
   },
   {
     "id": 16,
-    "title": "Trang 16: Tiêu chuẩn Căn & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_16.png",
-    "notes": "<h3>Định lý Tiêu chuẩn Căn (The Root Test)</h3><p>Cho Σaₙ là một chuỗi. Giả sử <code>lim(n→∞) ⁿ√|aₙ| = L</code>.</p><ul><li>Nếu <code>0 ≤ L < 1</code>, chuỗi <b>hội tụ tuyệt đối</b>.</li><li>Nếu <code>1 < L ≤ ∞</code>, chuỗi <b>phân kỳ</b>.</li><li>Nếu <code>L = 1</code>, tiêu chuẩn này <b>không kết luận được</b>.</li></ul><hr><h3>Ví dụ</h3><p>Tiêu chuẩn Căn có thể hoạt động tốt hơn Tiêu chuẩn Tỷ lệ trong một số trường hợp, chẳng hạn như ví dụ về chuỗi có các số hạng chẵn và lẻ được định nghĩa khác nhau. Trong ví dụ này, Tiêu chuẩn Tỷ lệ không đưa ra kết luận, nhưng Tiêu chuẩn Căn cho thấy chuỗi hội tụ.</p>",
+    "title": "Trang 16: Cực trị với Hai Ràng buộc",
+    "image": "images/calculus/week5/MA1521Chap5_page_16.png",
+    "notes": "<h3>Cực trị với Hai Ràng buộc</h3><p>Để tìm các giá trị cực trị của <code>w = f(x, y, z)</code> với hai điều kiện ràng buộc <code>g(x, y, z) = 0</code> và <code>h(x, y, z) = 0</code>.</p><p><b>Phương pháp Nhân tử Lagrange:</b></p><p>Tìm các giá trị x, y, z, λ, và μ thỏa mãn đồng thời hệ phương trình:</p><code>∇f = λ∇g + μ∇h</code><p>tức là:</p><ul><li><code>fₓ = λgₓ + μhₓ</code></li><li><code>fᵧ = λgᵧ + μhᵧ</code></li><li><code>f₂ = λg₂ + μh₂</code></li><li><code>g(x, y, z) = 0</code></li><li><code>h(x, y, z) = 0</code></li></ul><p><b>Ý tưởng hình học:</b> Tại điểm cực trị, vector gradient của hàm mục tiêu (∇f) phải nằm trong mặt phẳng được xác định bởi các vector gradient của các hàm ràng buộc (∇g và ∇h).</p>",
+    "terms": {}
+  },
+  {
+    "id": 17,
+    "title": "Trang 17: Ví dụ về Hai Ràng buộc",
+    "image": "images/calculus/week5/MA1521Chap5_page_17.png",
+    "notes": "<h3>Ví dụ: Tìm cực trị với Hai Ràng buộc</h3><p>Tìm các giá trị cực trị của hàm <code>f(x, y, z) = x³ + y³ + z³</code> với hai điều kiện ràng buộc <code>g(x, y, z) = x + y + z - 1 = 0</code> và <code>h(x, y, z) = x² + y² + z² - 1 = 0</code>.</p><p><b>Giải pháp:</b></p><p>Thiết lập hệ phương trình <code>∇f = λ∇g + μ∇h</code>. Đây là một hệ phương trình phi tuyến tính phức tạp. Bằng cách phân tích và loại trừ các biến, ta có thể tìm ra các điểm ứng cử viên. So sánh giá trị của f tại các điểm này để tìm ra cực đại và cực tiểu.</p>",
+    "terms": {}
+  }
+  ]
+},
+    {
+  "title": "Chương 6: Tích phân (Integrals)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 6",
+      "image": "images/calculus/week6.1/MA1521Chap6-1_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 6: Tích phân.</p><hr><h3>Mục lục Chương 6</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này, bao gồm Bài toán Diện tích, Tích phân xác định, các Định lý Cơ bản của Giải tích, và các Kỹ thuật tính Tích phân.</p>",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Bài toán Diện tích",
+      "image": "images/calculus/week6.1/MA1521Chap6-1_page_2.png",
+      "notes": "<h3>Bài toán Diện tích (The Area Problem)</h3><p>Làm thế nào để tìm diện tích của một vùng trên một mặt phẳng?</p><ul><li>Đối với <b>hình chữ nhật</b> có chiều dài a và chiều rộng b, diện tích là <code>S = ab</code>.</li><li>Đối với <b>hình bình hành</b> có cạnh đáy a và chiều cao h, diện tích là <code>S = ah</code>.</li></ul><hr><h3>Diện tích Đa giác</h3><p>Đối với một tam giác có cạnh đáy a và chiều cao h, diện tích là <code>S = (1/2)ah</code>.</p><p>Tổng quát, với một đa giác bất kỳ, ta có thể tìm diện tích của nó vì nó có thể được chia thành các tam giác.</p>",
+      "terms": {}
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Bài toán Diện tích & Tính số Pi",
+      "image": "images/calculus/week6.1/MA1521Chap6-1_page_3.png",
+      "notes": "<h3>Bài toán Diện tích (tiếp)</h3><p>Tuy nhiên, nếu diện tích không bị giới hạn bởi các đoạn thẳng mà bởi các đường cong thì phải làm thế nào?</p><p>Chúng ta có thể sử dụng các đa giác để <b>xấp xỉ</b> diện tích. Cụ thể, ta có thể sử dụng các đa giác đều để xấp xỉ <b>diện tích của hình tròn</b>. Archimedes là người đầu tiên sử dụng phương pháp này để tính toán số π.</p><hr><h3>Tính toán số π: Phương pháp Archimedes</h3><p>π là tỷ lệ giữa chu vi của một hình tròn và đường kính của nó. Chu vi của một hình tròn đơn vị là 2π. Diện tích của một hình tròn đơn vị là π.</p><p>Bằng cách nội tiếp một đa giác đều n-cạnh vào một hình tròn đơn vị và cho n tiến đến vô cực, diện tích của đa giác sẽ tiến đến diện tích của hình tròn, tức là π. Công thức diện tích của đa giác n-cạnh và giới hạn của nó cho thấy kết quả bằng π.</p>",
+      "terms": {
+        "π (pi)": "Một hằng số toán học, là tỷ lệ giữa chu vi của một hình tròn và đường kính của nó, xấp xỉ bằng 3.14159.",
+        "Archimedes": "Một nhà toán học, vật lý học, kỹ sư, nhà phát minh và nhà thiên văn học người Hy Lạp cổ đại. Ông là một trong những nhà khoa học hàng đầu của thời cổ đại."
+      }
+    },
+    {
+    "id": 4,
+    "title": "Trang 4: Tính Pi & Xấp xỉ bằng Hình chữ nhật",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_4.png",
+    "notes": "<h3>Tính toán số π: Phương pháp Archimedes (tiếp)</h3><p>Ngoài ra, π có thể được định nghĩa là diện tích của hình tròn đơn vị.</p><p>Các nhà toán học trong lịch sử đã sử dụng phương pháp đa giác để xấp xỉ π với độ chính xác ngày càng cao:</p><ul><li><b>Archimedes:</b> 3.14163 (đa giác 96 cạnh).</li><li><b>Lưu Huy (Liu Hui):</b> 3.14159 (đa giác 3072 cạnh).</li><li><b>Tổ Xung Chi (Zu Chongzhi):</b> 3.1415926 (đa giác 12288 cạnh).</li></ul><hr><h3>Tính toán số π: Xấp xỉ bằng Hình chữ nhật</h3><p>Xét diện tích của hình tròn đơn vị trong góc phần tư thứ nhất (có diện tích là π/4).</p><p>Ta có thể xấp xỉ diện tích này bằng tổng diện tích của các hình chữ nhật nội tiếp (Rₙ) hoặc ngoại tiếp (Lₙ). Khi số lượng hình chữ nhật n tăng lên, giá trị xấp xỉ sẽ ngày càng gần với giá trị thực của π/4.</p>",
+    "terms": {}
+  },
+  {
+    "id": 5,
+    "title": "Trang 5: Tích phân Xác định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_5.png",
+    "notes": "<h3>Tích phân Xác định (Definite Integral)</h3><p>Cho f là một hàm liên tục trên [a, b].</p><ol><li><b>Chia đoạn:</b> Chia [a, b] thành n đoạn con bằng nhau, mỗi đoạn có độ dài Δx = (b-a)/n.</li><li><b>Chọn điểm mẫu:</b> Lấy các điểm mẫu xᵢ* từ mỗi đoạn con.</li><li><b>Tính tổng Riemann:</b> Tính tổng <code>Σ(i=1 to n) f(xᵢ*)Δx</code>.</li></ol><p><b>Tích phân xác định</b> của f từ a đến b là giới hạn của tổng Riemann khi n → ∞:</p><code>∫ₐᵇ f(x)dx = lim(n→∞) Σ(i=1 to n) f(xᵢ*)Δx</code><p><b>Ký hiệu Leibniz:</b></p><ul><li>∫ là dấu tích phân.</li><li>a là cận dưới, b là cận trên.</li><li>f(x) là hàm dưới dấu tích phân (integrand).</li></ul>",
     "terms": {
-      "Root Test": "(Tiêu chuẩn Căn hay Tiêu chuẩn Cauchy) Một bài kiểm tra sự hội tụ của chuỗi, đặc biệt hữu ích cho các chuỗi có số hạng chứa lũy thừa bậc n."
+      "Definite Integral": "(Tích phân xác định) Một khái niệm trong giải tích, có thể được hiểu là diện tích có dấu của vùng nằm giữa đồ thị của một hàm số và trục hoành trên một khoảng cho trước.",
+      "Riemann Sum": "(Tổng Riemann) Một phương pháp xấp xỉ diện tích dưới đường cong bằng tổng diện tích của một loạt các hình chữ nhật."
+    }
+  },
+  {
+    "id": 6,
+    "title": "Trang 6: Ví dụ về Tích phân Xác định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_6.png",
+    "notes": "<h3>Ví dụ 1: Tính tích phân của x²</h3><p>Tính <code>A = ∫₀¹ x²dx</code>.</p><p>Bằng cách chia đoạn [0, 1] thành n đoạn con và chọn điểm mẫu là điểm cuối bên phải (xᵢ* = i/n), ta có thể thiết lập tổng Riemann Sₙ.</p><p>Sử dụng công thức tổng các bình phương <code>Σi² = n(n+1)(2n+1)/6</code>, ta tính được giới hạn của Sₙ khi n → ∞ là 1/3.</p><hr><h3>Ví dụ 2: Tính tích phân của cos(x)</h3><p>Tính <code>A = ∫₀<sup>π/2</sup> cos(x)dx</code>.</p><p>Tương tự, ta thiết lập tổng Riemann cho hàm cos(x) trên đoạn [0, π/2]. Việc tính giới hạn của tổng này phức tạp hơn và thường đòi hỏi các công thức lượng giác nâng cao hoặc các định lý cơ bản của giải tích (sẽ học sau).</p>",
+    "terms": {}
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Ý nghĩa Hình học của Tích phân",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_7.png",
+    "notes": "<h3>Ý nghĩa Hình học của Tích phân</h3><p>Nếu <code>f(x) ≥ 0</code> với mọi x, thì tích phân xác định <code>∫ₐᵇ f(x)dx</code> biểu diễn <b>diện tích</b> của vùng nằm giữa đồ thị <code>y = f(x)</code> và trục x, từ x=a đến x=b.</p><hr><h3>Diện tích và Diện tích thực</h3><p>Nếu f(x) có thể nhận giá trị âm:</p><ul><li>A⁺ là diện tích của vùng nằm <b>trên</b> trục x.</li><li>A⁻ là diện tích của vùng nằm <b>dưới</b> trục x.</li><li>Tích phân xác định <code>∫ₐᵇ f(x)dx = A⁺ - A⁻</code>, được gọi là <b>diện tích thực (net area)</b>.</li></ul><p>Để tìm <b>diện tích hình học (area)</b> giới hạn bởi y = f(x) và trục x, ta phải tính <code>∫ₐᵇ |f(x)|dx</code>.</p>",
+    "terms": {
+      "Net Area": "(Diện tích thực hay diện tích đại số) Diện tích của vùng nằm trên trục x trừ đi diện tích của vùng nằm dưới trục x. Tích phân xác định tính toán diện tích thực."
+    }
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Các tính chất của Tích phân Xác định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_8.png",
+    "notes": "<h3>Các tính chất của Tích phân Xác định</h3><ul><li><b>Nối khoảng:</b> <code>∫ₐᶜ f(x)dx + ∫cᵇ f(x)dx = ∫ₐᵇ f(x)dx</code>.</li><li><b>Đảo cận:</b> <code>∫bₐ f(x)dx = -∫ₐᵇ f(x)dx</code>.</li><li><b>Cận trùng nhau:</b> <code>∫ₐᵃ f(x)dx = 0</code>.</li><li><b>Tích phân của hằng số:</b> <code>∫ₐᵇ c dx = c(b-a)</code>.</li><li><b>Tính tuyến tính:</b><ul><li><code>∫ₐᵇ c*f(x)dx = c * ∫ₐᵇ f(x)dx</code>.</li><li><code>∫ₐᵇ [f(x) ± g(x)]dx = ∫ₐᵇ f(x)dx ± ∫ₐᵇ g(x)dx</code>.</li></ul></li></ul>",
+    "terms": {}
+  },
+   {
+    "id": 9,
+    "title": "Trang 9: Tính chất của Tích phân & Ví dụ",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_9.png",
+    "notes": "<h3>Tính chất So sánh của Tích phân</h3><ul><li>Nếu <code>f(x) ≥ 0</code> trên [a, b], thì <code>∫ₐᵇ f(x)dx ≥ 0</code>.</li><li>Nếu <code>f(x) ≥ g(x)</code> trên [a, b], thì <code>∫ₐᵇ f(x)dx ≥ ∫ₐᵇ g(x)dx</code>.</li><li>Nếu <code>m ≤ f(x) ≤ M</code> trên [a, b], thì <code>m(b-a) ≤ ∫ₐᵇ f(x)dx ≤ M(b-a)</code>.</li></ul><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách áp dụng các tính chất trên để tính toán hoặc ước lượng giá trị của một tích phân.</p>",
+    "terms": {}
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Định lý Cơ bản của Giải tích, Phần I",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_10.png",
+    "notes": "<h3>Định lý Cơ bản của Giải tích, Phần I (FTC1)</h3><p>Cho f là một hàm liên tục trên [a, b]. Ta định nghĩa một hàm mới g(x) như sau:</p><code>g(x) = ∫ₐˣ f(t)dt</code><p>Hàm g(x) này biểu diễn diện tích tích lũy dưới đồ thị của f từ a đến x.</p><p><b>Câu hỏi:</b> Hàm g có liên tục không? Có khả vi không? Và g'(x) là gì?</p><hr><h3>Nội dung Định lý</h3><p><b>Định lý:</b> Nếu f là liên tục trên [a, b], thì hàm g(x) định nghĩa như trên là <b>liên tục</b> trên [a, b], <b>khả vi</b> trên (a, b), và:</p><code>g'(x) = f(x)</code><p>Nói cách khác, <b>đạo hàm của một hàm tích phân là chính hàm dưới dấu tích phân ban đầu.</b> Phép lấy đạo hàm và phép lấy tích phân là hai phép toán ngược nhau.</p>",
+    "terms": {
+      "Fundamental Theorem of Calculus (FTC)": "(Định lý Cơ bản của Giải tích) Một định lý nền tảng liên kết hai nhánh của giải tích: phép tính vi phân và phép tính tích phân. Nó bao gồm hai phần."
+    }
+  },
+  {
+    "id": 11,
+    "title": "Trang 11: Ví dụ về FTC1 & Định lý Cơ bản, Phần II",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_11.png",
+    "notes": "<h3>Ví dụ về FTC1</h3><p>Các ví dụ minh họa cách áp dụng FTC1 kết hợp với Quy tắc Chuỗi để tính đạo hàm của các hàm tích phân có cận trên là một hàm của x, ví dụ: <code>d/dx ∫₁<sup>x⁴</sup> sec(t)dt</code>.</p><hr><h3>Định lý Cơ bản của Giải tích, Phần II (FTC2)</h3><p>Nếu f và g là các hàm liên tục trên [a, b] và <code>g' = f</code>, thì chúng ta có thể tìm một hàm F liên tục sao cho <code>F' = f</code>.</p><p>Công thức Newton-Leibniz:</p><code>∫ₐᵇ f(t)dt = F(b) - F(a)</code><p>Công thức này cung cấp một phương pháp hiệu quả để tính tích phân xác định mà không cần dùng đến tổng Riemann.</p>",
+    "terms": {
+      "FTC1": "Phần đầu tiên của Định lý Cơ bản của Giải tích, liên quan đến đạo hàm của một hàm được định nghĩa dưới dạng tích phân.",
+      "FTC2 (Newton-Leibniz formula)": "Phần thứ hai của Định lý Cơ bản của Giải tích. Nó cung cấp một cách để tính tích phân xác định của một hàm bằng cách sử dụng nguyên hàm của nó."
+    }
+  },
+  {
+    "id": 12,
+    "title": "Trang 12: Nguyên hàm & Tích phân Bất định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_12.png",
+    "notes": "<h3>Nguyên hàm (Antiderivative)</h3><p>Việc tính tích phân xác định có thể được rút gọn về việc tìm <b>nguyên hàm</b>.</p><p>Một hàm F được gọi là nguyên hàm của f nếu <code>F' = f</code>.</p><hr><h3>Tích phân Bất định (Indefinite Integral)</h3><p>Ký hiệu <code>∫ f(x)dx</code> được dùng cho một nguyên hàm của f. Nó được gọi là <b>tích phân bất định</b>.</p><p>Theo định nghĩa: <code>d/dx ∫ f(x)dx = f(x)</code>.</p><p>Khi đó, FTC2 trở thành: <code>∫ₐᵇ f(x)dx = [∫ f(x)dx]|ₐᵇ</code>.</p><hr><h3>Họ các Nguyên hàm</h3><p>Nếu F là một nguyên hàm của f, thì mọi nguyên hàm khác của f đều có dạng <code>F(x) + C</code>, trong đó C là một hằng số. Ta gọi đây là <b>họ các nguyên hàm</b>.</p><code>∫ f(x)dx = F(x) + C</code>",
+    "terms": {
+      "Antiderivative (Nguyên hàm)": "Một hàm F(x) được gọi là nguyên hàm của một hàm f(x) nếu đạo hàm của F(x) bằng f(x).",
+      "Indefinite Integral": "(Tích phân bất định) Biểu thức ∫f(x)dx, đại diện cho họ tất cả các nguyên hàm của f(x)."
+    }
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Các tính chất của Tích phân Bất định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_13.png",
+    "notes": "<h3>Tính chất của Tích phân Bất định</h3><p>Vì <code>F'(x) = f(x)</code> có nghĩa là <code>∫ f(x)dx = F(x) + C</code>, ta có thể suy ra một bảng các tích phân cơ bản từ bảng các đạo hàm cơ bản:</p><ul><li><code>∫ k dx = kx + C</code></li><li><code>∫ xʳ dx = xʳ⁺¹ / (r+1) + C</code>, (với r ≠ -1)</li><li><code>∫ sin x dx = -cos x + C</code></li><li><code>∫ cos x dx = sin x + C</code></li><li><code>∫ sec²x dx = tan x + C</code></li></ul><hr><h3>Tính Tuyến tính</h3><p>Nếu F' = f và G' = g, thì (aF + bG)' = af + bg. Do đó, tích phân bất định cũng có tính tuyến tính:</p><code>∫ [af(x) + bg(x)]dx = a∫f(x)dx + b∫g(x)dx</code>",
+    "terms": {}
+  },
+  {
+    "id": 14,
+    "title": "Trang 14: Kỹ thuật Đổi biến",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_14.png",
+    "notes": "<h3>Ví dụ về Kỹ thuật Đổi biến (Substitution Rule)</h3><p>Các ví dụ minh họa cách tìm nguyên hàm bằng phương pháp đổi biến:</p><ol><li>Chọn một hàm <code>u = g(x)</code> (thường là hàm 'bên trong').</li><li>Tính <code>du = g'(x)dx</code>.</li><li>Viết lại tích phân theo biến u.</li><li>Tính tích phân theo u.</li><li>Thay u trở lại bằng g(x).</li></ol><hr><h3>Quy tắc Đổi biến</h3><p><b>Định lý:</b> Nếu u = g(x) là một hàm khả vi và f là liên tục, thì:</p><code>∫ f(g(x))g'(x)dx = ∫ f(u)du</code><p>Quy tắc này là phiên bản đảo ngược của Quy tắc Chuỗi trong phép lấy đạo hàm.</p>",
+    "terms": {
+      "Substitution Rule": "(Quy tắc Đổi biến) Một kỹ thuật tính tích phân bằng cách thay thế một phần của hàm dưới dấu tích phân bằng một biến mới, nhằm đơn giản hóa bài toán. Đây là quy tắc tương ứng với Quy tắc Chuỗi của đạo hàm."
+    }
+  },
+  {
+    "id": 15,
+    "title": "Trang 15: Ví dụ về Đổi biến (tiếp)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_15.png",
+    "notes": "<h3>Ví dụ</h3><p>Các ví dụ tiếp tục minh họa phương pháp đổi biến cho các dạng tích phân khác nhau, bao gồm cả các hàm lượng giác như <code>tan x</code> và <code>sec x</code>.</p><p>Để tính tích phân xác định bằng phương pháp đổi biến, ta cũng cần phải <b>đổi cận tích phân</b> theo biến mới u.</p>",
+    "terms": {}
+  },
+  {
+    "id": 16,
+    "title": "Trang 16: Tích phân Suy rộng",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_16.png",
+    "notes": "<h3>Tích phân Suy rộng (Improper Integral)</h3><p>Định nghĩa tích phân xác định <code>∫ₐᵇ f(x)dx</code> yêu cầu hàm f phải liên tục trên khoảng đóng [a, b].</p><p>Tuy nhiên, điều gì sẽ xảy ra nếu f có một điểm gián đoạn, hoặc nếu khoảng tích phân là vô hạn?</p><p>Giả sử f liên tục trên [a, b) và gián đoạn tại b. Tích phân <code>∫ₐᵇ f(x)dx</code> không thể được định nghĩa trực tiếp. Tuy nhiên, ta có thể tính <code>∫ₐᵗ f(x)dx</code> với mọi t ∈ [a, b) và sau đó lấy giới hạn khi t tiến đến b.</p>",
+    "terms": {
+      "Improper Integral": "(Tích phân suy rộng) Một tích phân xác định trong đó hoặc cận tích phân là vô hạn, hoặc hàm dưới dấu tích phân có một điểm gián đoạn vô hạn trên khoảng tích phân."
     }
   },
   {
     "id": 17,
-    "title": "Trang 17: Chuỗi lũy thừa",
-    "image": "images/calculus/week3/MA1521Chap3_page_17.png",
-    "notes": "<h3>Chuỗi lũy thừa (Power Series)</h3><p>Một <b>chuỗi lũy thừa</b> tâm tại 0 là một chuỗi có dạng:</p><code>Σ(n=0 to ∞) cₙxⁿ = c₀ + c₁x + c₂x² + ...</code><p>Một chuỗi lũy thừa tâm tại a là một chuỗi có dạng:</p><code>Σ(n=0 to ∞) cₙ(x-a)ⁿ = c₀ + c₁(x-a) + c₂(x-a)² + ...</code><ul><li>Các cₙ là các hằng số, gọi là các <b>hệ số (coefficients)</b>.</li><li>x là một biến số.</li></ul><p>Bài toán chính là: Tìm tất cả các giá trị x để chuỗi lũy thừa hội tụ.</p>",
-    "terms": {
-      "Power Series": "(Chuỗi lũy thừa) Một chuỗi vô hạn có dạng Σcₙ(x-a)ⁿ. Nó có thể được xem như một 'đa thức bậc vô hạn'."
-    }
+    "title": "Trang 17: Tích phân Suy rộng (Hàm gián đoạn)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_17.png",
+    "notes": "<h3>Tích phân Suy rộng của Hàm gián đoạn</h3><p><b>Trường hợp 1: Gián đoạn tại cận.</b></p><ul><li>Nếu f liên tục trên [a, b) và gián đoạn tại b, ta định nghĩa:<code>∫ₐᵇ f(x)dx = lim(t→b⁻) ∫ₐᵗ f(x)dx</code></li><li>Tương tự, nếu f liên tục trên (a, b] và gián đoạn tại a, ta định nghĩa:<code>∫ₐᵇ f(x)dx = lim(t→a⁺) ∫tᵇ f(x)dx</code></li></ul><p>Tích phân suy rộng được gọi là <b>hội tụ (convergent)</b> nếu giới hạn tồn tại, và <b>phân kỳ (divergent)</b> nếu giới hạn không tồn tại.</p><hr><h3>Ví dụ</h3><p>Tính <code>∫₂⁵ 1/sqrt(x-2) dx</code>. Hàm có điểm gián đoạn vô hạn tại x = 2.</p><p>Ta tính giới hạn khi t→2⁺ của tích phân từ t đến 5, và tìm được kết quả là <code>2√3</code>. Vậy tích phân hội tụ.</p>",
+    "terms": {}
   },
   {
     "id": 18,
-    "title": "Trang 18: Ví dụ về Sự hội tụ của Chuỗi lũy thừa",
-    "image": "images/calculus/week3/MA1521Chap3_page_18.png",
-    "notes": "<h3>Ví dụ</h3><p>Kiểm tra sự hội tụ của chuỗi <code>Σ xⁿ/√n</code>.</p><p>Để kiểm tra, ta sử dụng <b>Tiêu chuẩn Tỷ lệ</b> cho hội tụ tuyệt đối. Ta tính giới hạn của <code>|aₙ₊₁/aₙ|</code> khi n → ∞.</p><p>Kết quả giới hạn là <code>|x|</code>. Theo Tiêu chuẩn Tỷ lệ:</p><ul><li>Chuỗi <b>hội tụ</b> nếu <code>|x| < 1</code>.</li><li>Chuỗi <b>phân kỳ</b> nếu <code>|x| > 1</code>.</li></ul><p>Trường hợp <code>|x| = 1</code> (tức x = ±1) sẽ được tìm hiểu sau.</p>",
+    "title": "Trang 18: Tích phân Suy rộng (Gián đoạn bên trong)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_18.png",
+    "notes": "<h3>Tích phân Suy rộng (tiếp)</h3><p><b>Trường hợp 2: Gián đoạn bên trong khoảng.</b></p><p>Nếu f có một điểm gián đoạn tại c ∈ (a, b), ta định nghĩa:</p><code>∫ₐᵇ f(x)dx = ∫ₐᶜ f(x)dx + ∫cᵇ f(x)dx</code><p>Tích phân <code>∫ₐᵇ f(x)dx</code> hội tụ nếu và chỉ nếu <b>cả hai</b> tích phân ở vế phải đều hội tụ.</p><hr><h3>Ví dụ</h3><p>Tính <code>∫₋₁⁸ 1/∛x dx</code>. Hàm có điểm gián đoạn vô hạn tại x = 0.</p><p>Ta tách tích phân thành <code>∫₋₁⁰ dx/∛x + ∫₀⁸ dx/∛x</code>.</p><p>Tính riêng từng tích phân bằng giới hạn, ta thấy cả hai đều hội tụ. Do đó, tích phân ban đầu hội tụ và có giá trị bằng tổng của hai giới hạn đó.</p>",
     "terms": {}
   },
   {
     "id": 19,
-    "title": "Trang 19: Định lý Hội tụ & Bán kính Hội tụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_19.png",
-    "notes": "<h3>Định lý Hội tụ cho Chuỗi lũy thừa</h3><p>Cho chuỗi lũy thừa <code>Σ cₙ(x-a)ⁿ</code>. Sự hội tụ của nó chỉ có thể xảy ra theo một trong ba khả năng sau:</p><ol><li>Chuỗi chỉ hội tụ tại x = a.</li><li>Chuỗi hội tụ với mọi x ∈ ℝ.</li><li>Tồn tại một số R > 0 sao cho chuỗi hội tụ nếu <code>|x-a| < R</code> và phân kỳ nếu <code>|x-a| > R</code>.</li></ol><hr><h3>Bán kính Hội tụ</h3><p>Số R trong trường hợp (iii) được gọi là <b>bán kính hội tụ (radius of convergence)</b>.</p><ul><li>Trường hợp (i): R = 0.</li><li>Trường hợp (ii): R = ∞.</li></ul><p><b>Lưu ý:</b> Định lý không kết luận về sự hội tụ tại các điểm cuối x = a ± R.</p>",
-    "terms": {
-      "Radius of Convergence": "(Bán kính hội tụ) Một số không âm R sao cho một chuỗi lũy thừa hội tụ nếu biến số nằm trong khoảng cách R so với tâm của chuỗi, và phân kỳ nếu nằm ngoài khoảng cách đó."
-    }
+    "title": "Trang 19: Tích phân Suy rộng trên khoảng vô hạn",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_19.png",
+    "notes": "<h3>Tích phân Suy rộng trên Khoảng vô hạn</h3><p><b>Trường hợp 1: Khoảng [a, ∞).</b></p><p>Ta định nghĩa:</p><code>∫ₐ<sup>∞</sup> f(x)dx = lim(t→∞) ∫ₐᵗ f(x)dx</code><p><b>Trường hợp 2: Khoảng (-∞, b].</b></p><p>Ta định nghĩa:</p><code>∫<sub>-∞</sub>ᵇ f(x)dx = lim(t→-∞) ∫tᵇ f(x)dx</code><p><b>Trường hợp 3: Khoảng (-∞, ∞).</b></p><p>Ta tách thành hai tích phân suy rộng:</p><code>∫<sub>-∞</sub><sup>∞</sup> f(x)dx = ∫<sub>-∞</sub>ᵃ f(x)dx + ∫ₐ<sup>∞</sup> f(x)dx</code><p>Tích phân này hội tụ nếu cả hai tích phân ở vế phải đều hội tụ.</p>",
+    "terms": {}
   },
   {
     "id": 20,
-    "title": "Trang 20: Tìm Bán kính Hội tụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_20.png",
-    "notes": "<h3>Làm thế nào để tính Bán kính Hội tụ R?</h3><p>Bán kính hội tụ R của một chuỗi lũy thừa tồn tại. Để tìm nó, ta có thể sử dụng Tiêu chuẩn Tỷ lệ hoặc Tiêu chuẩn Căn.</p><p><b>Sử dụng Tiêu chuẩn Tỷ lệ:</b></p><p>Giả sử <code>lim(n→∞) |cₙ₊₁/cₙ| = L</code>. Khi đó chuỗi hội tụ nếu <code>L|x-a| < 1</code>.</p><p>Điều này tương đương với <code>|x-a| < 1/L</code>. Do đó, bán kính hội tụ là <code>R = 1/L</code>.</p><p><b>Sử dụng Tiêu chuẩn Căn:</b></p><p>Giả sử <code>lim(n→∞) ⁿ√|cₙ| = L</code>. Tương tự, ta có bán kính hội tụ <code>R = 1/L</code>.</p>",
+    "title": "Trang 20: Ví dụ về Tích phân Xác định & Bất định",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_20.png",
+    "notes": "<h3>Ví dụ: Tính tích phân của hàm sàn</h3><p>Tính <code>∫₁³ [x]³ dx</code>, trong đó [x] là hàm sàn.</p><p>Vì hàm sàn thay đổi giá trị tại các số nguyên, ta tách tích phân thành các khoảng nhỏ hơn:</p><code>∫₁³ [x]³ dx = ∫₁² 1³ dx + ∫₂³ 2³ dx = 1 + 8 = 9</code>.<hr><h3>Ví dụ: Tích phân của hàm hữu tỉ</h3><p>Tính <code>∫₀² (x³-1)/(x-1) dx</code>.</p><p>Hàm dưới dấu tích phân có một điểm gián đoạn có thể loại bỏ tại x=1. Với x ≠ 1, ta có thể rút gọn biểu thức thành <code>x² + x + 1</code>. Tích phân của hàm đã rút gọn này sẽ cho cùng kết quả diện tích.</p>",
     "terms": {}
   },
   {
     "id": 21,
-    "title": "Trang 21: Biểu diễn hàm bằng Chuỗi lũy thừa",
-    "image": "images/calculus/week3/MA1521Chap3_page_21.png",
-    "notes": "<h3>Biểu diễn hàm bằng Chuỗi lũy thừa</h3><p>Ta đã biết công thức của chuỗi cấp số nhân:</p><code>Σ(n=0 to ∞) xⁿ = 1 + x + x² + ... = 1 / (1 - x)</code>, với |x| < 1.<p>Điều này cho ta một <b>biểu diễn chuỗi lũy thừa (power series representation)</b> của hàm <code>f(x) = 1/(1-x)</code> tâm tại 0.</p><hr><h3>Ví dụ</h3><p>Tìm biểu diễn chuỗi lũy thừa của <code>1 / (1 + x²)</code>.</p><p>Ta thay x bằng <code>-x²</code> trong công thức trên:</p><code>1 / (1 - (-x²)) = Σ(n=0 to ∞) (-x²)ⁿ = Σ(n=0 to ∞) (-1)ⁿx²ⁿ</code><p>Đẳng thức này đúng khi <code>|-x²| < 1</code>, tức là <code>|x| < 1</code>.</p>",
+    "title": "Trang 21: Tích phân Từng phần",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_21.png",
+    "notes": "<h3>Tích phân Từng phần (Integration by Parts)</h3><p>Nhắc lại Quy tắc Tích cho đạo hàm: <code>(fg)' = f'g + fg'</code>.</p><p>Lấy tích phân hai vế, ta có: <code>fg = ∫f'g dx + ∫fg' dx</code>.</p><p>Sắp xếp lại, ta được công thức Tích phân Từng phần:</p><code>∫ f(x)g'(x)dx = f(x)g(x) - ∫ f'(x)g(x)dx</code><p>Đặt <code>u = f(x)</code> và <code>v = g(x)</code>, công thức có thể được viết gọn lại thành:</p><code>∫ u dv = uv - ∫ v du</code><p>Đây là một kỹ thuật rất hữu ích, đặc biệt là để tính các tích phân có dạng <code>∫ cosⁿx dx</code>.</p><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách áp dụng công thức Tích phân Từng phần bằng cách chọn u và dv một cách hợp lý để tính <code>∫ x sin(x) dx</code> và <code>∫ ln(x) dx</code>.</p>",
     "terms": {
-      "Power Series Representation": "(Biểu diễn chuỗi lũy thừa) Việc biểu diễn một hàm số dưới dạng một chuỗi lũy thừa. Nhiều hàm số quan trọng có thể được biểu diễn theo cách này."
+      "Integration by Parts": "(Tích phân từng phần) Một kỹ thuật tính tích phân dựa trên Quy tắc Tích của đạo hàm. Rất hữu ích khi hàm dưới dấu tích phân là tích của hai hàm khác loại (ví dụ: đa thức và lượng giác)."
     }
   },
   {
     "id": 22,
-    "title": "Trang 22: Ví dụ về Biểu diễn Chuỗi lũy thừa",
-    "image": "images/calculus/week3/MA1521Chap3_page_22.png",
-    "notes": "<h3>Ví dụ</h3><p>Các ví dụ minh họa cách sử dụng các phép biến đổi đại số (như phân tích thành phân thức đơn giản) và công thức chuỗi cấp số nhân để tìm biểu diễn chuỗi lũy thừa cho các hàm phức tạp hơn và xác định bán kính hội tụ của chúng.</p>",
+    "title": "Trang 22: Ví dụ về Tích phân Từng phần (tiếp)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_22.png",
+    "notes": "<h3>Ví dụ 1: Áp dụng nhiều lần</h3><p>Tính <code>∫ x²eˣ dx</code>. Ta cần áp dụng Tích phân Từng phần hai lần để giảm dần bậc của x² xuống 0.</p><hr><h3>Ví dụ 2: Tích phân lặp lại</h3><p>Tính <code>∫ eˣ sin(x) dx</code>. Khi áp dụng Tích phân Từng phần hai lần, ta sẽ thu được lại tích phân ban đầu ở vế phải. Ta có thể coi tích phân này như một biến, chuyển vế và giải phương trình để tìm kết quả.</p><hr><h3>Công thức cho Tích phân Xác định</h3><code>∫ₐᵇ u dv = [uv]|ₐᵇ - ∫ₐᵇ v du</code>",
     "terms": {}
   },
   {
     "id": 23,
-    "title": "Trang 23: Lấy Đạo hàm Chuỗi lũy thừa & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_23.png",
-    "notes": "<h3>Lấy Đạo hàm và Tích phân của Chuỗi lũy thừa</h3><p><b>Định lý (Đạo hàm/Tích phân từng số hạng):</b></p><p>Nếu chuỗi lũy thừa <code>Σ cₙ(x-a)ⁿ</code> có bán kính hội tụ R > 0, thì hàm f được định nghĩa bởi chuỗi đó là khả vi (và do đó liên tục) trên khoảng (a-R, a+R).</p><p>Hơn nữa, đạo hàm và tích phân của f có thể được tính bằng cách lấy đạo hàm/tích phân <b>từng số hạng</b> của chuỗi.</p><hr><h3>Ví dụ</h3><p>Bắt đầu từ <code>Σ xⁿ = 1/(1-x)</code>, ta có thể lấy đạo hàm hai vế để tìm biểu diễn chuỗi cho các hàm khác như <code>1/(1-x)²</code>, và sau đó tiếp tục lấy đạo hàm để tìm chuỗi cho <code>2/(1-x)³</code>.</p>",
+    "title": "Trang 23: Ví dụ về Tích phân Lượng giác",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_23.png",
+    "notes": "<h3>Tính <code>∫ sinⁿx cosᵐx dx</code></h3><p>Các chiến lược để giải quyết loại tích phân này:</p><ul><li><b>Nếu m lẻ:</b> Tách ra một cos(x), dùng <code>cos²x = 1 - sin²x</code>, và đặt u = sin(x).</li><li><b>Nếu n lẻ:</b> Tách ra một sin(x), dùng <code>sin²x = 1 - cos²x</code>, và đặt u = cos(x).</li><li><b>Nếu cả m và n đều chẵn:</b> Sử dụng các công thức hạ bậc:</li><code>sin²x = (1 - cos(2x))/2</code><br><code>cos²x = (1 + cos(2x))/2</code></ul>",
     "terms": {}
   },
   {
     "id": 24,
-    "title": "Trang 24: Hệ số của Chuỗi lũy thừa",
-    "image": "images/calculus/week3/MA1521Chap3_page_24.png",
-    "notes": "<h3>Hệ số của Biểu diễn Chuỗi lũy thừa</h3><p>Giả sử hàm f(x) có một biểu diễn chuỗi lũy thừa <code>Σ cₙxⁿ</code> với bán kính hội tụ R > 0. Vậy các hệ số cₙ là gì?</p><p>Bằng cách lấy đạo hàm liên tiếp của f(x) và thay giá trị x = 0, ta có thể tìm ra mối quan hệ giữa các hệ số cₙ và các đạo hàm của f tại 0:</p><code>f⁽ᵏ⁾(0) = k! * cₖ</code><p>Điều này suy ra:</p><code>cₙ = f⁽ⁿ⁾(0) / n!</code>",
-    "terms": {}
+    "title": "Trang 24: Đổi biến Lượng giác",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_24.png",
+    "notes": "<h3>Đổi biến Lượng giác (Trigonometric Substitution)</h3><p>Kỹ thuật này được dùng để loại bỏ các dấu căn trong các tích phân có chứa các biểu thức:</p><ul><li><code>sqrt(a² - x²)</code>: Đặt <code>x = a sin θ</code>.</li><li><code>sqrt(a² + x²)</code>: Đặt <code>x = a tan θ</code>.</li><li><code>sqrt(x² - a²)</code>: Đặt <code>x = a sec θ</code>.</li></ul><p>Sau khi đổi biến, ta sẽ thu được một tích phân lượng giác có thể giải được bằng các phương pháp đã biết.</p>",
+    "terms": {
+      "Trigonometric Substitution": "(Đổi biến lượng giác) Một kỹ thuật tính tích phân dùng để xử lý các hàm có chứa biểu thức căn bậc hai bằng cách thay thế biến số bằng một hàm lượng giác."
+    }
   },
   {
     "id": 25,
-    "title": "Trang 25: Chuỗi Taylor và Maclaurin",
-    "image": "images/calculus/week3/MA1521Chap3_page_25.png",
-    "notes": "<h3>Chuỗi Maclaurin</h3><p><b>Định lý:</b> Nếu f có một biểu diễn chuỗi lũy thừa tâm tại 0 với bán kính hội tụ R > 0, thì các hệ số được cho bởi <code>cₙ = f⁽ⁿ⁾(0) / n!</code>. Chuỗi này được gọi là <b>chuỗi Maclaurin</b> của f.</p><code>f(x) = Σ(n=0 to ∞) [f⁽ⁿ⁾(0) / n!] * xⁿ</code><hr><h3>Chuỗi Taylor</h3><p><b>Định lý:</b> Tương tự, nếu f có một biểu diễn chuỗi lũy thừa tâm tại a, thì chuỗi đó được gọi là <b>chuỗi Taylor</b> của f tại a.</p><code>f(x) = Σ(n=0 to ∞) [f⁽ⁿ⁾(a) / n!] * (x-a)ⁿ</code>",
+    "title": "Trang 25: Phân tích thành Phân thức Đơn giản",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_25.png",
+    "notes": "<h3>Phân tích thành Phân thức Đơn giản (Partial Fraction Decomposition)</h3><p>Phương pháp này được dùng để tính tích phân của các <b>hàm hữu tỉ</b> <code>f(x) = P(x) / Q(x)</code>.</p><p><b>Ý tưởng:</b> Viết lại hàm hữu tỉ f(x) thành tổng của các phân thức đơn giản hơn mà ta có thể dễ dàng lấy nguyên hàm.</p><p>Các bước phụ thuộc vào dạng của các nhân tử trong mẫu số Q(x).</p><hr><h3>Trường hợp 1: Mẫu số có các nhân tử tuyến tính phân biệt</h3><p>Nếu <code>Q(x) = (a₁x + b₁)...(aₖx + bₖ)</code>, ta có thể viết:</p><code>f(x) = A₁/(a₁x + b₁) + ... + Aₖ/(aₖx + bₖ)</code><p>Nhiệm vụ là tìm các hằng số A₁, ..., Aₖ.</p>",
     "terms": {
-      "Taylor Series": "(Chuỗi Taylor) Biểu diễn một hàm số dưới dạng một tổng vô hạn các số hạng, được tính từ các giá trị đạo hàm của hàm số tại một điểm duy nhất.",
-      "Maclaurin Series": "(Chuỗi Maclaurin) Một trường hợp đặc biệt của chuỗi Taylor, khi chuỗi được khai triển tại điểm a = 0."
+      "Partial Fraction Decomposition": "(Phân tích thành phân thức đơn giản) Một quy trình trong đại số dùng để viết lại một hàm hữu tỉ phức tạp thành tổng của các phân thức đơn giản hơn."
     }
   },
-   {
+  {
     "id": 26,
-    "title": "Trang 26: Tiêu chuẩn Phân kỳ & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_26.png",
-    "notes": "<h3>Tiêu chuẩn Phân kỳ (Test for Divergence)</h3><p><b>Định lý:</b> Nếu chuỗi Σaₙ hội tụ, thì <code>lim(n→∞) aₙ = 0</code>.</p><p><b>Hệ quả (Tiêu chuẩn Phân kỳ):</b></p><p>Nếu <code>lim(n→∞) aₙ</code> không tồn tại, hoặc tồn tại nhưng khác 0, thì chuỗi Σaₙ <b>phân kỳ</b>.</p><hr><h3>Ví dụ</h3><p>Xét chuỗi <code>Σ n² / (5n² + 4)</code>. Vì <code>lim(n→∞) n² / (5n² + 4) = 1/5 ≠ 0</code>, chuỗi này phân kỳ.</p><p><b>Lưu ý:</b> Nếu <code>lim aₙ = 0</code>, tiêu chuẩn này không kết luận được gì. Chuỗi có thể hội tụ hoặc phân kỳ.</p>",
+    "title": "Trang 26: Ví dụ về Tích phân Lượng giác",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_26.png",
+    "notes": "<h3>Ví dụ: Công thức hạ bậc</h3><p>Tính <code>∫ cosⁿx dx</code>.</p><p>Sử dụng công thức truy hồi thu được từ Tích phân Từng phần, ta có thể tính tích phân của các lũy thừa chẵn của cos(x).</p><hr><h3>Ví dụ: Đổi biến lượng giác</h3><p>Tính <code>∫ dx / (1 + x²)ⁿ</code>.</p><p>Bằng cách đặt <code>x = tan(t)</code>, ta có thể chuyển tích phân này về dạng <code>∫ cos²ⁿ⁻²(t) dt</code>, là một dạng ta đã biết cách giải quyết.</p>",
     "terms": {
-      "Test for Divergence": "(Tiêu chuẩn Phân kỳ) Một bài kiểm tra cơ bản. Nếu giới hạn của số hạng tổng quát của một chuỗi không bằng 0, thì chuỗi đó phân kỳ."
+      "Reduction Formula": "(Công thức truy hồi/hạ bậc) Một công thức biểu diễn một tích phân qua một tích phân khác có dạng tương tự nhưng với bậc thấp hơn. Rất hữu ích để tính tích phân của các lũy thừa của hàm lượng giác."
     }
   },
   {
     "id": 27,
-    "title": "Trang 27: Tiêu chuẩn So sánh & Chuỗi p",
-    "image": "images/calculus/week3/MA1521Chap3_page_27.png",
-    "notes": "<h3>So sánh với một chuỗi đã biết</h3><p>Xét chuỗi <code>Σ 1 / (sqrt(n) + 1)</code>. Giới hạn của số hạng tổng quát bằng 0, nên Tiêu chuẩn Phân kỳ không kết luận được.</p><p>Tuy nhiên, ta thấy rằng với n lớn, <code>1 / (sqrt(n) + 1)</code> 'tương tự' như <code>1 / sqrt(n)</code>. Các số hạng của chuỗi Σ1/sqrt(n) là 'lớn'. Có vẻ như chuỗi ban đầu cũng phân kỳ. Liệu 'so sánh' này có đúng không?</p><hr><h3>Chuỗi p (p-Series)</h3><p>Chuỗi có dạng <code>Σ 1/nᵖ</code> được gọi là <b>chuỗi p</b>. Vấn đề là: Với những giá trị nào của p thì chuỗi này hội tụ?</p>",
-    "terms": {
-      "Comparison Test": "(Tiêu chuẩn So sánh) Một phương pháp xác định sự hội tụ hoặc phân kỳ của một chuỗi bằng cách so sánh nó với một chuỗi khác đã biết tính chất hội tụ.",
-      "p-Series": "(Chuỗi p) Một chuỗi có dạng Σ 1/nᵖ. Nó hội tụ nếu p > 1 và phân kỳ nếu p ≤ 1."
-    }
-  },
-  {
-    "id": 28,
-    "title": "Trang 28: Chuỗi Điều hòa",
-    "image": "images/calculus/week3/MA1521Chap3_page_28.png",
-    "notes": "<h3>Chuỗi Điều hòa (Harmonic Series)</h3><p><b>Chuỗi điều hòa</b> là chuỗi p với p = 1: <code>Σ 1/n = 1 + 1/2 + 1/3 + ...</code></p><p>Mặc dù các số hạng của nó tiến đến 0, chuỗi này lại <b>phân kỳ</b>.</p><p>Để chứng minh, ta xét các tổng riêng <code>S₂ⁿ</code> và nhóm các số hạng lại. Ta có thể chỉ ra rằng <code>S₂ⁿ > 1 + n/2</code>. Khi n → ∞, <code>S₂ⁿ</code> cũng tiến đến ∞.</p>",
-    "terms": {
-      "Harmonic Series": "(Chuỗi Điều hòa) Chuỗi Σ 1/n. Đây là ví dụ kinh điển của một chuỗi có số hạng tổng quát tiến về 0 nhưng bản thân chuỗi lại phân kỳ."
-    }
-  },
-  {
-    "id": 29,
-    "title": "Trang 29: Định lý Chuỗi p & Tiêu chuẩn So sánh",
-    "image": "images/calculus/week3/MA1521Chap3_page_29.png",
-    "notes": "<h3>Định lý về Chuỗi p</h3><p>Chuỗi p <code>Σ 1/nᵖ</code> <b>hội tụ</b> nếu <code>p > 1</code> và <b>phân kỳ</b> nếu <code>p ≤ 1</code>.</p><hr><h3>Tiêu chuẩn So sánh (The Comparison Test)</h3><p><b>Định lý:</b> Cho Σaₙ và Σbₙ là các chuỗi có số hạng không âm.</p><p>a) Nếu <code>Σbₙ</code> <b>hội tụ</b> và <code>aₙ ≤ bₙ</code> với mọi n đủ lớn, thì <code>Σaₙ</code> cũng <b>hội tụ</b>.</p><p>b) Nếu <code>Σbₙ</code> <b>phân kỳ</b> và <code>aₙ ≥ bₙ</code> với mọi n đủ lớn, thì <code>Σaₙ</code> cũng <b>phân kỳ</b>.</p>",
+    "title": "Trang 27: Ví dụ về Đổi biến Lượng giác",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_27.png",
+    "notes": "<h3>Ví dụ 1: Dạng <code>sqrt(a² - x²)</code></h3><p>Tính <code>∫ sqrt(1 - x²) dx</code>.</p><p>Đặt <code>x = sin(t)</code>, ta có <code>dx = cos(t)dt</code>. Tích phân trở thành <code>∫ cos²(t) dt</code>. Sử dụng công thức hạ bậc, ta có thể giải tích phân này theo t, sau đó thay t trở lại theo x.</p><hr><h3>Ví dụ 2: Dạng <code>sqrt(a² + x²)</code></h3><p>Tính <code>∫ sqrt(1 + x²) dx</code>.</p><p>Đặt <code>x = tan(t)</code>, ta có <code>dx = sec²(t)dt</code>. Tích phân trở thành <code>∫ sec³(t) dt</code>. Tích phân này có thể được giải bằng Tích phân Từng phần.</p>",
     "terms": {}
   },
   {
-    "id": 30,
-    "title": "Trang 30: Ví dụ & Tiêu chuẩn So sánh giới hạn",
-    "image": "images/calculus/week3/MA1521Chap3_page_30.png",
-    "notes": "<h3>Ví dụ về Tiêu chuẩn So sánh</h3><p>Để sử dụng Tiêu chuẩn So sánh, ta phải 'đoán' xem chuỗi hội tụ hay phân kỳ, sau đó tìm một chuỗi đã biết tính chất để so sánh.</p><p><b>Ví dụ:</b> <code>Σ ln(n)/n</code>. Vì <code>ln(n) > 1</code> với n ≥ 3, ta có <code>ln(n)/n > 1/n</code>. Mà chuỗi điều hòa <code>Σ 1/n</code> phân kỳ, do đó chuỗi ban đầu cũng phân kỳ.</p><hr><h3>Tiêu chuẩn So sánh Giới hạn (The Limit Comparison Test)</h3><p><b>Định lý:</b> Cho Σaₙ và Σbₙ là các chuỗi có số hạng dương. Nếu <code>lim(n→∞) aₙ/bₙ = c</code>, trong đó c là một số hữu hạn và c > 0, thì hai chuỗi <b>cùng hội tụ hoặc cùng phân kỳ</b>.</p>",
+    "id": 28,
+    "title": "Trang 28: Tổng kết Đổi biến Lượng giác & Tích phân Hàm hữu tỉ",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_28.png",
+    "notes": "<h3>Tổng kết Đổi biến Lượng giác</h3><p>Nếu hàm dưới dấu tích phân có dạng bậc hai, ta có thể thử phương pháp đổi biến lượng giác:</p><ul><li><b>Dạng a² - x²:</b> Đặt <code>x = a sin(t)</code>.</li><li><b>Dạng a² + x²:</b> Đặt <code>x = a tan(t)</code>.</li><li><b>Dạng x² - a²:</b> Đặt <code>x = a sec(t)</code>.</li></ul><hr><h3>Tích phân của Hàm hữu tỉ</h3><p>Có một thuật toán để tính mọi tích phân không? <b>Không!</b> Trên thực tế, chỉ có rất ít tích phân có thể được tính. Tuy nhiên, các đa thức và hàm hữu tỉ là những trường hợp may mắn.</p><p>Để tích phân một hàm hữu tỉ bất kỳ, chỉ cần biết cách tích phân hai loại hàm sau:</p><ul><li><code>∫ dx / xⁿ</code></li><li><code>∫ dx / (1 + x²)ⁿ</code></li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 29,
+    "title": "Trang 29: Tích phân Hàm hữu tỉ (Các bước đầu)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_29.png",
+    "notes": "<h3>Tích phân Hàm hữu tỉ</h3><p>Hãy thực hiện một số giả định ban đầu để đơn giản hóa bài toán:</p><p><b>1. A(x) và B(x) nguyên tố cùng nhau (coprime).</b></p><ul><li>Nếu chúng có nhân tử chung, hãy rút gọn trước.</li></ul><p><b>2. Đa thức ở mẫu B(x) là đa thức monic.</b></p><ul><li>Nếu không, chia cả tử và mẫu cho hệ số cao nhất của B(x).</li></ul><p><b>3. Bậc của A(x) nhỏ hơn bậc của B(x).</b></p><ul><li>Nếu không, thực hiện phép chia đa thức: <code>A(x)/B(x) = Q(x) + R(x)/B(x)</code>.</li><li>Tích phân của đa thức Q(x) rất dễ dàng. Ta chỉ cần tập trung vào việc tích phân phần dư <code>R(x)/B(x)</code>, trong đó bậc của tử đã nhỏ hơn bậc của mẫu.</li></ul>",
     "terms": {
-      "Limit Comparison Test": "(Tiêu chuẩn So sánh Giới hạn) Một phương pháp so sánh hai chuỗi bằng cách lấy giới hạn của tỷ lệ giữa các số hạng tổng quát của chúng. Rất hữu ích khi các số hạng của chuỗi 'tương tự' như các số hạng của một chuỗi đã biết."
+      "Coprime (Nguyên tố cùng nhau)": "Hai đa thức được gọi là nguyên tố cùng nhau nếu chúng không có nhân tử chung nào khác hằng số.",
+      "Monic Polynomial": "(Đa thức monic) Một đa thức trong đó hệ số của số hạng có bậc cao nhất là 1."
     }
+  },
+   {
+    "id": 30,
+    "title": "Trang 30: Tích phân Hàm hữu tỉ (Phân tích mẫu số)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_30.png",
+    "notes": "<h3>Phân tích Mẫu số thành Nhân tử</h3><p><b>Dữ kiện 1:</b> Mọi đa thức monic B(x) đều có thể được phân tích một cách duy nhất thành tích của các <b>nhân tử tuyến tính (linear factors)</b> và các <b>nhân tử bậc hai bất khả quy (quadratic factors)</b> trên tập số thực ℝ.</p><code>B(x) = (x+a₁)ᵏ¹... * (x²+b₁x+c₁)ʳ¹...</code><p>Ở đây, các nhân tử bậc hai <code>x²+bx+c</code> không thể được phân tích thành các nhân tử tuyến tính, tương đương với điều kiện <code>b² < 4c</code>.</p><hr><h3>Phân tích thành Phân thức Đơn giản</h3><p><b>Dữ kiện 2:</b> Nếu bậc của A(x) < bậc của B(x), thì A(x)/B(x) có thể được chuyển đổi thành một <b>phân thức đơn giản (partial fraction)</b>, là tổng của các hàm hữu tỉ đơn giản hơn.</p><ul><li>Với mỗi nhân tử <code>(x+a)ᵏ</code>: ta có các số hạng <code>A₁/(x+a) + A₂/(x+a)² + ...</code></li><li>Với mỗi nhân tử <code>(x²+bx+c)ʳ</code>: ta có các số hạng <code>(B₁x+C₁)/(x²+bx+c) + ...</code></li></ul>",
+    "terms": {}
   },
   {
     "id": 31,
-    "title": "Trang 31: Ví dụ & Chuỗi đan dấu",
-    "image": "images/calculus/week3/MA1521Chap3_page_31.png",
-    "notes": "<h3>Ví dụ về Tiêu chuẩn So sánh Giới hạn</h3><p>Các ví dụ minh họa cách 'đoán' hành vi của một chuỗi phức tạp bằng cách chỉ giữ lại các số hạng có bậc cao nhất ở tử và mẫu, sau đó áp dụng Tiêu chuẩn So sánh Giới hạn để xác nhận dự đoán đó.</p><hr><h3>Chuỗi đan dấu (Alternating Series)</h3><p>Làm thế nào với các chuỗi có các số hạng không phải lúc nào cũng dương?</p><p><b>Chuỗi điều hòa đan dấu</b> có dạng:</p><code>Σ (-1)ⁿ⁻¹ / n = 1 - 1/2 + 1/3 - 1/4 + ...</code><p>Chuỗi này có hội tụ không? Đồ thị của các tổng riêng cho thấy nó dường như hội tụ về một giá trị nào đó.</p>",
-    "terms": {
-      "Alternating Series": "(Chuỗi đan dấu) Một chuỗi vô hạn có các số hạng đan xen giữa dương và âm."
-    }
+    "title": "Trang 31: Ví dụ về Phân thức Đơn giản & Cách tính",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_31.png",
+    "notes": "<h3>Ví dụ về Phân tích thành Phân thức Đơn giản</h3><p>Phân tích hàm <code>4x / (x³ - x² - x + 1)</code>.</p><ol><li><b>Phân tích mẫu số:</b> <code>x³ - x² - x + 1 = (x+1)(x-1)²</code>.</li><li><b>Thiết lập dạng phân tích:</b><code>4x / [(x+1)(x-1)²] = A/(x+1) + B/(x-1) + C/(x-1)²</code></li><li><b>Quy đồng mẫu số và đồng nhất hệ số:</b> Tìm các hằng số A, B, C bằng cách so sánh các hệ số của đa thức ở tử số.</li><li><b>Kết quả:</b> A = -1, B = 1, C = 2.</li></ol><hr><h3>Tích phân các Phân thức Đơn giản</h3><p>Việc tích phân hàm hữu tỉ được rút gọn về việc tích phân hai dạng cơ bản:</p><ul><li><code>∫ dx / (x+a)ᵏ</code> (có thể tính trực tiếp hoặc bằng đổi biến).</li><li><code>∫ (Bx+C)dx / (x²+bx+c)ʳ</code> (phức tạp hơn, thường đòi hỏi tách thành hai tích phân, một có tử là đạo hàm của mẫu, và một có tử là hằng số, sau đó sử dụng các công thức lượng giác ngược).</li></ul>",
+    "terms": {}
   },
   {
     "id": 32,
-    "title": "Trang 32: Tiêu chuẩn Chuỗi đan dấu & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_32.png",
-    "notes": "<h3>Tiêu chuẩn Chuỗi đan dấu (Alternating Series Test)</h3><p>Nếu chuỗi đan dấu <code>Σ (-1)ⁿ⁻¹ bₙ</code> (với bₙ > 0) thỏa mãn hai điều kiện:</p><ol><li><code>bₙ₊₁ ≤ bₙ</code> với mọi n (dãy bₙ là dãy giảm).</li><li><code>lim(n→∞) bₙ = 0</code>.</li></ol><p>thì chuỗi đó <b>hội tụ</b>.</p><hr><h3>Ví dụ</h3><p>Các ví dụ áp dụng Tiêu chuẩn Chuỗi đan dấu để xác định sự hội tụ của các chuỗi có các số hạng đổi dấu.</p>",
-    "terms": {
-      "Alternating Series Test": "(Tiêu chuẩn Chuỗi đan dấu hay Tiêu chuẩn Leibniz) Một bài kiểm tra sự hội tụ cho các chuỗi đan dấu. Nếu giá trị tuyệt đối của các số hạng giảm dần và tiến về 0, thì chuỗi hội tụ."
-    }
+    "title": "Trang 32: Ví dụ về Tích phân Hàm hữu tỉ",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_32.png",
+    "notes": "<h3>Ví dụ</h3><p>Các ví dụ minh họa quy trình đầy đủ: phân tích mẫu số, thiết lập dạng phân thức đơn giản, tìm các hệ số, và cuối cùng là tính tích phân của từng phân thức đơn giản đó.</p>",
+    "terms": {}
   },
   {
     "id": 33,
-    "title": "Trang 33: Hội tụ Tuyệt đối & Hội tụ có điều kiện",
-    "image": "images/calculus/week3/MA1521Chap3_page_33.png",
-    "notes": "<h3>Hội tụ Tuyệt đối và Hội tụ có điều kiện</h3><p><b>Định nghĩa:</b></p><ul><li>Một chuỗi Σaₙ được gọi là <b>hội tụ tuyệt đối (absolutely convergent)</b> nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ.</li><li>Một chuỗi Σaₙ được gọi là <b>hội tụ có điều kiện (conditionally convergent)</b> nếu nó hội tụ, nhưng chuỗi Σ|aₙ| lại phân kỳ.</li></ul><p><b>Ví dụ:</b> Chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> hội tụ (theo Tiêu chuẩn Chuỗi đan dấu), nhưng chuỗi các giá trị tuyệt đối của nó là <code>Σ 1/n</code> (chuỗi điều hòa) lại phân kỳ. Do đó, nó hội tụ có điều kiện.</p><p><b>Định lý:</b> Nếu một chuỗi hội tụ tuyệt đối, thì nó cũng hội tụ.</p>",
+    "title": "Trang 33: Tích phân Hàm lượng giác hữu tỉ",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_33.png",
+    "notes": "<h3>Tích phân Hàm lượng giác hữu tỉ</h3><p><b>Ví dụ:</b> Tính <code>∫ dx / (sin x + 2 cos x + 3)</code>.</p><p>Ta có thể sử dụng <b>phép đổi biến phổ dụng (universal substitution)</b> <code>t = tan(x/2)</code>. Phép đổi biến này có ưu điểm là biến đổi mọi hàm hữu tỉ của sin(x) và cos(x) thành một hàm hữu tỉ của t.</p><p>Sử dụng các công thức góc đôi, ta có:</p><ul><li><code>sin x = 2t / (1+t²)</code></li><li><code>cos x = (1-t²) / (1+t²)</code></li><li><code>dx = 2dt / (1+t²)</code></li></ul><p>Thay thế vào tích phân ban đầu, ta sẽ thu được một tích phân của hàm hữu tỉ theo biến t, có thể giải được bằng phương pháp Phân thức Đơn giản.</p>",
     "terms": {
-      "Conditionally Convergent": "(Hội tụ có điều kiện) Một chuỗi hội tụ nhưng không hội tụ tuyệt đối."
+      "Universal Trigonometric Substitution (Phép thế Weierstrass)": "Một phương pháp đổi biến sử dụng t = tan(x/2) để chuyển đổi một tích phân của hàm hữu tỉ chứa các hàm lượng giác thành một tích phân của hàm hữu tỉ thông thường."
     }
   },
   {
     "id": 34,
-    "title": "Trang 34: Tổng kết các Tiêu chuẩn & Kết luận",
-    "image": "images/calculus/week3/MA1521Chap3_page_34.png",
-    "notes": "<h3>Sơ đồ chiến lược kiểm tra sự hội tụ của chuỗi</h3><p>Sơ đồ này cung cấp một quy trình từng bước để quyết định nên sử dụng tiêu chuẩn nào khi đối mặt với một chuỗi bất kỳ, bắt đầu từ việc kiểm tra <code>lim aₙ</code> (Tiêu chuẩn Phân kỳ) cho đến các tiêu chuẩn phức tạp hơn như Tiêu chuẩn Tỷ lệ hay So sánh.</p><hr><h3>Kết luận</h3><p>Chương này đã giới thiệu các khái niệm cơ bản về dãy số và chuỗi, cùng với các công cụ chính để xác định sự hội tụ của chúng. Đây là nền tảng cho việc nghiên cứu Chuỗi Taylor và các ứng dụng của chuỗi trong giải tích.</p>",
+    "title": "Trang 34: Ví dụ về Tích phân Hàm hữu tỉ (tiếp)",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_34.png",
+    "notes": "<h3>Ví dụ 1: Bậc tử lớn hơn bậc mẫu</h3><p>Tính <code>∫ (x⁴ - 2x² + 4x + 1) / (x³ - x² - x + 1) dx</code>.</p><ol><li><b>Thực hiện phép chia đa thức:</b> Ta được <code>x + 1 + 4x / (x³ - x² - x + 1)</code>.</li><li><b>Phân tích phần dư:</b> Phân tích <code>4x / (x³ - x² - x + 1)</code> thành các phân thức đơn giản như đã làm ở trang trước.</li><li><b>Tích phân:</b> Tích phân từng phần, bao gồm cả phần đa thức và các phân thức đơn giản.</li></ol><hr><h3>Ví dụ 2: Mẫu có nhân tử tuyến tính</h3><p>Tính <code>∫ (x² + 2x - 1) / (2x³ + 3x² - 2x) dx</code>.</p><ol><li><b>Phân tích mẫu số:</b> <code>2x³ + 3x² - 2x = x(x+2)(2x-1)</code>.</li><li><b>Phân tích thành phân thức đơn giản:</b> <code>A/x + B/(x+2) + C/(2x-1)</code>.</li><li><b>Tìm hệ số và tính tích phân.</b></li></ol>",
     "terms": {}
   },
   {
     "id": 35,
-    "title": "Trang 35: Tiêu chuẩn Chuỗi đan dấu & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_35.png",
-    "notes": "<h3>Tiêu chuẩn Chuỗi đan dấu (The Alternating Series Test)</h3><p><b>Định nghĩa:</b> Một <b>chuỗi đan dấu</b> là một chuỗi có các số hạng đổi dấu liên tiếp giữa dương và âm.</p><p><b>Tiêu chuẩn Leibniz:</b> Cho Σaₙ là một chuỗi đan dấu. Giả sử <code>lim(n→∞) |aₙ| = 0</code> và dãy {|aₙ|} là dãy giảm. Khi đó, chuỗi Σaₙ <b>hội tụ</b>.</p><hr><h3>Ví dụ</h3><p>Chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> là hội tụ, mặc dù chuỗi điều hòa <code>Σ 1/n</code> là phân kỳ.</p>",
-    "terms": {}
-  },
-  {
-    "id": 36,
-    "title": "Trang 36: Hội tụ Tuyệt đối & Có điều kiện",
-    "image": "images/calculus/week3/MA1521Chap3_page_36.png",
-    "notes": "<h3>Hội tụ Tuyệt đối (Absolute Convergence)</h3><p><b>Định nghĩa:</b> Một chuỗi Σaₙ được gọi là <b>hội tụ tuyệt đối</b> nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ.</p><p><b>Định lý:</b> Nếu một chuỗi hội tụ tuyệt đối, thì nó cũng hội tụ.</p><p><b>Lưu ý:</b> Nếu Σ|aₙ| phân kỳ, ta chưa thể kết luận gì về sự hội tụ của Σaₙ.</p><hr><h3>Hội tụ có điều kiện (Conditionally Convergent)</h3><p><b>Định nghĩa:</b> Một chuỗi được gọi là <b>hội tụ có điều kiện</b> nếu nó hội tụ, nhưng không hội tụ tuyệt đối (tức là Σ|aₙ| phân kỳ).</p><p><b>Ví dụ:</b> <code>Σ (-1)ⁿ⁻¹/n</code> hội tụ có điều kiện, trong khi <code>Σ (-1)ⁿ⁻¹/n²</code> hội tụ tuyệt đối.</p>",
+    "title": "Trang 35: Tích phân Hàm lượng giác hữu tỉ",
+    "image": "images/calculus/week6.1/MA1521Chap6-1_page_35.png",
+    "notes": "<h3>Tích phân Hàm lượng giác hữu tỉ</h3><p>Để tính tích phân của một biểu thức hữu tỉ bất kỳ chứa sin(x) và cos(x), ta có thể sử dụng <b>phép đổi biến phổ dụng (universal substitution)</b> <code>t = tan(x/2)</code>.</p><p>Sử dụng các công thức góc đôi, ta có:</p><ul><li><code>sin x = 2t / (1+t²)</code></li><li><code>cos x = (1-t²) / (1+t²)</code></li><li><code>dx = 2dt / (1+t²)</code></li></ul><hr><h3>Ví dụ</h3><p>Tính <code>∫ dx / (sin x + 2 cos x + 3)</code>.</p><p>Áp dụng phép thế trên, ta chuyển tích phân lượng giác về tích phân của một hàm hữu tỉ theo biến t. Sau đó, ta có thể giải tích phân này bằng các phương pháp đã biết (hoàn thành bình phương và sử dụng công thức arctan).</p>",
     "terms": {
-      "Absolute Convergence": "(Hội tụ tuyệt đối) Một chuỗi Σaₙ được gọi là hội tụ tuyệt đối nếu chuỗi các giá trị tuyệt đối Σ|aₙ| hội tụ. Hội tụ tuyệt đối suy ra hội tụ.",
-      "Conditionally Convergent": "(Hội tụ có điều kiện) Một chuỗi hội tụ nhưng không hội tụ tuyệt đối."
-    }
-  },
-  {
-    "id": 37,
-    "title": "Trang 37: Chứng minh & Ví dụ",
-    "image": "images/calculus/week3/MA1521Chap3_page_37.png",
-    "notes": "<h3>Chứng minh Định lý Hội tụ Tuyệt đối</h3><p>Ý tưởng của việc chứng minh là tách chuỗi aₙ thành hai chuỗi số không âm aₙ⁺ và aₙ⁻. Nếu chuỗi Σ|aₙ| hội tụ, ta có thể chứng minh được rằng cả hai chuỗi Σaₙ⁺ và Σaₙ⁻ đều hội tụ. Vì aₙ = aₙ⁺ - aₙ⁻, nên chuỗi Σaₙ cũng hội tụ.</p><hr><h3>Ví dụ</h3><p>Kiểm tra sự hội tụ của <code>Σ cos(nπ) / n²</code>.</p><p>Ta xét chuỗi các giá trị tuyệt đối: <code>Σ |cos(nπ)| / n²</code>. Vì <code>|cos(nπ)| ≤ 1</code>, ta có <code>|cos(nπ)| / n² ≤ 1/n²</code>. Mà chuỗi p <code>Σ 1/n²</code> hội tụ (vì p=2 > 1). Theo Tiêu chuẩn So sánh, chuỗi các giá trị tuyệt đối hội tụ. Do đó, chuỗi ban đầu hội tụ tuyệt đối.</p>",
-    "terms": {}
-  },
-  {
-    "id": 38,
-    "title": "Trang 38: Ví dụ về tính tổng Chuỗi",
-    "image": "images/calculus/week3/MA1521Chap3_page_38.png",
-    "notes": "<h3>Ví dụ: Tính tổng chuỗi đan dấu</h3><p>Cho biết <code>Σ 1/n² = π²/6</code>. Tính <code>Σ (-1)ⁿ⁻¹ / n²</code>.</p><p><b>Giải pháp:</b></p><p>Ta có thể tách chuỗi đan dấu thành hiệu của hai chuỗi con: (tổng các số hạng dương) - (tổng các số hạng âm). Bằng cách biến đổi và sử dụng giá trị đã cho, ta có thể tìm được tổng của chuỗi đan dấu là <code>π²/12</code>.</p><hr><h3>Ví dụ: Sắp xếp lại số hạng</h3><p>Liệu ta có thể tính tổng của chuỗi điều hòa đan dấu <code>Σ (-1)ⁿ⁻¹/n</code> bằng cách tương tự không?</p><p>Nếu ta cố gắng tách thành (tổng số hạng dương) - (tổng số hạng âm), ta sẽ nhận được dạng <code>∞ - ∞</code>, là một dạng vô định. Điều này cho thấy có một sự khác biệt cơ bản giữa hai loại chuỗi này.</p>",
-    "terms": {}
-  },
-  {
-    "id": 39,
-    "title": "Trang 39: Sự ảnh hưởng của việc Sắp xếp lại",
-    "image": "images/calculus/week3/MA1521Chap3_page_39.png",
-    "notes": "<h3>Sự hội tụ có điều kiện và việc Sắp xếp lại</h3><p><b>Định lý (Định lý Sắp xếp lại Riemann):</b></p><ul><li>Nếu một chuỗi <b>hội tụ tuyệt đối</b>, thì mọi cách sắp xếp lại (rearrangement) các số hạng của nó đều cho cùng một tổng.</li><li>Nếu một chuỗi <b>hội tụ có điều kiện</b>, thì có thể tồn tại các cách sắp xếp lại khác nhau cho các tổng khác nhau. Hơn nữa, với mọi số L bất kỳ (kể cả ±∞), tồn tại một cách sắp xếp lại các số hạng của chuỗi sao cho tổng của nó là L.</li></ul><p><b>Kết luận:</b> Nếu một chuỗi hội tụ có điều kiện, chúng ta không nên thay đổi thứ tự của các số hạng khi tính tổng.</p><hr><h3>Ví dụ</h3><p>Minh họa cách sắp xếp lại các số hạng của chuỗi điều hòa đan dấu để làm cho nó tiến đến 1 thay vì giá trị gốc (ln 2).</p>",
-    "terms": {
-      "Rearrangement (of a series)": "(Sắp xếp lại một chuỗi) Một chuỗi mới được tạo ra bằng cách thay đổi thứ tự của các số hạng của chuỗi ban đầu.",
-      "Riemann Series Theorem": "(Định lý Chuỗi Riemann) Phát biểu rằng nếu một chuỗi vô hạn hội tụ có điều kiện, thì các số hạng của nó có thể được sắp xếp lại để tạo thành một chuỗi mới hội tụ về một giá trị thực bất kỳ, hoặc phân kỳ."
+      "Universal Trigonometric Substitution (Phép thế Weierstrass)": "Một phương pháp đổi biến sử dụng t = tan(x/2) để chuyển đổi một tích phân của hàm hữu tỉ chứa các hàm lượng giác thành một tích phân của hàm hữu tỉ thông thường."
     }
   }
-      ]
-    },
-    {
-      "title": "Chương 5: Tối ưu hóa",
-      "slides": [
-        {
-          "id": 143,
-          "title": "Trang 1",
-          "image": "images/calculus/week5/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 144,
-          "title": "Trang 2",
-          "image": "images/calculus/week5/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 145,
-          "title": "Trang 3",
-          "image": "images/calculus/week5/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 146,
-          "title": "Trang 4",
-          "image": "images/calculus/week5/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 147,
-          "title": "Trang 5",
-          "image": "images/calculus/week5/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 148,
-          "title": "Trang 6",
-          "image": "images/calculus/week5/page_6.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 149,
-          "title": "Trang 7",
-          "image": "images/calculus/week5/page_7.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 150,
-          "title": "Trang 8",
-          "image": "images/calculus/week5/page_8.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 151,
-          "title": "Trang 9",
-          "image": "images/calculus/week5/page_9.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 152,
-          "title": "Trang 10",
-          "image": "images/calculus/week5/page_10.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 153,
-          "title": "Trang 11",
-          "image": "images/calculus/week5/page_11.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 154,
-          "title": "Trang 12",
-          "image": "images/calculus/week5/page_12.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 155,
-          "title": "Trang 13",
-          "image": "images/calculus/week5/page_13.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 156,
-          "title": "Trang 14",
-          "image": "images/calculus/week5/page_14.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 157,
-          "title": "Trang 15",
-          "image": "images/calculus/week5/page_15.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 158,
-          "title": "Trang 16",
-          "image": "images/calculus/week5/page_16.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 159,
-          "title": "Trang 17",
-          "image": "images/calculus/week5/page_17.png",
-          "notes": "",
-          "terms": {}
-        }
-      ]
-    },
-    {
-      "title": "Chương 6: Tích phân và Ứng dụng",
-      "slides": [
-        {
-          "id": 160,
-          "title": "Trang 1",
-          "image": "images/calculus/week6/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 161,
-          "title": "Trang 2",
-          "image": "images/calculus/week6/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 162,
-          "title": "Trang 3",
-          "image": "images/calculus/week6/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 163,
-          "title": "Trang 4",
-          "image": "images/calculus/week6/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 164,
-          "title": "Trang 5",
-          "image": "images/calculus/week6/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 165,
-          "title": "Trang 6",
-          "image": "images/calculus/week6/page_6.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 166,
-          "title": "Trang 7",
-          "image": "images/calculus/week6/page_7.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 167,
-          "title": "Trang 8",
-          "image": "images/calculus/week6/page_8.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 168,
-          "title": "Trang 9",
-          "image": "images/calculus/week6/page_9.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 169,
-          "title": "Trang 10",
-          "image": "images/calculus/week6/page_10.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 170,
-          "title": "Trang 11",
-          "image": "images/calculus/week6/page_11.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 171,
-          "title": "Trang 12",
-          "image": "images/calculus/week6/page_12.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 172,
-          "title": "Trang 13",
-          "image": "images/calculus/week6/page_13.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 173,
-          "title": "Trang 14",
-          "image": "images/calculus/week6/page_14.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 174,
-          "title": "Trang 15",
-          "image": "images/calculus/week6/page_15.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 175,
-          "title": "Trang 16",
-          "image": "images/calculus/week6/page_16.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 176,
-          "title": "Trang 17",
-          "image": "images/calculus/week6/page_17.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 177,
-          "title": "Trang 18",
-          "image": "images/calculus/week6/page_18.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 178,
-          "title": "Trang 19",
-          "image": "images/calculus/week6/page_19.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 179,
-          "title": "Trang 20",
-          "image": "images/calculus/week6/page_20.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 180,
-          "title": "Trang 21",
-          "image": "images/calculus/week6/page_21.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 181,
-          "title": "Trang 22",
-          "image": "images/calculus/week6/page_22.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 182,
-          "title": "Trang 23",
-          "image": "images/calculus/week6/page_23.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 183,
-          "title": "Trang 24",
-          "image": "images/calculus/week6/page_24.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 184,
-          "title": "Trang 25",
-          "image": "images/calculus/week6/page_25.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 185,
-          "title": "Trang 26",
-          "image": "images/calculus/week6/page_26.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 186,
-          "title": "Trang 27",
-          "image": "images/calculus/week6/page_27.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 187,
-          "title": "Trang 28",
-          "image": "images/calculus/week6/page_28.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 188,
-          "title": "Trang 29",
-          "image": "images/calculus/week6/page_29.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 189,
-          "title": "Trang 30",
-          "image": "images/calculus/week6/page_30.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 190,
-          "title": "Trang 31",
-          "image": "images/calculus/week6/page_31.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 191,
-          "title": "Trang 32",
-          "image": "images/calculus/week6/page_32.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 192,
-          "title": "Trang 33",
-          "image": "images/calculus/week6/page_33.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 193,
-          "title": "Trang 34",
-          "image": "images/calculus/week6/page_34.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 194,
-          "title": "Trang 35",
-          "image": "images/calculus/week6/page_35.png",
-          "notes": "",
-          "terms": {}
-        }
-      ]
-    },
-    {
-      "title": "Chương 6.2",
-      "slides": [
-        {
-          "id": 195,
-          "title": "Trang 1",
-          "image": "images/calculus/week6.2/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 196,
-          "title": "Trang 2",
-          "image": "images/calculus/week6.2/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 197,
-          "title": "Trang 3",
-          "image": "images/calculus/week6.2/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 198,
-          "title": "Trang 4",
-          "image": "images/calculus/week6.2/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 199,
-          "title": "Trang 5",
-          "image": "images/calculus/week6.2/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 200,
-          "title": "Trang 6",
-          "image": "images/calculus/week6.2/page_6.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 201,
-          "title": "Trang 7",
-          "image": "images/calculus/week6.2/page_7.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 202,
-          "title": "Trang 8",
-          "image": "images/calculus/week6.2/page_8.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 203,
-          "title": "Trang 9",
-          "image": "images/calculus/week6.2/page_9.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 204,
-          "title": "Trang 10",
-          "image": "images/calculus/week6.2/page_10.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 205,
-          "title": "Trang 11",
-          "image": "images/calculus/week6.2/page_11.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 206,
-          "title": "Trang 12",
-          "image": "images/calculus/week6.2/page_12.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 207,
-          "title": "Trang 13",
-          "image": "images/calculus/week6.2/page_13.png",
-          "notes": "",
-          "terms": {}
-        }
-      ]
-    },
-    {
-      "title": "Chương 7: Phương trình vi phân thường",
-      "slides": [
-        {
-          "id": 208,
-          "title": "Trang 1",
-          "image": "images/calculus/week7/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 209,
-          "title": "Trang 2",
-          "image": "images/calculus/week7/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 210,
-          "title": "Trang 3",
-          "image": "images/calculus/week7/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 211,
-          "title": "Trang 4",
-          "image": "images/calculus/week7/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 212,
-          "title": "Trang 5",
-          "image": "images/calculus/week7/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 213,
-          "title": "Trang 6",
-          "image": "images/calculus/week7/page_6.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 214,
-          "title": "Trang 7",
-          "image": "images/calculus/week7/page_7.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 215,
-          "title": "Trang 8",
-          "image": "images/calculus/week7/page_8.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 216,
-          "title": "Trang 9",
-          "image": "images/calculus/week7/page_9.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 217,
-          "title": "Trang 10",
-          "image": "images/calculus/week7/page_10.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 218,
-          "title": "Trang 11",
-          "image": "images/calculus/week7/page_11.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 219,
-          "title": "Trang 12",
-          "image": "images/calculus/week7/page_12.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 220,
-          "title": "Trang 13",
-          "image": "images/calculus/week7/page_13.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 221,
-          "title": "Trang 14",
-          "image": "images/calculus/week7/page_14.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 222,
-          "title": "Trang 15",
-          "image": "images/calculus/week7/page_15.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 223,
-          "title": "Trang 16",
-          "image": "images/calculus/week7/page_16.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 224,
-          "title": "Trang 17",
-          "image": "images/calculus/week7/page_17.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 225,
-          "title": "Trang 18",
-          "image": "images/calculus/week7/page_18.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 226,
-          "title": "Trang 19",
-          "image": "images/calculus/week7/page_19.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 227,
-          "title": "Trang 20",
-          "image": "images/calculus/week7/page_20.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 228,
-          "title": "Trang 21",
-          "image": "images/calculus/week7/page_21.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 229,
-          "title": "Trang 22",
-          "image": "images/calculus/week7/page_22.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 230,
-          "title": "Trang 23",
-          "image": "images/calculus/week7/page_23.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 231,
-          "title": "Trang 24",
-          "image": "images/calculus/week7/page_24.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 232,
-          "title": "Trang 25",
-          "image": "images/calculus/week7/page_25.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 233,
-          "title": "Trang 26",
-          "image": "images/calculus/week7/page_26.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 234,
-          "title": "Trang 27",
-          "image": "images/calculus/week7/page_27.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 235,
-          "title": "Trang 28",
-          "image": "images/calculus/week7/page_28.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 236,
-          "title": "Trang 29",
-          "image": "images/calculus/week7/page_29.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 237,
-          "title": "Trang 30",
-          "image": "images/calculus/week7/page_30.png",
-          "notes": "",
-          "terms": {}
-        }
-      ]
-    }
+  ]
+}
   ]
 }
