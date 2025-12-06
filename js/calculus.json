@@ -1871,6 +1871,115 @@
     }
   }
   ]
+},
+{
+  "title": "Chương 6.2: Ứng dụng của Tích phân (Applications of Integration)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 6.2",
+      "image": "images/calculus/week6.2/MA1521Chap6-2_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 6: Ứng dụng của Tích phân.</p><hr><h3>Mục lục</h3><p>Các ứng dụng của tích phân sẽ được đề cập, bao gồm:</p><ul><li>Bài toán Diện tích</li><li>Bài toán Thể tích (Vật thể tròn xoay)</li><li>Độ dài Cung</li><li>Diện tích Bề mặt tròn xoay</li></ul>",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Bài toán Diện tích",
+      "image": "images/calculus/week6.2/MA1521Chap6-2_page_2.png",
+      "notes": "<h3>Bài toán Diện tích (The Area Problem)</h3><p>Nhắc lại ý nghĩa hình học của tích phân:</p><p>Diện tích thực (net area) dưới đường cong <code>y = f(x)</code> từ a đến b là <code>A = ∫ₐᵇ f(x)dx</code>.</p><hr><h3>Diện tích giữa hai đường cong</h3><p>Tổng quát, giả sử f và g là các hàm liên tục sao cho <code>f(x) ≥ g(x)</code> với mọi x ∈ [a, b].</p><p>Diện tích của vùng giới hạn bởi hai đường cong <code>y = f(x)</code> và <code>y = g(x)</code> từ a đến b là:</p><code>A = ∫ₐᵇ [f(x) - g(x)]dx</code><p>Ý tưởng là lấy 'diện tích dưới đường cong trên' trừ đi 'diện tích dưới đường cong dưới'.</p>",
+      "terms": {
+        "Area Between Curves": "(Diện tích giữa hai đường cong) Diện tích của một vùng được giới hạn bởi đồ thị của hai hàm số trên một khoảng nhất định. Nó được tính bằng tích phân của hiệu số giữa hàm trên và hàm dưới."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Ví dụ về Diện tích",
+      "image": "images/calculus/week6.2/MA1521Chap6-2_page_3.png",
+      "notes": "<h3>Ví dụ 1: Diện tích giữa hai đường cong</h3><p>Tìm diện tích của vùng giới hạn phía trên bởi <code>y = x² + 1</code> và phía dưới bởi <code>y = x</code>, từ x = 0 đến x = 1.</p><p>Áp dụng công thức:</p><code>A = ∫₀¹ [(x² + 1) - x] dx = [x³/3 + x - x²/2] |₀¹ = 5/6</code><hr><h3>Ví dụ 2: Diện tích vùng kín</h3><p>Tìm diện tích của vùng được bao bọc bởi <code>y = x²</code> và <code>y = 2x - x²</code>.</p><p><b>1. Tìm giao điểm:</b> Cho <code>x² = 2x - x²</code>, ta giải được x = 0 và x = 1. Đây chính là hai cận tích phân.</p><p><b>2. Thiết lập tích phân:</b> Trên khoảng [0, 1], đường <code>y = 2x - x²</code> nằm trên. Do đó:</p><code>A = ∫₀¹ [(2x - x²) - x²] dx = ∫₀¹ (2x - 2x²) dx = 1/3</code>",
+      "terms": {}
+    },
+    {
+    "id": 4,
+    "title": "Trang 4: Bài toán Thể tích",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_4.png",
+    "notes": "<h3>Bài toán Thể tích (The Volume Problem)</h3><p>Làm thế nào để tìm thể tích của một vật thể rắn?</p><ul><li>Đối với các hình lăng trụ (như hình hộp chữ nhật, hình trụ) có diện tích đáy là S và chiều cao h, thể tích là <code>V = Sh</code>.</li></ul><hr><h3>Thể tích của Hình cầu Đơn vị</h3><p>Để tìm thể tích của một hình cầu, ta có thể cắt nó thành nhiều lát mỏng hình trụ. Mỗi lát cắt tại vị trí x có bán kính <code>r = sqrt(1 - x²)</code> và độ dày Δx.</p><p>Thể tích của một lát mỏng là <code>ΔV ≈ πr²Δx = π(1 - x²)Δx</code>.</p><p>Bằng cách lấy tích phân (tổng hợp vô hạn các lát mỏng) từ -1 đến 1, ta thu được thể tích của hình cầu đơn vị là <code>4π/3</code>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 5,
+    "title": "Trang 5: Vật thể Tròn xoay",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_5.png",
+    "notes": "<h3>Bài toán Thể tích (Tổng quát)</h3><p>Giả sử một vật thể rắn được đặt dọc theo trục x từ a đến b. Cho <code>A(x)</code> là <b>diện tích thiết diện (cross-sectional area)</b> vuông góc với trục x tại điểm x.</p><p>Khi đó, thể tích của vật thể là:</p><code>V = ∫ₐᵇ A(x)dx</code><hr><h3>Vật thể Tròn xoay (Solids of Revolution)</h3><p>Giả sử một vật thể được tạo ra bằng cách quay vùng dưới đường cong <code>y = f(x)</code> từ a đến b quanh trục x.</p><p>Tại mỗi điểm x, thiết diện là một hình tròn có bán kính <code>r = f(x)</code>. Do đó, diện tích thiết diện là <code>A(x) = π[f(x)]²</code>.</p><p>Thể tích của vật thể tròn xoay này là:</p><code>V = ∫ₐᵇ π[f(x)]² dx</code><p>Phương pháp này được gọi là <b>phương pháp đĩa (disk method)</b> hoặc phương pháp vòng đệm (washer method) nếu có lỗ ở giữa.</p>",
+    "terms": {
+      "Solid of Revolution": "(Vật thể tròn xoay) Một hình khối 3D được tạo ra bằng cách quay một mặt phẳng 2D quanh một đường thẳng (trục quay).",
+      "Disk/Washer Method": "(Phương pháp Đĩa/Vòng đệm) Một phương pháp tính thể tích của vật thể tròn xoay bằng cách lấy tích phân diện tích của các lát cắt hình đĩa hoặc hình vòng đệm vuông góc với trục quay."
+    }
+  },
+  {
+    "id": 6,
+    "title": "Trang 6: Ví dụ & Thể tích bằng Vỏ trụ",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_6.png",
+    "notes": "<h3>Ví dụ: Quay quanh trục y</h3><p>Tìm thể tích của vật thể tạo bởi việc quay vùng giới hạn bởi <code>y = x³</code>, y=8, và x=0 quanh trục y.</p><p>Vì ta quay quanh trục y, ta cần lấy tích phân theo y. Ta viết lại hàm dưới dạng <code>x = ³√y</code>.</p><p>Thiết diện tại y là một hình tròn có bán kính <code>r = x = ³√y</code>. Diện tích thiết diện là <code>A(y) = π(³√y)² = πy²/³</code>.</p><p>Thể tích: <code>V = ∫₀⁸ A(y)dy = 96π/5</code>.</p><hr><h3>Thể tích bằng Vỏ trụ (Volumes by Cylindrical Shells)</h3><p>Đôi khi, việc sử dụng phương pháp đĩa/vòng đệm trở nên rất khó khăn hoặc không thể. Ví dụ, khi quay vùng dưới đường cong <code>y = 2x² - x³</code> quanh trục y, việc biểu diễn x theo y là không dễ dàng. Một phương pháp thay thế là <b>phương pháp vỏ trụ</b>.</p>",
+    "terms": {
+      "Method of Cylindrical Shells": "(Phương pháp Vỏ trụ) Một phương pháp tính thể tích của vật thể tròn xoay bằng cách lấy tích phân thể tích của các lớp vỏ trụ đồng tâm song song với trục quay."
+    }
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Phương pháp Vỏ trụ",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_7.png",
+    "notes": "<h3>Thể tích bằng Vỏ trụ (tiếp)</h3><p>Ý tưởng của phương pháp này là cắt vật thể thành các lớp vỏ trụ mỏng đồng tâm.</p><p>Xét một lớp vỏ trụ tại vị trí x, có bán kính x, chiều cao <code>f(x)</code> và độ dày Δx.</p><p>Nếu ta trải phẳng lớp vỏ này ra, nó sẽ trở thành một tấm hình hộp chữ nhật có:</p><ul><li><b>Chiều dài:</b> Chu vi <code>2πx</code></li><li><b>Chiều cao:</b> <code>f(x)</code></li><li><b>Độ dày:</b> <code>Δx</code></li></ul><p>Thể tích của một lớp vỏ mỏng là <code>ΔV ≈ (2πx) * f(x) * Δx</code>.</p><p>Lấy tích phân, thể tích của toàn bộ vật thể là:</p><code>V = ∫ₐᵇ 2πx * f(x) dx</code><p>Đây được gọi là <b>phương pháp vỏ trụ (method of cylindrical shells)</b>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Ví dụ về Vỏ trụ & Độ dài Cung",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_8.png",
+    "notes": "<h3>Ví dụ về Vỏ trụ</h3><p>Tìm thể tích của vật thể tạo bởi việc quay vùng giữa <code>y=x</code> và <code>y=x²</code> quanh trục y.</p><ul><li>Giao điểm là x=0 và x=1.</li><li>Tại mỗi x, ta có một vỏ trụ với bán kính <code>x</code> và chiều cao <code>(x - x²)</code>.</li><li>Thể tích: <code>V = ∫₀¹ 2πx(x - x²)dx = π/6</code>.</li></ul><hr><h3>Độ dài Cung (The Arc Length)</h3><p>Làm thế nào để đo độ dài của một đoạn đường cong?</p><p>Ý tưởng là xấp xỉ đường cong bằng nhiều đoạn thẳng nhỏ. Độ dài của một đoạn thẳng nhỏ ΔL có thể được tính bằng định lý Pythagoras: <code>ΔL = sqrt((Δx)² + (Δy)²)</code>.</p><p>Khi cho Δx → 0, tổng độ dài của các đoạn thẳng sẽ tiến đến độ dài thực của cung. Công thức độ dài cung của đường cong <code>y = f(x)</code> từ a đến b là:</p><code>L = ∫ₐᵇ sqrt(1 + [f'(x)]²) dx</code>",
+    "terms": {
+      "Arc Length": "(Độ dài cung) Độ dài của một đường cong giữa hai điểm cho trước. Nó được tính bằng cách lấy tích phân của căn bậc hai của 1 cộng với bình phương của đạo hàm."
+    }
+  },
+  {
+    "id": 9,
+    "title": "Trang 9: Ví dụ về Độ dài Cung",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_9.png",
+    "notes": "<h3>Ví dụ: Tìm độ dài cung</h3><p>Tìm độ dài cung của đường cong <code>y = √x</code> từ (0, 0) đến (1, 1).</p><p>1. <b>Tính đạo hàm:</b> <code>dy/dx = 1 / (2√x)</code>.</p><p>2. <b>Thiết lập tích phân:</b> <code>L = ∫₀¹ sqrt(1 + [1/(2√x)]²) dx = ∫₀¹ sqrt(1 + 1/(4x)) dx</code>.</p><p>Tích phân này khá phức tạp và đòi hỏi các kỹ thuật nâng cao (như đổi biến lượng giác) để giải quyết.</p><hr><h3>Cách tiếp cận khác</h3><p>Ta có thể lấy tích phân theo y. Viết lại hàm dưới dạng <code>x = y²</code>, với y từ 0 đến 1. <code>dx/dy = 2y</code>.</p><p>Công thức độ dài cung theo y là: <code>L = ∫₀¹ sqrt(1 + (dx/dy)²) dy = ∫₀¹ sqrt(1 + (2y)²) dy</code>. Tích phân này cũng có thể được giải bằng đổi biến lượng giác.</p>",
+    "terms": {}
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Diện tích Bề mặt Tròn xoay",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_10.png",
+    "notes": "<h3>Diện tích Bề mặt Tròn xoay (Surface Area of Revolution)</h3><p>Bây giờ ta xét bài toán diện tích bề mặt của một vật thể 3D. Ví dụ, diện tích bề mặt của một hình cầu đơn vị là bao nhiêu?</p><p>Bề mặt của hình cầu đơn vị có thể được xem như là kết quả của việc quay đường cong <code>y = sqrt(1 - x²)</code> từ -1 đến 1 quanh trục x.</p><hr><h3>Ý tưởng</h3><p>Chúng ta sẽ xấp xỉ bề mặt bằng các 'dải băng' nhỏ (frustum) được tạo ra bằng cách quay các đoạn thẳng nhỏ xấp xỉ đường cong.</p>",
+    "terms": {
+      "Surface Area of Revolution": "(Diện tích Bề mặt tròn xoay) Diện tích của một bề mặt được tạo ra bằng cách quay một đường cong 2D quanh một trục."
+    }
+  },
+  {
+    "id": 11,
+    "title": "Trang 11: Diện tích Bề mặt Hình nón",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_11.png",
+    "notes": "<h3>Diện tích Bề mặt của một Hình nón</h3><p>Diện tích bề mặt xung quanh của một hình nón có bán kính đáy R và đường sinh L là <code>A = πRL</code>.</p><hr><h3>Diện tích Bề mặt của một Hình nón cụt (Frustum)</h3><p>Một hình nón cụt được tạo ra bằng cách cắt bỏ phần chóp của một hình nón lớn. Diện tích bề mặt xung quanh của nó được tính bằng <code>A = π(R+r)L</code>, trong đó R và r là bán kính của hai đáy, và L là độ dài đường sinh của phần nón cụt.</p>",
+    "terms": {
+      "Frustum": "(Hình nón cụt) Phần của một hình khối rắn (thường là hình nón hoặc hình chóp) nằm giữa hai mặt phẳng song song cắt khối đó."
+    }
+  },
+  {
+    "id": 12,
+    "title": "Trang 12: Công thức Diện tích Bề mặt Tròn xoay",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_12.png",
+    "notes": "<h3>Công thức Diện tích Bề mặt Tròn xoay</h3><p>Ta xấp xỉ diện tích bề mặt bằng tổng diện tích của các hình nón cụt nhỏ.</p><p>Diện tích của một 'dải băng' nhỏ là <code>ΔA ≈ 2πf(x)ΔL</code>, trong đó <code>ΔL = sqrt(1 + [f'(x)]²)Δx</code> là độ dài của đoạn cung nhỏ.</p><p>Lấy giới hạn khi Δx → 0, ta có công thức tính <b>diện tích bề mặt</b> được tạo ra bằng cách quay đường cong <code>y = f(x)</code> từ a đến b quanh trục x:</p><code>A = ∫ₐᵇ 2πf(x) * sqrt(1 + [f'(x)]²) dx</code><hr><h3>Ví dụ: Diện tích bề mặt hình cầu</h3><p>Áp dụng công thức trên cho đường cong <code>y = sqrt(1 - x²)</code>, ta tính được diện tích bề mặt của hình cầu đơn vị là <code>4π</code>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Ví dụ về Diện tích Bề mặt",
+    "image": "images/calculus/week6.2/MA1521Chap6-2_page_13.png",
+    "notes": "<h3>Ví dụ</h3><p>Tìm diện tích của bề mặt được tạo ra bằng cách quay đường cong <code>y = eˣ</code>, 0 ≤ x ≤ 1, quanh trục x.</p><p><b>1. Tính đạo hàm:</b> <code>(eˣ)' = eˣ</code>.</p><p><b>2. Thiết lập tích phân:</b></p><code>A = ∫₀¹ 2πeˣ * sqrt(1 + [eˣ]²) dx</code><p><b>3. Giải tích phân:</b></p><p>Đây là một tích phân phức tạp. Ta có thể sử dụng phương pháp đổi biến bằng cách đặt <code>u = eˣ</code>, <code>du = eˣdx</code>. Tích phân trở thành <code>∫₁ᵉ 2π * sqrt(1 + u²) du</code>.</p><p>Tích phân này có thể được giải bằng các công thức chuẩn hoặc đổi biến lượng giác, và kết quả cuối cùng là <code>π[e√ (1+e²) - √2 + ln(e+√ (1+e²)) - ln(1+√2)]</code>.</p>",
+    "terms": {}
+  }
+  ]
 }
   ]
 }
