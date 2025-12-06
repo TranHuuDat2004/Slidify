@@ -537,367 +537,320 @@
       ]
     },
     {
-      "title": "Chương 2: Đạo hàm và Ứng dụng",
-      "slides": [
-        {
-          "id": 36,
-          "title": "Trang 1",
-          "image": "images/calculus/week2/page_1.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 37,
-          "title": "Trang 2",
-          "image": "images/calculus/week2/page_2.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 38,
-          "title": "Trang 3",
-          "image": "images/calculus/week2/page_3.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 39,
-          "title": "Trang 4",
-          "image": "images/calculus/week2/page_4.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 40,
-          "title": "Trang 5",
-          "image": "images/calculus/week2/page_5.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 41,
-          "title": "Trang 6",
-          "image": "images/calculus/week2/page_6.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 42,
-          "title": "Trang 7",
-          "image": "images/calculus/week2/page_7.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 43,
-          "title": "Trang 8",
-          "image": "images/calculus/week2/page_8.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 44,
-          "title": "Trang 9",
-          "image": "images/calculus/week2/page_9.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 45,
-          "title": "Trang 10",
-          "image": "images/calculus/week2/page_10.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 46,
-          "title": "Trang 11",
-          "image": "images/calculus/week2/page_11.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 47,
-          "title": "Trang 12",
-          "image": "images/calculus/week2/page_12.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 48,
-          "title": "Trang 13",
-          "image": "images/calculus/week2/page_13.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 49,
-          "title": "Trang 14",
-          "image": "images/calculus/week2/page_14.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 50,
-          "title": "Trang 15",
-          "image": "images/calculus/week2/page_15.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 51,
-          "title": "Trang 16",
-          "image": "images/calculus/week2/page_16.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 52,
-          "title": "Trang 17",
-          "image": "images/calculus/week2/page_17.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 53,
-          "title": "Trang 18",
-          "image": "images/calculus/week2/page_18.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 54,
-          "title": "Trang 19",
-          "image": "images/calculus/week2/page_19.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 55,
-          "title": "Trang 20",
-          "image": "images/calculus/week2/page_20.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 56,
-          "title": "Trang 21",
-          "image": "images/calculus/week2/page_21.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 57,
-          "title": "Trang 22",
-          "image": "images/calculus/week2/page_22.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 58,
-          "title": "Trang 23",
-          "image": "images/calculus/week2/page_23.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 59,
-          "title": "Trang 24",
-          "image": "images/calculus/week2/page_24.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 60,
-          "title": "Trang 25",
-          "image": "images/calculus/week2/page_25.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 61,
-          "title": "Trang 26",
-          "image": "images/calculus/week2/page_26.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 62,
-          "title": "Trang 27",
-          "image": "images/calculus/week2/page_27.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 63,
-          "title": "Trang 28",
-          "image": "images/calculus/week2/page_28.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 64,
-          "title": "Trang 29",
-          "image": "images/calculus/week2/page_29.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 65,
-          "title": "Trang 30",
-          "image": "images/calculus/week2/page_30.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 66,
-          "title": "Trang 31",
-          "image": "images/calculus/week2/page_31.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 67,
-          "title": "Trang 32",
-          "image": "images/calculus/week2/page_32.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 68,
-          "title": "Trang 33",
-          "image": "images/calculus/week2/page_33.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 69,
-          "title": "Trang 34",
-          "image": "images/calculus/week2/page_34.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 70,
-          "title": "Trang 35",
-          "image": "images/calculus/week2/page_35.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 71,
-          "title": "Trang 36",
-          "image": "images/calculus/week2/page_36.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 72,
-          "title": "Trang 37",
-          "image": "images/calculus/week2/page_37.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 73,
-          "title": "Trang 38",
-          "image": "images/calculus/week2/page_38.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 74,
-          "title": "Trang 39",
-          "image": "images/calculus/week2/page_39.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 75,
-          "title": "Trang 40",
-          "image": "images/calculus/week2/page_40.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 76,
-          "title": "Trang 41",
-          "image": "images/calculus/week2/page_41.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 77,
-          "title": "Trang 42",
-          "image": "images/calculus/week2/page_42.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 78,
-          "title": "Trang 43",
-          "image": "images/calculus/week2/page_43.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 79,
-          "title": "Trang 44",
-          "image": "images/calculus/week2/page_44.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 80,
-          "title": "Trang 45",
-          "image": "images/calculus/week2/page_45.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 81,
-          "title": "Trang 46",
-          "image": "images/calculus/week2/page_46.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 82,
-          "title": "Trang 47",
-          "image": "images/calculus/week2/page_47.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 83,
-          "title": "Trang 48",
-          "image": "images/calculus/week2/page_48.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 84,
-          "title": "Trang 49",
-          "image": "images/calculus/week2/page_49.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 85,
-          "title": "Trang 50",
-          "image": "images/calculus/week2/page_50.png",
-          "notes": "",
-          "terms": {}
-        },
-        {
-          "id": 86,
-          "title": "Trang 51",
-          "image": "images/calculus/week2/page_51.png",
-          "notes": "",
-          "terms": {}
-        }
-      ]
+  "title": "Chương 2: Đạo hàm và Ứng dụng (Derivatives with Applications)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 2",
+      "image": "images/calculus/week2/MA1521Chap2_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 2: Đạo hàm và Ứng dụng.</p><hr><h3>Mục lục Chương 2</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này, bao gồm Đường tiếp tuyến, Định nghĩa đạo hàm, các Quy tắc tính đạo hàm, và các ứng dụng trong việc tìm giá trị lớn nhất/nhỏ nhất, vẽ đồ thị...</p>",
+      "terms": {}
     },
+    {
+      "id": 2,
+      "title": "Trang 2: Đường tiếp tuyến & Định nghĩa Đạo hàm",
+      "image": "images/calculus/week2/MA1521Chap2_page_2.png",
+      "notes": "<h3>Đường tiếp tuyến (The Tangent Line)</h3><p>Như đã thấy ở Chương 1, hệ số góc của đường tiếp tuyến với đường cong <code>y = f(x)</code> tại điểm <code>P(a, f(a))</code> được định nghĩa bằng giới hạn:</p><code>m = lim(h→0) [f(a+h) - f(a)] / h</code><hr><h3>Định nghĩa Đạo hàm (Definition of Derivative)</h3><p><b>Đạo hàm (derivative)</b> của một hàm số f tại một số a, ký hiệu là <code>f'(a)</code>, là:</p><code>f'(a) = lim(h→0) [f(a+h) - f(a)] / h</code><ul><li>Nếu <code>f'(a)</code> tồn tại, ta nói f <b>khả vi (differentiable)</b> tại a.</li><li><code>f'(a)</code> chính là <b>hệ số góc</b> của đường cong <code>y = f(x)</code> tại x = a.</li><li><b>Phương trình đường tiếp tuyến</b> với <code>y = f(x)</code> tại điểm <code>(a, f(a))</code> là: <code>y - f(a) = f'(a)(x - a)</code>.</li></ul>",
+      "terms": {
+        "Derivative (Đạo hàm)": "Đo lường tốc độ thay đổi tức thời của một hàm số. Về mặt hình học, đạo hàm tại một điểm là hệ số góc của đường tiếp tuyến với đồ thị hàm số tại điểm đó.",
+        "Differentiable (Khả vi)": "Một hàm số được gọi là khả vi tại một điểm nếu đạo hàm của nó tồn tại tại điểm đó. Điều này có nghĩa là đồ thị của hàm 'trơn' và không có góc nhọn tại điểm đó."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Ví dụ về Đạo hàm",
+      "image": "images/calculus/week2/MA1521Chap2_page_3.png",
+      "notes": "<h3>Ví dụ 1: Tìm đạo hàm tại một điểm</h3><p>Cho <code>f(x) = x² - 8x + 9</code>. Tìm <code>f'(3)</code>.</p><p>Áp dụng định nghĩa giới hạn:</p><code>f'(3) = lim(h→0) [f(3+h) - f(3)] / h</code><br><code>= lim(h→0) [((3+h)² - 8(3+h) + 9) - (3² - 8*3 + 9)] / h</code><br><code>= lim(h→0) [-2h + h²] / h = lim(h→0) (-2 + h) = -2</code><p>Phương trình đường tiếp tuyến tại điểm (3, -6) là: <code>y - (-6) = -2(x - 3)</code>, hay <code>2x + y = 0</code>.</p><hr><h3>Ví dụ 2: Sử dụng Định lý Kẹp</h3><p>Cho hàm <code>f(x) = { x²sin(1/x), nếu x ≠ 0; 0, nếu x = 0 }</code>. Tìm <code>f'(0)</code>.</p><p>Áp dụng định nghĩa:</p><code>f'(0) = lim(h→0) [f(0+h) - f(0)] / h</code><br><code>= lim(h→0) [h²sin(1/h) - 0] / h = lim(h→0) h sin(1/h)</code><p>Vì <code>-1 ≤ sin(1/h) ≤ 1</code>, ta có <code>-|h| ≤ h sin(1/h) ≤ |h|</code>. Theo Định lý Kẹp, giới hạn này bằng 0. Vậy <code>f'(0) = 0</code>.</p>",
+      "terms": {}
+    },
+    {
+    "id": 4,
+    "title": "Trang 4: Vận tốc & Ví dụ",
+    "image": "images/calculus/week2/MA1521Chap2_page_4.png",
+    "notes": "<h3>Vận tốc (Velocity)</h3><p>Cho <code>s(t)</code> là hàm vị trí của một hạt.</p><ul><li><b>Vận tốc tức thời (instantaneous velocity)</b> tại thời điểm t = a là <code>s'(a)</code>.</li><li><b>Tốc độ (speed)</b> tại thời điểm t = a là <code>|s'(a)|</code>.</li></ul><hr><h3>Ví dụ: Tìm đạo hàm</h3><p>Cho <code>f(x) = 1/x</code>. Tìm <code>f'(a)</code> với a ∈ ℝ \\ {0}.</p><p>Áp dụng định nghĩa giới hạn:</p><code>f'(a) = lim(h→0) [1/(a+h) - 1/a] / h</code><br><code>= lim(h→0) [a - (a+h)] / [h(a+h)a]</code><br><code>= lim(h→0) -h / [h(a+h)a] = -1 / a²</code><p>Vậy, <code>f'</code> là một hàm số được định nghĩa trên ℝ \\ {0}.</p>",
+    "terms": {
+      "Speed (Tốc độ)": "Độ lớn của vận tốc, là một đại lượng vô hướng chỉ cho biết mức độ nhanh chậm của chuyển động."
+    }
+  },
+  {
+    "id": 5,
+    "title": "Trang 5: Đạo hàm như một Hàm số & Ví dụ",
+    "image": "images/calculus/week2/MA1521Chap2_page_5.png",
+    "notes": "<h3>Đạo hàm như một Hàm số</h3><p>Đạo hàm <code>f'(a)</code> của f tại một điểm cố định x = a.</p><p>Nếu ta cho a thay đổi, ta có thể định nghĩa <b>đạo hàm của f như một hàm số</b>:</p><code>f'(x) = lim(h→0) [f(x+h) - f(x)] / h</code><p>Các ký hiệu khác của đạo hàm: <code>y', dy/dx, df/dx, D_x f(x)</code>.</p><hr><h3>Ví dụ</h3><p>Cho <code>f(x) = (1-x) / (2+x)</code>. Áp dụng định nghĩa, ta tìm được <code>f'(x) = -3 / (2+x)²</code>.</p><p>Miền xác định của f là ℝ \\ {-2}. Miền xác định của f' cũng là ℝ \\ {-2}.</p>",
+    "terms": {}
+  },
+  {
+    "id": 6,
+    "title": "Trang 6: Ví dụ & Hàm khả vi",
+    "image": "images/calculus/week2/MA1521Chap2_page_6.png",
+    "notes": "<h3>Ví dụ: Đạo hàm của hàm căn</h3><p>Cho <code>f(x) = sqrt(x)</code>, (x ≥ 0). Tìm f'.</p><p>Sử dụng phương pháp nhân liên hợp, ta tìm được <code>f'(x) = 1 / (2 * sqrt(x))</code>, với x > 0.</p><p>Lưu ý rằng miền xác định của f' có thể <b>nhỏ hơn</b> miền xác định của f. Trong trường hợp này, f(x) xác định tại x=0 nhưng f'(x) thì không.</p><hr><h3>Hàm khả vi (Differentiable Functions)</h3><p><b>Định nghĩa:</b></p><ul><li>f là <b>khả vi tại a</b> nếu <code>f'(a)</code> tồn tại.</li><li>f là <b>khả vi trên (a, b)</b> nếu nó khả vi tại mọi số c ∈ (a, b).</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Tính khả vi và Tính liên tục",
+    "image": "images/calculus/week2/MA1521Chap2_page_7.png",
+    "notes": "<h3>Tính khả vi suy ra Tính liên tục</h3><p><b>Định lý:</b> Nếu f là <b>khả vi</b> tại a, thì f cũng <b>liên tục</b> tại a.</p><p><b>Lưu ý:</b> Điều ngược lại là sai. Một hàm có thể liên tục tại một điểm nhưng không khả vi tại điểm đó. Ví dụ kinh điển là hàm <code>f(x) = |x|</code> liên tục tại 0 nhưng không khả vi tại 0 (do đồ thị có góc nhọn).</p><hr><h3>Chứng minh Định lý</h3><p>Giả sử f khả vi tại a, tức là <code>f'(a) = lim(x→a) [f(x) - f(a)] / (x - a)</code> tồn tại.</p><p>Ta cần chứng minh <code>lim(x→a) f(x) = f(a)</code>, tương đương với <code>lim(x→a) [f(x) - f(a)] = 0</code>.</p><p>Ta có: <code>lim(x→a) [f(x) - f(a)] = lim(x→a) [ (f(x) - f(a)) / (x - a) * (x - a) ]</code></p><p><code>= [lim(x→a) (f(x) - f(a)) / (x - a)] * [lim(x→a) (x - a)]</code></p><p><code>= f'(a) * 0 = 0</code>. (Điều phải chứng minh)</p>",
+    "terms": {}
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Các công thức tính Đạo hàm",
+    "image": "images/calculus/week2/MA1521Chap2_page_8.png",
+    "notes": "<h3>Đạo hàm của Hằng số và Hằng số nhân với hàm</h3><p><b>Đạo hàm của hằng số:</b></p><p>Nếu c là một hằng số, thì <code>(c)' = 0</code>.</p><p><b>Đạo hàm của hằng số nhân với hàm:</b></p><p>Nếu f là một hàm khả vi và c là hằng số, thì <code>(cf)' = c * f'</code>.</p><hr><h3>Đạo hàm của Tổng và Hiệu</h3><p>Nếu f và g là các hàm khả vi, thì:</p><ul><li><b>Đạo hàm của Tổng:</b> <code>(f + g)' = f' + g'</code>.</li><li><b>Đạo hàm của Hiệu:</b> <code>(f - g)' = f' - g'</code>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 9,
+    "title": "Trang 9: Các công thức tính Đạo hàm (tiếp)",
+    "image": "images/calculus/week2/MA1521Chap2_page_9.png",
+    "notes": "<h3>Quy tắc Tích và Thương</h3><p>Nếu f và g là các hàm khả vi, thì:</p><ul><li><b>Quy tắc Tích (Product Rule):</b> <code>(fg)' = f'g + fg'</code>.</li><li><b>Quy tắc Thương (Quotient Rule):</b> <code>(f/g)' = (f'g - fg') / g²</code>, với điều kiện g(x) ≠ 0.</li></ul><hr><h3>Chứng minh Quy tắc Thương</h3><p>Đầu tiên, ta chứng minh đạo hàm của <code>1/g</code>. Sử dụng định nghĩa giới hạn, ta có thể biến đổi và chứng minh được <code>(1/g)' = -g' / g²</code>.</p><p>Sau đó, áp dụng Quy tắc Tích cho <code>f * (1/g)</code>:</p><p><code>(f/g)' = (f * 1/g)' = f' * (1/g) + f * (1/g)'</code></p><p><code>= f'/g + f * (-g'/g²) = (f'g - fg') / g²</code>.</p>",
+    "terms": {
+      "Product Rule": "(Quy tắc Tích) Một công thức dùng để tìm đạo hàm của tích hai hoặc nhiều hàm số.",
+      "Quotient Rule": "(Quy tắc Thương) Một công thức dùng để tìm đạo hàm của thương hai hàm số."
+    }
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Quy tắc Chuỗi",
+    "image": "images/calculus/week2/MA1521Chap2_page_10.png",
+    "notes": "<h3>Quy tắc Chuỗi (The Chain Rule)</h3><p><b>Ví dụ:</b> Tìm đạo hàm của <code>F(x) = sqrt(x² + 1)</code>.</p><p>Sử dụng định nghĩa giới hạn và nhân liên hợp, ta có thể tìm được đạo hàm. Tuy nhiên, quá trình này khá phức tạp.</p><hr><p>Một cách tiếp cận khác là xem <code>F</code> như một <b>hàm hợp</b>: <code>F = f ∘ g</code>, trong đó:</p><ul><li><code>f(x) = sqrt(x)</code></li><li><code>g(x) = x² + 1</code></li></ul><p>Ta đã biết <code>f'(x) = 1 / (2 sqrt(x))</code> và <code>g'(x) = 2x</code>.</p><p><b>Quy tắc chuỗi</b> cho phép chúng ta tính đạo hàm của hàm hợp F' bằng cách sử dụng f' và g'. Theo ký hiệu Leibniz, nếu y = f(u) và u = g(x), thì:</p><code>dy/dx = (dy/du) * (du/dx)</code>",
+    "terms": {
+      "Chain Rule": "(Quy tắc Chuỗi) Một công thức để tính đạo hàm của một hàm hợp. Nếu h(x) = f(g(x)), thì h'(x) = f'(g(x)) * g'(x).",
+      "Composite Function": "(Hàm hợp) Một hàm số được tạo ra bằng cách áp dụng một hàm số vào kết quả của một hàm số khác. Ký hiệu là f ∘ g."
+    }
+  },
+  {
+    "id": 11,
+    "title": "Trang 11: Định lý Quy tắc Chuỗi & Các công thức",
+    "image": "images/calculus/week2/MA1521Chap2_page_11.png",
+    "notes": "<h3>Định lý Quy tắc Chuỗi</h3><p>Nếu f và g là các hàm khả vi, thì hàm hợp <code>F = f ∘ g</code> cũng khả vi, và:</p><code>F'(x) = f'(g(x)) * g'(x)</code><hr><h3>Các công thức Đạo hàm cơ bản</h3><p><b>Quy tắc lũy thừa:</b> <code>d/dx (xᵃ) = axᵃ⁻¹</code></p><p><b>Hàm lượng giác:</b></p><ul><li><code>(sin x)' = cos x</code></li><li><code>(cos x)' = -sin x</code></li><li><code>(tan x)' = sec²x</code></li></ul><p><b>Hàm lượng giác ngược:</b></p><ul><li><code>(sin⁻¹ x)' = 1 / sqrt(1 - x²)</code></li><li><code>(tan⁻¹ x)' = 1 / (1 + x²)</code></li></ul><p><b>Hàm mũ & logarit:</b></p><ul><li><code>(eˣ)' = eˣ</code></li><li><code>(ln |x|)' = 1/x</code></li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 12,
+    "title": "Trang 12: Ví dụ & Đạo hàm ngầm",
+    "image": "images/calculus/week2/MA1521Chap2_page_12.png",
+    "notes": "<h3>Ví dụ về Đạo hàm</h3><p>Các ví dụ minh họa cách kết hợp các quy tắc đạo hàm (Quy tắc Tích, Quy tắc Thương, Quy tắc Chuỗi) và các công thức cơ bản để tính đạo hàm của các hàm phức tạp.</p><p>Một kỹ thuật hữu ích là <b>lấy logarit (Logarithmic Differentiation)</b> trước khi tính đạo hàm cho các hàm có dạng lũy thừa phức tạp.</p><hr><h3>Đạo hàm ngầm (Implicit Differentiation)</h3><p>Làm thế nào để tìm hệ số góc của đường tiếp tuyến với đường tròn đơn vị <code>x² + y² = 1</code> tại một điểm P(x₀, y₀)?</p><p>Đường tròn không phải là đồ thị của một hàm số <code>y = f(x)</code> duy nhất. <b>Đạo hàm ngầm</b> là kỹ thuật cho phép chúng ta tìm đạo hàm trong những trường hợp như vậy.</p>",
+    "terms": {
+      "Implicit Differentiation": "(Đạo hàm ngầm) Một kỹ thuật để tìm đạo hàm của một hàm được định nghĩa ngầm (implicit), tức là một hàm có mối quan hệ giữa x và y được cho bởi một phương trình thay vì một công thức tường minh y = f(x)."
+    }
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Phương pháp Đạo hàm ngầm",
+    "image": "images/calculus/week2/MA1521Chap2_page_13.png",
+    "notes": "<h3>Phương pháp Đạo hàm ngầm</h3><p>Xét lại phương trình đường tròn <code>x² + y² = 1</code>. Ta xem y như một hàm số của x (y = y(x)) và lấy đạo hàm hai vế theo x:</p><code>d/dx (x² + y²) = d/dx (1)</code><p>Sử dụng Quy tắc Chuỗi cho y²:</p><code>2x + 2y * (dy/dx) = 0</code><p>Bây giờ, ta có thể giải phương trình để tìm <code>dy/dx</code>:</p><code>dy/dx = -x / y</code><hr><h3>Tổng quát</h3><p>Đối với một phương trình tổng quát <code>f(x, y) = 0</code>, ta thực hiện các bước sau:</p><ol><li>Lấy đạo hàm hai vế theo x, coi y là một hàm của x.</li><li>Giải phương trình thu được để biểu diễn <code>dy/dx</code> theo x và y.</li></ol>",
+    "terms": {}
+  },
+  {
+    "id": 14,
+    "title": "Trang 14: Ví dụ & Tìm hàm ngược",
+    "image": "images/calculus/week2/MA1521Chap2_page_14.png",
+    "notes": "<h3>Ví dụ về Đạo hàm ngầm</h3><p>Tìm <code>dy/dx</code> nếu <code>x³ + y³ = 3xy</code>.</p><p>Lấy đạo hàm hai vế theo x, sử dụng Quy tắc Tích cho vế phải:</p><code>3x² + 3y²y' = 3(y + xy')</code><p>Nhóm các số hạng chứa y' lại và giải phương trình, ta được:</p><code>y' = (y - x²) / (y² - x)</code><hr><h3>Tìm Hàm ngược</h3><p>Nếu một hàm f là 1-1, nó sẽ có một hàm ngược f⁻¹. Để tìm f⁻¹, ta làm theo các bước sau:</p><ol><li>Viết <code>y = f(x)</code>.</li><li>Giải phương trình để biểu diễn x theo y: <code>x = f⁻¹(y)</code>.</li><li>Đổi chỗ x và y để biểu diễn f⁻¹ như một hàm của biến x: <code>y = f⁻¹(x)</code>.</li></ol><p>Đồ thị của f và f⁻¹ đối xứng với nhau qua đường thẳng <code>y = x</code>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 15,
+    "title": "Trang 15: Ví dụ & Giải tích của Hàm ngược",
+    "image": "images/calculus/week2/MA1521Chap2_page_15.png",
+    "notes": "<h3>Ví dụ tìm Hàm ngược</h3><p>Các ví dụ minh họa quy trình 3 bước để tìm hàm ngược của <code>f(x) = x³ + 2</code> và <code>g(x) = sqrt(-1-x)</code>.</p><hr><h3>Giải tích của Hàm ngược</h3><p><b>Định lý:</b> Giả sử f là một hàm 1-1 và liên tục trên một khoảng. Khi đó:</p><ul><li>f hoặc là hàm tăng, hoặc là hàm giảm.</li><li>Hàm ngược f⁻¹ của nó cũng là một hàm liên tục.</li></ul>",
+    "terms": {
+      "Monotonic": "(Đơn điệu) Một hàm số chỉ tăng hoặc chỉ giảm trên một khoảng nhất định."
+    }
+  },
+  {
+    "id": 16,
+    "title": "Trang 16: Đạo hàm của Hàm ngược & Ví dụ",
+    "image": "images/calculus/week2/MA1521Chap2_page_16.png",
+    "notes": "<h3>Giải tích của Hàm ngược (tiếp)</h3><p><b>Định lý:</b> Cho f là một hàm 1-1 và liên tục. Nếu f là <b>khả vi</b> tại a và <code>f'(a) ≠ 0</code>, thì hàm ngược f⁻¹ cũng <b>khả vi</b> tại b = f(a), và:</p><code>(f⁻¹)'(b) = 1 / f'(a)</code><hr><h3>Ví dụ</h3><p>Cho <code>f(x) = x²</code> trên [0, 2]. Tìm <code>(f⁻¹)'(1)</code>.</p><p><b>Cách 1: Tìm hàm ngược trước.</b></p><p>Hàm ngược là <code>f⁻¹(x) = sqrt(x)</code>. Đạo hàm của nó là <code>(f⁻¹)'(x) = 1 / (2 sqrt(x))</code>. Thay x = 1 vào, ta được kết quả là 1/2.</p><p><b>Cách 2: Sử dụng định lý.</b></p><p>Ta cần tìm a sao cho <code>f(a) = 1</code>, tức là <code>a² = 1</code>. Vì a ∈ [0, 2], ta có a = 1. Đạo hàm <code>f'(x) = 2x</code>, vậy <code>f'(1) = 2</code>. Áp dụng công thức, <code>(f⁻¹)'(1) = 1 / f'(1) = 1/2</code>.</p>",
+    "terms": {}
+  },
+  {
+    "id": 17,
+    "title": "Trang 17: Đạo hàm Hàm lượng giác ngược & Đạo hàm cấp hai",
+    "image": "images/calculus/week2/MA1521Chap2_page_17.png",
+    "notes": "<h3>Đạo hàm của các Hàm lượng giác ngược</h3><p>Sử dụng kỹ thuật đạo hàm ngầm và các hằng đẳng thức lượng giác, chúng ta có thể chứng minh được các công thức đạo hàm cho các hàm lượng giác ngược.</p><ul><li><code>(sin⁻¹ x)' = 1 / sqrt(1 - x²)</code></li><li><code>(cos⁻¹ x)' = -1 / sqrt(1 - x²)</code></li><li><code>(tan⁻¹ x)' = 1 / (1 + x²)</code></li></ul><hr><h3>Đạo hàm cấp hai (Second Derivative)</h3><p>Cho f là một hàm số. Ta có thể lấy đạo hàm của f để có f'. Vì f' cũng là một hàm số, ta có thể tiếp tục lấy đạo hàm của nó để có <code>(f')'</code>. Hàm này được gọi là <b>đạo hàm cấp hai</b> của f, ký hiệu là <code>f''</code>.</p><p><b>Ý nghĩa hình học:</b> f' đo lường tốc độ thay đổi của f, còn f'' đo lường tốc độ thay đổi của f'.</p>",
+    "terms": {
+      "Second Derivative": "(Đạo hàm cấp hai) Đạo hàm của đạo hàm của một hàm số. Nó cho biết tốc độ thay đổi của hệ số góc (tốc độ thay đổi của tốc độ thay đổi)."
+    }
+  },
+  {
+    "id": 18,
+    "title": "Trang 18: Ý nghĩa Vật lý & Đạo hàm cấp cao",
+    "image": "images/calculus/week2/MA1521Chap2_page_18.png",
+    "notes": "<h3>Ý nghĩa Vật lý của Đạo hàm cấp hai</h3><p>Cho <code>s = s(t)</code> là hàm vị trí của một vật thể.</p><ul><li><code>s'(t) = v(t)</code> là <b>vận tốc tức thời</b>, xác định sự thay đổi của <b>vị trí</b>.</li><li><code>s''(t) = v'(t) = a(t)</code> là <b>gia tốc (acceleration)</b>, xác định sự thay đổi của <b>vận tốc</b>.</li></ul><hr><h3>Đạo hàm cấp cao (Higher Derivatives)</h3><p>Ta có thể tiếp tục quá trình lấy đạo hàm:</p><ul><li>Đạo hàm của f'' là f''' (đạo hàm cấp ba).</li><li>Đạo hàm của f''' là f'''' (đạo hàm cấp bốn).</li><li>Tổng quát, <b>đạo hàm cấp n</b>, ký hiệu là <code>f⁽ⁿ⁾</code>.</li></ul>",
+    "terms": {
+      "Acceleration (Gia tốc)": "Tốc độ thay đổi của vận tốc theo thời gian. Trong giải tích, nó là đạo hàm cấp hai của hàm vị trí.",
+      "Higher Derivatives": "(Đạo hàm cấp cao) Các đạo hàm của một hàm số vượt quá đạo hàm cấp một (ví dụ: đạo hàm cấp hai, cấp ba...)."
+    }
+  },
+  {
+    "id": 19,
+    "title": "Trang 19: Ví dụ & Phương trình Tham số",
+    "image": "images/calculus/week2/MA1521Chap2_page_19.png",
+    "notes": "<h3>Ví dụ về Đạo hàm cấp cao</h3><p>Ví dụ minh họa cách tính đạo hàm cấp một, cấp hai, và cấp ba của hàm <code>f(x) = x cos x</code> bằng cách áp dụng lặp đi lặp lại Quy tắc Tích.</p><hr><h3>Phương trình Tham số (Parametric Equations)</h3><p>Cho x và y là các hàm số của một biến t:</p><code>x = x(t)</code> và <code>y = y(t)</code><p>Đây được gọi là một <b>phương trình tham số</b> của x và y. Biến t được gọi là tham số.</p><p><b>Ví dụ:</b> Đường tròn <code>x² + y² = 1</code> có thể được tham số hóa thành <code>x = cos t, y = sin t</code>.</p>",
+    "terms": {
+      "Parametric Equation": "(Phương trình tham số) Một phương pháp biểu diễn một đường cong hoặc bề mặt bằng cách sử dụng các phương trình biểu diễn các tọa độ của các điểm trên đường cong/bề mặt đó như các hàm của một hoặc nhiều biến độc lập, gọi là các tham số."
+    }
+  },
+  {
+    "id": 20,
+    "title": "Trang 20: Đạo hàm của Phương trình Tham số",
+    "image": "images/calculus/week2/MA1521Chap2_page_20.png",
+    "notes": "<h3>Đạo hàm của Phương trình Tham số</h3><p>Giả sử x = x(t) và y = y(t). Theo Quy tắc Chuỗi, ta có:</p><code>dy/dt = (dy/dx) * (dx/dt)</code><p>Do đó, ta có thể tìm <b>đạo hàm của y theo x</b> bằng công thức:</p><code>dy/dx = (dy/dt) / (dx/dt)</code>, với điều kiện <code>dx/dt ≠ 0</code>.<hr><h3>Đạo hàm cấp hai</h3><p>Ta có thể tìm đạo hàm cấp hai bằng cách áp dụng Quy tắc Chuỗi một lần nữa:</p><code>d²y/dx² = d/dx(dy/dx) = [d/dt(dy/dx)] / (dx/dt)</code>",
+    "terms": {}
+  },
+  {
+    "id": 21,
+    "title": "Trang 21: Lấy Logarit để tính Đạo hàm",
+    "image": "images/calculus/week2/MA1521Chap2_page_21.png",
+    "notes": "<h3>Lấy Logarit để tính Đạo hàm (Logarithmic Differentiation)</h3><p>Xét hàm số <code>y = [(x²+1)sqrt(x+3)] / (x-1)</code>. Chúng ta có thể dùng Quy tắc Tích và Thương, nhưng có một cách ngắn hơn.</p><p>Kỹ thuật này gồm 2 bước:</p><ol><li><b>Lấy logarit tự nhiên</b> hai vế và sử dụng các tính chất của logarit để đơn giản hóa biểu thức.<code>ln y = ln(x²+1) + (1/2)ln(x+3) - ln(x-1)</code></li><li><b>Lấy đạo hàm ngầm</b> hai vế theo x, sau đó giải phương trình để tìm <code>dy/dx</code>.<code>(1/y) * (dy/dx) = 2x/(x²+1) + 1/(2(x+3)) - 1/(x-1)</code></li></ol>",
+    "terms": {
+      "Logarithmic Differentiation": "(Lấy Logarit để tính Đạo hàm) Một phương pháp tìm đạo hàm bằng cách lấy logarit tự nhiên của hàm số trước, sau đó sử dụng đạo hàm ngầm. Rất hữu ích cho các hàm có dạng tích, thương, và lũy thừa phức tạp."
+    }
+  },
+  {
+    "id": 22,
+    "title": "Trang 22: Ví dụ về Logarithmic Differentiation",
+    "image": "images/calculus/week2/MA1521Chap2_page_22.png",
+    "notes": "<h3>Tổng quát</h3><p>Tổng quát, nếu <code>y = f₁(x)f₂(x)...fₙ(x)</code>, ta có thể tìm đạo hàm theo các bước sau:</p><ol><li>Lấy logarit tự nhiên hai vế: <code>ln|y| = ln|f₁(x)| + ... + ln|fₙ(x)|</code>.</li><li>Lấy đạo hàm ngầm theo x.</li><li>Giải phương trình để tìm <code>dy/dx</code>.</li></ol><hr><h3>Ví dụ</h3><p>Các ví dụ minh họa cách áp dụng kỹ thuật này để tìm đạo hàm của các hàm phức tạp, bao gồm cả các hàm có dạng <code>y = [f(x)]<sup>g(x)</sup></code>. Đối với dạng này, ta lấy logarit hai vế để đưa g(x) xuống khỏi số mũ: <code>ln y = g(x) ln[f(x)]</code>, sau đó lấy đạo hàm bằng Quy tắc Tích.</p>",
+    "terms": {}
+  },
+  {
+    "id": 23,
+    "title": "Trang 23: Giá trị Lớn nhất và Nhỏ nhất Tuyệt đối",
+    "image": "images/calculus/week2/MA1521Chap2_page_23.png",
+    "notes": "<h3>Giá trị Lớn nhất và Nhỏ nhất Tuyệt đối</h3><p><b>Định nghĩa:</b> Cho hàm f với miền xác định D.</p><ul><li>f có một <b>giá trị lớn nhất toàn cục (global maximum)</b> tại c nếu <code>f(c) ≥ f(x)</code> với mọi x ∈ D.</li><li>f có một <b>giá trị nhỏ nhất toàn cục (global minimum)</b> tại c nếu <code>f(c) ≤ f(x)</code> với mọi x ∈ D.</li></ul><p>Giá trị lớn nhất và nhỏ nhất tuyệt đối được gọi chung là các <b>giá trị cực trị tuyệt đối (absolute extreme values)</b>.</p><hr><h3>Ví dụ</h3><p>Xét hàm <code>f(x) = 3x⁴ - 16x³ + 18x²</code> trên <code>[-1, 3.5]</code>.</p><p>Quan sát đồ thị, ta thấy điểm cao nhất là <code>f(-1) = 37</code> (global max) và điểm thấp nhất là <code>f(3) = -27</code> (global min).</p>",
+    "terms": {
+      "Absolute Maximum": "(Giá trị lớn nhất tuyệt đối) Giá trị lớn nhất mà một hàm số đạt được trên toàn bộ miền xác định của nó.",
+      "Absolute Minimum": "(Giá trị nhỏ nhất tuyệt đối) Giá trị nhỏ nhất mà một hàm số đạt được trên toàn bộ miền xác định của nó.",
+      "Extreme Values": "(Giá trị cực trị) Bao gồm cả giá trị lớn nhất và nhỏ nhất của một hàm số."
+    }
+  },
+  {
+    "id": 24,
+    "title": "Trang 24: Cực trị Địa phương & Định lý Giá trị Cực trị",
+    "image": "images/calculus/week2/MA1521Chap2_page_24.png",
+    "notes": "<h3>Cực đại và Cực tiểu Địa phương</h3><p><b>Định nghĩa:</b></p><ul><li>f có một <b>cực đại địa phương (local maximum)</b> tại c nếu <code>f(c) ≥ f(x)</code> với mọi x ở <b>lân cận</b> c.</li><li>f có một <b>cực tiểu địa phương (local minimum)</b> tại c nếu <code>f(c) ≤ f(x)</code> với mọi x ở <b>lân cận</b> c.</li></ul><hr><h3>Định lý Giá trị Cực trị (Extreme Value Theorem)</h3><p><b>Định lý:</b> Nếu f là hàm <b>liên tục</b> trên một <b>khoảng đóng hữu hạn</b> <code>[a, b]</code>, thì f sẽ đạt được các giá trị cực trị trên <code>[a, b]</code>.</p><p><b>Lưu ý:</b> Định lý này chỉ đảm bảo sự <b>tồn tại</b> của các giá trị cực trị, nhưng không chỉ ra cách tìm chúng.</p>",
+    "terms": {
+      "Local Maximum": "(Cực đại địa phương) Giá trị lớn nhất của một hàm số trong một vùng lân cận nhất định. Nó giống như 'đỉnh' của một ngọn đồi trên đồ thị.",
+      "Local Minimum": "(Cực tiểu địa phương) Giá trị nhỏ nhất của một hàm số trong một vùng lân cận nhất định. Nó giống như 'đáy' của một thung lũng trên đồ thị.",
+      "Extreme Value Theorem": "(Định lý Giá trị Cực trị) Một định lý cơ bản trong giải tích, đảm bảo rằng bất kỳ hàm liên tục nào trên một khoảng đóng và bị chặn đều phải có một giá trị lớn nhất và một giá trị nhỏ nhất."
+    }
+  },
+  {
+    "id": 25,
+    "title": "Trang 25: Vị trí Cực trị & Cách tìm",
+    "image": "images/calculus/week2/MA1521Chap2_page_25.png",
+    "notes": "<h3>Các giá trị Cực trị nằm ở đâu?</h3><p>Giá trị cực trị tuyệt đối của một hàm liên tục trên khoảng đóng [a, b] có thể xảy ra tại:</p><ul><li>Các <b>điểm cuối (endpoints)</b> của khoảng, tức là tại a hoặc b.</li><li>Hoặc, nếu nó không xảy ra tại các điểm cuối, theo định nghĩa, nó phải xảy ra tại một <b>cực đại địa phương</b> hoặc một <b>cực tiểu địa phương</b>.</li></ul><hr><h3>Phương pháp tìm Giá trị Cực trị</h3><p>Cho f là một hàm liên tục trên khoảng đóng [a, b].</p><ol><li>Tính các giá trị tại các điểm cuối: f(a), f(b).</li><li>Tìm các cực đại và cực tiểu địa phương của f trên (a, b).</li><li>So sánh tất cả các giá trị thu được để tìm ra giá trị <b>lớn nhất</b> (cực đại tuyệt đối) và <b>nhỏ nhất</b> (cực tiểu tuyệt đối).</li></ol>",
+    "terms": {}
+  },
+  {
+    "id": 26,
+    "title": "Trang 26: Định lý Fermat & Ví dụ",
+    "image": "images/calculus/week2/MA1521Chap2_page_26.png",
+    "notes": "<h3>Định lý Fermat</h3><p><b>Định lý:</b> Giả sử f có một cực trị địa phương tại c. Nếu <code>f'(c)</code> tồn tại, thì <code>f'(c) = 0</code>.</p><p><b>Lưu ý:</b></p><ul><li>Điều ngược lại <b>KHÔNG</b> đúng. <code>f'(c) = 0</code> không đảm bảo f có cực trị địa phương tại c. (Ví dụ: <code>f(x) = x³</code> tại x=0).</li><li>Nếu f có cực trị địa phương tại c, <code>f'(c)</code> có thể không tồn tại. (Ví dụ: <code>f(x) = |x|</code> tại x=0).</li></ul>",
+    "terms": {
+      "Fermat's Theorem (on stationary points)": "(Định lý Fermat về điểm dừng) Phát biểu rằng nếu một hàm số có một cực trị địa phương tại một điểm và nó khả vi tại điểm đó, thì đạo hàm tại điểm đó phải bằng 0."
+    }
+  },
+  {
+    "id": 27,
+    "title": "Trang 27: Số tới hạn & Phương pháp Khoảng đóng",
+    "image": "images/calculus/week2/MA1521Chap2_page_27.png",
+    "notes": "<h3>Số tới hạn (Critical Number)</h3><p><b>Định nghĩa:</b> Cho f là một hàm. Một số c trong miền xác định D được gọi là <b>số tới hạn</b> của f nếu <code>f'(c)</code> không tồn tại, hoặc <code>f'(c) = 0</code>.</p><p><b>Kết hợp với Định lý Fermat:</b> Nếu f có một cực trị địa phương tại c, thì c là một số tới hạn.</p><hr><h3>Phương pháp Khoảng đóng (Closed Interval Method)</h3><p>Để tìm các giá trị cực trị tuyệt đối của một hàm liên tục f trên một khoảng đóng [a, b]:</p><ol><li>Tìm các giá trị của f tại các <b>điểm cuối</b> a và b.</li><li>Tìm các giá trị của f tại các <b>số tới hạn</b> của f trong khoảng mở (a, b).</li><li>So sánh tất cả các giá trị thu được. Giá trị lớn nhất là cực đại tuyệt đối, giá trị nhỏ nhất là cực tiểu tuyệt đối.</li></ol>",
+    "terms": {
+      "Critical Number": "(Số tới hạn) Một số c trong miền xác định của một hàm f tại đó đạo hàm f'(c) bằng 0 hoặc không tồn tại. Các số tới hạn là các 'ứng cử viên' cho các vị trí có cực trị địa phương."
+    }
+  },
+  {
+    "id": 28,
+    "title": "Trang 28: Ví dụ về Phương pháp Khoảng đóng",
+    "image": "images/calculus/week2/MA1521Chap2_page_28.png",
+    "notes": "<h3>Ví dụ 1</h3><p>Tìm các giá trị cực trị của <code>f(x) = x^(2/3) * (4 - x)</code> trên [-1, 3].</p><ol><li><b>Điểm cuối:</b> <code>f(-1) = -5</code>, <code>f(3) ≈ 3.1886</code>.</li><li><b>Số tới hạn:</b> Tính <code>f'(x)</code>. Ta thấy <code>f'(x)</code> không xác định tại x = 0, và <code>f'(x) = 0</code> tại x = 1.5. Cả hai đều nằm trong khoảng.</li><li><b>So sánh:</b> Tính <code>f(0) = 0</code>, <code>f(1.5) ≈ 3.1886</code>. So sánh tất cả các giá trị, ta có Cực tiểu tuyệt đối là -5 tại x=-1, và Cực đại tuyệt đối là ≈3.1886 tại x=1.5 và x=3.</li></ol><hr><h3>Ví dụ 2</h3><p>Tìm các giá trị cực trị của <code>f(x) = x^(2/3) * (x² - x)</code> trên [-1, 2].</p>",
+    "terms": {}
+  },
+  {
+    "id": 29,
+    "title": "Trang 29: Dấu hiệu Tăng/Giảm",
+    "image": "images/calculus/week2/MA1521Chap2_page_29.png",
+    "notes": "<h3>Dấu hiệu Tăng/Giảm (Increasing/Decreasing Test)</h3><p>Quan sát đồ thị, dường như có một mối liên hệ giữa việc hàm số tăng/giảm và dấu của đạo hàm:</p><ul><li>f tăng (increasing) ⇔ f' > 0</li><li>f giảm (decreasing) ⇔ f' < 0</li></ul><hr><h3>Định lý</h3><p>Cho f là một hàm liên tục trên [a, b] và khả vi trên (a, b).</p><ul><li>Nếu <code>f'(x) > 0</code> trên (a, b), thì f là hàm <b>tăng</b> trên [a, b].</li><li>Nếu <code>f'(x) < 0</code> trên (a, b), thì f là hàm <b>giảm</b> trên [a, b].</li></ul>",
+    "terms": {
+      "Increasing function": "(Hàm tăng) Một hàm số mà giá trị của nó tăng lên khi biến số tăng lên.",
+      "Decreasing function": "(Hàm giảm) Một hàm số mà giá trị của nó giảm xuống khi biến số tăng lên."
+    }
+  },
+  {
+    "id": 30,
+    "title": "Trang 30: Ví dụ & Tiêu chuẩn Đạo hàm bậc nhất",
+    "image": "images/calculus/week2/MA1521Chap2_page_30.png",
+    "notes": "<h3>Ví dụ về Dấu hiệu Tăng/Giảm</h3><p>Xét hàm <code>f(x) = 3x⁴ - 4x³ - 12x² + 5</code>. Ta có <code>f'(x) = 12x(x+1)(x-2)</code>. Bằng cách lập bảng xét dấu cho f'(x), ta có thể xác định các khoảng mà hàm f(x) tăng hoặc giảm.</p><hr><h3>Tiêu chuẩn Đạo hàm bậc nhất (First Derivative Test)</h3><p>Giả sử c là một số tới hạn của một hàm liên tục f. Tiêu chuẩn này giúp xác định xem tại c có cực trị địa phương hay không dựa vào sự đổi dấu của f' khi đi qua c.</p>",
+    "terms": {}
+  },
+  {
+    "id": 31,
+    "title": "Trang 31: Tiêu chuẩn Đạo hàm bậc nhất (tiếp)",
+    "image": "images/calculus/week2/MA1521Chap2_page_31.png",
+    "notes": "<h3>Tiêu chuẩn Đạo hàm bậc nhất (First Derivative Test)</h3><p>Giả sử c là một số tới hạn của hàm f.</p><ul><li>Nếu f' đổi dấu từ <b>dương sang âm</b> tại c, thì f có một <b>cực đại địa phương</b> tại c.</li><li>Nếu f' đổi dấu từ <b>âm sang dương</b> tại c, thì f có một <b>cực tiểu địa phương</b> tại c.</li><li>Nếu f' không đổi dấu tại c, thì f không có cực trị địa phương tại c.</li></ul><hr><h3>Ví dụ</h3><p>Sử dụng bảng xét dấu đã lập ở trang trước, ta có thể kết luận:</p><ul><li>Cực đại địa phương tại x = 0.</li><li>Cực tiểu địa phương tại x = -1 và x = 2.</li></ul>",
+    "terms": {
+      "First Derivative Test": "(Tiêu chuẩn Đạo hàm bậc nhất) Một phương pháp sử dụng đạo hàm bậc nhất của một hàm số để tìm các điểm cực trị (cực đại hoặc cực tiểu) địa phương."
+    }
+  },
+  {
+    "id": 32,
+    "title": "Trang 32: Ví dụ & Độ lõm (Concavity)",
+    "image": "images/calculus/week2/MA1521Chap2_page_32.png",
+    "notes": "<h3>Ví dụ về Tiêu chuẩn Đạo hàm Bậc nhất</h3><p>Tìm cực trị địa phương của hàm <code>f(x) = x¹/³(x - 4)</code>.</p><ul><li>Tìm các số tới hạn: <code>f'(x)</code> không tồn tại tại x = 0, và <code>f'(x) = 0</code> tại x = 1.</li><li>Lập bảng xét dấu cho f'(x).</li><li>Dựa vào sự thay đổi dấu của f'(x) qua các điểm tới hạn, ta kết luận hàm có một cực tiểu địa phương tại x = 1.</li></ul><hr><h3>Độ lõm (Concavity)</h3><p>Xét hai đồ thị cùng đi qua hai điểm cuối giống nhau và cùng là hàm tăng, nhưng chúng có hình dạng khác nhau.</p><ul><li>Một đồ thị được gọi là <b>lõm lên (Concave Up)</b>.</li><li>Đồ thị còn lại được gọi là <b>lõm xuống (Concave Down)</b>.</li></ul>",
+    "terms": {
+      "Concavity (Độ lõm)": "Một thuộc tính mô tả hình dạng của đồ thị một hàm số. Đồ thị lõm lên nếu nó có hình dạng giống như một cái bát ngửa, và lõm xuống nếu nó giống như một cái bát úp."
+    }
+  },
+  {
+    "id": 33,
+    "title": "Trang 33: Định nghĩa & Tiêu chuẩn Độ lõm",
+    "image": "images/calculus/week2/MA1521Chap2_page_33.png",
+    "notes": "<h3>Định nghĩa Độ lõm</h3><p>Cho hàm f khả vi trên một khoảng mở I.</p><ul><li>Đồ thị được gọi là <b>lõm lên (concave up)</b> trên I nếu nó nằm <b>phía trên</b> tất cả các đường tiếp tuyến của nó trên I.</li><li>Đồ thị được gọi là <b>lõm xuống (concave down)</b> trên I nếu nó nằm <b>phía dưới</b> tất cả các đường tiếp tuyến của nó trên I.</li></ul><hr><h3>Tiêu chuẩn Độ lõm (Concavity Test)</h3><p>Mối quan hệ giữa độ lõm và đạo hàm cấp hai f'':</p><ul><li>Đồ thị lõm lên ⇔ f' đang tăng.</li><li>Đồ thị lõm xuống ⇔ f' đang giảm.</li></ul><p><b>Tiêu chuẩn:</b></p><ul><li>Nếu <code>f''(x) > 0</code> trên một khoảng I, thì đồ thị của f lõm lên trên I.</li><li>Nếu <code>f''(x) < 0</code> trên một khoảng I, thì đồ thị của f lõm xuống trên I.</li></ul>",
+    "terms": {
+      "Concave Up": "(Lõm lên) Đồ thị của một hàm số nằm phía trên các đường tiếp tuyến của nó. Tương đương với việc đạo hàm cấp hai f'' > 0.",
+      "Concave Down": "(Lõm xuống) Đồ thị của một hàm số nằm phía dưới các đường tiếp tuyến của nó. Tương đương với việc đạo hàm cấp hai f'' < 0."
+    }
+  },
+  {
+    "id": 34,
+    "title": "Trang 34: Ví dụ về Vẽ Đồ thị",
+    "image": "images/calculus/week2/MA1521Chap2_page_34.png",
+    "notes": "<h3>Vẽ Đồ thị bằng f' và f''</h3><p>Vẽ đồ thị của hàm <code>f(x) = x⁴ - 4x³</code>.</p><p><b>1. Phân tích f'(x):</b></p><ul><li><code>f'(x) = 4x²(x - 3)</code>.</li><li>Lập bảng xét dấu cho f'(x) để tìm các khoảng tăng/giảm và cực trị địa phương.</li><li>Kết luận: f có cực tiểu địa phương tại x = 3.</li></ul><p><b>2. Phân tích f''(x):</b></p><ul><li><code>f''(x) = 12x(x - 2)</code>.</li><li>Lập bảng xét dấu cho f''(x) để tìm các khoảng lõm lên/lõm xuống và các điểm uốn.</li></ul><hr><h3>Kết hợp thông tin</h3><p>Kết hợp thông tin từ hai bảng xét dấu, ta có thể phác thảo hình dạng tổng thể của đồ thị, xác định được các khoảng đồng biến, nghịch biến, lõm lên, lõm xuống và các điểm cực trị, điểm uốn.</p>",
+    "terms": {
+      "Inflection Point": "(Điểm uốn) Một điểm trên đồ thị mà tại đó độ lõm thay đổi (từ lõm lên sang lõm xuống hoặc ngược lại). Điều này thường xảy ra khi f''(x) = 0 hoặc không xác định."
+    }
+  },
+  {
+    "id": 35,
+    "title": "Trang 35: Ví dụ về Vẽ Đồ thị (tiếp)",
+    "image": "images/calculus/week2/MA1521Chap2_page_35.png",
+    "notes": "<h3>Ví dụ: Vẽ đồ thị bằng f' và f''</h3><p>Vẽ đồ thị của hàm <code>f(x) = x²/³(6 - x)¹/³</code>.</p><p><b>1. Phân tích f'(x):</b></p><ul><li><code>f'(x) = (4 - x) / [x¹/³(6 - x)²/³]</code>.</li><li>Lập bảng xét dấu cho f'(x) để tìm các khoảng tăng/giảm và cực trị địa phương.</li></ul><p><b>2. Phân tích f''(x):</b></p><ul><li><code>f''(x) = -8 / [x⁴/³(6 - x)⁵/³]</code>.</li><li>Lập bảng xét dấu cho f''(x) để tìm các khoảng lõm lên/lõm xuống.</li></ul><hr><h3>Phác thảo đồ thị</h3><p>Kết hợp thông tin từ các bảng xét dấu để vẽ đồ thị hoàn chỉnh, thể hiện đúng các đặc điểm đã phân tích.</p>",
+    "terms": {}
+  },
+  {
+    "id": 36,
+    "title": "Trang 36: Ứng dụng Bất đẳng thức",
+    "image": "images/calculus/week2/MA1521Chap2_page_36.png",
+    "notes": "<h3>Chứng minh Bất đẳng thức bằng Đạo hàm</h3><p><b>Ví dụ 1:</b> Chứng minh rằng <code>2√x > 3 - 1/x</code> với mọi x > 0, x ≠ 1.</p><ul><li>Đặt <code>f(x) = 2√x - 3 + 1/x</code>. Ta cần chứng minh f(x) > 0.</li><li>Tính đạo hàm f'(x) và tìm các điểm tới hạn. Ta thấy f có giá trị nhỏ nhất tại x = 1.</li><li>Vì <code>f(1) = 0</code> và đây là giá trị nhỏ nhất, nên <code>f(x) > 0</code> với mọi x ≠ 1.</li></ul><hr><h3>Ví dụ 2:</h3><p>Chứng minh rằng <code>sin x < x</code> khi 0 < x < π/2.</p><ul><li>Đặt <code>g(x) = sin x / x</code>. Ta cần chứng minh g(x) < 1.</li><li>Tính đạo hàm g'(x). Ta thấy g'(x) < 0 trên (0, π/2), suy ra g(x) là hàm giảm.</li><li>Vì g(x) giảm, <code>g(x) < lim(t→0⁺) g(t) = 1</code>. (Điều phải chứng minh)</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 37,
+    "title": "Trang 37: Bất đẳng thức & Xấp xỉ",
+    "image": "images/calculus/week2/MA1521Chap2_page_37.png",
+    "notes": "<h3>Ví dụ về Bất đẳng thức (tiếp)</h3><p>Chứng minh rằng <code>tan x + sin x > 2x</code> với x ∈ (0, π/2).</p><ul><li>Đặt <code>f(x) = tan x + sin x - 2x</code>.</li><li>Tính đạo hàm <code>f'(x) = sec²x + cos x - 2</code>.</li><li>Chứng minh rằng f'(x) > 0 trên khoảng đã cho.</li><li>Vì <code>f(0) = 0</code> và f(x) là hàm tăng, suy ra <code>f(x) > f(0) = 0</code>. (Điều phải chứng minh)</li></ul><hr><h3>Xấp xỉ (Approximation)</h3><p><b>Xấp xỉ bậc 0 (liên tục):</b></p><p>Nếu f liên tục, khi x → a thì f(x) → f(a). Nói cách khác, với x ≈ a, ta có <code>f(x) ≈ f(a)</code>.</p><p><b>Xấp xỉ bậc 1 (tuyến tính):</b></p><p>Nếu f khả vi, ta có một xấp xỉ tốt hơn bằng cách sử dụng đường tiếp tuyến:</p><code>f(x) ≈ f(a) + f'(a)(x - a)</code>",
+    "terms": {
+      "Approximation": "(Xấp xỉ) Một giá trị hoặc một đại lượng gần đúng nhưng không hoàn toàn chính xác.",
+      "Linear Approximation": "(Xấp xỉ tuyến tính) Một phương pháp xấp xỉ một hàm số bằng một hàm tuyến tính (phương trình đường tiếp tuyến) tại một điểm cho trước. Đây là ứng dụng cơ bản của đạo hàm."
+    }
+  }
+  ]
+},
     {
       "title": "Chương 3: Chuỗi và Dãy số",
       "slides": [
