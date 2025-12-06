@@ -9,7 +9,7 @@
     "id": "computer_vision",
     "title": "Nhập môn Thị giác Máy tính",
     "description": "Khám phá cách máy tính 'nhìn' và phân tích hình ảnh, từ nhận diện vật thể đến xử lý ảnh cơ bản.",
-    "thumbnail": "images/computer-vision.webp"
+    "thumbnail": "images/computer-vision.png"
   },
   {
     "id": "computer_organization",
@@ -21,6 +21,6 @@
     "id": "calculus",
     "title": "MA1521: Giải tích cho Máy tính",
     "description": "Các khái niệm nền tảng về Giải tích, bao gồm Giới hạn, Đạo hàm, Tích phân và các chủ đề liên quan.",
-    "thumbnail": "images/calculus-thumb.png"
+    "thumbnail": "images/calculus.png"
   }
 ]
