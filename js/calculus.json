@@ -1980,6 +1980,258 @@
     "terms": {}
   }
   ]
+},
+{
+  "title": "Chương 7: Phương trình Vi phân Thường (Ordinary Differential Equations)",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa & Mục lục Chương 7",
+      "image": "images/calculus/week7/MA1521Chap7_page_1.png",
+      "notes": "<h3>MA1521: Giải tích cho Máy tính</h3><p>Chương 7: Phương trình Vi phân Thường.</p><hr><h3>Mục lục Chương 7</h3><p>Danh sách các chủ đề sẽ được đề cập trong chương này, bao gồm các phương pháp giải phương trình vi phân cấp một và cấp hai, và các ứng dụng thực tế.</p>",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Giới thiệu & Phương trình Vi phân Đơn giản nhất",
+      "image": "images/calculus/week7/MA1521Chap7_page_2.png",
+      "notes": "<h3>Giới thiệu về Phương trình Vi phân</h3><p>Đạo hàm của một hàm số xác định sự thay đổi của hàm đó. Ngược lại, nếu ta biết đạo hàm <code>dy/dx = f(x)</code>, ta có thể tìm lại hàm ban đầu bằng cách lấy tích phân: <code>y = ∫f(x)dx + C</code>.</p><p>Tổng quát, một mối quan hệ có dạng <code>F(x, y, dy/dx, ..., dⁿy/dxⁿ) = 0</code> được gọi là một <b>phương trình vi phân thường (ordinary differential equation - ODE)</b>. Mục tiêu là tìm mối quan hệ tường minh giữa x và y.</p><hr><h3>Phương trình Vi phân Đơn giản nhất</h3><p>Dạng đơn giản nhất là <code>dy/dx = f(x)</code>. Việc giải phương trình này chính là bài toán tìm nguyên hàm (tích phân).</p>",
+      "terms": {
+        "Ordinary Differential Equation (ODE)": "(Phương trình Vi phân Thường) Một phương trình chứa một hàm của một biến độc lập và các đạo hàm của nó. 'Thường' (ordinary) có nghĩa là hàm chỉ phụ thuộc vào một biến duy nhất."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Các dạng Phương trình Vi phân & Tách biến",
+      "image": "images/calculus/week7/MA1521Chap7_page_3.png",
+      "notes": "<h3>Các dạng Phương trình Vi phân Đơn giản</h3><p>Các ví dụ minh họa cách giải các phương trình vi phân có thể đưa về dạng tích phân trực tiếp, bao gồm cả các dạng như <code>dy/dx = g(y)</code>, có thể được giải bằng cách viết lại thành <code>dx/dy = 1/g(y)</code> và lấy tích phân theo y.</p><hr><h3>Phương pháp Tách biến (Separation of Variables)</h3><p>Xét bài toán tổng quát <code>dy/dx = f(x)g(y)</code>.</p><p>Ta có thể 'tách' các biến x và y sang hai vế khác nhau của phương trình:</p><code>(1/g(y)) dy = f(x) dx</code><p>Sau đó, ta lấy tích phân hai vế để tìm ra mối quan hệ giữa x và y.</p>",
+      "terms": {
+        "Separation of Variables": "(Phương pháp Tách biến) Một kỹ thuật giải các phương trình vi phân bằng cách sắp xếp lại phương trình sao cho mỗi biến xuất hiện ở một vế khác nhau, sau đó lấy tích phân hai vế."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Trang 4: Ví dụ về Tách biến",
+      "image": "images/calculus/week7/MA1521Chap7_page_4.png",
+      "notes": "<h3>Ví dụ về Phương pháp Tách biến</h3><p>Các ví dụ minh họa cách áp dụng phương pháp tách biến để giải các phương trình vi phân khác nhau.</p><p><b>Ví dụ 1:</b> <code>2√xy * dy/dx = 1</code></p><ul><li>Tách biến: <code>2√y dy = (1/√x) dx</code></li><li>Tích phân hai vế để tìm ra nghiệm.</li></ul><p><b>Ví dụ 2:</b> <code>dy/dx * sec(x) = e<sup>y+sin(x)</sup></code></p><ul><li>Viết lại: <code>dy/dx = eʸ * e<sup>sin(x)</sup> * cos(x)</code></li><li>Tách biến: <code>e⁻ʸ dy = e<sup>sin(x)</sup>cos(x) dx</code></li><li>Tích phân hai vế, vế phải có thể được giải bằng cách đặt u = sin(x).</li></ul>",
+      "terms": {}
+    },
+    {
+    "id": 5,
+    "title": "Trang 5: Nghiệm Kì dị & Phương trình Đẳng cấp",
+    "image": "images/calculus/week7/MA1521Chap7_page_5.png",
+    "notes": "<h3>Nghiệm Kì dị (Singular Solutions)</h3><p>Đôi khi, ngoài họ nghiệm tìm được bằng phương pháp tích phân, có thể tồn tại các nghiệm khác không nằm trong họ nghiệm đó. Ví dụ, với <code>dy/dx = sqrt(xy)</code>, ngoài nghiệm tổng quát, <code>y=0</code> cũng là một nghiệm. Đây được gọi là <b>nghiệm kì dị</b>.</p><hr><h3>Phương trình Đẳng cấp (Homogeneous Equations)</h3><p>Xét phương trình vi phân có dạng <code>dy/dx = F(x, y)</code>, trong đó F là một hàm <b>đẳng cấp bậc 0</b> (tức là <code>F(tx, ty) = F(x, y)</code>).</p><p>Để giải loại phương trình này, ta sử dụng phép đổi biến <code>z = y/x</code>. Khi đó, <code>y = xz</code> và <code>dy/dx = z + x(dz/dx)</code>.</p><p>Thay thế vào phương trình ban đầu, ta sẽ thu được một phương trình vi phân mới theo z và x, có thể giải được bằng phương pháp Tách biến.</p>",
+    "terms": {
+      "Singular Solution": "(Nghiệm kì dị) Một nghiệm của một phương trình vi phân không thể thu được từ nghiệm tổng quát bằng cách chọn một giá trị cụ thể cho hằng số.",
+      "Homogeneous Differential Equation": "(Phương trình Vi phân Đẳng cấp) Một phương trình vi phân có thể được viết dưới dạng dy/dx = F(y/x)."
+    }
+  },
+  {
+    "id": 6,
+    "title": "Trang 6: Ví dụ về Phương trình Đẳng cấp & Tuyến tính",
+    "image": "images/calculus/week7/MA1521Chap7_page_6.png",
+    "notes": "<h3>Ví dụ về Phương trình Đẳng cấp</h3><p>Các ví dụ minh họa cách áp dụng phép đổi biến <code>z = y/x</code> để giải các phương trình vi phân đẳng cấp.</p><hr><h3>Phương trình Tuyến tính Cấp một (First Order Linear Equations)</h3><p>Dạng phương trình vi phân quan trọng nhất là <b>phương trình tuyến tính</b>. Dạng tổng quát của một phương trình tuyến tính cấp một là:</p><code>dy/dx + p(x)y = q(x)</code>",
+    "terms": {
+      "Linear Differential Equation": "(Phương trình Vi phân Tuyến tính) Một phương trình vi phân trong đó biến phụ thuộc (y) và các đạo hàm của nó chỉ xuất hiện ở bậc nhất và không được nhân với nhau."
+    }
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Giải Phương trình Tuyến tính & Thừa số Tích phân",
+    "image": "images/calculus/week7/MA1521Chap7_page_7.png",
+    "notes": "<h3>Giải Phương trình Tuyến tính</h3><p>Để giải phương trình <code>dy/dx + p(x)y = q(x)</code>, ta sử dụng một kỹ thuật gọi là <b>thừa số tích phân (integrating factor)</b>.</p><p><b>Ý tưởng:</b> Tìm một hàm v(x) sao cho khi nhân nó vào hai vế của phương trình, vế trái sẽ trở thành đạo hàm của một tích.</p><p>Ta cần tìm v(x) sao cho <code>v'(x) = v(x)p(x)</code>. Giải phương trình này, ta tìm được thừa số tích phân là:</p><code>v(x) = e<sup>∫p(x)dx</sup></code>",
+    "terms": {
+      "Integrating Factor": "(Thừa số Tích phân) Một hàm số được chọn để nhân vào một phương trình vi phân nhằm làm cho nó có thể được tích phân một cách dễ dàng. Đối với phương trình tuyến tính cấp một, thừa số tích phân là e^(∫p(x)dx)."
+    }
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Ví dụ về Phương trình Tuyến tính",
+    "image": "images/calculus/week7/MA1521Chap7_page_8.png",
+    "notes": "<h3>Quy trình giải Phương trình Tuyến tính</h3><ol><li>Đưa phương trình về dạng chuẩn: <code>dy/dx + p(x)y = q(x)</code>.</li><li>Tính thừa số tích phân: <code>v(x) = e<sup>∫p(x)dx</sup></code>.</li><li>Nhân v(x) vào hai vế. Vế trái sẽ trở thành <code>d/dx [v(x)y]</code>.</li><li>Lấy tích phân hai vế theo x.</li><li>Giải phương trình để tìm y.</li></ol><hr><h3>Ví dụ</h3><p>Giải phương trình <code>x(dy/dx) = x² + 3y</code>.</p><ol><li><b>Dạng chuẩn:</b> <code>dy/dx - (3/x)y = x</code>.</li><li><b>Thừa số tích phân:</b> <code>v(x) = e<sup>∫(-3/x)dx</sup> = x⁻³</code>.</li><li><b>Nhân và tích phân:</b> <code>d/dx (x⁻³y) = x⁻² ⇒ x⁻³y = ∫x⁻²dx = -1/x + C</code>.</li><li><b>Nghiệm:</b> <code>y = -x² + Cx³</code>.</li></ol>",
+    "terms": {}
+  },
+  {
+    "id": 9,
+    "title": "Trang 9: Ví dụ & Phương trình Bernoulli",
+    "image": "images/calculus/week7/MA1521Chap7_page_9.png",
+    "notes": "<h3>Ví dụ về Thừa số Tích phân (tiếp)</h3><p>Các ví dụ khác về việc tìm thừa số tích phân và giải các phương trình tuyến tính, bao gồm cả các trường hợp mà x và y đổi vai trò cho nhau (phương trình tuyến tính theo x).</p><hr><h3>Phương trình Bernoulli</h3><p>Phương trình Bernoulli có dạng:</p><code>dy/dx + p(x)y = q(x)yⁿ</code><p>Đây là một phương trình phi tuyến tính. Tuy nhiên, ta có thể đưa nó về dạng tuyến tính bằng phép đổi biến:</p><code>z = y¹⁻ⁿ</code><p>Sau khi biến đổi, ta sẽ thu được một phương trình tuyến tính theo biến z, có thể giải được bằng phương pháp Thừa số Tích phân.</p>",
+    "terms": {
+      "Bernoulli's Equation": "(Phương trình Bernoulli) Một loại phương trình vi phân phi tuyến tính có thể được chuyển đổi thành một phương trình vi phân tuyến tính bằng một phép đổi biến thích hợp."
+    }
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Ví dụ về Phương trình Bernoulli",
+    "image": "images/calculus/week7/MA1521Chap7_page_10.png",
+    "notes": "<h3>Ví dụ về Phương trình Bernoulli</h3><p>Giải phương trình <code>x(dy/dx) + y = x⁴y³</code>.</p><ol><li><b>Đưa về dạng Bernoulli:</b> <code>dy/dx + (1/x)y = x³y³</code>. Ở đây n=3.</li><li><b>Đổi biến:</b> Đặt <code>z = y¹⁻³ = y⁻²</code>.</li><li><b>Phương trình mới:</b> Ta thu được một phương trình tuyến tính theo z: <code>dz/dx - (2/x)z = -2x³</code>.</li><li><b>Giải phương trình tuyến tính:</b> Tìm thừa số tích phân cho phương trình theo z, giải ra z.</li><li><b>Thay ngược lại:</b> Thay <code>z = y⁻²</code> trở lại để tìm nghiệm cuối cùng cho y.</li></ol>",
+    "terms": {}
+  },
+   {
+    "id": 11,
+    "title": "Trang 11: Bài toán Giá trị Ban đầu & Tăng trưởng theo Cấp số nhân",
+    "image": "images/calculus/week7/MA1521Chap7_page_11.png",
+    "notes": "<h3>Bài toán Giá trị Ban đầu (Initial Value Problem)</h3><p>Một <b>bài toán giá trị ban đầu</b> là một phương trình vi phân thường đi kèm với các giá trị được chỉ định tại một điểm cho trước, gọi là <b>điều kiện ban đầu (initial condition)</b>.</p><p>Nghiệm tổng quát của một phương trình vi phân cấp một chứa một hằng số tùy ý C. Để xác định C, ta chỉ cần một điều kiện ban đầu.</p><hr><h3>Tăng trưởng và Suy tàn theo Cấp số nhân (Exponential Growth and Decay)</h3><p>Nhiều hiện tượng trong tự nhiên có tốc độ thay đổi tỷ lệ thuận với chính đại lượng đó:</p><code>(1/P)(dP/dt) = r ⇒ dP/dt = rP</code><p>Phương trình vi phân này mô tả sự tăng trưởng (nếu r > 0) hoặc suy tàn (nếu r < 0) theo cấp số nhân. Nghiệm tổng quát của nó là <code>P(t) = Ceʳᵗ</code>.</p>",
+    "terms": {
+      "Initial Value Problem": "(Bài toán giá trị ban đầu) Một phương trình vi phân cùng với một điều kiện ban đầu, cho phép xác định một nghiệm duy nhất (nghiệm riêng) từ họ nghiệm tổng quát.",
+      "Initial Condition": "(Điều kiện ban đầu) Một giá trị của hàm chưa biết tại một điểm nhất định trong miền xác định của nó.",
+      "Exponential Growth/Decay": "(Tăng trưởng/Suy tàn theo cấp số nhân) Một mô hình trong đó tốc độ thay đổi của một đại lượng tỷ lệ thuận với giá trị hiện tại của nó."
+    }
+  },
+  {
+    "id": 12,
+    "title": "Trang 12: Phân rã Phóng xạ & Tăng trưởng Logistic",
+    "image": "images/calculus/week7/MA1521Chap7_page_12.png",
+    "notes": "<h3>Phân rã Phóng xạ (Radiocarbon Dating)</h3><p><b>Chu kỳ bán rã (half-life)</b> của một nguyên tố phóng xạ là thời gian cần thiết để một nửa số hạt nhân phóng xạ trong một mẫu bị phân rã.</p><p><b>Ví dụ:</b> Chu kỳ bán rã của Carbon-14 là khoảng 5730 năm. Bằng cách đo tỷ lệ Carbon-14 còn lại trong một mẫu vật hữu cơ, ta có thể xác định tuổi của nó. Quá trình này được mô hình hóa bằng phương trình suy tàn theo cấp số nhân <code>dC/dt = kC</code>.</p><hr><h3>Tăng trưởng Logistic (Logistic Growth)</h3><p>Trong thực tế, sự tăng trưởng của một quần thể thường bị giới hạn bởi các nguồn tài nguyên. Mô hình tăng trưởng logistic phản ánh điều này.</p><p>Tốc độ tăng trưởng r không phải là hằng số mà phụ thuộc vào quy mô quần thể P so với <b>sức chứa (carrying capacity)</b> M. Phương trình vi phân có dạng:</p><code>dP/dt = r(M - P)P</code>",
+    "terms": {
+      "Half-life": "(Chu kỳ bán rã) Thời gian cần thiết để một đại lượng (ví dụ: số lượng hạt nhân phóng xạ) giảm đi một nửa giá trị ban đầu của nó.",
+      "Logistic Growth": "(Tăng trưởng Logistic) Một mô hình tăng trưởng quần thể, trong đó tốc độ tăng trưởng giảm dần khi quần thể tiến gần đến một giới hạn tối đa, gọi là sức chứa.",
+      "Carrying Capacity (M)": "(Sức chứa) Kích thước quần thể tối đa mà một môi trường có thể duy trì một cách bền vững."
+    }
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Ví dụ & Truyền nhiệt",
+    "image": "images/calculus/week7/MA1521Chap7_page_13.png",
+    "notes": "<h3>Ví dụ về Tăng trưởng Logistic</h3><p>Một công viên quốc gia có thể nuôi tối đa 100 con gấu. Hiện tại có 10 con. Mô hình hóa và dự đoán khi nào số lượng gấu sẽ đạt 50 con.</p><p>Bằng cách giải phương trình vi phân logistic với các điều kiện ban đầu đã cho, ta có thể tìm ra hàm P(t) biểu diễn số lượng gấu theo thời gian và từ đó tính được thời điểm cần tìm.</p><hr><h3>Truyền nhiệt (Heat Transfer)</h3><p><b>Định luật thứ hai của Nhiệt động lực học:</b> Nhiệt luôn truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn.</p><p><b>Định luật Tản nhiệt của Newton (1701):</b> Tốc độ mất nhiệt của một vật thể tỷ lệ thuận với sự chênh lệch nhiệt độ giữa vật thể đó và môi trường xung quanh.</p><code>dT/dt = -r(T - Tₛ)</code><p>Đây là một phương trình vi phân tuyến tính cấp một, có thể giải bằng phương pháp Tách biến hoặc Thừa số Tích phân.</p>",
+    "terms": {
+      "Newton's Law of Cooling": "(Định luật Tản nhiệt của Newton) Phát biểu rằng tốc độ thay đổi nhiệt độ của một vật thể tỷ lệ thuận với sự chênh lệch nhiệt độ giữa vật thể và môi trường xung quanh nó."
+    }
+  },
+  {
+    "id": 14,
+    "title": "Trang 14: Ví dụ về Truyền nhiệt & Bài toán Thùng rò rỉ",
+    "image": "images/calculus/week7/MA1521Chap7_page_14.png",
+    "notes": "<h3>Ví dụ về Truyền nhiệt</h3><p>Một quả trứng luộc ở 98°C được đặt trong nước 18°C. Sau 5 phút, nhiệt độ của trứng giảm xuống 38°C. Mất bao lâu để trứng đạt 20°C?</p><p>Ta thiết lập phương trình vi phân theo Định luật Tản nhiệt của Newton với Tₛ = 18. Sử dụng các điều kiện đã cho để tìm hằng số r và hằng số tích phân C, từ đó tìm ra thời gian cần thiết.</p><hr><h3>Bài toán Thùng rò rỉ (Draining Tank Problem)</h3><p>Mô hình hóa sự thay đổi thể tích nước trong một cái thùng đang bị rò rỉ. Tốc độ nước chảy ra khỏi lỗ rò (theo Định luật Torricelli) tỷ lệ thuận với căn bậc hai của chiều cao cột nước.</p><p>Điều này dẫn đến một phương trình vi phân có thể giải được bằng phương pháp Tách biến.</p>",
+    "terms": {
+      "Torricelli's Law": "(Định luật Torricelli) Một định luật trong động lực học chất lỏng, phát biểu rằng tốc độ của dòng chất lỏng chảy ra từ một lỗ ở đáy một bình chứa tỷ lệ thuận với căn bậc hai của khoảng cách thẳng đứng từ bề mặt chất lỏng đến tâm của lỗ."
+    }
+  },
+  {
+    "id": 15,
+    "title": "Trang 15: Chuyển động có Lực cản & Phương trình Bậc hai",
+    "image": "images/calculus/week7/MA1521Chap7_page_15.png",
+    "notes": "<h3>Chuyển động có Lực cản (Motion with Resistance)</h3><p>Xét một vật thể rơi chịu tác động của trọng lực và lực cản không khí. Lực cản thường được mô hình hóa là tỷ lệ thuận với vận tốc (đối với vật thể di chuyển chậm) hoặc bình phương vận tốc (đối với vật thể di chuyển nhanh).</p><p>Áp dụng Định luật II của Newton (F=ma), ta có thể thiết lập một phương trình vi phân cho vận tốc v(t) của vật thể.</p><hr><h3>Phương trình Vi phân Bậc hai (Second Order ODEs)</h3><p>Phương trình vi phân bậc hai có dạng tổng quát <code>F(x, y, y', y'') = 0</code>.</p><p>Một số phương trình bậc hai có thể được giải bằng cách đưa về phương trình cấp một thông qua các phép đổi biến thích hợp.</p>",
+    "terms": {
+      "Air Resistance": "(Lực cản không khí) Một loại lực ma sát tác động lên các vật thể khi chúng di chuyển trong không khí.",
+      "Second Order Differential Equation": "(Phương trình vi phân cấp hai) Một phương trình vi phân chứa đạo hàm cấp hai của hàm chưa biết, nhưng không có đạo hàm cấp cao hơn."
+    }
+  },
+  {
+    "id": 16,
+    "title": "Trang 16: Bài toán Đuổi bắt & Phương trình Bậc hai",
+    "image": "images/calculus/week7/MA1521Chap7_page_16.png",
+    "notes": "<h3>Bài toán Chó và Thỏ (Dog and Rabbit)</h3><p>Một bài toán đuổi bắt cổ điển, dẫn đến một phương trình vi phân phức tạp. Một con chó đuổi theo một con thỏ, luôn hướng về phía con thỏ. Quỹ đạo của con chó có thể được mô tả bằng một phương trình vi phân.</p><hr><h3>Phương trình Vi phân Tuyến tính Bậc hai</h3><p>Một <b>phương trình vi phân tuyến tính bậc hai</b> có dạng:</p><code>y'' + p(x)y' + q(x)y = r(x)</code><ul><li>Phương trình được gọi là <b>thuần nhất (homogeneous)</b> nếu r(x) = 0.</li><li>Nếu y₁ và y₂ là hai nghiệm độc lập tuyến tính của phương trình thuần nhất, thì nghiệm tổng quát là <code>y = C₁y₁ + C₂y₂</code>.</li><li>Nghiệm tổng quát của phương trình không thuần nhất là tổng của nghiệm tổng quát của phương trình thuần nhất và một nghiệm riêng bất kỳ yₚ.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 17,
+    "title": "Trang 17: Phương trình Bậc hai với Hệ số Hằng",
+    "image": "images/calculus/week7/MA1521Chap7_page_17.png",
+    "notes": "<h3>Phương trình Bậc hai với Hệ số Hằng</h3><p>Ta xét trường hợp đặc biệt khi p(x) và q(x) là các hằng số. Phương trình có dạng:</p><code>y'' + py' + qy = r(x)</code><p>Đầu tiên, ta xét trường hợp thuần nhất <code>y'' + py' + qy = 0</code>.</p><p>Ta thử một nghiệm có dạng <code>y = e<sup>λx</sup></code>. Thay vào phương trình, ta thu được:</p><code>(λ² + pλ + q)e<sup>λx</sup> = 0</code><p>Vì e<sup>λx</sup> ≠ 0, ta cần giải phương trình <code>λ² + pλ + q = 0</code>. Đây được gọi là <b>phương trình đặc trưng (characteristic equation)</b>.</p>",
+    "terms": {
+      "Characteristic Equation": "(Phương trình đặc trưng) Một phương trình đại số bậc n được suy ra từ một phương trình vi phân tuyến tính thuần nhất bậc n có hệ số hằng. Nghiệm của phương trình đặc trưng quyết định dạng nghiệm của phương trình vi phân."
+    }
+  },
+  {
+    "id": 18,
+    "title": "Trang 18: Nghiệm của Phương trình Đặc trưng",
+    "image": "images/calculus/week7/MA1521Chap7_page_18.png",
+    "notes": "<h3>Giải Phương trình Đặc trưng</h3><p>Cho phương trình đặc trưng <code>λ² + pλ + q = 0</code>, nghiệm được cho bởi công thức bậc hai. Ta xét 3 trường hợp dựa trên biệt thức Δ = p² - 4q.</p><p><b>Định lý:</b> Nghiệm tổng quát của <code>y'' + py' + qy = 0</code> là <code>y = C₁y₁ + C₂y₂</code>, trong đó:</p><ul><li><b>Trường hợp 1 (Δ > 0):</b> Hai nghiệm thực phân biệt λ₁, λ₂. <code>y₁ = e<sup>λ₁x</sup>, y₂ = e<sup>λ₂x</sup></code>.</li><li><b>Trường hợp 2 (Δ = 0):</b> Một nghiệm thực kép λ. <code>y₁ = e<sup>λx</sup>, y₂ = xe<sup>λx</sup></code>.</li><li><b>Trường hợp 3 (Δ < 0):</b> Hai nghiệm phức liên hợp λ = a ± bi. <code>y₁ = e<sup>ax</sup>cos(bx), y₂ = e<sup>ax</sup>sin(bx)</code>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 19,
+    "title": "Trang 19: Ví dụ về Nghiệm thực Phân biệt",
+    "image": "images/calculus/week7/MA1521Chap7_page_19.png",
+    "notes": "<h3>Ví dụ (Trường hợp Δ > 0)</h3><p>Tìm nghiệm tổng quát của các phương trình sau:</p><p><b>1. <code>y'' + y' - 6y = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² + λ - 6 = 0</code>.</li><li>Nghiệm: λ = -3, 2.</li><li>Nghiệm tổng quát: <code>y = C₁e⁻³ˣ + C₂e²ˣ</code>.</li></ul><p><b>2. <code>y'' + y' = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² + λ = 0</code>.</li><li>Nghiệm: λ = -1, 0.</li><li>Nghiệm tổng quát: <code>y = C₁e⁻¹ˣ + C₂e⁰ˣ = C₁e⁻ˣ + C₂</code>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 20,
+    "title": "Trang 20: Ví dụ về Nghiệm kép và Nghiệm 0",
+    "image": "images/calculus/week7/MA1521Chap7_page_20.png",
+    "notes": "<h3>Ví dụ (Trường hợp Δ = 0)</h3><p>Tìm nghiệm tổng quát của các phương trình sau:</p><p><b>1. <code>y'' + 2y' + y = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² + 2λ + 1 = 0</code>.</li><li>Nghiệm kép: λ = -1.</li><li>Nghiệm tổng quát: <code>y = C₁e⁻ˣ + C₂xe⁻ˣ</code>.</li></ul><p><b>2. <code>y'' - 4y' + 4y = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² - 4λ + 4 = 0</code>.</li><li>Nghiệm kép: λ = 2.</li><li>Nghiệm tổng quát: <code>y = C₁e²ˣ + C₂xe²ˣ</code>.</li></ul><p><b>3. <code>y'' = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² = 0</code>.</li><li>Nghiệm kép: λ = 0.</li><li>Nghiệm tổng quát: <code>y = C₁e⁰ˣ + C₂xe⁰ˣ = C₁ + C₂x</code>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 21,
+    "title": "Trang 21: Ví dụ về Nghiệm phức",
+    "image": "images/calculus/week7/MA1521Chap7_page_21.png",
+    "notes": "<h3>Ví dụ (Trường hợp Δ < 0)</h3><p>Tìm nghiệm tổng quát của các phương trình sau:</p><p><b>1. <code>y'' - 6y' + 25y = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² - 6λ + 25 = 0</code>.</li><li>Nghiệm phức: λ = 3 ± 4i. (a=3, b=4)</li><li>Nghiệm tổng quát: <code>y = C₁e³ˣcos(4x) + C₂e³ˣsin(4x)</code>.</li></ul><p><b>2. <code>y'' + 8y = 0</code></b></p><ul><li>Phương trình đặc trưng: <code>λ² + 8 = 0</code>.</li><li>Nghiệm phức: λ = ±2√2 i. (a=0, b=2√2)</li><li>Nghiệm tổng quát: <code>y = C₁cos(2√2 x) + C₂sin(2√2 x)</code>.</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 22,
+    "title": "Trang 22: Phương pháp Biến thiên Hằng số",
+    "image": "images/calculus/week7/MA1521Chap7_page_22.png",
+    "notes": "<h3>Phương pháp Biến thiên Hằng số (Variation of Parameters)</h3><p>Bây giờ ta xét đến việc giải phương trình <b>không thuần nhất</b>:</p><code>y'' + py' + qy = r(x)</code><p>Nghiệm tổng quát của nó có dạng <code>y(x) = yₕ(x) + yₚ(x)</code>, trong đó:</p><ul><li><code>yₕ(x) = C₁y₁ + C₂y₂</code> là nghiệm tổng quát của phương trình thuần nhất tương ứng.</li><li><code>yₚ(x)</code> là một <b>nghiệm riêng (particular solution)</b> của phương trình không thuần nhất.</li></ul><p>Chúng ta sẽ sử dụng phương pháp <b>biến thiên hằng số</b> để tìm một nghiệm riêng yₚ.</p>",
+    "terms": {
+      "Variation of Parameters": "(Phương pháp Biến thiên Hằng số) Một phương pháp tổng quát để tìm một nghiệm riêng của một phương trình vi phân tuyến tính không thuần nhất, sau khi đã biết nghiệm của phương trình thuần nhất tương ứng.",
+      "Particular Solution": "(Nghiệm riêng) Một nghiệm bất kỳ của một phương trình vi phân không thuần nhất, không chứa hằng số tùy ý."
+    }
+  },
+  {
+    "id": 23,
+    "title": "Trang 23: Dẫn dắt Phương pháp Biến thiên Hằng số",
+    "image": "images/calculus/week7/MA1521Chap7_page_23.png",
+    "notes": "<h3>Dẫn dắt Phương pháp Biến thiên Hằng số</h3><p>Để tìm một nghiệm riêng yₚ, ta bắt đầu từ nghiệm thuần nhất <code>yₕ = C₁y₁ + C₂y₂</code> và 'biến thiên' các hằng số C₁ và C₂ thành các hàm số v₁(x) và v₂(x).</p><p>Ta thử một nghiệm có dạng <code>yₚ(x) = v₁(x)y₁ + v₂(x)y₂</code>.</p><p>Lấy đạo hàm của yₚ và áp đặt một điều kiện giả định <code>v₁'y₁ + v₂'y₂ = 0</code> để đơn giản hóa biểu thức. Sau đó, tiếp tục lấy đạo hàm cấp hai và thay tất cả vào phương trình vi phân không thuần nhất ban đầu, ta sẽ thu được một hệ phương trình cho v₁' và v₂'.</p>",
+    "terms": {}
+  },
+  {
+    "id": 24,
+    "title": "Trang 24: Công thức Wronskian",
+    "image": "images/calculus/week7/MA1521Chap7_page_24.png",
+    "notes": "<h3>Hệ phương trình cho v₁' và v₂'</h3><p>Từ các bước ở trang trước, ta thu được hệ hai phương trình tuyến tính sau cho v₁' và v₂':</p><ul><li><code>v₁'y₁ + v₂'y₂ = 0</code></li><li><code>v₁'y₁' + v₂'y₂' = r(x)</code></li></ul><p>Giải hệ phương trình này, ta có thể tìm được v₁' và v₂' theo y₁, y₂, và r(x). Định thức của hệ phương trình này chính là <b>Định thức Wronski (Wronskian)</b> của y₁ và y₂:</p><code>W(y₁, y₂) = y₁y₂' - y₁'y₂</code><p>Cuối cùng, ta lấy tích phân của v₁' và v₂' để tìm v₁ và v₂, từ đó có được nghiệm riêng yₚ.</p>",
+    "terms": {
+      "Wronskian": "(Định thức Wronski) Một định thức được sử dụng để kiểm tra sự độc lập tuyến tính của một tập hợp các hàm số. Trong phương pháp Biến thiên Hằng số, nó xuất hiện tự nhiên khi giải hệ phương trình."
+    }
+  },
+  {
+    "id": 25,
+    "title": "Trang 25: Tổng kết & Ví dụ",
+    "image": "images/calculus/week7/MA1521Chap7_page_25.png",
+    "notes": "<h3>Tổng kết Phương pháp Biến thiên Hằng số</h3><ol><li>Tìm nghiệm tổng quát <code>yₕ = C₁y₁ + C₂y₂</code> của phương trình thuần nhất.</li><li>Tính định thức Wronski <code>W(y₁, y₂)</code>.</li><li>Tính các hàm v₁ và v₂ bằng các công thức tích phân.</li><li>Nghiệm riêng là <code>yₚ = v₁y₁ + v₂y₂</code>.</li><li>Nghiệm tổng quát cuối cùng là <code>y = yₕ + yₚ</code>.</li></ol><hr><h3>Ví dụ</h3><p>Tìm nghiệm tổng quát của <code>y'' - y' - 6y = e⁻ˣ</code>.</p><ol><li><b>Nghiệm thuần nhất:</b> yₕ = C₁e⁻²ˣ + C₂e³ˣ.</li><li><b>Tính Wronskian:</b> W = 5eˣ.</li><li><b>Tính v₁ và v₂:</b> Áp dụng công thức, ta tìm được v₁ và v₂.</li><li><b>Nghiệm riêng:</b> yₚ = v₁y₁ + v₂y₂ = -1/6 * e⁻ˣ.</li><li><b>Nghiệm tổng quát:</b> y = C₁e⁻²ˣ + C₂e³ˣ - (1/6)e⁻ˣ.</li></ol>",
+    "terms": {}
+  },
+   {
+    "id": 26,
+    "title": "Trang 26: Phương pháp Toán tử",
+    "image": "images/calculus/week7/MA1521Chap7_page_26.png",
+    "notes": "<h3>Phương pháp Toán tử (Operator Methods)</h3><p>Đặt <code>D = d/dx</code> là toán tử lấy đạo hàm. Ta có thể viết lại phương trình vi phân tuyến tính hệ số hằng dưới dạng toán tử:</p><code>(D² + pD + q)y = r(x)</code><p>Ta có thể phân tích đa thức toán tử <code>D² + pD + q = (D - λ₁)(D - λ₂)</code>, trong đó λ₁, λ₂ là nghiệm của phương trình đặc trưng.</p><p>Khi đó, nghiệm có thể được viết dưới dạng:</p><code>y = [1 / (D - λ₁)] * [1 / (D - λ₂)] * r(x)</code><p>trong đó toán tử ngược <code>1/(D-k)</code> được định nghĩa là một phép tích phân.</p>",
+    "terms": {
+      "Operator Method": "(Phương pháp Toán tử) Một phương pháp giải các phương trình vi phân tuyến tính bằng cách coi phép lấy đạo hàm như một toán tử đại số, cho phép sử dụng các kỹ thuật phân tích đa thức."
+    }
+  },
+  {
+    "id": 27,
+    "title": "Trang 27: Ví dụ về Phương pháp Toán tử",
+    "image": "images/calculus/week7/MA1521Chap7_page_27.png",
+    "notes": "<h3>Ví dụ về Phương pháp Toán tử</h3><p>Các ví dụ minh họa cách sử dụng phương pháp toán tử để tìm nghiệm riêng của các phương trình không thuần nhất. Phương pháp này đặc biệt hiệu quả khi hàm <code>r(x)</code> ở vế phải có dạng đa thức hoặc hàm mũ.</p>",
+    "terms": {}
+  },
+  {
+    "id": 28,
+    "title": "Trang 28: Bài toán Giá trị Ban đầu",
+    "image": "images/calculus/week7/MA1521Chap7_page_28.png",
+    "notes": "<h3>Bài toán Giá trị Ban đầu (Initial Value Problem)</h3><p>Nhắc lại rằng một bài toán giá trị ban đầu là một phương trình vi phân đi kèm với các giá trị được chỉ định tại một điểm.</p><p>Nghiệm của một phương trình vi phân bậc hai có hai hằng số tùy ý (C₁, C₂). Để xác định duy nhất một nghiệm, chúng ta cần <b>hai điều kiện ban đầu</b>.</p><p>Thông thường, các điều kiện ban đầu được cho dưới dạng:</p><ul><li><code>y(x₀) = A</code> (giá trị của hàm tại một điểm)</li><li><code>y'(x₀) = B</code> (giá trị của đạo hàm tại cùng điểm đó)</li></ul>",
+    "terms": {}
+  },
+  {
+    "id": 29,
+    "title": "Trang 29: Ví dụ về Bài toán Giá trị Ban đầu",
+    "image": "images/calculus/week7/MA1521Chap7_page_29.png",
+    "notes": "<h3>Ví dụ</h3><p>Giải bài toán giá trị ban đầu: <code>y'' + y = x</code>, với <code>y(-π/4) = 0</code> và <code>y(π/4) = 0</code>.</p><ol><li><b>Tìm nghiệm tổng quát:</b><code>y = C₁cos(x) + C₂sin(x) + x</code>.</li><li><b>Áp dụng điều kiện ban đầu:</b> Thay các giá trị x và y đã cho vào nghiệm tổng quát, ta thu được một hệ hai phương trình tuyến tính cho C₁ và C₂.</li><li><b>Giải hệ phương trình:</b> Tìm được C₁ = 0 và C₂ = -√2 * π / 4.</li><li><b>Kết luận nghiệm riêng:</b> Thay các giá trị C₁ và C₂ vừa tìm được vào nghiệm tổng quát để có nghiệm cuối cùng.</li></ol>",
+    "terms": {}
+  },
+  {
+    "id": 30,
+    "title": "Trang 30: Ví dụ về Bài toán Giá trị Ban đầu (tiếp)",
+    "image": "images/calculus/week7/MA1521Chap7_page_30.png",
+    "notes": "<h3>Ví dụ (tiếp)</h3><p>Giải bài toán giá trị ban đầu: <code>y'' + y = x</code>, với <code>y(π/4) = 0</code> và <code>y'(π/4) = 1</code>.</p><ol><li><b>Tìm nghiệm tổng quát:</b> Giống như ví dụ trước, <code>y = C₁cos(x) + C₂sin(x) + x</code>.</li><li><b>Tính đạo hàm:</b> <code>y' = -C₁sin(x) + C₂cos(x) + 1</code>.</li><li><b>Áp dụng điều kiện ban đầu:</b> Thay các giá trị x, y, và y' đã cho vào để tạo thành một hệ hai phương trình cho C₁ và C₂.</li><li><b>Giải hệ phương trình và kết luận nghiệm riêng.</b></li></ol>",
+    "terms": {}
+  }
+  ]
 }
   ]
 }
