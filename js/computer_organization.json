@@ -45,6 +45,129 @@
                         "Processor (CPU - Bộ xử lý)": "Bộ xử lý trung tâm, là bộ não của máy tính, thực hiện các chỉ thị của một chương trình máy tính.",
                         "Memory (Bộ nhớ)": "Đề cập đến các thiết bị vật lý được sử dụng để lưu trữ chương trình hoặc dữ liệu (ví dụ: RAM, ổ cứng) một cách tạm thời hoặc vĩnh viễn."
                     }
+                },
+                {
+                    "id": 6,
+                    "title": "Trang 6: Máy tính là gì? (1/6)",
+                    "image": "images/computer_organization/week1/slide_6.png",
+                    "notes": "Máy tính là một thiết bị có khả năng giải quyết các vấn đề theo các chương trình được thiết kế sẵn. Nó đơn giản là tăng cường sức mạnh lưu trữ và tốc độ tính toán của chúng ta.\n\nVí dụ: một chiếc ô tô giúp tăng cường khả năng di chuyển của chúng ta.",
+                    "terms": {}
+                },
+                {
+                    "id": 7,
+                    "title": "Trang 7: Máy tính là gì? (2/6)",
+                    "image": "images/computer_organization/week1/slide_7.png",
+                    "notes": "Từ góc độ tổ chức máy tính, chúng ta nghiên cứu các thành phần và cách chúng hoạt động cùng nhau.\n\nCác thành phần bao gồm: Bộ xử lý, bộ nhớ, thiết bị nhập/xuất, mạng, v.v.\n\nCác bộ phận được đánh số trong hình:\n1. Màn hình (Monitor)\n2. Ổ cứng (Hard Drive)\n3. Chuột (Mouse)\n4. Bàn phím (Keyboard)\n5. Máy quét (Scanner)\n6. Máy in (Printer)\n7. Modem",
+                    "terms": {
+                        "Input/Output devices (Thiết bị nhập/xuất)": "Các thiết bị phần cứng cho phép người dùng tương tác với máy tính (nhập) và nhận phản hồi từ máy tính (xuất). Ví dụ: bàn phím, chuột, màn hình."
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Trang 8: Máy tính là gì? (3/6)",
+                    "image": "images/computer_organization/week1/slide_8.png",
+                    "notes": "Các thành phần chính bên trong một máy tính hiện đại:\n\n1. <b>Nguồn điện (Power supply)</b>\n2. <b>Bo mạch chủ (Motherboard)</b>\n3. <b>Bộ xử lý trung tâm (CPU)</b>\n4. <b>Bộ nhớ truy cập ngẫu nhiên (RAM)</b>\n5. <b>Ổ cứng (Hard drive)</b>\n6. <b>Quạt tản nhiệt (Cooling fan)</b>\n7. <b>Các thiết bị I/O</b>",
+                    "terms": {
+                        "Motherboard (Bo mạch chủ)": "Bảng mạch in chính trong máy tính, kết nối tất cả các thành phần quan trọng như CPU, RAM, ổ cứng và các cổng kết nối.",
+                        "RAM (Random Access Memory)": "Bộ nhớ truy cập ngẫu nhiên, một loại bộ nhớ khả biến (dữ liệu bị mất khi mất điện) được máy tính sử dụng để lưu trữ dữ liệu và mã máy đang được sử dụng."
+                    }
+                },
+                {
+                    "id": 9,
+                    "title": "Trang 9: Máy tính là gì? (4/6)",
+                    "image": "images/computer_organization/week1/slide_9.png",
+                    "notes": "Slide này minh họa chi tiết hơn về một bo mạch chủ (PC motherboard) và cấu trúc bên trong của một bộ xử lý Pentium.\n\n- <b>Bo mạch chủ:</b> Hiển thị các khe cắm và cổng kết nối khác nhau như khe cắm AGP, khe cắm PCI, cổng âm thanh, cổng LAN, cổng USB, socket CPU, v.v.\n- <b>Bên trong chip Pentium:</b> Hiển thị các khối chức năng khác nhau như Khối điều khiển (Control), Giao diện I/O, Bộ nhớ đệm lệnh (Instruction cache), Bộ nhớ đệm dữ liệu (Data cache), v.v.",
+                    "terms": {
+                        "Cache (Bộ nhớ đệm)": "Một thành phần phần cứng hoặc phần mềm lưu trữ dữ liệu để các yêu cầu trong tương lai cho dữ liệu đó có thể được phục vụ nhanh hơn. Dữ liệu được lưu trong bộ đệm có thể là kết quả của một phép tính trước đó hoặc bản sao của dữ liệu được lưu ở nơi khác."
+                    }
+                },
+                {
+                    "id": 10,
+                    "title": "Trang 10: Máy tính là gì? (5/6)",
+                    "image": "images/computer_organization/week1/slide_10.png",
+                    "notes": "Sơ đồ khối về Tổ chức Máy tính:\n\n- Một <b>Máy tính</b> bao gồm 3 phần chính: <b>CPU</b>, <b>Bộ nhớ (Memory)</b>, và các <b>Thiết bị (Devices)</b>.\n- <b>CPU</b> bao gồm <b>Khối điều khiển (Control)</b> và <b>Đường đi dữ liệu (Datapath)</b>.\n- Các <b>Thiết bị</b> bao gồm <b>Nhập (Input)</b> và <b>Xuất (Output)</b>.",
+                    "terms": {
+                        "Computer Organisation (Tổ chức máy tính)": "Một lĩnh vực nghiên cứu cách các thành phần của một hệ thống máy tính được kết nối và hoạt động cùng nhau để thực hiện các chỉ thị kiến trúc.",
+                        "Control Unit (Khối điều khiển)": "Một thành phần của CPU có chức năng chỉ đạo hoạt động của bộ xử lý. Nó ra lệnh cho bộ nhớ, đơn vị logic số học và các thiết bị I/O cách phản ứng với các chỉ thị đã được gửi đến.",
+                        "Datapath (Đường đi dữ liệu)": "Một tập hợp các đơn vị chức năng (như bộ cộng, bộ nhân), các thanh ghi, và các bus, thực hiện các hoạt động xử lý dữ liệu."
+                    }
+                },
+                {
+                    "id": 11,
+                    "title": "Trang 11: Máy tính là gì? (6/6)",
+                    "image": "images/computer_organization/week1/slide_11.png",
+                    "notes": "Thế hệ tiếp theo...\n\nSlide này trưng bày các công nghệ giao diện máy tính trong tương lai hoặc đang trong giai đoạn ý tưởng, bao gồm:\n- Bàn phím laser trong suốt.\n- Chuột đeo trên ngón tay.\n- Bàn phím được chiếu lên bề mặt.",
+                    "terms": {}
+                },
+                {
+                    "id": 12,
+                    "title": "Trang 12: Intel Edison",
+                    "image": "images/computer_organization/week1/slide_12.png",
+                    "notes": "Slide này giới thiệu về Intel Edison, một máy tính có kích thước chỉ bằng một chiếc thẻ SD, được công bố vào ngày 6 tháng 1 năm 2014. Đây là một ví dụ về sự thu nhỏ đáng kinh ngạc của công nghệ máy tính.",
+                    "terms": {}
+                },
+                {
+                    "id": 13,
+                    "title": "Trang 13: Trừu tượng hóa (1/2)",
+                    "image": "images/computer_organization/week1/slide_13.png",
+                    "notes": "<b>Trừu tượng hóa (Abstraction)</b> là một khái niệm cốt lõi trong khoa học máy tính.\n\n- Đi sâu vào chi tiết sẽ cho thấy nhiều thông tin hơn.\n- Trừu tượng hóa bỏ qua các chi tiết không cần thiết.\n\nSơ đồ minh họa quá trình dịch một đoạn mã từ Ngôn ngữ bậc cao (High-level Language) sang Ngôn ngữ Assembly (Assembly Language) và cuối cùng là Ngôn ngữ máy (Machine Language). Mỗi cấp độ là một sự trừu tượng hóa của cấp độ bên dưới nó.",
+                    "terms": {
+                        "Abstraction (Trừu tượng hóa)": "Quá trình ẩn đi các chi tiết phức tạp và chỉ hiển thị các tính năng cần thiết của một hệ thống. Nó cho phép chúng ta làm việc với các khái niệm phức tạp một cách đơn giản hơn.",
+                        "High-level Language": "Một ngôn ngữ lập trình được thiết kế để dễ đọc và dễ viết cho con người (ví dụ: C, Java, Python).",
+                        "Assembly Language": "Một ngôn ngữ lập trình bậc thấp, trong đó có một sự tương ứng rất chặt chẽ giữa các chỉ thị của ngôn ngữ và các chỉ thị mã máy của kiến trúc.",
+                        "Machine Language": "Một tập hợp các chỉ thị được thực thi trực tiếp bởi CPU của máy tính. Nó bao gồm các chuỗi số nhị phân (0 và 1)."
+                    }
+                },
+                {
+                    "id": 14,
+                    "title": "Trang 14: Trừu tượng hóa (2/2)",
+                    "image": "images/computer_organization/week1/slide_14.png",
+                    "notes": "Chúng ta cần học các tầng trừu tượng hóa như:\n\n- Phần mềm ứng dụng và hệ thống.\n- Ngôn ngữ assembly và ngôn ngữ máy.\n- Các vấn đề kiến trúc như pipelining, caches, bộ nhớ ảo.\n- Logic tổ hợp, các mạch số học.\n- Logic tuần tự, máy trạng thái hữu hạn.\n- Logic Boolean (1 và 0).\n- Transistors dùng để xây dựng các cổng logic.\n- Chất bán dẫn/silicon dùng để xây dựng transistors.\n- Các thuộc tính của nguyên tử, electron và động lực học lượng tử.",
+                    "terms": {}
+                },
+                {
+                    "id": 15,
+                    "title": "Trang 15: Các mảnh ghép khớp với nhau như thế nào?",
+                    "image": "images/computer_organization/week1/slide_15.png",
+                    "notes": "Sơ đồ này minh họa các tầng trừu tượng trong một hệ thống máy tính, từ phần cứng ở dưới cùng đến phần mềm ở trên cùng.\n\n- <b>Phần mềm (Software):</b> Bao gồm các ứng dụng và hệ điều hành.\n- <b>Kiến trúc Tập lệnh (Instruction Set Architecture - ISA):</b> Giao diện giữa phần cứng và phần mềm.\n- <b>Kiến trúc Máy tính (Computer Architecture):</b> Bao gồm Bộ xử lý, Bộ nhớ, I/O.\n- <b>Thiết kế Logic Số (Digital Logic Design):</b> Thiết kế các mạch từ các cổng logic.\n- <b>Phần cứng (Hardware):</b> Các transistor vật lý.",
+                    "terms": {
+                        "Instruction Set Architecture (ISA)": "Kiến trúc tập lệnh, là một phần của kiến trúc máy tính liên quan đến lập trình. Nó định nghĩa các chỉ thị, kiểu dữ liệu, thanh ghi, và các chế độ địa chỉ mà CPU có thể thực thi."
+                    }
+                },
+                {
+                    "id": 16,
+                    "title": "Trang 16: Các cấp độ biểu diễn",
+                    "image": "images/computer_organization/week1/slide_16.png",
+                    "notes": "Sơ đồ này cho thấy quá trình chuyển đổi một chương trình từ cấp độ cao nhất xuống cấp độ thấp nhất:\n\n1. <b>Chương trình Ngôn ngữ Bậc cao (ví dụ: C)</b>\n2. Dịch bởi <b>Compiler</b> thành <b>Chương trình Ngôn ngữ Assembly (ví dụ: MIPS)</b>\n3. Dịch bởi <b>Assembler</b> thành <b>Chương trình Ngôn ngữ Máy (MIPS)</b>\n4. Được <b>diễn giải bởi Máy (Machine Interpretation)</b>, thông qua <b>Mô tả Kiến trúc Phần cứng</b> và cuối cùng là <b>Mô tả Mạch Logic</b>.",
+                    "terms": {}
+                },
+                {
+                    "id": 17,
+                    "title": "Trang 17: Đề cương môn học (Xem lại)",
+                    "image": "images/computer_organization/week1/slide_17.png",
+                    "notes": "Đề cương môn học được chia thành các phần chính:\n\n- <b>Chuẩn bị (2 tuần):</b> Hệ thống số và mã, Đại số Boolean.\n- <b>Thiết kế Logic (3 tuần):</b> Cổng logic và mạch, Tối giản hóa, Mạch tổ hợp, Mạch tuần tự.\n- <b>Tổ chức Máy tính:</b> Hiệu suất, Ngôn ngữ Assembly, Bộ xử lý, Pipelining, Phân cấp bộ nhớ, Input/Output.",
+                    "terms": {}
+                },
+                {
+                    "id": 18,
+                    "title": "Trang 18: Các khía cạnh thực hành",
+                    "image": "images/computer_organization/week1/slide_18.png",
+                    "notes": "Kinh nghiệm thực hành trong môn học sẽ bao gồm:\n\n- Các thí nghiệm thiết kế logic.\n- Sử dụng phần mềm <b>Logisim</b> để mô phỏng các mạch logic.\n- Sử dụng phần mềm <b>PC Spim</b> để lập trình và mô phỏng mã Assembly MIPS.",
+                    "terms": {}
+                },
+                {
+                    "id": 19,
+                    "title": "Trang 19: Các câu trích dẫn",
+                    "image": "images/computer_organization/week1/slide_19.png",
+                    "notes": "Một vài câu trích dẫn truyền cảm hứng:\n\n- \"Những gì tôi nghe, tôi quên. Những gì tôi thấy, tôi nhớ. Những gì tôi làm, tôi hiểu.\"\n- \"Điều quan trọng là hiểu những gì bạn đang làm, hơn là chỉ để có được câu trả lời đúng.\" – Tom Lehrer",
+                    "terms": {}
+                },
+                {
+                    "id": 20,
+                    "title": "Trang 20: Hỏi & Đáp",
+                    "image": "images/computer_organization/week1/slide_20.png",
+                    "notes": "Kết thúc phần giới thiệu. Bây giờ là thời gian cho các câu hỏi và trả lời.",
+                    "terms": {}
                 }
             ]
         },
@@ -53,616 +176,677 @@
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Number Systems and Codes",
                     "image": "images/computer_organization/week2/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 2: Hệ thống số và Mã (Number Systems and Codes).",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week2/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week2/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Ghi nhận các chỉnh sửa",
                     "image": "images/computer_organization/week2/slide_4.png",
-                    "notes": "",
+                    "notes": "Ghi nhận các chỉnh sửa:\n\n- Xóa slide CÂU HỎI XEM LẠI NHANH (QUICK REVIEW QUESTIONS).",
                     "terms": {}
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: Đề cương - HỆ THỐNG SỐ & MÃ",
                     "image": "images/computer_organization/week2/slide_5.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các chủ đề chính trong chương này bao gồm:\n\n- Biểu diễn thông tin.\n- Các hệ thống số.\n- Chuyển đổi cơ số.\n- Số âm.\n- Biểu diễn số thừa (Excess Representation).\n- Số dấu phẩy động (Floating-Point Numbers).\n- Các mã thập phân: BCD, Excess-3, 2421, 84-2-1.\n- Mã Gray.\n- Mã chữ và số.\n- Phát hiện và sửa lỗi.",
+                    "terms": {
+                        "Number System": "Một hệ thống chữ viết để biểu diễn các số. Ví dụ: hệ thập phân (cơ số 10), hệ nhị phân (cơ số 2).",
+                        "Base Conversion": "Quá trình chuyển đổi một số từ một hệ cơ số này sang một hệ cơ số khác.",
+                        "Floating-Point Number": "Một dạng biểu diễn số cho phép biểu diễn một dải rộng các giá trị (cả rất lớn và rất nhỏ) bằng cách sử dụng một dấu chấm cơ số động."
+                    }
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Biểu diễn thông tin (1/3)",
                     "image": "images/computer_organization/week2/slide_6.png",
-                    "notes": "",
+                    "notes": "<b>Các con số rất quan trọng đối với máy tính:</b>\n- Chúng biểu diễn thông tin một cách chính xác.\n- Chúng có thể được xử lý.\n\n<b>Ví dụ:</b>\n- Biểu diễn có hoặc không: dùng 0 và 1.\n- Biểu diễn 4 mùa: dùng 0, 1, 2 và 3.\n\n<b>Đôi khi, các ký tự khác được sử dụng:</b>\n- Mã số sinh viên: 8 ký tự chữ và số (ví dụ: U071234X).",
                     "terms": {}
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Biểu diễn thông tin (2/3)",
                     "image": "images/computer_organization/week2/slide_7.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Bit (Binary digit - Chữ số nhị phân):</b>\n- Gồm 0 và 1.\n- Biểu diễn <i>false</i> và <i>true</i> trong logic.\n- Biểu diễn các trạng thái <i>low</i> và <i>high</i> trong các thiết bị điện tử.\n\n<b>Các đơn vị khác:</b>\n- <b>Byte:</b> 8 bits.\n- <b>Nibble:</b> 4 bits (ít được sử dụng).\n- <b>Word:</b> Bội số của byte (ví dụ: 1 byte, 2 byte, 4 byte, 8 byte, v.v.), tùy thuộc vào kiến trúc của hệ thống máy tính.",
+                    "terms": {
+                        "Bit": "Đơn vị thông tin cơ bản nhất trong máy tính, có thể có giá trị là 0 hoặc 1.",
+                        "Byte": "Một đơn vị thông tin kỹ thuật số thường bao gồm 8 bit.",
+                        "Word (Kiến trúc máy tính)": "Đơn vị dữ liệu tự nhiên được sử dụng bởi một thiết kế bộ xử lý cụ thể. Kích thước của một word (word size) là một đặc tính quan trọng của bất kỳ kiến trúc máy tính nào."
+                    }
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Biểu diễn thông tin (3/3)",
                     "image": "images/computer_organization/week2/slide_8.png",
-                    "notes": "",
+                    "notes": "<b>N bits</b> có thể biểu diễn lên đến <b>2^N</b> giá trị.\n- 2 bits → 4 giá trị (00, 01, 10, 11)\n- 3 bits → 8 giá trị (000 ... 111)\n- 4 bits → 16 giá trị (0000 ... 1111)\n\nĐể biểu diễn <b>M</b> giá trị, cần <b>⌈log₂M⌉</b> bits.\n- 32 giá trị → cần 5 bits\n- 64 giá trị → cần 6 bits\n- 1024 giá trị → cần 10 bits\n- 40 giá trị → cần 6 bits (vì 2^5=32 < 40 < 2^6=64)\n- 100 giá trị → cần 7 bits (vì 2^6=64 < 100 < 2^7=128)",
                     "terms": {}
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Hệ Thập phân (Cơ số 10) - 1/2",
                     "image": "images/computer_organization/week2/slide_9.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Đây là một <b>hệ thống số vị trí có trọng số (weighted-positional number system)</b>.\n\n- <b>Cơ số (Base)</b> hay <b>radix</b> là 10. Đây là tổng số các ký hiệu/chữ số được phép trong hệ thống.\n- Các ký hiệu/chữ số: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}.\n- <b>Vị trí</b> rất quan trọng, vì giá trị của mỗi ký hiệu/chữ số phụ thuộc vào loại và vị trí của nó trong số.\n\nVí dụ, số 9 trong hai số (75<b>9</b>4) và (<b>9</b>12) có các giá trị khác nhau.",
+                    "terms": {
+                        "Weighted-Positional Number System": "Một hệ thống số trong đó giá trị của mỗi chữ số được xác định bởi cả bản thân chữ số đó và vị trí của nó trong số. Giá trị tổng thể là tổng của các giá trị của từng chữ số được nhân với một trọng số."
+                    }
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Hệ Thập phân (Cơ số 10) - 2/2",
                     "image": "images/computer_organization/week2/slide_10.png",
-                    "notes": "",
+                    "notes": "Các <b>hệ số trọng số (weights)</b> là các lũy thừa của 10.\n\nĐể đánh giá số thập phân 593.68, chữ số ở mỗi vị trí được nhân với trọng số tương ứng:\n<b>5×10² + 9×10¹ + 3×10⁰ + 6×10⁻¹ + 8×10⁻² = (593.68)₁₀</b>",
                     "terms": {}
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11",
+                    "title": "Trang 11: Các Hệ thống số khác (1/2)",
                     "image": "images/computer_organization/week2/slide_11.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Ngoài hệ thập phân, có các hệ thống số quan trọng khác trong khoa học máy tính:\n\n- <b>Nhị phân (Binary - cơ số 2):</b>\n  - Trọng số là lũy thừa của 2.\n  - Các chữ số nhị phân (bits): 0, 1.\n- <b>Bát phân (Octal - cơ số 8):</b>\n  - Trọng số là lũy thừa của 8.\n  - Các chữ số bát phân: 0, 1, 2, 3, 4, 5, 6, 7.\n- <b>Thập lục phân (Hexadecimal - cơ số 16):</b>\n  - Trọng số là lũy thừa của 16.\n  - Các chữ số thập lục phân: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.",
+                    "terms": {
+                        "Binary (Hệ nhị phân)": "Hệ thống số cơ số 2, chỉ sử dụng hai ký hiệu là 0 và 1. Đây là hệ thống số cơ bản mà máy tính sử dụng.",
+                        "Octal (Hệ bát phân)": "Hệ thống số cơ số 8, sử dụng các chữ số từ 0 đến 7. Mỗi chữ số bát phân có thể biểu diễn chính xác 3 bit nhị phân.",
+                        "Hexadecimal (Hệ thập lục phân)": "Hệ thống số cơ số 16. Nó sử dụng các chữ số từ 0-9 và các chữ cái A-F. Rất phổ biến trong lập trình vì nó cung cấp một cách biểu diễn các số nhị phân một cách ngắn gọn (mỗi chữ số thập lục phân biểu diễn 4 bit)."
+                    }
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12",
+                    "title": "Trang 12: Các Hệ thống số khác (2/2)",
                     "image": "images/computer_organization/week2/slide_12.png",
-                    "notes": "",
+                    "notes": "Trong một số ngôn ngữ lập trình/phần mềm, các ký hiệu đặc biệt được sử dụng để biểu diễn các số trong các cơ số nhất định:\n\n- Trong ngôn ngữ lập trình <b>C</b>:\n  - Tiền tố `0` cho số bát phân. Ví dụ: `032` biểu diễn số bát phân (32)₈.\n  - Tiền tố `0x` cho số thập lục phân. Ví dụ: `0x32` biểu diễn số thập lục phân (32)₁₆.\n- Trong <b>PCSpim</b> (một trình giả lập MIPS):\n  - Tiền tố `0x` cho số thập lục phân. Ví dụ: `0x100` biểu diễn số thập lục phân (100)₁₆.\n- Trong <b>Verilog</b>, các giá trị sau là giống nhau: `8'b11110000`, `8'hF0`, `8'd240`.",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13",
+                    "title": "Trang 13: Chuyển đổi Cơ số R sang Thập phân",
                     "image": "images/computer_organization/week2/slide_13.png",
-                    "notes": "",
+                    "notes": "Cách chuyển đổi từ một hệ cơ số bất kỳ (R) sang hệ thập phân là nhân mỗi chữ số với trọng số vị trí của nó (là một lũy thừa của cơ số R) và cộng tất cả chúng lại.\n\nVí dụ:\n(1101.101)₂ = 1×2³ + 1×2² + 0×2¹ + 1×2⁰ + 1×2⁻¹ + 0×2⁻² + 1×2⁻³",
                     "terms": {}
                 },
                 {
                     "id": 14,
-                    "title": "Trang 14",
+                    "title": "Trang 14: Chuyển đổi Thập phân sang Nhị phân",
                     "image": "images/computer_organization/week2/slide_14.png",
-                    "notes": "",
+                    "notes": "Có hai phương pháp chính để chuyển đổi một số thập phân sang nhị phân:\n\n- <b>Phương pháp 1: Phương pháp Tổng-trọng-số (Sum-of-Weights Method)</b>\n\n- <b>Phương pháp 2:</b>\n  - <b>Phương pháp Chia liên tiếp cho 2 (Repeated Division-by-2)</b> (dành cho phần nguyên).\n  - <b>Phương pháp Nhân liên tiếp với 2 (Repeated Multiplication-by-2)</b> (dành cho phần phân số).",
                     "terms": {}
                 },
                 {
                     "id": 15,
-                    "title": "Trang 15",
+                    "title": "Trang 15: Phương pháp Tổng-trọng-số",
                     "image": "images/computer_organization/week2/slide_15.png",
-                    "notes": "",
+                    "notes": "Phương pháp này bao gồm việc xác định tập hợp các trọng số nhị phân (các lũy thừa của 2) có tổng bằng số thập phân.\n\n- (9)₁₀ = 8 + 1 = 2³ + 2⁰ = (1001)₂\n- (18)₁₀ = 16 + 2 = 2⁴ + 2¹ = (10010)₂\n- (58)₁₀ = 32 + 16 + 8 + 2 = 2⁵ + 2⁴ + 2³ + 2¹ = (111010)₂\n- (0.625)₁₀ = 0.5 + 0.125 = 2⁻¹ + 2⁻³ = (0.101)₂",
                     "terms": {}
                 },
                 {
                     "id": 16,
-                    "title": "Trang 16",
+                    "title": "Trang 16: Phương pháp Chia liên tiếp cho 2",
                     "image": "images/computer_organization/week2/slide_16.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Để chuyển đổi một <b>số nguyên (whole number)</b> sang nhị phân, hãy sử dụng phép <b>chia liên tiếp cho 2</b> cho đến khi thương số là 0.\n\nCác số dư (remainders) sẽ tạo thành câu trả lời, với số dư đầu tiên là <b>bit có trọng số thấp nhất (LSB - Least Significant Bit)</b> và số dư cuối cùng là <b>bit có trọng số cao nhất (MSB - Most Significant Bit)</b>.\n\nVí dụ: (43)₁₀ = (101011)₂",
+                    "terms": {
+                        "Least Significant Bit (LSB)": "Trong một số nhị phân, đây là bit nằm ở vị trí ngoài cùng bên phải. Nó có trọng số nhỏ nhất (2⁰).",
+                        "Most Significant Bit (MSB)": "Trong một số nhị phân, đây là bit nằm ở vị trí ngoài cùng bên trái. Nó có trọng số lớn nhất."
+                    }
                 },
                 {
                     "id": 17,
-                    "title": "Trang 17",
+                    "title": "Trang 17: Phương pháp Nhân liên tiếp với 2",
                     "image": "images/computer_organization/week2/slide_17.png",
-                    "notes": "",
+                    "notes": "Để chuyển đổi <b>phần phân số thập phân (decimal fractions)</b> sang nhị phân, sử dụng phép <b>nhân liên tiếp với 2</b> cho đến khi phần phân số của tích là 0 (hoặc cho đến khi đạt được số lượng vị trí thập phân mong muốn).\n\nCác chữ số được mang sang (carries), tạo thành câu trả lời, với số mang sang đầu tiên là MSB, và số cuối cùng là LSB.\n\nVí dụ: (0.3125)₁₀ = (.0101)₂",
                     "terms": {}
                 },
                 {
                     "id": 18,
-                    "title": "Trang 18",
+                    "title": "Trang 18: Chuyển đổi giữa Thập phân và các Cơ số khác",
                     "image": "images/computer_organization/week2/slide_18.png",
-                    "notes": "",
+                    "notes": "Tổng kết các phương pháp chuyển đổi:\n\n- <b>Cơ số R sang Thập phân:</b> nhân các chữ số với trọng số tương ứng của chúng.\n\n- <b>Thập phân sang Nhị phân (cơ số 2):</b>\n  - Số nguyên: chia liên tiếp cho 2.\n  - Phân số: nhân liên tiếp với 2.\n\n- <b>Thập phân sang Cơ số R:</b>\n  - Số nguyên: chia liên tiếp cho R.\n  - Phân số: nhân liên tiếp với R.",
                     "terms": {}
                 },
                 {
                     "id": 19,
-                    "title": "Trang 19",
+                    "title": "Trang 19: Chuyển đổi giữa các Cơ số",
                     "image": "images/computer_organization/week2/slide_19.png",
-                    "notes": "",
+                    "notes": "Nói chung, việc chuyển đổi giữa các cơ số có thể được thực hiện thông qua cơ số thập phân.\n\nSơ đồ minh họa rằng để chuyển từ một Cơ số R bất kỳ sang một Cơ số khác, cách phổ biến nhất là chuyển nó sang Thập phân trước, sau đó chuyển từ Thập phân sang cơ số đích.\n\nTuy nhiên, có những <b>đường tắt (shortcuts)</b> để chuyển đổi giữa các cơ số 2, 4, 8, 16 (xem slide tiếp theo).",
                     "terms": {}
                 },
                 {
                     "id": 20,
-                    "title": "Trang 20",
+                    "title": "Trang 20: Chuyển đổi Nhị phân sang Bát phân/Thập lục phân",
                     "image": "images/computer_organization/week2/slide_20.png",
-                    "notes": "",
+                    "notes": "Các đường tắt để chuyển đổi:\n\n- <b>Nhị phân ↔ Bát phân:</b>\n  - Nhị phân sang Bát phân: chia thành các nhóm 3 bit (bắt đầu từ dấu chấm thập phân).\n  - Bát phân sang Nhị phân: chuyển đổi ngược lại (mỗi chữ số bát phân thành 3 bit).\n\n- <b>Nhị phân ↔ Thập lục phân:</b>\n  - Nhị phân sang Thập lục phân: chia thành các nhóm 4 bit.\n  - Thập lục phân sang Nhị phân: chuyển đổi ngược lại (mỗi chữ số thập lục phân thành 4 bit).",
                     "terms": {}
                 },
                 {
                     "id": 21,
-                    "title": "Trang 21",
+                    "title": "Trang 21: Nhìn về phía trước (1/2)",
                     "image": "images/computer_organization/week2/slide_21.png",
-                    "notes": "",
+                    "notes": "Các chủ đề sẽ được đề cập trong các bài giảng sau:\n\n- Tối giản hóa hàm (ví dụ: thuật toán Quine-McCluskey).\n- Trong 'ngôn ngữ máy tính', các đơn vị thường là lũy thừa của 2.\n- Địa chỉ bộ nhớ (xem slide tiếp theo).",
                     "terms": {}
                 },
                 {
                     "id": 22,
-                    "title": "Trang 22",
+                    "title": "Trang 22: Nhìn về phía trước (2/2)",
                     "image": "images/computer_organization/week2/slide_22.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Địa chỉ bộ nhớ (Memory addressing):</b>\n\n- Giả sử có 2¹⁰ bytes trong bộ nhớ, và mỗi 'word' chứa 4 bytes.\n- Bảng minh họa cách mỗi địa chỉ bộ nhớ (biểu diễn ở dạng nhị phân và thập phân) trỏ đến một 'word' dữ liệu cụ thể trong bộ nhớ.",
+                    "terms": {
+                        "Memory Addressing": "Cách mà CPU hoặc các thiết bị khác tham chiếu đến các vị trí trong bộ nhớ máy tính. Mỗi ô nhớ có một địa chỉ duy nhất."
+                    }
                 },
                 {
                     "id": 23,
-                    "title": "Trang 23",
+                    "title": "Trang 23: Số Âm (Negative Numbers)",
                     "image": "images/computer_organization/week2/slide_23.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Số không dấu (Unsigned numbers):</b> chỉ các giá trị không âm.\n<b>Số có dấu (Signed numbers):</b> bao gồm tất cả các giá trị (dương và âm).\n\nCó 3 cách biểu diễn phổ biến cho các số nhị phân có dấu:\n- <b>Dấu và Độ lớn (Sign-and-Magnitude)</b>\n- <b>Bù 1 (1s Complement)</b>\n- <b>Bù 2 (2s Complement)</b>",
+                    "terms": {
+                        "Unsigned Number": "Một số nguyên chỉ có thể biểu diễn các giá trị không âm (0 và các số dương).",
+                        "Signed Number": "Một số nguyên có thể biểu diễn cả giá trị dương, âm và số 0."
+                    }
                 },
                 {
                     "id": 24,
-                    "title": "Trang 24",
+                    "title": "Trang 24: Dấu và Độ lớn (1/3)",
                     "image": "images/computer_organization/week2/slide_24.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Trong phương pháp này, dấu được biểu diễn bởi một 'bit dấu' (sign bit):\n- <b>0</b> cho dấu <b>+</b>\n- <b>1</b> cho dấu <b>-</b>\n\nVí dụ: một định dạng gồm 1-bit dấu và 7-bit độ lớn (magnitude). Bit ngoài cùng bên trái là bit dấu, 7 bit còn lại biểu diễn độ lớn của số.",
+                    "terms": {
+                        "Sign-and-Magnitude": "Một phương pháp biểu diễn số có dấu, trong đó bit ngoài cùng bên trái được dành riêng cho dấu (0 là dương, 1 là âm) và các bit còn lại biểu diễn độ lớn của số đó."
+                    }
                 },
                 {
                     "id": 25,
-                    "title": "Trang 25",
+                    "title": "Trang 25: Dấu và Độ lớn (2/3)",
                     "image": "images/computer_organization/week2/slide_25.png",
-                    "notes": "",
+                    "notes": "Với 8 bit (1 bit dấu, 7 bit độ lớn):\n- <b>Giá trị lớn nhất:</b> 01111111 = +127₁₀\n- <b>Giá trị nhỏ nhất:</b> 11111111 = -127₁₀\n- <b>Số không (Zeros):</b> Có hai cách biểu diễn cho số 0:\n  - 00000000 = +0₁₀\n  - 10000000 = -0₁₀\n- <b>Phạm vi (Range):</b> -127₁₀ đến +127₁₀.",
                     "terms": {}
                 },
                 {
                     "id": 26,
-                    "title": "Trang 26",
+                    "title": "Trang 26: Dấu và Độ lớn (3/3)",
                     "image": "images/computer_organization/week2/slide_26.png",
-                    "notes": "",
+                    "notes": "Để phủ định một số (đổi dấu), chỉ cần <b>đảo bit dấu</b>.\n\n<b>Ví dụ:</b>\n- Phủ định của 00100001 (số thập phân 33)?\n  Trả lời: 10100001 (số thập phân -33).\n- Phủ định của 10000101 (số thập phân -5)?\n  Trả lời: 00000101 (số thập phân +5).",
                     "terms": {}
                 },
                 {
                     "id": 27,
-                    "title": "Trang 27",
+                    "title": "Trang 27: Bù 1 (1s Complement) - 1/3",
                     "image": "images/computer_organization/week2/slide_27.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Với một số <b>x</b> có thể được biểu diễn dưới dạng một số nhị phân n-bit, giá trị phủ định của nó có thể được thu được trong biểu diễn bù 1 bằng công thức:\n<b>-x = 2ⁿ - x - 1</b>\n\nVí dụ: Với số 8-bit 00001100 (12₁₀), giá trị phủ định của nó được biểu diễn trong bù 1 là:\n-00001100₂ = 2⁸ - 12 - 1 (tính toán ở hệ thập phân)\n= 243\n= 11110011 (trong bù 1)\n\nĐiều này có nghĩa là -12₁₀ được viết là 11110011 trong biểu diễn bù 1.",
+                    "terms": {
+                        "1s Complement (Bù 1)": "Một phương pháp biểu diễn số có dấu. Số âm được tạo ra bằng cách đảo ngược tất cả các bit của số dương tương ứng. Phương pháp này có hai cách biểu diễn cho số 0."
+                    }
                 },
                 {
                     "id": 28,
-                    "title": "Trang 28",
+                    "title": "Trang 28: Bù 1 (1s Complement) - 2/3",
                     "image": "images/computer_organization/week2/slide_28.png",
-                    "notes": "",
+                    "notes": "Kỹ thuật thiết yếu để phủ định một giá trị: <b>đảo ngược tất cả các bit (invert all the bits)</b>.\n\nVới 8 bit:\n- <b>Giá trị lớn nhất:</b> 01111111 = +127₁₀\n- <b>Giá trị nhỏ nhất:</b> 10000000 = -127₁₀\n- <b>Số không (Zeros):</b> Vẫn có hai cách biểu diễn cho số 0:\n  - 00000000 = +0₁₀\n  - 11111111 = -0₁₀\n- <b>Phạm vi (Range):</b> -127₁₀ đến +127₁₀.\n- Bit có trọng số cao nhất (ngoài cùng bên trái) vẫn biểu diễn dấu: 0 cho số dương, 1 cho số âm.",
                     "terms": {}
                 },
                 {
                     "id": 29,
-                    "title": "Trang 29",
+                    "title": "Trang 29: Bù 1 (1s Complement) - 3/3",
                     "image": "images/computer_organization/week2/slide_29.png",
-                    "notes": "",
+                    "notes": "Ví dụ (giả sử số 8-bit):\n\n- (14)₁₀ = (00001110)₂ = (00001110) bù 1\n- -(14)₁₀ = -(00001110)₂ = (11110001) bù 1 (đảo tất cả các bit)\n\nĐể biểu diễn -(80)₁₀:\n- (80)₁₀ = (01010000)₂\n- -(80)₁₀ trong bù 1 là (10101111) bù 1",
                     "terms": {}
                 },
                 {
                     "id": 30,
-                    "title": "Trang 30",
+                    "title": "Trang 30: Bù 2 (2s Complement) - 1/3",
                     "image": "images/computer_organization/week2/slide_30.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Với một số <b>x</b> có thể được biểu diễn dưới dạng một số nhị phân n-bit, giá trị phủ định của nó có thể được thu được trong biểu diễn bù 2 bằng công thức:\n<b>-x = 2ⁿ - x</b>\n\nVí dụ: Với số 8-bit 00001100 (12₁₀), giá trị phủ định của nó được biểu diễn trong bù 2 là:\n-00001100₂ = 2⁸ - 12 (tính toán ở hệ thập phân)\n= 244\n= 11110100 (trong bù 2)\n\nĐiều này có nghĩa là -12₁₀ được viết là 11110100 trong biểu diễn bù 2.",
+                    "terms": {
+                        "2s Complement (Bù 2)": "Phương pháp biểu diễn số có dấu phổ biến nhất được sử dụng trong máy tính. Số âm được tạo ra bằng cách đảo ngược tất cả các bit của số dương tương ứng và sau đó cộng thêm 1. Phương pháp này chỉ có một cách biểu diễn cho số 0 và giúp đơn giản hóa các phép toán số học."
+                    }
                 },
                 {
                     "id": 31,
-                    "title": "Trang 31",
+                    "title": "Trang 31: Bù 2 (2s Complement) - 2/3",
                     "image": "images/computer_organization/week2/slide_31.png",
-                    "notes": "",
+                    "notes": "Kỹ thuật thiết yếu để phủ định một giá trị: <b>đảo ngược tất cả các bit, sau đó cộng 1</b>.\n\nVới 8 bit:\n- <b>Giá trị lớn nhất:</b> 01111111 = +127₁₀\n- <b>Giá trị nhỏ nhất:</b> 10000000 = -128₁₀\n- <b>Số không (Zero):</b> Chỉ có một cách biểu diễn cho số 0: 00000000.\n- <b>Phạm vi (Range):</b> -128₁₀ đến +127₁₀. (Có thể biểu diễn thêm một số âm so với Bù 1 và Dấu-Độ lớn).\n- Bit có trọng số cao nhất vẫn biểu diễn dấu: 0 cho dương, 1 cho âm.",
                     "terms": {}
                 },
                 {
                     "id": 32,
-                    "title": "Trang 32",
+                    "title": "Trang 32: Bù 2 (2s Complement) - 3/3",
                     "image": "images/computer_organization/week2/slide_32.png",
-                    "notes": "",
+                    "notes": "Ví dụ (giả sử số 8-bit):\n\n- (14)₁₀ = (00001110)₂\n- -(14)₁₀: Đảo bit của (14)₁₀ -> 11110001, sau đó cộng 1 -> (11110010) bù 2.\n\nĐể biểu diễn -(80)₁₀:\n- (80)₁₀ = (01010000)₂\n- -(80)₁₀: Đảo bit -> 10101111, sau đó cộng 1 -> (10101111) bù 2.",
                     "terms": {}
                 },
                 {
                     "id": 33,
-                    "title": "Trang 33",
+                    "title": "Trang 33: Bài tập Đọc",
                     "image": "images/computer_organization/week2/slide_33.png",
-                    "notes": "",
+                    "notes": "<b>Bài tập về nhà:</b>\n\n- Tải về từ trang web của khóa học và đọc Ghi chú Bổ sung về Bài giảng 2: Hệ thống số.\n- Làm các bài tập trong đó và thảo luận chúng trên diễn đàn IVLE nếu bạn có thắc mắc.",
                     "terms": {}
                 },
                 {
                     "id": 34,
-                    "title": "Trang 34",
+                    "title": "Trang 34: So sánh các phương pháp",
                     "image": "images/computer_organization/week2/slide_34.png",
-                    "notes": "",
+                    "notes": "Bảng này so sánh cách biểu diễn các giá trị dương và âm trong hệ 4-bit của ba phương pháp:\n\n- <b>Sign-and-Magnitude (Dấu và Độ lớn)</b>\n- <b>1s Complement (Bù 1)</b>\n- <b>2s Complement (Bù 2)</b>\n\n<b>Lưu ý quan trọng:</b>\n- Các giá trị dương được biểu diễn giống nhau ở cả ba phương pháp.\n- Sign-and-Magnitude và 1s Complement có hai cách biểu diễn cho số 0 (+0 và -0).\n- 2s Complement chỉ có một số 0 và có thể biểu diễn một số âm nhiều hơn (-8).",
                     "terms": {}
                 },
                 {
                     "id": 35,
-                    "title": "Trang 35",
+                    "title": "Trang 35: Bù trên Phân số",
                     "image": "images/computer_organization/week2/slide_35.png",
-                    "notes": "",
+                    "notes": "Chúng ta có thể mở rộng ý tưởng về phép bù trên các phân số.\n\n<b>Ví dụ:</b>\n- Phủ định 0101.01 trong bù 1: Đảo tất cả các bit -> 1010.10\n- Phủ định 111000.101 trong bù 1: Đảo tất cả các bit -> 000111.010\n- Phủ định 0101.01 trong bù 2: Đảo bit -> 1010.10, sau đó cộng 1 vào bit cuối cùng -> 1010.11",
                     "terms": {}
                 },
                 {
                     "id": 36,
-                    "title": "Trang 36",
+                    "title": "Trang 36: Phép cộng/trừ Bù 2 (1/3)",
                     "image": "images/computer_organization/week2/slide_36.png",
-                    "notes": "",
+                    "notes": "<b>Thuật toán cho phép cộng, A + B:</b>\n1. Thực hiện phép cộng nhị phân trên hai số.\n2. Bỏ qua bit nhớ ra (carry out) của MSB.\n3. Kiểm tra tràn số (overflow).\n\n<b>Thuật toán cho phép trừ, A - B:</b>\n`A - B = A + (-B)`\n1. Lấy bù 2 của B.\n2. Cộng bù 2 của B vào A.",
                     "terms": {}
                 },
                 {
                     "id": 37,
-                    "title": "Trang 37",
+                    "title": "Trang 37: Tràn số (Overflow)",
                     "image": "images/computer_organization/week2/slide_37.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các số có dấu có một phạm vi cố định. Nếu kết quả của phép cộng/trừ vượt ra ngoài phạm vi này, một hiện tượng <b>tràn số (overflow)</b> sẽ xảy ra.\n\nTràn số có thể được phát hiện dễ dàng:\n- dương + dương → âm\n- âm + âm → dương\n\nVí dụ: Hệ bù 2 4-bit (phạm vi từ -8 đến 7)\n- 5 + 5 = 10, nhưng trong 4-bit, kết quả là 1010₂ = -6₁₀. (Tràn số!)\n- (-7) + (-3) = -10, nhưng trong 4-bit, kết quả là 0110₂ = +6₁₀. (Tràn số!)",
+                    "terms": {
+                        "Overflow (Tràn số)": "Một lỗi xảy ra khi kết quả của một phép toán số học lớn hơn giá trị tối đa (hoặc nhỏ hơn giá trị tối thiểu) có thể được lưu trữ trong không gian bộ nhớ được cấp phát. Điều này dẫn đến một kết quả sai."
+                    }
                 },
                 {
                     "id": 38,
-                    "title": "Trang 38",
+                    "title": "Trang 38: Phép cộng/trừ Bù 2 (2/3)",
                     "image": "images/computer_organization/week2/slide_38.png",
-                    "notes": "",
+                    "notes": "Ví dụ trong hệ 4-bit:\n\n- (+3) + (+4) = +7 (0011 + 0100 = 0111) -> Đúng.\n- (-2) + (-6) = -8 (1110 + 1010 = 11000, bỏ bit nhớ ra -> 1000) -> Đúng.\n- (+6) + (-3) = +3 (0110 + 1101 = 10011, bỏ bit nhớ ra -> 0011) -> Đúng.\n- (+4) + (-7) = -3 (0100 + 1001 = 1101) -> Đúng.\n\nKhông có trường hợp nào ở trên bị tràn số.",
                     "terms": {}
                 },
                 {
                     "id": 39,
-                    "title": "Trang 39",
+                    "title": "Trang 39: Phép cộng/trừ Bù 2 (3/3)",
                     "image": "images/computer_organization/week2/slide_39.png",
-                    "notes": "",
+                    "notes": "Ví dụ trong hệ 4-bit (tiếp theo):\n\n- (-3) + (-6) = -9. Kết quả nhị phân là (10111), bỏ bit nhớ ra là (0111) = +7. <b>Tràn số!</b> (âm + âm -> dương).\n- (+5) + (+6) = +11. Kết quả nhị phân là (1011) = -5. <b>Tràn số!</b> (dương + dương -> âm).",
                     "terms": {}
                 },
                 {
                     "id": 40,
-                    "title": "Trang 40",
+                    "title": "Trang 40: Phép cộng/trừ Bù 1 (1/2)",
                     "image": "images/computer_organization/week2/slide_40.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Thuật toán cho phép cộng, A + B (trong bù 1):</b>\n1. Thực hiện phép cộng nhị phân.\n2. Nếu có một bit nhớ ra (carry out) từ MSB, cộng 1 vào kết quả (end-around carry).\n3. Kiểm tra tràn số.\n\n<b>Thuật toán cho phép trừ, A - B:</b>\n1. Lấy bù 1 của B.\n2. Cộng bù 1 của B vào A.",
+                    "terms": {
+                        "End-around carry": "Một thao tác trong số học bù 1. Nếu một phép cộng tạo ra một bit nhớ ra khỏi vị trí bit có trọng số cao nhất, bit nhớ đó phải được cộng trở lại vào vị trí bit có trọng số thấp nhất."
+                    }
                 },
                 {
                     "id": 41,
-                    "title": "Trang 41",
+                    "title": "Trang 41: Phép cộng/trừ Bù 1 (2/2)",
                     "image": "images/computer_organization/week2/slide_41.png",
-                    "notes": "",
+                    "notes": "Ví dụ trong hệ 4-bit (bù 1):\n\n- (+3) + (+4) = +7 (0011 + 0100 = 0111) -> Đúng.\n- (+5) + (-5) = 0 (0101 + 1010 = 1111 = -0) -> Đúng.\n- (-2) + (-5) = -7 (1101 + 1010 = 10111, có bit nhớ ra -> 0111 + 1 = 1000 = -7) -> Đúng.\n- (-3) + (-7) = -10. Kết quả là 0101 = +5. <b>Tràn số!</b>",
                     "terms": {}
                 },
                 {
                     "id": 42,
-                    "title": "Trang 42",
+                    "title": "Trang 42: Câu hỏi Xem lại nhanh (4)",
                     "image": "images/computer_organization/week2/slide_42.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (4):\n\n- Sách DLD trang 42 - 43\n- Câu hỏi 2-13 đến 2-18.",
                     "terms": {}
                 },
                 {
                     "id": 43,
-                    "title": "Trang 43",
+                    "title": "Trang 43: Biểu diễn số thừa (1/2)",
                     "image": "images/computer_organization/week2/slide_43.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Bên cạnh các phương pháp dấu-độ lớn và bù, <b>biểu diễn số thừa (excess representation)</b> là một phương pháp khác.\n\n- Nó cho phép phạm vi các giá trị được phân bố đều giữa các giá trị dương và âm, bằng một phép dịch đơn giản (cộng/trừ).\n- Ví dụ: Biểu diễn Excess-4 trên các số 3-bit. Giá trị thực = Biểu diễn nhị phân - 4.",
+                    "terms": {
+                        "Excess-K Representation": "Một phương pháp biểu diễn số có dấu trong đó một số được biểu diễn bằng một số không dấu lớn hơn nó một lượng K (gọi là 'bias'). Ví dụ, trong Excess-127, số 0 được biểu diễn là 127."
+                    }
                 },
                 {
                     "id": 44,
-                    "title": "Trang 44",
+                    "title": "Trang 44: Biểu diễn số thừa (2/2)",
                     "image": "images/computer_organization/week2/slide_44.png",
-                    "notes": "",
+                    "notes": "Bài tập: Đối với các số 4-bit, chúng ta có thể sử dụng excess-7 hoặc excess-8. Bảng bên dưới hiển thị excess-8. Hãy điền vào các giá trị.\n\n- 0000 -> -8 (0 - 8)\n- 0001 -> -7 (1 - 8)\n- ...\n- 0111 -> -1 (7 - 8)\n- 1000 -> 0 (8 - 8)\n- 1001 -> +1 (9 - 8)\n- ...\n- 1111 -> +7 (15 - 8)",
                     "terms": {}
                 },
                 {
                     "id": 45,
-                    "title": "Trang 45",
+                    "title": "Trang 45: Số Dấu phẩy Cố định (1/2)",
                     "image": "images/computer_organization/week2/slide_45.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Trong <b>biểu diễn dấu phẩy cố định (fixed point representation)</b>, dấu chấm nhị phân được giả định là ở một vị trí cố định.\n\nVí dụ, nếu dấu chấm nhị phân ở cuối của một biểu diễn 8-bit, nó có thể biểu diễn các số nguyên từ -128 đến +127 (nếu dùng bù 2).",
+                    "terms": {
+                        "Fixed-Point Representation": "Một phương pháp biểu diễn số thực trong đó vị trí của dấu chấm cơ số (dấu phẩy) được cố định. Nó đơn giản hơn dấu phẩy động nhưng có phạm vi biểu diễn hạn chế hơn."
+                    }
                 },
                 {
                     "id": 46,
-                    "title": "Trang 46",
+                    "title": "Trang 46: Số Dấu phẩy Cố định (2/2)",
                     "image": "images/computer_organization/week2/slide_46.png",
-                    "notes": "",
+                    "notes": "Nói chung, dấu chấm nhị phân có thể được giả định là ở bất kỳ vị trí nào đã được định trước.\n\nVí dụ: Giả sử có hai bit phân số. Nếu sử dụng bù 2, chúng ta có thể biểu diễn các giá trị như:\n- 011010.11 (bù 2) = 26.75₁₀\n- 111110.11 (bù 2) = -1.25₁₀",
                     "terms": {}
                 },
                 {
                     "id": 47,
-                    "title": "Trang 47",
+                    "title": "Trang 47: Số Dấu phẩy Động (1/4)",
                     "image": "images/computer_organization/week2/slide_47.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các số dấu phẩy cố định có phạm vi hạn chế. <b>Số dấu phẩy động (Floating point numbers)</b> cho phép chúng ta biểu diễn các số rất lớn hoặc rất nhỏ.\n\nVí dụ:\n- 0.23 × 10²³ (số dương rất lớn)\n- 0.5 × 10⁻³⁷ (số dương rất nhỏ)\n- -0.2397 × 10⁻¹⁸ (số âm rất nhỏ)",
+                    "terms": {
+                        "Floating-Point Representation": "Một phương pháp biểu diễn số thực cho phép biểu diễn một dải giá trị rất rộng bằng cách tách số thành phần định trị (significand/mantissa) và phần mũ (exponent)."
+                    }
                 },
                 {
                     "id": 48,
-                    "title": "Trang 48",
+                    "title": "Trang 48: Số Dấu phẩy Động (2/4)",
                     "image": "images/computer_organization/week2/slide_48.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Một số dấu phẩy động có 3 phần: <b>dấu (sign)</b>, <b>phần định trị (mantissa)</b> và <b>phần mũ (exponent)</b>.\n- Cơ số (radix) được giả định là 2.\n- Bit dấu: 0 cho dương, 1 cho âm.\n- Phần định trị thường ở dạng <b>chuẩn hóa (normalised)</b> (phần nguyên là 0 và phần phân số không bắt đầu bằng số 0).\n\n<b>Sự đánh đổi:</b>\n- Nhiều bit hơn trong phần định trị → độ chính xác tốt hơn.\n- Nhiều bit hơn trong phần mũ → phạm vi giá trị lớn hơn.",
+                    "terms": {
+                        "Mantissa (Significand)": "Phần định trị của một số dấu phẩy động. Nó chứa các chữ số có nghĩa của số đó.",
+                        "Exponent": "Phần mũ của một số dấu phẩy động, cho biết lũy thừa của cơ số mà phần định trị phải được nhân với."
+                    }
                 },
                 {
                     "id": 49,
-                    "title": "Trang 49",
+                    "title": "Trang 49: Số Dấu phẩy Động (3/4)",
                     "image": "images/computer_organization/week2/slide_49.png",
-                    "notes": "",
+                    "notes": "Phần mũ thường được biểu diễn ở định dạng bù hoặc số thừa.\n\n<b>Ví dụ:</b> Biểu diễn -6.5₁₀ ở dạng chuẩn hóa cơ số 2.\n-6.5₁₀ = -110.1₂ = -0.1101₂ × 2³\n\nGiả sử biểu diễn dấu phẩy động chứa 1-bit dấu, 5-bit phần định trị chuẩn hóa, và 4-bit phần mũ. Ví dụ trên sẽ được lưu trữ như sau (nếu phần mũ là bù 1 hoặc bù 2):\n\n- Dấu: 1 (vì là số âm)\n- Định trị: 11010\n- Mũ: 3₁₀ = 0011₂",
                     "terms": {}
                 },
                 {
                     "id": 50,
-                    "title": "Trang 50",
+                    "title": "Trang 50: Số Dấu phẩy Động (4/4)",
                     "image": "images/computer_organization/week2/slide_50.png",
-                    "notes": "",
+                    "notes": "<b>Ví dụ:</b> Biểu diễn 0.1875₁₀ ở dạng chuẩn hóa cơ số 2.\n0.1875₁₀ = 0.0011₂ = 0.11₂ × 2⁻²\n\nGiả sử biểu diễn dấu phẩy động là: 1-bit dấu, 5-bit định trị chuẩn hóa, và 4-bit phần mũ.\nVí dụ trên sẽ được biểu diễn như sau:\n- Dấu: 0\n- Định trị: 11000\n- Mũ (-2) trong bù 1: 1101\n- Mũ (-2) trong bù 2: 1110\n- Mũ (-2) trong excess-8: 0110 (-2 + 8 = 6)",
                     "terms": {}
                 },
                 {
                     "id": 51,
-                    "title": "Trang 51",
+                    "title": "Trang 51: Mã Thập phân (Decimal Codes)",
                     "image": "images/computer_organization/week2/slide_51.png",
-                    "notes": "",
+                    "notes": "Số thập phân được con người ưa chuộng. Số nhị phân là tự nhiên đối với máy tính. Do đó, cần có sự chuyển đổi.\n\nNếu cần ít tính toán, chúng ta có thể sử dụng một số <b>sơ đồ mã hóa (coding schemes)</b> để lưu trữ các số thập phân, cho mục đích truyền dữ liệu.\n\n- Ví dụ: BCD (hoặc 8421), Excess-3, 84-2-1, 2421, v.v.\n- Mỗi chữ số thập phân được biểu diễn dưới dạng một mã 4-bit.",
                     "terms": {}
                 },
                 {
                     "id": 52,
-                    "title": "Trang 52",
+                    "title": "Trang 52: Binary Code Decimal (BCD) - 1/2",
                     "image": "images/computer_organization/week2/slide_52.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>BCD (Mã thập phân nhị phân hóa)</b> là một sơ đồ mã hóa trong đó mỗi chữ số thập phân được biểu diễn bằng 4 bit nhị phân tương ứng của nó.\n\n- Một số mã không được sử dụng, như 1010, 1011, ..., 1111. Các mã này được coi là <b>lỗi</b>.\n- Dễ chuyển đổi, nhưng các phép toán số học phức tạp hơn.\n- Thích hợp cho các giao diện như đầu vào từ bàn phím.",
+                    "terms": {
+                        "BCD (Binary-Coded Decimal)": "Một phương pháp mã hóa các số thập phân, trong đó mỗi chữ số thập phân được biểu diễn bằng một số nhị phân 4-bit riêng biệt."
+                    }
                 },
                 {
                     "id": 53,
-                    "title": "Trang 53",
+                    "title": "Trang 53: Binary Code Decimal (BCD) - 2/2",
                     "image": "images/computer_organization/week2/slide_53.png",
-                    "notes": "",
+                    "notes": "Ví dụ về chuyển đổi giữa giá trị BCD và giá trị thập phân:\n- (234)₁₀ = (0010 0011 0100) BCD\n- (7093)₁₀ = (0111 0000 1001 0011) BCD\n\nLưu ý rằng BCD <b>không tương đương</b> với nhị phân.\nVí dụ: (234)₁₀ = (11101010)₂",
                     "terms": {}
                 },
                 {
                     "id": 54,
-                    "title": "Trang 54",
+                    "title": "Trang 54: Các Mã Thập phân khác",
                     "image": "images/computer_organization/week2/slide_54.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Bảng này hiển thị các cách mã hóa thập phân khác nhau bên cạnh BCD (8421).\n\n- <b>Mã tự bù (Self-complementing code):</b> các mã cho các chữ số bù trừ cũng bù trừ cho nhau (ví dụ: Excess-3).\n- <b>Mã phát hiện lỗi (Error-detecting code):</b> mã biquinary.",
+                    "terms": {
+                        "Self-complementing code": "Một loại mã thập phân nhị phân hóa trong đó mã bù 9 của một chữ số thập phân có thể được thu được bằng cách lấy bù 1 (đảo bit) của mã của chữ số đó. Ví dụ: mã Excess-3.",
+                        "Error-detecting code": "Một mã hóa bổ sung các bit dư thừa vào dữ liệu để có thể phát hiện các lỗi xảy ra trong quá trình truyền hoặc lưu trữ."
+                    }
                 },
                 {
                     "id": 55,
-                    "title": "Trang 55",
+                    "title": "Trang 55: Mã Tự bù",
                     "image": "images/computer_organization/week2/slide_55.png",
-                    "notes": "",
+                    "notes": "Các mã đại diện cho cặp chữ số bù trừ (ví dụ: 0 và 9, 1 và 8...) cũng bù trừ cho nhau (đảo bit).\n\nVí dụ: <b>Mã Excess-3</b>\n- 0: 0011\n- 9: 1100 (là bù 1 của 0011)\n- 1: 0100\n- 8: 1011 (là bù 1 của 0100)",
                     "terms": {}
                 },
                 {
                     "id": 56,
-                    "title": "Trang 56",
+                    "title": "Trang 56: Mã Gray (1/3)",
                     "image": "images/computer_organization/week2/slide_56.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Mã Gray (Gray Code)</b> là một loại mã nhị phân có các đặc điểm sau:\n- <b>Không trọng số (Unweighted):</b> không phải là một mã số học.\n- Chỉ có một <b>thay đổi bit duy nhất</b> từ một giá trị mã này sang giá trị tiếp theo.\n- Không bị giới hạn ở các chữ số thập phân; n bit có thể biểu diễn 2^n giá trị.\n- Tốt cho việc phát hiện lỗi.",
+                    "terms": {
+                        "Gray Code": "Một hệ thống mã hóa nhị phân trong đó hai giá trị liên tiếp chỉ khác nhau một bit. Rất hữu ích trong các bộ mã hóa quay (rotary encoders) và để ngăn ngừa lỗi trong các hệ thống kỹ thuật số."
+                    }
                 },
                 {
                     "id": 57,
-                    "title": "Trang 57",
+                    "title": "Trang 57: Mã Gray (2/3)",
                     "image": "images/computer_organization/week2/slide_57.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa cách tạo ra một chuỗi mã Gray 4-bit tiêu chuẩn. Quy tắc chung là 'phản chiếu' (mirror) chuỗi bit trước đó và thêm tiền tố 0 cho nửa đầu, tiền tố 1 cho nửa sau.",
                     "terms": {}
                 },
                 {
                     "id": 58,
-                    "title": "Trang 58",
+                    "title": "Trang 58: Mã Gray (3/3)",
                     "image": "images/computer_organization/week2/slide_58.png",
-                    "notes": "",
+                    "notes": "Ứng dụng của Mã Gray trong các bộ mã hóa quay (rotary encoders).\n\nKhi các cảm biến (sensors) bị lệch một chút, việc chuyển đổi giữa hai giá trị liền kề trong mã nhị phân tiêu chuẩn có thể tạo ra các giá trị trung gian sai.\n\nVí dụ, khi chuyển từ 7 (111) sang 0 (000), một cảm biến bị lệch có thể đọc tạm thời là 6 (110).\n\nVới Mã Gray, vì chỉ có một bit thay đổi giữa các bước liền kề (ví dụ: từ 7 (100) sang 8 (101) trong ví dụ của slide), lỗi do lệch cảm biến được giảm thiểu tối đa. <i>(Lưu ý: ví dụ trên slide minh họa chuyển từ 111->101)</i>",
                     "terms": {}
                 },
                 {
                     "id": 59,
-                    "title": "Trang 59",
+                    "title": "Trang 59: Mã chữ và số (1/3)",
                     "image": "images/computer_organization/week2/slide_59.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Máy tính cũng xử lý dữ liệu dạng văn bản.\n\n<b>Bộ ký tự (Character set)</b> thường được sử dụng bao gồm:\n- Bảng chữ cái: 'A'...'Z', 'a'...'z'\n- Chữ số: '0'...'9'\n- Các ký hiệu đặc biệt: '$', '.', '@', '*', v.v.\n- Các ký tự không in được: NULL, BELL, CR, v.v.\n\n<b>Ví dụ về các bảng mã:</b> ASCII (8 bits), Unicode.",
+                    "terms": {
+                        "Alphanumeric Codes": "Các hệ thống mã hóa được sử dụng để biểu diễn các ký tự chữ, số và các ký hiệu khác dưới dạng nhị phân, cho phép máy tính xử lý và lưu trữ dữ liệu văn bản."
+                    }
                 },
                 {
                     "id": 60,
-                    "title": "Trang 60",
+                    "title": "Trang 60: Mã chữ và số (2/3) - ASCII",
                     "image": "images/computer_organization/week2/slide_60.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>ASCII (American Standard Code for Information Interchange - Mã Chuẩn của Mỹ cho Trao đổi Thông tin)</b>\n\n- Sử dụng 7 bits, cộng thêm một <b>bit chẵn lẻ (parity bit)</b> để phát hiện lỗi.\n- Có thể là chẵn lẻ chẵn (even parity) hoặc chẵn lẻ lẻ (odd parity).",
+                    "terms": {
+                        "ASCII": "Một tiêu chuẩn mã hóa ký tự dựa trên bảng chữ cái tiếng Anh. Mỗi ký tự được biểu diễn bằng một số 7-bit (hoặc 8-bit với bit chẵn lẻ)."
+                    }
                 },
                 {
                     "id": 61,
-                    "title": "Trang 61",
+                    "title": "Trang 61: Mã chữ và số (3/3) - Bảng ASCII",
                     "image": "images/computer_organization/week2/slide_61.png",
-                    "notes": "",
+                    "notes": "Bảng này minh họa cách mã ASCII được cấu trúc. Mã cho một ký tự được tạo thành bằng cách kết hợp 3 bit có trọng số cao nhất (MSBs) và 4 bit có trọng số thấp nhất (LSBs).\n\nVí dụ, để tìm mã cho ký tự 'A':\n- Cột MSBs: 100\n- Hàng LSBs: 0001\n- Mã ASCII cho 'A' là 1000001.",
                     "terms": {}
                 },
                 {
                     "id": 62,
-                    "title": "Trang 62",
+                    "title": "Trang 62: Phát hiện lỗi (1/4)",
                     "image": "images/computer_organization/week2/slide_62.png",
-                    "notes": "",
+                    "notes": "Lỗi có thể xảy ra trong quá trình truyền dữ liệu. Chúng nên được phát hiện để có thể yêu cầu truyền lại.\n\nVới các số nhị phân, thường xảy ra <b>lỗi một bit (single-bit errors)</b>.\n\n<b>Mã biquinary</b> có độ dài 7; nó sử dụng 3 bit bổ sung để phát hiện lỗi.",
                     "terms": {}
                 },
                 {
                     "id": 63,
-                    "title": "Trang 63",
+                    "title": "Trang 63: Phát hiện lỗi (2/4) - Parity Bit",
                     "image": "images/computer_organization/week2/slide_63.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Bit chẵn lẻ (Parity bit)</b> là một bit bổ sung được thêm vào dữ liệu để phát hiện lỗi.\n\n- <b>Chẵn lẻ chẵn (Even parity):</b> bit bổ sung được thêm vào để làm cho tổng số bit 1 là một số chẵn.\n- <b>Chẵn lẻ lẻ (Odd parity):</b> bit bổ sung được thêm vào để làm cho tổng số bit 1 là một số lẻ.\n\nBảng minh họa việc thêm bit chẵn lẻ lẻ vào các giá trị ASCII.",
+                    "terms": {
+                        "Parity Bit": "Một bit được thêm vào cuối một chuỗi các bit nhị phân để đảm bảo rằng tổng số bit 1 trong chuỗi là chẵn hoặc lẻ. Nó được dùng như một phương pháp đơn giản để phát hiện lỗi."
+                    }
                 },
                 {
                     "id": 64,
-                    "title": "Trang 64",
+                    "title": "Trang 64: Phát hiện lỗi (3/4)",
                     "image": "images/computer_organization/week2/slide_64.png",
-                    "notes": "",
+                    "notes": "Bit chẵn lẻ có thể phát hiện một <b>số lượng lỗi lẻ</b> nhưng <b>không phải là một số lượng lỗi chẵn</b>.\n\nVí dụ: Giả sử chẵn lẻ lẻ:\n- 10011 -> 10001 (1 lỗi bit, phát hiện được vì tổng số bit 1 thay đổi từ lẻ sang chẵn).\n- 10011 -> 10101 (2 lỗi bit, không phát hiện được vì tổng số bit 1 vẫn là lẻ).\n\nCác bit chẵn lẻ cũng có thể được áp dụng cho một khối dữ liệu, cả theo hàng (row-wise) và theo cột (column-wise).",
                     "terms": {}
                 },
                 {
                     "id": 65,
-                    "title": "Trang 65",
+                    "title": "Trang 65: Phát hiện lỗi (4/4) - Sửa lỗi",
                     "image": "images/computer_organization/week2/slide_65.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Đôi khi, việc phát hiện lỗi là không đủ. Chúng ta có thể muốn <b>sửa chữa</b> các lỗi.\n\nViệc sửa lỗi rất tốn kém. Trong thực tế, chúng ta có thể chỉ sử dụng sửa lỗi một bit.\n\nKỹ thuật phổ biến: <b>Mã Hamming (Hamming code)</b>.",
+                    "terms": {
+                        "Error Correction": "Quá trình không chỉ phát hiện lỗi trong dữ liệu mà còn tái tạo lại dữ liệu gốc, đúng đắn.",
+                        "Hamming Code": "Một loại mã sửa lỗi tuyến tính có thể phát hiện và sửa các lỗi một bit. Nó hoạt động bằng cách thêm các bit chẵn lẻ được tính toán một cách thông minh vào dữ liệu."
+                    }
                 },
                 {
                     "id": 66,
-                    "title": "Trang 66",
+                    "title": "Trang 66: Sửa lỗi (1/7)",
                     "image": "images/computer_organization/week2/slide_66.png",
-                    "notes": "",
+                    "notes": "Cho mã 3-bit C₁ = {000, 110, 011, 101}.\n\n- Với 4 từ mã (code words), chúng ta thực sự chỉ cần 2 bit.\n- Chúng ta gọi <i>k</i> là số bit thông điệp gốc.\n- Để thêm khả năng phát hiện/sửa lỗi, chúng ta sử dụng nhiều bit hơn mức cần thiết.\n\nChúng ta định nghĩa <b>hiệu quả mã (code efficiency)</b> (hoặc tỷ lệ) bằng: `k / độ dài của từ mã`.\nDo đó, hiệu quả của C₁ là 2/3.",
                     "terms": {}
                 },
                 {
                     "id": 67,
-                    "title": "Trang 67",
+                    "title": "Trang 67: Sửa lỗi (2/7)",
                     "image": "images/computer_organization/week2/slide_67.png",
-                    "notes": "",
+                    "notes": "Cho mã 3-bit C₁ = {000, 110, 011, 101}.\n\n- C₁ có thể phát hiện một lỗi bit đơn lẻ không?\n- C₁ có thể sửa một lỗi bit đơn lẻ không?",
                     "terms": {}
                 },
                 {
                     "id": 68,
-                    "title": "Trang 68",
+                    "title": "Trang 68: Sửa lỗi (3/7) - Hamming Distance",
                     "image": "images/computer_organization/week2/slide_68.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Khoảng cách (distance) `d`</b> giữa hai từ mã bất kỳ trong một mã là tổng số lượng các khác biệt giữa các từ mã.\n- Ví dụ: d(000, 110) = 2; d(0110, 1011) = 3.\n\n<b>Khoảng cách Hamming (Hamming distance) `δ`</b> của một mã là khoảng cách tối thiểu giữa hai từ mã bất kỳ trong mã đó.\n- Ví dụ: Khoảng cách Hamming của C₁ là 2.\n\nMột mã với khoảng cách Hamming là 2 có thể phát hiện 1 lỗi.",
+                    "terms": {
+                        "Hamming Distance": "Một chỉ số đo lường sự khác biệt giữa hai chuỗi có cùng độ dài. Nó được định nghĩa là số lượng các vị trí mà tại đó các ký hiệu tương ứng là khác nhau."
+                    }
                 },
                 {
                     "id": 69,
-                    "title": "Trang 69",
+                    "title": "Trang 69: Sửa lỗi (4/7) - Bài tập",
                     "image": "images/computer_organization/week2/slide_69.png",
-                    "notes": "",
+                    "notes": "Cho mã 6-bit C₂ = {000000, 111000, 001110, 110011}.\n\n- Hiệu quả của nó là bao nhiêu?\n- Khoảng cách Hamming của nó là bao nhiêu?\n- Nó có thể sửa 1 lỗi không?\n- Nó có thể sửa 2 lỗi không?",
                     "terms": {}
                 },
                 {
                     "id": 70,
-                    "title": "Trang 70",
+                    "title": "Trang 70: Sửa lỗi (5/7) - Mã Hamming",
                     "image": "images/computer_organization/week2/slide_70.png",
-                    "notes": "",
+                    "notes": "<b>Mã Hamming (Hamming code):</b> một mã sửa lỗi phổ biến.\n\n<b>Quy trình:</b>\n- Các bit chẵn lẻ nằm ở các vị trí là lũy thừa của 2 (tức là 1, 2, 4, 8, 16, ...).\n- Tất cả các vị trí khác là các bit dữ liệu.\n- Mỗi bit chẵn lẻ kiểm tra một số bit dữ liệu:\n  - Vị trí 1: Kiểm tra 1 bit, bỏ qua 1 bit (1, 3, 5, 7, ...).\n  - Vị trí 2: Kiểm tra 2 bit, bỏ qua 2 bit (2, 3, 6, 7, ...).\n  - Vị trí 4: Kiểm tra 4 bit, bỏ qua 4 bit (4-7, 12-15, ...).\n- Thiết lập bit chẵn lẻ tương ứng sao cho tổng số bit 1 trong các vị trí nó kiểm tra là chẵn.",
                     "terms": {}
                 },
                 {
                     "id": 71,
-                    "title": "Trang 71",
+                    "title": "Trang 71: Sửa lỗi (6/7) - Ví dụ Mã Hamming",
                     "image": "images/computer_organization/week2/slide_71.png",
-                    "notes": "",
+                    "notes": "Ví dụ: Mã hóa dữ liệu 10011010 bằng mã Hamming.\n\n1. <b>Chèn vị trí cho các bit chẵn lẻ:</b>\n   __1_001_1010\n2. <b>Tính toán các bit chẵn lẻ (để tổng số bit 1 là chẵn):</b>\n   - Vị trí 1 (kiểm tra 3,5,7,9,11): ?_1_0_1_0_1_0 -> ? + 1+1+0+0 = 2. Để chẵn, ? phải là 0.\n   - Vị trí 2 (kiểm tra 3,6,7,10,11): ?_1_0_1_0_1_0 -> ? + 1+0+1+1+0 = 3. Để chẵn, ? phải là 1.\n   - Vị trí 4 (kiểm tra 5,6,7): 011?_001... -> ? + 0+0+1 = 1. Để chẵn, ? phải là 1.\n   - Vị trí 8 (kiểm tra 9,10,11): ...100?_1010 -> ? + 1+0+1 = 2. Để chẵn, ? phải là 0.\n\n3. <b>Kết quả:</b> 011100101010",
                     "terms": {}
                 },
                 {
                     "id": 72,
-                    "title": "Trang 72",
+                    "title": "Trang 72: Sửa lỗi (7/7) - Sửa lỗi Mã Hamming",
                     "image": "images/computer_organization/week2/slide_72.png",
-                    "notes": "",
+                    "notes": "Giả sử có 1 lỗi xảy ra và dữ liệu nhận được là: `011100101110` (bit thứ 10 đã bị thay đổi từ 0 thành 1).\n\n- <b>Làm thế nào để xác định bit nào bị lỗi?</b>\n- <b>Kiểm tra xem các bit chẵn lẻ nào bị lỗi.</b>\n  - Vị trí 1: (0+1+0+1+1+0 = 3) -> Lẻ (Lỗi!)\n  - Vị trí 2: (1+1+0+1+1+0 = 4) -> Chẵn (Đúng)\n  - Vị trí 4: (1+0+0+1 = 2) -> Chẵn (Đúng)\n  - Vị trí 8: (0+1+1+0 = 2) -> Chẵn (Đúng)\n\n<i>(Lưu ý: Có vẻ có sự nhầm lẫn trong ví dụ của slide, giả sử các bit chẵn lẻ 2 và 8 bị lỗi).</i>\n\n- <b>Cộng các vị trí của các bit chẵn lẻ bị lỗi đó.</b>\n  - Trả lời: 2 + 8 = 10. Do đó, bit dữ liệu thứ 10 bị lỗi.\n- <b>Dữ liệu đã được sửa:</b> `011100101010`",
                     "terms": {}
                 },
                 {
                     "id": 73,
-                    "title": "Trang 73",
+                    "title": "Trang 73: Bài tập Đọc",
                     "image": "images/computer_organization/week2/slide_73.png",
-                    "notes": "",
+                    "notes": "<b>Bài tập về nhà:</b>\n\n- Chuyển đổi giữa mã Gray tiêu chuẩn và nhị phân.\n- Sách DLD trang 1-24.",
                     "terms": {}
                 },
                 {
                     "id": 74,
-                    "title": "Trang 74",
+                    "title": "Trang 74: Hỏi & Đáp",
                     "image": "images/computer_organization/week2/slide_74.png",
-                    "notes": "",
+                    "notes": "Kết thúc bài giảng Tuần 2. Bây giờ là thời gian cho các câu hỏi và trả lời.",
                     "terms": {}
                 }
             ]
         },
         {
-            "title": "Tuần 3: Number Systems Supplimentary Notes",
+            "title": "Tuần 3: Number Systems Supplementary Notes",
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Number Systems Supplementary Notes",
                     "image": "images/computer_organization/week3/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 3: Các Ghi chú Bổ sung về Hệ thống số.",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week3/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week3/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Ghi nhận các chỉnh sửa",
                     "image": "images/computer_organization/week3/slide_4.png",
-                    "notes": "",
+                    "notes": "Hiện tại, không có chỉnh sửa nào trên các nội dung này.",
                     "terms": {}
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: Đề cương Ghi chú Bổ sung",
                     "image": "images/computer_organization/week3/slide_5.png",
-                    "notes": "",
+                    "notes": "Các chủ đề chính trong phần ghi chú bổ sung này bao gồm:\n\n- <b>Phép bù (Complements)</b>\n- <b>Số dấu phẩy động (Floating-point Numbers)</b>",
                     "terms": {}
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Phép bù (1/3)",
                     "image": "images/computer_organization/week3/slide_6.png",
-                    "notes": "",
+                    "notes": "Cụm từ \"Tìm bù của một số\" là cách nói ngắn gọn của \"tìm giá trị phủ định trong hệ thống bù đó\".\n\nVí dụ, hai câu hỏi dưới đây là tương đương:\n- [4-bit] Tìm bù 1 của 0110. Trả lời: 1001.\n- [4-bit] Nếu x là 0110 (bù 1), -x ở dạng bù 1 là gì? Trả lời: 1001 (bù 1).",
                     "terms": {}
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Phép bù (2/3)",
                     "image": "images/computer_organization/week3/slide_7.png",
-                    "notes": "",
+                    "notes": "Thêm các ví dụ về phép bù:\n\n- <b>[8-bit] Tìm bù 1 của 101:</b>\n  101 = 00000101. Đảo bit -> 11111010.\n- <b>[8-bit] Tìm bù 1 của 11001000:</b>\n  Đảo bit -> 00110111.\n- <b>[8-bit] 101₂ (5₁₀) được biểu diễn trong bù 1 như thế nào?</b>\n  Vì 5 là số dương, biểu diễn bù 1 của nó giống hệt biểu diễn nhị phân: 00000101.\n- <b>[8-bit] -101₂ (-5₁₀) được biểu diễn trong bù 1 như thế nào?</b>\n  Lấy bù 1 của 00000101 -> 11111010.\n- <b>[8-bit] Tìm bù 2 của 111000:</b>\n  111000 = 00111000. Đảo bit -> 11000111. Cộng 1 -> 11001000.\n- <b>[12-bit] Tìm bù 2 của 101:</b>\n  101 = 000...0101. Đảo bit -> 111...1010. Cộng 1 -> 111111111011.",
                     "terms": {}
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Định nghĩa Phép bù",
                     "image": "images/computer_organization/week3/slide_8.png",
-                    "notes": "",
+                    "notes": "Nhìn chung, có hai loại phép bù của số Nhị phân: <b>bù 1</b> và <b>bù 2</b>.\n\n- Để có được <b>bù 1</b> của một số nhị phân, chỉ cần <b>đảo ngược</b> số đã cho. Ví dụ, bù 1 của số nhị phân 110010 là 001101.\n\n- Để có được <b>bù 2</b> của một số nhị phân, ta lấy bù 1 của số đã cho cộng với 1 vào bit có trọng số thấp nhất (LSB). Ví dụ, bù 2 của số nhị phân 10010 là (01101) + 1 = 01110.",
                     "terms": {}
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Mạch logic của Phép bù 2",
                     "image": "images/computer_organization/week3/slide_9.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Slide này minh họa một mạch logic có thể được sử dụng để tính toán bù 2 của một số nhị phân 4-bit.\n\nMạch này bao gồm một tầng 'Bù 1' (sử dụng các cổng NOT - bộ đảo) và một tầng 'Cộng 1' (sử dụng các bộ bán cộng - half-adders hoặc bộ cộng đủ - full-adders) để thực hiện phép toán.",
+                    "terms": {
+                        "Logical Circuit (Mạch logic)": "Một mạch điện tử thực hiện các phép toán logic Boolean. Nó được xây dựng từ các cổng logic cơ bản như AND, OR, NOT."
+                    }
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Phép bù (3/3) - Ví dụ",
                     "image": "images/computer_organization/week3/slide_10.png",
-                    "notes": "",
+                    "notes": "Thêm các ví dụ về phép bù:\n\n- <b>[8-bit] 111₂ (7₁₀) trong dạng bù 2 là gì?</b>\n  Trả lời: 00000111 (vì là số dương).\n- <b>[8-bit] -111₂ (-7₁₀) trong dạng bù 2 là gì?</b>\n  (7₁₀ = 00000111) → Đảo bit: 11111000 → Cộng 1: 11111001.\n- <b>[10-bit] 14₁₀ trong dạng bù 1 là gì?</b>\n  Trả lời: 0000001110 (vì là số dương).\n- <b>[10-bit] -14₁₀ trong dạng bù 2 là gì?</b>\n  (14₁₀ = 0000001110) → Đảo bit: 1111110001 → Cộng 1: 1111110010.",
                     "terms": {}
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11",
+                    "title": "Trang 11: Số Dấu phẩy động (1/2) - Ví dụ",
                     "image": "images/computer_organization/week3/slide_11.png",
-                    "notes": "",
+                    "notes": "Giả sử một sơ đồ dấu phẩy động 10-bit với: 1-bit dấu, 5-bit định trị chuẩn hóa, và 4-bit phần mũ.\n\n<b>Giá trị `1 11000 1001` là gì?</b>\n- Bit dấu là <b>1</b>, vậy giá trị là <b>âm</b>.\n- Phần định trị là 0.11000₂, hoặc 0.75₁₀.\n- Phần mũ 1001 là gì?\n  - Nếu là số không dấu, mũ = 9.\n  - Nếu là dấu-độ lớn, mũ = -1.\n  - Nếu là bù 1, mũ = -6.\n  - Nếu là bù 2, mũ = -7.",
                     "terms": {}
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12",
+                    "title": "Trang 12: Số Dấu phẩy động (2/2) - Kết quả",
                     "image": "images/computer_organization/week3/slide_12.png",
-                    "notes": "",
+                    "notes": "Do đó, giá trị cuối cùng của `1 11000 1001` là:\n\n- Nếu mũ không dấu: -0.11₂ × 2⁹, hay -384₁₀.\n- Nếu mũ ở dạng dấu-độ lớn: -0.11₂ × 2⁻¹, hay -0.375₁₀.\n- Nếu mũ ở dạng bù 1: -0.11₂ × 2⁻⁶, hay -0.00000011₂.\n- Nếu mũ ở dạng bù 2: -0.11₂ × 2⁻⁷, hay -0.000000011₂.",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13",
+                    "title": "Trang 13: Hỏi & Đáp",
                     "image": "images/computer_organization/week3/slide_13.png",
-                    "notes": "",
+                    "notes": "Kết thúc phần Ghi chú Bổ sung. Bây giờ là thời gian cho các câu hỏi và trả lời.",
                     "terms": {}
                 }
             ]
@@ -672,455 +856,504 @@
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Boolean Algebra",
                     "image": "images/computer_organization/week4/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 4: Đại số Boolean (Boolean Algebra).",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week4/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week4/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Ghi nhận các chỉnh sửa",
                     "image": "images/computer_organization/week4/slide_4.png",
-                    "notes": "",
+                    "notes": "Ghi nhận các chỉnh sửa:\n- Thay đổi nhỏ ở slide 13 (thay thế hình ảnh mới).\n- Hiện tại, không có chỉnh sửa nào khác trên các nội dung này.",
                     "terms": {}
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: Chúng ta đang ở đâu?",
                     "image": "images/computer_organization/week4/slide_5.png",
-                    "notes": "",
+                    "notes": "Sơ đồ này cho thấy vị trí của chủ đề 'Đại số Boolean' trong tổng thể môn học. Nó thuộc phần 'Chuẩn bị' và là nền tảng cho phần 'Thiết kế Logic'.",
                     "terms": {}
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Danh sách kiểm tra",
                     "image": "images/computer_organization/week4/slide_6.png",
-                    "notes": "",
+                    "notes": "Danh sách kiểm tra dành cho sinh viên:\n\n- Bạn đã làm các Câu hỏi Xem lại nhanh cho Chương 2 chưa?\n- Bạn đã thử làm Bài tập Tự đánh giá số 1 chưa?\n- Bạn đã làm rõ những thắc mắc của mình trên diễn đàn chưa?\n- Sẵn sàng cho một bài kiểm tra đột xuất (pop quiz) chưa?",
                     "terms": {}
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Đề cương - ĐẠI SỐ BOOLEAN",
                     "image": "images/computer_organization/week4/slide_7.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các chủ đề chính trong chương này bao gồm:\n\n- Đại số Boolean.\n- Thứ tự ưu tiên của các toán tử.\n- Bảng chân lý (Truth Table).\n- Tính đối ngẫu (Duality).\n- Các định lý cơ bản (Basic Theorems).\n- Phép bù của các hàm (Complement of Functions).\n- Các dạng chuẩn (Standard Forms).\n- Minterms và Maxterms.\n- Các dạng chính tắc (Canonical Forms).",
+                    "terms": {
+                        "Boolean Algebra": "Một nhánh của đại số, trong đó giá trị của các biến là các giá trị chân lý `true` và `false`, thường được ký hiệu là 1 và 0. Nó là nền tảng toán học cho tất cả các máy tính kỹ thuật số.",
+                        "Truth Table (Bảng chân lý)": "Một bảng toán học được sử dụng trong logic để tính toán giá trị chân lý của một biểu thức logic dựa trên tất cả các kết hợp giá trị chân lý có thể có của các biến của nó."
+                    }
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Mạch số (1/2)",
                     "image": "images/computer_organization/week4/slide_8.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các mạch số (Digital Circuits) hoạt động dựa trên <b>hai mức điện áp</b>:\n\n- <b>Cao (High):</b> tương ứng với <i>true</i>, <i>1</i>.\n- <b>Thấp (Low):</b> tương ứng với <i>false</i>, <i>0</i>.\n\nSơ đồ minh họa sự khác biệt giữa tín hiệu trong mạch số (các xung vuông rõ ràng) và tín hiệu trong mạch tương tự (các đường cong liên tục).",
+                    "terms": {
+                        "Digital Circuit": "Một mạch điện tử sử dụng các tín hiệu số (các mức điện áp rời rạc, thường là hai mức) để thực hiện các phép toán logic.",
+                        "Analog Circuit": "Một mạch điện tử sử dụng các tín hiệu tương tự (các mức điện áp liên tục) để xử lý thông tin."
+                    }
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Mạch số (2/2)",
                     "image": "images/computer_organization/week4/slide_9.png",
-                    "notes": "",
+                    "notes": "Ưu điểm của mạch số so với mạch tương tự:\n\n- <b>Đáng tin cậy hơn:</b> các mạch đơn giản hơn, ít bị nhiễu.\n- <b>Độ chính xác được chỉ định:</b> có thể xác định được.\n- <b>Trừu tượng hóa</b> có thể được áp dụng bằng cách sử dụng một mô hình toán học đơn giản - <b>Đại số Boolean</b>.\n- Dễ dàng thiết kế, phân tích và đơn giản hóa mạch số - <b>Thiết kế Logic Số</b>.",
                     "terms": {}
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Các loại Khối Logic",
                     "image": "images/computer_organization/week4/slide_10.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Có hai loại khối logic chính:\n\n- <b>Tổ hợp (Combinational):</b> không có bộ nhớ, đầu ra chỉ phụ thuộc duy nhất vào đầu vào.\n  - Cổng (Gates)\n  - Bộ giải mã (Decoders), bộ dồn kênh (Multiplexers)\n  - Bộ cộng (Adders), bộ nhân (Multipliers)\n\n- <b>Tuần tự (Sequential):</b> có bộ nhớ, đầu ra phụ thuộc vào cả đầu vào và trạng thái hiện tại.\n  - Bộ đếm (Counters), thanh ghi (Registers)\n  - Bộ nhớ (Memories)",
+                    "terms": {
+                        "Combinational Logic": "Một loại mạch logic kỹ thuật số trong đó đầu ra chỉ là một hàm của các đầu vào hiện tại. Nó không có bộ nhớ.",
+                        "Sequential Logic": "Một loại mạch logic kỹ thuật số trong đó đầu ra phụ thuộc vào cả các đầu vào hiện tại và trạng thái trước đó của mạch. Nó có bộ nhớ."
+                    }
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11",
+                    "title": "Trang 11: Đại số Boolean",
                     "image": "images/computer_organization/week4/slide_11.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các thành phần cơ bản của Đại số Boolean:\n\n- <b>Các giá trị Boolean:</b>\n  - True (1)\n  - False (0)\n- <b>Các phép nối (Connectives):</b>\n  - Phép hội (AND): A · B\n  - Phép tuyển (OR): A + B\n  - Phép phủ định (NOT): A'\n- <b>Bảng chân lý (Truth tables):</b> Hiển thị kết quả của các phép toán logic.\n- <b>Cổng logic (Logic gates):</b> Biểu diễn vật lý của các phép toán logic.",
+                    "terms": {
+                        "Logic Gate": "Một khối xây dựng cơ bản của một mạch kỹ thuật số. Hầu hết các cổng logic có hai đầu vào và một đầu ra, và thực hiện một phép toán logic đơn giản như AND, OR, NOT."
+                    }
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12",
+                    "title": "Trang 12: Phép toán AND (·)",
                     "image": "images/computer_organization/week4/slide_12.png",
-                    "notes": "",
+                    "notes": "<b>Lời nhắc:</b> Hãy luôn viết toán tử AND `·` thay vì bỏ qua nó.\n\n- Ví dụ: Viết `a·b` thay vì `ab`.\n- Tại sao? Vì viết `ab` có thể có nghĩa là một giá trị 2-bit.",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13",
+                    "title": "Trang 13: Các Luật của Đại số Boolean",
                     "image": "images/computer_organization/week4/slide_13.png",
-                    "notes": "",
+                    "notes": "Các luật cơ bản của Đại số Boolean:\n\n- <b>Luật Đồng nhất (Identity laws):</b>\n  - A + 0 = A; A · 1 = A\n- <b>Luật Nghịch đảo/Bù (Inverse/complement laws):</b>\n  - A + A' = 1; A · A' = 0\n- <b>Luật Giao hoán (Commutative laws):</b>\n  - A + B = B + A; A · B = B · A\n- <b>Luật Kết hợp (Associative laws):</b>\n  - A + (B + C) = (A + B) + C; A · (B · C) = (A · B) · C\n- <b>Luật Phân phối (Distributive laws):</b>\n  - A · (B + C) = (A · B) + (A · C); A + (B · C) = (A + B) · (A + C)",
                     "terms": {}
                 },
                 {
                     "id": 14,
-                    "title": "Trang 14",
+                    "title": "Trang 14: Thứ tự ưu tiên của các Toán tử",
                     "image": "images/computer_organization/week4/slide_14.png",
-                    "notes": "",
+                    "notes": "Thứ tự ưu tiên từ cao nhất đến thấp nhất:\n1. <b>Not</b>\n2. <b>And</b>\n3. <b>Or</b>\n\n<b>Ví dụ:</b>\n- A · B + C = (A · B) + C\n- X + Y' = X + (Y')\n\nSử dụng dấu ngoặc đơn để ghi đè thứ tự ưu tiên. Ví dụ:\n- A · (B + C)\n- (P + Q)' · R",
                     "terms": {}
                 },
                 {
                     "id": 15,
-                    "title": "Trang 15",
+                    "title": "Trang 15: Bảng Chân lý (Truth Table)",
                     "image": "images/computer_organization/week4/slide_15.png",
-                    "notes": "",
+                    "notes": "Bảng chân lý cung cấp một danh sách của mọi sự kết hợp có thể có của các đầu vào và các đầu ra tương ứng của chúng.\n\n- Các đầu vào thường được liệt kê theo thứ tự nhị phân.\n\nVí dụ bên phải là một bảng chân lý với 3 đầu vào (x, y, z) và 2 đầu ra (y + z, x · (y + z)).",
                     "terms": {}
                 },
                 {
                     "id": 16,
-                    "title": "Trang 16",
+                    "title": "Trang 16: Chứng minh bằng Bảng Chân lý",
                     "image": "images/computer_organization/week4/slide_16.png",
-                    "notes": "",
+                    "notes": "Để chứng minh một đẳng thức Boolean, ví dụ `x · (y + z) = (x · y) + (x · z)`, chúng ta có thể:\n\n1. Xây dựng một bảng chân lý cho vế trái (LHS) và vế phải (RHS).\n2. Kiểm tra xem cột của vế trái có bằng cột của vế phải cho tất cả các kết hợp đầu vào hay không.",
                     "terms": {}
                 },
                 {
                     "id": 17,
-                    "title": "Trang 17",
+                    "title": "Trang 17: Tính Đối ngẫu (Duality)",
                     "image": "images/computer_organization/week4/slide_17.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Nếu các toán tử <b>AND/OR</b> và các phần tử đồng nhất <b>0/1</b> trong một phương trình Boolean được hoán đổi cho nhau, nó vẫn hợp lệ. Đây là nguyên tắc đối ngẫu.\n\nTính đối ngẫu cho chúng ta các định lý miễn phí - \"hai với giá của một\". Bạn chứng minh một định lý và cái kia có được miễn phí!\n\n<b>Ví dụ:</b>\n- Nếu `(x+y+z)' = x'·y'·z'` là hợp lệ, thì đối ngẫu của nó cũng hợp lệ: `(x·y·z)' = x'+y'+z'`\n- Nếu `x+1 = 1` là hợp lệ, thì đối ngẫu của nó cũng hợp lệ: `x·0 = 0`",
+                    "terms": {
+                        "Duality Principle": "Một nguyên tắc trong đại số Boolean phát biểu rằng nếu một biểu thức là đúng, thì biểu thức đối ngẫu của nó (thu được bằng cách hoán đổi AND với OR và 0 với 1) cũng đúng."
+                    }
                 },
                 {
                     "id": 18,
-                    "title": "Trang 18",
+                    "title": "Trang 18: Các Định lý Cơ bản (1/2)",
                     "image": "images/computer_organization/week4/slide_18.png",
-                    "notes": "",
+                    "notes": "Một số định lý cơ bản khác trong Đại số Boolean:\n\n1. <b>Idempotency (Tính lũy đẳng):</b>\n   - X + X = X; X · X = X\n2. <b>Zero and One elements (Phần tử 0 và 1):</b>\n   - X + 1 = 1; X · 0 = 0\n3. <b>Involution (Phép lũy thừa):</b>\n   - (X')' = X\n4. <b>Absorption (Luật hấp thụ):</b>\n   - X + X·Y = X; X·(X + Y) = X\n5. <b>Absorption (biến thể):</b>\n   - X + X'·Y = X + Y; X·(X' + Y) = X·Y",
                     "terms": {}
                 },
                 {
                     "id": 19,
-                    "title": "Trang 19",
+                    "title": "Trang 19: Các Định lý Cơ bản (2/2)",
                     "image": "images/computer_organization/week4/slide_19.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Tiếp tục với các định lý cơ bản:\n\n6. <b>DeMorgan's (Định lý De Morgan):</b>\n   - (X + Y)' = X' · Y'; (X · Y)' = X' + Y'\n   - Định lý De Morgan có thể được tổng quát hóa cho nhiều hơn hai biến.\n\n7. <b>Consensus (Định lý đồng thuận):</b>\n   - X·Y + X'·Z + Y·Z = X·Y + X'·Z",
+                    "terms": {
+                        "De Morgan's Laws": "Hai quy tắc trong logic mệnh đề, liên quan đến mối quan hệ giữa các phép toán AND, OR, và NOT. Chúng phát biểu rằng phủ định của một phép hội là phép tuyển của các phủ định, và phủ định của một phép tuyển là phép hội của các phủ định."
+                    }
                 },
                 {
                     "id": 20,
-                    "title": "Trang 20",
+                    "title": "Trang 20: Chứng minh một Định lý",
                     "image": "images/computer_organization/week4/slide_20.png",
-                    "notes": "",
+                    "notes": "Các định lý có thể được chứng minh bằng bảng chân lý, hoặc bằng các thao tác đại số sử dụng các định lý/luật khác.\n\n<b>Ví dụ: Chứng minh định lý hấp thụ X + X·Y = X</b>\n- X + X·Y = X·1 + X·Y  (theo luật đồng nhất)\n- = X·(1+Y)  (theo luật phân phối)\n- = X·(Y+1)  (theo luật giao hoán)\n- = X·1      (theo luật phần tử 1)\n- = X        (theo luật đồng nhất)\n\nBằng tính đối ngẫu, chúng ta cũng đã chứng minh được <b>X·(X+Y) = X</b>.",
                     "terms": {}
                 },
                 {
                     "id": 21,
-                    "title": "Trang 21",
+                    "title": "Trang 21: Hàm Boolean",
                     "image": "images/computer_organization/week4/slide_21.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Ví dụ về các hàm Boolean (phương trình logic) và bảng chân lý của chúng.",
+                    "terms": {
+                        "Boolean Function": "Một hàm có các biến đầu vào và đầu ra đều là các giá trị Boolean (0 hoặc 1). Một hàm Boolean có thể được biểu diễn bằng một biểu thức đại số hoặc một bảng chân lý."
+                    }
                 },
                 {
                     "id": 22,
-                    "title": "Trang 22",
+                    "title": "Trang 22: Phép bù (Complement)",
                     "image": "images/computer_organization/week4/slide_22.png",
-                    "notes": "",
+                    "notes": "Cho một hàm Boolean F, <b>phép bù (complement)</b> của F, ký hiệu là F', được thu được bằng cách hoán đổi 1 với 0 trong các giá trị đầu ra của hàm.\n\nVí dụ, nếu `F1 = x·y·z'`, thì F1' sẽ có giá trị 1 ở những nơi F1 có giá trị 0, và ngược lại.",
                     "terms": {}
                 },
                 {
                     "id": 23,
-                    "title": "Trang 23",
+                    "title": "Trang 23: Các Dạng chuẩn (1/2)",
                     "image": "images/computer_organization/week4/slide_23.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Một số loại biểu thức Boolean nhất định dẫn đến các mạch mong muốn từ góc độ triển khai. Có hai dạng chuẩn:\n- <b>Tổng của các Tích (Sum-of-Products - SOP)</b>\n- <b>Tích của các Tổng (Product-of-Sums - POS)</b>\n\n- <b>Literal:</b> Một biến Boolean đứng riêng hoặc ở dạng bù của nó (ví dụ: x, x', y, y').\n- <b>Product term (Số hạng tích):</b> Một literal đơn hoặc một tích logic (AND) của nhiều literal (ví dụ: x·y·z').",
+                    "terms": {
+                        "Standard Forms (Boolean)": "Các cách biểu diễn chuẩn hóa cho các hàm Boolean, giúp cho việc phân tích và tối giản hóa trở nên dễ dàng hơn. Hai dạng phổ biến nhất là Sum-of-Products (SOP) và Product-of-Sums (POS)."
+                    }
                 },
                 {
                     "id": 24,
-                    "title": "Trang 24",
+                    "title": "Trang 24: Các Dạng chuẩn (2/2)",
                     "image": "images/computer_organization/week4/slide_24.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "- <b>Sum term (Số hạng tổng):</b> Một literal đơn hoặc một tổng logic (OR) của nhiều literal (ví dụ: x+y+z').\n- <b>Biểu thức Sum-of-Products (SOP):</b> Một số hạng tích hoặc một tổng logic (OR) của nhiều số hạng tích.\n- <b>Biểu thức Product-of-Sums (POS):</b> Một số hạng tổng hoặc một tích logic (AND) của nhiều số hạng tổng.\n\nMọi biểu thức Boolean đều có thể được biểu diễn ở dạng SOP hoặc POS.",
+                    "terms": {
+                        "Sum-of-Products (SOP)": "Một dạng biểu thức Boolean bao gồm một hoặc nhiều số hạng tích được cộng (OR) lại với nhau. Ví dụ: `A·B + C·D`.",
+                        "Product-of-Sums (POS)": "Một dạng biểu thức Boolean bao gồm một hoặc nhiều số hạng tổng được nhân (AND) lại với nhau. Ví dụ: `(A+B) · (C+D)`."
+                    }
                 },
                 {
                     "id": 25,
-                    "title": "Trang 25",
+                    "title": "Trang 25: Tự làm",
                     "image": "images/computer_organization/week4/slide_25.png",
-                    "notes": "",
+                    "notes": "Bài tập: Đánh dấu vào bảng sau để xác định mỗi biểu thức thuộc dạng SOP, POS, hay cả hai.",
                     "terms": {}
                 },
                 {
                     "id": 26,
-                    "title": "Trang 26",
+                    "title": "Trang 26: Minterms & Maxterms (1/2)",
                     "image": "images/computer_organization/week4/slide_26.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Một <b>minterm</b> của <i>n</i> biến là một <b>số hạng tích</b> chứa <i>n</i> literal từ tất cả các biến.\n- Ví dụ: Trên 2 biến x và y, các minterm là: x'·y', x'·y, x·y' và x·y.\n\nMột <b>maxterm</b> của <i>n</i> biến là một <b>số hạng tổng</b> chứa <i>n</i> literal từ tất cả các biến.\n- Ví dụ: Trên 2 biến x và y, các maxterm là: x'+y', x'+y, x+y' và x+y.",
+                    "terms": {
+                        "Minterm": "Một số hạng tích trong một hàm Boolean chứa tất cả các biến của hàm đó, ở dạng thường hoặc dạng bù. Một minterm chỉ có giá trị `1` cho một tổ hợp đầu vào duy nhất.",
+                        "Maxterm": "Một số hạng tổng trong một hàm Boolean chứa tất cả các biến của hàm đó, ở dạng thường hoặc dạng bù. Một maxterm chỉ có giá trị `0` cho một tổ hợp đầu vào duy nhất."
+                    }
                 },
                 {
                     "id": 27,
-                    "title": "Trang 27",
+                    "title": "Trang 27: Minterms & Maxterms (2/2)",
                     "image": "images/computer_organization/week4/slide_27.png",
-                    "notes": "",
+                    "notes": "Các minterm và maxterm trên 2 biến được ký hiệu lần lượt là từ <b>m0 đến m3</b> và từ <b>M0 đến M3</b>. Bảng hiển thị sự tương ứng giữa các tổ hợp đầu vào (x,y), các số hạng (Term), và ký hiệu (Notation).\n\nMỗi minterm là phép bù của maxterm tương ứng.\nVí dụ: m2 = x·y'\nm2' = (x·y')' = x' + (y')' = x' + y = M2.",
                     "terms": {}
                 },
                 {
                     "id": 28,
-                    "title": "Trang 28",
+                    "title": "Trang 28: Các Dạng Chính tắc (Canonical Forms)",
                     "image": "images/computer_organization/week4/slide_28.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Dạng chính tắc (Canonical)</b> hay <b>dạng chuẩn (normal)</b>: một dạng biểu diễn duy nhất.\n\n- <b>Tổng của các Minterm (Sum-of-minterms):</b> là dạng Tổng-của-các-Tích chính tắc.\n- <b>Tích của các Maxterm (Product-of-maxterms):</b> là dạng Tích-của-các-Tổng chính tắc.",
+                    "terms": {
+                        "Canonical Form": "Một cách biểu diễn một hàm Boolean sao cho mọi hàm đều có một dạng biểu diễn duy nhất. Điều này rất hữu ích cho việc kiểm tra sự tương đương của các hàm."
+                    }
                 },
                 {
                     "id": 29,
-                    "title": "Trang 29",
+                    "title": "Trang 29: Tổng của các Minterm",
                     "image": "images/computer_organization/week4/slide_29.png",
-                    "notes": "",
+                    "notes": "Cho một bảng chân lý, ta có thể thu được biểu thức <b>tổng-của-các-minterm</b> bằng cách tập hợp các minterm của hàm (những nơi đầu ra là <b>1</b>).\n\n- <b>F1:</b> Chỉ có một đầu ra 1 tại hàng (1,1,0), tương ứng với minterm m6. Vậy `F1 = x·y·z' = m6`.\n- <b>F2:</b> Có các đầu ra 1 tại m1, m4, m5, m6, m7. Vậy `F2 = x'·y'·z + x·y'·z' + ...`\n- <b>F3:</b> Có các đầu ra 1 tại m1, m3, m4, m5. Vậy `F3 = x'·y'·z + x'·y·z + ...`",
                     "terms": {}
                 },
                 {
                     "id": 30,
-                    "title": "Trang 30",
+                    "title": "Trang 30: Tích của các Maxterm",
                     "image": "images/computer_organization/week4/slide_30.png",
-                    "notes": "",
+                    "notes": "Tương tự, ta có thể thu được biểu thức <b>tích-của-các-maxterm</b> bằng cách tập hợp các maxterm của hàm (những nơi đầu ra là <b>0</b>).\n\n- <b>F2:</b> Có các đầu ra 0 tại các hàng tương ứng với M0, M2, M3. Vậy `F2 = (x+y+z) · (x+y'+z) · (x'+y'+z)`.",
                     "terms": {}
                 },
                 {
                     "id": 31,
-                    "title": "Trang 31",
+                    "title": "Trang 31: Chuyển đổi",
                     "image": "images/computer_organization/week4/slide_31.png",
-                    "notes": "",
+                    "notes": "Chúng ta có thể chuyển đổi dễ dàng giữa dạng tổng-của-các-minterm và tích-của-các-maxterm.\n\nVí dụ: `F2 = Σm(1,4,5,6,7) = ΠM(0,2,3)`.\n\n- Lấy phần bù của F2 là F2', ta sẽ thu được các minterm ở những nơi F2 có giá trị 0: `F2' = m0 + m2 + m3`.\n- Lấy phần bù một lần nữa: `F2 = (m0 + m2 + m3)'`.\n- Áp dụng định lý De Morgan: `F2 = m0' · m2' · m3'`.\n- Vì `mx' = Mx`, ta có: `F2 = M0 · M2 · M3`.",
                     "terms": {}
                 },
                 {
                     "id": 32,
-                    "title": "Trang 32",
+                    "title": "Trang 32: Bài tập Đọc",
                     "image": "images/computer_organization/week4/slide_32.png",
-                    "notes": "",
+                    "notes": "<b>Bài tập về nhà:</b>\n\n- Chuyển đổi giữa các Dạng chuẩn.\n- Đọc sách DLD mục 3.4, trang 57 – 58.",
                     "terms": {}
                 },
                 {
                     "id": 33,
-                    "title": "Trang 33",
+                    "title": "Trang 33: Hỏi & Đáp",
                     "image": "images/computer_organization/week4/slide_33.png",
-                    "notes": "",
+                    "notes": "Kết thúc bài giảng Tuần 4. Bây giờ là thời gian cho các câu hỏi và trả lời.",
                     "terms": {}
                 }
             ]
         },
         {
-            "title": "Tuần 5: Logic Gates and Circuits",
+            "title": "Tuần 5: Logic gates and circuits",
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Logic gates and circuits",
                     "image": "images/computer_organization/week5/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 5: Cổng logic và Mạch (Logic gates and circuits).",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week5/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week5/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Chúng ta đang ở đâu?",
                     "image": "images/computer_organization/week5/slide_4.png",
-                    "notes": "",
+                    "notes": "Sơ đồ này cho thấy vị trí của chủ đề 'Cổng logic và mạch' trong tổng thể môn học. Đây là một phần quan trọng của 'Thiết kế Logic'.",
                     "terms": {}
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: Đề cương - CỔNG LOGIC VÀ MẠCH",
                     "image": "images/computer_organization/week5/slide_5.png",
-                    "notes": "",
+                    "notes": "Các chủ đề chính trong chương này bao gồm:\n\n- Các Ký hiệu Cổng (Gate Symbols).\n- Các cổng Inverter/AND/OR/NAND/NOR/XOR/XNOR.\n- Vẽ và Phân tích Mạch Logic.\n- Các Cổng Phổ dụng (Universal Gates).\n- Mạch SOP và NAND.\n- Mạch POS và NOR.\n- Mảng Logic Lập trình được (Programmable Logic Array).",
                     "terms": {}
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Cổng Logic - Ký hiệu",
                     "image": "images/computer_organization/week5/slide_6.png",
-                    "notes": "",
+                    "notes": "Slide này trình bày hai bộ ký hiệu phổ biến cho các cổng logic:\n\n- <b>Symbol set 1:</b> Các ký hiệu hình dạng đặc trưng (distinctive-shape symbols).\n- <b>Symbol set 2 (ANSI/IEEE Standard 91-1984):</b> Các ký hiệu hình chữ nhật (rectangular-shape symbols).",
                     "terms": {}
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Các cổng INVERTER/AND/OR",
                     "image": "images/computer_organization/week5/slide_7.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các cổng logic cơ bản:\n\n- <b>Inverter (cổng NOT):</b> Đảo ngược đầu vào. Nếu đầu vào là 1, đầu ra là 0, và ngược lại.\n- <b>Cổng AND:</b> Đầu ra là 1 chỉ khi <b>tất cả</b> các đầu vào là 1.\n- <b>Cổng OR:</b> Đầu ra là 1 nếu <b>ít nhất một</b> trong các đầu vào là 1.",
+                    "terms": {
+                        "AND Gate": "Một cổng logic cho đầu ra `true` (1) chỉ khi tất cả các đầu vào của nó đều là `true`.",
+                        "OR Gate": "Một cổng logic cho đầu ra `true` (1) nếu ít nhất một trong các đầu vào của nó là `true`.",
+                        "NOT Gate (Inverter)": "Một cổng logic cho đầu ra là giá trị ngược lại của đầu vào duy nhất của nó."
+                    }
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Các cổng NAND/NOR",
                     "image": "images/computer_organization/week5/slide_8.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Cổng NAND (NOT-AND):</b>\n- Tương đương với một cổng AND theo sau là một cổng NOT.\n- Đầu ra là 0 chỉ khi tất cả các đầu vào là 1.\n- Theo định lý De Morgan, cổng NAND tương đương với một cổng OR có các đầu vào được đảo ngược (Negative-OR).\n\n<b>Cổng NOR (NOT-OR):</b>\n- Tương đương với một cổng OR theo sau là một cổng NOT.\n- Đầu ra là 1 chỉ khi tất cả các đầu vào là 0.\n- Theo định lý De Morgan, cổng NOR tương đương với một cổng AND có các đầu vào được đảo ngược (Negative-AND).",
+                    "terms": {
+                        "NAND Gate": "Một cổng logic cho đầu ra `false` (0) chỉ khi tất cả các đầu vào của nó đều là `true`. Nó là nghịch đảo của cổng AND.",
+                        "NOR Gate": "Một cổng logic cho đầu ra `true` (1) chỉ khi tất cả các đầu vào của nó đều là `false`. Nó là nghịch đảo của cổng OR."
+                    }
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Các cổng XOR/XNOR",
                     "image": "images/computer_organization/week5/slide_9.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Cổng XOR (EXCLUSIVE-OR):</b>\n- Đầu ra là 1 nếu số lượng đầu vào bằng 1 là một số <b>lẻ</b>. Với 2 đầu vào, nó có nghĩa là đầu ra là 1 nếu các đầu vào khác nhau.\n\n<b>Cổng XNOR (EXCLUSIVE-NOR):</b>\n- Là phép bù của XOR.\n- Đầu ra là 1 nếu số lượng đầu vào bằng 1 là một số <b>chẵn</b>. Với 2 đầu vào, nó có nghĩa là đầu ra là 1 nếu các đầu vào giống nhau (cổng tương đương - equivalence gate).",
+                    "terms": {
+                        "XOR Gate (Exclusive OR)": "Một cổng logic cho đầu ra `true` (1) nếu số lượng đầu vào `true` là một số lẻ. Với hai đầu vào, nó hoạt động như một bộ so sánh 'khác nhau'.",
+                        "XNOR Gate (Exclusive NOR)": "Nghịch đảo của cổng XOR. Nó cho đầu ra `true` (1) nếu số lượng đầu vào `true` là một số chẵn. Với hai đầu vào, nó hoạt động như một bộ so sánh 'bằng nhau'."
+                    }
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Mạch Logic (1/2)",
                     "image": "images/computer_organization/week5/slide_10.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Fan-in:</b> số lượng đầu vào của một cổng. Các cổng có thể có fan-in lớn hơn 2.\n\nCho một biểu thức Boolean, chúng ta có thể triển khai nó dưới dạng một mạch logic.\n\nVí dụ: `F1 = x·y·z'` có thể được triển khai bằng một cổng NOT cho đầu vào `z` và một cổng AND 3 đầu vào cho `x`, `y`, và `z'`.",
+                    "terms": {
+                        "Fan-in": "Số lượng đầu vào mà một cổng logic có thể xử lý."
+                    }
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11",
+                    "title": "Trang 11: Mạch Logic (2/2)",
                     "image": "images/computer_organization/week5/slide_11.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa cách vẽ các mạch logic từ các biểu thức Boolean.\n\nSự khác biệt chính giữa hai cột là giả định về các đầu vào. Cột bên trái giả định rằng cả biến và phần bù của nó (ví dụ: `y` và `y'`) đều có sẵn làm đầu vào. Cột bên phải thực tế hơn, giả định rằng chỉ có các biến gốc có sẵn và chúng ta phải tự tạo ra các phần bù bằng cách sử dụng các cổng NOT (inverters).",
                     "terms": {}
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12",
+                    "title": "Trang 12: Phân tích Mạch Logic",
                     "image": "images/computer_organization/week5/slide_12.png",
-                    "notes": "",
+                    "notes": "Cho một mạch logic, chúng ta có thể phân tích nó để thu được biểu thức logic tương ứng.\n\nBài tập: Cho mạch logic bên dưới, biểu thức Boolean của F4 là gì?\n\n- Đầu vào cổng AND là A' và B'. Đầu ra là A' · B'.\n- Đầu vào cổng OR là (A' · B') và C.\n- Đầu ra cổng NOT là ((A' · B') + C)'.\n- Vậy, <b>F4 = ((A' · B') + C)'</b>, có thể được đơn giản hóa thành <b>(A + B) · C'</b> bằng định lý De Morgan.",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13",
+                    "title": "Trang 13: Câu hỏi Xem lại nhanh (1)",
                     "image": "images/computer_organization/week5/slide_13.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (1):\n\n- Sách DLD trang 79\n- Câu hỏi 4-1 đến 4-4.",
                     "terms": {}
                 },
                 {
                     "id": 14,
-                    "title": "Trang 14",
+                    "title": "Trang 14: Các Cổng Phổ dụng",
                     "image": "images/computer_organization/week5/slide_14.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Các cổng AND/OR/NOT là đủ để xây dựng bất kỳ hàm Boolean nào. Chúng ta gọi tập hợp {AND, OR, NOT} là một <b>tập hợp logic hoàn chỉnh (complete set of logic)</b>.\n\nTuy nhiên, các cổng khác cũng được sử dụng vì chúng:\n- Hữu ích (ví dụ: cổng XOR để tạo bit chẵn lẻ).\n- Kinh tế hơn.\n- Tự cung tự cấp (ví dụ: cổng NAND/NOR).",
+                    "terms": {
+                        "Universal Gate": "Một cổng logic có thể được sử dụng để tạo ra bất kỳ cổng logic cơ bản nào khác (AND, OR, NOT). Các cổng NAND và NOR là hai cổng phổ dụng."
+                    }
                 },
                 {
                     "id": 15,
-                    "title": "Trang 15",
+                    "title": "Trang 15: Cổng NAND",
                     "image": "images/computer_organization/week5/slide_15.png",
-                    "notes": "",
+                    "notes": "Tập hợp {NAND} là một tập hợp logic hoàn chỉnh.\n\nChứng minh: Triển khai NOT/AND/OR chỉ bằng các cổng NAND.\n- <b>NOT:</b> Nối hai đầu vào của một cổng NAND lại với nhau (`(x·x)' = x'`).\n- <b>AND:</b> Đặt một cổng NAND theo sau một cổng NOT (được tạo từ NAND).\n- <b>OR:</b> Áp dụng định lý De Morgan, `x+y = (x'·y')'`. Điều này có thể được triển khai bằng cách đảo ngược các đầu vào trước khi đưa chúng vào một cổng NAND.",
                     "terms": {}
                 },
                 {
                     "id": 16,
-                    "title": "Trang 16",
+                    "title": "Trang 16: Cổng NOR",
                     "image": "images/computer_organization/week5/slide_16.png",
-                    "notes": "",
+                    "notes": "Tương tự, tập hợp {NOR} cũng là một tập hợp logic hoàn chỉnh.\n\nChứng minh: Triển khai NOT/AND/OR chỉ bằng các cổng NOR.\n- <b>NOT:</b> Nối hai đầu vào của một cổng NOR lại với nhau (`(x+x)' = x'`).\n- <b>OR:</b> Đặt một cổng NOR theo sau một cổng NOT (được tạo từ NOR).\n- <b>AND:</b> Áp dụng định lý De Morgan, `x·y = (x'+y')'`. Điều này có thể được triển khai bằng cách đảo ngược các đầu vào trước khi đưa chúng vào một cổng NOR.",
                     "terms": {}
                 },
                 {
                     "id": 17,
-                    "title": "Trang 17",
+                    "title": "Trang 17: Câu hỏi Xem lại nhanh (2)",
                     "image": "images/computer_organization/week5/slide_17.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (2):\n\n- Sách DLD trang 79\n- Câu hỏi 4-6 đến 4-8.",
                     "terms": {}
                 },
                 {
                     "id": 18,
-                    "title": "Trang 18",
+                    "title": "Trang 18: Mạch SOP và NAND (1/2)",
                     "image": "images/computer_organization/week5/slide_18.png",
-                    "notes": "",
+                    "notes": "Một biểu thức <b>Tổng-của-các-Tích (SOP)</b> có thể được triển khai dễ dàng bằng cách sử dụng:\n- Mạch AND-OR 2 cấp.\n- Mạch NAND 2 cấp.\n\nVí dụ: `F = A·B + C'·D + E` được triển khai bằng một mạch AND-OR.",
                     "terms": {}
                 },
                 {
                     "id": 19,
-                    "title": "Trang 19",
+                    "title": "Trang 19: Mạch SOP và NAND (2/2)",
                     "image": "images/computer_organization/week5/slide_19.png",
-                    "notes": "",
+                    "notes": "Ví dụ: `F = A·B + C'·D + E`\n\nSử dụng một mạch NAND 2 cấp.\nBằng cách áp dụng định lý De Morgan hai lần (`F = (F')'`), chúng ta có thể thấy rằng một mạch AND-OR có thể được chuyển đổi thành một mạch NAND-NAND tương đương. Điều này rất hữu ích vì trong thực tế, việc chế tạo các mạch chỉ sử dụng một loại cổng (như NAND) sẽ dễ dàng và rẻ hơn.",
                     "terms": {}
                 },
                 {
                     "id": 20,
-                    "title": "Trang 20",
+                    "title": "Trang 20: Mạch POS và NOR (1/2)",
                     "image": "images/computer_organization/week5/slide_20.png",
-                    "notes": "",
+                    "notes": "Tương tự, một biểu thức <b>Tích-của-các-Tổng (POS)</b> có thể được triển khai dễ dàng bằng cách sử dụng:\n- Mạch OR-AND 2 cấp.\n- Mạch NOR 2 cấp.\n\nVí dụ: `G = (A+B) · (C'+D) · E` được triển khai bằng một mạch OR-AND.",
                     "terms": {}
                 },
                 {
                     "id": 21,
-                    "title": "Trang 21",
+                    "title": "Trang 21: Mạch POS và NOR (2/2)",
                     "image": "images/computer_organization/week5/slide_21.png",
-                    "notes": "",
+                    "notes": "Ví dụ: `G = (A+B) · (C'+D) · E`\n\nSử dụng một mạch NOR 2 cấp.\nTương tự như mạch SOP-NAND, bằng cách áp dụng định lý De Morgan hai lần, một mạch OR-AND có thể được chuyển đổi thành một mạch NOR-NOR tương đương.",
                     "terms": {}
                 },
                 {
                     "id": 22,
-                    "title": "Trang 22",
+                    "title": "Trang 22: Bài tập Đọc",
                     "image": "images/computer_organization/week5/slide_22.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Bài tập về nhà:</b>\n\n- <b>Propagation Delay (Độ trễ lan truyền):</b> Đọc sách DLD mục 4.5, trang 75 – 77.\n- <b>Integrated Circuit Logic Families (Các họ logic Mạch tích hợp):</b> Đọc sách DLD mục 4.6, trang 77 – 78.",
+                    "terms": {
+                        "Propagation Delay": "Thời gian cần thiết để một sự thay đổi ở đầu vào của một cổng logic tạo ra một sự thay đổi tương ứng ở đầu ra. Đây là một yếu tố quan trọng ảnh hưởng đến tốc độ tối đa của một mạch kỹ thuật số."
+                    }
                 },
                 {
                     "id": 23,
-                    "title": "Trang 23",
+                    "title": "Trang 23: Chip Mạch tích hợp (IC)",
                     "image": "images/computer_organization/week5/slide_23.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Mạch tích hợp (Integrated Circuit - IC), hay còn gọi là chip, là một tập hợp các linh kiện điện tử được chế tạo trên một miếng vật liệu bán dẫn nhỏ.\n\nVí dụ về một chip <b>74LS00</b>: Chứa 4 cổng NAND 2 đầu vào (Quad NAND gates).",
+                    "terms": {
+                        "Integrated Circuit (IC)": "Một bộ các mạch điện tử trên một miếng vật liệu bán dẫn nhỏ, thường là silicon. IC là khối xây dựng cơ bản của tất cả các thiết bị điện tử hiện đại."
+                    }
                 },
                 {
                     "id": 24,
-                    "title": "Trang 24",
+                    "title": "Trang 24: Mảng Logic Lập trình được (PLA)",
                     "image": "images/computer_organization/week5/slide_24.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Một <b>mảng logic lập trình được (programmable logic array - PLA)</b> là một mạch tích hợp lập trình được - triển khai các mạch tổng-của-các-tích (cho phép nhiều đầu ra).\n\nNó có 2 giai đoạn:\n- Các cổng AND = các số hạng tích.\n- Các cổng OR = các đầu ra.\n\nCác kết nối giữa các đầu vào và các mặt phẳng có thể được 'ghi' (burned) để tạo ra các hàm logic mong muốn.",
+                    "terms": {
+                        "Programmable Logic Array (PLA)": "Một loại thiết bị logic lập trình được sử dụng để triển khai các mạch logic tổ hợp. Nó có một mảng AND lập trình được và một mảng OR lập trình được."
+                    }
                 },
                 {
                     "id": 25,
-                    "title": "Trang 25",
+                    "title": "Trang 25: Ví dụ về PLA (1/2)",
                     "image": "images/computer_organization/week5/slide_25.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa một ví dụ về cách một PLA được cấu hình để triển khai một bảng chân lý cụ thể. Các kết nối trong mặt phẳng AND được thiết lập để tạo ra các số hạng tích cần thiết, và các kết nối trong mặt phẳng OR kết hợp các số hạng tích đó để tạo ra các đầu ra cuối cùng (D, E, F).",
                     "terms": {}
                 },
                 {
                     "id": 26,
-                    "title": "Trang 26",
+                    "title": "Trang 26: Ví dụ về PLA (2/2)",
                     "image": "images/computer_organization/week5/slide_26.png",
-                    "notes": "",
+                    "notes": "Đây là một biểu diễn đơn giản hóa của PLA trước đó. Thay vì vẽ các cổng AND và OR một cách rõ ràng, nó sử dụng một sơ đồ lưới.\n\n- Các chấm đen biểu thị các kết nối được 'ghi' hoặc kích hoạt.\n- Các đường ngang trong mặt phẳng AND đại diện cho các số hạng tích.\n- Các đường ngang trong mặt phẳng OR đại diện cho các đầu ra.",
                     "terms": {}
                 },
                 {
                     "id": 27,
-                    "title": "Trang 27",
+                    "title": "Trang 27: Bộ nhớ Chỉ đọc (ROM)",
                     "image": "images/computer_organization/week5/slide_27.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Bộ nhớ Chỉ đọc (Read Only Memory - ROM)</b> có cấu trúc tương tự như PLA:\n- Tập hợp các đầu vào (được gọi là địa chỉ).\n- Tập hợp các đầu ra.\n- Ánh xạ lập trình được giữa đầu vào và đầu ra.\n\nROM được giải mã hoàn toàn: có thể triển khai bất kỳ ánh xạ nào. Ngược lại, PLA có thể không thể triển khai một ánh xạ cho trước do không có đủ minterms.",
+                    "terms": {
+                        "Read-Only Memory (ROM)": "Một loại bộ nhớ không khả biến được sử dụng trong máy tính và các thiết bị điện tử khác. Dữ liệu được lưu trong ROM không thể được sửa đổi một cách điện tử sau khi sản xuất."
+                    }
                 },
                 {
                     "id": 28,
-                    "title": "Trang 28",
+                    "title": "Trang 28: Bài tập Thực hành (1/3)",
                     "image": "images/computer_organization/week5/slide_28.png",
-                    "notes": "",
+                    "notes": "Trong vài buổi thực hành đầu tiên, bạn sẽ triển khai các mạch đơn giản bằng cách sử dụng Bộ thực hành Logic (Logic Trainer).",
                     "terms": {}
                 },
                 {
                     "id": 29,
-                    "title": "Trang 29",
+                    "title": "Trang 29: Bài tập Thực hành (2/3)",
                     "image": "images/computer_organization/week5/slide_29.png",
-                    "notes": "",
+                    "notes": "Các quy định cho buổi thực hành:\n\n- Các tờ bài tập sẽ được phát trong các buổi lý thuyết.\n- Nhớ đọc Hướng dẫn Thực hành và Bài #1 trước khi đến buổi thực hành đầu tiên.\n- Đối với các buổi thực hành tiếp theo, vui lòng đọc tờ bài tập và điền vào nhiều nhất có thể trước khi đến phòng thực hành.\n- Cố gắng hoàn thành thí nghiệm của bạn càng nhanh càng tốt. Rời khỏi phòng 10 phút trước khi hết giờ. Nếu không, chỉ cần nộp báo cáo thực hành của bạn.",
                     "terms": {}
                 },
                 {
                     "id": 30,
-                    "title": "Trang 30",
+                    "title": "Trang 30: Bài tập Thực hành (3/3)",
                     "image": "images/computer_organization/week5/slide_30.png",
-                    "notes": "",
+                    "notes": "Các quy định khác:\n\n- Sẽ không có buổi thực hành bù nếu bạn bỏ lỡ. Nếu bạn có lý do chính đáng, bạn sẽ được điểm \"EX\" (miễn) và điểm CA của bạn sẽ không bị ảnh hưởng.\n- Để tham dự một nhóm khác chỉ trong tuần đó với lý do chính đáng, vui lòng xin phép giảng viên, tốt nhất là trước ít nhất hai ngày.",
                     "terms": {}
                 },
                 {
                     "id": 31,
-                    "title": "Trang 31",
+                    "title": "Trang 31: Hỏi & Đáp",
                     "image": "images/computer_organization/week5/slide_31.png",
-                    "notes": "",
+                    "notes": "Kết thúc bài giảng Tuần 5. Bây giờ là thời gian cho các câu hỏi và trả lời.",
                     "terms": {}
                 }
             ]
@@ -1130,408 +1363,421 @@
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Karnaugh-Maps",
                     "image": "images/computer_organization/week6/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 6: Bìa Karnaugh (Karnaugh-Maps).",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week6/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week6/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Chúng ta đang ở đâu?",
                     "image": "images/computer_organization/week6/slide_4.png",
-                    "notes": "",
+                    "notes": "Sơ đồ này cho thấy vị trí của chủ đề 'Tối giản hóa' (Simplification) trong tổng thể môn học. Đây là một phần quan trọng của 'Thiết kế Logic'.",
                     "terms": {}
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: Đề cương - BÌA KARNAUGH",
                     "image": "images/computer_organization/week6/slide_5.png",
-                    "notes": "",
+                    "notes": "Các chủ đề chính trong chương này bao gồm:\n\n- Tối giản hóa Hàm.\n- Tối giản hóa Đại số.\n- Bộ bán cộng (Half Adder).\n- Giới thiệu về Bìa K-map.\n- Cách sử dụng Bìa K-map.\n- Chuyển đổi sang dạng Minterms.\n- Các Tế bào gốc nguyên tố (Prime Implicants).\n- Tìm biểu thức SOP tối thiểu.\n- Tìm biểu thức POS.\n- Các điều kiện 'Không quan tâm' (Don't-care Conditions).",
                     "terms": {}
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Tối giản hóa Hàm",
                     "image": "images/computer_organization/week6/slide_6.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Tại sao phải tối giản hóa?\n- Biểu thức đơn giản hơn sử dụng ít cổng logic hơn.\n- Do đó, rẻ hơn, tiêu thụ ít điện năng hơn, (đôi khi) nhanh hơn.\n\nCác kỹ thuật:\n- <b>Đại số (Algebraic):</b> Sử dụng các định lý, đòi hỏi kỹ năng.\n- <b>Bìa Karnaugh (Karnaugh Maps):</b> Dễ sử dụng, nhưng bị giới hạn không quá 6 biến.\n- <b>Quine-McCluskey:</b> Phù hợp cho tự động hóa, có thể xử lý nhiều biến.",
+                    "terms": {
+                        "Function Simplification": "Quá trình biến đổi một biểu thức Boolean phức tạp thành một biểu thức tương đương đơn giản hơn (ít số hạng hoặc ít literal hơn). Điều này dẫn đến việc triển khai mạch logic hiệu quả hơn.",
+                        "Karnaugh Map (K-map)": "Một phương pháp đồ họa được sử dụng để đơn giản hóa các biểu thức đại số Boolean. Bìa K-map là một cách biểu diễn bảng chân lý một cách trực quan, giúp dễ dàng nhóm các minterm lại với nhau."
+                    }
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Tối giản hóa Đại số (1/4)",
                     "image": "images/computer_organization/week6/slide_7.png",
-                    "notes": "",
+                    "notes": "Mục tiêu của việc tối giản hóa đại số là giảm thiểu:\n- Số lượng literals.\n- Số lượng số hạng (terms).\n\nĐôi khi các mục tiêu này mâu thuẫn với nhau, vì vậy chúng ta sẽ nhắm đến việc giảm số lượng literal trong các ví dụ tiếp theo. Việc này khá khó và cần kỹ năng thao tác đại số tốt.",
                     "terms": {}
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Tối giản hóa Đại số (2/4)",
                     "image": "images/computer_organization/week6/slide_8.png",
-                    "notes": "",
+                    "notes": "Ví dụ 1: Tối giản biểu thức `(x+y)·(x+y')·(x'+z)`.\n\nBằng cách áp dụng các luật phân phối, lũy đẳng, bù, và đồng nhất, chúng ta có thể rút gọn biểu thức ban đầu có 6 literal xuống còn `x·z` chỉ với 2 literal.",
                     "terms": {}
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Tối giản hóa Đại số (3/4)",
                     "image": "images/computer_organization/week6/slide_9.png",
-                    "notes": "",
+                    "notes": "Ví dụ 2: Tìm các biểu thức SOP và POS đã được tối giản của `F(x,y,z) = x'·y·(z+y'·x) + y'·z`.\n\n- Biểu thức ban đầu: `x'·y·(z+y'·x) + y'·z`\n- = `x'·y·z + x'·y·y'·x + y'·z`\n- = `x'·y·z + 0 + y'·z`\n- = `z·(x'·y + y')`\n- = `z·((x'+y')·(y+y'))` (luật phân phối ngược)\n- = `z·(x'+y')`\n\n- SOP tối giản: `x'·z + y'·z`\n- POS tối giản: `(x'+y')·z`",
                     "terms": {}
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Tối giản hóa Đại số (4/4)",
                     "image": "images/computer_organization/week6/slide_10.png",
-                    "notes": "",
+                    "notes": "Ví dụ 3: Tìm biểu thức SOP tối thiểu của `F(a,b,c,d) = a·b·c + a·b·d + a'·b·c' + c·d + b·d'`\n\n- = `a·b·(c+d) + a'·b·c' + c·d + b·d'` (gom `a·b`)\n- = `a·b·c + a·b·d + a'·b·c' + c·d + b·d'`\n- = `a·b·c + a'·b·c' + a·b·d + c·d + b·d'` (đổi chỗ)\n- = `b·(a·c + a'·c') + a·b·d + c·d + b·d'` (gom `b`)\n- = `b·(a⊙c)' + ...` (đây là cổng XNOR)\n\nKết quả cuối cùng sau khi áp dụng các định lý (đặc biệt là định lý đồng thuận):\n`a'·b·c' + a·b·d + b·d' + c·d`",
                     "terms": {}
                 },
                 {
                     "id": 11,
-                    "title": "Trang 11",
+                    "title": "Trang 11: Bộ Bán cộng (1/2)",
                     "image": "images/computer_organization/week6/slide_11.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Bộ bán cộng (Half adder)</b> là một mạch cộng 2 bit đơn (X, Y) để tạo ra một kết quả 2 bit (C, S).\n\n- S là bit Tổng (Sum).\n- C là bit Nhớ (Carry).\n\nSơ đồ hộp đen và bảng chân lý của bộ bán cộng được hiển thị bên dưới.",
+                    "terms": {
+                        "Half Adder": "Một mạch logic kỹ thuật số thực hiện phép cộng hai số nhị phân một bit. Nó có hai đầu vào (A và B) và hai đầu ra (Sum và Carry)."
+                    }
                 },
                 {
                     "id": 12,
-                    "title": "Trang 12",
+                    "title": "Trang 12: Bộ Bán cộng (2/2)",
                     "image": "images/computer_organization/week6/slide_12.png",
-                    "notes": "",
+                    "notes": "Từ bảng chân lý, chúng ta có thể viết các biểu thức ở dạng chính tắc (tổng-của-các-minterm):\n- <b>C = X·Y</b>\n- <b>S = X'·Y + X·Y'</b>\n\nĐầu ra S có thể được tối giản thêm (mặc dù không còn ở dạng SOP):\n- S = X'·Y + X·Y' = <b>X ⊕ Y</b> (Phép XOR)\n\nDo đó, một bộ bán cộng có thể được triển khai bằng một cổng XOR (cho S) và một cổng AND (cho C).",
                     "terms": {}
                 },
                 {
                     "id": 13,
-                    "title": "Trang 13",
+                    "title": "Trang 13: Giới thiệu về Bìa K-map",
                     "image": "images/computer_organization/week6/slide_13.png",
-                    "notes": "",
+                    "notes": "Đây là một phương pháp có hệ thống để thu được các biểu thức tổng-của-các-tích (SOP) đã được tối giản (tối thiểu).\n\n- <b>Mục tiêu:</b> Có được số lượng số hạng tích và literal ít nhất có thể.\n- Kỹ thuật dạng sơ đồ dựa trên một dạng đặc biệt của <b>sơ đồ Venn</b>.\n- <b>Ưu điểm:</b> Dễ sử dụng.\n- <b>Nhược điểm:</b> Bị giới hạn ở 5 hoặc 6 biến.",
                     "terms": {}
                 },
                 {
                     "id": 14,
-                    "title": "Trang 14",
+                    "title": "Trang 14: Sơ đồ Venn",
                     "image": "images/computer_organization/week6/slide_14.png",
-                    "notes": "",
+                    "notes": "Ví dụ: 2 biến a và b được biểu diễn bằng 2 vùng tròn. Có 4 minterm, mỗi cái chiếm không gian tương ứng của chúng.\n\nMột tập hợp các minterm đại diện cho một hàm Boolean nhất định. Bằng cách nhóm các vùng minterm lại với nhau, chúng ta có thể tối giản hóa các biểu thức.",
                     "terms": {}
                 },
                 {
                     "id": 15,
-                    "title": "Trang 15",
+                    "title": "Trang 15: Bìa K-map 2 biến (1/4)",
                     "image": "images/computer_organization/week6/slide_15.png",
-                    "notes": "",
+                    "notes": "Bìa Karnaugh (K-map) là một dạng trừu tượng của sơ đồ Venn, được tổ chức dưới dạng một <b>ma trận các ô vuông</b>, trong đó:\n\n- Mỗi ô vuông đại diện cho một minterm.\n- Hai ô vuông liền kề đại diện cho các minterm chỉ khác nhau <b>đúng một literal</b>.",
                     "terms": {}
                 },
                 {
                     "id": 16,
-                    "title": "Trang 16",
+                    "title": "Trang 16: Bìa K-map 2 biến (2/4)",
                     "image": "images/computer_organization/week6/slide_16.png",
-                    "notes": "",
+                    "notes": "Các cách bố trí thay thế của một K-map 2 biến (a, b). Dù các biến được đặt ở hàng hay cột, và thứ tự của các giá trị (ví dụ: a' trước a, hoặc ngược lại), miễn là quy tắc về sự liền kề được duy trì, nó vẫn là một K-map hợp lệ.",
                     "terms": {}
                 },
                 {
                     "id": 17,
-                    "title": "Trang 17",
+                    "title": "Trang 17: Bìa K-map 2 biến (3/4)",
                     "image": "images/computer_organization/week6/slide_17.png",
-                    "notes": "",
+                    "notes": "Cách dán nhãn thay thế của một K-map 2 biến (a, b). Thay vì sử dụng a' và a, chúng ta có thể sử dụng các giá trị nhị phân 0 và 1. Lưu ý cách thứ tự của các nhãn (ví dụ, 0 rồi 1, hoặc 1 rồi 0) ảnh hưởng đến vị trí của các minterm.",
                     "terms": {}
                 },
                 {
                     "id": 18,
-                    "title": "Trang 18",
+                    "title": "Trang 18: Bìa K-map 2 biến (4/4)",
                     "image": "images/computer_organization/week6/slide_18.png",
-                    "notes": "",
+                    "notes": "K-map cho một hàm được điền bằng cách:\n- Đặt một số <b>'1'</b> vào ô vuông tương ứng với một minterm của hàm.\n- Đặt <b>'0'</b> ở những nơi khác.\n\nVí dụ: K-map cho bộ bán cộng. Hàm C chỉ có '1' ở ô `a·b`. Hàm S có '1' ở các ô `a·b'` và `a'·b`.",
                     "terms": {}
                 },
                 {
                     "id": 19,
-                    "title": "Trang 19",
+                    "title": "Trang 19: Bìa K-map 3 biến (1/2)",
                     "image": "images/computer_organization/week6/slide_19.png",
-                    "notes": "",
+                    "notes": "Vì có 8 minterm cho 3 biến, nên sẽ có 8 ô vuông trong một K-map 3 biến. Ví dụ: cho các biến a, b, c.\n\nSự sắp xếp trên đảm bảo rằng các minterm của các ô liền kề chỉ khác nhau một literal. Lưu ý rằng các cột được sắp xếp theo <b>chuỗi mã Gray</b> (00, 01, 11, 10) để duy trì tính liền kề giữa cột cuối cùng (10) và cột đầu tiên (00).",
                     "terms": {}
                 },
                 {
                     "id": 20,
-                    "title": "Trang 20",
+                    "title": "Trang 20: Bìa K-map 3 biến (2/2)",
                     "image": "images/computer_organization/week6/slide_20.png",
-                    "notes": "",
+                    "notes": "Có sự <b>bao quanh (wrap-around)</b> trong K-map:\n- a'·b'·c' (m0) liền kề với a'·b·c' (m2).\n- a·b'·c' (m4) liền kề với a·b·c' (m6).\n\nNói chung, mỗi ô trong một K-map n biến có n hàng xóm liền kề. Ví dụ, m0 có 3 hàng xóm liền kề: m1, m2, và m4.",
                     "terms": {}
                 },
                 {
                     "id": 21,
-                    "title": "Trang 21",
+                    "title": "Trang 21: Câu hỏi Xem lại nhanh (1)",
                     "image": "images/computer_organization/week6/slide_21.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (1):\n\n- <b>5-1.</b> K-map của một hàm 3 biến F được hiển thị bên dưới. Biểu thức tổng-của-các-minterm của F là gì?\n  - Trả lời: `F = a'·b'·c' + a'·b·c + b'·c`\n- <b>5-2.</b> Vẽ K-map cho hàm A(x, y, z) = x·y + y·z' + x'·y'·z",
                     "terms": {}
                 },
                 {
                     "id": 22,
-                    "title": "Trang 22",
+                    "title": "Trang 22: Bìa K-map 4 biến (1/2)",
                     "image": "images/computer_organization/week6/slide_22.png",
-                    "notes": "",
+                    "notes": "Có 16 ô vuông trong một K-map 4 biến. Ví dụ: cho các biến w, x, y, z.\n\nSự bao quanh (wrap-around) bây giờ xảy ra ở cả chiều ngang và chiều dọc. Hàng dưới cùng liền kề với hàng trên cùng, và cột ngoài cùng bên phải liền kề với cột ngoài cùng bên trái.",
                     "terms": {}
                 },
                 {
                     "id": 23,
-                    "title": "Trang 23",
+                    "title": "Trang 23: Bìa K-map 4 biến (2/2)",
                     "image": "images/computer_organization/week6/slide_23.png",
-                    "notes": "",
+                    "notes": "Có 2 sự bao quanh. Mỗi ô có 4 hàng xóm liền kề.\n\nVí dụ: Ô tương ứng với minterm m0 có các hàng xóm là m1, m2, m4, và m8.",
                     "terms": {}
                 },
                 {
                     "id": 24,
-                    "title": "Trang 24",
+                    "title": "Trang 24: Bìa K-map 5 biến (1/2)",
                     "image": "images/computer_organization/week6/slide_24.png",
-                    "notes": "",
+                    "notes": "Các K-map có nhiều hơn 4 biến khó sử dụng hơn vì hình học (cấu hình siêu khối) để kết hợp các ô vuông liền kề trở nên phức tạp hơn.\n\nĐối với 5 biến, ví dụ: v, w, x, y, z, chúng ta cần 2⁵ = 32 ô vuông. Mỗi ô vuông có 5 hàng xóm.",
                     "terms": {}
                 },
                 {
                     "id": 25,
-                    "title": "Trang 25",
+                    "title": "Trang 25: Bìa K-map 5 biến (2/2)",
                     "image": "images/computer_organization/week6/slide_25.png",
-                    "notes": "",
+                    "notes": "Một K-map 5 biến được tổ chức thành hai K-map 4 biến. Một cho `v'` và cái còn lại cho `v`.\n\nCác ô vuông tương ứng của mỗi map là liền kề nhau. Bạn có thể hình dung đây là một K-map 4 biến nằm trên một K-map 4 biến khác.",
                     "terms": {}
                 },
                 {
                     "id": 26,
-                    "title": "Trang 26",
+                    "title": "Trang 26: Các Bìa K-map lớn hơn (1/2)",
                     "image": "images/computer_organization/week6/slide_26.png",
-                    "notes": "",
+                    "notes": "K-map 6 biến đang đẩy đến giới hạn khả năng 'nhận dạng mẫu' của con người.\n\nCác K-map lớn hơn 6 biến thực tế là chưa từng nghe thấy!\n\nThông thường, một K-map 6 biến được tổ chức thành bốn K-map 4 biến, được phản chiếu dọc theo hai trục.",
                     "terms": {}
                 },
                 {
                     "id": 27,
-                    "title": "Trang 27",
+                    "title": "Trang 27: Các Bìa K-map lớn hơn (2/2)",
                     "image": "images/computer_organization/week6/slide_27.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa một K-map 6 biến được tạo thành từ bốn K-map 4 biến. Thử thách khả năng nhận dạng của bạn bằng cách tìm biểu thức tổng-của-các-tích đơn giản nhất cho hàm đã cho.",
                     "terms": {}
                 },
                 {
                     "id": 28,
-                    "title": "Trang 28",
+                    "title": "Trang 28: Cách sử dụng K-map (1/7)",
                     "image": "images/computer_organization/week6/slide_28.png",
-                    "notes": "",
+                    "notes": "Cách sử dụng K-map dựa trên Định lý Hợp nhất (luật bù): <b>A + A' = 1</b>.\n\n- Trong một K-map, mỗi ô chứa số '1' tương ứng với một minterm của một hàm F cho trước.\n- Mỗi nhóm hợp lệ của các ô liền kề chứa số '1' sau đó tương ứng với một <b>số hạng tích đơn giản hơn</b> của F.\n- Một nhóm phải có kích thước là <b>lũy thừa của hai</b>: 1, 2, 4, 8, ...\n- Nhóm 2 ô liền kề loại bỏ 1 biến; nhóm 4 ô loại bỏ 2 biến; nhóm 8 ô loại bỏ 3 biến, và cứ thế.",
                     "terms": {}
                 },
                 {
                     "id": 29,
-                    "title": "Trang 29",
+                    "title": "Trang 29: Cách sử dụng K-map (2/7)",
                     "image": "images/computer_organization/week6/slide_29.png",
-                    "notes": "",
+                    "notes": "Các quy tắc để nhóm các ô:\n\n1. <b>Nhóm càng nhiều ô càng tốt.</b>\n   - Nhóm càng lớn, số lượng literal trong số hạng tích kết quả càng ít.\n\n2. <b>Chọn càng ít nhóm càng tốt để bao phủ tất cả các ô (minterms) của hàm.</b>\n   - Càng ít nhóm, số lượng số hạng tích trong biểu thức SOP tối giản càng ít.",
                     "terms": {}
                 },
                 {
                     "id": 30,
-                    "title": "Trang 30",
+                    "title": "Trang 30: Cách sử dụng K-map (3/7)",
                     "image": "images/computer_organization/week6/slide_30.png",
-                    "notes": "",
+                    "notes": "Ví dụ: `F(w,x,y,z) = Σ m(4, 5, 10, 11, 14, 15)`\n\nSlide này cho thấy cách điền các số '1' vào một K-map 4 biến dựa trên danh sách các minterm của một hàm.",
                     "terms": {}
                 },
                 {
                     "id": 31,
-                    "title": "Trang 31",
+                    "title": "Trang 31: Cách sử dụng K-map (4/7)",
                     "image": "images/computer_organization/week6/slide_31.png",
-                    "notes": "",
+                    "notes": "Mỗi nhóm các minterm liền kề tương ứng với một số hạng tích có thể có của hàm đã cho.\n\nỞ đây, có 2 nhóm minterm, A và B:\n- <b>Nhóm A:</b> Bao gồm hai ô `w'·x·y'·z'` và `w'·x·y'·z`. Khi nhóm lại, biến `z` bị loại bỏ, cho ra số hạng tích đơn giản hơn là `w'·x·y'`.\n- <b>Nhóm B:</b> Bao gồm bốn ô. Khi nhóm lại, cả hai biến `x` và `z` đều bị loại bỏ, cho ra số hạng tích đơn giản hơn là `w·y`.",
                     "terms": {}
                 },
                 {
                     "id": 32,
-                    "title": "Trang 32",
+                    "title": "Trang 32: Cách sử dụng K-map (5/7)",
                     "image": "images/computer_organization/week6/slide_32.png",
-                    "notes": "",
+                    "notes": "Mỗi số hạng tích tương ứng với một nhóm (`w'·x·y'` và `w·y`) đại diện cho tổng của các minterm trong nhóm đó.\n\nDo đó, biểu thức Boolean là tổng của các số hạng tích (SOP) đại diện cho tất cả các nhóm của các minterm của hàm:\n`F(w,x,y,z) = group A + group B = w'·x·y' + w·y`",
                     "terms": {}
                 },
                 {
                     "id": 33,
-                    "title": "Trang 33",
+                    "title": "Trang 33: Cách sử dụng K-map (6/7)",
                     "image": "images/computer_organization/week6/slide_33.png",
-                    "notes": "",
+                    "notes": "Nhóm càng lớn (chứa càng nhiều minterm), số lượng literal trong số hạng tích liên quan càng ít.\n\nHãy nhớ rằng một nhóm phải có kích thước là lũy thừa của hai.\n\n<b>Ví dụ:</b> Đối với K-map 4 biến:\n- 1 ô = 4 literals\n- 2 ô = 3 literals\n- 4 ô = 2 literals\n- 8 ô = 1 literal\n- 16 ô = 0 literal (hằng số 1)",
                     "terms": {}
                 },
                 {
                     "id": 34,
-                    "title": "Trang 34",
+                    "title": "Trang 34: Cách sử dụng K-map (7/7)",
                     "image": "images/computer_organization/week6/slide_34.png",
-                    "notes": "",
+                    "notes": "Ví dụ về các cách nhóm hợp lệ và không hợp lệ.\n\n- <b>Hợp lệ:</b> Các nhóm phải là hình chữ nhật (có tính đến sự bao quanh) và có kích thước là lũy thừa của hai (1, 2, 4, 8...).\n- <b>Không hợp lệ:</b> Các nhóm không phải hình chữ nhật (ví dụ: hình chữ L) hoặc có kích thước không phải là lũy thừa của hai (ví dụ: nhóm 3 ô, 6 ô) là không được phép.",
                     "terms": {}
                 },
                 {
                     "id": 35,
-                    "title": "Trang 35",
+                    "title": "Trang 35: Chuyển đổi sang dạng Minterms (1/2)",
                     "image": "images/computer_organization/week6/slide_35.png",
-                    "notes": "",
+                    "notes": "K-map của một hàm có thể được điền dễ dàng khi hàm được cho ở dạng tổng-của-các-minterm.\n\nNếu nó không ở dạng tổng-của-các-minterm thì sao?\n- Chuyển nó thành dạng tổng-của-các-tích (SOP).\n- Mở rộng biểu thức SOP thành biểu thức tổng-của-các-minterm, hoặc điền trực tiếp vào K-map dựa trên biểu thức SOP.",
                     "terms": {}
                 },
                 {
                     "id": 36,
-                    "title": "Trang 36",
+                    "title": "Trang 36: Chuyển đổi sang dạng Minterms (2/2)",
                     "image": "images/computer_organization/week6/slide_36.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa quá trình điền vào một K-map từ một biểu thức SOP không ở dạng chính tắc. Mỗi số hạng tích (ví dụ: `A·B·C'·D'`, `A·C·D'`) sẽ tương ứng với một nhóm các ô trên K-map. Bằng cách điền '1' vào tất cả các ô được bao phủ bởi các số hạng tích này, chúng ta có thể xây dựng K-map cho hàm.",
                     "terms": {}
                 },
                 {
                     "id": 37,
-                    "title": "Trang 37",
+                    "title": "Trang 37: PIs và EPIs (1/3)",
                     "image": "images/computer_organization/week6/slide_37.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Để tìm biểu thức SOP đơn giản nhất (tối thiểu) từ một K-map, bạn cần thu được:\n- Số lượng literal tối thiểu cho mỗi số hạng tích.\n- Số lượng số hạng tích tối thiểu.\n\nĐiều này đạt được thông qua K-map bằng cách sử dụng:\n- Các nhóm minterm <b>lớn hơn</b> (tế bào gốc nguyên tố - prime implicants) ở những nơi có thể.\n- <b>Không có nhóm dư thừa</b> (tìm kiếm các tế bào gốc nguyên tố thiết yếu - essential prime implicants).",
+                    "terms": {
+                        "Implicant": "Một số hạng tích bao phủ một hoặc nhiều minterm của một hàm Boolean."
+                    }
                 },
                 {
                     "id": 38,
-                    "title": "Trang 38",
+                    "title": "Trang 38: PIs và EPIs (2/3) - Prime Implicant",
                     "image": "images/computer_organization/week6/slide_38.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Tế bào gốc nguyên tố (Prime implicant - PI):</b> một số hạng tích thu được bằng cách kết hợp số lượng minterm <b>tối đa có thể</b> từ các ô vuông liền kề trong map. (Nghĩa là, đó là nhóm lớn nhất có thể).\n\nLuôn tìm kiếm các tế bào gốc nguyên tố trong một K-map. Hình bên trái là sai vì các nhóm có thể được mở rộng lớn hơn. Hình bên phải là đúng.",
+                    "terms": {
+                        "Prime Implicant (PI)": "Một implicant không thể được kết hợp với bất kỳ implicant nào khác để tạo thành một implicant lớn hơn (với ít literal hơn). Về mặt đồ họa, đây là nhóm các số '1' lớn nhất có thể mà bạn có thể khoanh vùng."
+                    }
                 },
                 {
                     "id": 39,
-                    "title": "Trang 39",
+                    "title": "Trang 39: PIs và EPIs (3/3) - Essential Prime Implicant",
                     "image": "images/computer_organization/week6/slide_39.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Quy tắc: Không có nhóm dư thừa.\n\n<b>Tế bào gốc nguyên tố thiết yếu (Essential prime implicant - EPI):</b> một tế bào gốc nguyên tố bao gồm ít nhất một minterm không được bao phủ bởi bất kỳ tế bào gốc nguyên tố nào khác.\n\nTrong ví dụ, cả hai nhóm màu xanh dương đều là EPI vì mỗi nhóm chứa một số '1' mà nhóm kia không bao phủ.",
+                    "terms": {
+                        "Essential Prime Implicant (EPI)": "Một prime implicant bao phủ ít nhất một minterm mà không một prime implicant nào khác có thể bao phủ. Tất cả các EPI đều phải có mặt trong biểu thức SOP tối thiểu cuối cùng."
+                    }
                 },
                 {
                     "id": 40,
-                    "title": "Trang 40",
+                    "title": "Trang 40: Câu hỏi Xem lại nhanh (2)",
                     "image": "images/computer_organization/week6/slide_40.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (2):\n\n- Sách DLD trang 106, câu hỏi 5-3.\n- <b>5-3.</b> Xác định các tế bào gốc nguyên tố (PIs) và các tế bào gốc nguyên tố thiết yếu (EPIs) của hai K-map bên dưới.",
                     "terms": {}
                 },
                 {
                     "id": 41,
-                    "title": "Trang 41",
+                    "title": "Trang 41: Ví dụ tìm SOP tối thiểu (1/4)",
                     "image": "images/computer_organization/week6/slide_41.png",
-                    "notes": "",
+                    "notes": "Thuật toán để tìm biểu thức SOP tối thiểu:\n\n1. Khoanh tròn tất cả các tế bào gốc nguyên tố (prime implicants - PIs) trên K-map.\n2. Xác định và chọn tất cả các tế bào gốc nguyên tố thiết yếu (essential prime implicants - EPIs) cho 'lớp phủ' (cover).\n3. Chọn một tập hợp con tối thiểu của các PIs còn lại để hoàn thành lớp phủ, tức là, để bao phủ những minterm chưa được bao phủ bởi các EPIs.",
                     "terms": {}
                 },
                 {
                     "id": 42,
-                    "title": "Trang 42",
+                    "title": "Trang 42: Ví dụ tìm SOP tối thiểu (2/4)",
                     "image": "images/computer_organization/week6/slide_42.png",
-                    "notes": "",
+                    "notes": "Ví dụ #1:\n`F(A,B,C,D) = Σ m(2,3,4,5,7,8,10,13,15)`\n\nSlide này hiển thị K-map đã được điền các số '1' tương ứng với các minterm của hàm F.",
                     "terms": {}
                 },
                 {
                     "id": 43,
-                    "title": "Trang 43",
+                    "title": "Trang 43: Ví dụ tìm SOP tối thiểu (3/4)",
                     "image": "images/computer_organization/week6/slide_43.png",
-                    "notes": "",
+                    "notes": "Slide này minh họa các bước của thuật toán:\n\n- <b>Tất cả PIs:</b> Khoanh tròn tất cả các nhóm lớn nhất có thể.\n- <b>Essential prime implicants:</b> Xác định các nhóm bao phủ ít nhất một số '1' mà không nhóm nào khác bao phủ.\n- <b>Câu trả lời:</b> Tập hợp các nhóm tối thiểu cần thiết để bao phủ tất cả các số '1'.",
                     "terms": {}
                 },
                 {
                     "id": 44,
-                    "title": "Trang 44",
+                    "title": "Trang 44: Ví dụ tìm SOP tối thiểu (4/4)",
                     "image": "images/computer_organization/week6/slide_44.png",
-                    "notes": "",
+                    "notes": "Kết quả cuối cùng của việc nhóm các EPIs và các PIs cần thiết khác, chúng ta thu được biểu thức SOP tối thiểu:\n\n`F(A,B,C,D) = C·D' + A'·B + B'·D'` (Có thể có nhiều câu trả lời tối thiểu khác nhau).",
                     "terms": {}
                 },
                 {
                     "id": 45,
-                    "title": "Trang 45",
+                    "title": "Trang 45: Câu hỏi Xem lại nhanh (3)",
                     "image": "images/computer_organization/week6/slide_45.png",
-                    "notes": "",
+                    "notes": "Câu hỏi xem lại nhanh (3):\n\n- Sách DLD trang 106-107, câu hỏi 5-4 đến 5-7.\n- <b>5-4.</b> Tìm biểu thức SOP tối thiểu cho G(A,B,C,D).",
                     "terms": {}
                 },
                 {
                     "id": 46,
-                    "title": "Trang 46",
+                    "title": "Trang 46: Tìm biểu thức POS (1/2)",
                     "image": "images/computer_organization/week6/slide_46.png",
-                    "notes": "",
+                    "notes": "Biểu thức <b>Tích-của-các-Tổng (POS)</b> đã được tối giản có thể thu được bằng cách nhóm các <b>maxterms</b> (tức là các số <b>0</b>) của hàm đã cho.\n\nVí dụ: Cho `F = Σm(0,1,2,3,5,7,8,9,10,11)`, chúng ta trước tiên vẽ K-map, sau đó nhóm các maxterm lại với nhau.",
                     "terms": {}
                 },
                 {
                     "id": 47,
-                    "title": "Trang 47",
+                    "title": "Trang 47: Tìm biểu thức POS (2/2)",
                     "image": "images/computer_organization/week6/slide_47.png",
-                    "notes": "",
+                    "notes": "Bằng cách nhóm các số 0 của F, chúng ta thực chất đang tìm biểu thức <b>SOP của F'</b> (phần bù của F).\n- Trong ví dụ, `F' = B·D' + A·B`.\n\nĐể có được <b>POS của F</b>, chúng ta lấy phần bù của F' và áp dụng định lý De Morgan:\n- `F = (F')' = (B·D' + A·B)'`\n- `F = (B·D')' · (A·B)'`\n- `F = (B' + D) · (A' + B')`",
                     "terms": {}
                 },
                 {
                     "id": 48,
-                    "title": "Trang 48",
+                    "title": "Trang 48: Điều kiện Không quan tâm (1/3)",
                     "image": "images/computer_organization/week6/slide_48.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "Trong một số vấn đề nhất định, một số đầu ra không được chỉ định hoặc không hợp lệ. Do đó, các đầu ra này có thể là '1' hoặc '0'.\n\nChúng được gọi là <b>điều kiện không quan tâm (don't-care conditions)</b>, ký hiệu là X (hoặc đôi khi là d).\n\nVí dụ: Một bộ tạo chẵn lẻ lẻ cho mã BCD có 6 tổ hợp không sử dụng (1010 đến 1111). Đầu ra cho các tổ hợp này là không quan tâm.",
+                    "terms": {
+                        "Don't-care Condition": "Trong K-map, đây là một đầu vào mà đầu ra của nó không quan trọng. Chúng ta có thể tùy ý coi các ô 'don't-care' là '1' hoặc '0' để tạo ra các nhóm lớn hơn và do đó có được một biểu thức đơn giản hơn."
+                    }
                 },
                 {
                     "id": 49,
-                    "title": "Trang 49",
+                    "title": "Trang 49: Điều kiện Không quan tâm (2/3)",
                     "image": "images/computer_organization/week6/slide_49.png",
-                    "notes": "",
+                    "notes": "Các điều kiện không quan tâm có thể được sử dụng để giúp tối giản hóa biểu thức Boolean hơn nữa trong K-map.\n\nChúng có thể được chọn là '1' hoặc '0', tùy thuộc vào lựa chọn nào cho kết quả là một biểu thức đơn giản hơn.\n\nChúng ta thường sử dụng ký hiệu `Σd` để biểu thị tập hợp các minterm không quan tâm.",
                     "terms": {}
                 },
                 {
                     "id": 50,
-                    "title": "Trang 50",
+                    "title": "Trang 50: Điều kiện Không quan tâm (3/3)",
                     "image": "images/computer_organization/week6/slide_50.png",
-                    "notes": "",
+                    "notes": "So sánh việc tối giản hóa có và không có các điều kiện không quan tâm.\n\n- <b>Không có 'don't-cares':</b> Cần các nhóm nhỏ hơn, dẫn đến một biểu thức phức tạp hơn.\n- <b>Với 'don't-cares':</b> Chúng ta có thể sử dụng các ô 'X' như thể chúng là '1' để tạo ra các nhóm lớn hơn nhiều. Điều này cho phép chúng ta có được một biểu thức SOP tối thiểu đơn giản hơn đáng kể.",
                     "terms": {}
                 },
                 {
                     "id": 51,
-                    "title": "Trang 51",
+                    "title": "Trang 51: Thêm Ví dụ (1/6)",
                     "image": "images/computer_organization/week6/slide_51.png",
-                    "notes": "",
+                    "notes": "Ví dụ #2: `F(A,B,C,D) = A·B·C + B'·C·D' + A·D + B'·C'·D'`\n\nBước đầu tiên là điền các số '1' vào K-map dựa trên biểu thức SOP đã cho. Mỗi số hạng tích sẽ tương ứng với một hoặc nhiều ô '1' trên bản đồ.",
                     "terms": {}
                 },
                 {
                     "id": 52,
-                    "title": "Trang 52",
+                    "title": "Trang 52: Thêm Ví dụ (2/6)",
                     "image": "images/computer_organization/week6/slide_52.png",
-                    "notes": "",
+                    "notes": "Bước tiếp theo là tìm tất cả các Tế bào gốc Nguyên tố (PIs) và chọn ra các Tế bào gốc Nguyên tố Thiết yếu (EPIs) để tạo thành lớp phủ tối thiểu.\n\nCâu trả lời cuối cùng cho biểu thức SOP tối thiểu là:\n`F(A,B,C,D) = A·D + B'·C'·D' + A·B·C` (hoặc một biểu thức tương đương khác như `A·D + B'·C'·D' + B'·C·D'`).",
                     "terms": {}
                 },
                 {
                     "id": 53,
-                    "title": "Trang 53",
+                    "title": "Trang 53: Thêm Ví dụ (3/6)",
                     "image": "images/computer_organization/week6/slide_53.png",
-                    "notes": "",
+                    "notes": "Ví dụ #3 (với điều kiện không quan tâm):\n`F(A,B,C,D) = Σm(2,8,10,15) + Σd(0,1,3,7)`\n\nBước đầu tiên là điền các số '1' và các chữ 'X' (don't-cares) vào K-map.",
                     "terms": {}
                 },
                 {
                     "id": 54,
-                    "title": "Trang 54",
+                    "title": "Trang 54: Thêm Ví dụ (4/6)",
                     "image": "images/computer_organization/week6/slide_54.png",
-                    "notes": "",
+                    "notes": "Khi nhóm các ô, chúng ta có thể sử dụng các ô 'X' như thể chúng là '1' để tạo ra các nhóm lớn hơn.\n\nCâu trả lời cuối cùng cho biểu thức SOP tối thiểu là:\n`F(A,B,C,D) = B·D' + C·D`\n\nChúng ta không cần thêm một số hạng `A'·B'` để bao phủ 2 ô 'X' còn lại, vì tất cả các ô '1' đã được bao phủ.",
                     "terms": {}
                 },
                 {
                     "id": 55,
-                    "title": "Trang 55",
+                    "title": "Trang 55: Thêm Ví dụ (5/6)",
                     "image": "images/computer_organization/week6/slide_55.png",
-                    "notes": "",
+                    "notes": "Tìm biểu thức POS đơn giản nhất cho ví dụ #2.\n\n1. Vẽ K-map của phần bù của F, tức là F'. Điều này được thực hiện bằng cách điền '1' vào những nơi F có '0'.\n2. Tìm biểu thức SOP cho F'. Từ K-map, `F' = B·D + A'·D'`.\n3. Sử dụng định lý De Morgan để tìm F từ F':\n   `F = (F')' = (B·D + A'·D')'`\n   `F = (B·D)' · (A'·D')'`\n   `F = (B' + D') · (A + D)`",
                     "terms": {}
                 },
                 {
                     "id": 56,
-                    "title": "Trang 56",
+                    "title": "Trang 56: Thêm Ví dụ (6/6)",
                     "image": "images/computer_organization/week6/slide_56.png",
-                    "notes": "",
+                    "notes": "Tìm biểu thức POS đơn giản nhất cho ví dụ #3.\n\n1. Vẽ K-map của F'. Các minterm của F' là những minterm không có trong F (cả minterm '1' và minterm 'don't-care').\n   `F'(A,B,C,D) = Σm(4,5,6,9,11,12,13,14) + Σd(0,1,3,7)`\n2. Tìm biểu thức SOP cho F' bằng cách nhóm các số '1' (và 'X') trong K-map của F'.\n   `F' = C + A'·D + A·B·D'`\n3. Sử dụng định lý De Morgan để tìm F:\n   `F = (C + A'·D + A·B·D')'`\n   `F = C' · (A'·D)' · (A·B·D')'`\n   `F = C' · (A + D') · (A' + B' + D)`",
                     "terms": {}
                 },
                 {
                     "id": 57,
-                    "title": "Trang 57",
+                    "title": "Trang 57: Bài tập Đọc",
                     "image": "images/computer_organization/week6/slide_57.png",
-                    "notes": "",
+                    "notes": "<b>Bài tập về nhà:</b>\n\n- <b>Các giải pháp thay thế (Alternative Solutions):</b> Đọc sách DLD mục 5.8, trang 101.\n- <b>Quine-McCluskey:</b> Không có trong đề cương, nhưng giúp hiểu sâu hơn. Đọc sách DLD mục 5.10, trang 103 – 105.",
                     "terms": {}
                 },
                 {
                     "id": 58,
-                    "title": "Trang 58",
+                    "title": "Trang 58: Hỏi & Đáp",
                     "image": "images/computer_organization/week6/slide_58.png",
-                    "notes": "",
+                    "notes": "Kết thúc bài giảng Tuần 6. Bây giờ là thời gian cho các câu hỏi và trả lời.",
                     "terms": {}
                 }
             ]
