@@ -1783,83 +1783,80 @@
             ]
         },
         {
-            "title": "Tuần 7: Combinational Circuits",
+            "title": "Tuần 7: Quine-McCluskey",
             "slides": [
                 {
                     "id": 1,
-                    "title": "Trang 1",
+                    "title": "Trang 1: Bìa - Quine-McCluskey",
                     "image": "images/computer_organization/week7/slide_1.png",
-                    "notes": "",
+                    "notes": "Bài giảng Tuần 7: Phương pháp Quine-McCluskey.",
                     "terms": {}
                 },
                 {
                     "id": 2,
-                    "title": "Trang 2",
+                    "title": "Trang 2: Lời cảm ơn (Acknowledgement)",
                     "image": "images/computer_organization/week7/slide_2.png",
-                    "notes": "",
+                    "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
                     "terms": {}
                 },
                 {
                     "id": 3,
-                    "title": "Trang 3",
+                    "title": "Trang 3: Chính sách cho sinh viên",
                     "image": "images/computer_organization/week7/slide_3.png",
-                    "notes": "",
+                    "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
                     "terms": {}
                 },
                 {
                     "id": 4,
-                    "title": "Trang 4",
+                    "title": "Trang 4: Giới thiệu Quine-McCluskey",
                     "image": "images/computer_organization/week7/slide_4.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Quine-McCluskey</b> là một phương pháp lập bảng (tabulation) có khái niệm tương tự như Bìa K-map.\n\n- Áp dụng được cho các hàm với bất kỳ số lượng biến nào.\n- Tẻ nhạt trên giấy, nhưng có thể được tự động hóa (lập trình).\n- Không nằm trong phần thi, nhưng biết nó có thể nâng cao sự hiểu biết của bạn về K-map.",
+                    "terms": {
+                        "Quine-McCluskey algorithm": "Một phương pháp dạng bảng được sử dụng để tối giản hóa các hàm Boolean. Nó hiệu quả hơn Bìa K-map khi xử lý một số lượng lớn các biến và có thể được lập trình trên máy tính."
+                    }
                 },
                 {
                     "id": 5,
-                    "title": "Trang 5",
+                    "title": "Trang 5: PIs và EPIs (Xem lại)",
                     "image": "images/computer_organization/week7/slide_5.png",
-                    "notes": "",
+                    "notes": "Để tìm biểu thức SOP đơn giản nhất (tối thiểu) từ một K-map, bạn cần thu được:\n\n- Số lượng literal tối thiểu cho mỗi số hạng tích; và\n- Số lượng số hạng tích tối thiểu.\n\nĐiều này đạt được thông qua K-map bằng cách sử dụng các nhóm minterm lớn hơn (prime implicants) và không có nhóm dư thừa (tìm kiếm essential prime implicants).",
                     "terms": {}
                 },
                 {
                     "id": 6,
-                    "title": "Trang 6",
+                    "title": "Trang 6: Ví dụ - Bước 1",
                     "image": "images/computer_organization/week7/slide_6.png",
-                    "notes": "",
+                    "notes": "Ví dụ: `F(A,B,C,D) = Σm(2,3,4,5,7,8,10,13,15)`\n\n<b>Bước 1:</b> Liệt kê tất cả các minterm thành các nhóm có cùng số lượng bit '1' trong mã nhị phân của chúng.",
                     "terms": {}
                 },
                 {
                     "id": 7,
-                    "title": "Trang 7",
+                    "title": "Trang 7: Ví dụ - Bước 2",
                     "image": "images/computer_organization/week7/slide_7.png",
-                    "notes": "",
+                    "notes": "<b>Bước 2:</b> Kết hợp các mã chỉ khác nhau 1 bit thành một nhóm lớn hơn, viết mã kết hợp vào cột tiếp theo. Đánh dấu các mã đã được kết hợp.\n\nVí dụ: `2 (0010)` và `3 (0011)` khác nhau 1 bit, chúng được kết hợp thành `2,3: 001-`.",
                     "terms": {}
                 },
                 {
                     "id": 8,
-                    "title": "Trang 8",
+                    "title": "Trang 8: Ví dụ - Bước 3",
                     "image": "images/computer_organization/week7/slide_8.png",
-                    "notes": "",
+                    "notes": "<b>Bước 3:</b> Lặp lại Bước 2 - Kết hợp các mã ở cột thứ hai chỉ khác nhau 1 bit thành một nhóm lớn hơn nữa, viết mã kết hợp vào cột tiếp theo.\n\nVí dụ: `5,7: 01-1` và `13,15: 11-1` khác nhau 1 bit, chúng được kết hợp thành `5,7,13,15: -1-1`.\n\nLặp lại cho đến khi không thể kết hợp thêm được nữa. Các số hạng không được đánh dấu trong quá trình này chính là các Tế bào gốc Nguyên tố (Prime Implicants). Chúng ta đã hoàn thành <b>Giai đoạn 1</b>.",
                     "terms": {}
                 },
                 {
                     "id": 9,
-                    "title": "Trang 9",
+                    "title": "Trang 9: Ví dụ - Giai đoạn 2",
                     "image": "images/computer_organization/week7/slide_9.png",
-                    "notes": "",
-                    "terms": {}
+                    "notes": "<b>Giai đoạn 2:</b> Xác định các Tế bào gốc Nguyên tố Thiết yếu (EPIs).\n\n- Vẽ một biểu đồ PI (PI chart).\n- Các EPIs là ở đâu? Hãy tìm các cột chỉ chứa một dấu tích duy nhất. Trong ví dụ này, đó là các cột 4, 8, và 15.\n- Các EPIs là các PI bao phủ các cột đó: `A'.B.C'`, `A.B'.D'`, và `B.D`.",
+                    "terms": {
+                        "Prime Implicant Chart": "Một bảng được sử dụng trong thuật toán Quine-McCluskey để tìm ra tập hợp tối thiểu các prime implicant cần thiết để bao phủ một hàm. Các hàng đại diện cho các prime implicant và các cột đại diện cho các minterm."
+                    }
                 },
                 {
                     "id": 10,
-                    "title": "Trang 10",
+                    "title": "Trang 10: Ví dụ - Giai đoạn 2 (Tiếp theo)",
                     "image": "images/computer_organization/week7/slide_10.png",
-                    "notes": "",
-                    "terms": {}
-                },
-                {
-                    "id": 11,
-                    "title": "Trang 11",
-                    "image": "images/computer_organization/week7/slide_11.png",
-                    "notes": "",
+                    "notes": "<b>Giai đoạn 2 (Tiếp theo):</b> Sau khi xác định các EPIs.\n\n1. Tìm ra các minterm được bao phủ bởi các EPIs. (Trong ví dụ, các EPIs đã bao phủ các minterm 4, 5, 7, 8, 10, 13, 15).\n2. Loại bỏ các EPIs và các minterm chúng bao phủ khỏi biểu đồ → <b>biểu đồ PI đã được rút gọn</b>.\n3. Tìm số lượng tối thiểu các PIs còn lại để bao phủ các minterm còn lại (trong trường hợp này là 2 và 3).\n\nKết quả cuối cùng là tổng của các EPIs và các PIs đã chọn: `B.D + A'.B.C' + A.B'.D' + A'.B'.C`.",
                     "terms": {}
                 }
             ]
