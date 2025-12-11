@@ -8,18 +8,78 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: #007bff; /* Màu chủ đạo giả định */
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- === SIDEBAR CHÍNH (BÊN TRÁI) - CÓ HEADER VÀ NÚT ĐÓNG === -->
+    <!-- === SIDEBAR CHÍNH (BÊN TRÁI) === -->
     <nav id="left-sidebar" class="sidebar left-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo-container">
                 <img src="images/logo.png" alt="Slidify Logo" class="logo">
-
             </div>
             <button id="close-left-sidebar-btn" class="close-sidebar-btn">
                 <i class="fas fa-times"></i>
@@ -28,14 +88,18 @@
         <a href="index.html">Trang Chủ</a>
         <a href="#">Giới Thiệu</a>
     </nav>
+    
     <!-- === LỚP PHỦ (OVERLAY) === -->
     <div id="overlay"></div>
 
-    <!-- Header của bạn sẽ được nạp vào đây -->
+    <!-- Header Placeholder -->
     <header id="header-placeholder"></header>
 
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <main class="homepage-main">
-        <h1>Chào mừng đến với Slidify</h1>
+        <h1 id="welcome-title">Chào mừng đến với Slidify</h1>
         <p>Chọn một môn học bên dưới để bắt đầu ghi chú và khám phá kiến thức.</p>
 
         <div id="course-list-container" class="course-list-container">
@@ -48,8 +112,11 @@
     <!-- Nhúng các file JS cần thiết -->
     <script src="js/main.js"></script>
 
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
-        // Hàm load header/footer (có thể tách ra file js/main.js nếu muốn)
+        // Hàm load header/footer
         function loadComponent(filePath, elementId) {
             fetch(filePath)
                 .then(response => response.text())
@@ -63,13 +130,13 @@
 
             // Hiển thị danh sách môn học từ courses.json
             const courseContainer = document.getElementById('course-list-container');
+            
             fetch('js/courses.json')
                 .then(response => response.json())
                 .then(courses => {
                     courses.forEach(course => {
                         const courseCard = document.createElement('a');
                         courseCard.className = 'course-card';
-                        // Link đến trang học với tham số ?course=...
                         courseCard.href = `subject.html?course=${course.id}`;
 
                         courseCard.innerHTML = `
@@ -81,12 +148,82 @@
                         `;
                         courseContainer.appendChild(courseCard);
                     });
+
+                    // === 4. KHỞI TẠO TOUR SAU KHI DỮ LIỆU ĐÃ LOAD ===
+                    // Chúng ta gọi hàm initTour ở đây để đảm bảo các thẻ course-card đã xuất hiện
+                    initSlidifyTour();
                 })
                 .catch(error => {
                     console.error('Error loading courses:', error);
                     courseContainer.innerHTML = '<p>Lỗi khi tải danh sách môn học.</p>';
                 });
         });
+
+        function initSlidifyTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Bắt đầu học ngay!',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme', // Class CSS tùy chỉnh
+                steps: [
+                    { 
+                        element: '#welcome-title', 
+                        popover: { 
+                            title: 'Chào mừng đến với Slidify! 🎓', 
+                            description: 'Nền tảng hỗ trợ học tập và ghi chú thông minh của bạn.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#header-placeholder', 
+                        popover: { 
+                            title: 'Thanh công cụ', 
+                            description: 'Nơi bạn có thể tìm kiếm bài giảng hoặc truy cập các cài đặt hiển thị.', // Đã sửa nội dung tại đây
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#course-list-container', 
+                        popover: { 
+                            title: 'Kho môn học', 
+                            description: 'Tất cả các môn học hiện có đều nằm ở đây. Hãy chọn một môn để bắt đầu xem bài giảng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào nút này bất cứ lúc nào nếu bạn muốn xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenSlidifyTour');
+            if (!hasSeenTour) {
+                // Delay 500ms để đảm bảo layout ổn định hoàn toàn
+                setTimeout(() => {
+                    driverObj.drive();
+                    localStorage.setItem('hasSeenSlidifyTour', 'true');
+                }, 500);
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

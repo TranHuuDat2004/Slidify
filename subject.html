@@ -10,17 +10,77 @@
     <link rel="stylesheet" href="css/subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: #007bff; /* Màu chủ đạo */
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
-
 
     <!-- === SIDEBAR CHÍNH (BÊN TRÁI) - CÓ HEADER VÀ NÚT ĐÓNG === -->
     <nav id="left-sidebar" class="sidebar left-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo-container">
                 <img src="images/logo.png" alt="Slidify Logo" class="logo">
-
             </div>
             <button id="close-left-sidebar-btn" class="close-sidebar-btn">
                 <i class="fas fa-times"></i>
@@ -35,6 +95,9 @@
 
     <!-- Header của bạn sẽ được nạp vào đây -->
     <header id="header-placeholder"></header>
+
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
 
     <div class="main-container">
         <!-- Khu vực hiển thị slide chính -->
@@ -108,8 +171,102 @@
     <!-- Đã cập nhật đường dẫn các file JS -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
-
     <script src="js/script.js"></script>
+
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Khởi tạo tour sau khi trang đã load xong
+            // Delay nhẹ 1s để đảm bảo ảnh và dữ liệu từ js/script.js đã render xong
+            setTimeout(() => {
+                initSubjectTour();
+            }, 1000);
+        });
+
+        function initSubjectTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.slide-image-container', 
+                        popover: { 
+                            title: 'Màn hình chiếu', 
+                            description: 'Nội dung bài giảng sẽ hiển thị chính ở đây.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.zoom-controls', 
+                        popover: { 
+                            title: 'Thu phóng', 
+                            description: 'Bạn có thể phóng to hoặc thu nhỏ slide để xem rõ hơn.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.slide-nav-buttons', 
+                        popover: { 
+                            title: 'Điều hướng', 
+                            description: 'Sử dụng các nút này để chuyển slide. Bạn cũng có thể dùng phím mũi tên Trái/Phải trên bàn phím.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.notes-section', 
+                        popover: { 
+                            title: 'Ghi chú & Thuật ngữ', 
+                            description: 'Bản dịch chi tiết và giải thích các thuật ngữ khó của slide hiện tại sẽ nằm ở đây.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.slide-sidebar', 
+                        popover: { 
+                            title: 'Mục lục', 
+                            description: 'Danh sách toàn bộ các slide trong chương. Bấm vào tiêu đề để nhảy nhanh đến slide đó.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây nếu bạn muốn xem lại hướng dẫn này.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu cho trang subject
+            // Dùng key khác với trang chủ để không bị trùng lặp
+            const hasSeenSubjectTour = localStorage.getItem('hasSeenSubjectTour');
+            if (!hasSeenSubjectTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenSubjectTour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
+    </script>
 </body>
 
 </html>
