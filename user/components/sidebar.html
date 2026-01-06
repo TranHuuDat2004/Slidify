@@ -1,0 +1,49 @@
+<!-- SIDEBAR CONTENT -->
+<div class="flex flex-col h-full p-6">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 mb-10 cursor-pointer" onclick="resetHome()">
+        <div
+            class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+            <i class="ph-bold ph-chats-circle text-lg"></i>
+        </div>
+        <span class="font-bold text-lg tracking-tight text-slate-800">UniChat<span
+                class="text-indigo-600">.</span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="space-y-2 flex-1">
+        <a href="#" onclick="resetHome()"
+            class="flex items-center gap-3 px-4 py-3 bg-white/50 text-indigo-700 rounded-xl font-semibold shadow-sm border border-white/50">
+            <i class="ph-fill ph-house text-xl"></i>
+            <span>Trang chủ</span>
+        </a>
+        <a href="my-documents.html"
+            class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-white/40 hover:text-slate-700 rounded-xl transition">
+            <i class="ph ph-files text-xl"></i>
+            <span>Tài liệu của tôi</span>
+        </a>
+        <a href="history.html"
+            class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-white/40 hover:text-slate-700 rounded-xl transition">
+            <i class="ph ph-clock-counter-clockwise text-xl"></i>
+            <span>Lịch sử câu hỏi</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-white/40 hover:text-slate-700 rounded-xl transition">
+            <i class="ph ph-bookmark-simple text-xl"></i>
+            <span>Đã lưu</span>
+        </a>
+    </nav>
+
+    <!-- Bottom Actions -->
+    <div class="space-y-2 mt-auto pt-6 border-t border-slate-200/50">
+        <a href="settings.html"
+            class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-white/40 hover:text-slate-700 rounded-xl transition">
+            <i class="ph ph-gear text-xl"></i>
+            <span>Cài đặt</span>
+        </a>
+        <button onclick="toggleSidebar()"
+            class="md:hidden flex items-center gap-3 px-4 py-3 text-red-500 rounded-xl w-full hover:bg-red-50 transition">
+            <i class="ph ph-x text-xl"></i> Đóng Menu
+        </button>
+    </div>
+</div>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt tài khoản - UniChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #4F46E5;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body
+    class="text-slate-700 h-screen flex overflow-hidden bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center">
+
+    <!-- Privacy Layer -->
+    <div class="absolute inset-0 bg-slate-50/95 z-0"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 glass-panel h-full relative z-20 hidden md:flex transition-all duration-300" id="sidebar">
+        <!-- Loaded via JS -->
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="flex-1 flex flex-col h-full relative z-10 overflow-hidden">
+        <!-- Header -->
+        <header
+            class="h-16 border-b border-slate-200 bg-white/50 backdrop-blur flex items-center justify-between px-6 shrink-0">
+            <h1 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <i class="ph-fill ph-gear text-indigo-600"></i> Cài đặt tài khoản
+            </h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-6">
+            <div class="max-w-3xl mx-auto space-y-6">
+
+                <!-- Profile Section -->
+                <div class="bg-white/80 backdrop-blur border border-slate-200 rounded-2xl p-6 shadow-sm">
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i class="ph-duotone ph-user-circle text-2xl text-indigo-600"></i> Thông tin cá nhân
+                    </h2>
+
+                    <div class="flex items-start gap-6">
+                        <div class="flex flex-col items-center gap-2">
+                            <img src="https://ui-avatars.com/api/?name=Dat+Nguyen&background=random"
+                                class="w-24 h-24 rounded-full shadow-md border-4 border-white">
+                            <button class="text-xs font-semibold text-indigo-600 hover:text-indigo-700">Đổi ảnh đại
+                                diện</button>
+                        </div>
+
+                        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1">Họ và tên</label>
+                                <input type="text" value="Nguyễn Hữu Đạt"
+                                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1">Mã sinh viên</label>
+                                <input type="text" value="20206267"
+                                    class="w-full px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-500 cursor-not-allowed"
+                                    disabled>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1">Email</label>
+                                <input type="email" value="dat.nh206267@sis.hust.edu.vn"
+                                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 mb-1">Số điện thoại</label>
+                                <input type="tel" value="0987654321"
+                                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences Settings -->
+                <div class="bg-white/80 backdrop-blur border border-slate-200 rounded-2xl p-6 shadow-sm">
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i class="ph-duotone ph-sliders text-2xl text-indigo-600"></i> Tùy chỉnh
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50">
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-700">Chế độ tối (Dark Mode)</h4>
+                                <p class="text-xs text-slate-400">Chuyển sang giao diện tối giúp bảo vệ mắt</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50">
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-700">Thông báo (Notifications)</h4>
+                                <p class="text-xs text-slate-400">Nhận thông báo về lịch học và câu trả lời mới</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="bg-white/80 backdrop-blur border border-slate-200 rounded-2xl p-6 shadow-sm">
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i class="ph-duotone ph-shield-check text-2xl text-indigo-600"></i> Bảo mật
+                    </h2>
+                    <button
+                        class="flex items-center justify-between w-full p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-500 shadow-sm">
+                                <i class="ph-bold ph-password"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-sm font-semibold text-slate-700">Đổi mật khẩu</h4>
+                                <p class="text-xs text-slate-400">Cập nhật mật khẩu định kỳ để bảo vệ tài khoản</p>
+                            </div>
+                        </div>
+                        <i class="ph-bold ph-caret-right text-slate-400"></i>
+                    </button>
+
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <button class="text-sm font-medium text-red-600 hover:text-red-700 flex items-center gap-2">
+                            <i class="ph-bold ph-sign-out"></i> Đăng xuất
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSidebar();
+        });
+
+        async function loadSidebar() {
+            try {
+                const response = await fetch('components/sidebar.html');
+                const html = await response.text();
+                const container = document.getElementById('sidebar');
+                container.innerHTML = html;
+
+                // Highlight active link
+                const navLinks = container.querySelectorAll('nav a');
+                // Settings is in bottom div, usually last one or explicitly found
+                // The sidebar structure in `sidebar.html` shows links inside `nav` and bottom div.
+                // We'll iterate to find href="settings.html" once updated, or index.
+                // For now, let's just create a quick logic to find 'Cài đặt'
+
+                const allLinks = container.querySelectorAll('a');
+                allLinks.forEach(link => {
+                    if (link.textContent.includes('Cài đặt')) {
+                        link.classList.remove('text-slate-500', 'hover:bg-white/40');
+                        link.classList.add('bg-white/50', 'text-indigo-700', 'font-semibold', 'shadow-sm', 'border', 'border-white/50');
+                    }
+                });
+
+            } catch (error) {
+                console.error("Failed to load sidebar", error);
+            }
+        }
+
+        function resetHome() {
+            window.location.href = 'index.html';
+        }
+        function toggleSidebar() { }
+    </script>
+</body>
+
+</html>

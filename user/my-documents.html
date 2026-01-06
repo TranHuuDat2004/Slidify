@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu của tôi - UniChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #4F46E5;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .doc-item.active {
+            background-color: #eff6ff;
+            /* blue-50 */
+            border-left: 3px solid #4F46E5;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body
+    class="text-slate-700 h-screen flex overflow-hidden bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center">
+
+    <!-- Privacy Layer -->
+    <div class="absolute inset-0 bg-slate-50/95 z-0"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 glass-panel h-full relative z-20 hidden md:flex transition-all duration-300" id="sidebar">
+        <!-- Loaded via JS -->
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="flex-1 flex flex-col h-full relative z-10 overflow-hidden">
+
+        <!-- Header -->
+        <header
+            class="h-16 border-b border-slate-200 bg-white/50 backdrop-blur flex items-center justify-between px-6 shrink-0">
+            <h1 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <i class="ph-fill ph-files text-indigo-600"></i> Tài liệu của tôi
+            </h1>
+
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-2.5 text-slate-400"></i>
+                    <input type="text" placeholder="Tìm kiếm tài liệu..."
+                        class="pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 w-64">
+                </div>
+                <button
+                    class="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition shadow-sm">
+                    <i class="ph-bold ph-upload-simple"></i> Upload
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Split View -->
+        <main class="flex-1 flex overflow-hidden">
+
+            <!-- List View (Left) -->
+            <div class="w-1/3 border-r border-slate-200 bg-white/60 flex flex-col">
+                <div
+                    class="p-4 border-b border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                    <span>Tên file</span>
+                    <span>Ngày</span>
+                </div>
+                <!-- File List -->
+                <div class="flex-1 overflow-y-auto p-2 space-y-1" id="fileList">
+                    <!-- Dynamic Items -->
+                </div>
+            </div>
+
+            <!-- Preview View (Right) -->
+            <div class="flex-1 bg-slate-100 relative flex flex-col">
+
+                <!-- Empty State -->
+                <div id="emptyState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
+                    <i class="ph ph-file-text text-6xl mb-4 text-slate-300"></i>
+                    <p>Chọn một tài liệu để xem trước</p>
+                </div>
+
+                <!-- Viewer Container (Hidden initially) -->
+                <div id="viewerContainer" class="hidden flex-1 flex flex-col h-full">
+                    <!-- Toolbar -->
+                    <div
+                        class="h-12 bg-white border-b border-slate-200 flex items-center justify-between px-4 shrink-0">
+                        <div class="flex items-center gap-3">
+                            <span id="previewIcon" class="p-1 rounded bg-slate-100"></span>
+                            <span id="previewTitle"
+                                class="font-medium text-sm text-slate-700 truncate max-w-[300px]">Filename.pdf</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a href="#" id="downloadBtn" class="p-2 hover:bg-slate-100 rounded text-slate-500"
+                                title="Download">
+                                <i class="ph ph-download-simple"></i>
+                            </a>
+                            <button onclick="closePreview()"
+                                class="p-2 hover:bg-red-50 text-slate-400 hover:text-red-500 rounded" title="Close">
+                                <i class="ph ph-x"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Iframe -->
+                    <div class="flex-1 bg-slate-200 p-4 overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center z-0">
+                            <i class="ph ph-spinner animate-spin text-3xl text-slate-400"></i>
+                        </div>
+                        <iframe id="previewFrame" class="w-full h-full bg-white shadow-sm rounded-lg relative z-10"
+                            src=""></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- CLIENT-SIDE DOCUMENT VIEWERS -->
+
+    <!-- PDF: Natively via Iframe (built-in) -->
+
+    <!-- WORD: docx-preview -->
+    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <script src="https://unpkg.com/docx-preview/dist/docx-preview.min.js"></script>
+
+    <!-- EXCEL: SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
+    <!-- PPTX: PPTXjs (Requires jQuery + Dependencies) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pptxjs/1.21.1/css/pptxjs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pptxjs/1.21.1/js/pptxjs.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSidebar();
+            loadDocuments();
+        });
+
+        async function loadSidebar() {
+            try {
+                // Adjust path since we are in FE_Dat/user/
+                const response = await fetch('components/sidebar.html');
+                const html = await response.text();
+                const container = document.getElementById('sidebar');
+                container.innerHTML = html;
+
+                // Highlight active link
+                // For simplicity, we just find the 'Files' icon and style it manually or check href
+                // Here we mock it:
+                const navLinks = container.querySelectorAll('nav a');
+                if (navLinks[1]) {
+                    navLinks[1].classList.remove('text-slate-500', 'hover:bg-white/40');
+                    navLinks[1].classList.add('bg-white/50', 'text-indigo-700', 'font-semibold', 'shadow-sm', 'border', 'border-white/50');
+                }
+            } catch (error) {
+                console.error("Failed to load sidebar", error);
+            }
+        }
+
+        async function loadDocuments() {
+            const list = document.getElementById('fileList');
+            list.innerHTML = '<div class="p-4 text-center text-slate-400"><i class="ph ph-spinner animate-spin"></i> Loading...</div>';
+
+            try {
+                // METHOD 1: Try JSON index first (Manual curation)
+                // const response = await fetch('data/documents.json');
+                // const docs = await response.json();
+
+                // METHOD 2: Direct Folder Scanning (Works if Dev Server enables Directory Listing/Auto-Index)
+                // We fetch the folder path. Most dev servers return an HTML page with links.
+                const response = await fetch('documents/');
+
+                if (response.ok) {
+                    const text = await response.text();
+
+                    // Check if we got a directory listing HTML (look for <a href...>)
+                    if (text.toLowerCase().includes('<!doctype html>') || text.toLowerCase().includes('<html')) {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(text, 'text/html');
+                        const links = Array.from(doc.querySelectorAll('a'));
+
+                        // Filter out parent directory links and non-files
+                        const files = links
+                            .map(link => {
+                                const href = link.getAttribute('href');
+                                // Clean up href (sometimes it's full path, sometimes relative)
+                                const name = href.split('/').pop() || link.innerText;
+                                return decodeURIComponent(name);
+                            })
+                            .filter(name => {
+                                return name &&
+                                    name !== '../' &&
+                                    name !== './' &&
+                                    !name.endsWith('/') && // exclude subdirectories if any
+                                    !name.startsWith('?'); // exclude sorting links
+                            })
+                            // Filter specifically for file extensions we care about to avoid junk
+                            .filter(name => /\.(pdf|docx|doc|xlsx|xls|ppt|pptx|txt|py|js|html)$/i.test(name));
+
+                        // Convert to our object format
+                        const docs = files.map((name, index) => ({
+                            id: index,
+                            name: name,
+                            type: getFileType(name), // Helper to determine type from extension
+                            size: 'Unknown', // Scan doesn't give size easily from HTML
+                            date: new Date().toLocaleDateString(), // Placeholder date
+                            url: `documents/${name}`
+                        }));
+
+                        if (docs.length > 0) {
+                            renderDocList(docs);
+                        } else {
+                            list.innerHTML = '<div class="p-4 text-center text-slate-400">Không tìm thấy file nào trong folder documents/</div>';
+                        }
+                    } else {
+                        // Not HTML, maybe it returned a file? Or empty?
+                        console.warn("Folder response was not HTML index.");
+                        throw new Error("Cannot scan folder");
+                    }
+                } else {
+                    throw new Error("Folder not found");
+                }
+
+            } catch (error) {
+                console.error("Failed to load documents", error);
+
+                // Fallback: If scanning fails (e.g. server blocks listing), load the JSON mock
+                console.log("Falling back to data/documents.json");
+                try {
+                    const response = await fetch('data/documents.json');
+                    const docs = await response.json();
+                    renderDocList(docs);
+                } catch (jsonErr) {
+                    list.innerHTML = `
+                        <div class="p-4 text-center text-red-400">
+                            <i class="ph ph-warning"></i><br>
+                            Không thể tải danh sách tài liệu.<br>
+                            <span class="text-xs">Đảm bảo folder "documents/" tồn tại hoặc file "data/documents.json" hợp lệ.</span>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        function getFileType(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            if (['doc', 'docx'].includes(ext)) return 'word';
+            if (['xls', 'xlsx', 'csv'].includes(ext)) return 'excel';
+            if (['ppt', 'pptx'].includes(ext)) return 'ppt';
+            if (ext === 'pdf') return 'pdf';
+            return 'other';
+        }
+
+        function renderDocList(docs) {
+            const list = document.getElementById('fileList');
+            list.innerHTML = '';
+
+            // ... (rest is same)
+
+
+            docs.forEach(doc => {
+                const icon = getIcon(doc.type);
+
+                const el = document.createElement('div');
+                el.className = 'doc-item p-3 rounded-lg cursor-pointer hover:bg-white transition flex items-center justify-between group';
+                el.onclick = () => selectDocument(el, doc);
+                el.innerHTML = `
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <div class="w-8 h-8 rounded-lg ${icon.bg} ${icon.text} flex items-center justify-center shrink-0">
+                            <i class="${icon.class} text-lg"></i>
+                        </div>
+                        <div class="flex flex-col truncate">
+                            <span class="text-sm font-medium text-slate-700 truncate group-hover:text-indigo-600 transition">${doc.name}</span>
+                            <span class="text-[10px] text-slate-400 opacity-0 group-hover:opacity-100 transition">${doc.size}</span>
+                        </div>
+                    </div>
+                    <span class="text-xs text-slate-400 whitespace-nowrap">${doc.date}</span>
+                `;
+                list.appendChild(el);
+            });
+        }
+
+        async function selectDocument(el, doc) {
+            // UI Active State
+            document.querySelectorAll('.doc-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+
+            // Show Viewer Area
+            document.getElementById('emptyState').classList.add('hidden');
+            const container = document.getElementById('viewerContainer');
+            container.classList.remove('hidden');
+
+            // Set Header Info
+            document.getElementById('previewTitle').textContent = doc.name;
+            document.getElementById('downloadBtn').href = doc.url;
+
+            // --- VIEWER LOGIC ---
+            const frame = document.getElementById('previewFrame');
+            const parent = frame.parentNode;
+
+            // Helper to reset/create containers
+            const resetViewers = () => {
+                frame.style.display = 'none'; // PDF/Default hidden
+                frame.src = 'about:blank';
+                frame.removeAttribute('srcdoc');
+
+                ['docx-container', 'excel-container', 'pptx-container'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.style.display = 'none';
+                });
+            };
+
+            // Helper to get or create specific container
+            const getContainer = (id, className = "") => {
+                let el = document.getElementById(id);
+                if (!el) {
+                    el = document.createElement('div');
+                    el.id = id;
+                    el.className = 'w-full h-full bg-white overflow-auto relative ' + className;
+                    parent.appendChild(el);
+                }
+                el.style.display = 'block';
+                return el;
+            };
+
+            resetViewers();
+
+            // 1. PDF
+            if (doc.type === 'pdf') {
+                frame.style.display = 'block';
+                frame.src = doc.url;
+            }
+            // 2. WORD (.docx)
+            else if (doc.type === 'word') {
+                const c = getContainer('docx-container');
+                c.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2"><i class="ph ph-spinner animate-spin text-2xl"></i><span>Rendering Word Document...</span></div>';
+
+                try {
+                    const res = await fetch(doc.url);
+                    const blob = await res.blob();
+                    c.innerHTML = '';
+                    await docx.renderAsync(blob, c, null, { inWrapper: false, ignoreWidth: false, experimental: true });
+                } catch (e) {
+                    renderError(c, 'Word', doc.url);
+                }
+            }
+            // 3. EXCEL (.xlsx, .xls)
+            else if (doc.type === 'excel') {
+                // Xóa class p-4 ở container cha để thanh cuộn nằm sát mép đẹp hơn
+                const c = getContainer('excel-container', 'bg-slate-50'); 
+                c.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2"><i class="ph ph-spinner animate-spin text-2xl"></i><span>Parsing Excel Spreadsheet...</span></div>';
+
+                try {
+                    const res = await fetch(doc.url);
+                    const ab = await res.arrayBuffer();
+                    const wb = XLSX.read(ab);
+                    const ws = wb.Sheets[wb.SheetNames[0]]; // Read first sheet
+                    const html = XLSX.utils.sheet_to_html(ws, { id: "excel-table", editable: false });
+
+                    c.innerHTML = `
+                        <style>
+                            /* Quan trọng: width: max-content để bảng bung hết cỡ ngang */
+                            #excel-table { 
+                                width: max-content; 
+                                min-width: 100%; 
+                                border-collapse: collapse; 
+                                font-family: 'Segoe UI', sans-serif; 
+                                font-size: 13px; 
+                                background-color: white;
+                            }
+                            #excel-table td, #excel-table th { 
+                                border: 1px solid #e2e8f0; 
+                                padding: 6px 12px; 
+                                white-space: nowrap; /* Giữ nội dung trên 1 dòng */
+                            }
+                            /* Sticky Header */
+                            #excel-table tr:first-child td { 
+                                background: #f8fafc; 
+                                font-weight: 600; 
+                                text-align: center; 
+                                color: #475569; 
+                                position: sticky; 
+                                top: 0; 
+                                border-bottom: 2px solid #e2e8f0;
+                                z-index: 10; 
+                            }
+                        </style>
+                        
+                        <div class="w-full h-full overflow-auto bg-white relative custom-scrollbar">
+                            <div class="inline-block min-w-full align-middle">
+                                ${html}
+                            </div>
+                        </div>
+                      `;
+                } catch (e) {
+                    renderError(c, 'Excel', doc.url);
+                }
+            }
+            // 4. POWERPOINT (.pptx)
+            else if (doc.type === 'ppt') {
+                const c = getContainer('pptx-container');
+                c.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2"><i class="ph ph-spinner animate-spin text-2xl"></i><span>Rendering Slides...</span></div>';
+
+                // Uses PPTXjs (Needs jQuery attached to window)
+                try {
+                    // PPTXjs needs a div ID to target
+                    c.innerHTML = '<div id="pptx-view-target"></div>';
+                    $("#pptx-view-target").pptxToHtml({
+                        pptxFileUrl: doc.url,
+                        slidesScale: "100%",
+                        slideMode: false,
+                        keyBoardShortCut: false
+                    });
+                } catch (e) {
+                    console.error("PPTX Error", e);
+                    renderError(c, 'PowerPoint', doc.url);
+                }
+            }
+            // 5. OTHER
+            else {
+                // Fallback
+                const c = getContainer('docx-container'); // Reuse container for msg
+                renderError(c, 'File', doc.url, `Format .${doc.name.split('.').pop()} not supported locally.`);
+            }
+
+            // Update Icon in Header
+            const icon = getIcon(doc.type);
+            document.getElementById('previewIcon').className = `w-6 h-6 rounded flex items-center justify-center ${icon.bg} ${icon.text}`;
+            document.getElementById('previewIcon').innerHTML = `<i class="${icon.class}"></i>`;
+        }
+
+        function renderError(container, type, url, msg = null) {
+            container.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:center;height:100%;font-family:sans-serif;color:#64748b;flex-direction:column;text-align:center;">
+                     <div style="background:white;padding:40px;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                        <h3 style="margin:0 0 8px 0;font-size:18px;color:#334155;">Preview Failed</h3>
+                        <p style="margin:0;font-size:14px;color:#94a3b8;">${msg || `Could not render ${type} file.`}</p>
+                        <a href="${url}" target="_blank" style="display:inline-block;margin-top:20px;padding:10px 20px;background:#4f46e5;color:white;text-decoration:none;border-radius:8px;font-size:14px;">Download File</a>
+                     </div>
+                </div>
+            `;
+        }
+
+        function closePreview() {
+            document.getElementById('emptyState').classList.remove('hidden');
+            document.getElementById('viewerContainer').classList.add('hidden');
+            document.querySelectorAll('.doc-item').forEach(i => i.classList.remove('active'));
+            document.getElementById('previewFrame').src = 'about:blank';
+        }
+
+        function getIcon(type) {
+            switch (type) {
+                case 'pdf': return { class: 'ph-fill ph-file-pdf', bg: 'bg-red-100', text: 'text-red-600' };
+                case 'word': return { class: 'ph-fill ph-file-doc', bg: 'bg-blue-100', text: 'text-blue-600' };
+                case 'excel': return { class: 'ph-fill ph-file-xls', bg: 'bg-green-100', text: 'text-green-600' };
+                case 'ppt': return { class: 'ph-fill ph-file-ppt', bg: 'bg-orange-100', text: 'text-orange-600' };
+                default: return { class: 'ph-fill ph-file', bg: 'bg-slate-100', text: 'text-slate-600' };
+            }
+        }
+
+        function resetHome() {
+            window.location.href = 'index.html';
+        }
+        function toggleSidebar() { /* Reuse from index if needed, or simple toggle */ }
+    </script>
+</body>
+
+</html>
