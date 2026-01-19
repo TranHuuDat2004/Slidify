@@ -83,6 +83,3 @@ Toàn bộ "bộ não" của Slidify nằm trong tệp `js/data.js`.
 
 ---
 *Dự án này được tạo ra với mục đích học tập và quản lý kiến thức cá nhân.*
-
-
-tiếp
