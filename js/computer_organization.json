@@ -1861,7 +1861,412 @@
                 }
             ]
         },
-        
+        {
+  "title": "Tuần 8: Combinational Circuits",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Trang 1: Bìa - Combinational Circuits",
+      "image": "images/computer_organization/week8/slide_1.png",
+      "notes": "Bài giảng Tuần 2: Mạch Tổ hợp (Combinational Circuits).",
+      "terms": {}
+    },
+    {
+      "id": 2,
+      "title": "Trang 2: Lời cảm ơn",
+      "image": "images/computer_organization/week8/slide_2.png",
+      "notes": "Nội dung của các slide này có nguồn gốc từ Khoa Máy tính, Đại học Quốc gia Singapore. Xin chân thành cảm ơn sự hỗ trợ của ông Aaron Tan Tuck Choy đã vui lòng chia sẻ những tài liệu này.",
+      "terms": {}
+    },
+    {
+      "id": 3,
+      "title": "Trang 3: Chính sách cho sinh viên",
+      "image": "images/computer_organization/week8/slide_3.png",
+      "notes": "Các nội dung này chỉ được sử dụng cho mục đích <b>CÁ NHÂN</b>.\n\nSinh viên <b>KHÔNG ĐƯỢC PHÉP</b> sửa đổi hoặc cung cấp các nội dung này cho bất kỳ ai ở bất kỳ đâu cho bất kỳ mục đích nào.",
+      "terms": {}
+    },
+    {
+      "id": 4,
+      "title": "Trang 4: Chúng ta đang ở đâu?",
+      "image": "images/computer_organization/week8/slide_4.png",
+      "notes": "Lộ trình môn học:\n\n- <b>Chuẩn bị (2 tuần):</b>\n  - Hệ thống số và mã.\n- <b>Thiết kế Logic (3 tuần):</b>\n  - Đại số Boolean.\n  - Cổng logic và mạch.\n  - Rút gọn.\n  - <b>Mạch tổ hợp (Chủ đề tuần này).</b>\n  - Mạch tuần tự.\n- <b>Tổ chức Máy tính:</b>\n  - Hiệu suất.\n  - Ngôn ngữ Assembly.\n  - Bộ xử lý: Datapath và Control.\n  - Pipelining.\n  - Phân cấp bộ nhớ: Cache.\n  - Nhập/xuất.",
+      "terms": {}
+    },
+    {
+      "id": 5,
+      "title": "Trang 5: Đề cương - Mạch Tổ hợp",
+      "image": "images/computer_organization/week8/slide_5.png",
+      "notes": "Các chủ đề chính trong phần Mạch Tổ hợp:\n\n- Giới thiệu.\n- Quy trình Phân tích.\n- Các phương pháp Thiết kế.\n- Thiết kế mức Cổng (SSI).\n- Thiết kế mức Khối.\n- Mạch số học.\n- Độ trễ của mạch.\n- Bộ cộng có nhớ trước (Look-Ahead Carry Adder).",
+      "terms": {
+        "Combinational Circuit (Mạch tổ hợp)": "Một loại mạch logic kỹ thuật số trong đó đầu ra chỉ phụ thuộc vào các giá trị đầu vào hiện tại. Nó không có bất kỳ bộ nhớ nào để lưu trữ trạng thái trước đó."
+      }
+    },
+    
+  {
+    "id": 6,
+    "title": "Trang 6: Giới thiệu - Mạch Tổ hợp và Tuần tự",
+    "image": "images/computer_organization/week8/slide_6.png",
+    "notes": "Có hai loại mạch logic chính:\n\n- <b>Mạch Tổ hợp (Combinational Circuit):</b> Mỗi đầu ra chỉ phụ thuộc hoàn toàn vào các đầu vào tức thời (hiện tại).\n- <b>Mạch Tuần tự (Sequential Circuit):</b> Mỗi đầu ra phụ thuộc vào cả các đầu vào hiện tại và trạng thái (state) của mạch. Mạch tuần tự có bộ nhớ (Memory).",
+    "terms": {
+      "Sequential Circuit (Mạch tuần tự)": "Một loại mạch logic kỹ thuật số trong đó đầu ra phụ thuộc không chỉ vào các tín hiệu đầu vào hiện tại mà còn vào chuỗi các sự kiện đầu vào trong quá khứ. Mạch tuần tự có các phần tử lưu trữ trạng thái (bộ nhớ)."
+    }
+  },
+  {
+    "id": 7,
+    "title": "Trang 7: Quy trình Phân tích",
+    "image": "images/computer_organization/week8/slide_7.png",
+    "notes": "Với một mạch tổ hợp cho trước, làm thế nào để phân tích chức năng của nó?\n\n<b>Các bước:</b>\n1. Ghi nhãn các đầu vào và đầu ra.\n2. Thu được các hàm của các điểm trung gian và các đầu ra.\n3. Vẽ bảng chân lý (truth table).\n4. Suy ra chức năng của mạch.",
+    "terms": {
+      "Truth Table (Bảng chân lý)": "Một bảng toán học được sử dụng trong logic, liệt kê tất cả các kết hợp có thể có của các giá trị đầu vào và hiển thị kết quả đầu ra tương ứng cho mỗi kết hợp."
+    }
+  },
+  {
+    "id": 8,
+    "title": "Trang 8: Các phương pháp Thiết kế",
+    "image": "images/computer_organization/week8/slide_8.png",
+    "notes": "Các phương pháp thiết kế mạch tổ hợp khác nhau:\n- <b>Phương pháp thiết kế mức cổng (Gate-level):</b> với các cổng logic.\n- <b>Phương pháp thiết kế mức khối (Block-level):</b> với các khối chức năng.\n\nCác mục tiêu chính của thiết kế mạch:\n- Giảm chi phí (số lượng cổng cho các mạch nhỏ; số lượng gói IC cho các mạch phức tạp).\n- Tăng tốc độ.\n- Đơn giản hóa thiết kế (tái sử dụng các khối nếu có thể).",
+    "terms": {
+      "Logic Gate (Cổng logic)": "Một khối xây dựng cơ bản của một mạch kỹ thuật số. Hầu hết các cổng logic có hai đầu vào và một đầu ra, thực hiện một hàm logic Boolean cơ bản như AND, OR, NOT.",
+      "IC (Integrated Circuit - Mạch tích hợp)": "Một bộ các mạch điện tử trên một miếng vật liệu bán dẫn nhỏ, thường là silic. Các IC có các mức độ tích hợp khác nhau như SSI (quy mô nhỏ), MSI (quy mô trung bình), LSI (quy mô lớn), VLSI (quy mô rất lớn)."
+    }
+  },
+  {
+    "id": 9,
+    "title": "Trang 9: Thiết kế mức Cổng - Half Adder (1/2)",
+    "image": "images/computer_organization/week8/slide_9.png",
+    "notes": "Quy trình thiết kế cho một bộ bán cộng (Half Adder):\n\n1. <b>Nêu vấn đề:</b> Xây dựng một Half Adder.\n2. <b>Xác định và ghi nhãn các đầu vào và đầu ra của mạch:</b> Ví dụ này có hai đầu vào (X, Y) và hai đầu ra (S - Sum, C - Carry).\n3. <b>Vẽ bảng chân lý:</b> Liệt kê tất cả các kết hợp đầu vào và các đầu ra tương ứng.",
+    "terms": {
+      "Half Adder (Bộ bán cộng)": "Một mạch logic kỹ thuật số thực hiện phép cộng hai chữ số nhị phân. Nó tạo ra hai đầu ra: một tổng (Sum - S) và một số nhớ (Carry - C)."
+    }
+  },
+  {
+    "id": 10,
+    "title": "Trang 10: Thiết kế mức Cổng - Half Adder (2/2)",
+    "image": "images/computer_organization/week8/slide_10.png",
+    "notes": "Tiếp tục quy trình thiết kế:\n\n4. <b>Thu được các hàm Boolean đã được rút gọn:</b>\n   - Từ bảng chân lý, ta có `C = X·Y` (Cổng AND).\n   - `S = X'·Y + X·Y' = X ⊕ Y` (Cổng XOR).\n5. <b>Vẽ sơ đồ logic:</b> Vẽ mạch sử dụng các cổng logic tương ứng với các hàm Boolean đã tìm được.",
+    "terms": {
+      "Boolean Function (Hàm Boolean)": "Một biểu thức toán học trong đại số Boolean, bao gồm các biến Boolean, các hằng số (0 và 1), và các toán tử logic (AND, OR, NOT).",
+      "XOR Gate (Cổng XOR)": "Một cổng logic cho đầu ra là `true` (1) nếu và chỉ nếu số lượng đầu vào `true` là một số lẻ. Đối với hai đầu vào, nó cho ra `true` nếu các đầu vào khác nhau."
+    }
+  },
+   {
+    "id": 11,
+    "title": "Trang 11: Thiết kế mức Cổng - Full Adder (1/5)",
+    "image": "images/computer_organization/week8/slide_11.png",
+    "notes": "Bộ bán cộng (Half adder) chỉ cộng được hai bit. Để cộng hai số nhị phân, chúng ta cần cộng 3 bit (bao gồm cả số nhớ - carry).\n\nDo đó, chúng ta cần một <b>Bộ cộng toàn phần (Full Adder)</b>, được gọi như vậy vì nó có thể được tạo ra từ hai bộ bán cộng.",
+    "terms": {
+      "Full Adder (Bộ cộng toàn phần)": "Một mạch logic kỹ thuật số thực hiện phép cộng ba chữ số nhị phân (hai bit đầu vào và một bit nhớ vào - carry-in). Nó tạo ra hai đầu ra: một tổng (Sum) và một số nhớ ra (carry-out)."
+    }
+  },
+  {
+    "id": 12,
+    "title": "Trang 12: Thiết kế mức Cổng - Full Adder (2/5)",
+    "image": "images/computer_organization/week8/slide_12.png",
+    "notes": "Bảng chân lý (Truth table) cho một Full Adder với 3 đầu vào (X, Y, Z) và 2 đầu ra (C, S).\n\n- <b>Z:</b> carry in (nhớ vào từ vị trí trước đó)\n- <b>C:</b> carry out (nhớ ra cho vị trí tiếp theo)\n\nSử dụng bản đồ Karnaugh (K-map) để rút gọn các biểu thức dạng Tổng của các Tích (Sum of Products - SOP).",
+    "terms": {
+      "Karnaugh Map (K-map)": "Một phương pháp đồ họa được sử dụng để rút gọn các biểu thức đại số Boolean. Bản đồ K-map giúp dễ dàng tìm ra các biểu thức tối giản nhất cho một hàm logic."
+    }
+  },
+  {
+    "id": 13,
+    "title": "Trang 13: Thiết kế mức Cổng - Full Adder (3/5)",
+    "image": "images/computer_organization/week8/slide_13.png",
+    "notes": "Các công thức thay thế thu được bằng cách sử dụng các phép biến đổi đại số:\n\n- <b>C (Carry out):</b> `C = X·Y + (X⊕Y)·Z`\n- <b>S (Sum):</b> `S = X⊕Y⊕Z`",
+    "terms": {}
+  },
+  {
+    "id": 14,
+    "title": "Trang 14: Thiết kế mức Cổng - Full Adder (4/5)",
+    "image": "images/computer_organization/week8/slide_14.png",
+    "notes": "Sơ đồ mạch logic cho các công thức ở trên.\n\nMột bộ cộng toàn phần (Full Adder) được tạo thành từ <b>hai bộ bán cộng (Half-Adders)</b> và một cổng <b>OR</b>.",
+    "terms": {}
+  },
+  {
+    "id": 15,
+    "title": "Trang 15: Thiết kế mức Cổng - Full Adder (5/5)",
+    "image": "images/computer_organization/week8/slide_15.png",
+    "notes": "Sơ đồ mạch logic cho Full Adder dưới dạng sơ đồ khối (Block diagrams).\n\nSơ đồ này cho thấy rõ cách một Full Adder được xây dựng bằng cách kết nối đầu ra của một Half Adder thứ nhất với đầu vào của một Half Adder thứ hai. Đầu ra Carry của cả hai Half Adder sau đó được kết hợp bằng một cổng OR để tạo ra Carry out cuối cùng.",
+    "terms": {}
+  },
+  {
+    "id": 16,
+    "title": "Trang 16: Bộ chuyển đổi mã (Code Converters)",
+    "image": "images/computer_organization/week8/slide_16.png",
+    "notes": "<b>Bộ chuyển đổi mã (Code converter)</b> – nhận một mã đầu vào, dịch nó sang mã đầu ra tương đương.\n\nVí dụ: Bộ chuyển đổi mã BCD sang Excess-3.\n- Đầu vào: mã BCD\n- Đầu ra: mã Excess-3",
+    "terms": {
+      "BCD (Binary-Coded Decimal)": "Mã thập phân được mã hóa nhị phân. Đây là một phương pháp biểu diễn các chữ số thập phân (0-9) bằng cách sử dụng một chuỗi 4 bit nhị phân.",
+      "Excess-3 Code": "Một loại mã BCD tự bù trừ. Mã Excess-3 của một chữ số thập phân được tạo ra bằng cách cộng 3 vào chữ số đó rồi chuyển đổi kết quả sang dạng nhị phân 4 bit."
+    }
+  },
+  {
+    "id": 17,
+    "title": "Trang 17: BCD-to-Excess-3 Converter (1/2)",
+    "image": "images/computer_organization/week8/slide_17.png",
+    "notes": "Bảng chân lý và các bản đồ K-map cho bộ chuyển đổi mã BCD sang Excess-3. Các đầu vào là A, B, C, D (mã BCD) và các đầu ra là W, X, Y, Z (mã Excess-3).\n\nLưu ý rằng các kết hợp đầu vào từ 10 đến 15 là không hợp lệ trong mã BCD, vì vậy các đầu ra tương ứng của chúng được coi là các điều kiện 'không quan tâm' (don't care - X) trong K-map, giúp cho việc rút gọn biểu thức trở nên đơn giản hơn.",
+    "terms": {
+      "Don't Care Condition": "Trong thiết kế logic, đây là một tình huống đầu vào mà kết quả đầu ra không quan trọng. Chúng ta có thể gán giá trị 0 hoặc 1 cho các điều kiện 'don't care' này để tối ưu hóa việc rút gọn hàm logic."
+    }
+  },
+  {
+    "id": 18,
+    "title": "Trang 18: BCD-to-Excess-3 Converter (2/2)",
+    "image": "images/computer_organization/week8/slide_18.png",
+    "notes": "Slide này trình bày các nhóm ô trên K-map để rút gọn và tìm ra các biểu thức Boolean cho từng đầu ra W, X, Y, và Z.",
+    "terms": {}
+  },
+  {
+    "id": 19,
+    "title": "Trang 19: Thiết kế mức Khối (Block-Level Design)",
+    "image": "images/computer_organization/week8/slide_19.png",
+    "notes": "Các mạch phức tạp hơn cũng có thể được xây dựng bằng phương pháp <b>thiết kế mức khối (block-level)</b>.\n\nNhìn chung, phương pháp thiết kế mức khối (trái ngược với thiết kế mức cổng) dựa trên các thuật toán hoặc công thức của mạch, thu được bằng cách phân rã vấn đề chính thành các bài toán con một cách đệ quy (cho đến khi đủ nhỏ để có thể được giải quyết trực tiếp bằng các khối mạch).\n\nCác ví dụ đơn giản sử dụng bộ cộng song song 4-bit làm khối xây dựng:\n1. Bộ chuyển đổi mã BCD-sang-Excess-3\n2. Bộ cộng song song 16-bit\n3. Bộ cộng kết hợp trừ",
+    "terms": {}
+  },
+  {
+    "id": 20,
+    "title": "Trang 20: 4-Bit Parallel Adder (1/4)",
+    "image": "images/computer_organization/week8/slide_20.png",
+    "notes": "Xem xét một mạch để cộng hai số 4-bit với nhau và một số nhớ vào (carry-in), để tạo ra một kết quả 5-bit.\n\nKết quả 5-bit là đủ vì kết quả lớn nhất là:\n`1111₂ + 1111₂ + 1₂ = 11111₂`",
+    "terms": {
+      "Parallel Adder (Bộ cộng song song)": "Một mạch kỹ thuật số có khả năng cộng hai số nhị phân có nhiều hơn một bit. Nó được cấu tạo bằng cách kết nối nhiều bộ cộng toàn phần (Full Adders) lại với nhau."
+    }
+  },
+   {
+    "id": 21,
+    "title": "Trang 21: 4-Bit Parallel Adder (2/4)",
+    "image": "images/computer_organization/week8/slide_21.png",
+    "notes": "Không nên sử dụng kỹ thuật thiết kế SSI (mức cổng) ở đây.\n\nBảng chân lý cho 9 đầu vào (4 bit cho X, 4 bit cho Y, 1 bit cho carry-in) sẽ quá lớn: `2⁹ = 512` hàng!\n\nViệc rút gọn sẽ trở nên quá phức tạp!",
+    "terms": {}
+  },
+  {
+    "id": 22,
+    "title": "Trang 22: 4-Bit Parallel Adder (3/4)",
+    "image": "images/computer_organization/week8/slide_22.png",
+    "notes": "Một thiết kế thay thế là khả thi. Công thức cộng cho mỗi cặp bit (với số nhớ) có cùng chức năng như một bộ cộng toàn phần (full adder).\n\nCông thức cho Full Adder:\n- `C(i+1) = Xi·Yi + (Xi ⊕ Yi)·Ci`\n- `Si = Xi ⊕ Yi ⊕ Ci`",
+    "terms": {}
+  },
+  {
+    "id": 23,
+    "title": "Trang 23: 4-Bit Parallel Adder (4/4)",
+    "image": "images/computer_organization/week8/slide_23.png",
+    "notes": "Bằng cách nối chuỗi 4 bộ cộng toàn phần (Full Adders) thông qua các số nhớ (carries) của chúng, chúng ta có được một bộ cộng song song 4-bit.\n\nĐầu ra Carry của một Full Adder sẽ trở thành đầu vào Carry cho Full Adder tiếp theo trong chuỗi.",
+    "terms": {}
+  },
+  {
+    "id": 24,
+    "title": "Trang 24: Parallel Adders",
+    "image": "images/computer_organization/week8/slide_24.png",
+    "notes": "Lưu ý rằng số nhớ (carry) được lan truyền bằng cách nối chuỗi số nhớ từ một bộ cộng toàn phần này đến bộ tiếp theo. Do sự lan truyền này, mạch còn được gọi là <b>Ripple-Carry Adder (Bộ cộng nhớ gợn sóng)</b>.",
+    "terms": {
+      "Ripple-Carry Adder": "Một loại bộ cộng song song trong đó bit nhớ ra (carry-out) của mỗi bộ cộng toàn phần được nối với bit nhớ vào (carry-in) của bộ cộng toàn phần tiếp theo. Nó đơn giản nhưng chậm vì mỗi bit phải chờ bit nhớ từ bit trước đó."
+    }
+  },
+  {
+    "id": 25,
+    "title": "Trang 25: BCD-to-Excess-3 Converter (1/2)",
+    "image": "images/computer_organization/week8/slide_25.png",
+    "notes": "Mã Excess-3 có thể được chuyển đổi từ mã BCD bằng cách sử dụng bảng chân lý. Thiết kế mức cổng có thể được sử dụng vì chỉ có 4 đầu vào.\n\nTuy nhiên, một thiết kế thay thế là khả thi. Chúng ta có thể sử dụng công thức đặc thù của bài toán:\n`Mã Excess-3 = Mã BCD + 0011₂`",
+    "terms": {}
+  },
+  {
+    "id": 26,
+    "title": "Trang 26: BCD-to-Excess-3 Converter (2/2)",
+    "image": "images/computer_organization/week8/slide_26.png",
+    "notes": "Mạch mức khối:\n\nChúng ta có thể xây dựng một bộ chuyển đổi mã BCD sang Excess-3 bằng cách sử dụng một bộ cộng song song 4-bit. Đầu vào BCD (X) sẽ được cộng với số nhị phân `0011` (Y), tạo ra kết quả là mã Excess-3 (S).",
+    "terms": {}
+  },
+  {
+    "id": 27,
+    "title": "Trang 27: 16-Bit Parallel Adder",
+    "image": "images/computer_organization/week8/slide_27.png",
+    "notes": "Các bộ cộng song song lớn hơn có thể được xây dựng từ các bộ nhỏ hơn.\n\nVí dụ: Một <b>bộ cộng song song 16-bit</b> có thể được xây dựng từ <b>bốn bộ cộng song song 4-bit</b>, được nối chuỗi với nhau thông qua các đường truyền số nhớ (carry).",
+    "terms": {}
+  },
+  {
+    "id": 28,
+    "title": "Trang 28: 4-Bit Adder cum Subtractor (1/3)",
+    "image": "images/computer_organization/week8/slide_28.png",
+    "notes": "Nhắc lại: Phép trừ có thể được thực hiện thông qua phép cộng với các số bù 2 (2s-complement).\n\nDo đó, chúng ta có thể thiết kế một mạch để thực hiện <b>cả phép cộng và phép trừ</b>, bằng cách sử dụng một bộ cộng song song và một số cổng logic.\n\n- Một tín hiệu điều khiển `S` sẽ được dùng để chọn phép toán cộng hoặc trừ.\n- `S = 0` nghĩa là Cộng (X + Y).\n- `S = 1` nghĩa là Trừ (X - Y).",
+    "terms": {
+      "2's Complement (Bù 2)": "Một phép toán trên các số nhị phân, là cách phổ biến nhất để biểu diễn các số nguyên có dấu trong máy tính. Số bù 2 của một số nhị phân được tạo ra bằng cách đảo tất cả các bit (bù 1) rồi cộng thêm 1."
+    }
+  },
+  {
+    "id": 29,
+    "title": "Trang 29: 4-Bit Adder cum Subtractor (2/3)",
+    "image": "images/computer_organization/week8/slide_29.png",
+    "notes": "Nhắc lại:\n`X - Y = X + (-Y)`\n`= X + (bù 2 của Y)`\n`= X + (bù 1 của Y) + 1`\n\nThiết kế yêu cầu:\n(1) các cổng <b>XOR</b> để thực hiện phép bù 1 có điều kiện.\n(2) `S` được kết nối với <b>carry-in (số nhớ vào)</b> để cộng thêm 1 khi thực hiện phép trừ.",
+    "terms": {}
+  },
+  {
+    "id": 30,
+    "title": "Trang 30: 4-Bit Adder cum Subtractor (3/3)",
+    "image": "images/computer_organization/week8/slide_30.png",
+    "notes": "Đây là sơ đồ mạch của bộ cộng-trừ 4-bit. Mạch này không được hiển thị chi tiết, nhưng nó sử dụng một bộ cộng song song 4-bit làm khối trung tâm. Các đầu vào Y sẽ đi qua các cổng XOR trước khi vào bộ cộng, và tín hiệu điều khiển S sẽ được nối vào chân Cin.",
+    "terms": {}
+  },
+  {
+    "id": 31,
+    "title": "Trang 31: Ôn tập - Half Adder",
+    "image": "images/computer_organization/week8/slide_31.png",
+    "notes": "Slide này tóm tắt lại các kiến thức về Bộ bán cộng (Half Adder), bao gồm bảng chân lý, sơ đồ khối, và các cách triển khai mạch logic khác nhau.",
+    "terms": {}
+  },
+  {
+    "id": 32,
+    "title": "Trang 32: Ôn tập - Full Adder",
+    "image": "images/computer_organization/week8/slide_32.png",
+    "notes": "Slide này tóm tắt lại các kiến thức về Bộ cộng toàn phần (Full Adder), bao gồm bảng chân lý, K-map, sơ đồ khối, và các cách triển khai mạch logic.",
+    "terms": {}
+  },
+  {
+    "id": 33,
+    "title": "Trang 33: Ôn tập - Parallel Adder",
+    "image": "images/computer_organization/week8/slide_33.png",
+    "notes": "Tóm tắt về bộ cộng song song 4-bit, cho thấy cách nó được xây dựng bằng cách nối chuỗi các bộ cộng toàn phần (Full Adders - FAs).",
+    "terms": {}
+  },
+  {
+    "id": 34,
+    "title": "Trang 34: Ôn tập - Nối chuỗi các bộ cộng",
+    "image": "images/computer_organization/week8/slide_34.png",
+    "notes": "Việc nối chuỗi 4 bộ cộng toàn phần (FAs) tạo ra một bộ cộng song song 4-bit.\n\nPhương pháp nối chuỗi có thể được mở rộng cho các bộ cộng lớn hơn. Ví dụ: một bộ cộng song song 16-bit được xây dựng từ bốn bộ cộng song song 4-bit.",
+    "terms": {}
+  },
+  {
+    "id": 35,
+    "title": "Trang 35: Ví dụ - Hệ thống bỏ phiếu",
+    "image": "images/computer_organization/week8/slide_35.png",
+    "notes": "Ứng dụng: một hệ thống bỏ phiếu 6 người.\n\n- Sử dụng các bộ cộng toàn phần (FAs) và một bộ cộng song song 4-bit.\n- Mỗi FA có thể cộng được 3 phiếu bầu.\n- Hai bộ cộng toàn phần được dùng để cộng 6 phiếu bầu, và kết quả của chúng sau đó được cộng lại với nhau bằng một bộ cộng song song 4-bit để cho ra kết quả cuối cùng là một số 3-bit.",
+    "terms": {}
+  },
+  {
+    "id": 36,
+    "title": "Trang 36: Bộ so sánh độ lớn (1/4)",
+    "image": "images/computer_organization/week8/slide_36.png",
+    "notes": "<b>Bộ so sánh độ lớn (Magnitude comparator)</b>: so sánh 2 giá trị A và B, để kiểm tra xem A > B, A = B, hay A < B.\n\nĐể thiết kế một bộ so sánh độ lớn n-bit bằng phương pháp cổ điển, sẽ cần `2²ⁿ` hàng trong bảng chân lý! Do đó, chúng ta sẽ khai thác tính đều đặn trong thiết kế của mình.",
+    "terms": {
+      "Magnitude Comparator": "Một mạch tổ hợp nhận hai số nhị phân làm đầu vào và xác định mối quan hệ độ lớn giữa chúng (lớn hơn, nhỏ hơn, hoặc bằng nhau)."
+    }
+  },
+  {
+    "id": 37,
+    "title": "Trang 37: Bộ so sánh độ lớn (2/4)",
+    "image": "images/computer_organization/week8/slide_37.png",
+    "notes": "Slide này trình bày sơ đồ mạch logic chi tiết của một bộ so sánh độ lớn 4-bit. Mạch được xây dựng bằng cách so sánh từng cặp bit tương ứng từ cao xuống thấp và sử dụng kết quả của các phép so sánh trước đó để đưa ra kết luận cuối cùng.",
+    "terms": {}
+  },
+  {
+    "id": 38,
+    "title": "Trang 38: Bộ so sánh độ lớn (3/4)",
+    "image": "images/computer_organization/week8/slide_38.png",
+    "notes": "Sơ đồ khối của một bộ so sánh độ lớn 4-bit. Nó nhận hai số 4-bit (A và B) làm đầu vào và có ba đầu ra tương ứng cho các trường hợp A < B, A > B, và A = B.",
+    "terms": {}
+  },
+  {
+    "id": 39,
+    "title": "Trang 39: Bộ so sánh độ lớn (4/4)",
+    "image": "images/computer_organization/week8/slide_39.png",
+    "notes": "Bài tập: Một hàm F nhận một giá trị nhị phân 4-bit ABCD, và trả về 1 nếu `3 ≤ ABCD ≤ 12`, và 0 trong các trường hợp khác. Bạn sẽ triển khai F như thế nào bằng cách sử dụng các bộ so sánh độ lớn và một cổng logic phù hợp?",
+    "terms": {}
+  },
+  {
+    "id": 40,
+    "title": "Trang 40: Độ trễ của mạch (1/5)",
+    "image": "images/computer_organization/week8/slide_40.png",
+    "notes": "Với một cổng logic có độ trễ `t`. Nếu các đầu vào ổn định tại các thời điểm `t₁`, `t₂`, ..., `tₙ`, thì thời điểm sớm nhất mà đầu ra sẽ ổn định là:\n`max(t₁, t₂, ..., tₙ) + t`\n\nĐể tính toán độ trễ của tất cả các đầu ra của một mạch tổ hợp, hãy lặp lại quy tắc trên cho tất cả các cổng.",
+    "terms": {
+      "Circuit Delay (Propagation Delay)": "Độ trễ truyền tín hiệu. Đây là khoảng thời gian cần thiết để một sự thay đổi ở đầu vào của một cổng logic gây ra một sự thay đổi tương ứng ở đầu ra của nó."
+    }
+  },
+  {
+    "id": 41,
+    "title": "Trang 41: Độ trễ của mạch (2/5)",
+    "image": "images/computer_organization/week8/slide_41.png",
+    "notes": "Một ví dụ đơn giản: xét mạch cộng toàn phần (full adder) trong đó tất cả các đầu vào đều có sẵn tại thời điểm 0. Giả sử mỗi cổng có độ trễ là `t`.\n\nĐầu ra `S` sẽ ổn định sau `2t` (qua 2 cổng XOR), trong khi đầu ra `C` sẽ ổn định sau `3t` (qua 1 cổng XOR, 1 cổng AND, và 1 cổng OR).",
+    "terms": {}
+  },
+  {
+    "id": 42,
+    "title": "Trang 42: Độ trễ của mạch (3/5)",
+    "image": "images/computer_organization/week8/slide_42.png",
+    "notes": "Một ví dụ phức tạp hơn: bộ cộng song song 4-bit. Độ trễ của mạch này bị ảnh hưởng bởi sự lan truyền của bit nhớ (carry) từ bộ cộng toàn phần (FA) này sang bộ tiếp theo.",
+    "terms": {}
+  },
+  {
+    "id": 43,
+    "title": "Trang 43: Độ trễ của mạch (4/5)",
+    "image": "images/computer_organization/week8/slide_43.png",
+    "notes": "Phân tích độ trễ cho khối lặp lại (một Full Adder).\n- Giả sử các đầu vào `Xi` và `Yi` ổn định tại thời điểm 0, trong khi đầu vào `Ci` ổn định tại thời điểm `mt`.\n- Đầu ra `Si` sẽ ổn định tại thời điểm `max(t, mt) + t`.\n- Đầu ra `Ci+1` sẽ ổn định tại thời điểm `max(t, mt) + 2t`.",
+    "terms": {}
+  },
+  {
+    "id": 44,
+    "title": "Trang 44: Độ trễ của mạch (5/5)",
+    "image": "images/computer_organization/week8/slide_44.png",
+    "notes": "Tính toán độ trễ cho từng bit trong bộ cộng song song 4-bit:\n- Độ trễ của `S` và `C` tăng lên theo từng bit.\n\nNói chung, một bộ cộng song song nhớ gợn sóng n-bit sẽ có thời gian trễ:\n- `Sn` = `(2n)t`\n- `Cn+1` = `(2n+1)t`\n\nĐộ trễ lan truyền của các bộ cộng song song nhớ gợn sóng tỷ lệ thuận với số lượng bit mà nó xử lý. Độ trễ tối đa là `(2n+1)t`.",
+    "terms": {}
+  },
+  {
+    "id": 45,
+    "title": "Trang 45: Các mạch nhanh hơn",
+    "image": "images/computer_organization/week8/slide_45.png",
+    "notes": "Ba cách để cải thiện tốc độ của các mạch:\n\n1. <b>Sử dụng công nghệ tốt hơn</b> (ví dụ: cổng ECL nhanh hơn TTL) NHƯNG công nghệ nhanh hơn thường đắt hơn, cần nhiều năng lượng hơn, và có mức độ tích hợp thấp hơn.\n2. <b>Sử dụng các thiết kế mức cổng thành các mạch hai cấp!</b> (sử dụng dạng tổng-của-các-tích/tích-của-các-tổng) NHƯNG các thiết kế phức tạp cho các mạch lớn và các số hạng tích/tổng cần RẤT NHIỀU đầu vào!\n3. <b>Sử dụng các kỹ thuật nhìn trước thông minh</b> NHƯNG có thêm các chi phí (hy vọng là hợp lý).",
+    "terms": {}
+  },
+  {
+    "id": 46,
+    "title": "Trang 46: Bộ cộng có nhớ trước (1/6)",
+    "image": "images/computer_organization/week8/slide_46.png",
+    "notes": "Xem xét một bộ cộng toàn phần (FA), trong đó các tín hiệu trung gian được gán nhãn là `Pi` và `Gi`.\n\n- `Pi = Xi ⊕ Yi` là tín hiệu <b>lan truyền nhớ (carry propagate)</b>.\n- `Gi = Xi · Yi` là tín hiệu <b>tạo nhớ (carry generate)</b>.",
+    "terms": {
+      "Look-Ahead Carry Adder": "Một loại bộ cộng nhanh hơn Ripple-Carry Adder. Thay vì chờ bit nhớ lan truyền qua từng bit, nó sử dụng các mạch logic phức tạp hơn để tính toán trước các bit nhớ cho nhiều vị trí cùng một lúc."
+    }
+  },
+  {
+    "id": 47,
+    "title": "Trang 47: Bộ cộng có nhớ trước (2/6)",
+    "image": "images/computer_organization/week8/slide_47.png",
+    "notes": "Đối với bộ cộng nhớ gợn sóng 4-bit, các phương trình cho bốn tín hiệu nhớ là:\n- `C(i+1) = Gi + Pi·Ci`\n- ...\n\nCác công thức này được lồng sâu vào nhau, như được hiển thị ở đây cho `C(i+2)`. Điều này gây ra độ trễ lan truyền.",
+    "terms": {}
+  },
+  {
+    "id": 48,
+    "title": "Trang 48: Bộ cộng có nhớ trước (3/6)",
+    "image": "images/computer_organization/week8/slide_48.png",
+    "notes": "Các công thức/cổng lồng nhau gây ra nhiều độ trễ lan truyền hơn. Chúng ta có thể giảm độ trễ bằng cách khai triển và làm phẳng các công thức cho các số nhớ. Ví dụ, đối với `C(i+2)`:\n`C(i+2) = G(i+1) + P(i+1)·G(i) + P(i+1)·P(i)·Ci`\n\nĐiều này tạo ra một mạch mới nhanh hơn cho `C(i+2)` vì nó chỉ có độ trễ của 2 cấp cổng.",
+    "terms": {}
+  },
+  {
+    "id": 49,
+    "title": "Trang 49: Bộ cộng có nhớ trước (4/6)",
+    "image": "images/computer_organization/week8/slide_49.png",
+    "notes": "Các tín hiệu nhớ khác có thể được làm phẳng tương tự. Lưu ý rằng các công thức trở nên dài hơn với các số nhớ cao hơn.\n\nNgoài ra, tất cả các số nhớ đều là các biểu thức tổng-của-các-tích hai cấp, xét theo các tín hiệu tạo nhớ `Gs`, các tín hiệu lan truyền nhớ `Ps`, và số nhớ vào đầu tiên `Ci`.",
+    "terms": {}
+  },
+  {
+    "id": 50,
+    "title": "Trang 50: Bộ cộng có nhớ trước (5/6)",
+    "image": "images/computer_organization/week8/slide_50.png",
+    "notes": "Chúng ta sử dụng công thức nhìn trước trong mạch cộng có nhớ trước này. Mạch này tính toán đồng thời tất cả các bit nhớ `C(i+1)` đến `C(i+4)` trực tiếp từ các tín hiệu `P`, `G` và `Ci` ban đầu.",
+    "terms": {}
+  },
+  {
+    "id": 51,
+    "title": "Trang 51: Bộ cộng có nhớ trước (6/6)",
+    "image": "images/computer_organization/week8/slide_51.png",
+    "notes": "Chip IC 74182 cho phép xây dựng các bộ cộng có nhớ trước nhanh hơn. Giả sử độ trễ của cổng là `t`, độ trễ lan truyền tối đa cho mạch do đó là `4t`:\n\n- `t` để tạo ra các tín hiệu `generate` và `propagate`.\n- `2t` để có được các số nhớ (carries).\n- `t` cho các tín hiệu tổng (sum).",
+    "terms": {}
+  },
+  {
+    "id": 52,
+    "title": "Trang 52: Câu hỏi ôn tập nhanh",
+    "image": "images/computer_organization/week8/slide_52.png",
+    "notes": "Các câu hỏi ôn tập nhanh:\n\n- DLD trang 128 - 129\n- Câu hỏi 6-1 đến 6-4.",
+    "terms": {}
+  }
+
+  ]
+},
         {
             "title": "Tuần 9: Registers and Counters",
             "slides": [

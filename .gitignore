@@ -1,0 +1,8 @@
+.vscode/
+
+### Environment files ###
+.env
+.env.prod
+.env.local
+
+input_slides
