@@ -183,7 +183,7 @@
                         element: '#header-placeholder', 
                         popover: { 
                             title: 'Thanh công cụ', 
-                            description: 'Nơi bạn có thể tìm kiếm bài giảng hoặc truy cập các cài đặt hiển thị.', // Đã sửa nội dung tại đây
+                            description: 'Nơi bạn có thể tìm kiếm bài giảng hoặc truy cập các cài đặt hiển thị.',
                             side: "bottom", 
                             align: 'center' 
                         } 
@@ -209,20 +209,50 @@
                 ]
             });
 
-            // Logic tự động chạy lần đầu
+            // Logic hiển thị Welcome Toast cho người dùng mới
             const hasSeenTour = localStorage.getItem('hasSeenSlidifyTour');
             if (!hasSeenTour) {
-                // Delay 500ms để đảm bảo layout ổn định hoàn toàn
-                setTimeout(() => {
-                    driverObj.drive();
-                    localStorage.setItem('hasSeenSlidifyTour', 'true');
-                }, 500);
+                showWelcomeToast(driverObj, 'hasSeenSlidifyTour');
             }
 
             // Gán sự kiện cho nút ?
             document.getElementById('restart-tour').addEventListener('click', () => {
                 driverObj.drive();
             });
+        }
+
+        function showWelcomeToast(driverObj, storageKey) {
+            const toast = document.createElement('div');
+            toast.className = 'welcome-toast';
+            toast.innerHTML = `
+                <div class="welcome-toast-content">
+                    <b>Chào bạn!</b> Có vẻ đây là lần đầu bạn ghé thăm Slidify. Bạn có muốn xem hướng dẫn nhanh không?
+                </div>
+                <div class="welcome-toast-actions">
+                    <button class="welcome-toast-btn" id="start-tour-btn">Xem hướng dẫn</button>
+                    <button class="welcome-toast-close" id="close-toast-btn">×</button>
+                </div>
+            `;
+            document.body.appendChild(toast);
+
+            // Hiển thị với hiệu ứng delay nhẹ
+            setTimeout(() => toast.classList.add('show'), 1000);
+
+            const startBtn = toast.querySelector('#start-tour-btn');
+            const closeBtn = toast.querySelector('#close-toast-btn');
+
+            startBtn.onclick = () => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 500);
+                localStorage.setItem(storageKey, 'true');
+                driverObj.drive();
+            };
+
+            closeBtn.onclick = () => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 500);
+                localStorage.setItem(storageKey, 'true');
+            };
         }
     </script>
 </body>
